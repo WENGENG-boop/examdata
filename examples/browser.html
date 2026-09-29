@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>examdata 统一网关 · 浏览器端最小示例</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        font-family: system-ui, "Segoe UI", "Microsoft YaHei", sans-serif;
+        margin: 0 auto;
+        max-width: 1080px;
+        padding: 24px 16px 64px;
+        line-height: 1.6;
+      }
+      h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+      }
+      .hint {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        align-items: flex-end;
+        margin: 16px 0;
+        padding: 12px;
+        border: 1px solid #8884;
+        border-radius: 8px;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.85rem;
+        gap: 4px;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        padding: 4px 8px;
+      }
+      input[type="text"],
+      input[type="url"] {
+        min-width: 12rem;
+      }
+      button {
+        cursor: pointer;
+      }
+      #status {
+        font-size: 0.9rem;
+        min-height: 1.4em;
+      }
+      #status.error {
+        color: #b00020;
+        white-space: pre-wrap;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 0.88rem;
+        margin-top: 12px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #8884;
+        padding: 6px 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #8881;
+      }
+      td.stem {
+        max-width: 32rem;
+      }
+      code {
+        background: #8881;
+        padding: 0 4px;
+        border-radius: 3px;
+      }
+      .note {
+        margin-top: 24px;
+        padding: 12px;
+        border-left: 4px solid #d08700;
+        background: #d087001a;
+        font-size: 0.9rem;
+      }
+      .note pre {
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>examdata 统一网关 · 浏览器端最小示例</h1>
+    <p class="hint">
+      用浏览器原生 <code>fetch</code> 调 <code>GET /api/v1/search</code>（跨考试局检索，读服务端数据库）。
+      页面不依赖任何框架，双击打开即可；把 <strong>服务地址</strong> 换成你的服务地址再点“检索”。
+    </p>
+
+    <form id="search-form">
+      <label>
+        服务地址
+        <input id="base-url" type="url" value="http://127.0.0.1:8000" />
+      </label>
+      <label>
+        API Key（可选）
+        <input id="api-key" type="text" placeholder="服务端设了 EXAMDATA_API_KEY 才需要" />
+      </label>
+      <label>
+        科目
+        <input id="subject" type="text" placeholder="0580 / Economics" />
+      </label>
+      <label>
+        考试局
+        <select id="board">
+          <option value="">自动</option>
+          <option value="cie">cie</option>
+          <option value="cambridge">cambridge</option>
+          <option value="edexcel">edexcel</option>
+          <option value="pearson">pearson</option>
+        </select>
+      </label>
+      <label>
+        关键词
+        <input id="keyword" type="text" placeholder="题干关键词" />
+      </label>
+      <label>
+        条数
+        <input id="limit" type="text" value="20" size="4" />
+      </label>
+      <button type="submit">检索</button>
+    </form>
+
+    <div id="status"></div>
+    <div id="summary"></div>
+    <table id="results" hidden>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>考试局</th>
+          <th>科目</th>
+          <th>年份</th>
+          <th>试卷</th>
+          <th>题号</th>
+          <th>分值</th>
+          <th>题干</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="note">
+      <strong>为什么需要服务端开 CORS：</strong>
+      本页面与 API 不同源，浏览器会先发预检请求；服务端没开 CORS 时，请求会被同源策略拦下，
+      控制台报 <code>blocked by CORS policy</code>。给服务进程加一个环境变量再启动即可：
+      <pre><code>EXAMDATA_CORS_ORIGINS='*' examdata serve --port 8000
+# 或只放行本页所在来源（更安全）
+EXAMDATA_CORS_ORIGINS='http://127.0.0.1:5500' examdata serve --port 8000</code></pre>
+      CORS 由服务端 <code>EXAMDATA_CORS_ORIGINS</code> 控制，不配置就不挂中间件——本地同源调用不受影响。
+      <br /><br />
+      <strong>双击打开（<code>file://</code>）时只能用 <code>'*'</code>：</strong>
+      这时页面的 Origin 是 <code>null</code>，实测白名单模式不会回
+      <code>access-control-allow-origin</code>（预检直接 400），浏览器就会拦下请求。
+      想用白名单，就把本文件放到本地 HTTP 服务下再访问：在仓库根执行
+      <code>python -m http.server 5500 --directory examples</code>，然后打开
+      <code>http://127.0.0.1:5500/browser.html</code>，此时白名单写
+      <code>http://127.0.0.1:5500</code> 即可。
+      <br /><br />
+      <strong>不要把 API Key 写进公开页面：</strong>
+      这里的输入框只适合本机调试。公开页面里的 Key 等同于公开，浏览器端调用应当放在你自己的后端转发。
+    </div>
+
+    <script>
+      // 与 examples/python_client.py、examples/node_client.mjs 调的是同一个端点，
+      // 只是把出口换成浏览器。只做 GET，不需要任何写接口。
+      const form = document.getElementById("search-form");
+      const statusEl = document.getElementById("status");
+      const summaryEl = document.getElementById("summary");
+      const table = document.getElementById("results");
+      const tbody = table.querySelector("tbody");
+
+      function setStatus(text, isError = false) {
+        statusEl.textContent = text;
+        statusEl.className = isError ? "error" : "";
+      }
+
+      function cell(row, text) {
+        const td = document.createElement("td");
+        td.textContent = text === null || text === undefined || text === "" ? "-" : String(text);
+        row.appendChild(td);
+        return td;
+      }
+
+      function render(data) {
+        const byBoard = data.by_board || {};
+        summaryEl.textContent =
+          `命中 ${data.total} 题（cambridge=${byBoard.cambridge ?? 0}, ` +
+          `edexcel=${byBoard.edexcel ?? 0}）  limit=${data.limit} offset=${data.offset}`;
+        tbody.replaceChildren();
+        for (const item of data.items || []) {
+          const row = document.createElement("tr");
+          cell(row, item.question_id);
+          cell(row, item.board);
+          cell(row, item.subject_code);
+          cell(row, item.year);
+          cell(row, item.paper_code);
+          cell(row, item.number_path);
+          cell(row, item.marks);
+          const stemCell = cell(row, (item.stem_text || "").replace(/\s+/g, " ").slice(0, 120));
+          stemCell.className = "stem";
+          row.appendChild(stemCell);
+          tbody.appendChild(row);
+        }
+        table.hidden = (data.items || []).length === 0;
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const baseUrl = document.getElementById("base-url").value.replace(/\/+$/, "");
+        const apiKey = document.getElementById("api-key").value.trim();
+        const params = new URLSearchParams();
+        const add = (key, value) => {
+          if (value) params.set(key, value);
+        };
+        add("subject", document.getElementById("subject").value.trim());
+        add("board", document.getElementById("board").value);
+        add("keyword", document.getElementById("keyword").value.trim());
+        add("limit", document.getElementById("limit").value.trim() || "20");
+
+        const url = `${baseUrl}/api/v1/search?${params}`;
+        const headers = { Accept: "application/json" };
+        if (apiKey) headers["X-API-Key"] = apiKey;
+
+        setStatus(`请求 ${url} …`);
+        try {
+          const response = await fetch(url, { headers });
+          const payload = await response.json().catch(() => null);
+          if (!response.ok) {
+            const detail = payload && payload.detail ? payload.detail : `HTTP ${response.status}`;
+            setStatus(`请求失败：${detail}`, true);
+            return;
+          }
+          render(payload);
+          setStatus(`成功：${response.status} ${response.statusText}`);
+        } catch (error) {
+          // fetch 在 CORS 被拦、服务未启动、DNS 失败时都会走到这里，且不暴露细节，
+          // 因此把最常见的原因一并提示出来。
+          setStatus(
+            `调用失败：${error.message}\n` +
+              "常见原因：服务没启动、地址写错，或服务端没设置 EXAMDATA_CORS_ORIGINS（见页面底部说明）。",
+            true,
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

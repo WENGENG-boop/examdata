@@ -1,5 +1,9 @@
 """只读检索 API（需求：题目检索能力 / 试卷检索能力 / 随机抽题 / 后台监控）。
 
+对外主入口是统一网关 `/api/v1`（见 `unified.py`）：它把两个上游
+（CIE 与 Pearson Edexcel）合并成一套调用形态，`board` 可省略。
+`/paper-qa/*` 与 `/questions` 等是既有端点，行为保持不变，仍可单独使用。
+
 设计取舍：
 - **只读**。写入类操作（人工修正、重新解析）走 CLI 与后台任务，不开放匿名写接口，
   避免"生成内容与官方内容物理隔离"这条约束被绕过。
@@ -44,12 +48,23 @@ from ..paperqa.api import json_payload, response_payload
 from ..paperqa.errors import PaperQAError
 from fastapi.responses import Response
 
+from .security import install_security
+from .unified import router as unified_router
+
 
 app = FastAPI(
     title="国际考试真题统一数据服务",
     description="试卷检索 / 题目检索 / 单题完整内容 / 整卷题目树 / 随机抽题 / 后台监控",
     version="0.1.0",
 )
+
+# 统一网关（/api/v1）：board 别名归一 + 自动判定 + 跨考试局检索。
+# 既有端点行为不变，网关只是新增入口。
+app.include_router(unified_router)
+
+# 可选安全层：只有设置了 EXAMDATA_API_KEY / EXAMDATA_CORS_ORIGINS 才生效。
+# 两个都没设置时是空操作，本地开发、pytest 与既有部署的行为完全不变。
+install_security(app)
 
 
 @app.get(

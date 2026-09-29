@@ -42,7 +42,9 @@ examdata provenance-rebuild
 examdata db-stats          # 看规模
 ```
 
-完整部署指南（数据准备、systemd、nginx、HTTPS、故障排查）见 [docs/DEPLOY.md](docs/DEPLOY.md)。
+完整部署指南（数据准备、systemd、nginx、HTTPS、故障排查）见 [docs/DEPLOY.md](docs/DEPLOY.md)；
+统一 API 的完整参考与**公网调用指南**见 [docs/API.md](docs/API.md)，
+可直接运行的客户端示例见 [`examples/`](examples/)。
 
 ## 使用
 
@@ -72,10 +74,11 @@ examdata serve --host 127.0.0.1 --port 8000
 # 交互式文档：http://127.0.0.1:8000/docs
 ```
 
-20 条只读路由：试卷检索 `/papers`、题目检索 `/questions`、单题完整内容
+24 条只读路由：试卷检索 `/papers`、题目检索 `/questions`、单题完整内容
 `/questions/{id}`、相似题、整卷题目树、随机抽题 `/sample`、溯源、待检查队列、
-知识点体系、监控视图 `/monitor`，以及 `/paper-qa/resolve`（只解析清单）与
-`/paper-qa/query`（取回文件，默认二进制，`format=json` 走 base64）。
+知识点体系、监控视图 `/monitor`、`/paper-qa/resolve`（只解析清单）与
+`/paper-qa/query`（取回文件，默认二进制，`format=json` 走 base64），
+以及统一网关 `/api/v1/*` 的 4 条（见下一节）。
 
 ```bash
 curl 'http://127.0.0.1:8000/questions?subject=0580&leaves_only=true&limit=5'
@@ -90,7 +93,42 @@ print(result.metadata()['counts'], result.files[0].sha256[:12], result.files[0].
 ```
 
 **写入类操作刻意不开放 HTTP**（人工修正、重新解析走 CLI），避免"生成内容与官方内容
-物理隔离"这条约束被匿名写接口绕过。API 无鉴权，部署时请只监听内网或置于反向代理之后。
+物理隔离"这条约束被匿名写接口绕过。默认无鉴权，公网部署请设置 `EXAMDATA_API_KEY`
+或只监听内网、置于反向代理之后。
+
+### 统一 API（`/api/v1`）
+
+两个上游（CIE 与 Pearson Edexcel）已经合并成**一套入口**，调用方不必分别对接：
+
+| 端点 | 作用 |
+|---|---|
+| `GET /api/v1/boards` | 能力发现：两个考试局的科目形态、考季、模式、是否支持按题裁剪 |
+| `GET /api/v1/paper` | 统一取卷：解析清单 / 整卷 PDF / 按题裁剪 PNG / 题目+答案配对 |
+| `GET /api/v1/search` | 跨考试局检索，返回 `by_board` 分组计数 |
+| `GET /api/v1/question/{id}` | 单题聚合视图，附可直接复用的 `paper_endpoint` |
+
+`board` 可省略：四位数字科目代码（`0580`、`9709`）判为 CIE，其余（`wec11`、
+`ial18-economics`）判为 Edexcel；别名 `cie`/`cambridge`、`edexcel`/`edx`/`pearson` 等价。
+响应顶层回带 `board` 与 `board_source`（`explicit` / `inferred`），判定过程透明。
+
+```bash
+# 不传 board，自动判定
+curl -o qp.pdf 'http://127.0.0.1:8000/api/v1/paper?subject=0580&year=2024&season=Jun&mode=qp'
+# 跨考试局检索
+curl 'http://127.0.0.1:8000/api/v1/search?keyword=triangle&limit=5'
+```
+
+完整参考（参数表、错误码、curl/Python/浏览器三种调用形态、VPS 公网部署与
+nginx + HTTPS + 限流、故障排查）见 [docs/API.md](docs/API.md)；可直接运行的客户端见
+[`examples/python_client.py`](examples/python_client.py)、
+[`examples/node_client.mjs`](examples/node_client.mjs)、
+[`examples/curl.md`](examples/curl.md)、
+[`examples/browser.html`](examples/browser.html)。
+部署完用 `scripts/smoke_public_api.py` 一键自检：
+
+```bash
+python scripts/smoke_public_api.py --base-url https://<你的域名>
+```
 
 ### 配置
 
@@ -116,7 +154,7 @@ EXAMDATA_DATABASE_URL=sqlite:////var/lib/examdata/examdata.db
 ## 测试
 
 ```bash
-pytest                      # 340 项
+pytest                      # 364 项
 pytest tests/conformance    # 适配器契约（参数化遍历 registry）
 ```
 
