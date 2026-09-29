@@ -1,0 +1,26 @@
+# --- Python ---
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# --- 运行时数据（数据库、下载的原件、图形资产）---
+.data/
+*.db
+*.sqlite3
+
+# --- 测试产物 ---
+.pytest_cache/
+pytest-of-weo/
+
+# --- 版权材料：真实试卷不得进入版本库 ---
+# 测试样本是考试局版权文件，公开仓库不收录。
+# 需要跑完整解析测试时，把真实 PDF 放到 tests/fixtures/ 下（见 README）。
+tests/fixtures/*.pdf
+
+# --- 本地临时目录 ---
+.piptmp/
+tmpwork/
+wheels/
