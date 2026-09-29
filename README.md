@@ -42,6 +42,8 @@ examdata provenance-rebuild
 examdata db-stats          # 看规模
 ```
 
+完整部署指南（数据准备、systemd、nginx、HTTPS、故障排查）见 [docs/DEPLOY.md](docs/DEPLOY.md)。
+
 ## 使用
 
 ### 命令行
@@ -49,11 +51,11 @@ examdata db-stats          # 看规模
 ```bash
 # 检索
 examdata search-papers --subject 0580 --year 2024
-examdata search-questions --subject 0580 --leaves-only --limit 5
+examdata search-questions --subject 0580 --leaves --limit 5
 examdata show-question 123
 
 # 抽题（seed 固定即可复现）
-examdata sample-questions --subject 0580 --marks-target 20 --seed 7
+examdata sample-questions --subject 0580 --marks 20 --seed 7
 
 # 取真题文件（不落盘；加 --out 才保存，且不覆盖已有文件）
 examdata paper-qa --board cie --subject 9709 --year 2026 --season Mar --paper 12 --mode both
