@@ -1,0 +1,30 @@
+{
+  "schema": "course/1",
+  "public_id": "course_vfthis5jlxjijxarwasb7bbyghnx7fqt",
+  "system": "edexcel",
+  "qualification": "IAL",
+  "native_code": "SYN-IAL-MATHS-2018",
+  "names": [
+    "Synthetic International A Level Mathematics"
+  ],
+  "aliases": [
+    "WMA",
+    "synthetic-maths"
+  ],
+  "specification_version": "SYN-IAL-MATHS-2018",
+  "applicable_years": [
+    2024
+  ],
+  "source_refs": [
+    {
+      "source_id": "synthetic-edexcel",
+      "provider_id": "edexcel",
+      "locator": {
+        "fixture": "synthetic/edexcel",
+        "detail": "subject:synthetic-ial-mathematics"
+      },
+      "content_class": "synthetic",
+      "retrieved_at": "2026-10-05T19:20:00+08:00"
+    }
+  ]
+}

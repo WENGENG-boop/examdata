@@ -1,0 +1,24 @@
+{
+  "schema": "region/1",
+  "public_id": "region_fn2r2ikszwe234bmma3a5zorsr7snsk3",
+  "document_role": "question_paper",
+  "document_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+  "page": 1,
+  "bbox": [
+    0.0,
+    0.0,
+    100.0,
+    50.0
+  ],
+  "coordinate_system": "unrotated_pdf_points_top_left",
+  "rotation_transform": null,
+  "evidence_status": "unverified",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts"
+    ],
+    "parent_refs": [],
+    "note": "synthetic crop region, no real document"
+  }
+}

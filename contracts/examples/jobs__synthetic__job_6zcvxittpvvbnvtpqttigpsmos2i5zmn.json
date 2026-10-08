@@ -1,0 +1,12 @@
+{
+  "schema": "job-status/1",
+  "public_id": "job_6zcvxittpvvbnvtpqttigpsmos2i5zmn",
+  "scope": "synthetic-ielts-book-1",
+  "input_revision": "rev-synthetic-0001",
+  "stage": "staged",
+  "counters": {},
+  "stop_reason": null,
+  "resume_required": false,
+  "output_refs": [],
+  "evidence_refs": []
+}

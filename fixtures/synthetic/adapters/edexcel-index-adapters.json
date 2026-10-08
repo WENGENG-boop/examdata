@@ -1,0 +1,72 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like a raw Edexcel subject/unit index. Invented titles only; no upstream Edexcel data. Shaped to exercise the A07 Edexcel adapter: qualification levels, unit/paper codes, session labels, alias handling, a missing mark scheme and a document hash conflict.",
+    "created_by": "Phase A executor (packet A07)",
+    "created_at_local": "2026-10-05T21:05:00+08:00",
+    "provider": "edexcel",
+    "purpose": "Drive the Edexcel read adapter against raw-index shapes without reading any protected source."
+  },
+  "schema_version": "1",
+  "board": "edexcel",
+  "subjects": [
+    {
+      "native_id": "adapter-ial-mathematics",
+      "alias_ids": ["WMA", "adapter-maths"],
+      "title": "Synthetic International A Level Mathematics",
+      "qualification_level": "IAL",
+      "specification_code": "SYN-IAL-MATHS-2020",
+      "units": [
+        {
+          "native_id": "SYN-WMA21",
+          "title": "Synthetic Pure Mathematics 2",
+          "unit_code": "WMA21",
+          "paper_code": "01",
+          "sessions": [
+            { "session": "2025-Jun", "date": null, "date_unknown_reason": "synthetic fixture: no date recorded" },
+            { "session": "2025-Oct", "date": null, "date_unknown_reason": "synthetic fixture: no date recorded" }
+          ],
+          "documents": [
+            { "role": "qp", "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" }
+          ],
+          "lineage": { "source": "synthetic", "subject": "adapter-ial-mathematics" }
+        },
+        {
+          "native_id": "SYN-WMA22",
+          "title": "Synthetic Pure Mathematics 3",
+          "unit_code": "WMA22",
+          "paper_code": "01",
+          "sessions": [
+            { "session": "2025-Jun", "date": null, "date_unknown_reason": "synthetic fixture: no date recorded" }
+          ],
+          "documents": [
+            { "role": "qp", "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" },
+            { "role": "ms", "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" }
+          ],
+          "lineage": { "source": "synthetic", "subject": "adapter-ial-mathematics" }
+        },
+        {
+          "native_id": "SYN-WMA23",
+          "title": "Synthetic Pure Mathematics 4 with a conflicting region hash",
+          "unit_code": "WMA23",
+          "paper_code": "01",
+          "sessions": [
+            { "session": "2025-Jun", "date": null, "date_unknown_reason": "synthetic fixture: no date recorded" }
+          ],
+          "documents": [
+            { "role": "qp", "sha256": "1111111111111111111111111111111111111111111111111111111111111111" }
+          ],
+          "regions": [
+            { "page": 1, "bbox": [10, 10, 100, 40], "document_role": "qp",
+              "document_sha256": "2222222222222222222222222222222222222222222222222222222222222222" }
+          ],
+          "lineage": { "source": "synthetic", "subject": "adapter-ial-mathematics" }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

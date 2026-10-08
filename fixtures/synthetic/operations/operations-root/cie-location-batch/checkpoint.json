@@ -1,0 +1,17 @@
+{
+  "stage": "stopped",
+  "loop_stage": null,
+  "current_subject": "9191",
+  "current_paper": "11",
+  "totals": {"subjects": 12, "completed": 4},
+  "loop_stages": {"9191": "stopped"},
+  "stop_reason": "download_error",
+  "stop_detail": {
+    "error": "cannot download C:/Users/weo/protected/secret-qp.pdf for subject 9191: HTTP 403 (key sk-test-b07-fake-secret-0000)",
+    "paper": "11"
+  },
+  "stopped_at": "2026-10-07T03:20:00+0800",
+  "needs_user_resume": true,
+  "resume_policy": "manual",
+  "updated_at": "2026-10-07T03:20:11+0800"
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "fixture-provenance/1",
+  "scope": "A09 catalog mapping synthetic fixtures",
+  "note": "Hand-authored synthetic catalog mapping inputs. Invented native codes, ids and hashes only; no upstream content, no real document hashes, no credentials.",
+  "created_by": "Phase A executor (packet A09)",
+  "created_at_local": "2026-10-05T18:30:00+08:00",
+  "entries": [
+    {
+      "path": "integration-staging/fixtures/synthetic/catalog/catalog-base-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "catalog",
+      "created_by": "Phase A executor (packet A09)",
+      "created_at_local": "2026-10-05T18:30:00+08:00",
+      "sha256": "2ced97a6aba36b46b94a8b270d96d2293a03093f5470a5e7799577ce26ec6341",
+      "bytes": 4355,
+      "note": "A valid catalog: one course, one paper container (aliased), one question bound to the container alias, one external asset and one document region, with every cross-reference resolving."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/catalog/catalog-duplicate-native-id-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "catalog",
+      "created_by": "Phase A executor (packet A09)",
+      "created_at_local": "2026-10-05T18:30:00+08:00",
+      "sha256": "30e972c258a4bbdf8305ef0598c5069196e62ba90585ab54a14f3850f38691fe",
+      "bytes": 2203,
+      "note": "One native identity (course 0700, igcse, spec 2026) registered twice with different content_revision values; the second registration must be recorded and raised as duplicate_native_id so the build cannot silently merge it."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/catalog/catalog-incomplete-reference-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "catalog",
+      "created_by": "Phase A executor (packet A09)",
+      "created_at_local": "2026-10-05T18:30:00+08:00",
+      "sha256": "14175ad8c38450133f2b13682fc33bda37d82dcf4e3d8f3bedc8b47c3418e16c",
+      "bytes": 1567,
+      "note": "One paper container whose course_ref ('9999') is claimed by no source; the missing course must be reported as unresolved_identity and the build must fail rather than publish a dangling reference."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/catalog/catalog-quality-upgrade-unexplained-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "catalog",
+      "created_by": "Phase A executor (packet A09)",
+      "created_at_local": "2026-10-05T18:30:00+08:00",
+      "sha256": "3367628803788d7614d98182717dc96eaa1f63ea9c131351db67c2d8a8beab07",
+      "bytes": 2303,
+      "note": "The previous revision marked course 0500 answer_verification 'unverified'; the new revision claims 'source_verified' while carrying only a synthetic_fixture evidence label, so the promotion must be rejected as unexplained_quality_upgrade (a synthetic fixture is not authoritative evidence)."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/catalog/catalog-removal-unexplained-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "catalog",
+      "created_by": "Phase A executor (packet A09)",
+      "created_at_local": "2026-10-05T18:30:00+08:00",
+      "sha256": "9cb8b0a1a44a04533956e51b5743daaac7cb230d3a616e51ab073823cd1e5dbb",
+      "bytes": 2873,
+      "note": "The previous revision held two courses (0600 and 0601); the new revision keeps only 0600 and carries no explanation for the removal of 0601, so the build must report unexplained_removal."
+    }
+  ],
+  "summary": {
+    "entries": 5,
+    "synthetic": 5
+  }
+}

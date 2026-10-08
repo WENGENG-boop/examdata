@@ -1,0 +1,78 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like a CIE paper index. Contains invented question text only; no upstream CIE data, no real document hashes.",
+    "created_by": "Phase A executor (packet A03)",
+    "created_at_local": "2026-10-05T19:20:00+08:00",
+    "provider": "cie",
+    "purpose": "Exercise the CIE index shape: question hierarchy, table structure, unknown date, answer conflict, required image and lineage."
+  },
+  "schema_version": "1",
+  "board": "cie",
+  "identity": {
+    "subject": "9999",
+    "subject_alias": "synthetic-subject",
+    "year": 2024,
+    "season": "Jun",
+    "paper": "11",
+    "date": null,
+    "date_unknown_reason": "The synthetic source carries no session date; the model must keep the date unknown rather than guess."
+  },
+  "coordinate_system": "unrotated_pdf_points_top_left",
+  "page_base": 1,
+  "documents": [
+    { "role": "qp", "sha256": "2222222222222222222222222222222222222222222222222222222222222222" },
+    { "role": "ms", "sha256": "3333333333333333333333333333333333333333333333333333333333333333" }
+  ],
+  "questions": [
+    {
+      "question": "1",
+      "parent": null,
+      "text": "Synthetic question 1 with parts (a) and (b).",
+      "page": 2,
+      "marks": 5,
+      "parts": [
+        { "question": "1(a)", "parent": "1", "text": "Synthetic part (a).", "marks": 2 },
+        { "question": "1(b)", "parent": "1", "text": "Synthetic part (b).", "marks": 3 }
+      ],
+      "required_images": [],
+      "lineage": { "source": "synthetic", "document_role": "qp", "page": 2 }
+    },
+    {
+      "question": "2",
+      "parent": null,
+      "text": "Synthetic question 2 presented as a table.",
+      "page": 3,
+      "marks": 4,
+      "table": {
+        "columns": ["Synthetic column 1", "Synthetic column 2"],
+        "rows": [
+          ["synthetic row 1 cell 1", "synthetic row 1 cell 2"],
+          ["synthetic row 2 cell 1", "synthetic row 2 cell 2"]
+        ],
+        "answer_cells": [{ "row": 2, "column": 2 }]
+      },
+      "required_images": [],
+      "lineage": { "source": "synthetic", "document_role": "qp", "page": 3 }
+    },
+    {
+      "question": "3",
+      "parent": null,
+      "text": "Synthetic question 3 whose marking source disagrees with the synthetic question paper.",
+      "page": 4,
+      "marks": 3,
+      "answer": "synthetic-mark-scheme-answer",
+      "answer_conflicts": [
+        { "value": "synthetic-mark-scheme-answer", "source": "synthetic-ms", "decision": null },
+        { "value": "synthetic-alternate-answer", "source": "synthetic-examiner-report", "decision": null }
+      ],
+      "manual_decision": null,
+      "required_images": [{ "role": "graph", "sha256": "4444444444444444444444444444444444444444444444444444444444444444" }],
+      "lineage": { "source": "synthetic", "document_role": "qp", "page": 4 }
+    }
+  ],
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

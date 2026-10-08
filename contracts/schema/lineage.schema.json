@@ -1,0 +1,1531 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/schema/lineage.schema.json",
+  "x-generated-by": "a04_generate_schemas.py sha256:3693f206a4d6ce07b324aa737996f27e4b0ad6b21e79ecba754b580bb785cb4b",
+  "$defs": {
+    "Answer": {
+      "title": "answer/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "question_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "original_value": {},
+        "normalized_value": {},
+        "alternatives": {
+          "type": "array",
+          "items": {}
+        },
+        "ordering_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "matching_method": {
+          "enum": [
+            "exact",
+            "normalized",
+            "alternative",
+            "in_any_order",
+            "grouped",
+            "ancestor",
+            "descendants",
+            "manual",
+            "unresolved"
+          ]
+        },
+        "verification": {
+          "type": "string",
+          "default": "unverified"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/SourceRef"
+            }
+          ]
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Conflict"
+          }
+        },
+        "manual_decision": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/ManualDecision"
+            }
+          ]
+        },
+        "content_class": {
+          "enum": [
+            "official",
+            "manual",
+            "generated",
+            "derived",
+            "synthetic",
+            "unknown"
+          ]
+        },
+        "lineage": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/Lineage"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Asset": {
+      "title": "asset/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "media_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "byte_size": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "storage_mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "availability": {
+          "type": "string",
+          "default": "unknown"
+        },
+        "content_link": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "range_capable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Conflict": {
+      "title": "answer-conflict/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Container": {
+      "title": "container/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "paper",
+            "test",
+            "set",
+            "book"
+          ]
+        },
+        "native_identity": {
+          "type": "object"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "question_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "coverage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_class": {
+          "enum": [
+            "official",
+            "manual",
+            "generated",
+            "derived",
+            "synthetic",
+            "unknown"
+          ]
+        },
+        "lineage": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/Lineage"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Course": {
+      "title": "course/1",
+      "type": "object",
+      "required": [
+        "system"
+      ],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "system": {
+          "enum": [
+            "cie",
+            "edexcel",
+            "ielts",
+            "toefl",
+            "gaokao"
+          ]
+        },
+        "qualification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "native_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "specification_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "applicable_years": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Coverage": {
+      "title": "coverage/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "denominator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "denominator_known": {
+          "type": "boolean",
+          "default": false
+        },
+        "observed": {
+          "type": "integer",
+          "default": 0
+        },
+        "excluded": {
+          "type": "integer",
+          "default": 0
+        },
+        "unknown": {
+          "type": "integer",
+          "default": 0
+        },
+        "missing": {
+          "type": "integer",
+          "default": 0
+        },
+        "partial": {
+          "type": "integer",
+          "default": 0
+        },
+        "verified": {
+          "type": "integer",
+          "default": 0
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "computed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "derived_status": {
+          "type": "string",
+          "default": "unknown"
+        },
+        "percentage": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "ExaminationSystemModel": {
+      "title": "examination-system/1",
+      "type": "object",
+      "required": [
+        "system"
+      ],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "system": {
+          "enum": [
+            "cie",
+            "edexcel",
+            "ielts",
+            "toefl",
+            "gaokao"
+          ]
+        },
+        "names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "qualifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "availability": {
+          "type": "string",
+          "default": "unknown"
+        },
+        "links": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Gap": {
+      "title": "gap/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "code": {
+          "type": "string",
+          "default": ""
+        },
+        "scope": {
+          "type": "string",
+          "default": ""
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "JobStatus": {
+      "title": "job-status/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "input_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stage": {
+          "type": "string",
+          "default": "unknown"
+        },
+        "counters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        "stop_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resume_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "output_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LabelsPayload": {
+      "title": "payload/labels/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "asset_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Lineage": {
+      "title": "lineage/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "operation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "parent_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "ManualDecision": {
+      "title": "manual-decision/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "decided_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decided_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "selected_value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "MatchingPayload": {
+      "title": "payload/matching/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "left": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "right": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mapping": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Material": {
+      "title": "material/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kind": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "applicability": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "candidate_facing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access_mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_class": {
+          "enum": [
+            "official",
+            "manual",
+            "generated",
+            "derived",
+            "synthetic",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Option": {
+      "title": "option/1",
+      "type": "object",
+      "required": [
+        "key"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "default": ""
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "OptionsPayload": {
+      "title": "payload/options/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Option"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Quality": {
+      "title": "quality/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "content": {
+          "enum": [
+            "complete",
+            "partial",
+            "missing",
+            "unknown"
+          ]
+        },
+        "answer_presence": {
+          "enum": [
+            "present",
+            "missing",
+            "unknown"
+          ]
+        },
+        "answer_verification": {
+          "enum": [
+            "source_verified",
+            "manual_adjudicated",
+            "conflicting",
+            "unverified",
+            "unknown"
+          ]
+        },
+        "assets": {
+          "enum": [
+            "embedded",
+            "external_only",
+            "missing",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "audio_integrity": {
+          "enum": [
+            "hash_verified",
+            "hash_mismatch",
+            "unverified",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "audio_alignment": {
+          "enum": [
+            "verified",
+            "unverified",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "region_verification": {
+          "enum": [
+            "verified",
+            "unverified",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Gap"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Question": {
+      "title": "question/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "native_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "container_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "number_path": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "parent_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "group_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "question_type": {
+          "enum": [
+            "single_choice",
+            "multiple_choice",
+            "table_choice",
+            "matching",
+            "fill_blank",
+            "short_answer",
+            "essay",
+            "speaking",
+            "diagram_labels",
+            "unknown"
+          ]
+        },
+        "stem": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "payload": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/OptionsPayload"
+                },
+                {
+                  "$ref": "#/$defs/TablePayload"
+                },
+                {
+                  "$ref": "#/$defs/MatchingPayload"
+                },
+                {
+                  "$ref": "#/$defs/LabelsPayload"
+                },
+                {
+                  "$ref": "#/$defs/TextPayload"
+                },
+                {
+                  "$ref": "#/$defs/UnknownPayload"
+                }
+              ]
+            }
+          ]
+        },
+        "marks": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "required_assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RequiredAsset"
+          }
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Answer"
+          }
+        },
+        "quality": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/Quality"
+            }
+          ]
+        },
+        "content_class": {
+          "enum": [
+            "official",
+            "manual",
+            "generated",
+            "derived",
+            "synthetic",
+            "unknown"
+          ]
+        },
+        "lineage": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/Lineage"
+            }
+          ]
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Question"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Region": {
+      "title": "region/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "bbox": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "coordinate_system": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rotation_transform": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          }
+        },
+        "evidence_status": {
+          "type": "string",
+          "default": "unverified"
+        },
+        "lineage": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/Lineage"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "RequiredAsset": {
+      "title": "required-asset/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "role": {
+          "type": "string",
+          "default": ""
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "asset_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "required": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "SourceRef": {
+      "title": "source-ref/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "source_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provider_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "locator": {
+          "type": "object"
+        },
+        "content_class": {
+          "enum": [
+            "official",
+            "manual",
+            "generated",
+            "derived",
+            "synthetic",
+            "unknown"
+          ]
+        },
+        "retrieved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Syllabus": {
+      "title": "syllabus/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "course_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "applicability": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_resources": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "content_class": {
+          "enum": [
+            "official",
+            "manual",
+            "generated",
+            "derived",
+            "synthetic",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "TableCell": {
+      "title": "table-cell/1",
+      "type": "object",
+      "required": [
+        "row",
+        "column"
+      ],
+      "properties": {
+        "row": {
+          "type": "integer",
+          "default": 0
+        },
+        "column": {
+          "type": "integer",
+          "default": 0
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "TablePayload": {
+      "title": "payload/table/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "answer_cells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TableCell"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Tag": {
+      "title": "tag/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scheme": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "specification_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assignment_method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "review": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "TextPayload": {
+      "title": "payload/text/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "stem": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "word_limit": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "TimetableEvent": {
+      "title": "timetable-event/1",
+      "type": "object",
+      "required": [
+        "system"
+      ],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "system": {
+          "enum": [
+            "cie",
+            "edexcel",
+            "ielts",
+            "toefl",
+            "gaokao"
+          ]
+        },
+        "qualification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "zone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "course_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "component": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "session": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "timezone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "duration_minutes": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/SourceRef"
+            }
+          ]
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "TimetableWindow": {
+      "title": "timetable-window/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "public_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "original_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parsed_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parsed_end": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parsing_status": {
+          "type": "string",
+          "default": "unparsed"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "system": {
+          "enum": [
+            "cie",
+            "edexcel",
+            "ielts",
+            "toefl",
+            "gaokao"
+          ]
+        },
+        "qualification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "zone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/SourceRef"
+            }
+          ]
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "UnknownPayload": {
+      "title": "payload/unknown/1",
+      "type": "object",
+      "required": [],
+      "properties": {
+        "native_shape": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "raw": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "title": "lineage/1",
+  "type": "object",
+  "required": [
+    "schema"
+  ],
+  "properties": {
+    "schema": {
+      "const": "lineage/1",
+      "type": "string"
+    },
+    "operation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parent_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

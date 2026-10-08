@@ -1,0 +1,46 @@
+{
+  "schema": "operations-expected/1",
+  "note": "synthetic expected manifest for the B07 private rehearsal; every denominator is declared by hand and never inferred from the published data",
+  "scopes": [
+    {
+      "id": "cie-questions",
+      "system": "cie",
+      "kind": "question",
+      "expected": 7,
+      "note": "the CIE synthetic paper declares seven question positions while the fixtures publish five",
+      "partial": [
+        {
+          "public_id": "q_p37hkvm7kf37fqhmwn3gmolw3a2oy3iy",
+          "reason": "fixture question 3 carries no answer text in the synthetic set"
+        }
+      ]
+    },
+    {
+      "id": "ielts-questions",
+      "system": "ielts",
+      "kind": "question",
+      "expected": 8,
+      "note": "the synthetic IELTS book publishes all eight questions"
+    },
+    {
+      "id": "edexcel-assets",
+      "system": "edexcel",
+      "kind": "asset",
+      "expected": 4,
+      "note": "four asset slots are declared for the staged unit; one fixture asset is deliberately outside the denominator",
+      "exclusions": [
+        {
+          "public_id": "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+          "reason": "synthetic fixture asset excluded from the staged denominator (sha 6666...)"
+        }
+      ]
+    },
+    {
+      "id": "toefl-courses",
+      "system": "toefl",
+      "kind": "course",
+      "expected": null,
+      "note": "no denominator is declared for TOEFL; the scope can never render a percentage"
+    }
+  ]
+}

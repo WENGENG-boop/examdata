@@ -1,0 +1,104 @@
+{
+  "fixture_kind": "synthetic",
+  "schema_version": "1",
+  "board": "catalog",
+  "dataset_revision": "rev-synthetic-a09-base",
+  "_provenance": {
+    "note": "Hand-authored synthetic catalog mapping inputs for the A09 store/builder. Invented native codes, ids and hashes only; no upstream content and no real document hash.",
+    "created_by": "Phase A executor (packet A09)",
+    "created_at_local": "2026-10-05T18:30:00+08:00",
+    "provider": "catalog",
+    "purpose": "A valid catalog: one course, one paper container (aliased), one question bound to the container alias, one external asset and one document region, with every cross-reference resolving."
+  },
+  "input_revisions": {"fixtures": "a09-base", "parser": "catalog-source/1"},
+  "explanations": {},
+  "sources": [
+    {
+      "kind": "course",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": "igcse",
+        "native_code": "0580",
+        "specification_version": "2026"
+      },
+      "native_locator": {"kind": "course", "native_code": "0580", "qualification": "igcse"},
+      "aliases": ["0580"],
+      "searchable": {"native_code": "0580", "names": ["Synthetic Mathematics"]},
+      "source_revision": "2026",
+      "quality_summary": {"content": "complete", "answer_verification": "unverified"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-course-0580"
+    },
+    {
+      "kind": "container",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "kind": "paper",
+        "native_identity": {"native_id": "0580/41", "session": "June", "year": 2026}
+      },
+      "native_locator": {"kind": "container", "native_identity": {"native_id": "0580/41", "session": "June", "year": 2026}},
+      "aliases": ["0580/41-june-2026"],
+      "course_ref": "0580",
+      "searchable": {"kind": "paper", "revision": "2026-june", "coverage": "partial"},
+      "source_revision": "2026-june",
+      "quality_summary": {"content": "partial"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-container-0580-41"
+    },
+    {
+      "kind": "question",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "container_native_identity": {"native_id": "0580/41"},
+        "native_id": "Q1",
+        "number_path": ["1"],
+        "parent_native_id": null
+      },
+      "native_locator": {"kind": "question", "native_id": "Q1", "container_ref": "0580/41-june-2026"},
+      "aliases": ["S1Q1"],
+      "container_ref": "0580/41-june-2026",
+      "searchable": {"native_id": "Q1", "stem": "Synthetic question stem", "question_type": "short_answer"},
+      "quality_summary": {"answer_verification": "unverified", "answer_presence": "present"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-question-0580-41-q1"
+    },
+    {
+      "kind": "asset",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "media_type": "application/pdf",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000001",
+        "storage_mode": "external_only"
+      },
+      "native_locator": {"kind": "asset", "sha256": "0000000000000000000000000000000000000000000000000000000000000001", "storage_mode": "external_only"},
+      "searchable": {"media_type": "application/pdf", "byte_size": 1024},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-asset-qp"
+    },
+    {
+      "kind": "region",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "document_role": "qp",
+        "document_sha256": "0000000000000000000000000000000000000000000000000000000000000001",
+        "page": 1,
+        "bbox": [10.0, 10.0, 100.0, 100.0],
+        "coordinate_system": "pdf_points"
+      },
+      "native_locator": {"kind": "region", "document_sha256": "0000000000000000000000000000000000000000000000000000000000000001", "page": 1, "bbox": [10.0, 10.0, 100.0, 100.0]},
+      "searchable": {"document_role": "qp", "page": 1},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-region-q1"
+    }
+  ]
+}

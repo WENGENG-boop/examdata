@@ -1,0 +1,22 @@
+{
+  "schema": "examination-system/1",
+  "public_id": "es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4",
+  "system": "ielts",
+  "names": [
+    "IELTS"
+  ],
+  "aliases": [
+    "International English Language Testing System"
+  ],
+  "qualifications": [
+    "academic"
+  ],
+  "capabilities": [
+    "reading",
+    "listening",
+    "writing",
+    "speaking"
+  ],
+  "availability": "unknown",
+  "links": {}
+}

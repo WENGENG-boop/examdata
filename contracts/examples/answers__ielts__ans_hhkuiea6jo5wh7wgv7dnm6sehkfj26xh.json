@@ -1,0 +1,37 @@
+{
+  "schema": "answer/1",
+  "public_id": "ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh",
+  "question_ref": null,
+  "original_value": "B",
+  "normalized_value": null,
+  "alternatives": [
+    "A",
+    "C",
+    "D"
+  ],
+  "ordering_rule": null,
+  "matching_method": "alternative",
+  "verification": "unverified",
+  "source": {
+    "source_id": "synthetic-ielts",
+    "provider_id": "ielts",
+    "locator": {
+      "fixture": "synthetic/ielts",
+      "detail": "answer:primary"
+    },
+    "content_class": "synthetic",
+    "retrieved_at": "2026-10-05T19:20:00+08:00"
+  },
+  "conflicts": [],
+  "manual_decision": null,
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-answer-key:primary"
+    ],
+    "parent_refs": [],
+    "note": null
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "ielts-run-checkpoint/1",
+  "run_id": "synthetic-run-ok",
+  "updated_at": "2026-10-06T12:00:30.500Z",
+  "fetcher": {
+    "counters": {"requests": 8, "errors": 0, "bytes": 4096},
+    "sources": {
+      "synthetic-book-1-listening": {"blocked": false, "downloaded": true},
+      "synthetic-book-1-reading": {"blocked": false, "downloaded": true}
+    }
+  }
+}

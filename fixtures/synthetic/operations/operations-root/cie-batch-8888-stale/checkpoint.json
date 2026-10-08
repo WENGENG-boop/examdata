@@ -1,0 +1,14 @@
+{
+  "stage": "stopped",
+  "loop_stage": null,
+  "current_subject": "8888",
+  "current_paper": "12",
+  "totals": {"subjects": 9, "completed": 2},
+  "loop_stages": {"8888": "stopped"},
+  "stop_reason": "download_error",
+  "stop_detail": {"error": "synthetic refusal while fetching paper 12 for subject 8888"},
+  "stopped_at": "2026-10-01T09:15:00+0800",
+  "needs_user_resume": false,
+  "resume_policy": null,
+  "updated_at": "2026-10-01T09:15:02+0800"
+}

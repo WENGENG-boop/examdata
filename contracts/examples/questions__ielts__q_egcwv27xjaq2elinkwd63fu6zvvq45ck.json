@@ -1,0 +1,151 @@
+{
+  "schema": "question/1",
+  "public_id": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+  "native_id": "Q3",
+  "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "number_path": [
+    "Q3"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "short_answer",
+  "stem": "Synthetic parent question 3 whose answer covers sub-parts (i)-(ii).",
+  "payload": {
+    "stem": "Synthetic parent question 3 whose answer covers sub-parts (i)-(ii).",
+    "word_limit": null
+  },
+  "marks": null,
+  "required_assets": [],
+  "answers": [
+    {
+      "public_id": "ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo",
+      "question_ref": null,
+      "original_value": "synthetic-parent-answer",
+      "normalized_value": null,
+      "alternatives": [],
+      "ordering_rule": "parent_answer_covers_sub_parts",
+      "matching_method": "ancestor",
+      "verification": "unverified",
+      "source": {
+        "source_id": "synthetic-ielts",
+        "provider_id": "ielts",
+        "locator": {
+          "fixture": "synthetic/ielts",
+          "detail": "answer:parent"
+        },
+        "content_class": "synthetic",
+        "retrieved_at": "2026-10-05T19:20:00+08:00"
+      },
+      "conflicts": [],
+      "manual_decision": null,
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/ielts",
+          "native-answer-key:parent"
+        ],
+        "parent_refs": [],
+        "note": null
+      }
+    }
+  ],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "present",
+    "answer_verification": "unverified",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-kind:parent_answer"
+    ],
+    "parent_refs": [],
+    "note": null
+  },
+  "children": [
+    {
+      "public_id": "q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k",
+      "native_id": "Q3.i",
+      "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+      "number_path": [
+        "Q3",
+        "Q3.i"
+      ],
+      "parent_ref": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+      "group_ref": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+      "question_type": "unknown",
+      "stem": "Synthetic sub-part (i).",
+      "payload": null,
+      "marks": null,
+      "required_assets": [],
+      "answers": [],
+      "quality": {
+        "content": "partial",
+        "answer_presence": "unknown",
+        "answer_verification": "unknown",
+        "assets": "unknown",
+        "audio_integrity": "unknown",
+        "audio_alignment": "unknown",
+        "region_verification": "unknown",
+        "gaps": []
+      },
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/ielts",
+          "native-kind:parent_answer_child"
+        ],
+        "parent_refs": [],
+        "note": "sub-part type is not declared by the source; kept as unknown"
+      },
+      "children": []
+    },
+    {
+      "public_id": "q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd",
+      "native_id": "Q3.ii",
+      "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+      "number_path": [
+        "Q3",
+        "Q3.ii"
+      ],
+      "parent_ref": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+      "group_ref": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+      "question_type": "unknown",
+      "stem": "Synthetic sub-part (ii).",
+      "payload": null,
+      "marks": null,
+      "required_assets": [],
+      "answers": [],
+      "quality": {
+        "content": "partial",
+        "answer_presence": "unknown",
+        "answer_verification": "unknown",
+        "assets": "unknown",
+        "audio_integrity": "unknown",
+        "audio_alignment": "unknown",
+        "region_verification": "unknown",
+        "gaps": []
+      },
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/ielts",
+          "native-kind:parent_answer_child"
+        ],
+        "parent_refs": [],
+        "note": "sub-part type is not declared by the source; kept as unknown"
+      },
+      "children": []
+    }
+  ]
+}

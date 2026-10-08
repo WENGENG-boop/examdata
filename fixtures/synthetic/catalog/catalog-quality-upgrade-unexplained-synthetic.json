@@ -1,0 +1,55 @@
+{
+  "fixture_kind": "synthetic",
+  "schema_version": "1",
+  "board": "catalog",
+  "dataset_revision": "rev-synthetic-a09-quality-upgrade",
+  "_provenance": {
+    "note": "Hand-authored synthetic catalog mapping input for the A09 quality-upgrade rule. Invented native codes, ids and hashes only; no upstream content and no real document hash.",
+    "created_by": "Phase A executor (packet A09)",
+    "created_at_local": "2026-10-05T18:30:00+08:00",
+    "provider": "catalog",
+    "purpose": "The previous revision marked course 0500 answer_verification 'unverified'; the new revision claims 'source_verified' while carrying only a synthetic_fixture evidence label, so the promotion must be rejected as unexplained_quality_upgrade (a synthetic fixture is not authoritative evidence)."
+  },
+  "input_revisions": {"fixtures": "a09-quality-upgrade", "parser": "catalog-source/1"},
+  "explanations": {},
+  "previous_sources": [
+    {
+      "kind": "course",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": "igcse",
+        "native_code": "0500",
+        "specification_version": "2026"
+      },
+      "native_locator": {"kind": "course", "native_code": "0500", "qualification": "igcse"},
+      "aliases": ["0500"],
+      "searchable": {"native_code": "0500", "names": ["Synthetic Language"]},
+      "source_revision": "2026",
+      "quality_summary": {"content": "complete", "answer_verification": "unverified"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-course-0500"
+    }
+  ],
+  "sources": [
+    {
+      "kind": "course",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": "igcse",
+        "native_code": "0500",
+        "specification_version": "2026"
+      },
+      "native_locator": {"kind": "course", "native_code": "0500", "qualification": "igcse"},
+      "aliases": ["0500"],
+      "searchable": {"native_code": "0500", "names": ["Synthetic Language"]},
+      "source_revision": "2026",
+      "quality_summary": {"content": "complete", "answer_verification": "source_verified"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-course-0500"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "fixture_kind": "synthetic",
+  "schema_version": "1",
+  "board": "toefl",
+  "_provenance": {
+    "note": "Hand-authored synthetic TOEFL cache fixture for the A08 read adapter. Invented ids and tokens only; no upstream TOEFL content. Shaped so the adapter can be checked for reporting a malformed or duplicate cache entry instead of dropping it.",
+    "created_by": "Phase A executor (packet A08)",
+    "created_at_local": "2026-10-06T00:20:00+08:00",
+    "provider": "toefl",
+    "purpose": "Exercise TOEFL cache reparse validation: a non-object entry, an entry with no identity and a duplicate identity."
+  },
+  "dataset_revision": "rev-synthetic-a08-toefl-cache",
+  "cache": {
+    "schema": "synthetic-toefl-cache/1",
+    "entries": [
+      {
+        "native_id": "cache-1",
+        "kmf_url": "https://toefl.kmf.com/detail/read/syn010.html",
+        "content": { "title": "Synthetic cached passage 1", "paragraphs": 3 }
+      },
+      "not-an-object",
+      {
+        "kmf_url": "https://toefl.kmf.com/detail/read/syn011.html",
+        "content": { "title": "Synthetic cached passage with no identity", "paragraphs": 2 }
+      },
+      {
+        "native_id": "cache-1",
+        "kmf_url": "https://toefl.kmf.com/detail/read/syn012.html",
+        "content": { "title": "Synthetic cached passage that repeats an identity", "paragraphs": 4 }
+      },
+      {
+        "native_id": "cache-3",
+        "kmf_url": "https://toefl.kmf.com/detail/read/syn013.html",
+        "content": { "title": "Synthetic cached passage 3", "paragraphs": 5 }
+      }
+    ]
+  },
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

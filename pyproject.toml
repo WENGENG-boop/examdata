@@ -24,6 +24,7 @@ postgres = ["psycopg[binary]>=3.2"]
 
 [project.scripts]
 examdata = "examdata.cli:app"
+examdata-workspace = "examdata.workspace:main"
 
 [build-system]
 requires = ["setuptools>=68"]

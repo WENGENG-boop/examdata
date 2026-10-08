@@ -1,3 +1,5 @@
+> main now has one launcher: `examdata workspace` (Python >=3.11, Node >=20). See [merged workspace and VPS instructions](docs/MAIN_INTEGRATION.md). Real v2 source assembly is required; synthetic fixtures are never enabled by the launcher.
+
 # examdata · 国际考试真题统一数据服务
 
 项目当前进度、各源数据覆盖与最新阻塞见 [项目总文档](../docs/PROJECT_STATUS.md)；全部文档入口见 [docs](../docs/README.md)（2026-10-05 更新）。

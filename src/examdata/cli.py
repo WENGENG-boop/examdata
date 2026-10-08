@@ -1508,5 +1508,24 @@ def cmd_question_crop(
         console.print(f"p{item['page']} -> {item['path']}", soft_wrap=True)
 
 
+
+@app.command("workspace")
+def cmd_workspace(
+    root: Optional[str] = typer.Option(None, "--root"),
+    host: str = typer.Option("127.0.0.1", "--host"),
+    port: int = typer.Option(8000, "--port"),
+    api_port: int = typer.Option(8001, "--api-port"),
+    classic_port: int = typer.Option(8002, "--classic-port"),
+    check: bool = typer.Option(False, "--check"),
+) -> None:
+    """Start the merged Web, classic frontend and all v1 API components."""
+    from .workspace import main
+    args = ["--host", host, "--port", str(port), "--api-port", str(api_port), "--classic-port", str(classic_port)]
+    if root:
+        args.extend(["--root", root])
+    if check:
+        args.append("--check")
+    raise typer.Exit(main(args))
+
 if __name__ == "__main__":
     app()

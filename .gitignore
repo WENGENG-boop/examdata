@@ -24,3 +24,11 @@ tests/fixtures/*.pdf
 .piptmp/
 tmpwork/
 wheels/
+
+# Monorepo Node dependencies, private verification environments and credentials
+node_modules/
+.merge-venv/
+.install-venv/
+.env
+.env.*
+!.env.example

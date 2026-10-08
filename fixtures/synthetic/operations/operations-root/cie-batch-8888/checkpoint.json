@@ -1,0 +1,9 @@
+{
+  "stage": "running",
+  "loop_stage": "fetching",
+  "current_subject": "8888",
+  "current_paper": "12",
+  "totals": {"subjects": 9, "completed": 2},
+  "loop_stages": {"8888": "fetching"},
+  "updated_at": "2026-10-06T08:31:02+0800"
+}

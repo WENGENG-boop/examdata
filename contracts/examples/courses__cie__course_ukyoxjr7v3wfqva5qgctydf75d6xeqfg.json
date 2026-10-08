@@ -1,0 +1,27 @@
+{
+  "schema": "course/1",
+  "public_id": "course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg",
+  "system": "cie",
+  "qualification": null,
+  "native_code": "9999",
+  "names": [
+    "synthetic-subject"
+  ],
+  "aliases": [],
+  "specification_version": null,
+  "applicable_years": [
+    2024
+  ],
+  "source_refs": [
+    {
+      "source_id": "synthetic-cie",
+      "provider_id": "cie",
+      "locator": {
+        "fixture": "synthetic/cie",
+        "detail": "subject"
+      },
+      "content_class": "synthetic",
+      "retrieved_at": "2026-10-05T19:20:00+08:00"
+    }
+  ]
+}

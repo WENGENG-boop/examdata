@@ -1,0 +1,33 @@
+{
+  "schema": "answer/1",
+  "public_id": "ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo",
+  "question_ref": null,
+  "original_value": "synthetic-parent-answer",
+  "normalized_value": null,
+  "alternatives": [],
+  "ordering_rule": "parent_answer_covers_sub_parts",
+  "matching_method": "ancestor",
+  "verification": "unverified",
+  "source": {
+    "source_id": "synthetic-ielts",
+    "provider_id": "ielts",
+    "locator": {
+      "fixture": "synthetic/ielts",
+      "detail": "answer:parent"
+    },
+    "content_class": "synthetic",
+    "retrieved_at": "2026-10-05T19:20:00+08:00"
+  },
+  "conflicts": [],
+  "manual_decision": null,
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-answer-key:parent"
+    ],
+    "parent_refs": [],
+    "note": null
+  }
+}

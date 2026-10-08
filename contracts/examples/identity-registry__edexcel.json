@@ -1,0 +1,92 @@
+{
+  "schema": "identity-registry/1",
+  "records": [
+    {
+      "public_id": "container_3bbmo2jmeebj3htxofgvkubtrcj23pct",
+      "kind": "container",
+      "canonical_identity": "\u001fcontainer\u001esystem=EDEXCEL\u001ekind=PAPER\u001enative_identity={\"paper\":\"01\",\"subject\":\"SYNTHETIC-IAL-MATHEMATICS\",\"unit\":\"SYN-WMA11\"}",
+      "identity_fields": {
+        "system": "edexcel",
+        "kind": "paper",
+        "native_identity": {
+          "subject": "synthetic-ial-mathematics",
+          "unit": "SYN-WMA11",
+          "paper": "01"
+        }
+      },
+      "native_locator": {
+        "provider": "edexcel",
+        "kind": "paper",
+        "subject": "synthetic-ial-mathematics",
+        "unit": "SYN-WMA11",
+        "paper": "01"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "course_vfthis5jlxjijxarwasb7bbyghnx7fqt",
+      "kind": "course",
+      "canonical_identity": "\u001fcourse\u001esystem=EDEXCEL\u001equalification=IAL\u001enative_code=SYN-IAL-MATHS-2018\u001especification_version=SYN-IAL-MATHS-2018",
+      "identity_fields": {
+        "system": "edexcel",
+        "qualification": "IAL",
+        "native_code": "SYN-IAL-MATHS-2018",
+        "specification_version": "SYN-IAL-MATHS-2018"
+      },
+      "native_locator": {
+        "provider": "edexcel",
+        "subject": "synthetic-ial-mathematics"
+      },
+      "aliases": [
+        "WMA",
+        "synthetic-maths"
+      ],
+      "content_revision": null
+    },
+    {
+      "public_id": "tte_5kfllz2yp7iibointgdo56rmvnm7zgjc",
+      "kind": "timetable_event",
+      "canonical_identity": "\u001ftimetable_event\u001esystem=EDEXCEL\u001equalification=IAL\u001ezone=\u0000\u001ecourse_native_code=SYN-IAL-MATHS-2018\u001ecomponent=WMA11\u001edate=\u0000\u001esession=2024-OCT",
+      "identity_fields": {
+        "system": "edexcel",
+        "qualification": "IAL",
+        "zone": null,
+        "course_native_code": "SYN-IAL-MATHS-2018",
+        "component": "WMA11",
+        "date": null,
+        "session": "2024-Oct"
+      },
+      "native_locator": {
+        "provider": "edexcel",
+        "unit": "SYN-WMA11",
+        "session": "2024-Oct"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "tte_hdxrn6xaev6ihma5sgilzhroxl5olams",
+      "kind": "timetable_event",
+      "canonical_identity": "\u001ftimetable_event\u001esystem=EDEXCEL\u001equalification=IAL\u001ezone=\u0000\u001ecourse_native_code=SYN-IAL-MATHS-2018\u001ecomponent=WMA11\u001edate=\u0000\u001esession=2024-JUN",
+      "identity_fields": {
+        "system": "edexcel",
+        "qualification": "IAL",
+        "zone": null,
+        "course_native_code": "SYN-IAL-MATHS-2018",
+        "component": "WMA11",
+        "date": null,
+        "session": "2024-Jun"
+      },
+      "native_locator": {
+        "provider": "edexcel",
+        "unit": "SYN-WMA11",
+        "session": "2024-Jun"
+      },
+      "aliases": [],
+      "content_revision": null
+    }
+  ],
+  "collision_events": [],
+  "alias_events": []
+}

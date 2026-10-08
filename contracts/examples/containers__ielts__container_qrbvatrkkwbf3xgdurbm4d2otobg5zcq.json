@@ -1,0 +1,29 @@
+{
+  "schema": "container/1",
+  "public_id": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "kind": "book",
+  "native_identity": {
+    "native_id": "synthetic-book-1"
+  },
+  "sections": [],
+  "resources": [],
+  "question_refs": [
+    "q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf",
+    "q_ymm437ermxommfdifgexf7eq6dm6kdxc",
+    "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+    "q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5",
+    "q_rtf7wrlwtotph3p45wx5wlfpfuo32iku",
+    "q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy"
+  ],
+  "revision": "rev-synthetic-0001",
+  "coverage": "unknown",
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts"
+    ],
+    "parent_refs": [],
+    "note": "native title kept in the fixture, not promoted to a name"
+  }
+}

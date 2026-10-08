@@ -574,3 +574,9 @@ def asset_file(asset_id: int, db: Session = Depends(get_session)) -> FileRespons
     if not path.is_file():
         raise HTTPException(status_code=410, detail="资产文件已丢失")
     return FileResponse(path, media_type=asset.mime or "application/octet-stream")
+
+
+# Attach after the existing routes to preserve their behavior.
+from ..integration.deployment import install as _install_integration
+
+_install_integration(app)

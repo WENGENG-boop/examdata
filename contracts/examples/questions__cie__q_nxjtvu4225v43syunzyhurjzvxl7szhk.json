@@ -1,0 +1,96 @@
+{
+  "schema": "question/1",
+  "public_id": "q_nxjtvu4225v43syunzyhurjzvxl7szhk",
+  "native_id": "2",
+  "container_ref": "container_6cnnjvwpypjw2orom36k3xjazamje2x3",
+  "number_path": [
+    "2"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "table_choice",
+  "stem": "Synthetic question 2 presented as a table.",
+  "payload": {
+    "columns": [
+      "Synthetic column 1",
+      "Synthetic column 2"
+    ],
+    "rows": [
+      [
+        "synthetic row 1 cell 1",
+        "synthetic row 1 cell 2"
+      ],
+      [
+        "synthetic row 2 cell 1",
+        "synthetic row 2 cell 2"
+      ]
+    ],
+    "answer_cells": [
+      {
+        "row": 2,
+        "column": 2,
+        "value": null
+      }
+    ]
+  },
+  "marks": 4,
+  "required_assets": [],
+  "answers": [
+    {
+      "public_id": "ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx",
+      "question_ref": null,
+      "original_value": {
+        "row": 2,
+        "column": 2
+      },
+      "normalized_value": null,
+      "alternatives": [],
+      "ordering_rule": "answer_locator_is_a_table_cell",
+      "matching_method": "exact",
+      "verification": "unverified",
+      "source": {
+        "source_id": "synthetic-cie",
+        "provider_id": "cie",
+        "locator": {
+          "fixture": "synthetic/cie",
+          "detail": "answer:primary"
+        },
+        "content_class": "synthetic",
+        "retrieved_at": "2026-10-05T19:20:00+08:00"
+      },
+      "conflicts": [],
+      "manual_decision": null,
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/cie",
+          "native-answer-key:primary"
+        ],
+        "parent_refs": [],
+        "note": null
+      }
+    }
+  ],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "present",
+    "answer_verification": "unverified",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/cie",
+      "native-document-role:qp"
+    ],
+    "parent_refs": [],
+    "note": "native page 3"
+  },
+  "children": []
+}

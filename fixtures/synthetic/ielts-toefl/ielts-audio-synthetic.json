@@ -1,0 +1,81 @@
+{
+  "fixture_kind": "synthetic",
+  "schema_version": "1",
+  "board": "ielts",
+  "_provenance": {
+    "note": "Hand-authored synthetic IELTS audio-alignment fixture for the A08 read adapter. Invented track ids, hashes and time windows only; no real audio, no upstream data. Shaped so the adapter can be checked for keeping a linked full recording, an unverified time window and a claimed-but-unsupported verified alignment distinct.",
+    "created_by": "Phase A executor (packet A08)",
+    "created_at_local": "2026-10-06T00:20:00+08:00",
+    "provider": "ielts",
+    "purpose": "Exercise IELTS audio alignment states without reading or requesting any audio source."
+  },
+  "dataset_revision": "rev-synthetic-a08-ielts-audio",
+  "book": {
+    "native_id": "synthetic-book-1",
+    "alias_ids": ["SB1"]
+  },
+  "audio": [
+    {
+      "native_id": "track-1",
+      "part": 1,
+      "media_type": "audio/mpeg",
+      "sha256": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+      "byte_size": 2048,
+      "duration_seconds": 600,
+      "storage_mode": "external_only",
+      "alignment": {
+        "status": "verified",
+        "method": "transcript_timestamps",
+        "evidence": "synthetic-transcript-timestamps",
+        "note": "The synthetic source claims a verified alignment; synthetic evidence must never reach verified."
+      },
+      "segments": [
+        { "question": "Q1", "start": 0.0, "end": 12.5 }
+      ]
+    },
+    {
+      "native_id": "track-2",
+      "part": 2,
+      "media_type": "audio/mpeg",
+      "sha256": null,
+      "byte_size": null,
+      "duration_seconds": 500,
+      "storage_mode": "external_only",
+      "alignment": {
+        "status": "unverified",
+        "method": null,
+        "evidence": null,
+        "note": "Only an identity association exists; no time window may be invented."
+      },
+      "segments": [
+        { "question": "Q2", "start": null, "end": null }
+      ]
+    },
+    {
+      "native_id": "track-3",
+      "part": 3,
+      "media_type": "audio/mpeg",
+      "sha256": "b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2",
+      "byte_size": 4096,
+      "duration_seconds": 700,
+      "storage_mode": "external_only",
+      "alignment": { "status": "unknown" },
+      "segments": []
+    },
+    {
+      "native_id": "track-4",
+      "part": 4,
+      "media_type": "audio/mpeg",
+      "sha256": "c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3",
+      "byte_size": 1024,
+      "duration_seconds": 300,
+      "storage_mode": "external_only",
+      "alignment": { "status": "not_applicable" },
+      "segments": []
+    }
+  ],
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

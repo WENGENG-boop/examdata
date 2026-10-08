@@ -1,0 +1,872 @@
+{
+  "version": 1,
+  "authorization": "全部到main里面了吗？然后所有部分全部先合并",
+  "scope": "code-only merge into GitHub main; original running workspace untouched",
+  "candidate": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1",
+  "files": [
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/__init__.py",
+      "target": "src/examdata/integration/__init__.py",
+      "sha256": "844f4bc91e4f16c47c7eaa62d405c724f287217335850305b8560d1ff466ea3d",
+      "final_sha256": "844f4bc91e4f16c47c7eaa62d405c724f287217335850305b8560d1ff466ea3d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/active_owner.py",
+      "target": "src/examdata/integration/adapters/active_owner.py",
+      "sha256": "0d8116f0f9622845bdbaae25f48b537fadb3a888d83741d46f2e743dee2d5399",
+      "final_sha256": "0d8116f0f9622845bdbaae25f48b537fadb3a888d83741d46f2e743dee2d5399"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/answers.py",
+      "target": "src/examdata/integration/adapters/answers.py",
+      "sha256": "e1e0ddeafd574c48d6401a24aea31b2e445be0cd2198ad12c3fcaccc2b2dcf67",
+      "final_sha256": "e1e0ddeafd574c48d6401a24aea31b2e445be0cd2198ad12c3fcaccc2b2dcf67"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/bundle.py",
+      "target": "src/examdata/integration/adapters/bundle.py",
+      "sha256": "b297a81b92f48fdce59de895351c418441b60da30fd2f60f96e2297ad1d8897c",
+      "final_sha256": "b297a81b92f48fdce59de895351c418441b60da30fd2f60f96e2297ad1d8897c"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/cie.py",
+      "target": "src/examdata/integration/adapters/cie.py",
+      "sha256": "a6b421b87d4c96d24a205eb0a0fa9101c130f3853a87a8ca9d024f0f39e49758",
+      "final_sha256": "a6b421b87d4c96d24a205eb0a0fa9101c130f3853a87a8ca9d024f0f39e49758"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/documents.py",
+      "target": "src/examdata/integration/adapters/documents.py",
+      "sha256": "e32513aa57e37646c8e2be831ef1597aac1021b9816b940bb4b6c2571e1a40eb",
+      "final_sha256": "e32513aa57e37646c8e2be831ef1597aac1021b9816b940bb4b6c2571e1a40eb"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/edexcel.py",
+      "target": "src/examdata/integration/adapters/edexcel.py",
+      "sha256": "b090d4bb1fb90327936c0157e53f18309186991ec7886aee80fce333cecd8f9a",
+      "final_sha256": "b090d4bb1fb90327936c0157e53f18309186991ec7886aee80fce333cecd8f9a"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/ielts.py",
+      "target": "src/examdata/integration/adapters/ielts.py",
+      "sha256": "e17a91b5d39afb31a98310840f0b27d5d7cb621c38b6bd3c2b79e7e0d6c8ff05",
+      "final_sha256": "e17a91b5d39afb31a98310840f0b27d5d7cb621c38b6bd3c2b79e7e0d6c8ff05"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/problems.py",
+      "target": "src/examdata/integration/adapters/problems.py",
+      "sha256": "35ae4107c422a4565bf9212cf1d1e129e213afe83267f6a6b75073f0763d9f41",
+      "final_sha256": "35ae4107c422a4565bf9212cf1d1e129e213afe83267f6a6b75073f0763d9f41"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/reader.py",
+      "target": "src/examdata/integration/adapters/reader.py",
+      "sha256": "9fda8dcf98cf4f09d6cca778e2131b89310828d3ddd9c5596c8e69d7957bd296",
+      "final_sha256": "9fda8dcf98cf4f09d6cca778e2131b89310828d3ddd9c5596c8e69d7957bd296"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/regions.py",
+      "target": "src/examdata/integration/adapters/regions.py",
+      "sha256": "d0d046d66a2812ef71c69862024002b0049c570d9705924142f447127aff8fa6",
+      "final_sha256": "d0d046d66a2812ef71c69862024002b0049c570d9705924142f447127aff8fa6"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/source_reader.py",
+      "target": "src/examdata/integration/adapters/source_reader.py",
+      "sha256": "eb77e0004d3a002f9f4ac338bcf65c5ae1af19f75f6990f519c1d413928cb56f",
+      "final_sha256": "eb77e0004d3a002f9f4ac338bcf65c5ae1af19f75f6990f519c1d413928cb56f"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/toefl.py",
+      "target": "src/examdata/integration/adapters/toefl.py",
+      "sha256": "e6dfdaaf3d043bb39e489663d375cee0c1ad34d2f944dfd72c8c2d4d640a42ce",
+      "final_sha256": "e6dfdaaf3d043bb39e489663d375cee0c1ad34d2f944dfd72c8c2d4d640a42ce"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/adapters/__init__.py",
+      "target": "src/examdata/integration/adapters/__init__.py",
+      "sha256": "e4fd17a5cf1e54723474d60345b0a8ed14ac373ce58692ccbd11942ed364bf8a",
+      "final_sha256": "e4fd17a5cf1e54723474d60345b0a8ed14ac373ce58692ccbd11942ed364bf8a"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/app.py",
+      "target": "src/examdata/integration/api/app.py",
+      "sha256": "e6e1e0f68a51d5e90b72c0653cfc4eff95a9a8ca23745a352264ea6663b65db8",
+      "final_sha256": "e6e1e0f68a51d5e90b72c0653cfc4eff95a9a8ca23745a352264ea6663b65db8"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/assembly.py",
+      "target": "src/examdata/integration/api/assembly.py",
+      "sha256": "53a32a3870cbb064b21762a87cd4a4fcfdcad7f3c10280efa5038759e23ef54d",
+      "final_sha256": "53a32a3870cbb064b21762a87cd4a4fcfdcad7f3c10280efa5038759e23ef54d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/binary.py",
+      "target": "src/examdata/integration/api/binary.py",
+      "sha256": "482616943acd060c57232530a990d769c1c1c9f1fac0d2966b61033e53b02701",
+      "final_sha256": "482616943acd060c57232530a990d769c1c1c9f1fac0d2966b61033e53b02701"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/compose.py",
+      "target": "src/examdata/integration/api/compose.py",
+      "sha256": "e220c007dba89d544cdd4c841c2ff5ab200b01e61556ba41a22a70c45f306efd",
+      "final_sha256": "3f4a8fdeb5c66abcfb82adcd64627d9b9026d926540e803cf32ec06491d0a80c"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/dataset.py",
+      "target": "src/examdata/integration/api/dataset.py",
+      "sha256": "ec73c1fb2598b7cb17fee65417ee3d6bd28681d9880990f0df5204c2335fb6cf",
+      "final_sha256": "ec73c1fb2598b7cb17fee65417ee3d6bd28681d9880990f0df5204c2335fb6cf"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/envelope.py",
+      "target": "src/examdata/integration/api/envelope.py",
+      "sha256": "4987f3bce8877dbbe00589913e31811fb26d27db355270c390fbd1cfc5d9f063",
+      "final_sha256": "4987f3bce8877dbbe00589913e31811fb26d27db355270c390fbd1cfc5d9f063"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/links.py",
+      "target": "src/examdata/integration/api/links.py",
+      "sha256": "f30af3f18c3c117edcf1e595178b712441effc14068643b6a75b0d4e9bcceb9d",
+      "final_sha256": "f30af3f18c3c117edcf1e595178b712441effc14068643b6a75b0d4e9bcceb9d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/openapi.py",
+      "target": "src/examdata/integration/api/openapi.py",
+      "sha256": "5e346d2eda0020bb33a0a42a7d897dddfacae37750262bb9418e74d64842e30a",
+      "final_sha256": "5e346d2eda0020bb33a0a42a7d897dddfacae37750262bb9418e74d64842e30a"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/pagination.py",
+      "target": "src/examdata/integration/api/pagination.py",
+      "sha256": "f069b3a0e04b2edfbfd5a3c2a9da3ee888bca3a398040134c84656275e7149ac",
+      "final_sha256": "f069b3a0e04b2edfbfd5a3c2a9da3ee888bca3a398040134c84656275e7149ac"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/view.py",
+      "target": "src/examdata/integration/api/view.py",
+      "sha256": "f03e549f5be4eb6f2041acd570851d7fda57f9bacdd0e5943b8af69dc6c3620f",
+      "final_sha256": "f03e549f5be4eb6f2041acd570851d7fda57f9bacdd0e5943b8af69dc6c3620f"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/api/__init__.py",
+      "target": "src/examdata/integration/api/__init__.py",
+      "sha256": "cacd0c3e7a16520b7ce20ea76f77a060fb7498ba5f2512b1be0cfd266e274a14",
+      "final_sha256": "cacd0c3e7a16520b7ce20ea76f77a060fb7498ba5f2512b1be0cfd266e274a14"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/catalog/builder.py",
+      "target": "src/examdata/integration/catalog/builder.py",
+      "sha256": "8bbd104b9e2481726c131ba6f5998349b3db3754cbd44073848dcfb950983457",
+      "final_sha256": "8bbd104b9e2481726c131ba6f5998349b3db3754cbd44073848dcfb950983457"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/catalog/model.py",
+      "target": "src/examdata/integration/catalog/model.py",
+      "sha256": "0c86ff30c1d209717b6367302a90294ce29e4554d9a3b38ffd1c1fbe014a5469",
+      "final_sha256": "0c86ff30c1d209717b6367302a90294ce29e4554d9a3b38ffd1c1fbe014a5469"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/catalog/revision.py",
+      "target": "src/examdata/integration/catalog/revision.py",
+      "sha256": "9133032d466251fc854910952192901f24708c70c23f40c85bf072f39ed5a908",
+      "final_sha256": "9133032d466251fc854910952192901f24708c70c23f40c85bf072f39ed5a908"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/catalog/store.py",
+      "target": "src/examdata/integration/catalog/store.py",
+      "sha256": "9e0543b7975a4ea9bf5477d312c46ffb61701baedaf6df01f01142fb2abdec13",
+      "final_sha256": "9e0543b7975a4ea9bf5477d312c46ffb61701baedaf6df01f01142fb2abdec13"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/catalog/__init__.py",
+      "target": "src/examdata/integration/catalog/__init__.py",
+      "sha256": "0127c8a41553fe80e3064c5eff85cfb80115ff6d1200d087beaf8b12d1a82a9a",
+      "final_sha256": "0127c8a41553fe80e3064c5eff85cfb80115ff6d1200d087beaf8b12d1a82a9a"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/base.py",
+      "target": "src/examdata/integration/contracts/base.py",
+      "sha256": "ad698af90e393225edb535b16feab37c30abd831806656b896c8f6ec5b5482a7",
+      "final_sha256": "ad698af90e393225edb535b16feab37c30abd831806656b896c8f6ec5b5482a7"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/canonical.py",
+      "target": "src/examdata/integration/contracts/canonical.py",
+      "sha256": "8153d10074b11643603b8b608a6ee4239b9bedc1541f802388e1fd4cd0b1ef0e",
+      "final_sha256": "8153d10074b11643603b8b608a6ee4239b9bedc1541f802388e1fd4cd0b1ef0e"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/completeness.py",
+      "target": "src/examdata/integration/contracts/completeness.py",
+      "sha256": "95f2b9032e3d17fa4fca9274047e002bf2124ecbfc6b71a8415df67a146877c7",
+      "final_sha256": "95f2b9032e3d17fa4fca9274047e002bf2124ecbfc6b71a8415df67a146877c7"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/enums.py",
+      "target": "src/examdata/integration/contracts/enums.py",
+      "sha256": "800bb6b5ebe189c4aca5262816978d4769d3242604958d58820438eeabf5999e",
+      "final_sha256": "800bb6b5ebe189c4aca5262816978d4769d3242604958d58820438eeabf5999e"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/ids.py",
+      "target": "src/examdata/integration/contracts/ids.py",
+      "sha256": "8553d705259a9aca36387f9f6f39ddd487d81b3bfc6cb1a1eeaabfa4e4c21bd0",
+      "final_sha256": "8553d705259a9aca36387f9f6f39ddd487d81b3bfc6cb1a1eeaabfa4e4c21bd0"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/jsonschema_lite.py",
+      "target": "src/examdata/integration/contracts/jsonschema_lite.py",
+      "sha256": "c05e7d2684faa8fe1b7e3f594ff44083db943f350dcad6fd7e2c873f490a78f7",
+      "final_sha256": "c05e7d2684faa8fe1b7e3f594ff44083db943f350dcad6fd7e2c873f490a78f7"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/models.py",
+      "target": "src/examdata/integration/contracts/models.py",
+      "sha256": "b3836f8b0315886427b22349f8cf5a0b5e515335a190f6663c595f051b3b85ea",
+      "final_sha256": "b3836f8b0315886427b22349f8cf5a0b5e515335a190f6663c595f051b3b85ea"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/quality.py",
+      "target": "src/examdata/integration/contracts/quality.py",
+      "sha256": "4498e2599f774a324bdb4af9c6e448885242771939f21a29b80bff6bbacabf33",
+      "final_sha256": "4498e2599f774a324bdb4af9c6e448885242771939f21a29b80bff6bbacabf33"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/trust.py",
+      "target": "src/examdata/integration/contracts/trust.py",
+      "sha256": "6b618c907f84f4cb57140f61ee257475c7e33dd1c3b71efc5beb25ea6df11cc6",
+      "final_sha256": "6b618c907f84f4cb57140f61ee257475c7e33dd1c3b71efc5beb25ea6df11cc6"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/contracts/__init__.py",
+      "target": "src/examdata/integration/contracts/__init__.py",
+      "sha256": "281741a3a6f20f8dfb68c913205c18e0c22827d1fc1313bac233e4b73725a6b6",
+      "final_sha256": "281741a3a6f20f8dfb68c913205c18e0c22827d1fc1313bac233e4b73725a6b6"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/legacy/bridge.py",
+      "target": "src/examdata/integration/legacy/bridge.py",
+      "sha256": "028c5b98c71ded46b0838c8ac4e8439e3d7e700f7450a2cf39a87793e44b9d24",
+      "final_sha256": "028c5b98c71ded46b0838c8ac4e8439e3d7e700f7450a2cf39a87793e44b9d24"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/legacy/decisions.py",
+      "target": "src/examdata/integration/legacy/decisions.py",
+      "sha256": "f8720683b07ec017cc5441af8d9ab793bc206562e34a4a34533fc00ed910424d",
+      "final_sha256": "f8720683b07ec017cc5441af8d9ab793bc206562e34a4a34533fc00ed910424d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/legacy/parity.py",
+      "target": "src/examdata/integration/legacy/parity.py",
+      "sha256": "60f4e1a5bc18d0532942ff4c158861cddbc7b445b1faed3989e3bbe8b256db8f",
+      "final_sha256": "60f4e1a5bc18d0532942ff4c158861cddbc7b445b1faed3989e3bbe8b256db8f"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/legacy/registry.json",
+      "target": "src/examdata/integration/legacy/registry.json",
+      "sha256": "a6b769d240ef03945269cf2f1f576037f1b7778586dd1279b077d27a02a4f503",
+      "final_sha256": "a6b769d240ef03945269cf2f1f576037f1b7778586dd1279b077d27a02a4f503"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/legacy/translate.py",
+      "target": "src/examdata/integration/legacy/translate.py",
+      "sha256": "322d6101e10bb66515edc7d616fb3444a9a4d6b7c17bf0fe7e4d747f020e021e",
+      "final_sha256": "322d6101e10bb66515edc7d616fb3444a9a4d6b7c17bf0fe7e4d747f020e021e"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/legacy/__init__.py",
+      "target": "src/examdata/integration/legacy/__init__.py",
+      "sha256": "9032ce541993944d731dd4ec71f6adb948c3471adad2d04914528581cc187828",
+      "final_sha256": "9032ce541993944d731dd4ec71f6adb948c3471adad2d04914528581cc187828"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/operations/budget.py",
+      "target": "src/examdata/integration/operations/budget.py",
+      "sha256": "d046842ab41a47b85c77f2ad03d02a86c4007bb8b66fad326ef041824336b38d",
+      "final_sha256": "d046842ab41a47b85c77f2ad03d02a86c4007bb8b66fad326ef041824336b38d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/operations/checkpoints.py",
+      "target": "src/examdata/integration/operations/checkpoints.py",
+      "sha256": "19659f841c51aa54e2ad324212cdc6eb8bd8300cf6823af61113c6b6989024a9",
+      "final_sha256": "19659f841c51aa54e2ad324212cdc6eb8bd8300cf6823af61113c6b6989024a9"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/operations/coverage.py",
+      "target": "src/examdata/integration/operations/coverage.py",
+      "sha256": "53e35cde7e96ea6bfe84e979de52c95fc5102a1fc1fd857c62f829080682b9e9",
+      "final_sha256": "53e35cde7e96ea6bfe84e979de52c95fc5102a1fc1fd857c62f829080682b9e9"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/operations/jobs.py",
+      "target": "src/examdata/integration/operations/jobs.py",
+      "sha256": "0f9c6a20d412ef93fc1961973bb01b9f78bca8064c2372b01e90b9e979588f66",
+      "final_sha256": "0f9c6a20d412ef93fc1961973bb01b9f78bca8064c2372b01e90b9e979588f66"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/operations/published.py",
+      "target": "src/examdata/integration/operations/published.py",
+      "sha256": "b19a7f4550d3048384f0fcc16094078c982ba03366d9f00c8a922b77c174e7c6",
+      "final_sha256": "b19a7f4550d3048384f0fcc16094078c982ba03366d9f00c8a922b77c174e7c6"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/operations/__init__.py",
+      "target": "src/examdata/integration/operations/__init__.py",
+      "sha256": "472d38bbf590b8f22a85b51ae54e3bfda66b4e152ab58743a4b1cad2dc57bdd9",
+      "final_sha256": "472d38bbf590b8f22a85b51ae54e3bfda66b4e152ab58743a4b1cad2dc57bdd9"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/providers/capabilities.py",
+      "target": "src/examdata/integration/providers/capabilities.py",
+      "sha256": "587c1efffd2219bd9f42ed778c530bb1adf73a3e978a62445bbfd2fa32e8c7a7",
+      "final_sha256": "587c1efffd2219bd9f42ed778c530bb1adf73a3e978a62445bbfd2fa32e8c7a7"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/providers/fixtures.py",
+      "target": "src/examdata/integration/providers/fixtures.py",
+      "sha256": "37ee8f53e48b286294b4e36e8a6889a1132b2fa2225e6e7a6b1fe9268658f8a1",
+      "final_sha256": "37ee8f53e48b286294b4e36e8a6889a1132b2fa2225e6e7a6b1fe9268658f8a1"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/providers/protocol.py",
+      "target": "src/examdata/integration/providers/protocol.py",
+      "sha256": "0c296216eda53f980901d545bdf4d9dc77ea7b4b47487e3db420a1311567bc23",
+      "final_sha256": "0c296216eda53f980901d545bdf4d9dc77ea7b4b47487e3db420a1311567bc23"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/providers/registry.py",
+      "target": "src/examdata/integration/providers/registry.py",
+      "sha256": "539cd0caaa296db100286b17950c451021833107064cac2a24d9c0c486755b33",
+      "final_sha256": "539cd0caaa296db100286b17950c451021833107064cac2a24d9c0c486755b33"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/providers/results.py",
+      "target": "src/examdata/integration/providers/results.py",
+      "sha256": "534cec403c7667a5d60e39d8c7aaec9858521e575056c25219d0b55074c2d434",
+      "final_sha256": "534cec403c7667a5d60e39d8c7aaec9858521e575056c25219d0b55074c2d434"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/providers/__init__.py",
+      "target": "src/examdata/integration/providers/__init__.py",
+      "sha256": "2f2e0c2be77d03abe9e3e94b4f0a4a72c4c69d878b9859ee414b9d9306de6d7e",
+      "final_sha256": "2f2e0c2be77d03abe9e3e94b4f0a4a72c4c69d878b9859ee414b9d9306de6d7e"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/classification.py",
+      "target": "src/examdata/integration/runtime/classification.py",
+      "sha256": "de5d92b927578d35bad97faf38c5c7323e247ae55b7bdc5ff35b8551f0d52198",
+      "final_sha256": "de5d92b927578d35bad97faf38c5c7323e247ae55b7bdc5ff35b8551f0d52198"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/doctor.py",
+      "target": "src/examdata/integration/runtime/doctor.py",
+      "sha256": "8d3f4bc812a8ce7a8502b1091ac801f086b7d9fe8694e90842ac781237f9edae",
+      "final_sha256": "8d3f4bc812a8ce7a8502b1091ac801f086b7d9fe8694e90842ac781237f9edae"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/manifest.py",
+      "target": "src/examdata/integration/runtime/manifest.py",
+      "sha256": "7ff0e084db5de5897870cce3bd3b90fd91376c4f3f917c856700764842cbebc3",
+      "final_sha256": "7ff0e084db5de5897870cce3bd3b90fd91376c4f3f917c856700764842cbebc3"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/paths.py",
+      "target": "src/examdata/integration/runtime/paths.py",
+      "sha256": "d0207fc79d66114c114a6bc65cca0ce123111cdfed0378ccbc7ca8494d60d0fb",
+      "final_sha256": "d0207fc79d66114c114a6bc65cca0ce123111cdfed0378ccbc7ca8494d60d0fb"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/redact.py",
+      "target": "src/examdata/integration/runtime/redact.py",
+      "sha256": "0a522501f75a28e69f91a81fae539519634e6b9840a063401324906a1cb99b02",
+      "final_sha256": "0a522501f75a28e69f91a81fae539519634e6b9840a063401324906a1cb99b02"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/runner.py",
+      "target": "src/examdata/integration/runtime/runner.py",
+      "sha256": "75001ddba5a65bd471143f9c74a2378db7c8aa5d59cd678b0b4690ebaea91bab",
+      "final_sha256": "75001ddba5a65bd471143f9c74a2378db7c8aa5d59cd678b0b4690ebaea91bab"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/settings.py",
+      "target": "src/examdata/integration/runtime/settings.py",
+      "sha256": "320f9e39fe65c6a3049b7cba73afc3a5b249eeab13ebbd292d0e11508f9322b5",
+      "final_sha256": "320f9e39fe65c6a3049b7cba73afc3a5b249eeab13ebbd292d0e11508f9322b5"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/runtime/__init__.py",
+      "target": "src/examdata/integration/runtime/__init__.py",
+      "sha256": "8e999047c922ae9b7dc5adbeced7f29294aa84429b3dbeb8592f9d541b8eb1f8",
+      "final_sha256": "8e999047c922ae9b7dc5adbeced7f29294aa84429b3dbeb8592f9d541b8eb1f8"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/testing/guards.py",
+      "target": "src/examdata/integration/testing/guards.py",
+      "sha256": "437e4aa6c8aa5bada4aa98e5562a6836b6c87bf012c7644c23b629a12c8843d8",
+      "final_sha256": "437e4aa6c8aa5bada4aa98e5562a6836b6c87bf012c7644c23b629a12c8843d8"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/testing/node_guard.py",
+      "target": "src/examdata/integration/testing/node_guard.py",
+      "sha256": "d1a7c4d30e98033e9177177544a6e213f89cce10dc957c5dab3d19f34026b6c1",
+      "final_sha256": "d1a7c4d30e98033e9177177544a6e213f89cce10dc957c5dab3d19f34026b6c1"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/testing/runtime_support.py",
+      "target": "src/examdata/integration/testing/runtime_support.py",
+      "sha256": "12fb79a319e4bd4cd3f6fcde66efcdddb2c10d47a2104baf2cc5ee9d5a43d7c2",
+      "final_sha256": "12fb79a319e4bd4cd3f6fcde66efcdddb2c10d47a2104baf2cc5ee9d5a43d7c2"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/src/examdata/integration/testing/__init__.py",
+      "target": "src/examdata/integration/testing/__init__.py",
+      "sha256": "4fa134108a8dd98ec1448837e080309eb720bbb4e8f819bfc3c8ec7b3ee3aec4",
+      "final_sha256": "4fa134108a8dd98ec1448837e080309eb720bbb4e8f819bfc3c8ec7b3ee3aec4"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/identity-keys.json",
+      "target": "contracts/identity-keys.json",
+      "sha256": "7d52444c6801b035f48b713885f7754f411aa5cfb8c2b56d92bf1c737f0bb3df",
+      "final_sha256": "7d52444c6801b035f48b713885f7754f411aa5cfb8c2b56d92bf1c737f0bb3df"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/quality-transitions.json",
+      "target": "contracts/quality-transitions.json",
+      "sha256": "f570b76f615424f593db625e7203d8a737c5d62294881a41e0978520e4351204",
+      "final_sha256": "f570b76f615424f593db625e7203d8a737c5d62294881a41e0978520e4351204"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/answers__cie__ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx.json",
+      "target": "contracts/examples/answers__cie__ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx.json",
+      "sha256": "5de7384437c77fe46f31c66c3280f13de378dd996d6007de492d273e6f73419d",
+      "final_sha256": "5de7384437c77fe46f31c66c3280f13de378dd996d6007de492d273e6f73419d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/answers__cie__ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl.json",
+      "target": "contracts/examples/answers__cie__ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl.json",
+      "sha256": "39963bab33214509b29e344c441dab3ef171c2ffb5cbc345603a8755879643f9",
+      "final_sha256": "39963bab33214509b29e344c441dab3ef171c2ffb5cbc345603a8755879643f9"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/answers__ielts__ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh.json",
+      "target": "contracts/examples/answers__ielts__ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh.json",
+      "sha256": "16731fafb4ba52b61c197b4aa61d61941989b82a54df1cb5d0ffc667fcbb8e92",
+      "final_sha256": "16731fafb4ba52b61c197b4aa61d61941989b82a54df1cb5d0ffc667fcbb8e92"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/answers__ielts__ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke.json",
+      "target": "contracts/examples/answers__ielts__ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke.json",
+      "sha256": "5855f1ff408c929abd302493465d687a451369c378f670ecf91887d5699c0a18",
+      "final_sha256": "5855f1ff408c929abd302493465d687a451369c378f670ecf91887d5699c0a18"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/answers__ielts__ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb.json",
+      "target": "contracts/examples/answers__ielts__ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb.json",
+      "sha256": "a1190c00547b0dd42eba5a0bf91331d7d18eadcb71e68cfabca9440fabc1ac51",
+      "final_sha256": "a1190c00547b0dd42eba5a0bf91331d7d18eadcb71e68cfabca9440fabc1ac51"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/answers__ielts__ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo.json",
+      "target": "contracts/examples/answers__ielts__ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo.json",
+      "sha256": "145594b7c04305f140bb7e0393c143b23a5d9a38990ee7109f9d6e361cce8bea",
+      "final_sha256": "145594b7c04305f140bb7e0393c143b23a5d9a38990ee7109f9d6e361cce8bea"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/answers__ielts__ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc.json",
+      "target": "contracts/examples/answers__ielts__ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc.json",
+      "sha256": "9bb3899dca966c23f9f6b192a71a6345381e9b2ed57eafaa355eab31d84f824c",
+      "final_sha256": "9bb3899dca966c23f9f6b192a71a6345381e9b2ed57eafaa355eab31d84f824c"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/assets__cie__asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl.json",
+      "target": "contracts/examples/assets__cie__asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl.json",
+      "sha256": "83d7f4428d3dd1892fa61fd810922b5eff213fcf24870a2c373b9d8d44c7f425",
+      "final_sha256": "83d7f4428d3dd1892fa61fd810922b5eff213fcf24870a2c373b9d8d44c7f425"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/assets__cie__asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd.json",
+      "target": "contracts/examples/assets__cie__asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd.json",
+      "sha256": "9fcd3157f6a4e56753aaa31e1caec5bdff941b60a396256d17f1a866e0509e8a",
+      "final_sha256": "9fcd3157f6a4e56753aaa31e1caec5bdff941b60a396256d17f1a866e0509e8a"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/assets__ielts__asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m.json",
+      "target": "contracts/examples/assets__ielts__asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m.json",
+      "sha256": "dcd903cbfd24aab5015c93e239bf2563090801bf87cb04193b339fc835e167bf",
+      "final_sha256": "dcd903cbfd24aab5015c93e239bf2563090801bf87cb04193b339fc835e167bf"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/containers__cie__container_6cnnjvwpypjw2orom36k3xjazamje2x3.json",
+      "target": "contracts/examples/containers__cie__container_6cnnjvwpypjw2orom36k3xjazamje2x3.json",
+      "sha256": "8765688328ccbda5e1bd4023e38626ea86e5bb8f26955df3e490efeefbb6d029",
+      "final_sha256": "8765688328ccbda5e1bd4023e38626ea86e5bb8f26955df3e490efeefbb6d029"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/containers__edexcel__container_3bbmo2jmeebj3htxofgvkubtrcj23pct.json",
+      "target": "contracts/examples/containers__edexcel__container_3bbmo2jmeebj3htxofgvkubtrcj23pct.json",
+      "sha256": "8654d00952e4d262ce6fb2c3b4300b7f0a09035daa0dfaae305ad87c9b9b4bd4",
+      "final_sha256": "8654d00952e4d262ce6fb2c3b4300b7f0a09035daa0dfaae305ad87c9b9b4bd4"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/containers__ielts__container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq.json",
+      "target": "contracts/examples/containers__ielts__container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq.json",
+      "sha256": "6fdd7ed31067ffcf511d43b8854c49d7567973f6bc7a00353ea5aaba8b862a28",
+      "final_sha256": "6fdd7ed31067ffcf511d43b8854c49d7567973f6bc7a00353ea5aaba8b862a28"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/courses__cie__course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg.json",
+      "target": "contracts/examples/courses__cie__course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg.json",
+      "sha256": "b6f8100bea69e509f0d54052973716b27735d156de1ef6f1f427627e8925eb9d",
+      "final_sha256": "b6f8100bea69e509f0d54052973716b27735d156de1ef6f1f427627e8925eb9d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/courses__edexcel__course_vfthis5jlxjijxarwasb7bbyghnx7fqt.json",
+      "target": "contracts/examples/courses__edexcel__course_vfthis5jlxjijxarwasb7bbyghnx7fqt.json",
+      "sha256": "3c5811d451a0a820f98a10f829377d9f24f7c370971b30e8ed951f2efe3fdec2",
+      "final_sha256": "3c5811d451a0a820f98a10f829377d9f24f7c370971b30e8ed951f2efe3fdec2"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/coverage__cie__cov_synthetic_cie.json",
+      "target": "contracts/examples/coverage__cie__cov_synthetic_cie.json",
+      "sha256": "ef61cf3f563ca729548ad4cb25d0b9e68a263bcf4864cae6d57bbfc34b4a3940",
+      "final_sha256": "ef61cf3f563ca729548ad4cb25d0b9e68a263bcf4864cae6d57bbfc34b4a3940"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/coverage__ielts__cov_synthetic_ielts.json",
+      "target": "contracts/examples/coverage__ielts__cov_synthetic_ielts.json",
+      "sha256": "7efb5e3588f39e929770fbb1eee32a328a646bfe243b656b6d66d56be645b2ac",
+      "final_sha256": "7efb5e3588f39e929770fbb1eee32a328a646bfe243b656b6d66d56be645b2ac"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/examination_systems__synthetic__es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4.json",
+      "target": "contracts/examples/examination_systems__synthetic__es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4.json",
+      "sha256": "61712d5a6ac2a9703851c3d2616955150f15575c6e1af113fbf211db439b0510",
+      "final_sha256": "61712d5a6ac2a9703851c3d2616955150f15575c6e1af113fbf211db439b0510"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/identity-registry__cie.json",
+      "target": "contracts/examples/identity-registry__cie.json",
+      "sha256": "31ae154e7f54f178a7eb93679b3d9845ea46ebf7358c42230de67acd6c8d1196",
+      "final_sha256": "31ae154e7f54f178a7eb93679b3d9845ea46ebf7358c42230de67acd6c8d1196"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/identity-registry__edexcel.json",
+      "target": "contracts/examples/identity-registry__edexcel.json",
+      "sha256": "996be9b8a4d0aadec3bea20bc88821b956de1120cc4f1929a50fe8aa8f84c5c9",
+      "final_sha256": "996be9b8a4d0aadec3bea20bc88821b956de1120cc4f1929a50fe8aa8f84c5c9"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/identity-registry__ielts.json",
+      "target": "contracts/examples/identity-registry__ielts.json",
+      "sha256": "a530a6500fdbe5a9e69e58c91749ea44b863337425ed8dee628fcccdabec4828",
+      "final_sha256": "a530a6500fdbe5a9e69e58c91749ea44b863337425ed8dee628fcccdabec4828"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/INDEX.json",
+      "target": "contracts/examples/INDEX.json",
+      "sha256": "701da1411d420d77c482ef23e23018c5b492020ef90f0b4f3b78ccc5cda49713",
+      "final_sha256": "701da1411d420d77c482ef23e23018c5b492020ef90f0b4f3b78ccc5cda49713"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/jobs__synthetic__job_6zcvxittpvvbnvtpqttigpsmos2i5zmn.json",
+      "target": "contracts/examples/jobs__synthetic__job_6zcvxittpvvbnvtpqttigpsmos2i5zmn.json",
+      "sha256": "183246f02abb16e6f5cf8452726041ed1079ebde52b9a3673b1db9f4790a41aa",
+      "final_sha256": "183246f02abb16e6f5cf8452726041ed1079ebde52b9a3673b1db9f4790a41aa"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/materials__synthetic__mat_mmfjianasbw6qrncjkldxnfuavnls3ou.json",
+      "target": "contracts/examples/materials__synthetic__mat_mmfjianasbw6qrncjkldxnfuavnls3ou.json",
+      "sha256": "8162635cf3336530eb027ab12f62952817a081161623b3c689111fd716ff9ea7",
+      "final_sha256": "8162635cf3336530eb027ab12f62952817a081161623b3c689111fd716ff9ea7"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__cie__q_2tc2e4uhkufazt3aszordnnbilofoy6s.json",
+      "target": "contracts/examples/questions__cie__q_2tc2e4uhkufazt3aszordnnbilofoy6s.json",
+      "sha256": "a5f4d2685fd4cbb170e6c09c30dd35d97a46c30e61559c47fda665d08eaa65fc",
+      "final_sha256": "a5f4d2685fd4cbb170e6c09c30dd35d97a46c30e61559c47fda665d08eaa65fc"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__cie__q_cb5bnkkjhe4ct7mrvespujhxowo2r3up.json",
+      "target": "contracts/examples/questions__cie__q_cb5bnkkjhe4ct7mrvespujhxowo2r3up.json",
+      "sha256": "7cb1612447df2f226c7368a04e8298686db716a3df641de2499712c1b233c412",
+      "final_sha256": "7cb1612447df2f226c7368a04e8298686db716a3df641de2499712c1b233c412"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__cie__q_ngtwfvjwc26jyirswzxxcccjeeidio56.json",
+      "target": "contracts/examples/questions__cie__q_ngtwfvjwc26jyirswzxxcccjeeidio56.json",
+      "sha256": "e2b235b53f8db96ccd04baf5fe9ed77f27603e756aabc14c08fc7adbe34ad23c",
+      "final_sha256": "e2b235b53f8db96ccd04baf5fe9ed77f27603e756aabc14c08fc7adbe34ad23c"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__cie__q_nxjtvu4225v43syunzyhurjzvxl7szhk.json",
+      "target": "contracts/examples/questions__cie__q_nxjtvu4225v43syunzyhurjzvxl7szhk.json",
+      "sha256": "4f5e408713fd695cc5c42870c26370386457d11a4ebe8f4b2a07008cbee71bfb",
+      "final_sha256": "4f5e408713fd695cc5c42870c26370386457d11a4ebe8f4b2a07008cbee71bfb"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__cie__q_w4ecszmbbqa54chk22paau3sluucc22z.json",
+      "target": "contracts/examples/questions__cie__q_w4ecszmbbqa54chk22paau3sluucc22z.json",
+      "sha256": "ba35977a0ecb940c8649ad9b5486fbad154ea39c601748eab239766d76a99268",
+      "final_sha256": "ba35977a0ecb940c8649ad9b5486fbad154ea39c601748eab239766d76a99268"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd.json",
+      "target": "contracts/examples/questions__ielts__q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd.json",
+      "sha256": "59633e8096eaf21404a444ff4a52516240625a245a6d84104f77ede1792271df",
+      "final_sha256": "59633e8096eaf21404a444ff4a52516240625a245a6d84104f77ede1792271df"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_egcwv27xjaq2elinkwd63fu6zvvq45ck.json",
+      "target": "contracts/examples/questions__ielts__q_egcwv27xjaq2elinkwd63fu6zvvq45ck.json",
+      "sha256": "170195309ae9aea6e566ba4a6ad1d1046ee39f3439bfe0c300ccf4c1cc5bd6d5",
+      "final_sha256": "170195309ae9aea6e566ba4a6ad1d1046ee39f3439bfe0c300ccf4c1cc5bd6d5"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k.json",
+      "target": "contracts/examples/questions__ielts__q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k.json",
+      "sha256": "5ea826294e0f488e5455d72c85e0d40d238db3a2462f3cd51788a979186f4dd0",
+      "final_sha256": "5ea826294e0f488e5455d72c85e0d40d238db3a2462f3cd51788a979186f4dd0"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.json",
+      "target": "contracts/examples/questions__ielts__q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.json",
+      "sha256": "339e7c6869e1a46367fae561c7ddc2724b8b5632f165ad6723dfba968801999a",
+      "final_sha256": "339e7c6869e1a46367fae561c7ddc2724b8b5632f165ad6723dfba968801999a"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_rtf7wrlwtotph3p45wx5wlfpfuo32iku.json",
+      "target": "contracts/examples/questions__ielts__q_rtf7wrlwtotph3p45wx5wlfpfuo32iku.json",
+      "sha256": "bb4547bed2883916e4b575421c16d8a4619319e21010bcad884131b48b691999",
+      "final_sha256": "bb4547bed2883916e4b575421c16d8a4619319e21010bcad884131b48b691999"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.json",
+      "target": "contracts/examples/questions__ielts__q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.json",
+      "sha256": "b5ccbb3b7b3edbdc5831aab6611cd39b174848f8b7873ea8bd0854ee32e740b9",
+      "final_sha256": "b5ccbb3b7b3edbdc5831aab6611cd39b174848f8b7873ea8bd0854ee32e740b9"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_ymm437ermxommfdifgexf7eq6dm6kdxc.json",
+      "target": "contracts/examples/questions__ielts__q_ymm437ermxommfdifgexf7eq6dm6kdxc.json",
+      "sha256": "1a0dcc7aa2bbae31b4639e9e11cf423e9ce7ceaa91e8b16cef075c7025534faf",
+      "final_sha256": "1a0dcc7aa2bbae31b4639e9e11cf423e9ce7ceaa91e8b16cef075c7025534faf"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/questions__ielts__q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.json",
+      "target": "contracts/examples/questions__ielts__q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.json",
+      "sha256": "08ca96c6d79c9de4e65a5707fab9d9d5a8fbf52002e87034f5dd6816ee6e806b",
+      "final_sha256": "08ca96c6d79c9de4e65a5707fab9d9d5a8fbf52002e87034f5dd6816ee6e806b"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/regions__synthetic__region_fn2r2ikszwe234bmma3a5zorsr7snsk3.json",
+      "target": "contracts/examples/regions__synthetic__region_fn2r2ikszwe234bmma3a5zorsr7snsk3.json",
+      "sha256": "a32ad3d8842dbed8f9b54ad3935e732c078d8dbd37ce380b75e3a0f34231695c",
+      "final_sha256": "a32ad3d8842dbed8f9b54ad3935e732c078d8dbd37ce380b75e3a0f34231695c"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/syllabi__synthetic__syl_6ytdfhso2hvo47geydgicjiuyilumcei.json",
+      "target": "contracts/examples/syllabi__synthetic__syl_6ytdfhso2hvo47geydgicjiuyilumcei.json",
+      "sha256": "64f953241e3f51842058fe997a507201ffc7eb9aa14cbe2678667e82bd6a7028",
+      "final_sha256": "64f953241e3f51842058fe997a507201ffc7eb9aa14cbe2678667e82bd6a7028"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/tags__synthetic__tag_fz2cdf3lly5r3uybtl2vmbubioquwymu.json",
+      "target": "contracts/examples/tags__synthetic__tag_fz2cdf3lly5r3uybtl2vmbubioquwymu.json",
+      "sha256": "f591a669c7cbe51d18d0f552dd49783feb58d39a6734a469f59c85e5f8762e5c",
+      "final_sha256": "f591a669c7cbe51d18d0f552dd49783feb58d39a6734a469f59c85e5f8762e5c"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/timetable_events__cie__tte_punqoxygppjubuhcuj4nkd4nbikowv3f.json",
+      "target": "contracts/examples/timetable_events__cie__tte_punqoxygppjubuhcuj4nkd4nbikowv3f.json",
+      "sha256": "bdc8b4a5538f531993e2c39521c56af26cf5b40648e23b5929d3e02044b1c034",
+      "final_sha256": "bdc8b4a5538f531993e2c39521c56af26cf5b40648e23b5929d3e02044b1c034"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/timetable_events__edexcel__tte_5kfllz2yp7iibointgdo56rmvnm7zgjc.json",
+      "target": "contracts/examples/timetable_events__edexcel__tte_5kfllz2yp7iibointgdo56rmvnm7zgjc.json",
+      "sha256": "10c38fb67af6819d093eca736dc2f1e98404727442644a5cbbb092a09f1d080b",
+      "final_sha256": "10c38fb67af6819d093eca736dc2f1e98404727442644a5cbbb092a09f1d080b"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/timetable_events__edexcel__tte_hdxrn6xaev6ihma5sgilzhroxl5olams.json",
+      "target": "contracts/examples/timetable_events__edexcel__tte_hdxrn6xaev6ihma5sgilzhroxl5olams.json",
+      "sha256": "cbfed9fbfc06c76db16a9c862de2dc457b602b4cf520616aba9911ec98735b06",
+      "final_sha256": "cbfed9fbfc06c76db16a9c862de2dc457b602b4cf520616aba9911ec98735b06"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/examples/timetable_windows__synthetic__ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv.json",
+      "target": "contracts/examples/timetable_windows__synthetic__ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv.json",
+      "sha256": "9b20722978dfcbf38939030db20696cbccbac22d2f789dd6c2488ac505bac981",
+      "final_sha256": "9b20722978dfcbf38939030db20696cbccbac22d2f789dd6c2488ac505bac981"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/answer-conflict.schema.json",
+      "target": "contracts/schema/answer-conflict.schema.json",
+      "sha256": "f60af62efd1580ce179b26636b70881cc471a5365dbc9e54b1762853fb2bbb6f",
+      "final_sha256": "f60af62efd1580ce179b26636b70881cc471a5365dbc9e54b1762853fb2bbb6f"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/answer.schema.json",
+      "target": "contracts/schema/answer.schema.json",
+      "sha256": "8bb77a49a74af984020cc44cdf68b446b0573b5b2a5f727c7d9ba7a1c63dde6c",
+      "final_sha256": "8bb77a49a74af984020cc44cdf68b446b0573b5b2a5f727c7d9ba7a1c63dde6c"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/asset.schema.json",
+      "target": "contracts/schema/asset.schema.json",
+      "sha256": "c788ce9e059f69d38509cff76748ec2d897c4b6b6d41500a75c2f06062450574",
+      "final_sha256": "c788ce9e059f69d38509cff76748ec2d897c4b6b6d41500a75c2f06062450574"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/container.schema.json",
+      "target": "contracts/schema/container.schema.json",
+      "sha256": "29217a15dfb9b01a5a2a0f0a83a59ae5436b0f835f2dec14f51effd24d2c14d5",
+      "final_sha256": "29217a15dfb9b01a5a2a0f0a83a59ae5436b0f835f2dec14f51effd24d2c14d5"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/course.schema.json",
+      "target": "contracts/schema/course.schema.json",
+      "sha256": "79813eef417497b5203121b8dfc4ccd96562d43d7c8e8a71bc59e54aa673d228",
+      "final_sha256": "79813eef417497b5203121b8dfc4ccd96562d43d7c8e8a71bc59e54aa673d228"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/coverage.schema.json",
+      "target": "contracts/schema/coverage.schema.json",
+      "sha256": "dbf36cf34118e590f10577308f0f115e0db2e71a52feb74e6740170d435ffda9",
+      "final_sha256": "dbf36cf34118e590f10577308f0f115e0db2e71a52feb74e6740170d435ffda9"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/examination-system.schema.json",
+      "target": "contracts/schema/examination-system.schema.json",
+      "sha256": "913f473c180118b9dcfa37181b77ee4841e25c687f8ff3352d3d6847a3b9b069",
+      "final_sha256": "913f473c180118b9dcfa37181b77ee4841e25c687f8ff3352d3d6847a3b9b069"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/gap.schema.json",
+      "target": "contracts/schema/gap.schema.json",
+      "sha256": "d1bf5ebe21281602b236704f37ac617e765e78cb5e54c8718af85bcd63d77f56",
+      "final_sha256": "d1bf5ebe21281602b236704f37ac617e765e78cb5e54c8718af85bcd63d77f56"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/job-status.schema.json",
+      "target": "contracts/schema/job-status.schema.json",
+      "sha256": "7bde25e811d353dd0ecfaae361ed984a2f5474350dd642b58c4d8d174d052e64",
+      "final_sha256": "7bde25e811d353dd0ecfaae361ed984a2f5474350dd642b58c4d8d174d052e64"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/lineage.schema.json",
+      "target": "contracts/schema/lineage.schema.json",
+      "sha256": "af343835a2d152f2f2d8f1d76fb3779d1cad4ce065404c00116b3bd9537fade1",
+      "final_sha256": "af343835a2d152f2f2d8f1d76fb3779d1cad4ce065404c00116b3bd9537fade1"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/manual-decision.schema.json",
+      "target": "contracts/schema/manual-decision.schema.json",
+      "sha256": "b9c4bad8ddc5e032951e133a1cc51d341226e21f6eb2cbfa0a55d5fb3347b044",
+      "final_sha256": "b9c4bad8ddc5e032951e133a1cc51d341226e21f6eb2cbfa0a55d5fb3347b044"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/material.schema.json",
+      "target": "contracts/schema/material.schema.json",
+      "sha256": "24779ff02006139adf1f1eafdd07b150f6f65bc69c57c9649c3c33ec319685fb",
+      "final_sha256": "24779ff02006139adf1f1eafdd07b150f6f65bc69c57c9649c3c33ec319685fb"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/option.schema.json",
+      "target": "contracts/schema/option.schema.json",
+      "sha256": "e78f8ff73b0ee7c0290faeca56d9fcbb8c5f3cb88e6d057e57a8602cc66dd6ab",
+      "final_sha256": "e78f8ff73b0ee7c0290faeca56d9fcbb8c5f3cb88e6d057e57a8602cc66dd6ab"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/payload-labels.schema.json",
+      "target": "contracts/schema/payload-labels.schema.json",
+      "sha256": "b22a489b8e94498c0c9e0d9ba5c90c7e231dfaf03fdc17e6d531932ea42840bc",
+      "final_sha256": "b22a489b8e94498c0c9e0d9ba5c90c7e231dfaf03fdc17e6d531932ea42840bc"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/payload-matching.schema.json",
+      "target": "contracts/schema/payload-matching.schema.json",
+      "sha256": "0859eaa67340796838afb6a0fcffcd8ed714f6ac7584c69247e09cbbe62f3943",
+      "final_sha256": "0859eaa67340796838afb6a0fcffcd8ed714f6ac7584c69247e09cbbe62f3943"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/payload-options.schema.json",
+      "target": "contracts/schema/payload-options.schema.json",
+      "sha256": "a83e658411cf76e333612b5812368a13e8031c271b825135df04a7b695fd2017",
+      "final_sha256": "a83e658411cf76e333612b5812368a13e8031c271b825135df04a7b695fd2017"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/payload-table.schema.json",
+      "target": "contracts/schema/payload-table.schema.json",
+      "sha256": "83b0238af34a4b69cf56f9583abb9819fe1e352509c937370ad0468fff09d825",
+      "final_sha256": "83b0238af34a4b69cf56f9583abb9819fe1e352509c937370ad0468fff09d825"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/payload-text.schema.json",
+      "target": "contracts/schema/payload-text.schema.json",
+      "sha256": "0abe4ac342c5a2f4c72f3bc15dbc73e68ecdb3368895d747d23751864073c13b",
+      "final_sha256": "0abe4ac342c5a2f4c72f3bc15dbc73e68ecdb3368895d747d23751864073c13b"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/payload-unknown.schema.json",
+      "target": "contracts/schema/payload-unknown.schema.json",
+      "sha256": "c6b98535700951daf2cf9236d508fd0005b19fc5dab33dc72d37692a1896c145",
+      "final_sha256": "c6b98535700951daf2cf9236d508fd0005b19fc5dab33dc72d37692a1896c145"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/quality.schema.json",
+      "target": "contracts/schema/quality.schema.json",
+      "sha256": "3be2c080e5ebb3c22ef2796572d8f250187e0e675348f4afe1edf0c9e5a15d1d",
+      "final_sha256": "3be2c080e5ebb3c22ef2796572d8f250187e0e675348f4afe1edf0c9e5a15d1d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/question.schema.json",
+      "target": "contracts/schema/question.schema.json",
+      "sha256": "5dbddbcf5cc453a80c5c29f4b8cf345d77178a606283376cab0379ae1b758e40",
+      "final_sha256": "5dbddbcf5cc453a80c5c29f4b8cf345d77178a606283376cab0379ae1b758e40"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/region.schema.json",
+      "target": "contracts/schema/region.schema.json",
+      "sha256": "2e61d4a4b1928d1e9861080c8c5ab7aa6bfddd84fec5ad1e687020f8e68bd62d",
+      "final_sha256": "2e61d4a4b1928d1e9861080c8c5ab7aa6bfddd84fec5ad1e687020f8e68bd62d"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/source-ref.schema.json",
+      "target": "contracts/schema/source-ref.schema.json",
+      "sha256": "feb19fe8a95ad19919f2bc57de36799cfddf072b325749d87e2c84febcc79adc",
+      "final_sha256": "feb19fe8a95ad19919f2bc57de36799cfddf072b325749d87e2c84febcc79adc"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/syllabus.schema.json",
+      "target": "contracts/schema/syllabus.schema.json",
+      "sha256": "68a6c2a4484374d5fe0002008b9bef1cece8031d468ed18cc000cdddba016210",
+      "final_sha256": "68a6c2a4484374d5fe0002008b9bef1cece8031d468ed18cc000cdddba016210"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/table-cell.schema.json",
+      "target": "contracts/schema/table-cell.schema.json",
+      "sha256": "9b125f4488beab959bc4ae8e969b3a8399856e1f48f74891cac363d921606514",
+      "final_sha256": "9b125f4488beab959bc4ae8e969b3a8399856e1f48f74891cac363d921606514"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/tag.schema.json",
+      "target": "contracts/schema/tag.schema.json",
+      "sha256": "9f2ae7bf76a64efa1d0598b1c1db44548836c3e389908b079fbd13e79b89b2dc",
+      "final_sha256": "9f2ae7bf76a64efa1d0598b1c1db44548836c3e389908b079fbd13e79b89b2dc"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/timetable-event.schema.json",
+      "target": "contracts/schema/timetable-event.schema.json",
+      "sha256": "398b4506fb2e5375e071bf3990d05971cd71bc9fb1f2e96eb23c2217c0451513",
+      "final_sha256": "398b4506fb2e5375e071bf3990d05971cd71bc9fb1f2e96eb23c2217c0451513"
+    },
+    {
+      "source": "integration-staging/runtime/integration-closure-20261007-c8b4e0c8/candidates/closure-v1/contracts/schema/timetable-window.schema.json",
+      "target": "contracts/schema/timetable-window.schema.json",
+      "sha256": "0f22760f8d1c0380fe222d4ba41ced5811290ff08401c8c060825b1061985073",
+      "final_sha256": "0f22760f8d1c0380fe222d4ba41ced5811290ff08401c8c060825b1061985073"
+    }
+  ]
+}

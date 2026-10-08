@@ -1,0 +1,74 @@
+{
+  "schema": "question/1",
+  "public_id": "q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf",
+  "native_id": "Q1",
+  "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "number_path": [
+    "Q1"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "fill_blank",
+  "stem": "Synthetic prompt for question 1.",
+  "payload": {
+    "stem": "Synthetic prompt for question 1.",
+    "word_limit": null
+  },
+  "marks": null,
+  "required_assets": [],
+  "answers": [
+    {
+      "public_id": "ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb",
+      "question_ref": null,
+      "original_value": "synthetic-answer-1",
+      "normalized_value": null,
+      "alternatives": [],
+      "ordering_rule": null,
+      "matching_method": "exact",
+      "verification": "unverified",
+      "source": {
+        "source_id": "synthetic-ielts",
+        "provider_id": "ielts",
+        "locator": {
+          "fixture": "synthetic/ielts",
+          "detail": "answer:primary"
+        },
+        "content_class": "synthetic",
+        "retrieved_at": "2026-10-05T19:20:00+08:00"
+      },
+      "conflicts": [],
+      "manual_decision": null,
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/ielts",
+          "native-answer-key:primary"
+        ],
+        "parent_refs": [],
+        "note": null
+      }
+    }
+  ],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "present",
+    "answer_verification": "unverified",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-kind:fill_blank"
+    ],
+    "parent_refs": [],
+    "note": null
+  },
+  "children": []
+}

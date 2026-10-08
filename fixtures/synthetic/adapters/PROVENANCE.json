@@ -1,0 +1,35 @@
+{
+  "schema": "fixture-provenance/1",
+  "scope": "A07 read-adapter synthetic fixtures",
+  "note": "Hand-authored synthetic fixtures shaped like raw board indexes. No upstream content, no real document hashes, no credentials.",
+  "created_by": "Phase A executor (packet A07)",
+  "created_at_local": "2026-10-05T21:05:00+08:00",
+  "entries": [
+    {
+      "path": "integration-staging/fixtures/synthetic/adapters/cie-index-adapters.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "cie",
+      "created_by": "Phase A executor (packet A07)",
+      "created_at_local": "2026-10-05T21:05:00+08:00",
+      "sha256": "e4b73d1573dc198c495265d04216fcf22319f3034277859c400171f43f861785",
+      "bytes": 4356,
+      "note": "Drive the CIE read adapter against raw-index shapes without reading any protected source."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/adapters/edexcel-index-adapters.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "edexcel",
+      "created_by": "Phase A executor (packet A07)",
+      "created_at_local": "2026-10-05T21:05:00+08:00",
+      "sha256": "c7b917432968b35122323401a6f93a722d059fabce559d1da1bc7fe5e1a65367",
+      "bytes": 3229,
+      "note": "Drive the Edexcel read adapter against raw-index shapes without reading any protected source."
+    }
+  ],
+  "summary": {
+    "entries": 2,
+    "synthetic": 2
+  }
+}

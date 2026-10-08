@@ -1,0 +1,73 @@
+{
+  "fixture_kind": "synthetic",
+  "schema_version": "1",
+  "board": "catalog",
+  "dataset_revision": "rev-synthetic-a09-removal-unexplained",
+  "_provenance": {
+    "note": "Hand-authored synthetic catalog mapping input for the A09 unexplained-removal rule. Invented native codes, ids and hashes only; no upstream content and no real document hash.",
+    "created_by": "Phase A executor (packet A09)",
+    "created_at_local": "2026-10-05T18:30:00+08:00",
+    "provider": "catalog",
+    "purpose": "The previous revision held two courses (0600 and 0601); the new revision keeps only 0600 and carries no explanation for the removal of 0601, so the build must report unexplained_removal."
+  },
+  "input_revisions": {"fixtures": "a09-removal-unexplained", "parser": "catalog-source/1"},
+  "explanations": {},
+  "previous_sources": [
+    {
+      "kind": "course",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": "igcse",
+        "native_code": "0600",
+        "specification_version": "2026"
+      },
+      "native_locator": {"kind": "course", "native_code": "0600", "qualification": "igcse"},
+      "aliases": ["0600"],
+      "searchable": {"native_code": "0600", "names": ["Synthetic Kept"]},
+      "source_revision": "2026",
+      "quality_summary": {"content": "complete", "answer_verification": "unverified"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-course-0600"
+    },
+    {
+      "kind": "course",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": "igcse",
+        "native_code": "0601",
+        "specification_version": "2026"
+      },
+      "native_locator": {"kind": "course", "native_code": "0601", "qualification": "igcse"},
+      "aliases": ["0601"],
+      "searchable": {"native_code": "0601", "names": ["Synthetic Dropped"]},
+      "source_revision": "2026",
+      "quality_summary": {"content": "complete", "answer_verification": "unverified"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-course-0601"
+    }
+  ],
+  "sources": [
+    {
+      "kind": "course",
+      "system": "cie",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": "igcse",
+        "native_code": "0600",
+        "specification_version": "2026"
+      },
+      "native_locator": {"kind": "course", "native_code": "0600", "qualification": "igcse"},
+      "aliases": ["0600"],
+      "searchable": {"native_code": "0600", "names": ["Synthetic Kept"]},
+      "source_revision": "2026",
+      "quality_summary": {"content": "complete", "answer_verification": "unverified"},
+      "content_class": "synthetic",
+      "evidence_labels": ["synthetic_fixture"],
+      "content_revision": "rev-syn-course-0600"
+    }
+  ]
+}

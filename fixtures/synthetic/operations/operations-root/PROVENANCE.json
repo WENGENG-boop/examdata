@@ -1,0 +1,114 @@
+{
+  "schema": "fixture-provenance/1",
+  "scope": "B07 operations-root rehearsal fixtures",
+  "note": "Synthetic fixtures shaped like the native checkpoint formats (CIE batch runner, ielts-run-checkpoint/1, one deliberately unrecognised dialect) plus an explicit expected manifest and README. Invented values only: no upstream content, no real batch/run state, no real credentials.",
+  "path_base": "relative to this manifest's directory",
+  "created_by": "B07 rehearsal executor (integration-staging)",
+  "created_at_local": "2026-10-07T05:50:00+08:00",
+  "entries": [
+    {
+      "path": "README.md",
+      "kind": "synthetic",
+      "label": "synthetic_documentation",
+      "provider": null,
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "247eec4e48ff13f318948c217efd7603a4fa6da5fb021372fd323b5287b6c489",
+      "bytes": 2239,
+      "note": "Rehearsal README: what each fixture drives and how PROVENANCE.json is regenerated."
+    },
+    {
+      "path": "cie-batch-8888-stale/checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_checkpoint",
+      "provider": "cie",
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "76559fb8ca482bd80a0075bceaea47870dc5b1932491a7d7a8eadf0aa5755673",
+      "bytes": 452,
+      "note": "Older stopped snapshot of the same CIE batch id; must land as a superseded row that can never override the newer running checkpoint."
+    },
+    {
+      "path": "cie-batch-8888/checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_checkpoint",
+      "provider": "cie",
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "c31696a05ce917d471249f289d409d98217ec4064e9043d7783821a8a1ccf0e3",
+      "bytes": 235,
+      "note": "Running CIE batch (subject 8888); the newest checkpoint for its batch id must win over the stale stopped copy."
+    },
+    {
+      "path": "cie-location-batch/checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_checkpoint",
+      "provider": "cie",
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "9eb281a2a56df32383be6a7b11c86b7bb067f433526b294879c6367fca4ac554",
+      "bytes": 539,
+      "note": "Stopped CIE batch (subject 9191) awaiting a manual resume; stop_detail carries a synthetic path and a synthetic key so public surfaces must sanitize them."
+    },
+    {
+      "path": "expected-manifest.json",
+      "kind": "synthetic",
+      "label": "synthetic_manifest",
+      "provider": null,
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "6f86b0211c5b873854fa21845466867b0b3e9c23b12995f15dd94bf0059f2f4a",
+      "bytes": 1471,
+      "note": "Explicit expected denominators (partial, exclusion, and no-denominator scopes) for the coverage view; denominators are declared, never inferred from published data."
+    },
+    {
+      "path": "run-ok-stale/checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_checkpoint",
+      "provider": "ielts",
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "3519a84fd24fccb872226de0395a49c405a1c138d49086f438ff3f014fe2c220",
+      "bytes": 374,
+      "note": "Older IELTS summary of synthetic-run-ok with one blocked source; kept as a superseded row only."
+    },
+    {
+      "path": "run-ok/checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_checkpoint",
+      "provider": "ielts",
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "fa0a85c5c2df6501f4940ba02af1e093f2919c9a84394daa6f66e03ae7905493",
+      "bytes": 378,
+      "note": "Healthy IELTS run (0 errors); the current row for synthetic-run-ok that the older summary must never override."
+    },
+    {
+      "path": "run-partial/checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_checkpoint",
+      "provider": "ielts",
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "0172743731000d05c2b805233893722a445a9d08adfc8683eb773115977028e2",
+      "bytes": 384,
+      "note": "IELTS run with a blocked writing source; must stay partial and can never read as complete."
+    },
+    {
+      "path": "unsupported/checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_checkpoint",
+      "provider": null,
+      "created_by": "B07 rehearsal executor (integration-staging)",
+      "created_at_local": "2026-10-07T05:50:00+08:00",
+      "sha256": "410b6ac73370c3e143e71656aafa0ebacf12a60c9908c522d123b9f50a8e1de0",
+      "bytes": 170,
+      "note": "Declares no recognised dialect; must surface as an unknown observation with a sanitized problem entry, never as a job."
+    }
+  ],
+  "summary": {
+    "entries": 9,
+    "checkpoints": 7,
+    "documents": 2
+  }
+}

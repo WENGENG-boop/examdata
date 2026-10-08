@@ -1,0 +1,34 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like an IELTS run checkpoint with a partial failure: one source shows consecutive 5xx errors, another is blocked with a reason. Invented source ids and counters; no upstream data.",
+    "created_by": "Phase A executor (packet A13)",
+    "created_at_local": "2026-10-06T10:10:00+08:00",
+    "provider": "ielts",
+    "purpose": "Prove that partial failure never zeroes counters or hides a blocked source in the coverage view."
+  },
+  "schema_version": "ielts-run-checkpoint/1",
+  "run_id": "synthetic-run-partial",
+  "updated_at": "2026-10-05T03:00:00.000Z",
+  "fetcher": {
+    "counters": {
+      "requests": 6,
+      "bytes": 300,
+      "errors": 1
+    },
+    "sources": {
+      "synthetic-source-b": {
+        "requests": 2,
+        "bytes": 100,
+        "consecutive_5xx": 2,
+        "blocked": null
+      },
+      "synthetic-source-c": {
+        "requests": 4,
+        "bytes": 200,
+        "consecutive_5xx": 0,
+        "blocked": "http_403"
+      }
+    }
+  }
+}

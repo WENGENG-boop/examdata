@@ -1,0 +1,52 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like the CIE location-batch checkpoint after a download-error stop. Invented values only; no upstream data, no real batch state, no real paper identities.",
+    "created_by": "Phase A executor (packet A13)",
+    "created_at_local": "2026-10-06T10:10:00+08:00",
+    "provider": "cie",
+    "purpose": "Drive the read-only CIE batch checkpoint adapter and coverage view without reading the protected batch state."
+  },
+  "current_cell": null,
+  "stage": "stopped",
+  "last_progress_at": "2026-10-04T16:29:00+0800",
+  "updated_at": "2026-10-04T16:30:15+0800",
+  "current_subject": "8888",
+  "last_subject": "8888",
+  "totals": {
+    "requests": 42,
+    "cells_done": 40,
+    "business_rejected": 2,
+    "inferred_cells": 12,
+    "failed_cells": 0,
+    "unqueried_cells": 0,
+    "expected_cells": 42,
+    "papers": 18,
+    "complete": false
+  },
+  "progress": {
+    "requests": 40,
+    "cells_done": 40,
+    "papers": 18
+  },
+  "last_fetch": "8888/2026/Jun/21",
+  "last_fetch_at": "2026-10-04T16:29:02+0800",
+  "loop_stage": "stopped",
+  "loop_stages": {
+    "cleaned": 3,
+    "validation_partial": 1,
+    "download_failed": 1,
+    "download_interrupted": 0
+  },
+  "stop_reason": "download_error",
+  "stop_detail": {
+    "paper": "8888/2025/Jun/21",
+    "role": "qp",
+    "error": "HTTP 502",
+    "error_class": "http_502"
+  },
+  "stopped_at": "2026-10-04T16:30:15+0800",
+  "needs_user_resume": false,
+  "resume_policy": "Synthetic policy text: network retries need explicit user permission; local phases are unaffected.",
+  "network_resume": null
+}

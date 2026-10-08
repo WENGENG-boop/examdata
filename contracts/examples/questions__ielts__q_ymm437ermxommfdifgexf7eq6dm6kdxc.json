@@ -1,0 +1,94 @@
+{
+  "schema": "question/1",
+  "public_id": "q_ymm437ermxommfdifgexf7eq6dm6kdxc",
+  "native_id": "Q2",
+  "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "number_path": [
+    "Q2"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "single_choice",
+  "stem": "Synthetic grouped question 2 with alternatives A-D.",
+  "payload": {
+    "options": [
+      {
+        "key": "A",
+        "label": null
+      },
+      {
+        "key": "B",
+        "label": null
+      },
+      {
+        "key": "C",
+        "label": null
+      },
+      {
+        "key": "D",
+        "label": null
+      }
+    ]
+  },
+  "marks": null,
+  "required_assets": [],
+  "answers": [
+    {
+      "public_id": "ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh",
+      "question_ref": null,
+      "original_value": "B",
+      "normalized_value": null,
+      "alternatives": [
+        "A",
+        "C",
+        "D"
+      ],
+      "ordering_rule": null,
+      "matching_method": "alternative",
+      "verification": "unverified",
+      "source": {
+        "source_id": "synthetic-ielts",
+        "provider_id": "ielts",
+        "locator": {
+          "fixture": "synthetic/ielts",
+          "detail": "answer:primary"
+        },
+        "content_class": "synthetic",
+        "retrieved_at": "2026-10-05T19:20:00+08:00"
+      },
+      "conflicts": [],
+      "manual_decision": null,
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/ielts",
+          "native-answer-key:primary"
+        ],
+        "parent_refs": [],
+        "note": null
+      }
+    }
+  ],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "present",
+    "answer_verification": "unverified",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-kind:grouped_alternatives"
+    ],
+    "parent_refs": [],
+    "note": null
+  },
+  "children": []
+}

@@ -1,0 +1,177 @@
+{
+  "schema": "examples-index/1",
+  "examples": [
+    {
+      "file": "answers__cie__ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx.json",
+      "schema": "answer/1"
+    },
+    {
+      "file": "answers__cie__ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl.json",
+      "schema": "answer/1"
+    },
+    {
+      "file": "answers__ielts__ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh.json",
+      "schema": "answer/1"
+    },
+    {
+      "file": "answers__ielts__ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke.json",
+      "schema": "answer/1"
+    },
+    {
+      "file": "answers__ielts__ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb.json",
+      "schema": "answer/1"
+    },
+    {
+      "file": "answers__ielts__ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo.json",
+      "schema": "answer/1"
+    },
+    {
+      "file": "answers__ielts__ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc.json",
+      "schema": "answer/1"
+    },
+    {
+      "file": "assets__cie__asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl.json",
+      "schema": "asset/1"
+    },
+    {
+      "file": "assets__cie__asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd.json",
+      "schema": "asset/1"
+    },
+    {
+      "file": "assets__ielts__asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m.json",
+      "schema": "asset/1"
+    },
+    {
+      "file": "containers__cie__container_6cnnjvwpypjw2orom36k3xjazamje2x3.json",
+      "schema": "container/1"
+    },
+    {
+      "file": "containers__edexcel__container_3bbmo2jmeebj3htxofgvkubtrcj23pct.json",
+      "schema": "container/1"
+    },
+    {
+      "file": "containers__ielts__container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq.json",
+      "schema": "container/1"
+    },
+    {
+      "file": "courses__cie__course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg.json",
+      "schema": "course/1"
+    },
+    {
+      "file": "courses__edexcel__course_vfthis5jlxjijxarwasb7bbyghnx7fqt.json",
+      "schema": "course/1"
+    },
+    {
+      "file": "coverage__cie__cov_synthetic_cie.json",
+      "schema": "coverage/1"
+    },
+    {
+      "file": "coverage__ielts__cov_synthetic_ielts.json",
+      "schema": "coverage/1"
+    },
+    {
+      "file": "examination_systems__synthetic__es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4.json",
+      "schema": "examination-system/1"
+    },
+    {
+      "file": "identity-registry__cie.json",
+      "schema": "identity-registry/1"
+    },
+    {
+      "file": "identity-registry__edexcel.json",
+      "schema": "identity-registry/1"
+    },
+    {
+      "file": "identity-registry__ielts.json",
+      "schema": "identity-registry/1"
+    },
+    {
+      "file": "jobs__synthetic__job_6zcvxittpvvbnvtpqttigpsmos2i5zmn.json",
+      "schema": "job-status/1"
+    },
+    {
+      "file": "materials__synthetic__mat_mmfjianasbw6qrncjkldxnfuavnls3ou.json",
+      "schema": "material/1"
+    },
+    {
+      "file": "questions__cie__q_2tc2e4uhkufazt3aszordnnbilofoy6s.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__cie__q_cb5bnkkjhe4ct7mrvespujhxowo2r3up.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__cie__q_ngtwfvjwc26jyirswzxxcccjeeidio56.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__cie__q_nxjtvu4225v43syunzyhurjzvxl7szhk.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__cie__q_w4ecszmbbqa54chk22paau3sluucc22z.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_egcwv27xjaq2elinkwd63fu6zvvq45ck.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_rtf7wrlwtotph3p45wx5wlfpfuo32iku.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_ymm437ermxommfdifgexf7eq6dm6kdxc.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "questions__ielts__q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.json",
+      "schema": "question/1"
+    },
+    {
+      "file": "regions__synthetic__region_fn2r2ikszwe234bmma3a5zorsr7snsk3.json",
+      "schema": "region/1"
+    },
+    {
+      "file": "syllabi__synthetic__syl_6ytdfhso2hvo47geydgicjiuyilumcei.json",
+      "schema": "syllabus/1"
+    },
+    {
+      "file": "tags__synthetic__tag_fz2cdf3lly5r3uybtl2vmbubioquwymu.json",
+      "schema": "tag/1"
+    },
+    {
+      "file": "timetable_events__cie__tte_punqoxygppjubuhcuj4nkd4nbikowv3f.json",
+      "schema": "timetable-event/1"
+    },
+    {
+      "file": "timetable_events__edexcel__tte_5kfllz2yp7iibointgdo56rmvnm7zgjc.json",
+      "schema": "timetable-event/1"
+    },
+    {
+      "file": "timetable_events__edexcel__tte_hdxrn6xaev6ihma5sgilzhroxl5olams.json",
+      "schema": "timetable-event/1"
+    },
+    {
+      "file": "timetable_windows__synthetic__ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv.json",
+      "schema": "timetable-window/1"
+    }
+  ]
+}

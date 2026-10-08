@@ -1,0 +1,13 @@
+{
+  "data_dir": "runtime/data",
+  "component_manifest": "components/manifest.json",
+  "network_mode": "offline",
+  "runner_output_budget": 4194304,
+  "total_response_budget": 33554432,
+  "ielts_max_concurrent": 2,
+  "toefl_max_concurrent": 2,
+  "ielts_queue_timeout": 5.0,
+  "toefl_queue_timeout": 5.0,
+  "frontend_port": 5188,
+  "frontend_upstream": "http://127.0.0.1:8000"
+}

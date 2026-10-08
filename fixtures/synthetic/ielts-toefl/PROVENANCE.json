@@ -1,0 +1,57 @@
+{
+  "schema": "fixture-provenance/1",
+  "scope": "A08 IELTS/TOEFL read-adapter synthetic fixtures",
+  "note": "Hand-authored synthetic fixtures shaped like IELTS and TOEFL source documents. No upstream content, no real document hashes, no credentials, no real audio.",
+  "created_by": "Phase A executor (packet A08)",
+  "created_at_local": "2026-10-06T00:20:00+08:00",
+  "entries": [
+    {
+      "path": "integration-staging/fixtures/synthetic/ielts-toefl/ielts-audio-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "ielts",
+      "created_by": "Phase A executor (packet A08)",
+      "created_at_local": "2026-10-06T00:20:00+08:00",
+      "sha256": "37cfdb49d30584a48f1f0afc9ac493fe3511cb4af90c47eb768111a147161b39",
+      "bytes": 2787,
+      "note": "Exercise IELTS audio alignment states without reading or requesting any audio source."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/ielts-toefl/ielts-questions-a08-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "ielts",
+      "created_by": "Phase A executor (packet A08)",
+      "created_at_local": "2026-10-06T00:20:00+08:00",
+      "sha256": "9daf7fe33ee72f47289d7169bdc2d1a6a5f3c567476aeec302e1698378d85ec6",
+      "bytes": 3935,
+      "note": "Exercise IELTS question variants, edition uncertainty, raw source ids, special numbering, a missing answer slot and an unresolved answer conflict."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/ielts-toefl/toefl-bad-cache-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "toefl",
+      "created_by": "Phase A executor (packet A08)",
+      "created_at_local": "2026-10-06T00:20:00+08:00",
+      "sha256": "4669b5adef6c9acae2e18a8dc916af306d3b92afc9614a93222c13f3afb48c1d",
+      "bytes": 1718,
+      "note": "Exercise TOEFL cache reparse validation: a non-object entry, an entry with no identity and a duplicate identity."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/ielts-toefl/toefl-questions-synthetic.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "toefl",
+      "created_by": "Phase A executor (packet A08)",
+      "created_at_local": "2026-10-06T00:20:00+08:00",
+      "sha256": "cbe0a88a14b9c5e86cdddadd635765b87f4ad794d4d5b0b3ca1ac58c48f58594",
+      "bytes": 4008,
+      "note": "Exercise TOEFL question-set shapes and identity classes without requesting any upstream URL."
+    }
+  ],
+  "summary": {
+    "entries": 4,
+    "synthetic": 4
+  }
+}

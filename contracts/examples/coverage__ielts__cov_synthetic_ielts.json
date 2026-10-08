@@ -1,0 +1,20 @@
+{
+  "schema": "coverage/1",
+  "public_id": "cov_synthetic_ielts",
+  "scope": "container:synthetic-book-1",
+  "denominator": "7",
+  "denominator_known": true,
+  "observed": 7,
+  "excluded": 0,
+  "unknown": 0,
+  "missing": 2,
+  "partial": 0,
+  "verified": 5,
+  "exclusions": [],
+  "computed_at": null,
+  "evidence": [
+    "synthetic_fixture"
+  ],
+  "derived_status": "partial",
+  "percentage": 71.43
+}

@@ -4,13 +4,15 @@ import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { join, normalize, extname } from 'node:path';
 import { Readable } from 'node:stream';
+import { timingSafeEqual } from 'node:crypto';
 import { resources } from './lib/resources.mjs';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 const upstream = new URL(process.env.EXAMDATA_URL || 'http://127.0.0.1:8000');
 const port = Number(process.env.WEB_PORT || 5190);
-const timetableDir = process.env.EXAMDATA_TIMETABLE_DIR || join(root, '..', 'examdata', 'src', 'examdata', 'timetable', 'data');
+const timetableDir = process.env.EXAMDATA_TIMETABLE_DIR || join(root, '..', 'src', 'examdata', 'timetable', 'data');
 const apiKey = process.env.EXAMDATA_API_KEY;
+const classic = new URL(process.env.EXAMDATA_CLASSIC_URL || 'http://127.0.0.1:8002');
 
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml' };
 // Static roots: public/ for the app, plus the shared search helpers and catalogue snapshots.
@@ -105,8 +107,32 @@ async function serveFile(res, path) {
 http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost');
-    if (req.method !== 'GET') { res.writeHead(405, { Allow: 'GET' }); return res.end(); }
+    if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405, { Allow: 'GET, HEAD' }); return res.end(); }
     const p = url.pathname, q = Object.fromEntries(url.searchParams);
+
+    // Fixed upstream targets: the caller cannot select an arbitrary proxy host.
+    const directApi = /^\/(?:api\/v[12](?:\/|$)|health$|docs(?:\/|$)|redoc$|openapi\.json$|paper-qa\/|questions(?:\/|$)|papers(?:\/|$)|assets\/|taxonomy(?:\/|$)|monitor(?:\/|$))/.test(p);
+    if (directApi || p === '/classic' || p.startsWith('/classic/')) {
+      const isClassic = !directApi;
+      if (directApi && apiKey && !['/health', '/docs', '/redoc', '/openapi.json'].includes(p)) {
+        const supplied = Buffer.from(String(req.headers['x-api-key'] || ''));
+        const expected = Buffer.from(apiKey);
+        if (supplied.length !== expected.length || !timingSafeEqual(supplied, expected)) return json(res, 401, { detail: 'Invalid or missing API key' });
+      }
+      if (p === '/classic') { res.writeHead(307, { Location: '/classic/' }); return res.end(); }
+      const target = new URL(isClassic ? classic : upstream);
+      target.pathname = isClassic ? (p.slice('/classic'.length) || '/') : p;
+      target.search = url.search;
+      const requestHeaders = directApi && apiKey ? { 'X-API-Key': apiKey } : {};
+      for (const key of ['range', 'if-none-match', 'if-range']) if (req.headers[key]) requestHeaders[key] = req.headers[key];
+      const response = await fetch(target, { method: req.method, redirect: 'manual', signal: AbortSignal.timeout(180000), headers: requestHeaders });
+      const headers = { 'Cache-Control': 'no-store' };
+      for (const key of ['content-type', 'content-disposition', 'content-length', 'etag', 'location']) if (response.headers.has(key)) headers[key] = response.headers.get(key);
+      res.writeHead(response.status, headers);
+      if (!response.body || req.method === 'HEAD') return res.end();
+      Readable.fromWeb(response.body).on('error', () => res.destroy()).pipe(res);
+      return;
+    }
 
     if (p === '/api/stats') return json(res, 200, await stats());
     if (p === '/api/timetable/events') { const [status, body] = await timetableRange(q); return json(res, status, body); }
@@ -138,4 +164,4 @@ http.createServer(async (req, res) => {
     if (res.headersSent) return res.destroy();
     json(res, 502, { detail: error.name === 'TimeoutError' ? '请求超时，请稍后重试。' : '暂时无法连接数据服务，请检查 EXAMDATA_URL。' });
   }
-}).listen(port, '127.0.0.1', () => console.log(`Examdata Web: http://127.0.0.1:${port}`));
+}).listen(port, process.env.WEB_HOST || '127.0.0.1', () => console.log(`Examdata Web: http://${process.env.WEB_HOST || '127.0.0.1'}:${port}`));

@@ -1,0 +1,44 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like the CIE location-batch checkpoint while running, with no stop fields at all. Invented values only; no upstream data, no real batch state, no real paper identities.",
+    "created_by": "Phase A executor (packet A13)",
+    "created_at_local": "2026-10-06T10:10:00+08:00",
+    "provider": "cie",
+    "purpose": "Prove that missing native stop fields stay None and a running batch derives in_progress without inventing a stop."
+  },
+  "current_cell": "8888/2026/Jun/22",
+  "stage": "running",
+  "last_progress_at": "2026-10-06T08:30:40+0800",
+  "updated_at": "2026-10-06T08:31:02+0800",
+  "current_subject": "8888",
+  "last_subject": "8888",
+  "totals": {
+    "requests": 47,
+    "cells_done": 44,
+    "business_rejected": 2,
+    "inferred_cells": 12,
+    "failed_cells": 1,
+    "unqueried_cells": 0,
+    "expected_cells": 47,
+    "papers": 19,
+    "complete": false
+  },
+  "progress": {
+    "requests": 44,
+    "cells_done": 44,
+    "papers": 19
+  },
+  "last_fetch": "8888/2026/Jun/22",
+  "last_fetch_at": "2026-10-06T08:31:00+0800",
+  "current_paper": "8888/2026/Jun/22",
+  "loop_stage": "running",
+  "loop_stages": {
+    "cleaned": 4,
+    "validation_partial": 1,
+    "download_failed": 1,
+    "download_interrupted": 0
+  },
+  "needs_user_resume": false,
+  "resume_policy": "Synthetic policy text: network retries need explicit user permission; local phases are unaffected."
+}

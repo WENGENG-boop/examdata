@@ -1,0 +1,96 @@
+{
+  "schema": "question/1",
+  "public_id": "q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy",
+  "native_id": "Q5",
+  "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "number_path": [
+    "Q5"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "fill_blank",
+  "stem": "Synthetic question 5 with two disagreeing sources.",
+  "payload": {
+    "stem": "Synthetic question 5 with two disagreeing sources.",
+    "word_limit": null
+  },
+  "marks": null,
+  "required_assets": [
+    {
+      "role": "diagram",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "asset_ref": null,
+      "required": true
+    }
+  ],
+  "answers": [
+    {
+      "public_id": "ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke",
+      "question_ref": null,
+      "original_value": "synthetic-answer-5a",
+      "normalized_value": null,
+      "alternatives": [
+        "synthetic-answer-5b"
+      ],
+      "ordering_rule": null,
+      "matching_method": "alternative",
+      "verification": "conflicting",
+      "source": {
+        "source_id": "synthetic-ielts",
+        "provider_id": "ielts",
+        "locator": {
+          "fixture": "synthetic/ielts",
+          "detail": "answer:primary"
+        },
+        "content_class": "synthetic",
+        "retrieved_at": "2026-10-05T19:20:00+08:00"
+      },
+      "conflicts": [
+        {
+          "value": "synthetic-answer-5a",
+          "source": "synthetic-source-a",
+          "evidence": null,
+          "decision": null
+        },
+        {
+          "value": "synthetic-answer-5b",
+          "source": "synthetic-source-b",
+          "evidence": null,
+          "decision": null
+        }
+      ],
+      "manual_decision": null,
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/ielts",
+          "native-answer-key:primary"
+        ],
+        "parent_refs": [],
+        "note": null
+      }
+    }
+  ],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "present",
+    "answer_verification": "conflicting",
+    "assets": "external_only",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-kind:answer_conflict"
+    ],
+    "parent_refs": [],
+    "note": null
+  },
+  "children": []
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "tag/1",
+  "public_id": "tag_fz2cdf3lly5r3uybtl2vmbubioquwymu",
+  "scheme": "synthetic-scheme",
+  "version": "1",
+  "code": "SYN-1",
+  "parent": null,
+  "label": "Synthetic tag",
+  "specification_ref": null,
+  "assignment_method": "synthetic_fixture",
+  "confidence": null,
+  "review": "unreviewed"
+}
