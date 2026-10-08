@@ -1,0 +1,13 @@
+import fs from "node:fs";
+import { parseListeningHtml, parseReadingHtml } from "../../../../../ielts-api/cam21.mjs";
+const base = "C:/Users/weo/Desktop/api/tmp_audit_ielts/cam21";
+const l = parseListeningHtml(fs.readFileSync(base + "/t1-listening.html", "utf8"));
+console.log("answer_key:", JSON.stringify(l.answer_key).slice(0, 400));
+console.log("answer_groups:", JSON.stringify(l.answer_groups).slice(0, 800));
+const multi = l.questions.filter(q => q.type === "multi");
+console.log("multi q:", JSON.stringify(multi[0], null, 1).slice(0, 800));
+const r = parseReadingHtml(fs.readFileSync(base + "/t1-reading.html", "utf8"));
+console.log("\nreading answer_key:", JSON.stringify(r.answer_key).slice(0, 300));
+console.log("reading answer_groups:", JSON.stringify(r.answer_groups).slice(0, 600));
+const rm = r.questions.find(q => q.slot_kind === "multi_member");
+console.log("reading multi q:", JSON.stringify(rm, null, 1).slice(0, 800));

@@ -1,0 +1,13 @@
+import fs from "node:fs";
+import { parsePtePage, expectedFor } from "../../../../../ielts-api/pte.mjs";
+const base = "C:/Users/weo/Desktop/api/tmp_audit_ielts/completeness_20261003";
+const raw = fs.readFileSync(`${base}/raw-5.txt`, "utf8");
+const p = parsePtePage(raw, { book: 1, test: 2, skill: "academic_reading" }, expectedFor(1, 2, "academic_reading"));
+const pas = p.passages[0];
+console.log("paragraphs[0]:", JSON.stringify(pas.paragraphs[0]).slice(0, 300));
+console.log("paragraphs len:", pas.paragraphs.length);
+console.log("group keys:", Object.keys(p.question_groups[0]));
+const g2 = p.question_groups.find(g => (g.assets||[]).length);
+console.log("group w assets:", JSON.stringify(g2).slice(0, 700));
+console.log("q keys:", Object.keys(p.questions[0]));
+console.log("q0:", JSON.stringify(p.questions[0]).slice(0, 500));

@@ -1,0 +1,1 @@
+Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'run_batches|resume_serial|finish_chain|run_worker' -and $_.ProcessId -ne $PID } | Select-Object ProcessId,Name,CommandLine | Format-List

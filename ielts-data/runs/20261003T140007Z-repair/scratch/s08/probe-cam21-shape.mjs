@@ -1,0 +1,14 @@
+import fs from "node:fs";
+import { parseReadingHtml, parseListeningHtml } from "../../../../../ielts-api/cam21.mjs";
+const base = "C:/Users/weo/Desktop/api/tmp_audit_ielts/cam21";
+const r = parseReadingHtml(fs.readFileSync(base + "/t1-reading.html", "utf8"));
+console.log("READING keys:", Object.keys(r));
+console.log("groups:", JSON.stringify(r.groups).slice(0, 600));
+console.log("q[0]:", JSON.stringify(r.questions[0]).slice(0, 600));
+console.log("q multi sample:", JSON.stringify(r.questions.find(q => q.slot_kind === "multi_member" || (q.options||[]).length)).slice(0, 700));
+console.log("passages:", (r.passages||[]).length, JSON.stringify((r.passages||[])[0]||{}).slice(0,300));
+const l = parseListeningHtml(fs.readFileSync(base + "/t1-listening.html", "utf8"));
+console.log("\nLISTENING keys:", Object.keys(l));
+console.log("groups:", JSON.stringify(l.groups).slice(0, 900));
+console.log("q[0]:", JSON.stringify(l.questions[0]).slice(0, 700));
+console.log("counts:", JSON.stringify(l.counts), "audio:", JSON.stringify(l.audio));

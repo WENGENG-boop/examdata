@@ -1,0 +1,10 @@
+import { pteListening } from "file:///C:/Users/weo/Documents/deepseek-harness/default-workspace/ielts-api/ielts-api.mjs";
+const r = await pteListening(1, 2);
+console.log("ok=", r.ok, "answer_count=", r.answer_count, "nulls=", (r.null_answers||[]).length, "null_answers=", JSON.stringify(r.null_answers||[]));
+const keys = Object.keys(r.answer_key||{}).map(Number).sort((a,b)=>a-b);
+console.log("key count:", keys.length, "first:", keys[0], "last:", keys[keys.length-1]);
+const missing = [];
+for (let i=1;i<=40;i++) if (!keys.includes(i)) missing.push(i);
+console.log("missing numbers:", JSON.stringify(missing));
+console.log("Q39=", JSON.stringify(r.answer_key?.[39]), "Q40=", JSON.stringify(r.answer_key?.[40]));
+console.log("source=", r.source, "url=", r.url||r.page||"");

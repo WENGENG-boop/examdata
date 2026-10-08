@@ -1,0 +1,11 @@
+import { aggregate } from 'file:///C:/Users/weo/Documents/deepseek-harness/default-workspace/ielts-api/ielts-api.mjs';
+const p = await aggregate({ book: 20, test: 1 });
+console.log('top keys:', Object.keys(p));
+console.log('score:', p.score, '| completeness:', JSON.stringify(p.completeness));
+console.log('warnings:', JSON.stringify(p.warnings));
+console.log('sources_used:', JSON.stringify(p.sources_used));
+console.log('parts keys:', Object.keys(p.parts));
+console.log('pdf:', JSON.stringify(p.parts.pdf));
+console.log('listening_audio[0]:', JSON.stringify(p.parts.listening_audio[0]));
+console.log('listening_script keys:', Object.keys(p.parts.listening_script));
+console.log('reading keys:', Object.keys(p.parts.reading));

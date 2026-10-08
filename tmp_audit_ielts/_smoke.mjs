@@ -1,0 +1,11 @@
+import { pteBook, pteListening, pteReading } from "file:///C:/Users/weo/Documents/deepseek-harness/default-workspace/ielts-api/ielts-api.mjs";
+const t0 = Date.now();
+const b3 = await pteBook(3);
+console.log("pteBook(3) ok=", b3.ok, "reading keys=", JSON.stringify(Object.keys(b3.reading||{})), "listening keys=", JSON.stringify(Object.keys(b3.listening||{})), "title=", b3.title);
+const l12 = await pteListening(1, 2);
+console.log("pteListening(1,2) ok=", l12.ok, "answer_count=", l12.answer_count, "q=", l12.question_count, "audio=", (l12.audio||[]).length, "err=", l12.error);
+console.log("  answer_key=", JSON.stringify(l12.answer_key));
+const r1 = await pteReading(1, 1);
+console.log("pteReading(1,1) ok=", r1.ok, "answer_count=", r1.answer_count, "q=", r1.question_count, "passage_paras=", (r1.passage||[]).length, "slug=", r1.slug, "err=", r1.error);
+console.log("  key sample=", JSON.stringify((r1.answer_key||[]).slice(0,5)));
+console.log("elapsed", Date.now()-t0, "ms");

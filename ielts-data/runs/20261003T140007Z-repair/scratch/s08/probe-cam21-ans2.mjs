@@ -1,0 +1,11 @@
+import fs from "node:fs";
+import { parseReadingHtml } from "../../../../../ielts-api/cam21.mjs";
+const base = "C:/Users/weo/Desktop/api/tmp_audit_ielts/cam21";
+const r = parseReadingHtml(fs.readFileSync(base + "/t1-reading.html", "utf8"));
+const byKind = {};
+for (const q of r.questions) byKind[q.slot_kind] = (byKind[q.slot_kind]||0)+1;
+console.log("slot_kinds:", byKind);
+const multi = r.questions.filter(q => q.slot_kind !== "single");
+console.log("non-single count:", multi.length);
+if (multi[0]) console.log(JSON.stringify(multi[0], null, 1).slice(0, 900));
+console.log("groups with TWO:", JSON.stringify(r.groups.filter(g => /TWO|three/i.test(g.instruction||"")).map(g=>g.id)));

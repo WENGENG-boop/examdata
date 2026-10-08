@@ -1,0 +1,9 @@
+$env:EXAMDATA_DATA_DIR = 'C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api'
+$env:EXAMDATA_DATABASE_URL = 'sqlite:///C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/examdata.db'
+$env:EXAMDATA_MAX_RETRIES = '1'
+$exe = 'C:/Users/weo/Desktop/api/examdata/.venv/Scripts/examdata.exe'
+$out = 'C:/Users/weo/Desktop/api/cie-location-batch/work/serve8000.out.log'
+$err = 'C:/Users/weo/Desktop/api/cie-location-batch/work/serve8000.err.log'
+$p = Start-Process -FilePath $exe -ArgumentList 'serve','--host','127.0.0.1','--port','8000' -WindowStyle Hidden -RedirectStandardOutput $out -RedirectStandardError $err -PassThru
+"PID=$($p.Id)" | Out-File -Encoding utf8 'C:/Users/weo/Desktop/api/cie-location-batch/work/serve8000.pid.txt'
+Write-Output "Started PID=$($p.Id)"
