@@ -1,0 +1,228 @@
+{
+  "exit_code": 0,
+  "report": {
+    "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode",
+    "workspace_root": "C:\\Users\\weo\\Desktop\\api",
+    "original_app_code": "C:\\Users\\weo\\Desktop\\api\\examdata\\src",
+    "pythonpath_env": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode",
+    "original_env": "C:\\Users\\weo\\Desktop\\api\\examdata\\src",
+    "staging_override_present": false,
+    "module_origin": {
+      "examdata": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\__init__.py",
+      "examdata.integration": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\__init__.py"
+    },
+    "paths_module": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\runtime\\paths.py",
+    "entry_points": {
+      "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\api\\dataset.py",
+      "examdata.integration.api.app": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\api\\app.py",
+      "examdata.integration.runtime": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\runtime\\__init__.py",
+      "examdata.integration.runtime.doctor": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\runtime\\doctor.py",
+      "examdata.integration.legacy": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\__init__.py",
+      "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\bridge.py",
+      "examdata.integration.legacy.decisions": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\decisions.py",
+      "examdata.integration.legacy.parity": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\parity.py",
+      "examdata.integration.legacy.translate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\translate.py"
+    },
+    "entry_errors": {},
+    "schema": {
+      "files": 28,
+      "loaded_ok": 28,
+      "bad": []
+    },
+    "guard": {
+      "staging_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode",
+      "original_app_code": "C:\\Users\\weo\\Desktop\\api\\examdata\\src"
+    },
+    "node_discovery": {
+      "manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\components\\manifest.json",
+      "ids": [
+        "fake_cli"
+      ],
+      "problems": [],
+      "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\components\\fake-node-cli\\fake-cli.mjs",
+      "entry_specifiers": []
+    },
+    "negative_escaping_manifest": {
+      "admitted": [],
+      "problem_codes": [
+        "not_relative_path"
+      ]
+    },
+    "negative_original_path": {
+      "path": "C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata\\api\\app.py",
+      "denied": true,
+      "detail": "R04 negative control points into original application code: C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata\\api\\app.py"
+    },
+    "negative_outside_path": {
+      "path": "C:\\Users\\weo\\Desktop\\api\\SESSION_CONTINUATION_PLAN.md",
+      "denied": true,
+      "detail": "R04 negative control escapes the staging tree: C:\\Users\\weo\\Desktop\\api\\SESSION_CONTINUATION_PLAN.md (allowed: C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode)"
+    },
+    "negative_node_guard": {
+      "denied": true,
+      "detail": "node import guard points into original application code: C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata\\api\\app.mjs"
+    },
+    "positive_staged_path": {
+      "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\components\\fake-node-cli\\fake-cli.mjs",
+      "admitted": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    "not_run": [
+      {
+        "check": "real Node component execution",
+        "reason": "gate original_paths_released is closed; synthetic fixture only"
+      },
+      {
+        "check": "real original source / database validation",
+        "reason": "gate original_paths_released is closed; no original path is read"
+      }
+    ],
+    "notes": [
+      "the loader containment rule `path_escapes_root` is only reachable through a symlink/junction; an escaping code_location is refused earlier by `not_relative_path`, and containment itself is exercised by the harness path guard checks below"
+    ],
+    "counts": {
+      "entry_points_ok": 9,
+      "schema_files": 28,
+      "schema_loaded_ok": 28,
+      "node_components_admitted": 1,
+      "checks": 26,
+      "checks_failed": 0
+    },
+    "checks": [
+      {
+        "name": "origin.examdata_within_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\__init__.py"
+      },
+      {
+        "name": "origin.paths_module_within_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\runtime\\paths.py"
+      },
+      {
+        "name": "origin.no_staging_override",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "entry.examdata.integration.api.dataset",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\api\\dataset.py"
+      },
+      {
+        "name": "entry.examdata.integration.api.app",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\api\\app.py"
+      },
+      {
+        "name": "entry.examdata.integration.runtime",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\runtime\\__init__.py"
+      },
+      {
+        "name": "entry.examdata.integration.runtime.doctor",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\runtime\\doctor.py"
+      },
+      {
+        "name": "entry.examdata.integration.legacy",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\__init__.py"
+      },
+      {
+        "name": "entry.examdata.integration.legacy.bridge",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\bridge.py"
+      },
+      {
+        "name": "entry.examdata.integration.legacy.decisions",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\decisions.py"
+      },
+      {
+        "name": "entry.examdata.integration.legacy.parity",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\parity.py"
+      },
+      {
+        "name": "entry.examdata.integration.legacy.translate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\src\\examdata\\integration\\legacy\\translate.py"
+      },
+      {
+        "name": "schema.files_found",
+        "ok": true,
+        "detail": "found 28"
+      },
+      {
+        "name": "schema.all_load",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "guard.staging_root_is_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode"
+      },
+      {
+        "name": "guard.original_app_code_is_real_workspace",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\examdata\\src"
+      },
+      {
+        "name": "node.ids_exactly_fake_cli",
+        "ok": true,
+        "detail": "['fake_cli']"
+      },
+      {
+        "name": "node.no_problems",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "node.entry_point_inside_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\components\\fake-node-cli\\fake-cli.mjs"
+      },
+      {
+        "name": "node.check_node_file_ok",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "negative.escaping_code_location_refused",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "negative.escaping_code_location_has_problem",
+        "ok": true,
+        "detail": "[\"not_relative_path\"]"
+      },
+      {
+        "name": "negative.original_app_code_denied",
+        "ok": true,
+        "detail": "R04 negative control points into original application code: C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata\\api\\app.py"
+      },
+      {
+        "name": "negative.outside_root_denied",
+        "ok": true,
+        "detail": "R04 negative control escapes the staging tree: C:\\Users\\weo\\Desktop\\api\\SESSION_CONTINUATION_PLAN.md (allowed: C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04"
+      },
+      {
+        "name": "negative.node_guard_denies_original",
+        "ok": true,
+        "detail": "node import guard points into original application code: C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata\\api\\app.mjs"
+      },
+      {
+        "name": "positive.staged_path_admitted",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode\\components\\fake-node-cli\\fake-cli.mjs"
+      }
+    ],
+    "failed": [],
+    "ok": true
+  },
+  "stderr": ""
+}

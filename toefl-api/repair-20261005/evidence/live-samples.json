@@ -1,0 +1,279 @@
+{
+ "started_at": "2026-10-05T05:40:38.206Z",
+ "min_gap_ms": 1150,
+ "detail_refresh": [
+  {
+   "name": "read Official54 11m4mj",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/read/11m4mj.html",
+    "--refresh=1"
+   ],
+   "started_at": "2026-10-05T05:40:38.343Z",
+   "ms": 10492,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "label": "Official 54 Passage 1",
+   "expected": 10,
+   "fetched": 10,
+   "complete": true,
+   "content_complete": true,
+   "n_questions": 10,
+   "n_table_choice": 0,
+   "n_missing_stem": 0,
+   "n_missing_answer": 0,
+   "errors": 0,
+   "content_gaps": 0,
+   "audio_url": null
+  },
+  {
+   "name": "listen Official54 11mc6j",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/listen/11mc6j.html",
+    "--refresh=1"
+   ],
+   "started_at": "2026-10-05T05:40:48.837Z",
+   "ms": 4924,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "label": "Official 54 Set 1",
+   "expected": 5,
+   "fetched": 5,
+   "complete": true,
+   "content_complete": true,
+   "n_questions": 5,
+   "n_table_choice": 0,
+   "n_missing_stem": 0,
+   "n_missing_answer": 0,
+   "errors": 0,
+   "content_gaps": 0,
+   "audio_url": "https://img.kmf.com/toefl/listening/audio/d6d157bbfe08509a9dee3c4b569b3879.mp3"
+  },
+  {
+   "name": "speak Official54 f1m9gj",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/speak/f1m9gj.html",
+    "--refresh=1"
+   ],
+   "started_at": "2026-10-05T05:40:53.761Z",
+   "ms": 522,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "question_chars": 125,
+   "audio_url": "https://img.kmf.com/toefl/listening/audio/f136ebfdfbbec9920996f555fe014d8b.mp3",
+   "text_chars": 5452
+  },
+  {
+   "name": "write Official54 c1m97j",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/write/c1m97j.html",
+    "--refresh=1"
+   ],
+   "started_at": "2026-10-05T05:40:54.918Z",
+   "ms": 564,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "prompt_chars": 142,
+   "essay_chars": 0,
+   "materials": {
+    "reading_chars": 1729,
+    "listening_chars": 3660
+   },
+   "audio_url": "https://img.kmf.com/toefl/listening/audio/c27cb8d3b9ea3f80853c63011b98477c.mp3"
+  }
+ ],
+ "detail_cachehit": [
+  {
+   "name": "read Official54 11m4mj",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/read/11m4mj.html"
+   ],
+   "started_at": "2026-10-05T05:40:56.071Z",
+   "ms": 110,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "label": "Official 54 Passage 1",
+   "expected": 10,
+   "fetched": 10,
+   "complete": true,
+   "content_complete": true,
+   "n_questions": 10,
+   "n_table_choice": 0,
+   "n_missing_stem": 0,
+   "n_missing_answer": 0,
+   "errors": 0,
+   "content_gaps": 0,
+   "audio_url": null
+  },
+  {
+   "name": "listen Official54 11mc6j",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/listen/11mc6j.html"
+   ],
+   "started_at": "2026-10-05T05:40:57.235Z",
+   "ms": 88,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "label": "Official 54 Set 1",
+   "expected": 5,
+   "fetched": 5,
+   "complete": true,
+   "content_complete": true,
+   "n_questions": 5,
+   "n_table_choice": 0,
+   "n_missing_stem": 0,
+   "n_missing_answer": 0,
+   "errors": 0,
+   "content_gaps": 0,
+   "audio_url": "https://img.kmf.com/toefl/listening/audio/d6d157bbfe08509a9dee3c4b569b3879.mp3"
+  },
+  {
+   "name": "speak Official54 f1m9gj",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/speak/f1m9gj.html"
+   ],
+   "started_at": "2026-10-05T05:40:58.401Z",
+   "ms": 102,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "question_chars": 125,
+   "audio_url": "https://img.kmf.com/toefl/listening/audio/f136ebfdfbbec9920996f555fe014d8b.mp3",
+   "text_chars": 5452
+  },
+  {
+   "name": "write Official54 c1m97j",
+   "args": [
+    "detail",
+    "--url=https://toefl.kmf.com/detail/write/c1m97j.html"
+   ],
+   "started_at": "2026-10-05T05:40:59.551Z",
+   "ms": 99,
+   "exit_code": 0,
+   "ok": true,
+   "error": null,
+   "official": 54,
+   "set_id": "tpo-54",
+   "prompt_chars": 142,
+   "essay_chars": 0,
+   "materials": {
+    "reading_chars": 1729,
+    "listening_chars": 3660
+   },
+   "audio_url": "https://img.kmf.com/toefl/listening/audio/c27cb8d3b9ea3f80853c63011b98477c.mp3"
+  }
+ ],
+ "audio_range": [
+  {
+   "name": "listen set.audio_url",
+   "url": "https://img.kmf.com/toefl/listening/audio/d6d157bbfe08509a9dee3c4b569b3879.mp3",
+   "started_at": "2026-10-05T05:41:00.702Z",
+   "status": 206,
+   "content_type": "audio/mpeg",
+   "content_range": "bytes 0-1023/47646",
+   "content_length": "1024",
+   "redirected": false,
+   "bytes_read": 1024,
+   "sha256_first_1024": "408e9348df3a3c6c39b3fad4a299c41d2beec3e4c3e0872ff4fce7e1489def80"
+  },
+  {
+   "name": "speak audio_url",
+   "url": "https://img.kmf.com/toefl/listening/audio/f136ebfdfbbec9920996f555fe014d8b.mp3",
+   "started_at": "2026-10-05T05:41:03.185Z",
+   "status": 206,
+   "content_type": "audio/mpeg",
+   "content_range": "bytes 0-1023/183065",
+   "content_length": "1024",
+   "redirected": false,
+   "bytes_read": 1024,
+   "sha256_first_1024": "e8018dd9ffcae0d3bb83bdb23ffb5d1ebe91bd3e8789278f5c20f72d5c74ef29"
+  },
+  {
+   "name": "write audio_url",
+   "url": "https://img.kmf.com/toefl/listening/audio/c27cb8d3b9ea3f80853c63011b98477c.mp3",
+   "started_at": "2026-10-05T05:41:04.338Z",
+   "status": 206,
+   "content_type": "audio/mpeg",
+   "content_range": "bytes 0-1023/4611734",
+   "content_length": "1024",
+   "redirected": false,
+   "bytes_read": 1024,
+   "sha256_first_1024": "e5fc360a885c042ec44d00d75e8146da1b998821ca76fe0655d706db6bf98b40"
+  }
+ ],
+ "failure": null,
+ "notes": [
+  "CLI 子进程严格串行（spawnSync 前一个退出后才启动下一个），启动间隔另有 ≥1.15s 强制间隔。",
+  "refresh=1 走真正联网；无 refresh 复跑为纯缓存对照（预期缓存 mtime 0 变化）。",
+  "音频只读前 1024 字节并 cancel，正文不落盘；sha256 为前 1KB 摘要。"
+ ],
+ "refresh_cache_diff": {
+  "pages": {
+   "changed": 17,
+   "added": 0,
+   "changed_files": [
+    "listen-11mc6j.html",
+    "listen-61mcbj.html",
+    "listen-91mc9j.html",
+    "listen-a1mcaj.html",
+    "listen-e1mc8j.html",
+    "read-01m6nj.html",
+    "read-01m6tj.html",
+    "read-11m4mj.html",
+    "read-51m6fj.html",
+    "read-71m6gj.html",
+    "read-81m6pj.html",
+    "read-81m6uj.html"
+   ],
+   "added_files": []
+  },
+  "text": {
+   "changed": 0,
+   "added": 0,
+   "changed_files": [],
+   "added_files": []
+  }
+ },
+ "cachehit_cache_diff": {
+  "pages": {
+   "changed": 0,
+   "added": 0,
+   "changed_files": [],
+   "added_files": []
+  },
+  "text": {
+   "changed": 0,
+   "added": 0,
+   "changed_files": [],
+   "added_files": []
+  }
+ },
+ "stopped_network_early": false,
+ "finished_at": "2026-10-05T05:41:04.518Z"
+}

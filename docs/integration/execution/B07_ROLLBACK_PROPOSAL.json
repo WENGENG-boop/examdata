@@ -1,0 +1,260 @@
+{
+  "proposal_version": "b07-rollback-proposal/1",
+  "packet": "B07",
+  "generated_by": "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_build_proposals.py",
+  "generated_at": "2026-10-07T07:15:00+08:00",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "merge_proposal_entries": 15,
+    "candidate_manifest": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/B07_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "3e7d2a7721b04a1663400ca335ae213c75e7696dbb60c656b938f2c32d061784",
+    "candidate_tree": {
+      "files": 221,
+      "excludes": [
+        "B07_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179"
+    }
+  },
+  "semantics": {
+    "staging_level": {
+      "staging_candidate_tree": "delete the candidate tree only if its current tree digest still equals sha256_at_proposal, recomputed with the rule recorded in derived_from.candidate_tree_digest_rule (the candidate's own manifest is excluded, since a file cannot hash itself)",
+      "staged_file_changes": "the twelve added operations files and the two rewritten modules live only inside the candidate tree: the container tree delete removes them; the two rewritten modules can alternatively be reversed by restoring the parent's staged bytes (staging_sha256_to_restore)"
+    },
+    "original_level": {
+      "merged_add_file": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal",
+      "rewritten_modules_note": "the two rewritten integration modules (app.py, dataset.py) never existed in the original project (A14 observed the targets as not existing), so their original-level reversal is a delete, never a restore of the superseded staged versions",
+      "b06_entries_note": "the eighteen release-required B06 entries (frontend files and the view.py rewrite) are reversed exactly as recorded in B06_ROLLBACK_PROPOSAL.json; B07 does not re-propose or re-state them"
+    },
+    "never": [
+      "never touch docs/integration/execution/evidence/**",
+      "never touch integration-staging/runtime/phase-b/** sealed transcripts",
+      "never touch the frozen R04 candidate under r0104-repair-20261006/candidates/**",
+      "never touch the frozen B02 candidate under b02-rehearsal-20261006/candidates/**",
+      "never touch the frozen B03 candidate under b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/**",
+      "never touch the frozen B04 candidate under b04-rehearsal-2026-10-07/candidates/b04-routes-v1/**",
+      "never touch the frozen B05 candidate under b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/**",
+      "never touch the frozen B06 candidate under b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/**",
+      "never restore the live execution ledger from a private copy"
+    ]
+  },
+  "guards": [
+    "verify the resolved absolute path and its sha256 (or tree digest) before any delete",
+    "no delete ever targets a protected original in Phase B private rehearsal",
+    "planned original writes are reversible only after the human release",
+    "the two rewritten integration modules never existed in the original project; their original-level reversal is a delete, never a restore of the superseded staged versions",
+    "no B07 entry restores base bytes or reconciles: every release-required B07 change is an add whose reversal is a guarded delete_file",
+    "the eighteen release-required B06 entries keep the reversal semantics recorded in B06_ROLLBACK_PROPOSAL.json",
+    "all seven gates remain closed during rollback"
+  ],
+  "counts": {
+    "entries": 15,
+    "staging_level": {
+      "reversible_by_tree_delete": 1,
+      "entries_removed_with_the_tree": 14,
+      "reversible_by_restore_parent_bytes": 2
+    },
+    "original_level": {
+      "reversible_by_target_delete": 14,
+      "reversible_by_restore_base": 0,
+      "reconciliation_cases": 0,
+      "no_original_action": 1
+    }
+  },
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1",
+      "proposed_target": null,
+      "kind": "staging_candidate_tree",
+      "sha256_at_proposal": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "delete the candidate tree, and only if its current tree digest still equals sha256_at_proposal",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/api/app.py",
+      "proposed_target": "examdata/src/examdata/integration/api/app.py",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "81f9c3c9700b6a4eb243ed20b90eefe18c36edbaedf84b00d69dcb73a51fc259",
+      "staging_sha256_to_restore": "0edb0911aee83753f1692299cd656df614805b2b032aad6eaa8122dca6d7bc8b",
+      "original_base_sha256": null,
+      "staging_level_reversal": "restore the parent's staged bytes (staging_sha256_to_restore) inside the candidate; the candidate itself stays private",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/api/dataset.py",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "c0d0d06cdcb22fc1f076b86b4c90da6bc72f09345ad512e62c141b764d428780",
+      "staging_sha256_to_restore": "d0edabc7a258c0a8f75dd5001475eaf2cd22f5f806c6aa83be8c32336669962b",
+      "original_base_sha256": null,
+      "staging_level_reversal": "restore the parent's staged bytes (staging_sha256_to_restore) inside the candidate; the candidate itself stays private",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/operations/jobs.py",
+      "proposed_target": "examdata/src/examdata/integration/operations/jobs.py",
+      "kind": "new_file",
+      "sha256_at_proposal": "916ae7b195902856de2521661aaae4bf0dcd940592bf19a315536f9134427839",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0005",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/operations/published.py",
+      "proposed_target": "examdata/src/examdata/integration/operations/published.py",
+      "kind": "new_file",
+      "sha256_at_proposal": "54522b9e669c57b9a21564a98d1075f02664611f310cc72868cab793f82a925a",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0006",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/PROVENANCE.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/PROVENANCE.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "f83617cc0a304d53c3bcf153ae199bafca8ff05151e4425282078cfe8f6f8173",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0007",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/README.md",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/README.md",
+      "kind": "new_file",
+      "sha256_at_proposal": "247eec4e48ff13f318948c217efd7603a4fa6da5fb021372fd323b5287b6c489",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0008",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/cie-batch-8888-stale/checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/cie-batch-8888-stale/checkpoint.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "76559fb8ca482bd80a0075bceaea47870dc5b1932491a7d7a8eadf0aa5755673",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0009",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/cie-batch-8888/checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/cie-batch-8888/checkpoint.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "c31696a05ce917d471249f289d409d98217ec4064e9043d7783821a8a1ccf0e3",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0010",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/cie-location-batch/checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/cie-location-batch/checkpoint.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "9eb281a2a56df32383be6a7b11c86b7bb067f433526b294879c6367fca4ac554",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0011",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/expected-manifest.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/expected-manifest.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "6f86b0211c5b873854fa21845466867b0b3e9c23b12995f15dd94bf0059f2f4a",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0012",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/run-ok-stale/checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/run-ok-stale/checkpoint.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "3519a84fd24fccb872226de0395a49c405a1c138d49086f438ff3f014fe2c220",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0013",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/run-ok/checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/run-ok/checkpoint.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "fa0a85c5c2df6501f4940ba02af1e093f2919c9a84394daa6f66e03ae7905493",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0014",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/run-partial/checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/run-partial/checkpoint.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "0172743731000d05c2b805233893722a445a9d08adfc8683eb773115977028e2",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0015",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/unsupported/checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/unsupported/checkpoint.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "410b6ac73370c3e143e71656aafa0ebacf12a60c9908c522d123b9f50a8e1de0",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    }
+  ]
+}

@@ -1,0 +1,1056 @@
+{
+  "schema_version": "1",
+  "board": "cie",
+  "identity": {
+    "subject": "9709",
+    "year": 2024,
+    "season": "Jun",
+    "paper": "11"
+  },
+  "coordinate_system": "unrotated_pdf_points_top_left",
+  "page_base": 1,
+  "documents": [
+    {
+      "role": "qp",
+      "sha256": "7dd8ce4a25dc6acaf730b86d7346ab993b6625879622fad8ec79cea9896d52da"
+    },
+    {
+      "role": "ms",
+      "sha256": "c3e5a899f2ea89b8d949da9a57cb90b6fa3c3cfacb8bcc0f0d0801b4b0747611"
+    }
+  ],
+  "questions": [
+    {
+      "question": "1",
+      "parent": null,
+      "text": "(a) Express 3y² − 12y − 15 in the form 3(y + a)² + b, where a and b are constants. (b) Hence find the exact solutions of 3x⁴ − 12x² − 15 = 0.",
+      "marks": null,
+      "qp": [
+        {
+          "page": 2,
+          "bbox": [
+            70,
+            58,
+            544,
+            370
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 6,
+          "bbox": [
+            80.0,
+            62.0,
+            433.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "1(a)",
+      "parent": "1",
+      "text": "Express 3y² − 12y − 15 in the form 3(y + a)² + b, where a and b are constants.",
+      "marks": 2,
+      "qp": [
+        {
+          "page": 2,
+          "bbox": [
+            71,
+            59,
+            542,
+            76
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 6,
+          "bbox": [
+            80.0,
+            62.0,
+            153.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题1的整体题干；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "1(b)",
+      "parent": "1",
+      "text": "Hence find the exact solutions of the equation 3x⁴ − 12x² − 15 = 0.",
+      "marks": 3,
+      "qp": [
+        {
+          "page": 2,
+          "bbox": [
+            92,
+            352,
+            543,
+            370
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 6,
+          "bbox": [
+            156.0,
+            62.0,
+            383.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "承接题1(a)；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "2",
+      "parent": null,
+      "text": "The diagram shows two curves. One curve has equation y = sin x and the other curve has equation y = f(x).",
+      "marks": null,
+      "qp": [
+        {
+          "page": 3,
+          "bbox": [
+            70,
+            58,
+            550,
+            543
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 7,
+          "bbox": [
+            80.0,
+            62.0,
+            360.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "包含题2共用曲线图与共同题干；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "2(a)",
+      "parent": "2",
+      "text": "In order to transform the curve y = sin x to the curve y = f(x), the curve y = sin x is first reflected in the x-axis. Describe fully a sequence of two further transformations which are required.",
+      "marks": 4,
+      "qp": [
+        {
+          "page": 3,
+          "bbox": [
+            92,
+            293,
+            544,
+            345
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 7,
+          "bbox": [
+            80.0,
+            62.0,
+            294.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "曲线图及共同题干继承自题2（QP第3页）；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "2(b)",
+      "parent": "2",
+      "text": "Find f(x) in terms of sin x.",
+      "marks": 2,
+      "qp": [
+        {
+          "page": 3,
+          "bbox": [
+            92,
+            525,
+            544,
+            543
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 7,
+          "bbox": [
+            294.0,
+            62.0,
+            360.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "曲线图及共同题干继承自题2（QP第3页）；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "3",
+      "parent": null,
+      "text": "The coefficient of x³ in the expansion of (3 + ax)⁶ is 160.",
+      "marks": null,
+      "qp": [
+        {
+          "page": 4,
+          "bbox": [
+            70,
+            58,
+            544,
+            394
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 7,
+          "bbox": [
+            386.0,
+            62.0,
+            468.0,
+            729.0
+          ]
+        },
+        {
+          "page": 8,
+          "bbox": [
+            80.0,
+            62.0,
+            218.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "3(a)",
+      "parent": "3",
+      "text": "Find the value of the constant a.",
+      "marks": 2,
+      "qp": [
+        {
+          "page": 4,
+          "bbox": [
+            92,
+            87,
+            544,
+            100
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 7,
+          "bbox": [
+            386.0,
+            62.0,
+            468.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题3的展开式条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "3(b)",
+      "parent": "3",
+      "text": "Hence find the coefficient of x³ in the expansion of (3 + ax)⁶(1 − 2x).",
+      "marks": 3,
+      "qp": [
+        {
+          "page": 4,
+          "bbox": [
+            92,
+            377,
+            544,
+            394
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 8,
+          "bbox": [
+            80.0,
+            62.0,
+            218.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "承接题3(a)求得的 a；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "4",
+      "parent": null,
+      "text": "The equation of a curve is y = f(x), where f(x) = (2x − 1)√(3x − 2) − 2. The following points lie on the curve: A(2, 4), B(2.0001, k), C(2.001, 4.00625), D(2.01, 4.06261), E(2.1, 4.63566), F(3, 11.22876). Non-exact values are given to 5 decimal places. The table gives gradients of chords AB, AC, AD, AE and AF.",
+      "marks": null,
+      "qp": [
+        {
+          "page": 5,
+          "bbox": [
+            70,
+            58,
+            544,
+            565
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 8,
+          "bbox": [
+            245.0,
+            62.0,
+            389.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "4(a)",
+      "parent": "4",
+      "text": "Find the value of k. Give your answer correct to 5 decimal places.",
+      "marks": 1,
+      "qp": [
+        {
+          "page": 5,
+          "bbox": [
+            92,
+            123,
+            544,
+            136
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 8,
+          "bbox": [
+            253.0,
+            62.0,
+            289.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题4的函数与点表条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "4(b)",
+      "parent": "4",
+      "text": "Find the gradient of the chord AE. Give your answer correct to 4 decimal places.",
+      "marks": 1,
+      "qp": [
+        {
+          "page": 5,
+          "bbox": [
+            92,
+            331,
+            544,
+            344
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 8,
+          "bbox": [
+            299.0,
+            62.0,
+            334.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题4的函数、点和梯度表条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "4(c)",
+      "parent": "4",
+      "text": "Deduce the value of f′(2) using the values in the table.",
+      "marks": 1,
+      "qp": [
+        {
+          "page": 5,
+          "bbox": [
+            92,
+            548,
+            544,
+            565
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 8,
+          "bbox": [
+            345.0,
+            62.0,
+            389.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题4的函数与梯度表条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "5",
+      "parent": null,
+      "text": "(a) Prove the identity (sin²x − cos x − 1)/(1 + cos x) = −cos x. (b) Hence solve (sin²x − cos x − 1)/(2 + 2 cos x) = 1/4 for 0° ≤ x ≤ 360°.",
+      "marks": null,
+      "qp": [
+        {
+          "page": 6,
+          "bbox": [
+            70,
+            65,
+            544,
+            436
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 9,
+          "bbox": [
+            80.0,
+            62.0,
+            361.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "5(a)",
+      "parent": "5",
+      "text": "Prove the identity (sin²x − cos x − 1)/(1 + cos x) = −cos x.",
+      "marks": 3,
+      "qp": [
+        {
+          "page": 6,
+          "bbox": [
+            71,
+            66,
+            544,
+            86
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 9,
+          "bbox": [
+            80.0,
+            62.0,
+            218.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "5(b)",
+      "parent": "5",
+      "text": "Hence solve (sin²x − cos x − 1)/(2 + 2 cos x) = 1/4 for 0° ≤ x ≤ 360°.",
+      "marks": 3,
+      "qp": [
+        {
+          "page": 6,
+          "bbox": [
+            92,
+            407,
+            544,
+            436
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 9,
+          "bbox": [
+            224.0,
+            62.0,
+            357.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "承接题5(a)的恒等式；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "6",
+      "parent": null,
+      "text": "The function f is defined by f(x) = 2/x² + 4 for x < 0. The diagram shows the graph of y = f(x).",
+      "marks": null,
+      "qp": [
+        {
+          "page": 7,
+          "bbox": [
+            70,
+            58,
+            544,
+            682
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 9,
+          "bbox": [
+            390.0,
+            62.0,
+            506.0,
+            729.0
+          ]
+        },
+        {
+          "page": 10,
+          "bbox": [
+            80.0,
+            62.0,
+            382.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "6(a)",
+      "parent": "6",
+      "text": "On this diagram, sketch the graph of y = f⁻¹(x). Show any relevant mirror line.",
+      "marks": 2,
+      "qp": [
+        {
+          "page": 7,
+          "bbox": [
+            92,
+            300,
+            544,
+            315
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 9,
+          "bbox": [
+            390.0,
+            62.0,
+            506.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题6的函数图像；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "6(b)",
+      "parent": "6",
+      "text": "Find an expression for f⁻¹(x).",
+      "marks": 3,
+      "qp": [
+        {
+          "page": 7,
+          "bbox": [
+            92,
+            323,
+            544,
+            339
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 10,
+          "bbox": [
+            80.0,
+            62.0,
+            245.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题6的函数定义；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "6(c)",
+      "parent": "6",
+      "text": "Solve the equation f(x) = 4.5.",
+      "marks": 1,
+      "qp": [
+        {
+          "page": 7,
+          "bbox": [
+            92,
+            592,
+            544,
+            607
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 10,
+          "bbox": [
+            250.0,
+            62.0,
+            302.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题6的函数定义；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "6(d)",
+      "parent": "6",
+      "text": "Explain why the equation f⁻¹(x) = f(x) has no solution.",
+      "marks": 1,
+      "qp": [
+        {
+          "page": 7,
+          "bbox": [
+            92,
+            664,
+            544,
+            681
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 10,
+          "bbox": [
+            303.0,
+            62.0,
+            382.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题6的函数定义；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "7",
+      "parent": null,
+      "text": "In the diagram, AOD and BC are two parallel straight lines. Arc AB is part of a circle with centre O and radius 15 cm. Angle BOA = θ radians. Arc CD is part of a circle with centre O and radius 10 cm. Angle COD = ½π radians.",
+      "marks": null,
+      "qp": [
+        {
+          "page": 8,
+          "bbox": [
+            70,
+            58,
+            544,
+            500
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 10,
+          "bbox": [
+            418.0,
+            62.0,
+            489.0,
+            729.0
+          ]
+        },
+        {
+          "page": 11,
+          "bbox": [
+            95.0,
+            62.0,
+            327.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "7(a)",
+      "parent": "7",
+      "text": "Show that θ = 0.7297, correct to 4 decimal places.",
+      "marks": 1,
+      "qp": [
+        {
+          "page": 8,
+          "bbox": [
+            92,
+            300,
+            544,
+            315
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 10,
+          "bbox": [
+            418.0,
+            62.0,
+            489.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题7的图形和几何条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "7(b)",
+      "parent": "7",
+      "text": "Find the perimeter and the area of the shape ABCD. Give your answers correct to 3 significant figures.",
+      "marks": 7,
+      "qp": [
+        {
+          "page": 8,
+          "bbox": [
+            92,
+            474,
+            544,
+            499
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 11,
+          "bbox": [
+            95.0,
+            62.0,
+            327.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题7的图形和几何条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "8",
+      "parent": null,
+      "text": "(a) The first three terms of an arithmetic progression are 25, 4p − 1 and 13 − p, where p is a constant. (b) The first three terms of a geometric progression are 25, 4q − 1 and 13 − q, where q is a positive constant.",
+      "marks": null,
+      "qp": [
+        {
+          "page": 10,
+          "bbox": [
+            70,
+            57,
+            540,
+            99
+          ]
+        },
+        {
+          "page": 11,
+          "bbox": [
+            92,
+            57,
+            544,
+            111
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 12,
+          "bbox": [
+            95.0,
+            62.0,
+            362.0,
+            729.0
+          ]
+        },
+        {
+          "page": 13,
+          "bbox": [
+            95.0,
+            62.0,
+            437.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "8(a)",
+      "parent": "8",
+      "text": "Find the value of the tenth term of the arithmetic progression.",
+      "marks": 4,
+      "qp": [
+        {
+          "page": 10,
+          "bbox": [
+            70,
+            58,
+            540,
+            98
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 12,
+          "bbox": [
+            95.0,
+            62.0,
+            362.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题8(a)给出的等差数列条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "8(b)",
+      "parent": "8",
+      "text": "Find the sum to infinity of the geometric progression.",
+      "marks": 4,
+      "qp": [
+        {
+          "page": 11,
+          "bbox": [
+            92,
+            58,
+            544,
+            109
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 13,
+          "bbox": [
+            95.0,
+            62.0,
+            437.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题8(b)给出的正公比条件；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "9",
+      "parent": null,
+      "text": "The diagram shows the shaded region bounded by the curve y = 1/(5x − 4)^(1/3), the lines x = 2.4 and y = 1, and the curve meets y = 1 at (1, 1). Find the exact volume of the solid generated when the shaded region is rotated through 360° about the x-axis.",
+      "marks": 6,
+      "qp": [
+        {
+          "page": 12,
+          "bbox": [
+            70,
+            58,
+            544,
+            356
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 14,
+          "bbox": [
+            95.0,
+            62.0,
+            338.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "10",
+      "parent": null,
+      "text": "The equation of a circle is (x − 3)² + y² = 18. The line with equation y = mx + c passes through (0, −9) and is a tangent to the circle. Find the two possible values of m and, for each value of m, find the coordinates of the point at which the tangent touches the circle.",
+      "marks": 8,
+      "qp": [
+        {
+          "page": 14,
+          "bbox": [
+            70,
+            58,
+            544,
+            125
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 15,
+          "bbox": [
+            95.0,
+            62.0,
+            381.0,
+            729.0
+          ]
+        },
+        {
+          "page": 16,
+          "bbox": [
+            95.0,
+            62.0,
+            427.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "11",
+      "parent": null,
+      "text": "A function is defined by f(x) = 4/x³ − 3/x + 2 for x ≠ 0. The graph of y = f(x) is shown in the diagram.",
+      "marks": null,
+      "qp": [
+        {
+          "page": 16,
+          "bbox": [
+            70,
+            58,
+            544,
+            377
+          ]
+        },
+        {
+          "page": 17,
+          "bbox": [
+            92,
+            58,
+            544,
+            110
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 17,
+          "bbox": [
+            95.0,
+            62.0,
+            410.0,
+            729.0
+          ]
+        },
+        {
+          "page": 18,
+          "bbox": [
+            95.0,
+            62.0,
+            398.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "11(a)",
+      "parent": "11",
+      "text": "Find the set of values of x for which f(x) is decreasing.",
+      "marks": 5,
+      "qp": [
+        {
+          "page": 16,
+          "bbox": [
+            92,
+            361,
+            544,
+            377
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 17,
+          "bbox": [
+            95.0,
+            62.0,
+            410.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题11的函数图像；AI视觉定位，待人工审核。"
+    },
+    {
+      "question": "11(b)",
+      "parent": "11",
+      "text": "A triangle is bounded by the y-axis, the normal to the curve at the point where x = 1 and the tangent to the curve at the point where x = −1. Find the area of the triangle. Give your answer correct to 3 significant figures.",
+      "marks": 8,
+      "qp": [
+        {
+          "page": 17,
+          "bbox": [
+            92,
+            58,
+            544,
+            110
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "page": 18,
+          "bbox": [
+            95.0,
+            62.0,
+            398.0,
+            729.0
+          ]
+        }
+      ],
+      "uncertain": false,
+      "notes": "继承题11的函数定义；AI视觉定位，待人工审核。"
+    }
+  ]
+}

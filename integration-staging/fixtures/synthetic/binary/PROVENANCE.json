@@ -1,0 +1,133 @@
+{
+  "schema": "fixture-provenance/1",
+  "scope": "A11 synthetic binary samples for the staged content/crop transport",
+  "note": "Hand-built deterministic binary samples (PDF/PNG). No upstream bytes, no real examination content, no real document hashes.",
+  "created_by": "Phase A executor (packet A11)",
+  "created_at_local": "2026-10-05T23:30:00+08:00",
+  "entries": [
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/cie-diagram.png",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "0f65db46db49639505d17df5f9bad982dbcd4263ca6d96a8255b79b2f0036ca0",
+      "bytes": 1448,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/cie-ms.pdf",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "37b26bec054e2f4ef071f00d19ed0a2dd982c0f665f4ab74c597c9d784c08630",
+      "bytes": 712,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/cie-qp.pdf",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "6596e686e26208b79bef32ecb04561d8813da7b15419ceeb32728dd0c0420790",
+      "bytes": 817,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/crop-cie-1-page2.png",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "b52c1698d4245b33201e250d1a47ce456961f665086fdf4c0a196c76a93bbf87",
+      "bytes": 3762,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/crop-cie-2-page3.png",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "0a0c6cad9c5ab5a3572cd5fcc8c46f2799d42c9110c5c3805632efaaab4ff711",
+      "bytes": 3754,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/crop-cie-3-page4.png",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "eea2cac490b42d5cc34a2ff51a068b3adf08ea388064dbf6fb55205ac271a3cb",
+      "bytes": 3762,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/edexcel-ms.pdf",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "21e9e5f2d202fbb9bd077ee0c191e097f6abedec0f61004b36c2aef9d44a84e0",
+      "bytes": 717,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/edexcel-qp.pdf",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "8b40c343cf294d0e40e53bd1d086837d0f268eb8a95f4ece05ebc24ebed8130e",
+      "bytes": 740,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/ielts-diagram.png",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "581ce430b2d8e28cd8be0dfe942c6e73a23072c12b2ec71368b8282ca7b6940f",
+      "bytes": 1831,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/material-synthetic-cie-ins.pdf",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "f5980cef27dfdb25e35a194b748da3ae274622de6dea1c97e72c410545760fef",
+      "bytes": 655,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/syllabus-synthetic-cie-0580.pdf",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da",
+      "bytes": 667,
+      "note": "deterministic synthetic binary sample"
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/binary/manifest.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "created_by": "Phase A executor (packet A11)",
+      "created_at_local": "2026-10-05T23:30:00+08:00",
+      "sha256": "c9b6eace1a868d15c022dec1082f87ad0ecfeb15659bd624dd46f8ea6053576f",
+      "bytes": 5142,
+      "note": "content manifest for the synthetic binary samples"
+    }
+  ],
+  "summary": {
+    "entries": 12,
+    "synthetic": 12
+  }
+}

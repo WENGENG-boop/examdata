@@ -1,0 +1,16 @@
+# B01 Node component discovery validation
+cwd: C:/Users/weo/Desktop/api
+command: PYTHONDONTWRITEBYTECODE=1 PYTHONIOENCODING=utf-8 ./examdata/.venv/Scripts/python.exe integration-staging/runtime/phase-b/b00b01-20261006T132400/b01_validate_node_discovery.py
+--- stdout+stderr ---
+{
+  "verdict": "pass",
+  "checks": {
+    "private_layout_block_is_f03": true,
+    "exactly_one_synthetic_component": true,
+    "synthetic_labelled": true,
+    "entry_point_inside_root": true,
+    "escaping_component_refused": true
+  },
+  "evidence": "docs/integration/execution/evidence/B01/b00b01-20261006T132400/B01_NODE_DISCOVERY.json"
+}
+exit_code: 0

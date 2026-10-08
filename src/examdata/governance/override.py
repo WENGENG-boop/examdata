@@ -177,11 +177,13 @@ def revert_override(
         raise OverrideError(f"没有找到 {target_type}:{target_id} 的 {field_path} 修正记录")
     ov.active = False
     ov.attrs = {**(ov.attrs or {}), "reverted_by": author}
-    if ov.source_value is not None:
-        model = _model(target_type)
-        obj = session.get(model, target_id)
-        if obj is not None:
-            setattr(obj, field_path, ov.source_value)
+    # source_value 一定是 set_override 当时记录的自动值，可能合法地为 NULL
+    # （字段本来就没有值）：不能用 `is not None` 判断，否则 NULL 基线不还原，
+    # 字段会一直留着已被撤销的人工值。
+    model = _model(target_type)
+    obj = session.get(model, target_id)
+    if obj is not None:
+        setattr(obj, field_path, ov.source_value)
     session.flush()
     return {"id": ov.id, "active": False, "restored": ov.source_value}
 

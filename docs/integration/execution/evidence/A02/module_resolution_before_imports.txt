@@ -1,0 +1,38 @@
+{
+  "generated_at_local": "2026-10-05T18:57:36+08:00",
+  "generated_at_utc": "2026-10-05T10:57:36+00:00",
+  "cwd": "C:\\Users\\weo\\Desktop\\api",
+  "python_executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+  "python_version": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "staging_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging",
+  "workspace_root": "C:\\Users\\weo\\Desktop\\api",
+  "staging_src_on_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\src",
+  "site_packages": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Lib\\site-packages",
+  "editable_install_artifacts": [
+    "__editable__.examdata-0.1.0.pth"
+  ],
+  "editable_install_pth_text": {
+    "__editable__.examdata-0.1.0.pth": "C:\\Users\\weo\\Desktop\\api\\examdata\\src"
+  },
+  "find_spec": {
+    "examdata": {
+      "name": "examdata",
+      "origin": "C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata\\__init__.py",
+      "search_locations": [
+        "C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata"
+      ]
+    },
+    "examdata_integration": {
+      "name": "examdata_integration",
+      "origin": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\src\\examdata_integration\\__init__.py",
+      "search_locations": [
+        "C:\\Users\\weo\\Desktop\\api\\integration-staging\\src\\examdata_integration"
+      ]
+    }
+  },
+  "verdicts": {
+    "examdata_resolves_into_original_tree": true,
+    "examdata_integration_resolves_under_staging": true,
+    "conclusion": "HAZARD CONFIRMED: the shared venv's editable install resolves 'examdata' to the original examdata/src tree; the staged harness blocks that import and audits every loaded application module."
+  }
+}

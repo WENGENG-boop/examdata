@@ -1,0 +1,8 @@
+提案已是最新，复用 C:\Users\weo\Desktop\api\cie-location-batch\work\proposals\0478\2026-Jun-11.json
+已存在索引 C:\Users\weo\Desktop\api\cie-location-batch\indexes\0478\2026-Jun-11\cie-index.json，初稿改写 C:\Users\weo\Desktop\api\cie-location-batch\work\drafts\0478\2026-Jun-11.json
+已有索引保留不动：C:\Users\weo\Desktop\api\cie-location-batch\indexes\0478\2026-Jun-11\cie-index.json
+qp 整页总览：16 页 / 4 张表
+ms 整页总览：18 页 / 5 张表
+qp 区域密集表：17 个区域 / 17 张表
+ms 区域密集表：24 个区域 / 7 张表
+完成 0478/2026/Jun/11：题数 2  MS 行带 30  表 33 张  警告 1 条

@@ -1,0 +1,662 @@
+{
+ "source": "ddy-ddy/TOEFL-TPO (GitHub)",
+ "raw_base": "https://raw.githubusercontent.com/ddy-ddy/TOEFL-TPO/master/",
+ "path": "data/json/tpo-30-35.json … tpo-51-54.json",
+ "checked_at": "2026-10-04",
+ "content_type": "structured reading passages (title + paragraphs + source link)",
+ "counts": {
+  "total": 72,
+  "tpo_min": 30,
+  "tpo_max": 54
+ },
+ "items": [
+  {
+   "id": "tpo-30-1",
+   "title": "The Pace of Evolutionary Change",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/81fwbj.html",
+   "kmf_hash": "81fwbj",
+   "paragraphs": 8,
+   "chars": 4448
+  },
+  {
+   "id": "tpo-30-2",
+   "title": "The Invention of the Mechanical Clock",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/81fwtj.html",
+   "kmf_hash": "81fwtj",
+   "paragraphs": 6,
+   "chars": 4043
+  },
+  {
+   "id": "tpo-30-3",
+   "title": "Role of Play in Development",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/31gijj.html",
+   "kmf_hash": "31gijj",
+   "paragraphs": 7,
+   "chars": 4334
+  },
+  {
+   "id": "tpo-32-1",
+   "title": "Distributions of Tropical Bee Colonies",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/b1epoj.html/1",
+   "kmf_hash": "b1epoj",
+   "paragraphs": 7,
+   "chars": 4298
+  },
+  {
+   "id": "tpo-32-2",
+   "title": "Siam, 1851-1910",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/21eppj.html/1",
+   "kmf_hash": "21eppj",
+   "paragraphs": 5,
+   "chars": 4312
+  },
+  {
+   "id": "tpo-32-3",
+   "title": "Plant Colonization",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/b1epqj.html/1",
+   "kmf_hash": "b1epqj",
+   "paragraphs": 5,
+   "chars": 4092
+  },
+  {
+   "id": "tpo-33-1",
+   "title": "Railroads and Commercial Agriculture in the Nineteen...",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/e1eprj.html/1",
+   "kmf_hash": "e1eprj",
+   "paragraphs": 8,
+   "chars": 4268
+  },
+  {
+   "id": "tpo-33-2",
+   "title": "Extinction Episodes of the Past",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/91epsj.html/1",
+   "kmf_hash": "91epsj",
+   "paragraphs": 4,
+   "chars": 4383
+  },
+  {
+   "id": "tpo-33-3",
+   "title": "The First Civilizations",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/91eptj.html/1",
+   "kmf_hash": "91eptj",
+   "paragraphs": 4,
+   "chars": 4111
+  },
+  {
+   "id": "tpo-34-1",
+   "title": "Protection of Plants by Insects",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/31epuj.html/1",
+   "kmf_hash": "31epuj",
+   "paragraphs": 5,
+   "chars": 4157
+  },
+  {
+   "id": "tpo-34-2",
+   "title": "Islamic Art and the Book",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/51epvj.html/1",
+   "kmf_hash": "51epvj",
+   "paragraphs": 4,
+   "chars": 4424
+  },
+  {
+   "id": "tpo-34-3",
+   "title": "The Development of Steam Power",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/51epwj.html/1",
+   "kmf_hash": "51epwj",
+   "paragraphs": 6,
+   "chars": 4108
+  },
+  {
+   "id": "tpo-35-1",
+   "title": "Seasonal Succession in Phytoplankton",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/11edij.html/1",
+   "kmf_hash": "11edij",
+   "paragraphs": 9,
+   "chars": 4524
+  },
+  {
+   "id": "tpo-35-2",
+   "title": "The Development of Social Complexity",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/c1edwj.html/1",
+   "kmf_hash": "c1edwj",
+   "paragraphs": 6,
+   "chars": 4221
+  },
+  {
+   "id": "tpo-35-3",
+   "title": "Earth's Age",
+   "file": "tpo-30-35.json",
+   "link": "https://toefl.kmf.com/detail/read/91ee9j.html/1",
+   "kmf_hash": "91ee9j",
+   "paragraphs": 6,
+   "chars": 4296
+  },
+  {
+   "id": "tpo-36-1",
+   "title": "Soil Formation",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/e1eeqj.html/1",
+   "kmf_hash": "e1eeqj",
+   "paragraphs": 5,
+   "chars": 4267
+  },
+  {
+   "id": "tpo-36-2",
+   "title": "Early Ideas about Deep-sea Biology",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/61ef4j.html/1",
+   "kmf_hash": "61ef4j",
+   "paragraphs": 5,
+   "chars": 4025
+  },
+  {
+   "id": "tpo-36-3",
+   "title": "Industrial Melanism: The Case of the Peppered Moth",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/01efij.html/1",
+   "kmf_hash": "01efij",
+   "paragraphs": 5,
+   "chars": 4542
+  },
+  {
+   "id": "tpo-37-1",
+   "title": "Thales and the Milesians",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/51eg0j.html/1",
+   "kmf_hash": "51eg0j",
+   "paragraphs": 5,
+   "chars": 4339
+  },
+  {
+   "id": "tpo-37-2",
+   "title": "Direct Species Translocation",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/81egej.html/1",
+   "kmf_hash": "81egej",
+   "paragraphs": 6,
+   "chars": 4511
+  },
+  {
+   "id": "tpo-37-3",
+   "title": "Modern Architecture in the United States",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/d1egsj.html/1",
+   "kmf_hash": "d1egsj",
+   "paragraphs": 4,
+   "chars": 4459
+  },
+  {
+   "id": "tpo-38-1",
+   "title": "The Racoon's Success",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/51ehlj.html/1",
+   "kmf_hash": "51ehlj",
+   "paragraphs": 7,
+   "chars": 4217
+  },
+  {
+   "id": "tpo-38-2",
+   "title": "The Racoon's Success",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/51ehlj.html/1",
+   "kmf_hash": "51ehlj",
+   "paragraphs": 5,
+   "chars": 4177
+  },
+  {
+   "id": "tpo-38-3",
+   "title": "Transgenic Plants",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/41ehzj.html/1",
+   "kmf_hash": "41ehzj",
+   "paragraphs": 6,
+   "chars": 4443
+  },
+  {
+   "id": "tpo-39-1",
+   "title": "Early Writing Systems",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/91eifj.html/1",
+   "kmf_hash": "91eifj",
+   "paragraphs": 6,
+   "chars": 4054
+  },
+  {
+   "id": "tpo-39-2",
+   "title": "The Extinction of Moa",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/61eiqj.html/1",
+   "kmf_hash": "61eiqj",
+   "paragraphs": 7,
+   "chars": 4437
+  },
+  {
+   "id": "tpo-39-3",
+   "title": "Forest Fire Suppression",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/81ej4j.html/1",
+   "kmf_hash": "81ej4j",
+   "paragraphs": 5,
+   "chars": 4368
+  },
+  {
+   "id": "tpo-40-1",
+   "title": "Latitude and Biodiversity",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/a1eq1j.html/1",
+   "kmf_hash": "a1eq1j",
+   "paragraphs": 3,
+   "chars": 3608
+  },
+  {
+   "id": "tpo-40-2",
+   "title": "Amphibian Thermoregulation",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/91eq2j.html/1",
+   "kmf_hash": "91eq2j",
+   "paragraphs": 6,
+   "chars": 4715
+  },
+  {
+   "id": "tpo-40-3",
+   "title": "Ancient Athens",
+   "file": "tpo-36-40.json",
+   "link": "https://toefl.kmf.com/detail/read/41eq0j.html/1",
+   "kmf_hash": "41eq0j",
+   "paragraphs": 6,
+   "chars": 4485
+  },
+  {
+   "id": "tpo-41-1",
+   "title": "Navajo Art",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/b1eq3j.html/1",
+   "kmf_hash": "b1eq3j",
+   "paragraphs": 4,
+   "chars": 4028
+  },
+  {
+   "id": "tpo-41-2",
+   "title": "Climate of Venus",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/01eq5j.html/1",
+   "kmf_hash": "01eq5j",
+   "paragraphs": 6,
+   "chars": 4229
+  },
+  {
+   "id": "tpo-41-3",
+   "title": "Trade and Early State Formation",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/61eq4j.html/1",
+   "kmf_hash": "61eq4j",
+   "paragraphs": 6,
+   "chars": 4620
+  },
+  {
+   "id": "tpo-42-1",
+   "title": "Explaining Dinosaur Extinction",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/21eq8j.html/1",
+   "kmf_hash": "21eq8j",
+   "paragraphs": 3,
+   "chars": 4213
+  },
+  {
+   "id": "tpo-42-2",
+   "title": "Callisto and Ganymede",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/e1eq6j.html/1",
+   "kmf_hash": "e1eq6j",
+   "paragraphs": 6,
+   "chars": 4106
+  },
+  {
+   "id": "tpo-42-3",
+   "title": "Geographic Isolation of Species",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/e1eq7j.html/1",
+   "kmf_hash": "e1eq7j",
+   "paragraphs": 6,
+   "chars": 4460
+  },
+  {
+   "id": "tpo-43-1",
+   "title": "The Empire of Alexander the Great",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/b1eqbj.html/1",
+   "kmf_hash": "b1eqbj",
+   "paragraphs": 6,
+   "chars": 4325
+  },
+  {
+   "id": "tpo-43-2",
+   "title": "The Origin of Petroleum",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/11eqaj.html/1",
+   "kmf_hash": "11eqaj",
+   "paragraphs": 5,
+   "chars": 4079
+  },
+  {
+   "id": "tpo-43-3",
+   "title": "El Nino",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/61eq9j.html/1",
+   "kmf_hash": "61eq9j",
+   "paragraphs": 6,
+   "chars": 4326
+  },
+  {
+   "id": "tpo-44-1",
+   "title": "From Fish to Terrestrial Vertebrates",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/61eqcj.html/1",
+   "kmf_hash": "61eqcj",
+   "paragraphs": 5,
+   "chars": 4285
+  },
+  {
+   "id": "tpo-44-2",
+   "title": "The Use of the Camera Obscura",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/11eqdj.html/1",
+   "kmf_hash": "11eqdj",
+   "paragraphs": 4,
+   "chars": 3945
+  },
+  {
+   "id": "tpo-44-3",
+   "title": "Seagrasses",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/a1eqej.html/1",
+   "kmf_hash": "a1eqej",
+   "paragraphs": 4,
+   "chars": 4290
+  },
+  {
+   "id": "tpo-45-1",
+   "title": "The Beringia Landscape",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/91eqij.html/1",
+   "kmf_hash": "91eqij",
+   "paragraphs": 6,
+   "chars": 4134
+  },
+  {
+   "id": "tpo-45-2",
+   "title": "Wind Pollination",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/d1eqjj.html/1",
+   "kmf_hash": "d1eqjj",
+   "paragraphs": 5,
+   "chars": 4061
+  },
+  {
+   "id": "tpo-45-3",
+   "title": "Feeding Strategies in the Ocean",
+   "file": "tpo-41-45.json",
+   "link": "https://toefl.kmf.com/detail/read/31eqkj.html/1",
+   "kmf_hash": "31eqkj",
+   "paragraphs": 5,
+   "chars": 4426
+  },
+  {
+   "id": "tpo-46-1",
+   "title": "The Origin of Writing",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/51eqmj.html/1",
+   "kmf_hash": "51eqmj",
+   "paragraphs": 6,
+   "chars": 4375
+  },
+  {
+   "id": "tpo-46-2",
+   "title": "The Commercial Revolution in Medieval Europe",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/81eqpj.html/1",
+   "kmf_hash": "81eqpj",
+   "paragraphs": 5,
+   "chars": 4382
+  },
+  {
+   "id": "tpo-46-3",
+   "title": "Ecosystem Diversity and Stability",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/a1eqtj.html/1",
+   "kmf_hash": "a1eqtj",
+   "paragraphs": 5,
+   "chars": 4156
+  },
+  {
+   "id": "tpo-47-1",
+   "title": "Roman Cultural Influence on Britain",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/c1c9fj.html",
+   "kmf_hash": "c1c9fj",
+   "paragraphs": 4,
+   "chars": 4489
+  },
+  {
+   "id": "tpo-47-2",
+   "title": "Termite Ingenuity",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/41cdqj.html",
+   "kmf_hash": "41cdqj",
+   "paragraphs": 5,
+   "chars": 4035
+  },
+  {
+   "id": "tpo-47-3",
+   "title": "Coral Reefs",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/11ce7j.html",
+   "kmf_hash": "11ce7j",
+   "paragraphs": 4,
+   "chars": 3769
+  },
+  {
+   "id": "tpo-48-1",
+   "title": "Chinese Population Growth",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/01cemj.html",
+   "kmf_hash": "01cemj",
+   "paragraphs": 6,
+   "chars": 4013
+  },
+  {
+   "id": "tpo-48-2",
+   "title": "Determining Dinosaur Diet",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/61cf1j.html",
+   "kmf_hash": "61cf1j",
+   "paragraphs": 7,
+   "chars": 4478
+  },
+  {
+   "id": "tpo-48-3",
+   "title": "Climate and Urban Development",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/f1cfgj.html",
+   "kmf_hash": "f1cfgj",
+   "paragraphs": 6,
+   "chars": 3874
+  },
+  {
+   "id": "tpo-49-1",
+   "title": "Ancient Coastlines",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/81cgyj.html",
+   "kmf_hash": "81cgyj",
+   "paragraphs": 4,
+   "chars": 4091
+  },
+  {
+   "id": "tpo-49-2",
+   "title": "Movable Type",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/11chdj.html",
+   "kmf_hash": "11chdj",
+   "paragraphs": 5,
+   "chars": 4488
+  },
+  {
+   "id": "tpo-49-3",
+   "title": "Background for the Industrial Revolution",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/b1chsj.html",
+   "kmf_hash": "b1chsj",
+   "paragraphs": 6,
+   "chars": 4422
+  },
+  {
+   "id": "tpo-50-1",
+   "title": "American Railroads",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/f1guvj.html",
+   "kmf_hash": "f1guvj",
+   "paragraphs": 5,
+   "chars": 4415
+  },
+  {
+   "id": "tpo-50-2",
+   "title": "The Achievement of Brazilian Independence",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/61gvaj.html",
+   "kmf_hash": "61gvaj",
+   "paragraphs": 5,
+   "chars": 4443
+  },
+  {
+   "id": "tpo-50-3",
+   "title": "Star Death",
+   "file": "tpo-46-50.json",
+   "link": "https://toefl.kmf.com/detail/read/21gvpj.html",
+   "kmf_hash": "21gvpj",
+   "paragraphs": 5,
+   "chars": 3905
+  },
+  {
+   "id": "tpo-51-1",
+   "title": "Memphis: United Egypt’s First Capital",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/e1m36j.html/1",
+   "kmf_hash": "e1m36j",
+   "paragraphs": 4,
+   "chars": 4179
+  },
+  {
+   "id": "tpo-51-2",
+   "title": "Population Growth in Nineteenth-Century Europe",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/f1m3oj.html/1",
+   "kmf_hash": "f1m3oj",
+   "paragraphs": 6,
+   "chars": 4588
+  },
+  {
+   "id": "tpo-51-3",
+   "title": "Surface Fluids on Venus and Earth",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/f1m5ij.html/1",
+   "kmf_hash": "f1m5ij",
+   "paragraphs": 3,
+   "chars": 4432
+  },
+  {
+   "id": "tpo-52-1",
+   "title": "Stream Deposits",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/11m4gj.html/1",
+   "kmf_hash": "11m4gj",
+   "paragraphs": 4,
+   "chars": 4230
+  },
+  {
+   "id": "tpo-52-2",
+   "title": "Natufian Culture",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/b1m4hj.html/1",
+   "kmf_hash": "b1m4hj",
+   "paragraphs": 4,
+   "chars": 3988
+  },
+  {
+   "id": "tpo-52-3",
+   "title": "Early Food Production in Sub-Saharan Africa",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/41m4ij.html/1",
+   "kmf_hash": "41m4ij",
+   "paragraphs": 4,
+   "chars": 3680
+  },
+  {
+   "id": "tpo-53-1",
+   "title": "Evidence of the Earliest Writing",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/a1m4jj.html",
+   "kmf_hash": "a1m4jj",
+   "paragraphs": 6,
+   "chars": 4753
+  },
+  {
+   "id": "tpo-53-2",
+   "title": "Rain Forest Soils",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/a1m4kj.html",
+   "kmf_hash": "a1m4kj",
+   "paragraphs": 4,
+   "chars": 4443
+  },
+  {
+   "id": "tpo-53-3",
+   "title": "Paleolithic Cave Painting",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/b1m4lj.html",
+   "kmf_hash": "b1m4lj",
+   "paragraphs": 5,
+   "chars": 4372
+  },
+  {
+   "id": "tpo-54-1",
+   "title": "Elements of Life",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/11m4mj.html",
+   "kmf_hash": "11m4mj",
+   "paragraphs": 6,
+   "chars": 4389
+  },
+  {
+   "id": "tpo-54-2",
+   "title": "The Commercialization of Lumber",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/71m4nj.html",
+   "kmf_hash": "71m4nj",
+   "paragraphs": 6,
+   "chars": 4373
+  },
+  {
+   "id": "tpo-54-3",
+   "title": "Overkill of the North American Megafauna",
+   "file": "tpo-51-54.json",
+   "link": "https://toefl.kmf.com/detail/read/b1m4oj.html",
+   "kmf_hash": "b1m4oj",
+   "paragraphs": 7,
+   "chars": 4589
+  }
+ ]
+}

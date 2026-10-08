@@ -1,0 +1,117 @@
+{
+  "proposal_version": "b05-rollback-proposal/1",
+  "packet": "B05",
+  "generated_by": "integration-staging/runtime/b05-rehearsal-2026-10-07/b05_build_proposals.py",
+  "generated_at": "2026-10-07T02:44:33+08:00",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "merge_proposal_entries": 4,
+    "candidate_manifest": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/B05_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "c4341576bf1a6b5d56a01098f46a77eb4081db30225c7f5cc4176be2abe9e008",
+    "candidate_tree": {
+      "files": 190,
+      "excludes": [
+        "B05_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955"
+    }
+  },
+  "semantics": {
+    "staging_level": {
+      "staging_candidate_tree": "delete the candidate tree only if its current tree digest still equals sha256_at_proposal, recomputed with the rule recorded in derived_from.candidate_tree_digest_rule (the candidate's own manifest is excluded, since a file cannot hash itself)",
+      "staged_file_changes": "the one added module and the two rewritten modules live only inside the candidate tree: the container tree delete removes them; per entry, a rewrite is reversed by restoring the parent's staged bytes (sha256_to_restore)"
+    },
+    "original_level": {
+      "merged_add_file": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal",
+      "merged_staged_file_rewrite": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal; the superseded A14/R0104 staged versions are never restored because the target never existed in the original project"
+    },
+    "never": [
+      "never touch docs/integration/execution/evidence/**",
+      "never touch integration-staging/runtime/phase-b/** sealed transcripts",
+      "never touch the frozen R04 candidate under r0104-repair-20261006/candidates/**",
+      "never touch the frozen B02 candidate under b02-rehearsal-20261006/candidates/**",
+      "never touch the frozen B03 candidate under b03-rehearsal-2026-10-07/candidates/**",
+      "never touch the frozen B04 candidate under b04-rehearsal-2026-10-07/candidates/**",
+      "never restore the live execution ledger from a private copy"
+    ]
+  },
+  "guards": [
+    "verify the resolved absolute path and its sha256 (or tree digest) before any delete",
+    "no delete ever targets a protected original in Phase B private rehearsal",
+    "planned original writes are reversible only after the human release",
+    "the two rewritten targets never existed in the original project; their original-level reversal is a delete, never a restore of the superseded staged versions",
+    "all seven gates remain closed during rollback"
+  ],
+  "counts": {
+    "entries": 4,
+    "staging_level": {
+      "reversible_by_tree_delete": 1,
+      "entries_removed_with_the_tree": 3
+    },
+    "original_level": {
+      "reversible_by_target_delete": 3,
+      "reversible_by_restore_base": 0,
+      "no_original_action": 1
+    }
+  },
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1",
+      "proposed_target": null,
+      "kind": "staging_candidate_tree",
+      "sha256_at_proposal": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955",
+      "sha256_to_restore": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc",
+      "staging_level_reversal": "delete the candidate tree, and only if its current tree digest still equals sha256_at_proposal",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/src/examdata/integration/adapters/active_owner.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/active_owner.py",
+      "kind": "new_file",
+      "sha256_at_proposal": "0d8116f0f9622845bdbaae25f48b537fadb3a888d83741d46f2e743dee2d5399",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the staged file; the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/src/examdata/integration/api/dataset.py",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "a9a72a7a56f87fd7a854793ca8e191fce6b801a79be40e3971d2ed6c73358a4e",
+      "sha256_to_restore": "c341ce3018f1b2c0944d458e40365dade153914b0cf80835a6bfce2893f6eeb3",
+      "staging_level_reversal": "restore the parent's staged bytes (sha256_to_restore) inside the candidate; the candidate itself stays private",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal; the superseded A14/R0104 staged versions are never restored because the target never existed in the original project",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/src/examdata/integration/api/app.py",
+      "proposed_target": "examdata/src/examdata/integration/api/app.py",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "aa3ba9c5e7da3277dbbadbe4ba40cc7b07b961b0c2ba43da801451c7410736f0",
+      "sha256_to_restore": "afa2602e7cbf829688d4ba50d720a237c6d5991869b2fb963c1f2be5e547c04b",
+      "staging_level_reversal": "restore the parent's staged bytes (sha256_to_restore) inside the candidate; the candidate itself stays private",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal; the superseded A14/R0104 staged versions are never restored because the target never existed in the original project",
+      "status": "proposal_only_not_merged"
+    }
+  ]
+}

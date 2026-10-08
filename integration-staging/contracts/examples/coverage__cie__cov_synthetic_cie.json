@@ -1,0 +1,20 @@
+{
+  "schema": "coverage/1",
+  "public_id": "cov_synthetic_cie",
+  "scope": "container:container_6cnnjvwpypjw2orom36k3xjazamje2x3",
+  "denominator": "4",
+  "denominator_known": true,
+  "observed": 4,
+  "excluded": 0,
+  "unknown": 0,
+  "missing": 1,
+  "partial": 0,
+  "verified": 3,
+  "exclusions": [],
+  "computed_at": null,
+  "evidence": [
+    "synthetic_fixture"
+  ],
+  "derived_status": "partial",
+  "percentage": 75.0
+}

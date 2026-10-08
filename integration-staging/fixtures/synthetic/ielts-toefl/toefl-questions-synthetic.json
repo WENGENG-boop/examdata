@@ -1,0 +1,108 @@
+{
+  "fixture_kind": "synthetic",
+  "schema_version": "1",
+  "board": "toefl",
+  "_provenance": {
+    "note": "Hand-authored synthetic TOEFL question-set fixture for the A08 read adapter. Invented ids, prompts and answers only; no upstream TOEFL content and no real KMF detail token. Shaped so the adapter can be checked for keeping Official/TPO/jj identities distinct, a restricted jj entry metadata-only, table-choice rows/columns, multiple-selection information, unknown exam dates, missing options/tables and strict KMF URL validation.",
+    "created_by": "Phase A executor (packet A08)",
+    "created_at_local": "2026-10-06T00:20:00+08:00",
+    "provider": "toefl",
+    "purpose": "Exercise TOEFL question-set shapes and identity classes without requesting any upstream URL."
+  },
+  "dataset_revision": "rev-synthetic-a08-toefl-questions",
+  "sets": [
+    {
+      "native_id": "synthetic-tpo-set-1",
+      "source_kind": "tpo",
+      "kmf_url": "https://toefl.kmf.com/detail/read/syn001.html",
+      "exam_date": null,
+      "exam_date_unknown_reason": "The synthetic source records no exam date; the date stays null, never invented.",
+      "questions": [
+        {
+          "native_id": "T1",
+          "kind": "table_choice",
+          "prompt": "Synthetic table question T1.",
+          "table": {
+            "columns": ["Synthetic column A", "Synthetic column B", "Synthetic column C"],
+            "rows": [
+              ["synthetic cell 1", "synthetic cell 2", "synthetic cell 3"],
+              ["synthetic cell 4", "synthetic cell 5", "synthetic cell 6"]
+            ],
+            "answer_cell": { "row": 2, "column": 3 }
+          },
+          "answer": "row-2-col-3",
+          "required_images": []
+        },
+        {
+          "native_id": "T2",
+          "kind": "multiple_choice",
+          "prompt": "Synthetic multiple-selection question T2.",
+          "options": ["A", "B", "C", "D", "E"],
+          "answer": "A",
+          "selected": ["A", "C"],
+          "selection_count": 2,
+          "required_images": []
+        },
+        {
+          "native_id": "T3",
+          "kind": "multiple_choice",
+          "prompt": "Synthetic choice question T3 that declares no options.",
+          "options": [],
+          "answer": null,
+          "required_images": []
+        },
+        {
+          "native_id": "T4",
+          "kind": "table_choice",
+          "prompt": "Synthetic table question T4 that declares no table structure.",
+          "table": { "columns": [], "rows": [] },
+          "answer": null,
+          "required_images": []
+        },
+        {
+          "native_id": "T5",
+          "kind": "fill_blank",
+          "prompt": "Synthetic question T5 with a required image that has no hash.",
+          "answer": "synthetic-answer-t5",
+          "required_images": [ { "role": "diagram", "sha256": null } ]
+        }
+      ]
+    },
+    {
+      "native_id": "synthetic-jj-set-1",
+      "source_kind": "jj",
+      "restricted": true,
+      "restricted_reason": "Restricted jj entries are metadata-only; content must never be read or requested.",
+      "kmf_url": "https://toefl.kmf.com/detail/read/syn002.html",
+      "exam_date": null,
+      "questions": []
+    },
+    {
+      "native_id": "synthetic-official-1",
+      "source_kind": "official",
+      "kmf_url": "https://toefl.kmf.com/detail/read/syn003.html",
+      "exam_date": "2026-03-14",
+      "questions": [
+        {
+          "native_id": "O1",
+          "kind": "single_choice",
+          "prompt": "Synthetic official question O1.",
+          "options": ["A", "B"],
+          "answer": "B",
+          "required_images": []
+        }
+      ]
+    },
+    {
+      "native_id": "synthetic-badurl-1",
+      "source_kind": "tpo",
+      "kmf_url": "http://mirror.example/detail/read/syn004.html",
+      "exam_date": null,
+      "questions": []
+    }
+  ],
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

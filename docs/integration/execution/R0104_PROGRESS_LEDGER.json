@@ -1,0 +1,157 @@
+{
+  "ledger_version": "r0104-private-progress-ledger/1",
+  "generated_by": "integration-staging/runtime/r0104-repair-20261006/r0104_build_progress_ledger.py",
+  "generated_at": "2026-10-06T23:07:30+08:00",
+  "kind": "private_progress_ledger",
+  "note": "Private progress record for the R01-R04 repair. This is NOT the live execution ledger and does not replace it. The live ledger is byte-unchanged and remains the only authoritative ledger.",
+  "live_execution_ledger": {
+    "path": "docs/integration/execution/execution-ledger.json",
+    "sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "expected_frozen_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "byte_unchanged": true,
+    "gates_open": [],
+    "all_gates_closed": true,
+    "written_by_this_repair": false
+  },
+  "status": "private_repair_complete_pending_human_release",
+  "not_claimed": [
+    "merged_pass",
+    "deployment",
+    "full B00/B01 completion"
+  ],
+  "changed_counts": {
+    "edited_staged_files": 8,
+    "new_staged_files": 1,
+    "collateral_tool_edits": 7,
+    "changed_files_total": 16,
+    "diff_artifacts": 6,
+    "candidates": 2
+  },
+  "test_counts": {
+    "r0104_ledger_guards": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/r0104-repair-20261006/test_r0104_ledger_guards.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "checks_total": 36,
+      "checks_passed": 36,
+      "checks_failed": 0,
+      "new_suite": true,
+      "explanation": "New R01/R02/R03 guard suite written for this repair; all 36 checks are new, so there is no earlier count to compare against."
+    },
+    "isolated_staged_suite": {
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "post_fix": {
+        "failed": 0,
+        "passed": 887
+      },
+      "pre_fix": {
+        "failed": 1,
+        "passed": 886
+      },
+      "collected_both_runs": 887,
+      "explanation": "The collected test count is unchanged at 887 in both runs. Pre-fix the run was 886 passed / 1 failed (exit 1): tests/test_config_resolution.py::test_config_file_outside_staging_refused failed with a PermissionError message mismatch from runtime/paths.py. The fix introduced PathOutsideRootError and the test now asserts it, moving that one test from fail to pass: 886 + 1 = 887 passed, exit 0. The delta is explained entirely by that one test outcome; no test was added or removed."
+    },
+    "preexisting_rejection_suite": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/r0104-repair-20261006/regression/test_b_ledger_rejections.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 1,
+      "checks_total": 18,
+      "checks_passed": 17,
+      "checks_failed": 1,
+      "failing_checks": [
+        "R15b"
+      ],
+      "suite_modified": false,
+      "sealed_reference": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/b_ledger_rejections_run_f04.txt (18/18 passed pre-fix)",
+      "explanation": "Historical control kept byte-identical. 17 of 18 checks pass. R15b fails by design: it expects guarded_action_gates_missing == ['existing_service_cutover_authorized'], the pre-R03 packet-wide model. Under the corrected action-level model B02's primary action config_integration needs only original_paths_released (open), so missing == [] and the guarded action stays open=False. The corrected expectation is a positive control in the new guard suite."
+    },
+    "r04_layout_probes": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/r0104-repair-20261006/r04_validate_layout.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "verdict": "target_layout_valid_private_only",
+      "findings": 0,
+      "probes_total": 4,
+      "probes_exit0": 4,
+      "import_probe": {
+        "modules_walked": [
+          62,
+          62
+        ],
+        "entry_points": [
+          9,
+          9
+        ],
+        "import_errors": [
+          0,
+          0
+        ],
+        "modules_outside_candidate": [
+          0,
+          0
+        ]
+      },
+      "resource_probe": {
+        "entry_points_ok": [
+          9,
+          9
+        ],
+        "schema_files": [
+          28,
+          28
+        ],
+        "schema_loaded_ok": [
+          28,
+          28
+        ],
+        "synthetic_node_components_admitted": [
+          1,
+          1
+        ],
+        "checks": [
+          26,
+          26
+        ],
+        "checks_failed": [
+          0,
+          0
+        ]
+      },
+      "explanation": "Two candidates x two probes = 4 probe runs, all exit 0. Both candidates produce identical counts, so the numbers are reported as one value per candidate; the lists above hold one entry per candidate. No PYTHONPATH and no staging-root override in any probe environment."
+    }
+  },
+  "artifacts": {
+    "change_manifest": "integration-staging/runtime/r0104-repair-20261006/evidence/R0104_CHANGE_MANIFEST.json",
+    "change_manifest_sha256": "6c77d80940c98d44ea3ddf17c81f689ee8af66eeea4ca502ff75628006076d36",
+    "merge_proposal": "docs/integration/execution/R0104_MERGE_PROPOSAL.json",
+    "rollback_proposal": "docs/integration/execution/R0104_ROLLBACK_PROPOSAL.json",
+    "review_report": "docs/integration/execution/R0104_REPAIR_REPORT.md",
+    "layout_validation": "docs/integration/execution/evidence/R0104/r0104-repair-20261006/R04_LAYOUT_VALIDATION.json",
+    "diffs": "integration-staging/runtime/r0104-repair-20261006/evidence/DIFFS/",
+    "transcripts": [
+      "integration-staging/runtime/r0104-repair-20261006/evidence/rerun_r0104_ledger_guards.txt",
+      "integration-staging/runtime/r0104-repair-20261006/evidence/rerun_regression_rejections.txt",
+      "integration-staging/runtime/r0104-repair-20261006/evidence/rerun_staged_suite.txt",
+      "integration-staging/runtime/r0104-repair-20261006/evidence/rerun_r04_build.txt",
+      "integration-staging/runtime/r0104-repair-20261006/evidence/rerun_r04_validate.txt",
+      "integration-staging/runtime/r0104-repair-20261006/evidence/staged_suite_run_pre_fix.txt"
+    ]
+  },
+  "frozen_evidence_written": false,
+  "process_observations": [
+    "PO-1"
+  ],
+  "not_run": [
+    "real Node component execution (ielts-api / toefl-api) against the original tree",
+    "any original-project source validation",
+    "original merge, deployment, service cutover, upstream request, real data write",
+    "original cleanup"
+  ],
+  "remaining_blockers": [
+    "original-project reconciliation awaits an explicit human release opening original_paths_released with an explicit scope",
+    "real Node/source validation against the original tree stays not_run (not authorized)",
+    "the pre-existing rejection suite keeps its stale R15b expectation until a human decides"
+  ]
+}

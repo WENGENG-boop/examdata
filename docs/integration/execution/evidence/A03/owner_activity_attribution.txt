@@ -1,0 +1,142 @@
+# A03 attribution of writes outside the allowlist
+generated_at_local: 2026-10-05T19:31:14+08:00
+generator: integration-staging/tools/a03_attribution.py
+inputs: evidence/A03/leak_check_after_capture.txt, evidence/A03/pytest_run_stdout.txt,
+        integration-staging/runtime/pytest-temp/ (directory listing)
+
+## Executor basetemp (the staged suite's own pytest temp root)
+  path: integration-staging/runtime/pytest-temp
+  inside the allowlist: True
+  node directories (6):
+    test_absolute_import_into_orig0
+    test_fixture_test_runs_and_wri0
+    test_path_guard_rejects_link_e0
+    test_pytest_temp_is_private0
+    test_relative_import_escaping_0
+    test_relative_import_inside_st0
+  files written there (5):
+    integration-staging/runtime/pytest-temp/test_absolute_import_into_orig0/abs.mjs
+    integration-staging/runtime/pytest-temp/test_fixture_test_runs_and_wri0/probe.txt
+    integration-staging/runtime/pytest-temp/test_relative_import_escaping_0/escape.mjs
+    integration-staging/runtime/pytest-temp/test_relative_import_inside_st0/main.mjs
+    integration-staging/runtime/pytest-temp/test_relative_import_inside_st0/ok.mjs
+
+## Executor test files collected by the staged run (from the pytest transcript)
+  tests\test_fixture_provenance.py
+  tests\test_harness_isolation.py
+  tests\test_node_import_guard.py
+
+## Owner basetemp directories (examdata's own pytest run, outside the allowlist) (2)
+  examdata/pytest-of-weo/pytest-22  (5 files)
+  examdata/pytest-of-weo/pytest-23  (32 files)
+
+## Owner test node names visible in those basetemps (18)
+  test_iter_seasons_filters_and_0
+  test_asset_path_escape_is_deni0
+  test_asset_path_escape_is_deni1
+  test_asset_path_escape_is_deni2
+  test_asset_path_escape_is_deni3
+  test_asset_path_escape_is_deni4
+  test_asset_path_escape_is_deni5
+  test_asset_path_escape_is_deni6
+  test_asset_resolved_symlink_ca0
+  test_changed_source_refuses_ol0
+  test_cie_index_read_api_and_al0
+  test_fetch_cie_regions_in_memo0
+
+## Owner pytest cache touched in the window (outside the allowlist)
+  examdata/.pytest_cache
+
+## Owner working-tree files created/modified in the window (outside basetemps)
+  examdata/docs/DEPLOY.md
+  examdata/examples/curl.md
+
+## Owner working-tree status at attribution time (read-only `git -C examdata status --porcelain`)
+    status counts: ??=1220, M=50
+    tracked changes (50):
+       M README.md
+       M docs/API.md
+       M docs/DEPLOY.md
+       M examples/browser.html
+       M examples/curl.md
+       M pyproject.toml
+       M scripts/reset_derived.py
+       M scripts/smoke_public_api.py
+       M src/examdata/adapters/edexcel/adapter.py
+       M src/examdata/adapters/edexcel/classify.py
+       M src/examdata/adapters/edexcel/servlet.py
+       M src/examdata/adapters/registry.py
+       M src/examdata/api/app.py
+       M src/examdata/api/security.py
+       M src/examdata/api/unified.py
+       M src/examdata/cli.py
+       M src/examdata/core/db.py
+       M src/examdata/core/fetch.py
+       M src/examdata/core/storage.py
+       M src/examdata/governance/override.py
+       M src/examdata/governance/provenance.py
+       M src/examdata/governance/reparse.py
+       M src/examdata/intelligence/explanation.py
+       M src/examdata/intelligence/similarity.py
+       M src/examdata/intelligence/taxonomy.py
+       M src/examdata/markscheme/cambridge.py
+       M src/examdata/paperqa/api.py
+       M src/examdata/paperqa/locator.py
+       M src/examdata/paperqa/models.py
+       M src/examdata/paperqa/sources/base.py
+       M src/examdata/paperqa/sources/pearson.py
+       M src/examdata/parsing/content_classify.py
+       M src/examdata/parsing/numbering.py
+       M src/examdata/parsing/pipeline.py
+       M src/examdata/parsing/segment.py
+       M src/examdata/query/__init__.py
+       M src/examdata/query/service.py
+       M src/examdata/sync/service.py
+       M tests/conformance/test_adapter_contract.py
+       M tests/test_api.py
+       M tests/test_api_unified.py
+       M tests/test_classification_validation.py
+       M tests/test_edexcel_adapter.py
+       M tests/test_explanation.py
+       M tests/test_governance.py
+       M tests/test_intelligence.py
+       M tests/test_paperqa.py
+       M tests/test_paperqa_api.py
+       M tests/test_paperqa_locator.py
+       M tests/test_parsing_regressions.py
+    untracked (1220), first 20:
+      ?? _dbnode.txt
+      ?? _dbq.txt
+      ?? _dbschema.txt
+      ?? docs/AGENT_HANDOFF.md
+      ?? docs/CIE_AI_PARSE_PROMPT.md
+      ?? docs/CIE_ALL_SUBJECTS_EXECUTION_PROMPT.md
+      ?? docs/IELTS_API.md
+      ?? docs/INDEPENDENT_REVIEW_CONTEXT.md
+      ?? docs/INDEX_RETRIEVAL_ACCEPTANCE.md
+      ?? docs/REMAINING_WORK_PLAN.md
+      ?? docs/REMAINING_WORK_RESULTS.md
+      ?? docs/REVIEW_ACCEPTANCE.md
+      ?? docs/UNIFIED_PAPER_API.md
+      ?? docs/UNIFIED_WORKFLOW_ACCEPTANCE.md
+      ?? docs/schemas/
+      ?? research/exam-materials-cie.md
+      ?? research/exam-materials-edexcel.md
+      ?? research/exam-timetable-cie-zone5.md
+      ?? research/exam-timetable-edexcel.md
+      ?? src/examdata/api/ielts.py
+      ... and 1200 more untracked paths
+
+## Counts from the window scan
+  new __pycache__ directories in protected roots: 0 (section 1 reported count: 0)
+  paths listed outside the allowlist in the leak transcript: 40
+  transcript's own count line: (count outside allowlist: 97)
+  of the listed paths - owner basetemp files: 37, owner cache/tree: 3, executor paths inside the allowlist (scan artefacts): 0
+  note: the transcript's count line exceeds its listing because the count was taken over a
+  wider path set than the lines kept in the transcript; only listed paths can be classified here.
+
+## Conclusion
+  Executor writes in this window: integration-staging/** and docs/integration/execution/** only.
+  Every out-of-allowlist path belongs to the active owner's concurrent run in examdata/ (its own
+  .pytest_cache, its pytest-of-weo basetemps whose test names match examdata's suite, and its
+  working-tree files). Owner activity is expected and is never repaired (plan section 0.9).

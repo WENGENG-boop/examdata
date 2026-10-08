@@ -1,0 +1,3916 @@
+{
+ "source": "SAOHPRWHG/FindSimilarTPO (GitHub)",
+ "raw_base": "https://raw.githubusercontent.com/SAOHPRWHG/FindSimilarTPO/master/",
+ "path": "data/TPO/<file>",
+ "checked_at": "2026-10-04",
+ "content_type": "reading passages + listening transcripts (no questions/answers)",
+ "tpo_range": "1-54",
+ "counts": {
+  "reading_passages": 156,
+  "listening_items": 312,
+  "reading_expected": 162,
+  "listening_expected": 324
+ },
+ "empty_tpos": [
+  26,
+  31
+ ],
+ "duplicates": {
+  "list-3-4": "list-3-3",
+  "read-7-1": "read-6-3",
+  "read-13-3": "read-13-1",
+  "list-17-102": "list-17-101",
+  "list-27-101": "list-27-1",
+  "list-52-102": "list-52-2"
+ },
+ "items": [
+  {
+   "tpo": 1,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "1-1.txt",
+   "present": true,
+   "chars": 4160
+  },
+  {
+   "tpo": 1,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "1-2.txt",
+   "present": true,
+   "chars": 4549
+  },
+  {
+   "tpo": 1,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "1-3.txt",
+   "present": true,
+   "chars": 3965
+  },
+  {
+   "tpo": 1,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L1-1.txt",
+   "present": true,
+   "chars": 4905
+  },
+  {
+   "tpo": 1,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L1-2.txt",
+   "present": true,
+   "chars": 4529
+  },
+  {
+   "tpo": 1,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L1-3.txt",
+   "present": true,
+   "chars": 4303
+  },
+  {
+   "tpo": 1,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L1-4.txt",
+   "present": true,
+   "chars": 4071
+  },
+  {
+   "tpo": 1,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C1-1.txt",
+   "present": true,
+   "chars": 2904
+  },
+  {
+   "tpo": 1,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C1-2.txt",
+   "present": true,
+   "chars": 3181
+  },
+  {
+   "tpo": 2,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "2-1.txt",
+   "present": true,
+   "chars": 4855
+  },
+  {
+   "tpo": 2,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "2-2.txt",
+   "present": true,
+   "chars": 3821
+  },
+  {
+   "tpo": 2,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "2-3.txt",
+   "present": true,
+   "chars": 4318
+  },
+  {
+   "tpo": 2,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L2-1.txt",
+   "present": true,
+   "chars": 4327
+  },
+  {
+   "tpo": 2,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L2-2.txt",
+   "present": true,
+   "chars": 3845
+  },
+  {
+   "tpo": 2,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L2-3.txt",
+   "present": true,
+   "chars": 4407
+  },
+  {
+   "tpo": 2,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L2-4.txt",
+   "present": true,
+   "chars": 3208
+  },
+  {
+   "tpo": 2,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C2-1.txt",
+   "present": true,
+   "chars": 3521
+  },
+  {
+   "tpo": 2,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C2-2.txt",
+   "present": true,
+   "chars": 2492
+  },
+  {
+   "tpo": 3,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "3-1.txt",
+   "present": true,
+   "chars": 4513
+  },
+  {
+   "tpo": 3,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "3-2.txt",
+   "present": true,
+   "chars": 4488
+  },
+  {
+   "tpo": 3,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "3-3.txt",
+   "present": true,
+   "chars": 4214
+  },
+  {
+   "tpo": 3,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L3-1.txt",
+   "present": true,
+   "chars": 4660
+  },
+  {
+   "tpo": 3,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L3-2.txt",
+   "present": true,
+   "chars": 4434
+  },
+  {
+   "tpo": 3,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L3-3.txt",
+   "present": true,
+   "chars": 4377
+  },
+  {
+   "tpo": 3,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L3-4.txt",
+   "present": true,
+   "chars": 4377
+  },
+  {
+   "tpo": 3,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C3-1.txt",
+   "present": true,
+   "chars": 3153
+  },
+  {
+   "tpo": 3,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C3-2.txt",
+   "present": true,
+   "chars": 3104
+  },
+  {
+   "tpo": 4,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "4-1.txt",
+   "present": true,
+   "chars": 4306
+  },
+  {
+   "tpo": 4,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "4-2.txt",
+   "present": true,
+   "chars": 4315
+  },
+  {
+   "tpo": 4,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "4-3.txt",
+   "present": true,
+   "chars": 4232
+  },
+  {
+   "tpo": 4,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L4-1.txt",
+   "present": true,
+   "chars": 4169
+  },
+  {
+   "tpo": 4,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L4-2.txt",
+   "present": true,
+   "chars": 4201
+  },
+  {
+   "tpo": 4,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L4-3.txt",
+   "present": true,
+   "chars": 4034
+  },
+  {
+   "tpo": 4,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L4-4.txt",
+   "present": true,
+   "chars": 4466
+  },
+  {
+   "tpo": 4,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C4-1.txt",
+   "present": true,
+   "chars": 3060
+  },
+  {
+   "tpo": 4,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C4-2.txt",
+   "present": true,
+   "chars": 3190
+  },
+  {
+   "tpo": 5,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "5-1.txt",
+   "present": true,
+   "chars": 4673
+  },
+  {
+   "tpo": 5,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "5-2.txt",
+   "present": true,
+   "chars": 4679
+  },
+  {
+   "tpo": 5,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "5-3.txt",
+   "present": true,
+   "chars": 4506
+  },
+  {
+   "tpo": 5,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L5-1.txt",
+   "present": true,
+   "chars": 4456
+  },
+  {
+   "tpo": 5,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L5-2.txt",
+   "present": true,
+   "chars": 4485
+  },
+  {
+   "tpo": 5,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L5-3.txt",
+   "present": true,
+   "chars": 4539
+  },
+  {
+   "tpo": 5,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L5-4.txt",
+   "present": true,
+   "chars": 4557
+  },
+  {
+   "tpo": 5,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C5-1.txt",
+   "present": true,
+   "chars": 3267
+  },
+  {
+   "tpo": 5,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C5-2.txt",
+   "present": true,
+   "chars": 3117
+  },
+  {
+   "tpo": 6,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "6-1.txt",
+   "present": true,
+   "chars": 4326
+  },
+  {
+   "tpo": 6,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "6-2.txt",
+   "present": true,
+   "chars": 4091
+  },
+  {
+   "tpo": 6,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "6-3.txt",
+   "present": true,
+   "chars": 4614
+  },
+  {
+   "tpo": 6,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L6-1.txt",
+   "present": true,
+   "chars": 4833
+  },
+  {
+   "tpo": 6,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L6-2.txt",
+   "present": true,
+   "chars": 4011
+  },
+  {
+   "tpo": 6,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L6-3.txt",
+   "present": true,
+   "chars": 4635
+  },
+  {
+   "tpo": 6,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L6-4.txt",
+   "present": true,
+   "chars": 4562
+  },
+  {
+   "tpo": 6,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C6-1.txt",
+   "present": true,
+   "chars": 3422
+  },
+  {
+   "tpo": 6,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C6-2.txt",
+   "present": true,
+   "chars": 3112
+  },
+  {
+   "tpo": 7,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "7-1.txt",
+   "present": true,
+   "chars": 4614
+  },
+  {
+   "tpo": 7,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "7-2.txt",
+   "present": true,
+   "chars": 4326
+  },
+  {
+   "tpo": 7,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "7-3.txt",
+   "present": true,
+   "chars": 4548
+  },
+  {
+   "tpo": 7,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L7-1.txt",
+   "present": true,
+   "chars": 4460
+  },
+  {
+   "tpo": 7,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L7-2.txt",
+   "present": true,
+   "chars": 4549
+  },
+  {
+   "tpo": 7,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L7-3.txt",
+   "present": true,
+   "chars": 4531
+  },
+  {
+   "tpo": 7,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L7-4.txt",
+   "present": true,
+   "chars": 3867
+  },
+  {
+   "tpo": 7,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C7-1.txt",
+   "present": true,
+   "chars": 3647
+  },
+  {
+   "tpo": 7,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C7-2.txt",
+   "present": true,
+   "chars": 2926
+  },
+  {
+   "tpo": 8,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "8-1.txt",
+   "present": true,
+   "chars": 4408
+  },
+  {
+   "tpo": 8,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "8-2.txt",
+   "present": true,
+   "chars": 4624
+  },
+  {
+   "tpo": 8,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "8-3.txt",
+   "present": true,
+   "chars": 4268
+  },
+  {
+   "tpo": 8,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L8-1.txt",
+   "present": true,
+   "chars": 4469
+  },
+  {
+   "tpo": 8,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L8-2.txt",
+   "present": true,
+   "chars": 4584
+  },
+  {
+   "tpo": 8,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L8-3.txt",
+   "present": true,
+   "chars": 3486
+  },
+  {
+   "tpo": 8,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L8-4.txt",
+   "present": true,
+   "chars": 4899
+  },
+  {
+   "tpo": 8,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C8-1.txt",
+   "present": true,
+   "chars": 2842
+  },
+  {
+   "tpo": 8,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C8-2.txt",
+   "present": true,
+   "chars": 3564
+  },
+  {
+   "tpo": 9,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "9-1.txt",
+   "present": true,
+   "chars": 4575
+  },
+  {
+   "tpo": 9,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "9-2.txt",
+   "present": true,
+   "chars": 4531
+  },
+  {
+   "tpo": 9,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "9-3.txt",
+   "present": true,
+   "chars": 4204
+  },
+  {
+   "tpo": 9,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L9-1.txt",
+   "present": true,
+   "chars": 4810
+  },
+  {
+   "tpo": 9,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L9-2.txt",
+   "present": true,
+   "chars": 4696
+  },
+  {
+   "tpo": 9,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L9-3.txt",
+   "present": true,
+   "chars": 4546
+  },
+  {
+   "tpo": 9,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L9-4.txt",
+   "present": true,
+   "chars": 5012
+  },
+  {
+   "tpo": 9,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C9-1.txt",
+   "present": true,
+   "chars": 3228
+  },
+  {
+   "tpo": 9,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C9-2.txt",
+   "present": true,
+   "chars": 2860
+  },
+  {
+   "tpo": 10,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "10-1.txt",
+   "present": true,
+   "chars": 4514
+  },
+  {
+   "tpo": 10,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "10-2.txt",
+   "present": true,
+   "chars": 4203
+  },
+  {
+   "tpo": 10,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "10-3.txt",
+   "present": true,
+   "chars": 4445
+  },
+  {
+   "tpo": 10,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L10-1.txt",
+   "present": true,
+   "chars": 3960
+  },
+  {
+   "tpo": 10,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L10-2.txt",
+   "present": true,
+   "chars": 4506
+  },
+  {
+   "tpo": 10,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L10-3.txt",
+   "present": true,
+   "chars": 4554
+  },
+  {
+   "tpo": 10,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L10-4.txt",
+   "present": true,
+   "chars": 4506
+  },
+  {
+   "tpo": 10,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C10-1.txt",
+   "present": true,
+   "chars": 2532
+  },
+  {
+   "tpo": 10,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C10-2.txt",
+   "present": true,
+   "chars": 3002
+  },
+  {
+   "tpo": 11,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "11-1.txt",
+   "present": true,
+   "chars": 4242
+  },
+  {
+   "tpo": 11,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "11-2.txt",
+   "present": true,
+   "chars": 4248
+  },
+  {
+   "tpo": 11,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "11-3.txt",
+   "present": true,
+   "chars": 4392
+  },
+  {
+   "tpo": 11,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L11-1.txt",
+   "present": true,
+   "chars": 3566
+  },
+  {
+   "tpo": 11,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L11-2.txt",
+   "present": true,
+   "chars": 5125
+  },
+  {
+   "tpo": 11,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L11-3.txt",
+   "present": true,
+   "chars": 4783
+  },
+  {
+   "tpo": 11,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L11-4.txt",
+   "present": true,
+   "chars": 4681
+  },
+  {
+   "tpo": 11,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C11-1.txt",
+   "present": true,
+   "chars": 3049
+  },
+  {
+   "tpo": 11,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C11-2.txt",
+   "present": true,
+   "chars": 3270
+  },
+  {
+   "tpo": 12,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "12-1.txt",
+   "present": true,
+   "chars": 4056
+  },
+  {
+   "tpo": 12,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "12-2.txt",
+   "present": true,
+   "chars": 4587
+  },
+  {
+   "tpo": 12,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "12-3.txt",
+   "present": true,
+   "chars": 4392
+  },
+  {
+   "tpo": 12,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L12-1.txt",
+   "present": true,
+   "chars": 4118
+  },
+  {
+   "tpo": 12,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L12-2.txt",
+   "present": true,
+   "chars": 4736
+  },
+  {
+   "tpo": 12,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L12-3.txt",
+   "present": true,
+   "chars": 4672
+  },
+  {
+   "tpo": 12,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L12-4.txt",
+   "present": true,
+   "chars": 4382
+  },
+  {
+   "tpo": 12,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C12-1.txt",
+   "present": true,
+   "chars": 2551
+  },
+  {
+   "tpo": 12,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C12-2.txt",
+   "present": true,
+   "chars": 3448
+  },
+  {
+   "tpo": 13,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "13-1.txt",
+   "present": true,
+   "chars": 4673
+  },
+  {
+   "tpo": 13,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "13-2.txt",
+   "present": true,
+   "chars": 4643
+  },
+  {
+   "tpo": 13,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "13-3.txt",
+   "present": true,
+   "chars": 4673
+  },
+  {
+   "tpo": 13,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L13-1.txt",
+   "present": true,
+   "chars": 4771
+  },
+  {
+   "tpo": 13,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L13-2.txt",
+   "present": true,
+   "chars": 4626
+  },
+  {
+   "tpo": 13,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L13-3.txt",
+   "present": true,
+   "chars": 5492
+  },
+  {
+   "tpo": 13,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L13-4.txt",
+   "present": true,
+   "chars": 4149
+  },
+  {
+   "tpo": 13,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C13-1.txt",
+   "present": true,
+   "chars": 3136
+  },
+  {
+   "tpo": 13,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C13-2.txt",
+   "present": true,
+   "chars": 2975
+  },
+  {
+   "tpo": 14,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "14-1.txt",
+   "present": true,
+   "chars": 4920
+  },
+  {
+   "tpo": 14,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "14-2.txt",
+   "present": true,
+   "chars": 4097
+  },
+  {
+   "tpo": 14,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "14-3.txt",
+   "present": true,
+   "chars": 4435
+  },
+  {
+   "tpo": 14,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L14-1.txt",
+   "present": true,
+   "chars": 3976
+  },
+  {
+   "tpo": 14,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L14-2.txt",
+   "present": true,
+   "chars": 4278
+  },
+  {
+   "tpo": 14,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L14-3.txt",
+   "present": true,
+   "chars": 4387
+  },
+  {
+   "tpo": 14,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L14-4.txt",
+   "present": true,
+   "chars": 4587
+  },
+  {
+   "tpo": 14,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C14-1.txt",
+   "present": true,
+   "chars": 2773
+  },
+  {
+   "tpo": 14,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C14-2.txt",
+   "present": true,
+   "chars": 3106
+  },
+  {
+   "tpo": 15,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "15-1.txt",
+   "present": true,
+   "chars": 4166
+  },
+  {
+   "tpo": 15,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "15-2.txt",
+   "present": true,
+   "chars": 4514
+  },
+  {
+   "tpo": 15,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "15-3.txt",
+   "present": true,
+   "chars": 3892
+  },
+  {
+   "tpo": 15,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L15-1.txt",
+   "present": true,
+   "chars": 4639
+  },
+  {
+   "tpo": 15,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L15-2.txt",
+   "present": true,
+   "chars": 3218
+  },
+  {
+   "tpo": 15,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L15-3.txt",
+   "present": true,
+   "chars": 4276
+  },
+  {
+   "tpo": 15,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L15-4.txt",
+   "present": true,
+   "chars": 4751
+  },
+  {
+   "tpo": 15,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C15-1.txt",
+   "present": true,
+   "chars": 3326
+  },
+  {
+   "tpo": 15,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C15-2.txt",
+   "present": true,
+   "chars": 3289
+  },
+  {
+   "tpo": 16,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "16-1.txt",
+   "present": true,
+   "chars": 4456
+  },
+  {
+   "tpo": 16,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "16-2.txt",
+   "present": true,
+   "chars": 4973
+  },
+  {
+   "tpo": 16,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "16-3.txt",
+   "present": true,
+   "chars": 4483
+  },
+  {
+   "tpo": 16,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L16-1.txt",
+   "present": true,
+   "chars": 4442
+  },
+  {
+   "tpo": 16,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L16-2.txt",
+   "present": true,
+   "chars": 4736
+  },
+  {
+   "tpo": 16,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L16-3.txt",
+   "present": true,
+   "chars": 4393
+  },
+  {
+   "tpo": 16,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L16-4.txt",
+   "present": true,
+   "chars": 4956
+  },
+  {
+   "tpo": 16,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C16-1.txt",
+   "present": true,
+   "chars": 3304
+  },
+  {
+   "tpo": 16,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C16-2.txt",
+   "present": true,
+   "chars": 3036
+  },
+  {
+   "tpo": 17,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "17-1.txt",
+   "present": true,
+   "chars": 4173
+  },
+  {
+   "tpo": 17,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "17-2.txt",
+   "present": true,
+   "chars": 4164
+  },
+  {
+   "tpo": 17,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "17-3.txt",
+   "present": true,
+   "chars": 4569
+  },
+  {
+   "tpo": 17,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L17-1.txt",
+   "present": true,
+   "chars": 4806
+  },
+  {
+   "tpo": 17,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L17-2.txt",
+   "present": true,
+   "chars": 4424
+  },
+  {
+   "tpo": 17,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L17-3.txt",
+   "present": true,
+   "chars": 4877
+  },
+  {
+   "tpo": 17,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L17-4.txt",
+   "present": true,
+   "chars": 4501
+  },
+  {
+   "tpo": 17,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C17-1.txt",
+   "present": true,
+   "chars": 2670
+  },
+  {
+   "tpo": 17,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C17-2.txt",
+   "present": true,
+   "chars": 2670
+  },
+  {
+   "tpo": 18,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "18-1.txt",
+   "present": true,
+   "chars": 4668
+  },
+  {
+   "tpo": 18,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "18-2.txt",
+   "present": true,
+   "chars": 4365
+  },
+  {
+   "tpo": 18,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "18-3.txt",
+   "present": true,
+   "chars": 4363
+  },
+  {
+   "tpo": 18,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L18-1.txt",
+   "present": true,
+   "chars": 4197
+  },
+  {
+   "tpo": 18,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L18-2.txt",
+   "present": true,
+   "chars": 4122
+  },
+  {
+   "tpo": 18,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L18-3.txt",
+   "present": true,
+   "chars": 4373
+  },
+  {
+   "tpo": 18,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L18-4.txt",
+   "present": true,
+   "chars": 4355
+  },
+  {
+   "tpo": 18,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C18-1.txt",
+   "present": true,
+   "chars": 2921
+  },
+  {
+   "tpo": 18,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C18-2.txt",
+   "present": true,
+   "chars": 2790
+  },
+  {
+   "tpo": 19,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "19-1.txt",
+   "present": true,
+   "chars": 4473
+  },
+  {
+   "tpo": 19,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "19-2.txt",
+   "present": true,
+   "chars": 4605
+  },
+  {
+   "tpo": 19,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "19-3.txt",
+   "present": true,
+   "chars": 4351
+  },
+  {
+   "tpo": 19,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L19-1.txt",
+   "present": true,
+   "chars": 3540
+  },
+  {
+   "tpo": 19,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L19-2.txt",
+   "present": true,
+   "chars": 4802
+  },
+  {
+   "tpo": 19,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L19-3.txt",
+   "present": true,
+   "chars": 4414
+  },
+  {
+   "tpo": 19,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L19-4.txt",
+   "present": true,
+   "chars": 4015
+  },
+  {
+   "tpo": 19,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C19-1.txt",
+   "present": true,
+   "chars": 2890
+  },
+  {
+   "tpo": 19,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C19-2.txt",
+   "present": true,
+   "chars": 3044
+  },
+  {
+   "tpo": 20,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "20-1.txt",
+   "present": true,
+   "chars": 4338
+  },
+  {
+   "tpo": 20,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "20-2.txt",
+   "present": true,
+   "chars": 4457
+  },
+  {
+   "tpo": 20,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "20-3.txt",
+   "present": true,
+   "chars": 4526
+  },
+  {
+   "tpo": 20,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L20-1.txt",
+   "present": true,
+   "chars": 4654
+  },
+  {
+   "tpo": 20,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L20-2.txt",
+   "present": true,
+   "chars": 4151
+  },
+  {
+   "tpo": 20,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L20-3.txt",
+   "present": true,
+   "chars": 4494
+  },
+  {
+   "tpo": 20,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L20-4.txt",
+   "present": true,
+   "chars": 4646
+  },
+  {
+   "tpo": 20,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C20-1.txt",
+   "present": true,
+   "chars": 2561
+  },
+  {
+   "tpo": 20,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C20-2.txt",
+   "present": true,
+   "chars": 3008
+  },
+  {
+   "tpo": 21,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "21-1.txt",
+   "present": true,
+   "chars": 4209
+  },
+  {
+   "tpo": 21,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "21-2.txt",
+   "present": true,
+   "chars": 4623
+  },
+  {
+   "tpo": 21,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "21-3.txt",
+   "present": true,
+   "chars": 4171
+  },
+  {
+   "tpo": 21,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L21-1.txt",
+   "present": true,
+   "chars": 4477
+  },
+  {
+   "tpo": 21,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L21-2.txt",
+   "present": true,
+   "chars": 4240
+  },
+  {
+   "tpo": 21,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L21-3.txt",
+   "present": true,
+   "chars": 4780
+  },
+  {
+   "tpo": 21,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L21-4.txt",
+   "present": true,
+   "chars": 4790
+  },
+  {
+   "tpo": 21,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C21-1.txt",
+   "present": true,
+   "chars": 2992
+  },
+  {
+   "tpo": 21,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C21-2.txt",
+   "present": true,
+   "chars": 3847
+  },
+  {
+   "tpo": 22,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "22-1.txt",
+   "present": true,
+   "chars": 4413
+  },
+  {
+   "tpo": 22,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "22-2.txt",
+   "present": true,
+   "chars": 4267
+  },
+  {
+   "tpo": 22,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "22-3.txt",
+   "present": true,
+   "chars": 4576
+  },
+  {
+   "tpo": 22,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L22-1.txt",
+   "present": true,
+   "chars": 3002
+  },
+  {
+   "tpo": 22,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L22-2.txt",
+   "present": true,
+   "chars": 4480
+  },
+  {
+   "tpo": 22,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L22-3.txt",
+   "present": true,
+   "chars": 4843
+  },
+  {
+   "tpo": 22,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L22-4.txt",
+   "present": true,
+   "chars": 4360
+  },
+  {
+   "tpo": 22,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C22-1.txt",
+   "present": true,
+   "chars": 3055
+  },
+  {
+   "tpo": 22,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C22-2.txt",
+   "present": true,
+   "chars": 2948
+  },
+  {
+   "tpo": 23,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "23-1.txt",
+   "present": true,
+   "chars": 4138
+  },
+  {
+   "tpo": 23,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "23-2.txt",
+   "present": true,
+   "chars": 4675
+  },
+  {
+   "tpo": 23,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "23-3.txt",
+   "present": true,
+   "chars": 4632
+  },
+  {
+   "tpo": 23,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L23-1.txt",
+   "present": true,
+   "chars": 4180
+  },
+  {
+   "tpo": 23,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L23-2.txt",
+   "present": true,
+   "chars": 3341
+  },
+  {
+   "tpo": 23,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L23-3.txt",
+   "present": true,
+   "chars": 3985
+  },
+  {
+   "tpo": 23,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L23-4.txt",
+   "present": true,
+   "chars": 4491
+  },
+  {
+   "tpo": 23,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C23-1.txt",
+   "present": true,
+   "chars": 3151
+  },
+  {
+   "tpo": 23,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C23-2.txt",
+   "present": true,
+   "chars": 3392
+  },
+  {
+   "tpo": 24,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "24-1.txt",
+   "present": true,
+   "chars": 4295
+  },
+  {
+   "tpo": 24,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "24-2.txt",
+   "present": true,
+   "chars": 4406
+  },
+  {
+   "tpo": 24,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "24-3.txt",
+   "present": true,
+   "chars": 4600
+  },
+  {
+   "tpo": 24,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L24-1.txt",
+   "present": true,
+   "chars": 4293
+  },
+  {
+   "tpo": 24,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L24-2.txt",
+   "present": true,
+   "chars": 3407
+  },
+  {
+   "tpo": 24,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L24-3.txt",
+   "present": true,
+   "chars": 4115
+  },
+  {
+   "tpo": 24,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L24-4.txt",
+   "present": true,
+   "chars": 4306
+  },
+  {
+   "tpo": 24,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C24-1.txt",
+   "present": true,
+   "chars": 2783
+  },
+  {
+   "tpo": 24,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C24-2.txt",
+   "present": true,
+   "chars": 3154
+  },
+  {
+   "tpo": 25,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "25-1.txt",
+   "present": true,
+   "chars": 4295
+  },
+  {
+   "tpo": 25,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "25-2.txt",
+   "present": true,
+   "chars": 4476
+  },
+  {
+   "tpo": 25,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "25-3.txt",
+   "present": true,
+   "chars": 4717
+  },
+  {
+   "tpo": 25,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L25-1.txt",
+   "present": true,
+   "chars": 4452
+  },
+  {
+   "tpo": 25,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L25-2.txt",
+   "present": true,
+   "chars": 4077
+  },
+  {
+   "tpo": 25,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L25-3.txt",
+   "present": true,
+   "chars": 4286
+  },
+  {
+   "tpo": 25,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L25-4.txt",
+   "present": true,
+   "chars": 4285
+  },
+  {
+   "tpo": 25,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C25-1.txt",
+   "present": true,
+   "chars": 2845
+  },
+  {
+   "tpo": 25,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C25-2.txt",
+   "present": true,
+   "chars": 2760
+  },
+  {
+   "tpo": 26,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "26-1.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "26-2.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "26-3.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L26-1.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L26-2.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L26-3.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L26-4.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C26-1.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 26,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C26-2.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 27,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "27-1.txt",
+   "present": true,
+   "chars": 4051
+  },
+  {
+   "tpo": 27,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "27-2.txt",
+   "present": true,
+   "chars": 4237
+  },
+  {
+   "tpo": 27,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "27-3.txt",
+   "present": true,
+   "chars": 4339
+  },
+  {
+   "tpo": 27,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L27-1.txt",
+   "present": true,
+   "chars": 4257
+  },
+  {
+   "tpo": 27,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L27-2.txt",
+   "present": true,
+   "chars": 4837
+  },
+  {
+   "tpo": 27,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L27-3.txt",
+   "present": true,
+   "chars": 4667
+  },
+  {
+   "tpo": 27,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L27-4.txt",
+   "present": true,
+   "chars": 3926
+  },
+  {
+   "tpo": 27,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C27-1.txt",
+   "present": true,
+   "chars": 4257
+  },
+  {
+   "tpo": 27,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C27-2.txt",
+   "present": true,
+   "chars": 3460
+  },
+  {
+   "tpo": 28,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "28-1.txt",
+   "present": true,
+   "chars": 4026
+  },
+  {
+   "tpo": 28,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "28-2.txt",
+   "present": true,
+   "chars": 4515
+  },
+  {
+   "tpo": 28,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "28-3.txt",
+   "present": true,
+   "chars": 4453
+  },
+  {
+   "tpo": 28,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L28-1.txt",
+   "present": true,
+   "chars": 4105
+  },
+  {
+   "tpo": 28,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L28-2.txt",
+   "present": true,
+   "chars": 4600
+  },
+  {
+   "tpo": 28,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L28-3.txt",
+   "present": true,
+   "chars": 4140
+  },
+  {
+   "tpo": 28,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L28-4.txt",
+   "present": true,
+   "chars": 4099
+  },
+  {
+   "tpo": 28,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C28-1.txt",
+   "present": true,
+   "chars": 2849
+  },
+  {
+   "tpo": 28,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C28-2.txt",
+   "present": true,
+   "chars": 3118
+  },
+  {
+   "tpo": 29,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "29-1.txt",
+   "present": true,
+   "chars": 4366
+  },
+  {
+   "tpo": 29,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "29-2.txt",
+   "present": true,
+   "chars": 4468
+  },
+  {
+   "tpo": 29,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "29-3.txt",
+   "present": true,
+   "chars": 4424
+  },
+  {
+   "tpo": 29,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L29-1.txt",
+   "present": true,
+   "chars": 4429
+  },
+  {
+   "tpo": 29,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L29-2.txt",
+   "present": true,
+   "chars": 4536
+  },
+  {
+   "tpo": 29,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L29-3.txt",
+   "present": true,
+   "chars": 4027
+  },
+  {
+   "tpo": 29,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L29-4.txt",
+   "present": true,
+   "chars": 4877
+  },
+  {
+   "tpo": 29,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C29-1.txt",
+   "present": true,
+   "chars": 3234
+  },
+  {
+   "tpo": 29,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C29-2.txt",
+   "present": true,
+   "chars": 3133
+  },
+  {
+   "tpo": 30,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "30-1.txt",
+   "present": true,
+   "chars": 4393
+  },
+  {
+   "tpo": 30,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "30-2.txt",
+   "present": true,
+   "chars": 4512
+  },
+  {
+   "tpo": 30,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "30-3.txt",
+   "present": true,
+   "chars": 4104
+  },
+  {
+   "tpo": 30,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L30-1.txt",
+   "present": true,
+   "chars": 4610
+  },
+  {
+   "tpo": 30,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L30-2.txt",
+   "present": true,
+   "chars": 4724
+  },
+  {
+   "tpo": 30,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L30-3.txt",
+   "present": true,
+   "chars": 3407
+  },
+  {
+   "tpo": 30,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L30-4.txt",
+   "present": true,
+   "chars": 4299
+  },
+  {
+   "tpo": 30,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C30-1.txt",
+   "present": true,
+   "chars": 3394
+  },
+  {
+   "tpo": 30,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C30-2.txt",
+   "present": true,
+   "chars": 3250
+  },
+  {
+   "tpo": 31,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "31-1.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "31-2.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "31-3.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L31-1.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L31-2.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L31-3.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L31-4.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C31-1.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 31,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C31-2.txt",
+   "present": false,
+   "chars": 0
+  },
+  {
+   "tpo": 32,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "32-1.txt",
+   "present": true,
+   "chars": 4130
+  },
+  {
+   "tpo": 32,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "32-2.txt",
+   "present": true,
+   "chars": 4347
+  },
+  {
+   "tpo": 32,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "32-3.txt",
+   "present": true,
+   "chars": 4364
+  },
+  {
+   "tpo": 32,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L32-1.txt",
+   "present": true,
+   "chars": 3383
+  },
+  {
+   "tpo": 32,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L32-2.txt",
+   "present": true,
+   "chars": 4492
+  },
+  {
+   "tpo": 32,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L32-3.txt",
+   "present": true,
+   "chars": 3425
+  },
+  {
+   "tpo": 32,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L32-4.txt",
+   "present": true,
+   "chars": 4141
+  },
+  {
+   "tpo": 32,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C32-1.txt",
+   "present": true,
+   "chars": 2867
+  },
+  {
+   "tpo": 32,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C32-2.txt",
+   "present": true,
+   "chars": 2839
+  },
+  {
+   "tpo": 33,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "33-1.txt",
+   "present": true,
+   "chars": 4363
+  },
+  {
+   "tpo": 33,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "33-2.txt",
+   "present": true,
+   "chars": 4431
+  },
+  {
+   "tpo": 33,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "33-3.txt",
+   "present": true,
+   "chars": 4412
+  },
+  {
+   "tpo": 33,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L33-1.txt",
+   "present": true,
+   "chars": 4183
+  },
+  {
+   "tpo": 33,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L33-2.txt",
+   "present": true,
+   "chars": 3837
+  },
+  {
+   "tpo": 33,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L33-3.txt",
+   "present": true,
+   "chars": 4681
+  },
+  {
+   "tpo": 33,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L33-4.txt",
+   "present": true,
+   "chars": 4516
+  },
+  {
+   "tpo": 33,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C33-1.txt",
+   "present": true,
+   "chars": 2709
+  },
+  {
+   "tpo": 33,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C33-2.txt",
+   "present": true,
+   "chars": 2933
+  },
+  {
+   "tpo": 34,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "34-1.txt",
+   "present": true,
+   "chars": 4209
+  },
+  {
+   "tpo": 34,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "34-2.txt",
+   "present": true,
+   "chars": 4466
+  },
+  {
+   "tpo": 34,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "34-3.txt",
+   "present": true,
+   "chars": 4162
+  },
+  {
+   "tpo": 34,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L34-1.txt",
+   "present": true,
+   "chars": 4242
+  },
+  {
+   "tpo": 34,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L34-2.txt",
+   "present": true,
+   "chars": 4711
+  },
+  {
+   "tpo": 34,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L34-3.txt",
+   "present": true,
+   "chars": 3829
+  },
+  {
+   "tpo": 34,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L34-4.txt",
+   "present": true,
+   "chars": 4866
+  },
+  {
+   "tpo": 34,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C34-1.txt",
+   "present": true,
+   "chars": 2982
+  },
+  {
+   "tpo": 34,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C34-2.txt",
+   "present": true,
+   "chars": 3186
+  },
+  {
+   "tpo": 35,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "35-1.txt",
+   "present": true,
+   "chars": 4597
+  },
+  {
+   "tpo": 35,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "35-2.txt",
+   "present": true,
+   "chars": 4286
+  },
+  {
+   "tpo": 35,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "35-3.txt",
+   "present": true,
+   "chars": 4331
+  },
+  {
+   "tpo": 35,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L35-1.txt",
+   "present": true,
+   "chars": 4115
+  },
+  {
+   "tpo": 35,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L35-2.txt",
+   "present": true,
+   "chars": 4597
+  },
+  {
+   "tpo": 35,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L35-3.txt",
+   "present": true,
+   "chars": 4333
+  },
+  {
+   "tpo": 35,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L35-4.txt",
+   "present": true,
+   "chars": 4344
+  },
+  {
+   "tpo": 35,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C35-1.txt",
+   "present": true,
+   "chars": 3292
+  },
+  {
+   "tpo": 35,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C35-2.txt",
+   "present": true,
+   "chars": 2895
+  },
+  {
+   "tpo": 36,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "36-1.txt",
+   "present": true,
+   "chars": 4305
+  },
+  {
+   "tpo": 36,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "36-2.txt",
+   "present": true,
+   "chars": 4081
+  },
+  {
+   "tpo": 36,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "36-3.txt",
+   "present": true,
+   "chars": 4616
+  },
+  {
+   "tpo": 36,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L36-1.txt",
+   "present": true,
+   "chars": 4317
+  },
+  {
+   "tpo": 36,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L36-2.txt",
+   "present": true,
+   "chars": 4726
+  },
+  {
+   "tpo": 36,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L36-3.txt",
+   "present": true,
+   "chars": 4300
+  },
+  {
+   "tpo": 36,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L36-4.txt",
+   "present": true,
+   "chars": 4633
+  },
+  {
+   "tpo": 36,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C36-1.txt",
+   "present": true,
+   "chars": 3352
+  },
+  {
+   "tpo": 36,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C36-2.txt",
+   "present": true,
+   "chars": 2898
+  },
+  {
+   "tpo": 37,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "37-1.txt",
+   "present": true,
+   "chars": 4384
+  },
+  {
+   "tpo": 37,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "37-2.txt",
+   "present": true,
+   "chars": 4565
+  },
+  {
+   "tpo": 37,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "37-3.txt",
+   "present": true,
+   "chars": 4514
+  },
+  {
+   "tpo": 37,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L37-1.txt",
+   "present": true,
+   "chars": 4274
+  },
+  {
+   "tpo": 37,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L37-2.txt",
+   "present": true,
+   "chars": 4700
+  },
+  {
+   "tpo": 37,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L37-3.txt",
+   "present": true,
+   "chars": 3444
+  },
+  {
+   "tpo": 37,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L37-4.txt",
+   "present": true,
+   "chars": 4484
+  },
+  {
+   "tpo": 37,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C37-1.txt",
+   "present": true,
+   "chars": 2537
+  },
+  {
+   "tpo": 37,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C37-2.txt",
+   "present": true,
+   "chars": 3062
+  },
+  {
+   "tpo": 38,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "38-1.txt",
+   "present": true,
+   "chars": 4256
+  },
+  {
+   "tpo": 38,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "38-2.txt",
+   "present": true,
+   "chars": 4642
+  },
+  {
+   "tpo": 38,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "38-3.txt",
+   "present": true,
+   "chars": 4484
+  },
+  {
+   "tpo": 38,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L38-1.txt",
+   "present": true,
+   "chars": 4130
+  },
+  {
+   "tpo": 38,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L38-2.txt",
+   "present": true,
+   "chars": 4351
+  },
+  {
+   "tpo": 38,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L38-3.txt",
+   "present": true,
+   "chars": 4288
+  },
+  {
+   "tpo": 38,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L38-4.txt",
+   "present": true,
+   "chars": 4453
+  },
+  {
+   "tpo": 38,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C38-1.txt",
+   "present": true,
+   "chars": 3094
+  },
+  {
+   "tpo": 38,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C38-2.txt",
+   "present": true,
+   "chars": 3259
+  },
+  {
+   "tpo": 39,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "39-1.txt",
+   "present": true,
+   "chars": 4100
+  },
+  {
+   "tpo": 39,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "39-2.txt",
+   "present": true,
+   "chars": 4486
+  },
+  {
+   "tpo": 39,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "39-3.txt",
+   "present": true,
+   "chars": 4410
+  },
+  {
+   "tpo": 39,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L39-1.txt",
+   "present": true,
+   "chars": 4401
+  },
+  {
+   "tpo": 39,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L39-2.txt",
+   "present": true,
+   "chars": 4344
+  },
+  {
+   "tpo": 39,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L39-3.txt",
+   "present": true,
+   "chars": 3426
+  },
+  {
+   "tpo": 39,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L39-4.txt",
+   "present": true,
+   "chars": 3680
+  },
+  {
+   "tpo": 39,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C39-1.txt",
+   "present": true,
+   "chars": 3256
+  },
+  {
+   "tpo": 39,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C39-2.txt",
+   "present": true,
+   "chars": 3065
+  },
+  {
+   "tpo": 40,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "40-1.txt",
+   "present": true,
+   "chars": 4530
+  },
+  {
+   "tpo": 40,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "40-2.txt",
+   "present": true,
+   "chars": 4043
+  },
+  {
+   "tpo": 40,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "40-3.txt",
+   "present": true,
+   "chars": 4746
+  },
+  {
+   "tpo": 40,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L40-1.txt",
+   "present": true,
+   "chars": 3774
+  },
+  {
+   "tpo": 40,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L40-2.txt",
+   "present": true,
+   "chars": 4529
+  },
+  {
+   "tpo": 40,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L40-3.txt",
+   "present": true,
+   "chars": 4397
+  },
+  {
+   "tpo": 40,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L40-4.txt",
+   "present": true,
+   "chars": 4602
+  },
+  {
+   "tpo": 40,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C40-1.txt",
+   "present": true,
+   "chars": 3296
+  },
+  {
+   "tpo": 40,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C40-2.txt",
+   "present": true,
+   "chars": 2495
+  },
+  {
+   "tpo": 41,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "41-1.txt",
+   "present": true,
+   "chars": 4060
+  },
+  {
+   "tpo": 41,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "41-2.txt",
+   "present": true,
+   "chars": 4676
+  },
+  {
+   "tpo": 41,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "41-3.txt",
+   "present": true,
+   "chars": 4269
+  },
+  {
+   "tpo": 41,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L41-1.txt",
+   "present": true,
+   "chars": 3663
+  },
+  {
+   "tpo": 41,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L41-2.txt",
+   "present": true,
+   "chars": 4399
+  },
+  {
+   "tpo": 41,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L41-3.txt",
+   "present": true,
+   "chars": 4747
+  },
+  {
+   "tpo": 41,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L41-4.txt",
+   "present": true,
+   "chars": 4120
+  },
+  {
+   "tpo": 41,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C41-1.txt",
+   "present": true,
+   "chars": 2756
+  },
+  {
+   "tpo": 41,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C41-2.txt",
+   "present": true,
+   "chars": 2968
+  },
+  {
+   "tpo": 42,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "42-1.txt",
+   "present": true,
+   "chars": 4516
+  },
+  {
+   "tpo": 42,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "42-2.txt",
+   "present": true,
+   "chars": 4255
+  },
+  {
+   "tpo": 42,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "42-3.txt",
+   "present": true,
+   "chars": 4151
+  },
+  {
+   "tpo": 42,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L42-1.txt",
+   "present": true,
+   "chars": 4365
+  },
+  {
+   "tpo": 42,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L42-2.txt",
+   "present": true,
+   "chars": 4344
+  },
+  {
+   "tpo": 42,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L42-3.txt",
+   "present": true,
+   "chars": 3871
+  },
+  {
+   "tpo": 42,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L42-4.txt",
+   "present": true,
+   "chars": 4524
+  },
+  {
+   "tpo": 42,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C42-1.txt",
+   "present": true,
+   "chars": 3046
+  },
+  {
+   "tpo": 42,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C42-2.txt",
+   "present": true,
+   "chars": 2007
+  },
+  {
+   "tpo": 43,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "43-1.txt",
+   "present": true,
+   "chars": 4357
+  },
+  {
+   "tpo": 43,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "43-2.txt",
+   "present": true,
+   "chars": 4122
+  },
+  {
+   "tpo": 43,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "43-3.txt",
+   "present": true,
+   "chars": 4354
+  },
+  {
+   "tpo": 43,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L43-1.txt",
+   "present": true,
+   "chars": 4431
+  },
+  {
+   "tpo": 43,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L43-2.txt",
+   "present": true,
+   "chars": 4813
+  },
+  {
+   "tpo": 43,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L43-3.txt",
+   "present": true,
+   "chars": 4183
+  },
+  {
+   "tpo": 43,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L43-4.txt",
+   "present": true,
+   "chars": 4135
+  },
+  {
+   "tpo": 43,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C43-1.txt",
+   "present": true,
+   "chars": 2871
+  },
+  {
+   "tpo": 43,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C43-2.txt",
+   "present": true,
+   "chars": 3488
+  },
+  {
+   "tpo": 44,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "44-1.txt",
+   "present": true,
+   "chars": 4341
+  },
+  {
+   "tpo": 44,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "44-2.txt",
+   "present": true,
+   "chars": 3986
+  },
+  {
+   "tpo": 44,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "44-3.txt",
+   "present": true,
+   "chars": 4319
+  },
+  {
+   "tpo": 44,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L44-1.txt",
+   "present": true,
+   "chars": 4165
+  },
+  {
+   "tpo": 44,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L44-2.txt",
+   "present": true,
+   "chars": 4298
+  },
+  {
+   "tpo": 44,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L44-3.txt",
+   "present": true,
+   "chars": 4277
+  },
+  {
+   "tpo": 44,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L44-4.txt",
+   "present": true,
+   "chars": 4365
+  },
+  {
+   "tpo": 44,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C44-1.txt",
+   "present": true,
+   "chars": 3119
+  },
+  {
+   "tpo": 44,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C44-2.txt",
+   "present": true,
+   "chars": 2994
+  },
+  {
+   "tpo": 45,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "45-1.txt",
+   "present": true,
+   "chars": 4225
+  },
+  {
+   "tpo": 45,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "45-2.txt",
+   "present": true,
+   "chars": 4133
+  },
+  {
+   "tpo": 45,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "45-3.txt",
+   "present": true,
+   "chars": 4513
+  },
+  {
+   "tpo": 45,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L45-1.txt",
+   "present": true,
+   "chars": 4126
+  },
+  {
+   "tpo": 45,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L45-2.txt",
+   "present": true,
+   "chars": 4749
+  },
+  {
+   "tpo": 45,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L45-3.txt",
+   "present": true,
+   "chars": 4463
+  },
+  {
+   "tpo": 45,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L45-4.txt",
+   "present": true,
+   "chars": 4149
+  },
+  {
+   "tpo": 45,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C45-1.txt",
+   "present": true,
+   "chars": 2547
+  },
+  {
+   "tpo": 45,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C45-2.txt",
+   "present": true,
+   "chars": 3308
+  },
+  {
+   "tpo": 46,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "46-1.txt",
+   "present": true,
+   "chars": 4465
+  },
+  {
+   "tpo": 46,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "46-2.txt",
+   "present": true,
+   "chars": 4486
+  },
+  {
+   "tpo": 46,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "46-3.txt",
+   "present": true,
+   "chars": 4210
+  },
+  {
+   "tpo": 46,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L46-1.txt",
+   "present": true,
+   "chars": 4348
+  },
+  {
+   "tpo": 46,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L46-2.txt",
+   "present": true,
+   "chars": 4222
+  },
+  {
+   "tpo": 46,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L46-3.txt",
+   "present": true,
+   "chars": 3102
+  },
+  {
+   "tpo": 46,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L46-4.txt",
+   "present": true,
+   "chars": 4283
+  },
+  {
+   "tpo": 46,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C46-1.txt",
+   "present": true,
+   "chars": 2887
+  },
+  {
+   "tpo": 46,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C46-2.txt",
+   "present": true,
+   "chars": 3194
+  },
+  {
+   "tpo": 47,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "47-1.txt",
+   "present": true,
+   "chars": 4569
+  },
+  {
+   "tpo": 47,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "47-2.txt",
+   "present": true,
+   "chars": 4108
+  },
+  {
+   "tpo": 47,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "47-3.txt",
+   "present": true,
+   "chars": 3823
+  },
+  {
+   "tpo": 47,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L47-1.txt",
+   "present": true,
+   "chars": 4900
+  },
+  {
+   "tpo": 47,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L47-2.txt",
+   "present": true,
+   "chars": 3953
+  },
+  {
+   "tpo": 47,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L47-3.txt",
+   "present": true,
+   "chars": 4805
+  },
+  {
+   "tpo": 47,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L47-4.txt",
+   "present": true,
+   "chars": 4113
+  },
+  {
+   "tpo": 47,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C47-1.txt",
+   "present": true,
+   "chars": 3498
+  },
+  {
+   "tpo": 47,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C47-2.txt",
+   "present": true,
+   "chars": 2737
+  },
+  {
+   "tpo": 48,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "48-1.txt",
+   "present": true,
+   "chars": 4062
+  },
+  {
+   "tpo": 48,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "48-2.txt",
+   "present": true,
+   "chars": 4535
+  },
+  {
+   "tpo": 48,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "48-3.txt",
+   "present": true,
+   "chars": 4037
+  },
+  {
+   "tpo": 48,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L48-1.txt",
+   "present": true,
+   "chars": 4416
+  },
+  {
+   "tpo": 48,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L48-2.txt",
+   "present": true,
+   "chars": 4493
+  },
+  {
+   "tpo": 48,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L48-3.txt",
+   "present": true,
+   "chars": 4669
+  },
+  {
+   "tpo": 48,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L48-4.txt",
+   "present": true,
+   "chars": 4995
+  },
+  {
+   "tpo": 48,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C48-1.txt",
+   "present": true,
+   "chars": 3036
+  },
+  {
+   "tpo": 48,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C48-2.txt",
+   "present": true,
+   "chars": 2601
+  },
+  {
+   "tpo": 49,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "49-1.txt",
+   "present": true,
+   "chars": 4395
+  },
+  {
+   "tpo": 49,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "49-2.txt",
+   "present": true,
+   "chars": 4500
+  },
+  {
+   "tpo": 49,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "49-3.txt",
+   "present": true,
+   "chars": 4732
+  },
+  {
+   "tpo": 49,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L49-1.txt",
+   "present": true,
+   "chars": 4758
+  },
+  {
+   "tpo": 49,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L49-2.txt",
+   "present": true,
+   "chars": 4653
+  },
+  {
+   "tpo": 49,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L49-3.txt",
+   "present": true,
+   "chars": 4623
+  },
+  {
+   "tpo": 49,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L49-4.txt",
+   "present": true,
+   "chars": 3467
+  },
+  {
+   "tpo": 49,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C49-1.txt",
+   "present": true,
+   "chars": 2729
+  },
+  {
+   "tpo": 49,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C49-2.txt",
+   "present": true,
+   "chars": 3196
+  },
+  {
+   "tpo": 50,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "50-1.txt",
+   "present": true,
+   "chars": 4453
+  },
+  {
+   "tpo": 50,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "50-2.txt",
+   "present": true,
+   "chars": 4504
+  },
+  {
+   "tpo": 50,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "50-3.txt",
+   "present": true,
+   "chars": 4105
+  },
+  {
+   "tpo": 50,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L50-1.txt",
+   "present": true,
+   "chars": 4403
+  },
+  {
+   "tpo": 50,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L50-2.txt",
+   "present": true,
+   "chars": 4431
+  },
+  {
+   "tpo": 50,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L50-3.txt",
+   "present": true,
+   "chars": 4608
+  },
+  {
+   "tpo": 50,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L50-4.txt",
+   "present": true,
+   "chars": 4268
+  },
+  {
+   "tpo": 50,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C50-1.txt",
+   "present": true,
+   "chars": 3187
+  },
+  {
+   "tpo": 50,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C50-2.txt",
+   "present": true,
+   "chars": 3312
+  },
+  {
+   "tpo": 51,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "51-1.txt",
+   "present": true,
+   "chars": 4199
+  },
+  {
+   "tpo": 51,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "51-2.txt",
+   "present": true,
+   "chars": 4485
+  },
+  {
+   "tpo": 51,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "51-3.txt",
+   "present": true,
+   "chars": 4656
+  },
+  {
+   "tpo": 51,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L51-1.txt",
+   "present": true,
+   "chars": 4306
+  },
+  {
+   "tpo": 51,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L51-2.txt",
+   "present": true,
+   "chars": 4392
+  },
+  {
+   "tpo": 51,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L51-3.txt",
+   "present": true,
+   "chars": 4217
+  },
+  {
+   "tpo": 51,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L51-4.txt",
+   "present": true,
+   "chars": 4364
+  },
+  {
+   "tpo": 51,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C51-1.txt",
+   "present": true,
+   "chars": 2868
+  },
+  {
+   "tpo": 51,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C51-2.txt",
+   "present": true,
+   "chars": 3038
+  },
+  {
+   "tpo": 52,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "52-1.txt",
+   "present": true,
+   "chars": 4262
+  },
+  {
+   "tpo": 52,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "52-2.txt",
+   "present": true,
+   "chars": 4020
+  },
+  {
+   "tpo": 52,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "52-3.txt",
+   "present": true,
+   "chars": 4489
+  },
+  {
+   "tpo": 52,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L52-1.txt",
+   "present": true,
+   "chars": 3894
+  },
+  {
+   "tpo": 52,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L52-2.txt",
+   "present": true,
+   "chars": 4439
+  },
+  {
+   "tpo": 52,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L52-3.txt",
+   "present": true,
+   "chars": 4142
+  },
+  {
+   "tpo": 52,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L52-4.txt",
+   "present": true,
+   "chars": 4394
+  },
+  {
+   "tpo": 52,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C52-1.txt",
+   "present": true,
+   "chars": 3014
+  },
+  {
+   "tpo": 52,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C52-2.txt",
+   "present": true,
+   "chars": 4439
+  },
+  {
+   "tpo": 53,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "53-1.txt",
+   "present": true,
+   "chars": 4808
+  },
+  {
+   "tpo": 53,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "53-2.txt",
+   "present": true,
+   "chars": 4474
+  },
+  {
+   "tpo": 53,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "53-3.txt",
+   "present": true,
+   "chars": 4417
+  },
+  {
+   "tpo": 53,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L53-1.txt",
+   "present": true,
+   "chars": 4764
+  },
+  {
+   "tpo": 53,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L53-2.txt",
+   "present": true,
+   "chars": 4561
+  },
+  {
+   "tpo": 53,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L53-3.txt",
+   "present": true,
+   "chars": 4223
+  },
+  {
+   "tpo": 53,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L53-4.txt",
+   "present": true,
+   "chars": 4518
+  },
+  {
+   "tpo": 53,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C53-1.txt",
+   "present": true,
+   "chars": 3492
+  },
+  {
+   "tpo": 53,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C53-2.txt",
+   "present": true,
+   "chars": 3133
+  },
+  {
+   "tpo": 54,
+   "section": "reading",
+   "item": "passage-1",
+   "file": "54-1.txt",
+   "present": true,
+   "chars": 4438
+  },
+  {
+   "tpo": 54,
+   "section": "reading",
+   "item": "passage-2",
+   "file": "54-2.txt",
+   "present": true,
+   "chars": 4533
+  },
+  {
+   "tpo": 54,
+   "section": "reading",
+   "item": "passage-3",
+   "file": "54-3.txt",
+   "present": true,
+   "chars": 4471
+  },
+  {
+   "tpo": 54,
+   "section": "listening",
+   "item": "lecture-1",
+   "file": "L54-1.txt",
+   "present": true,
+   "chars": 4092
+  },
+  {
+   "tpo": 54,
+   "section": "listening",
+   "item": "lecture-2",
+   "file": "L54-2.txt",
+   "present": true,
+   "chars": 4112
+  },
+  {
+   "tpo": 54,
+   "section": "listening",
+   "item": "lecture-3",
+   "file": "L54-3.txt",
+   "present": true,
+   "chars": 4029
+  },
+  {
+   "tpo": 54,
+   "section": "listening",
+   "item": "lecture-4",
+   "file": "L54-4.txt",
+   "present": true,
+   "chars": 4417
+  },
+  {
+   "tpo": 54,
+   "section": "listening",
+   "item": "conversation-1",
+   "file": "C54-1.txt",
+   "present": true,
+   "chars": 2949
+  },
+  {
+   "tpo": 54,
+   "section": "listening",
+   "item": "conversation-2",
+   "file": "C54-2.txt",
+   "present": true,
+   "chars": 2533
+  }
+ ]
+}

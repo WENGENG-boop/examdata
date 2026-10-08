@@ -162,7 +162,7 @@ def identity_parts(meta: dict[str, Any], url: str) -> str:
     同一份文档在公开路径与门禁路径下的 URL 不同，且 Pearson 换路径会变；
     用 URL 做身份会导致同一文档被重复入库。
     """
-    from ..core.ids import identity_key
+    from ...core.ids import identity_key
 
     filename = url.rsplit("/", 1)[-1]
     return identity_key(

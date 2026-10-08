@@ -42,29 +42,94 @@ SOURCE_KIND = "official_resource"
 
 
 def rebuild(session: Session, *, board: Optional[str] = None) -> dict[str, int]:
-    """从既有 FK 关系重建溯源边。幂等。"""
+    """从既有 FK 关系重建溯源边。幂等。
+
+    board 非空时只重建该考试局名下的主体：先删它们的旧边，再只投影它们，
+    其它考试局的数据不受影响。
+    """
     stats: dict[str, int] = {}
 
-    # 先清空，保证是纯投影
+    board_id: Optional[int] = None
     if board is None:
+        # 先清空，保证是纯投影
         session.execute(delete(ProvenanceEdge))
     else:
         board_id = session.scalar(select(Board.id).where(Board.key == board))
-        doc_ids = select(Document.id).where(Document.board_id == board_id)
+        if board_id is None:
+            raise ValueError(f"考试局 {board!r} 不存在")
+        _delete_board_edges(session, board_id)
+
+    stats["questions"] = _link_questions(session, board_id)
+    stats["mark_scheme_entries"] = _link_mark_scheme_entries(session, board_id)
+    stats["assets"] = _link_assets(session, board_id)
+    stats["official_answers"] = _link_official_answers(session, board_id)
+    stats["papers"] = _link_papers(session, board_id)
+    session.flush()
+    return stats
+
+
+def _board_question_ids(board_id: int):
+    """该考试局全部题目的 id 子查询（question -> paper -> document -> board）。"""
+    return (
+        select(Question.id)
+        .join(Paper, Paper.id == Question.paper_id)
+        .join(Document, Document.id == Paper.document_id)
+        .where(Document.board_id == board_id)
+    )
+
+
+def _delete_board_edges(session: Session, board_id: int) -> None:
+    """只删该考试局主体的旧边，其它考试局的边不动。
+
+    资产可能被多个考试局共用，无法只看 subject_id 判断归属，改按边上的
+    attrs.question_id 过滤（重建是低频维护操作，Python 侧筛选可以接受）。
+    """
+    question_ids = _board_question_ids(board_id)
+    ms_ids = (
+        select(MarkSchemeEntry.id)
+        .join(MarkScheme, MarkScheme.id == MarkSchemeEntry.mark_scheme_id)
+        .join(Document, Document.id == MarkScheme.document_id)
+        .where(Document.board_id == board_id)
+    )
+    answer_ids = (
+        select(OfficialAnswer.id)
+        .join(Question, Question.id == OfficialAnswer.question_id)
+        .join(Paper, Paper.id == Question.paper_id)
+        .join(Document, Document.id == Paper.document_id)
+        .where(Document.board_id == board_id)
+    )
+    paper_ids = (
+        select(Paper.id)
+        .join(Document, Document.id == Paper.document_id)
+        .where(Document.board_id == board_id)
+    )
+    for stype, ids in (
+        ("question", question_ids),
+        ("mark_scheme_entry", ms_ids),
+        ("official_answer", answer_ids),
+        ("paper", paper_ids),
+    ):
         session.execute(
             delete(ProvenanceEdge).where(
-                ProvenanceEdge.subject_type.in_(["question", "mark_scheme_entry", "asset",
-                                                 "official_answer", "paper"]),
+                ProvenanceEdge.subject_type == stype,
+                ProvenanceEdge.subject_id.in_(ids),
             )
         )
 
-    stats["questions"] = _link_questions(session)
-    stats["mark_scheme_entries"] = _link_mark_scheme_entries(session)
-    stats["assets"] = _link_assets(session)
-    stats["official_answers"] = _link_official_answers(session)
-    stats["papers"] = _link_papers(session)
-    session.flush()
-    return stats
+    board_qids = set(session.scalars(question_ids).all())
+    if not board_qids:
+        return
+    stale_ids = [
+        edge_id
+        for edge_id, attrs in session.execute(
+            select(ProvenanceEdge.id, ProvenanceEdge.attrs).where(
+                ProvenanceEdge.subject_type == "asset"
+            )
+        ).all()
+        if (attrs or {}).get("question_id") in board_qids
+    ]
+    if stale_ids:
+        session.execute(delete(ProvenanceEdge).where(ProvenanceEdge.id.in_(stale_ids)))
 
 
 def _revision_source(
@@ -111,11 +176,18 @@ def _add(
     return 1
 
 
-def _link_questions(session: Session) -> int:
+def _link_questions(session: Session, board_id: Optional[int] = None) -> int:
     n = 0
-    rows = session.execute(
-        select(Question.id, Question.parse_run_id, Question.number_path, Question.paper_id)
-    ).all()
+    stmt = select(
+        Question.id, Question.parse_run_id, Question.number_path, Question.paper_id
+    )
+    if board_id is not None:
+        stmt = (
+            stmt.join(Paper, Paper.id == Question.paper_id)
+            .join(Document, Document.id == Paper.document_id)
+            .where(Document.board_id == board_id)
+        )
+    rows = session.execute(stmt).all()
     cache: dict[int, Any] = {}
     for qid, run_id, number_path, paper_id in rows:
         if run_id not in cache:
@@ -142,16 +214,19 @@ def _link_questions(session: Session) -> int:
     return n
 
 
-def _link_mark_scheme_entries(session: Session) -> int:
+def _link_mark_scheme_entries(session: Session, board_id: Optional[int] = None) -> int:
     n = 0
-    rows = session.execute(
-        select(
-            MarkSchemeEntry.id,
-            MarkSchemeEntry.number_path,
-            MarkScheme.document_id,
-            MarkSchemeEntry.mark_scheme_id,
-        ).join(MarkScheme, MarkScheme.id == MarkSchemeEntry.mark_scheme_id)
-    ).all()
+    stmt = select(
+        MarkSchemeEntry.id,
+        MarkSchemeEntry.number_path,
+        MarkScheme.document_id,
+        MarkSchemeEntry.mark_scheme_id,
+    ).join(MarkScheme, MarkScheme.id == MarkSchemeEntry.mark_scheme_id)
+    if board_id is not None:
+        stmt = stmt.join(Document, Document.id == MarkScheme.document_id).where(
+            Document.board_id == board_id
+        )
+    rows = session.execute(stmt).all()
     for eid, number_path, doc_id, ms_id in rows:
         rev = session.scalar(
             select(DocumentRevision)
@@ -176,18 +251,24 @@ def _link_mark_scheme_entries(session: Session) -> int:
     return n
 
 
-def _link_assets(session: Session) -> int:
+def _link_assets(session: Session, board_id: Optional[int] = None) -> int:
     n = 0
-    rows = session.execute(
-        select(
-            Asset.id,
-            Asset.sha256,
-            Asset.storage_key,
-            QuestionAsset.question_id,
-            QuestionAsset.page,
-            QuestionAsset.role,
-        ).join(QuestionAsset, QuestionAsset.asset_id == Asset.id)
-    ).all()
+    stmt = select(
+        Asset.id,
+        Asset.sha256,
+        Asset.storage_key,
+        QuestionAsset.question_id,
+        QuestionAsset.page,
+        QuestionAsset.role,
+    ).join(QuestionAsset, QuestionAsset.asset_id == Asset.id)
+    if board_id is not None:
+        stmt = (
+            stmt.join(Question, Question.id == QuestionAsset.question_id)
+            .join(Paper, Paper.id == Question.paper_id)
+            .join(Document, Document.id == Paper.document_id)
+            .where(Document.board_id == board_id)
+        )
+    rows = session.execute(stmt).all()
     seen: set[tuple[int, int]] = set()
     for aid, sha, storage_key, qid, page, role in rows:
         if (aid, qid) in seen:
@@ -213,16 +294,22 @@ def _link_assets(session: Session) -> int:
     return n
 
 
-def _link_official_answers(session: Session) -> int:
+def _link_official_answers(session: Session, board_id: Optional[int] = None) -> int:
     n = 0
-    rows = session.execute(
-        select(
-            OfficialAnswer.id,
-            OfficialAnswer.question_id,
-            OfficialAnswer.source,
-            OfficialAnswer.source_document_id,
+    stmt = select(
+        OfficialAnswer.id,
+        OfficialAnswer.question_id,
+        OfficialAnswer.source,
+        OfficialAnswer.source_document_id,
+    )
+    if board_id is not None:
+        stmt = (
+            stmt.join(Question, Question.id == OfficialAnswer.question_id)
+            .join(Paper, Paper.id == Question.paper_id)
+            .join(Document, Document.id == Paper.document_id)
+            .where(Document.board_id == board_id)
         )
-    ).all()
+    rows = session.execute(stmt).all()
     for aid, qid, source, src_doc_id in rows:
         doc_id = src_doc_id
         if doc_id is None:
@@ -255,11 +342,14 @@ def _link_official_answers(session: Session) -> int:
     return n
 
 
-def _link_papers(session: Session) -> int:
+def _link_papers(session: Session, board_id: Optional[int] = None) -> int:
     n = 0
-    rows = session.execute(
-        select(Paper.id, Paper.document_id, Paper.parse_run_id, Paper.paper_no)
-    ).all()
+    stmt = select(Paper.id, Paper.document_id, Paper.parse_run_id, Paper.paper_no)
+    if board_id is not None:
+        stmt = stmt.join(Document, Document.id == Paper.document_id).where(
+            Document.board_id == board_id
+        )
+    rows = session.execute(stmt).all()
     for pid, doc_id, run_id, paper_no in rows:
         rev = session.scalar(
             select(DocumentRevision)

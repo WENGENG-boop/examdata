@@ -1,0 +1,167 @@
+{
+  "proposal_version": "b04-merge-proposal/1",
+  "packet": "B04",
+  "generated_by": "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_proposals.py",
+  "generated_at": "2026-10-07T01:40:30+08:00",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "candidate_manifest": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/B04_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "candidate_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "candidate_tree_digest_rule": "sha256 over 'path\\0sha256\\n' for every file under the root, sorted by path, excluding __pycache__/.pytest_cache and excluding the named manifest itself",
+    "parent_manifest": "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/B03_CANDIDATE_MANIFEST.json",
+    "parent_manifest_sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "parent_manifest_sha256_at_build": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "parent_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "parent_tree_including_manifest": {
+      "files": 187,
+      "excludes": [],
+      "sha256": "6201bd5def2f3788a98b9a97e3c9101ce7adc5ed5a21233f3106867f837d8226"
+    },
+    "a14_merge_map": "docs/integration/execution/A14_MERGE_MAP.json",
+    "a14_merge_map_sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+    "a14_merge_map_byte_unchanged": true
+  },
+  "digest_checks": {
+    "candidate_tree_reverified": true,
+    "parent_tree_reverified": true,
+    "b03_merge_crossref_matches": true,
+    "new_module_source_matches": true,
+    "note": "tree digests recomputed from disk at proposal time with the recorded rule (sha256 over 'path\\0sha256\\n', sorted, __pycache__/.pytest_cache skipped, named manifest excluded); the B03 cross-reference checks this candidate's recorded parent against B03_MERGE_PROPOSAL.json's derived_from; the new-module check compares the candidate file against the private tooling source"
+  },
+  "scope_note": "B04 adds exactly one new file relative to its parent (the B03 contracts/catalog candidate): the composition hook src/examdata/integration/api/compose.py. The registration into the shared application is a planned edit to examdata/src/examdata/api/app.py that stays deferred until the human release (deferred_pending_release). The product/test payload inside the candidate is the R04 payload already proposed in R0104_MERGE_PROPOSAL.json and the packaging already proposed in B02_MERGE_PROPOSAL.json; nothing is re-proposed here. Proposal only: nothing in this file has been applied to the original project. All seven gates remain closed; the original merge stays blocked until an explicit human release.",
+  "action_level_gate_model": {
+    "principle": "A gate is required only for the action that performs that effect. Private preparation never satisfies an original-action prerequisite.",
+    "private_preparation": {
+      "gates_required": [],
+      "note": "reading, staging, private copies, offline validation, synthetic fixtures: no gate required and none is opened"
+    },
+    "original_path_write": {
+      "gates_required": [
+        "original_paths_released"
+      ],
+      "note": "any write into the original project requires the human release"
+    },
+    "other_actions": {
+      "real_data_write": "real_data_write_authorized",
+      "existing_service_cutover": "existing_service_cutover_authorized",
+      "upstream_request": "upstream_requests_authorized",
+      "cie_resume": "cie_resume_authorized",
+      "remote_deployment": "remote_deployment_authorized",
+      "original_cleanup": "original_cleanup_authorized"
+    }
+  },
+  "frozen_evidence_never_touched": [
+    "docs/integration/execution/evidence/**",
+    "integration-staging/runtime/phase-b/**",
+    "integration-staging/runtime/r0104-repair-20261006/candidates/**",
+    "integration-staging/runtime/b02-rehearsal-20261006/candidates/**",
+    "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/**",
+    "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/**"
+  ],
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "counts": {
+    "entries": 3,
+    "entries_requiring_release": 2,
+    "staging_only_entries": 1,
+    "new_files_vs_parent": 1
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "change": "candidate_container",
+      "staged_path": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1",
+      "staged_sha256_before": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5",
+      "staged_sha256_after": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc",
+      "kind": "staging_candidate_tree",
+      "proposed_target": null,
+      "proposed_target_origin": "staging-only rehearsal container: no original-project target",
+      "phase_b_action": "keep in integration-staging/ only; no original-project action proposed",
+      "reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "sha_note": "the before digest covers the parent file set with B03's own manifest excluded (its digest rule); the after digest covers the candidate file set with B04's own manifest excluded; both use the same function and rule",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "change": "new_module_composition_hook",
+      "staged_path": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/src/examdata/integration/api/compose.py",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "e220c007dba89d544cdd4c841c2ff5ab200b01e61556ba41a22a70c45f306efd",
+      "kind": "new_file",
+      "proposed_target": "examdata/src/examdata/integration/api/compose.py",
+      "proposed_target_origin": "derived from the A14 target-layout convention (candidate src/... maps to examdata/src/...); the file is new since A14, so it has no A14 entry of its own",
+      "phase_b_action": "add_file at the proposed target (new module; no existing original file is edited by this entry)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "sha_note": "staged_sha256_after is recomputed from the candidate file and equals both the private tooling source and the manifest's recorded written_sha256",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "change": "register_v2_routes_in_shared_app",
+      "staged_path": null,
+      "staged_sha256_before": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+      "staged_sha256_after": null,
+      "kind": "planned_edit",
+      "proposed_target": "examdata/src/examdata/api/app.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json planned_original_edits (packet B04)",
+      "phase_b_action": "no file is staged for this edit by design: the changed bytes are produced only after the human release; this entry records the planned change, its base bytes and its reversal",
+      "reversal": "restore the recorded base bytes (hash above)",
+      "a14_record": {
+        "target_path": "examdata/src/examdata/api/app.py",
+        "base_sha256": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+        "base_exists": true,
+        "observed_at": "2026-10-06T11:43:31+08:00",
+        "packet": "B04",
+        "change": "register the staged v2 routes in the shared application (include_router / factory hook) without removing or shadowing any legacy route; keep path ordering and operation IDs",
+        "reversal": "restore the recorded base bytes (hash above)",
+        "note": "shared file; Kimi-owned and protected in Phase A"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "sha_note": "the base sha256 is carried verbatim from the A14 record (observed 2026-10-06T11:43:31+08:00); Phase B never read the original file, so the base hash must be re-verified at release time before any write",
+      "status": "deferred_pending_release"
+    }
+  ],
+  "not_merged": true,
+  "requirements_for_merge": [
+    "explicit human release opening original_paths_released with an explicit scope",
+    "apply the two release-required entries: add examdata/src/examdata/integration/api/compose.py and edit examdata/src/examdata/api/app.py per the A14 record (register the staged v2 routes without removing or shadowing any legacy route; keep path ordering and operation IDs)",
+    "re-verify the app.py base sha256 against the A14-recorded value immediately before the edit (Phase B never read the original file)",
+    "verify the candidate tree digest (staged_sha256_after, recomputed with the recorded rule) immediately before any original write",
+    "re-run the isolated staged suite against the frozen B04 candidate before any original write, and re-run the B04 route probe plus the suite against the merged tree afterwards"
+  ]
+}

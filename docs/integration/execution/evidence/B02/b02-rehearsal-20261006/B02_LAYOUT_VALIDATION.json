@@ -1,0 +1,76 @@
+{
+  "schema": "examdata.integration.b02_rehearsal_validation/1",
+  "run_id": "b02-rehearsal-20261006",
+  "packet": "B02",
+  "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1",
+  "probe": "b02_runtime_probe.py",
+  "runs": [
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api",
+      "exit_code": 0,
+      "checks": 32,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp",
+      "exit_code": 0,
+      "checks": 32,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\cwd with spaces ünïcode",
+      "exit_code": 0,
+      "checks": 32,
+      "checks_failed": 0,
+      "ok": true
+    }
+  ],
+  "discovery_identical_across_cwds": true,
+  "discovery": {
+    "ids": [
+      "fake_cli"
+    ],
+    "problems": [],
+    "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\components\\fake-node-cli\\fake-cli.mjs"
+  },
+  "in_process_cwds": [
+    "C:\\Users\\weo\\Desktop\\api",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\cwd with spaces ünïcode"
+  ],
+  "candidate_tree_digest_reproducible": {
+    "files_match": true,
+    "sha256_match": true,
+    "recorded": {
+      "files": 185,
+      "excludes": [
+        "B02_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf"
+    },
+    "recomputed": {
+      "files": 185,
+      "sha256": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf"
+    },
+    "candidate_manifest_sha256": "59dfc8c79b59d86ae67313cdb96048d5bb73e365405070de3e9b2a872264648d"
+  },
+  "findings": [],
+  "not_run": [
+    {
+      "check": "real legacy Node gateway execution (ielts-api / toefl-api)",
+      "reason": "gate original_paths_released is closed"
+    },
+    {
+      "check": "real Node component execution",
+      "reason": "gate original_paths_released is closed; synthetic fixture only"
+    },
+    {
+      "check": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; schema and data roots unchanged"
+    }
+  ],
+  "verdict": "b02_rehearsal_valid_private_only",
+  "note": "private candidate only; not merged, not deployed; the original tree was neither read, imported nor written; frozen evidence under evidence/B01/**, evidence/R0104/** and runtime/phase-b/** was not touched"
+}

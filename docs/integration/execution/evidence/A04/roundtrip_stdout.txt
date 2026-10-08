@@ -1,0 +1,125 @@
+=== A04 contract round-trip over the A03 synthetic fixtures ===
+generated_at_local: 2026-10-05T19:58:18+08:00
+fixtures: integration-staging/fixtures/synthetic
+
+--- identity registry sizes ---
+ielts: records=22 collisions=0 alias_events=0
+cie: records=12 collisions=0 alias_events=0
+edexcel: records=4 collisions=0 alias_events=0
+
+--- round-trip and validate ---
+validate ielts.containers.container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq [container/1]: no problems
+validate ielts.questions.q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf [question/1]: no problems
+validate ielts.questions.q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.answer.ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb [answer/1]: no problems
+validate ielts.questions.q_ymm437ermxommfdifgexf7eq6dm6kdxc [question/1]: no problems
+validate ielts.questions.q_ymm437ermxommfdifgexf7eq6dm6kdxc.answer.ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh [answer/1]: no problems
+validate ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck [question/1]: no problems
+validate ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck.child.q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k [question/1]: no problems
+validate ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck.child.q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd [question/1]: no problems
+validate ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck.answer.ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo [answer/1]: no problems
+validate ielts.questions.q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5 [question/1]: no problems
+validate ielts.questions.q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.answer.ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc [answer/1]: no problems
+validate ielts.questions.q_rtf7wrlwtotph3p45wx5wlfpfuo32iku [question/1]: no problems
+validate ielts.questions.q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy [question/1]: no problems
+validate ielts.questions.q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.answer.ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke [answer/1]: ['answer: conflicting candidates recorded without a manual decision']
+validate ielts.assets.asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m [asset/1]: ['asset: byte size missing']
+validate ielts.coverage.cov_synthetic_ielts [coverage/1]: no problems
+validate supporting.examination_systems.es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4 [examination-system/1]: no problems
+validate supporting.syllabi.syl_6ytdfhso2hvo47geydgicjiuyilumcei [syllabus/1]: no problems
+validate supporting.tags.tag_fz2cdf3lly5r3uybtl2vmbubioquwymu [tag/1]: no problems
+validate supporting.materials.mat_mmfjianasbw6qrncjkldxnfuavnls3ou [material/1]: no problems
+validate supporting.regions.region_fn2r2ikszwe234bmma3a5zorsr7snsk3 [region/1]: no problems
+validate supporting.timetable_windows.ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv [timetable-window/1]: no problems
+validate supporting.jobs.job_6zcvxittpvvbnvtpqttigpsmos2i5zmn [job-status/1]: no problems
+validate cie.containers.container_6cnnjvwpypjw2orom36k3xjazamje2x3 [container/1]: no problems
+validate cie.courses.course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg [course/1]: no problems
+validate cie.questions.q_2tc2e4uhkufazt3aszordnnbilofoy6s [question/1]: ['question: no answer recorded (keep the slot, report the gap)']
+validate cie.questions.q_2tc2e4uhkufazt3aszordnnbilofoy6s.child.q_cb5bnkkjhe4ct7mrvespujhxowo2r3up [question/1]: no problems
+validate cie.questions.q_2tc2e4uhkufazt3aszordnnbilofoy6s.child.q_ngtwfvjwc26jyirswzxxcccjeeidio56 [question/1]: no problems
+validate cie.questions.q_nxjtvu4225v43syunzyhurjzvxl7szhk [question/1]: no problems
+validate cie.questions.q_nxjtvu4225v43syunzyhurjzvxl7szhk.answer.ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx [answer/1]: no problems
+validate cie.questions.q_w4ecszmbbqa54chk22paau3sluucc22z [question/1]: no problems
+validate cie.questions.q_w4ecszmbbqa54chk22paau3sluucc22z.answer.ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl [answer/1]: ['answer: conflicting candidates recorded without a manual decision']
+validate cie.assets.asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl [asset/1]: ['asset: byte size missing']
+validate cie.assets.asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd [asset/1]: ['asset: byte size missing']
+validate cie.timetable_events.tte_punqoxygppjubuhcuj4nkd4nbikowv3f [timetable-event/1]: ['timetable_event: date unknown - keep it unknown, never invent one', 'timetable_event: session without timezone']
+validate cie.coverage.cov_synthetic_cie [coverage/1]: no problems
+validate edexcel.containers.container_3bbmo2jmeebj3htxofgvkubtrcj23pct [container/1]: no problems
+validate edexcel.courses.course_vfthis5jlxjijxarwasb7bbyghnx7fqt [course/1]: no problems
+validate edexcel.timetable_events.tte_hdxrn6xaev6ihma5sgilzhroxl5olams [timetable-event/1]: ['timetable_event: date unknown - keep it unknown, never invent one', 'timetable_event: session without timezone']
+validate edexcel.timetable_events.tte_5kfllz2yp7iibointgdo56rmvnm7zgjc [timetable-event/1]: ['timetable_event: date unknown - keep it unknown, never invent one', 'timetable_event: session without timezone']
+
+--- preservation assertions ---
+
+--- examples written ---
+examples: 43 + INDEX.json -> integration-staging/contracts/examples
+schemas covered (15): ['answer/1', 'asset/1', 'container/1', 'course/1', 'coverage/1', 'examination-system/1', 'identity-registry/1', 'job-status/1', 'material/1', 'question/1', 'region/1', 'syllabus/1', 'tag/1', 'timetable-event/1', 'timetable-window/1']
+
+--- verdict ---
+registry.ielts.no_collisions: PASS
+registry.ielts.no_alias_conflicts: PASS
+registry.cie.no_collisions: PASS
+registry.cie.no_alias_conflicts: PASS
+registry.edexcel.no_collisions: PASS
+registry.edexcel.no_alias_conflicts: PASS
+roundtrip.ielts.containers.container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq: PASS
+roundtrip.ielts.questions.q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf: PASS
+roundtrip.ielts.questions.q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.answer.ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb: PASS
+roundtrip.ielts.questions.q_ymm437ermxommfdifgexf7eq6dm6kdxc: PASS
+roundtrip.ielts.questions.q_ymm437ermxommfdifgexf7eq6dm6kdxc.answer.ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh: PASS
+roundtrip.ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck: PASS
+roundtrip.ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck.child.q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k: PASS
+roundtrip.ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck.child.q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd: PASS
+roundtrip.ielts.questions.q_egcwv27xjaq2elinkwd63fu6zvvq45ck.answer.ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo: PASS
+roundtrip.ielts.questions.q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5: PASS
+roundtrip.ielts.questions.q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.answer.ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc: PASS
+roundtrip.ielts.questions.q_rtf7wrlwtotph3p45wx5wlfpfuo32iku: PASS
+roundtrip.ielts.questions.q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy: PASS
+roundtrip.ielts.questions.q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.answer.ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke: PASS
+roundtrip.ielts.assets.asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m: PASS
+roundtrip.ielts.coverage.cov_synthetic_ielts: PASS
+roundtrip.supporting.examination_systems.es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4: PASS
+roundtrip.supporting.syllabi.syl_6ytdfhso2hvo47geydgicjiuyilumcei: PASS
+roundtrip.supporting.tags.tag_fz2cdf3lly5r3uybtl2vmbubioquwymu: PASS
+roundtrip.supporting.materials.mat_mmfjianasbw6qrncjkldxnfuavnls3ou: PASS
+roundtrip.supporting.regions.region_fn2r2ikszwe234bmma3a5zorsr7snsk3: PASS
+roundtrip.supporting.timetable_windows.ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv: PASS
+roundtrip.supporting.jobs.job_6zcvxittpvvbnvtpqttigpsmos2i5zmn: PASS
+roundtrip.cie.containers.container_6cnnjvwpypjw2orom36k3xjazamje2x3: PASS
+roundtrip.cie.courses.course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg: PASS
+roundtrip.cie.questions.q_2tc2e4uhkufazt3aszordnnbilofoy6s: PASS
+roundtrip.cie.questions.q_2tc2e4uhkufazt3aszordnnbilofoy6s.child.q_cb5bnkkjhe4ct7mrvespujhxowo2r3up: PASS
+roundtrip.cie.questions.q_2tc2e4uhkufazt3aszordnnbilofoy6s.child.q_ngtwfvjwc26jyirswzxxcccjeeidio56: PASS
+roundtrip.cie.questions.q_nxjtvu4225v43syunzyhurjzvxl7szhk: PASS
+roundtrip.cie.questions.q_nxjtvu4225v43syunzyhurjzvxl7szhk.answer.ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx: PASS
+roundtrip.cie.questions.q_w4ecszmbbqa54chk22paau3sluucc22z: PASS
+roundtrip.cie.questions.q_w4ecszmbbqa54chk22paau3sluucc22z.answer.ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl: PASS
+roundtrip.cie.assets.asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl: PASS
+roundtrip.cie.assets.asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd: PASS
+roundtrip.cie.timetable_events.tte_punqoxygppjubuhcuj4nkd4nbikowv3f: PASS
+roundtrip.cie.coverage.cov_synthetic_cie: PASS
+roundtrip.edexcel.containers.container_3bbmo2jmeebj3htxofgvkubtrcj23pct: PASS
+roundtrip.edexcel.courses.course_vfthis5jlxjijxarwasb7bbyghnx7fqt: PASS
+roundtrip.edexcel.timetable_events.tte_hdxrn6xaev6ihma5sgilzhroxl5olams: PASS
+roundtrip.edexcel.timetable_events.tte_5kfllz2yp7iibointgdo56rmvnm7zgjc: PASS
+ielts.alias_resolves_book: PASS
+ielts.alias_case_insensitive: PASS
+ielts.q41_slot_preserved: PASS
+ielts.q2_grouped_alternatives_preserved: PASS
+ielts.q3_parent_and_children_preserved: PASS
+ielts.q4_table_structure_preserved: PASS
+ielts.q5_conflict_and_manual_decision_preserved: PASS
+ielts.q5_required_image_preserved: PASS
+ielts.lineage_preserved: PASS
+ielts.native_locator_roundtrip: PASS
+cie.hierarchy_preserved: PASS
+cie.table_structure_preserved: PASS
+cie.unknown_date_preserved: PASS
+cie.conflict_preserved: PASS
+cie.synthetic_never_verified: PASS
+edexcel.sessions_unknown_dates: PASS
+edexcel.alias_resolves_subject: PASS
+supporting.region_has_document_hash: PASS
+examples.every_entity_kind_covered: PASS
+A04_ROUNDTRIP_JSON: PASS
+ROUNDTRIP: PASS

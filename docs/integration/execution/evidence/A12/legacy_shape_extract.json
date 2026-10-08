@@ -1,0 +1,2376 @@
+{
+  "schema": "examdata.integration.legacy_shape_extract/1",
+  "method": "static_ast_no_import",
+  "files": [
+    "examdata/src/examdata/api/app.py",
+    "examdata/src/examdata/api/unified.py",
+    "examdata/src/examdata/api/ielts.py",
+    "examdata/src/examdata/api/toefl.py"
+  ],
+  "source_hashes": {
+    "examdata/src/examdata/api/app.py": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+    "examdata/src/examdata/api/unified.py": "9568b295d15e837e69a879cfc7dabf53f16a42d61a7a9c2859ec386fdacbe4c1",
+    "examdata/src/examdata/api/ielts.py": "9d79ee009086f72e0fc2c2a94ad679c359d42d0f1e970b15a75915cce03511d3",
+    "examdata/src/examdata/api/toefl.py": "051449da09363e1c2d392c5a57f809b9d3a30cd2feabcdca4dffaacf73d17934"
+  },
+  "route_count": 64,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/paper-qa/resolve",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 103,
+      "handler": "paper_qa_resolve",
+      "decorator": {},
+      "params": [
+        {
+          "name": "board",
+          "annotation": "str"
+        },
+        {
+          "name": "subject",
+          "annotation": "str"
+        },
+        {
+          "name": "year",
+          "annotation": "int"
+        },
+        {
+          "name": "season",
+          "annotation": "str"
+        },
+        {
+          "name": "paper",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "question",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "mode",
+          "default": "None",
+          "annotation": "Optional[str]"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "paperqa_resolve(board, subject, year, season, paper, question, mode).metadata",
+          "expr": "paperqa_resolve(board, subject, year, season, paper, question, mode).metadata()"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": "str(error)"
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": "str(exc)"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/paper-qa/query",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 129,
+      "handler": "paper_qa_query",
+      "decorator": {},
+      "params": [
+        {
+          "name": "board",
+          "annotation": "str"
+        },
+        {
+          "name": "subject",
+          "annotation": "str"
+        },
+        {
+          "name": "year",
+          "annotation": "int"
+        },
+        {
+          "name": "season",
+          "annotation": "str"
+        },
+        {
+          "name": "paper",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "question",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "mode",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "format",
+          "default": "Query(None, description='binary（默认，返回原始字节/ZIP）或 json（base64 + 元数据）')",
+          "annotation": "Optional[str]"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "Response",
+          "expr": "Response(file.data, media_type=file.media_type, headers={'Content-Disposition': content_disposition(file.name), 'Content-Length': str(len(file.data))})"
+        },
+        {
+          "kind": "call",
+          "call": "json_payload",
+          "expr": "json_payload(result)"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": "str(error)"
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": "str(exc)"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 422,
+          "detail": "'format must be binary or json'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 167,
+      "handler": "health",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "status",
+            "papers"
+          ],
+          "expr": "{'status': 'ok', 'papers': total}"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 503,
+          "detail": "'数据库不可用'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/papers",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 179,
+      "handler": "list_papers",
+      "decorator": {},
+      "params": [
+        {
+          "name": "board",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "qualification",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "subject",
+          "default": "Query(None, description='科目代码，如 0580')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "year",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "session_name",
+          "default": "Query(None, alias='session')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "paper",
+          "default": "Query(None, description='Paper 代码，如 11')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "component",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "variant",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "level",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "doc_type",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "limit",
+          "default": "Query(50, ge=1, le=500)",
+          "annotation": "int"
+        },
+        {
+          "name": "offset",
+          "default": "Query(0, ge=0)",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "total",
+            "limit",
+            "offset",
+            "items"
+          ],
+          "expr": "{'total': count_papers(db, f), 'limit': limit, 'offset': offset, 'items': search_papers(db, f)}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/questions",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 213,
+      "handler": "list_questions",
+      "decorator": {},
+      "params": [
+        {
+          "name": "board",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "subject",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "year",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "session_name",
+          "default": "Query(None, alias='session')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "paper",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "level",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "number_path",
+          "default": "Query(None, description='题号路径，如 1(a)')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "keyword",
+          "default": "Query(None, description='题干关键词')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "marks_min",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "marks_max",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "leaves_only",
+          "default": "Query(False, description='只取可独立作答的叶子题')",
+          "annotation": "bool"
+        },
+        {
+          "name": "roots_only",
+          "default": "Query(False, description='只取大题')",
+          "annotation": "bool"
+        },
+        {
+          "name": "has_asset",
+          "default": "Query(None, description='是否要求带图形/图表')",
+          "annotation": "Optional[bool]"
+        },
+        {
+          "name": "has_answer",
+          "default": "Query(None, description='是否要求有官方答案')",
+          "annotation": "Optional[bool]"
+        },
+        {
+          "name": "taxonomy",
+          "default": "Query(None, description='知识点代码')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "limit",
+          "default": "Query(20, ge=1, le=500)",
+          "annotation": "int"
+        },
+        {
+          "name": "offset",
+          "default": "Query(0, ge=0)",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "total",
+            "limit",
+            "offset",
+            "items"
+          ],
+          "expr": "{'total': count_questions(db, f), 'limit': limit, 'offset': offset, 'items': search_questions(db, f)}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 262,
+      "handler": "question_detail",
+      "decorator": {},
+      "params": [
+        {
+          "name": "question_id",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "name",
+          "name": "bundle"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'题目 {question_id} 不存在'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}/similar",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 271,
+      "handler": "question_similar",
+      "decorator": {},
+      "params": [
+        {
+          "name": "question_id",
+          "annotation": "int"
+        },
+        {
+          "name": "limit",
+          "default": "Query(10, ge=1, le=50)",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "question_id",
+            "count",
+            "items"
+          ],
+          "expr": "{'question_id': question_id, 'count': len(items), 'items': items}"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'题目 {question_id} 不存在'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/taxonomy",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 286,
+      "handler": "taxonomy",
+      "decorator": {},
+      "params": [
+        {
+          "name": "board",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "roots",
+            "topic_count"
+          ],
+          "expr": "{'roots': roots, 'topic_count': len(roots)}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/papers/{paper_id}/tree",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 296,
+      "handler": "paper_tree",
+      "decorator": {},
+      "params": [
+        {
+          "name": "paper_id",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "name",
+          "name": "tree"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'试卷 {paper_id} 不存在'"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/sample",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 305,
+      "handler": "sample",
+      "decorator": {},
+      "params": [
+        {
+          "name": "subject",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "year",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "paper",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "marks_min",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "count",
+          "default": "Query(None, ge=1, le=200, description='抽题数量')",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "marks_target",
+          "default": "Query(None, ge=1, le=300, description='目标总分')",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "seed",
+          "default": "Query(None, description='随机种子，便于复现')",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "marks_total",
+            "requested_marks",
+            "question_count",
+            "questions"
+          ],
+          "expr": "{'marks_total': comp.marks_total, 'requested_marks': comp.requested_marks, 'question_count': len(comp.questions), 'questions': comp.questions}"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 422,
+          "detail": "'count 与 marks_target 至少给一个'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/monitor",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 336,
+      "handler": "monitor",
+      "decorator": {},
+      "params": [
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "sync",
+            "health",
+            "review_queue"
+          ],
+          "expr": "{'sync': sync_status(db), 'health': board_health(db), 'review_queue': review_queue(db, limit=200)}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}/provenance",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 346,
+      "handler": "question_provenance",
+      "decorator": {},
+      "params": [
+        {
+          "name": "question_id",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "question_id",
+            "sources"
+          ],
+          "expr": "{'question_id': question_id, 'sources': trace(db, 'question', question_id)}"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'题目 {question_id} 不存在'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/assets/{asset_id}/provenance",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 363,
+      "handler": "asset_provenance",
+      "decorator": {},
+      "params": [
+        {
+          "name": "asset_id",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "asset_id",
+            "sources"
+          ],
+          "expr": "{'asset_id': asset_id, 'sources': trace(db, 'asset', asset_id)}"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'资产 {asset_id} 不存在'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/provenance/coverage",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 374,
+      "handler": "provenance_coverage",
+      "decorator": {},
+      "params": [
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "coverage",
+            "complete"
+          ],
+          "expr": "{'coverage': cov, 'complete': all((c['ratio'] >= 1.0 for c in cov.values()))}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/review",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 386,
+      "handler": "review",
+      "decorator": {},
+      "params": [
+        {
+          "name": "status",
+          "default": "Query('open', description='open / in_progress / done / dismissed')",
+          "annotation": "str"
+        },
+        {
+          "name": "target_type",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "limit",
+          "default": "Query(50, ge=1, le=500)",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "status",
+            "count",
+            "items"
+          ],
+          "expr": "{'status': status, 'count': len(items), 'items': items}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/overrides",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 400,
+      "handler": "overrides",
+      "decorator": {},
+      "params": [
+        {
+          "name": "target_type",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "target_id",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "conflicts",
+          "default": "Query(False, description='只看冲突未生效的')",
+          "annotation": "bool"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "count",
+            "items"
+          ],
+          "expr": "{'count': len(items), 'items': items}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/classifications",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 416,
+      "handler": "classifications",
+      "decorator": {},
+      "params": [
+        {
+          "name": "document_id",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "method",
+          "default": "Query(None, description='label+content / conflict / content / label')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "limit",
+          "default": "Query(50, ge=1, le=500)",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "count",
+            "conflicts",
+            "items"
+          ],
+          "expr": "{'count': len(items), 'conflicts': conflicts, 'items': items}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}/explanation",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 453,
+      "handler": "question_explanation",
+      "decorator": {},
+      "params": [
+        {
+          "name": "question_id",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "question_id",
+            "official",
+            "generated"
+          ],
+          "expr": "{'question_id': question_id, 'official': [{'id': a.id, 'source': a.source, 'content': a.content, 'is_official': a.is_official} for a in official], 'generated..."
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'题目 {question_id} 不存在'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/explanations/review-queue",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 509,
+      "handler": "explanation_review_queue",
+      "decorator": {},
+      "params": [
+        {
+          "name": "status",
+          "default": "Query('pending', description='pending / approved / rejected')",
+          "annotation": "str"
+        },
+        {
+          "name": "limit",
+          "default": "Query(50, ge=1, le=500)",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "status",
+            "total",
+            "count",
+            "items"
+          ],
+          "expr": "{'status': status, 'total': total, 'count': len(items), 'items': [{'id': g.id, 'question_id': g.question_id, 'provider': g.provider, 'review_status': g.revie..."
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/assets/{asset_id}",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 551,
+      "handler": "asset_file",
+      "decorator": {},
+      "params": [
+        {
+          "name": "asset_id",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "FileResponse",
+          "expr": "FileResponse(path, media_type=asset.mime or 'application/octet-stream')"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 410,
+          "detail": "'资产文件已丢失'"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 403,
+          "detail": "'资产路径无效'"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 403,
+          "detail": "'资产路径无效'"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 403,
+          "detail": "'资产路径无效'"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'资产 {asset_id} 不存在'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/info",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 178,
+      "handler": "ielts_info",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "board",
+            "name",
+            "aggregator",
+            "books",
+            "routes",
+            "sources",
+            "env",
+            "notes"
+          ],
+          "expr": "{'board': 'ielts', 'name': 'IELTS（剑桥雅思）', 'aggregator': 'ielts-api/ielts-cli.mjs（Node ≥18，零 npm 依赖）', 'books': {'range': '1–21', 'tests_per_book': 4, 'note':..."
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/books/{book}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 247,
+      "handler": "ielts_book",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('pte-book', book, timeout=90)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/reading/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 252,
+      "handler": "ielts_reading",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        },
+        {
+          "name": "passage",
+          "default": "Query(None, description='Passage 1–3；缺省返回整卷 3 篇')",
+          "annotation": "int | None"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('reading', book, test, passage, timeout=90)"
+        },
+        {
+          "kind": "await",
+          "expr": "await _run('reading', book, test, timeout=90)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/reading-enriched/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 261,
+      "handler": "ielts_reading_enriched",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        },
+        {
+          "name": "passage",
+          "default": "Query(1, description='Passage 1–3；默认 1')",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('reading-enriched', book, test, passage, timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/listening/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 268,
+      "handler": "ielts_listening",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('listening-qa', book, test, timeout=180)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/aggregate/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 284,
+      "handler": "ielts_aggregate",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('aggregate', book, test, timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 289,
+      "handler": "ielts_coverage",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('coverage', timeout=600)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/cam21/reading/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 299,
+      "handler": "ielts_cam21_reading",
+      "decorator": {},
+      "params": [
+        {
+          "name": "test",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('cam21-reading', test, timeout=90)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/cam21/listening/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 304,
+      "handler": "ielts_cam21_listening",
+      "decorator": {},
+      "params": [
+        {
+          "name": "test",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('cam21-listening', test, timeout=90)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/cam21/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 309,
+      "handler": "ielts_cam21_coverage",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('cam21-coverage', timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/ito/script/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 319,
+      "handler": "ielts_ito_script",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('ito-script', book, test, timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/ito/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 324,
+      "handler": "ielts_ito_coverage",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('ito-coverage', timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/listening-script/{book}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 329,
+      "handler": "ielts_listening_script",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('listening-script', book, timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/listening-audio/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 334,
+      "handler": "ielts_listening_audio",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        },
+        {
+          "name": "part",
+          "default": "Query(1, description='Part 1–4，默认 1')",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('listening-audio', book, test, part, timeout=90)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/pdf/{book}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 346,
+      "handler": "ielts_pdf",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('pdf', book, timeout=600)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/lfs-coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 351,
+      "handler": "ielts_lfs_coverage",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('lfs-coverage', timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/pdf21",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 356,
+      "handler": "ielts_pdf21",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('pdf21', timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/iprog/listening/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 366,
+      "handler": "ielts_iprog_listening",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('iprog-listening', book, test, timeout=90)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/iprog/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 371,
+      "handler": "ielts_iprog_coverage",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('iprog-coverage', timeout=90)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/zhan/reading/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 376,
+      "handler": "ielts_zhan_reading",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "int"
+        },
+        {
+          "name": "passage",
+          "default": "Query(1, description='Passage 1–3，默认 1')",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('zhan-reading', book, test, passage, timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/zhan/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 383,
+      "handler": "ielts_zhan_coverage",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('zhan-coverage', timeout=180)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/info",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 393,
+      "handler": "ielts_v2_info",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('info', timeout=60)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/books",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 398,
+      "handler": "ielts_v2_books",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('books-v2', timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/test/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 403,
+      "handler": "ielts_v2_test",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "str"
+        },
+        {
+          "name": "variant",
+          "default": "Query(None, description='academic / general；general 需 test=gta/gtb')",
+          "annotation": "str | None"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('test-v2', *args, timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/questions/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 415,
+      "handler": "ielts_v2_questions",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "annotation": "int"
+        },
+        {
+          "name": "test",
+          "annotation": "str"
+        },
+        {
+          "name": "skill",
+          "default": "Query(None, description='reading / listening')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "variant",
+          "default": "Query(None, description='academic / general / shared')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "part",
+          "default": "Query(None, description='听力 Part 1–4')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "passage",
+          "default": "Query(None, description='阅读 Passage 1–3')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "status",
+          "default": "Query(None, description='答案状态过滤（如 empty/unverified/conflict）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "alignment",
+          "default": "Query(None, description='音频对齐状态过滤（如 verified/unverified/source_missing）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "type",
+          "default": "Query(None, description='题型精确过滤（如 multiple_choice）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "offset",
+          "default": "Query(None, description='分页起始（≥0；非法值返回 ok:false）')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "limit",
+          "default": "Query(None, description='分页大小（1–500；非法值返回 ok:false）')",
+          "annotation": "int | None"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('questions-v2', *args, timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/question/{question_id}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 446,
+      "handler": "ielts_v2_question",
+      "decorator": {},
+      "params": [
+        {
+          "name": "question_id",
+          "annotation": "str"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('question-v2', question_id, timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 451,
+      "handler": "ielts_v2_coverage",
+      "decorator": {},
+      "params": [
+        {
+          "name": "book",
+          "default": "Query(None, description='单册（1–21）')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "test",
+          "default": "Query(None, description='单套（1–4）')",
+          "annotation": "int | None"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('coverage-v2', *args, timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/asset/{asset_id}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 464,
+      "handler": "ielts_v2_asset",
+      "decorator": {},
+      "params": [
+        {
+          "name": "asset_id",
+          "annotation": "str"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "FileResponse",
+          "expr": "FileResponse(file_path, media_type=meta.get('mime') or 'application/octet-stream', content_disposition_type='inline')"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'asset 文件不存在：{file_path}'"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "meta.get('error') or 'asset not found'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/info",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 180,
+      "handler": "toefl_info",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "board",
+            "name",
+            "schema",
+            "aggregator",
+            "exam_family",
+            "tpo_range",
+            "exam_forms",
+            "eras",
+            "format_revision_reference",
+            "routes",
+            "sources",
+            "env",
+            "notes"
+          ],
+          "expr": "{'board': 'toefl', 'name': 'TOEFL（托福 TPO / 公开第三方索引）', 'schema': 'toefl.v1', 'aggregator': 'toefl-api/toefl-cli.mjs（Node ≥18，零 npm 依赖）', 'exam_family': 'toefl..."
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/coverage",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 244,
+      "handler": "toefl_coverage",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('coverage', timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/sets",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 249,
+      "handler": "toefl_sets",
+      "decorator": {},
+      "params": [
+        {
+          "name": "tpo",
+          "default": "Query(None, description='单个 TPO 编号（1–54）')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "era",
+          "default": "Query(None, description='编号分区（如 tpo-51-54；见 /info.eras）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "section",
+          "default": "Query(None, description='只返回该 Section（reading/listening/speaking/writing）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "tpo_min",
+          "default": "Query(None, alias='tpo-min', description='编号下限')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "tpo_max",
+          "default": "Query(None, alias='tpo-max', description='编号上限')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "page",
+          "default": "Query(1, description='页码（1–1000）')",
+          "annotation": "int"
+        },
+        {
+          "name": "page_size",
+          "default": "Query(20, alias='page-size', description='每页条数（1–100）')",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('sets', *args, timeout=60)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/get",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 273,
+      "handler": "toefl_get",
+      "decorator": {},
+      "params": [
+        {
+          "name": "set_id",
+          "default": "Query(..., alias='set', description='套次 ID（tpo-N，例：tpo-30）')",
+          "annotation": "str"
+        },
+        {
+          "name": "section",
+          "default": "Query(None, description='只返回该 Section（reading/listening/speaking/writing）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "file",
+          "default": "Query(None, description='FindSimilarTPO 原文文件名（如 1-1.txt）；返回该文件解析结果')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "refresh",
+          "default": "Query(0, description='file 时强制重抓（1=是；默认读缓存）')",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('get', *args, timeout=120)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/questions",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 290,
+      "handler": "toefl_questions",
+      "decorator": {},
+      "params": [
+        {
+          "name": "set_id",
+          "default": "Query(..., alias='set', description='套次 ID（tpo-N）')",
+          "annotation": "str"
+        },
+        {
+          "name": "section",
+          "default": "Query(..., description='reading 或 listening（speaking/writing 内容请用 /detail）')",
+          "annotation": "str"
+        },
+        {
+          "name": "item",
+          "default": "Query(1, description='Passage/Set 序号（从 1 起）')",
+          "annotation": "int"
+        },
+        {
+          "name": "limit",
+          "default": "Query(0, description='最多抓取题目数（0=全部；调试时可设小）')",
+          "annotation": "int"
+        },
+        {
+          "name": "refresh",
+          "default": "Query(0, description='强制重抓、忽略页面缓存（1=是）')",
+          "annotation": "int"
+        },
+        {
+          "name": "url",
+          "default": "Query(None, description='直接指定 kmf 题目页 URL（覆盖索引查找；高级用法）')",
+          "annotation": "str | None"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('questions', *args, timeout=240)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/detail",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 314,
+      "handler": "toefl_detail",
+      "decorator": {},
+      "params": [
+        {
+          "name": "url",
+          "default": "Query(..., description='kmf 详情页 URL（/detail/{read|listen|speak|write}/{hash}.html）')",
+          "annotation": "str"
+        },
+        {
+          "name": "refresh",
+          "default": "Query(0, description='强制重抓、忽略页面缓存（1=是）')",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('detail', *args, timeout=240)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/search",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 330,
+      "handler": "toefl_search",
+      "decorator": {},
+      "params": [
+        {
+          "name": "q",
+          "default": "Query(..., description='关键词/短语（大小写不敏感）')",
+          "annotation": "str"
+        },
+        {
+          "name": "limit",
+          "default": "Query(20, description='最多返回命中数（1–200）')",
+          "annotation": "int"
+        },
+        {
+          "name": "sources",
+          "default": "Query(None, description='逗号分隔的源子集（ddy-ddy,find-similar-tpo,kmf-index,kmf-cache）')",
+          "annotation": "str | None"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('search', *args, timeout=300)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/jj",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 347,
+      "handler": "toefl_jj",
+      "decorator": {},
+      "params": [
+        {
+          "name": "section",
+          "default": "Query(None, description='read/listen/speak/write（可空=汇总）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "batch",
+          "default": "Query(None, description='机经期数 1–25（25 最新）')",
+          "annotation": "int | None"
+        },
+        {
+          "name": "free",
+          "default": "Query(0, description='只看免费条目（1=是）')",
+          "annotation": "int"
+        },
+        {
+          "name": "locked",
+          "default": "Query(0, description='只看锁定条目（1=是）')",
+          "annotation": "int"
+        },
+        {
+          "name": "list_all",
+          "default": "Query(0, alias='list', description='列出条目（1=是）')",
+          "annotation": "int"
+        },
+        {
+          "name": "page",
+          "default": "Query(1, description='页码（1–1000）')",
+          "annotation": "int"
+        },
+        {
+          "name": "page_size",
+          "default": "Query(50, alias='page-size', description='每页条数（1–200）')",
+          "annotation": "int"
+        },
+        {
+          "name": "url",
+          "default": "Query(None, description='直接抓取某条详情页（read/listen 全题；speak/write 整页文本）')",
+          "annotation": "str | None"
+        },
+        {
+          "name": "refresh",
+          "default": "Query(0, description='url 时强制重抓（1=是）')",
+          "annotation": "int"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "await",
+          "expr": "await _run('jj', *args, timeout=60)"
+        },
+        {
+          "kind": "await",
+          "expr": "await _run('jj', *args, timeout=240)"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/boards",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 228,
+      "handler": "list_boards",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "schema_version",
+            "auto_detect",
+            "boards"
+          ],
+          "expr": "{'schema_version': SCHEMA_VERSION, 'auto_detect': AUTO_DETECT, 'boards': boards}"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/paper",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 278,
+      "handler": "unified_paper",
+      "decorator": {},
+      "params": [
+        {
+          "name": "subject",
+          "default": "Query(..., description='科目代码，如 0580；也用于自动判定 board')",
+          "annotation": "str"
+        },
+        {
+          "name": "year",
+          "default": "Query(..., description='考试年份，2000..2099')",
+          "annotation": "int"
+        },
+        {
+          "name": "season",
+          "default": "Query(..., description='考季，取值见 /api/v1/boards 的 seasons')",
+          "annotation": "str"
+        },
+        {
+          "name": "board",
+          "default": "Query(None, description='考试局别名，如 cie / cambridge / pearson；不传则自动判定')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "paper",
+          "default": "Query(None, description='Paper 代码，如 11 / wec11-01')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "question",
+          "default": "Query(None, description='题号，如 2(a)；仅 Edexcel 的 question/qa 模式支持')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "mode",
+          "default": "Query(None, description='两家统一 qp/ms/both；Edexcel 另兼容 paper/question/qa')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "download",
+          "default": "Query(True, description='true 取回文件字节；false 只解析清单')",
+          "annotation": "bool"
+        },
+        {
+          "name": "format",
+          "default": "Query(None, description='binary（默认，原始字节/ZIP）或 json（base64 + 元数据）')",
+          "annotation": "Optional[str]"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "Response",
+          "expr": "Response(file.data, media_type=file.media_type, headers={'Content-Disposition': content_disposition(file.name), 'Content-Length': str(len(file.data))})"
+        },
+        {
+          "kind": "dict",
+          "keys": [
+            "board",
+            "board_source"
+          ],
+          "expr": "{**payload, 'board': canonical, 'board_source': board_source}"
+        },
+        {
+          "kind": "dict",
+          "keys": [
+            "board",
+            "board_source"
+          ],
+          "expr": "{**manifest, 'board': canonical, 'board_source': board_source}"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": "str(error)"
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": "str(exc)"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 422,
+          "detail": "'format must be binary or json'"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/paper/index",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 331,
+      "handler": "unified_paper_index",
+      "decorator": {},
+      "params": [
+        {
+          "name": "subject",
+          "annotation": "str"
+        },
+        {
+          "name": "year",
+          "annotation": "int"
+        },
+        {
+          "name": "season",
+          "annotation": "str"
+        },
+        {
+          "name": "paper",
+          "annotation": "str"
+        },
+        {
+          "name": "board",
+          "default": "'edexcel'",
+          "annotation": "str"
+        },
+        {
+          "name": "mode",
+          "default": "'both'",
+          "annotation": "str"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "index_paper",
+          "expr": "index_paper(subject, year, season, paper, mode)"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/cie-index-schema",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 345,
+      "handler": "cie_index_schema",
+      "decorator": {},
+      "params": [],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "ExternalIndex.model_json_schema",
+          "expr": "ExternalIndex.model_json_schema()"
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/indexes/cie/{sha256}",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 351,
+      "handler": "cie_external_index",
+      "decorator": {},
+      "params": [
+        {
+          "name": "sha256",
+          "annotation": "str"
+        },
+        {
+          "name": "question",
+          "default": "None",
+          "annotation": "Optional[str]"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "read_index",
+          "expr": "read_index(get_settings().data_dir, sha256, question)"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/indexes/cie/{sha256}/question",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 362,
+      "handler": "cie_indexed_question",
+      "decorator": {},
+      "params": [
+        {
+          "name": "sha256",
+          "annotation": "str"
+        },
+        {
+          "name": "question",
+          "annotation": "str"
+        },
+        {
+          "name": "mode",
+          "default": "'qp'",
+          "annotation": "str"
+        },
+        {
+          "name": "format",
+          "default": "'binary'",
+          "annotation": "str"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "call",
+          "call": "Response",
+          "expr": "Response(file.data, media_type=file.media_type, headers={'Content-Disposition': content_disposition(file.name)})"
+        },
+        {
+          "kind": "dict",
+          "keys": [],
+          "expr": "{**json_payload(result), **source}"
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        },
+        {
+          "exception": "HTTPException",
+          "status": null,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/search",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 396,
+      "handler": "unified_search",
+      "decorator": {},
+      "params": [
+        {
+          "name": "keyword",
+          "default": "Query(None, description='题干关键词')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "subject",
+          "default": "Query(None, description='科目代码，如 0580')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "board",
+          "default": "Query(None, description='考试局别名，不传则跨局检索')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "year",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "session_name",
+          "default": "Query(None, alias='session', description='数据库原始考季写法')",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "paper",
+          "default": "None",
+          "annotation": "Optional[str]"
+        },
+        {
+          "name": "marks_min",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "marks_max",
+          "default": "None",
+          "annotation": "Optional[int]"
+        },
+        {
+          "name": "leaves_only",
+          "default": "Query(False, description='只取可独立作答的叶子题')",
+          "annotation": "bool"
+        },
+        {
+          "name": "has_answer",
+          "default": "Query(None, description='是否要求有官方答案')",
+          "annotation": "Optional[bool]"
+        },
+        {
+          "name": "limit",
+          "default": "Query(20, ge=1, le=500)",
+          "annotation": "int"
+        },
+        {
+          "name": "offset",
+          "default": "Query(0, ge=0)",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "total",
+            "limit",
+            "offset",
+            "by_board",
+            "items",
+            "board",
+            "board_source"
+          ],
+          "expr": "{'total': count_questions(db, f), 'limit': limit, 'offset': offset, 'by_board': by_board, 'items': search_questions(db, f), 'board': canonical, 'board_source..."
+        }
+      ],
+      "raises": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/question/{question_id}",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 465,
+      "handler": "unified_question",
+      "decorator": {},
+      "params": [
+        {
+          "name": "question_id",
+          "annotation": "int"
+        },
+        {
+          "name": "db",
+          "default": "Depends(get_session)",
+          "annotation": "Session"
+        }
+      ],
+      "returns": [
+        {
+          "kind": "dict",
+          "keys": [
+            "question_id",
+            "board",
+            "board_source",
+            "source",
+            "bundle"
+          ],
+          "expr": "{'question_id': question_id, 'board': db_key, 'board_source': 'inferred', 'source': {'board': db_key, 'board_canonical': canonical, 'subject_code': subject_c..."
+        }
+      ],
+      "raises": [
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'题目 {question_id} 所属试卷不存在'"
+        },
+        {
+          "exception": "HTTPException",
+          "status": 404,
+          "detail": "f'题目 {question_id} 不存在'"
+        }
+      ]
+    }
+  ]
+}

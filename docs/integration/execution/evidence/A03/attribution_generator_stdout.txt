@@ -1,0 +1,4 @@
+wrote docs/integration/execution/evidence/A03/owner_activity_attribution.txt (6038 bytes)
+owner_basetemps=2 owner_basetemp_files=37 owner_tree=2
+executor_basetemp=integration-staging/runtime/pytest-temp node_dirs=6 files=5
+collected_test_files=['tests\\test_fixture_provenance.py', 'tests\\test_harness_isolation.py', 'tests\\test_node_import_guard.py']

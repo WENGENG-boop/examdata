@@ -1,6 +1,6 @@
 # examdata 统一网关（/api/v1）curl 完整示例
 
-本文件是可直接复制粘贴的 curl 命令清单，覆盖统一网关的全部四个端点：
+本文件是可直接复制粘贴的 curl 命令清单，覆盖统一网关的全部端点：
 
 | 端点 | 作用 | 是否出网 |
 |---|---|---|
@@ -8,6 +8,8 @@
 | `GET /api/v1/search` | 跨考试局题目检索（读本地数据库） | 否 |
 | `GET /api/v1/paper` | 统一取卷：解析清单 / 下载 PDF / base64 JSON | 是（访问考试局站点） |
 | `GET /api/v1/question/{id}` | 单题聚合：题目内容 + 所属试卷定位 + 取卷链接 | 否 |
+| `GET /api/v1/materials` | 考试发放资料：目录 / 单条详情 / 原件取回 / CIE 卷内动态定位 | 目录与详情否；`/content`、`cie/in-paper` 是 |
+| `GET /api/v1/timetable` | 考试时间表：考季清单 / 结构化事件 / 日期窗口（CIE Zone 5 + Edexcel） | 否（离线快照） |
 
 字段级说明见 [docs/API.md](../docs/API.md)；Python / Node / 浏览器版本见同目录的
 `python_client.py`、`node_client.mjs`、`browser.html`。
@@ -43,7 +45,7 @@ export EXAMDATA_API_KEY='你的密钥'
 | `edexcel` / `edx` / `pearson` / `ial` | `edexcel` | `edexcel` |
 
 不传 `board` 时按科目代码形态自动判定：四位数字（`0580`）判为 `cie`，其余
-（`Economics`）判为 `edexcel`。响应里的 `board_source` 会告诉你这次用的是
+（`ial18-economics`）判为 `edexcel`。响应里的 `board_source` 会告诉你这次用的是
 `explicit`（你显式传的）还是 `inferred`（系统判的）。
 
 > Windows 提示：在 Git Bash 里下面这些单引号命令可以原样跑。在 PowerShell / CMD 里
@@ -84,9 +86,9 @@ curl -s 'http://127.0.0.1:8000/api/v1/search?keyword=angle&limit=5'
 # 2.2 按科目检索（0580 是四位数字，board 自动判为 cie）
 curl -s 'http://127.0.0.1:8000/api/v1/search?subject=0580&limit=5'
 
-# 2.3 显式指定考试局（别名可用 cambridge / pearson 等写法）
+# 2.3 显式指定考试局（别名可用 cambridge / pearson 等写法；Edexcel 科目用 slug）
 curl -s 'http://127.0.0.1:8000/api/v1/search?board=cambridge&subject=0580&limit=5'
-curl -s 'http://127.0.0.1:8000/api/v1/search?board=pearson&subject=Economics&limit=5'
+curl -s 'http://127.0.0.1:8000/api/v1/search?board=pearson&subject=ial18-economics&limit=5'
 
 # 2.4 分值区间 + 只要可独立作答的叶子题
 curl -s 'http://127.0.0.1:8000/api/v1/search?subject=0580&marks_min=3&marks_max=5&leaves_only=true&limit=10'
@@ -226,34 +228,169 @@ curl -s 'http://127.0.0.1:8000/api/v1/question/1' \
 curl -sO -J 'http://127.0.0.1:8000/api/v1/paper?subject=0580&year=2024&season=Jun&paper=11&mode=qp'
 ```
 
-## 5 带 X-API-Key 的形态
+## 5 考试发放资料：GET /api/v1/materials
+
+考试时发给考生的资料（公式表、元素周期表、随卷 insert 等）也有统一入口：
+目录、单条详情、原件取回，以及 CIE 的卷内动态定位。目录与详情读本地快照，
+`/content` 与 `cie/in-paper` 会访问上游。
+
+### 5.1 目录与过滤
+
+```bash
+# 全部 8 条（实测：CIE 6 条 + Edexcel 2 条）
+curl -s 'http://127.0.0.1:8000/api/v1/materials'
+
+# 按考试局、按类别过滤（实测各 2 条）
+curl -s 'http://127.0.0.1:8000/api/v1/materials?board=edexcel'
+curl -s 'http://127.0.0.1:8000/api/v1/materials?kind=formula-and-statistical-tables'
+```
+
+### 5.2 单条详情
+
+```bash
+# 9709 考试用的 MF19 公式与统计表
+curl -s 'http://127.0.0.1:8000/api/v1/materials/cie-mf19-formulae-and-statistical-tables'
+```
+
+### 5.3 取回原件
+
+```bash
+# MF19：实测 311234 字节，X-Material-Sha256-Match: true
+curl -sO -J 'http://127.0.0.1:8000/api/v1/materials/cie-mf19-formulae-and-statistical-tables/content'
+
+# Edexcel IAL 化学数据手册：实测 2542080 字节
+curl -sO -J 'http://127.0.0.1:8000/api/v1/materials/edexcel-ial-chemistry-data-booklet/content'
+```
+
+只要 JSON 的客户端加 `?format=json`（base64 载荷，带 `sha256_match`）：
+
+```bash
+curl -s 'http://127.0.0.1:8000/api/v1/materials/cie-mf19-formulae-and-statistical-tables/content?format=json' \
+  | python -c "import json,sys; d=json.load(sys.stdin); print(d['material_id'], d['size'], d['sha256_match'])"
+```
+
+元素周期表这类"印在试卷内"的条目（`access: in-paper`）没有独立文件，`/content`
+会返回 422 并说明访问方式：
+
+```bash
+curl -s -w '\n%{http_code}\n' 'http://127.0.0.1:8000/api/v1/materials/cie-periodic-table/content'
+# → 422 {"detail":{"message":"资料 cie-periodic-table 没有可独立取回的版本","access":"in-paper","dynamic_endpoint":null}}
+```
+
+### 5.4 CIE 卷内资料动态定位：GET /api/v1/materials/cie/in-paper
+
+insert / 保密须知随考卷变化，用 subject/year/season 实时定位；`download=false`
+（默认）只列清单：
+
+```bash
+# 0500 2024 Jun 实测 6 份 insert（组件 11/12/13/21/22/23）
+curl -s 'http://127.0.0.1:8000/api/v1/materials/cie/in-paper?subject=0500&year=2024&season=Jun' \
+  | python -c "import json,sys; d=json.load(sys.stdin); print(d['counts'], [doc['name'] for doc in d['documents']])"
+```
+
+`download=true` 且唯一命中时下载（多命中而未给 `paper` 是 409，并列出候选组件）：
+
+```bash
+# 实测 200、114871 字节、sha256 7d49097c…（X-Material-Role: in / X-Material-Paper: 11）
+curl -sO -J 'http://127.0.0.1:8000/api/v1/materials/cie/in-paper?subject=0500&year=2024&season=Jun&paper=11&download=true'
+```
+
+## 6 考试时间表：GET /api/v1/timetable
+
+CIE Zone 5（含中国大陆在内的考区）与 Edexcel 的历年时间表已结构化进统一网关：
+考季清单、单季事件（每场考试一行）、日期窗口。全部读离线快照，不联网、不查库。
+
+### 6.1 考季清单
+
+```bash
+# CIE：25 个可得考季（2013-11 … 2026-11）+ 2 个有证据的不可得考季
+curl -s 'http://127.0.0.1:8000/api/v1/timetable/seasons'
+
+# Edexcel：可按系列过滤（gcse / intgcse / ial / gce）；ial 实测 34 个考季
+curl -s 'http://127.0.0.1:8000/api/v1/timetable/seasons?board=edexcel&family=ial'
+```
+
+### 6.2 CIE 单季查询
+
+`season` 接受 `Jun`/`June`/`Nov`/`November`（大小写不敏感）；事件行含
+`date`/`weekday`/`session`/`level`/`subject_code`/`paper_code`/`duration_minutes`
+等字段；`limit` 默认 200、上限 2000，配合 `offset` 分页：
+
+```bash
+# 2026 Nov 的 9709 全部场次：实测 6 条，首条 2026-10-13 周二 AM AS 9709/13 110 分钟
+curl -s 'http://127.0.0.1:8000/api/v1/timetable?subject=9709&year=2026&season=Nov'
+
+# 过滤可组合：按日期（实测 11 条）、按时段 + 等级（实测 47 条）
+curl -s 'http://127.0.0.1:8000/api/v1/timetable?year=2026&season=Nov&date=2026-10-13'
+curl -s 'http://127.0.0.1:8000/api/v1/timetable?year=2026&season=Nov&session=AM&level=AS'
+```
+
+只打印条数：
+
+```bash
+curl -s 'http://127.0.0.1:8000/api/v1/timetable?subject=9709&year=2026&season=Nov' \
+  | python -c "import json,sys; d=json.load(sys.stdin); print(d['count'], d['total'])"
+```
+
+### 6.3 日期窗口：GET /api/v1/timetable/windows
+
+各 syllabus/component 的 "Test date windows"（2026 Nov 实测 22 条）：
+
+```bash
+curl -s 'http://127.0.0.1:8000/api/v1/timetable/windows?year=2026&season=Nov'
+```
+
+### 6.4 Edexcel 时间表（family 必填）
+
+```bash
+# IAL 2026 June：实测 90 条，首条 2026-05-05 WAC11/01
+curl -s 'http://127.0.0.1:8000/api/v1/timetable?board=edexcel&family=ial&year=2026&season=June'
+
+# R 卷变体：intgcse 2018 June：实测 36 条，variant=R
+curl -s 'http://127.0.0.1:8000/api/v1/timetable?board=edexcel&family=intgcse&year=2018&season=June&r_paper=true'
+```
+
+### 6.5 取消与不可得考季：404 语义
+
+Edexcel 取消考季（COVID-19）与有证据的不可得考季返回 404 并说明原因；
+考季形式合法但从未收录是 422：
+
+```bash
+curl -s -w '\n%{http_code}\n' 'http://127.0.0.1:8000/api/v1/timetable?board=edexcel&family=gcse&year=2020&season=June'
+# → 404 {"detail":{"message":"gcse|2020|06 考季已取消","reason":"UK GCSE summer 2020 series cancelled (COVID-19); grades awarded by centre assessment","cancelled":true}}
+
+curl -s -w '\n%{http_code}\n' 'http://127.0.0.1:8000/api/v1/timetable?year=2019&season=Jun'
+# → 404 {"detail":{"message":"2019-06 时间表不可得","reason":"文件 513557-june-2019-timetable-zone-5.pdf 从未被有效存档：…","evidence":"…"}}
+```
+
+## 7 带 X-API-Key 的形态
 
 服务端设了 `EXAMDATA_API_KEY` 后，所有端点都要带这个头：
 
 ```bash
-# 5.1 单次调用
+# 7.1 单次调用
 curl -s -H "X-API-Key: $EXAMDATA_API_KEY" 'http://127.0.0.1:8000/api/v1/boards'
 
-# 5.2 取卷（下载也一样，头照带）
+# 7.2 取卷（下载也一样，头照带）
 curl -sO -J -H "X-API-Key: $EXAMDATA_API_KEY" \
   'http://127.0.0.1:8000/api/v1/paper?subject=0580&year=2024&season=Jun&paper=11&mode=qp'
 
-# 5.3 探活与文档不需要 Key（豁免路径）
+# 7.3 探活与文档不需要 Key（豁免路径）
 curl -s 'http://127.0.0.1:8000/health'
 curl -s -o /dev/null -w '%{http_code}\n' 'http://127.0.0.1:8000/docs'
 
-# 5.4 不带 Key 会得到 401
+# 7.4 不带 Key 会得到 401
 curl -s -w '\n%{http_code}\n' 'http://127.0.0.1:8000/api/v1/boards'
 ```
 
-## 6 常见错误与排查
+## 8 常见错误与排查
 
 统一错误体是 FastAPI 的 `{"detail": ...}`：
 
 | 状态码 | 触发条件 | 例子 |
 |---|---|---|
 | 401 | 服务端设了 `EXAMDATA_API_KEY` 但请求没带或带错 `X-API-Key` | `{"detail": "缺少或无效的 X-API-Key 请求头"}` |
-| 404 | 题目 ID 不存在；上游没有对应的试卷文件 | `{"detail": "题目 999999 不存在"}` |
+| 404 | 题目 / 资料 ID 不存在；上游没有对应文件；考季已取消或不可得 | `{"detail": "题目 999999 不存在"}` |
 | 403 | 上游把该资源判为非公开 | 非公开试卷 |
 | 409 | 同一组条件命中多份候选，无法确定取哪份 | 需要补 `paper` 精确定位 |
 | 422 | 参数非法：board 别名不认识、season 不在该局考季表内、CIE 传了 `question`、`format` 不是 binary/json | `{"detail": "无法识别的 board: ..."}` |
@@ -272,21 +409,27 @@ curl -s 'http://127.0.0.1:8000/api/v1/boards' | python -c "import json,sys; d=js
 curl -sv 'http://127.0.0.1:8000/health' 2>&1 | head -20
 ```
 
-**注意**：`/api/v1/search` 读的是本地数据库。Edexcel 目前只有文档、还没解析出题目，
-所以跨局检索的 `items` 现在只会出现 Cambridge 的题，`by_board` 里
-`edexcel` 会是 0——这是数据现状，不是接口故障。
+**注意**：`/api/v1/search` 读的是本地数据库，两个考试局的题目都已入库。
+不带 board 搜 `triangle`，`by_board` 是 `{"cambridge": 24, "edexcel": 153}`。
+Edexcel 科目用数据库里的 slug 写法（如 `ial18-economics`、`ial-accounting`）：
 
-要确认 Edexcel 侧确实有数据，用统一网关直接列清单：
+```bash
+curl -s 'http://127.0.0.1:8000/api/v1/search?board=edexcel&subject=ial18-economics&limit=5'
+```
+
+某一局命中为 0 只说明该局没有匹配这个条件的题（Edexcel 用科目名 `Economics`
+搜不到，要用上面的 slug），不是接口故障。
+
+旧版式端点也一致：`GET /papers?board=edexcel` 实测 `total=1533`，
+`GET /papers` 全量为 1549 条（16 Cambridge + 1533 Edexcel）。
+
+Edexcel 侧上游取卷走统一网关（`counts.documents=1` 就说明上游有这份卷）：
 
 ```bash
 curl -s 'http://127.0.0.1:8000/api/v1/paper?board=edexcel&subject=Economics&year=2024&season=Jun&paper=wec11-01&download=false'
 ```
 
-`counts.documents=1` 就说明上游有这份卷。（`GET /papers?board=edexcel` 返回 `total=0` 是正常的：
-`/papers` 列的是数据库里的试卷记录，目前 16 条全是 Cambridge；Edexcel 侧的数据形态是"文档"，
-用上面的接口看。）
-
-## 7 一条完整链路
+## 9 一条完整链路
 
 ```bash
 BASE='http://127.0.0.1:8000'

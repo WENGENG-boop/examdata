@@ -1,0 +1,29 @@
+===== speak-f1m9gj.html exists=True size=30467
+### item-desc (pattern='<p class="item-desc[^"]*"[^>]*>[\\s\\S]{0,2000}?</p>')
+  [0] len=230
+  <p class="item-desc js-translate-new" data-qid="75508">
+                          Some people say that childhood is the best time in a person’s life. Other people disagree. What is your opinion? Explain why.
+                      </p>
+
+### js-translate-new contexts (pattern='<div class="[^"]*js-translate-new[^"]*"[^>]*>[\\s\\S]{0,800}')
+  [0] len=847
+  <div class="note-display-box js-translate-new"></div>
+                      </div>
+                  </div>
+                  <div class="g-smart-guide js-kmf-smart-guide" data-guideid="toeflweb_question_speaking_right_top_WenZi"></div>
+  
+              </div>
+              <!--优秀录音-->
+              <div class="essence-content g-mod-shadow">
+                  <div class="essence-title">精华内容</div>
+                  <div class="essence-box">
+                      <ul class="essence-button-lists js-essence-btns">
+                          <li class="essence-btn-list  active ">优秀录音</li>
+                                                  <li class="essence-btn-list">网友思路</li>
+                          <li class="essence-btn-list">名师思路</li>
+                          <!--<li class="essence-btn-list record"><a  href="javascri
+
+### audio data-url (pattern='data-url="[^"]+\\.mp3"')
+  [0] len=89
+  data-url="https://img.kmf.com/toefl/listening/audio/f136ebfdfbbec9920996f555fe014d8b.mp3"
+

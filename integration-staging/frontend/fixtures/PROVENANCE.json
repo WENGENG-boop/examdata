@@ -1,0 +1,23 @@
+{
+  "provenance_version": "fixture-provenance/1",
+  "fixture_kind": "synthetic",
+  "generated_by": "tools/a13_frontend_provenance.py",
+  "generated_at": "2026-10-06T10:17:44+08:00",
+  "files": [
+    {
+      "path": "catalog.json",
+      "sha256": "6344f4f2ef6433bc319741deaefd6ae96366b6214ac4df6af055dce85150ed29",
+      "size_bytes": 1851
+    },
+    {
+      "path": "syllabi.json",
+      "sha256": "080d0de3838acd197b01813d71e927fdc9fb9477bf3216b354a7c90a3bb58913",
+      "size_bytes": 810
+    },
+    {
+      "path": "resources.json",
+      "sha256": "12277f5ff5ef69bd1f513e31b1e29b5e0f50e55d596289db72862776a68b97aa",
+      "size_bytes": 10164
+    }
+  ]
+}

@@ -1,0 +1,469 @@
+{
+  "label": "9709_m26_qp_12",
+  "source_pdf": "C:\\Users\\weo\\Desktop\\api\\examdata\\tmpwork\\paperqa-live\\python-0\\9709_m26_qp_12.pdf",
+  "source_sha256": "47a6c66a3223cc5d8ac920040ac8a845d9887d4011cefde42e923d403aea9652",
+  "generated_at": "2026-10-03T23:03:16+0800",
+  "method": "text-layer geometry (no OCR, no ML)",
+  "coordinate_space": "unrotated PDF points, top-left origin, page base 1",
+  "crop_box": {
+    "left": 62.4,
+    "top": 56.9,
+    "right": 550.8,
+    "bottom": 735.2
+  },
+  "crop_box_detail": {
+    "content_x": [
+      72.4,
+      540.8
+    ],
+    "content_y1": 735.2,
+    "top_line_y1": 56.1,
+    "footer_y0": 735.8587646484375,
+    "token_ymin": 60.1
+  },
+  "zoom": 3.0,
+  "page_count": 16,
+  "questions": [
+    {
+      "number": 1,
+      "token_raw": "¦~",
+      "pages": [
+        3,
+        3
+      ],
+      "segments": [
+        {
+          "page": 3,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [],
+      "composite": {
+        "image": "q01.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02179
+      }
+    },
+    {
+      "number": 2,
+      "token_raw": "s~",
+      "pages": [
+        4,
+        4
+      ],
+      "segments": [
+        {
+          "page": 4,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 4,
+          "y0": 240.1
+        },
+        {
+          "label": "b",
+          "page": 4,
+          "y0": 472.5
+        }
+      ],
+      "composite": {
+        "image": "q02.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02915
+      }
+    },
+    {
+      "number": 3,
+      "token_raw": "~",
+      "pages": [
+        5,
+        5
+      ],
+      "segments": [
+        {
+          "page": 5,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 5,
+          "y0": 88.2
+        },
+        {
+          "label": "b",
+          "page": 5,
+          "y0": 491.8
+        }
+      ],
+      "composite": {
+        "image": "q03.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02285
+      }
+    },
+    {
+      "number": 4,
+      "token_raw": "»~",
+      "pages": [
+        6,
+        6
+      ],
+      "segments": [
+        {
+          "page": 6,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 6,
+          "y0": 133.6
+        },
+        {
+          "label": "b",
+          "page": 6,
+          "y0": 439.3
+        }
+      ],
+      "composite": {
+        "image": "q04.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.01931
+      }
+    },
+    {
+      "number": 5,
+      "token_raw": "Ô~",
+      "pages": [
+        7,
+        7
+      ],
+      "segments": [
+        {
+          "page": 7,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 7,
+          "y0": 60.3
+        },
+        {
+          "label": "b",
+          "page": 7,
+          "y0": 402.6
+        }
+      ],
+      "composite": {
+        "image": "q05.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.01948
+      }
+    },
+    {
+      "number": 6,
+      "token_raw": "ã~",
+      "pages": [
+        8,
+        8
+      ],
+      "segments": [
+        {
+          "page": 8,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 8,
+          "y0": 109.2
+        },
+        {
+          "label": "b",
+          "page": 8,
+          "y0": 243.7
+        }
+      ],
+      "composite": {
+        "image": "q06.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02061
+      }
+    },
+    {
+      "number": 7,
+      "token_raw": "ò~",
+      "pages": [
+        9,
+        9
+      ],
+      "segments": [
+        {
+          "page": 9,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 9,
+          "y0": 133.6
+        },
+        {
+          "label": "b",
+          "page": 9,
+          "y0": 586.1
+        }
+      ],
+      "composite": {
+        "image": "q07.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02478
+      }
+    },
+    {
+      "number": 8,
+      "token_raw": "ü~",
+      "pages": [
+        10,
+        10
+      ],
+      "segments": [
+        {
+          "page": 10,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 10,
+          "y0": 63.8
+        },
+        {
+          "label": "b",
+          "page": 10,
+          "y0": 442.9
+        }
+      ],
+      "composite": {
+        "image": "q08.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02276
+      }
+    },
+    {
+      "number": 9,
+      "token_raw": "ÿ~",
+      "pages": [
+        11,
+        11
+      ],
+      "segments": [
+        {
+          "page": 11,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": null
+        }
+      ],
+      "subparts": [],
+      "composite": {
+        "image": "q09.png",
+        "image_px": [
+          1466,
+          2035
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.01974
+      }
+    },
+    {
+      "number": 10,
+      "token_raw": "¦ą~",
+      "pages": [
+        12,
+        13
+      ],
+      "segments": [
+        {
+          "page": 12,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": "q10-p12.png"
+        },
+        {
+          "page": 13,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": "q10-p13.png"
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 12,
+          "y0": 97.0
+        },
+        {
+          "label": "b",
+          "page": 13,
+          "y0": 61.2
+        }
+      ],
+      "composite": {
+        "image": "q10.png",
+        "image_px": [
+          1466,
+          4070
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02169
+      }
+    },
+    {
+      "number": 11,
+      "token_raw": "¦¦",
+      "pages": [
+        14,
+        15
+      ],
+      "segments": [
+        {
+          "page": 14,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": "q11-p14.png"
+        },
+        {
+          "page": 15,
+          "y0": 56.9,
+          "y1": 735.2,
+          "png": "q11-p15.png"
+        }
+      ],
+      "subparts": [
+        {
+          "label": "a",
+          "page": 14,
+          "y0": 266.2
+        },
+        {
+          "label": "b",
+          "page": 15,
+          "y0": 61.1
+        },
+        {
+          "label": "c",
+          "page": 15,
+          "y0": 220.1
+        }
+      ],
+      "composite": {
+        "image": "q11.png",
+        "image_px": [
+          1466,
+          4070
+        ],
+        "edge_dark_px": 0,
+        "ink_frac": 0.02203
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "subparts_contiguous",
+      "ok": true,
+      "detail": "19 个标记，各题字母连续"
+    },
+    {
+      "name": "marker_pair_single",
+      "ok": true,
+      "detail": "字形对 [('Ì', 'Î')] 唯一，过滤掉 0 个噪声候选"
+    },
+    {
+      "name": "edges_clean",
+      "ok": true,
+      "detail": "15 张图四边无墨"
+    },
+    {
+      "name": "ink_sane",
+      "ok": true,
+      "detail": "15 张图墨迹占比均在 0.05%–20%"
+    },
+    {
+      "name": "drawings_within_box",
+      "ok": true,
+      "detail": "内容图形均在裁剪框内"
+    },
+    {
+      "name": "nothing_after_last",
+      "ok": true,
+      "detail": "最后一题之后仅附加页/空页（共 1 页）"
+    }
+  ],
+  "warnings": [],
+  "stats": {
+    "questions": 11,
+    "subpart_markers": 19,
+    "images": 15,
+    "checks_failed": 0
+  }
+}

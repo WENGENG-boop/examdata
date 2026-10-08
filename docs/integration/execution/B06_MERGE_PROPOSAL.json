@@ -1,0 +1,891 @@
+{
+  "proposal_version": "b06-merge-proposal/1",
+  "packet": "B06",
+  "generated_by": "integration-staging/runtime/b06-rehearsal-2026-10-07/b06_build_proposals.py",
+  "generated_at": "2026-10-07T05:02:05+08:00",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "candidate_manifest": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/B06_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "9af2e849573033aceb9e4b5f0acbea1d62b91565d8b87526b99e0a3db75b82cb",
+    "candidate_tree": {
+      "files": 208,
+      "excludes": [
+        "B06_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "ffe774db608ff9d86246458a38265f9baa760b40880e48197e84d887f85d53f4"
+    },
+    "candidate_tree_digest_rule": "sha256 over 'path\\0sha256\\n' for every file under the root, sorted by path, excluding __pycache__/.pytest_cache and excluding the named manifest itself",
+    "parent_manifest": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/B05_CANDIDATE_MANIFEST.json",
+    "parent_manifest_sha256": "c4341576bf1a6b5d56a01098f46a77eb4081db30225c7f5cc4176be2abe9e008",
+    "parent_manifest_sha256_at_build": "c4341576bf1a6b5d56a01098f46a77eb4081db30225c7f5cc4176be2abe9e008",
+    "parent_tree": {
+      "files": 190,
+      "excludes": [
+        "B05_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955"
+    },
+    "parent_tree_including_manifest": {
+      "files": 191,
+      "excludes": [],
+      "sha256": "f7f60b490dff3e6febc6247dec0f9117462286a7481fb30813f310807cadeb99"
+    },
+    "b05_merge_proposal": "docs/integration/execution/B05_MERGE_PROPOSAL.json",
+    "b05_merge_proposal_sha256": "85ae3d36eb22dcbb10f4ce4e3d2ccf03ffcb7baacff070151103be35e766b4d4",
+    "b01_merge_map": "docs/integration/execution/evidence/B01/b00b01-20261006T132400/B01_MERGE_MAP.json",
+    "b01_merge_map_sha256": "1f20f89ce4037e441f49557f6f036a3f4e3b6c471433fdcc5c66d31cff4df4ad",
+    "b01_merge_map_sha256_note": "observed at proposal time; the frozen anchor recorded in the execution ledger is the A14 map sha256 (29940a0b...), not the B01 map, so this value is recorded for traceability only and is not compared against a frozen expectation",
+    "a14_merge_map": "docs/integration/execution/A14_MERGE_MAP.json",
+    "a14_merge_map_sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+    "a14_merge_map_byte_unchanged": true,
+    "b01_a14_anchor_matches": true,
+    "source_edits_diff": "integration-staging/runtime/b06-rehearsal-2026-10-07/evidence/source_edits.diff",
+    "source_edits_diff_sha256": "6f704108d1ecdba7653e2b30262fefb6465a70d687d3425ead8b842203dbf23a"
+  },
+  "digest_checks": {
+    "candidate_tree_reverified": true,
+    "parent_tree_reverified": true,
+    "b05_merge_crossref_matches": true,
+    "edited_files_source_matches": true,
+    "new_files_exactly_seventeen_vs_parent": true,
+    "only_the_three_edited_files_changed_vs_parent": true,
+    "frontend_staged_bytes_match_sources": true,
+    "frontend_provenance_records_match": true,
+    "new_frontend_files_match_sources": true,
+    "frontend_matches_b01_records": true,
+    "supersession_chains_match": true,
+    "supersession_chain_detail": {
+      "dataset_chain": true,
+      "app_chain": true,
+      "view_chain": true
+    },
+    "frontend_check_detail": {
+      "staged_root_matches_staging_tree": true,
+      "staged_files": {
+        "frontend/PROVENANCE.json": true,
+        "frontend/README.md": true,
+        "frontend/app.js": true,
+        "frontend/client.mjs": true,
+        "frontend/fixture-server.mjs": true,
+        "frontend/fixtures/PROVENANCE.json": true,
+        "frontend/fixtures/catalog.json": true,
+        "frontend/fixtures/resources.json": true,
+        "frontend/fixtures/syllabi.json": true,
+        "frontend/index.html": true,
+        "frontend/search.mjs": true,
+        "frontend/styles.css": true,
+        "frontend/tests/client.test.mjs": true,
+        "frontend/tests/flow.test.mjs": true,
+        "frontend/tests/search.test.mjs": true
+      },
+      "provenance_records": {
+        "frontend/index.html": true,
+        "frontend/app.js": true,
+        "frontend/styles.css": true,
+        "frontend/search.mjs": true,
+        "frontend/README.md": true,
+        "frontend/tests/search.test.mjs": true,
+        "frontend/client.mjs": true,
+        "frontend/fixture-server.mjs": true,
+        "frontend/tests/client.test.mjs": true,
+        "frontend/tests/flow.test.mjs": true,
+        "frontend/fixtures/catalog.json": true,
+        "frontend/fixtures/syllabi.json": true,
+        "frontend/fixtures/resources.json": true
+      },
+      "new_files": {
+        "frontend/server.mjs": true,
+        "frontend/tests/server.test.mjs": true
+      },
+      "b01_records": {
+        "MM-0229": true,
+        "MM-0230": true,
+        "MM-0231": true,
+        "MM-0232": true,
+        "MM-0233": true,
+        "MM-0234": true,
+        "MM-0235": true,
+        "MM-0236": true,
+        "MM-0237": true,
+        "MM-0238": true,
+        "MM-0239": true,
+        "MM-0240": true,
+        "MM-0241": true
+      },
+      "b01_planned_edit_server_mjs": {
+        "found": true,
+        "base_sha256": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+        "observed_at": "2026-10-06T11:43:31+08:00",
+        "packet": "B06",
+        "b01_disposition": "carried_pending_release"
+      },
+      "b01_a14_anchor_matches": true,
+      "provenance_in_b01_not_merged": true,
+      "node_check_recorded": {
+        "frontend/server.mjs": {
+          "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b06-rehearsal-2026-10-07\\candidates\\b06-frontend-v1\\frontend\\server.mjs",
+          "ok": true,
+          "stderr": ""
+        },
+        "frontend/tests/server.test.mjs": {
+          "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b06-rehearsal-2026-10-07\\candidates\\b06-frontend-v1\\frontend\\tests\\server.test.mjs",
+          "ok": true,
+          "stderr": ""
+        }
+      }
+    },
+    "note": "tree digests recomputed from disk at proposal time with the recorded rule (sha256 over 'path\\0sha256\\n', sorted, __pycache__/.pytest_cache skipped, the named manifest excluded); the B05 cross-reference checks this candidate's recorded parent against B05_MERGE_PROPOSAL.json's derived_from; the frontend checks compare the candidate files against the staged tree under integration-staging/frontend and the frozen B01 records only (the original tree is never read); the file-set comparison excludes only the candidate's own manifest because the child carries byte-identical copies of the parent's manifests; the supersession chains re-verify the B05/R0104/A14 records that the three rewritten modules supersede (dataset: A14 MM-0017 -> R0104 RP-0005 -> B05 BP-0003 -> B06; app: A14 MM-0015 -> B05 BP-0004 -> B06; view: A14 MM-0022 -> B06 parent bytes)"
+  },
+  "scope_note": "B06 migrates frontend source discovery: relative to its parent (the B05 adapters candidate) it rewrites three carried modules - src/examdata/integration/api/app.py (discovery projection and resources wiring), src/examdata/integration/api/dataset.py (frontend-shaped query semantics) and src/examdata/integration/api/view.py - and adds seventeen files under frontend/: fifteen staged files byte-for-byte (thirteen carried from the B01/A14 records MM-0229..MM-0241, plus the two staging PROVENANCE records that B01 excluded from the merge), the rewritten frontend/server.mjs (the B01 planned original edit, packet B06) and the new frontend/tests/server.test.mjs. Everything else in the candidate is a byte-identical carry of B05. The staged bytes of the three rewritten modules supersede the bytes recorded by B05_MERGE_PROPOSAL.json BP-0004 (app.py), B05_MERGE_PROPOSAL.json BP-0003 via R0104_MERGE_PROPOSAL.json RP-0005 (dataset.py) and A14_MERGE_MAP.json MM-0022 (view.py); the whole integration package is new relative to the original project, so every release-required module entry is add_file semantics. The frontend entries carry the B01 records (deferred_pending_release for MM-0229..MM-0241; carried_pending_release for the server.mjs planned edit); B01 performed no reconciliation (three_way=false, gate was closed) and this proposal performs none either - it re-records the same deferred state against the B06 candidate bytes. The active-owner seam (B05 BP-0002) and the composition hook and shared-application registration (B04) remain as proposed in B05/B04 and are not re-proposed here. The product/test payload inside the candidate is the R04 payload already proposed in R0104_MERGE_PROPOSAL.json and the packaging already proposed in B02_MERGE_PROPOSAL.json; nothing is re-proposed here. Proposal only: nothing in this file has been applied to the original project. All seven gates remain closed; the original merge stays blocked until an explicit human release.",
+  "action_level_gate_model": {
+    "principle": "A gate is required only for the action that performs that effect. Private preparation never satisfies an original-action prerequisite.",
+    "private_preparation": {
+      "gates_required": [],
+      "note": "reading, staging, private copies, offline validation, synthetic fixtures: no gate required and none is opened"
+    },
+    "original_path_write": {
+      "gates_required": [
+        "original_paths_released"
+      ],
+      "note": "any write into the original project requires the human release"
+    },
+    "other_actions": {
+      "real_data_write": "real_data_write_authorized",
+      "existing_service_cutover": "existing_service_cutover_authorized",
+      "upstream_request": "upstream_requests_authorized",
+      "cie_resume": "cie_resume_authorized",
+      "remote_deployment": "remote_deployment_authorized",
+      "original_cleanup": "original_cleanup_authorized"
+    }
+  },
+  "frozen_evidence_never_touched": [
+    "docs/integration/execution/evidence/**",
+    "integration-staging/runtime/phase-b/**",
+    "integration-staging/runtime/r0104-repair-20261006/candidates/**",
+    "integration-staging/runtime/b02-rehearsal-20261006/candidates/**",
+    "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/**",
+    "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/**",
+    "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/**",
+    "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/**"
+  ],
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "counts": {
+    "entries": 21,
+    "entries_requiring_release": 18,
+    "staging_only_entries": 3,
+    "new_files_vs_parent": 17,
+    "edited_files_rewritten": 3
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "change": "candidate_container",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1",
+      "staged_sha256_before": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955",
+      "staged_sha256_after": "ffe774db608ff9d86246458a38265f9baa760b40880e48197e84d887f85d53f4",
+      "kind": "staging_candidate_tree",
+      "proposed_target": null,
+      "proposed_target_origin": "staging-only rehearsal container: no original-project target",
+      "phase_b_action": "keep in integration-staging/ only; no original-project action proposed",
+      "reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "original_level_reversal_kind": "none",
+      "restore_base_sha256": null,
+      "sha_note": "the before digest covers the parent (B05) file set with B05's own manifest excluded (its digest rule); the after digest covers the candidate file set with B06's own manifest excluded; both use the same function and rule",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "change": "rewrite_integration_app_for_frontend_discovery",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/src/examdata/integration/api/app.py",
+      "staged_sha256_before": "aa3ba9c5e7da3277dbbadbe4ba40cc7b07b961b0c2ba43da801451c7410736f0",
+      "staged_sha256_after": "0edb0911aee83753f1692299cd656df614805b2b032aad6eaa8122dca6d7bc8b",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "examdata/src/examdata/integration/api/app.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json MM-0015 via B05_MERGE_PROPOSAL.json BP-0004; the B06 bytes supersede the unapplied B05 bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 bytes (supersedes the unapplied B05 proposal BP-0004; the whole integration package is new relative to the original project; there is no existing original file to edit; A14 observed the target as not existing)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "supersedes": {
+        "proposal": "B05_MERGE_PROPOSAL.json BP-0004",
+        "superseded_staged_sha256_after": "aa3ba9c5e7da3277dbbadbe4ba40cc7b07b961b0c2ba43da801451c7410736f0",
+        "chain": "A14 MM-0015 -> B05 BP-0004 -> B06"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "staged_sha256_before is the B05 bytes this rewrite replaces; the chain is re-verified in digest_checks.supersession_chain_detail",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "change": "rewrite_integration_dataset_for_frontend_query_semantics",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/src/examdata/integration/api/dataset.py",
+      "staged_sha256_before": "a9a72a7a56f87fd7a854793ca8e191fce6b801a79be40e3971d2ed6c73358a4e",
+      "staged_sha256_after": "d0edabc7a258c0a8f75dd5001475eaf2cd22f5f806c6aa83be8c32336669962b",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json MM-0017 via R0104_MERGE_PROPOSAL.json RP-0005 and B05_MERGE_PROPOSAL.json BP-0003; the B06 bytes supersede the unapplied B05 bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 bytes (supersedes the unapplied B05 proposal BP-0003; the whole integration package is new relative to the original project; there is no existing original file to edit; A14 observed the target as not existing)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "supersedes": {
+        "proposal": "B05_MERGE_PROPOSAL.json BP-0003",
+        "superseded_staged_sha256_after": "a9a72a7a56f87fd7a854793ca8e191fce6b801a79be40e3971d2ed6c73358a4e",
+        "chain": "A14 MM-0017 -> R0104 RP-0005 -> B05 BP-0003 -> B06"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "staged_sha256_before is the B05 bytes this rewrite replaces; the chain is re-verified in digest_checks.supersession_chain_detail",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "change": "rewrite_integration_view_for_the_resources_wiring",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/src/examdata/integration/api/view.py",
+      "staged_sha256_before": "441c1da3977201942baf5eae3b99448cc8a65ad37e3ef44957a5db809ccf3986",
+      "staged_sha256_after": "f03e549f5be4eb6f2041acd570851d7fda57f9bacdd0e5943b8af69dc6c3620f",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "examdata/src/examdata/integration/api/view.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json MM-0022; the B06 parent carried the A14 bytes unchanged and the B06 bytes supersede them",
+      "phase_b_action": "add_file at the proposed target with the B06 bytes (the whole integration package is new relative to the original project; there is no existing original file to edit; A14 observed the target as not existing)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "supersedes": {
+        "proposal": "A14_MERGE_MAP.json MM-0022",
+        "superseded_staged_sha256": "441c1da3977201942baf5eae3b99448cc8a65ad37e3ef44957a5db809ccf3986",
+        "chain": "A14 MM-0022 -> B06 parent bytes (unchanged from A14 to the B06 parent, verified by sha equality)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "staged_sha256_before is the A14-staged version this rewrite replaces; the chain is re-verified in digest_checks.supersession_chain_detail",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0005",
+      "change": "keep_frontend_provenance_staging_only",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/PROVENANCE.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "bc7d167bc1419a0a17ae28796579ef7a25df548a5fad8f4dbcef570d2987fde1",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/PROVENANCE.json",
+        "staged_sha256": "bc7d167bc1419a0a17ae28796579ef7a25df548a5fad8f4dbcef570d2987fde1",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "staging_only_artifact",
+      "proposed_target": null,
+      "proposed_target_origin": "B01_MERGE_MAP.json not_merged exclusion: staging provenance consumed by B01; not a product file",
+      "phase_b_action": "keep in integration-staging/ only; not a product file (B01 not_merged exclusions)",
+      "reversal": "no original-project action to reverse; the file is removed only with the candidate tree",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "original_level_reversal_kind": "none",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0006",
+      "change": "reconcile_frontend_readme",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/README.md",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "53764be9870a086be874eee775baacd5ca9eafdcf06cefb1cbeb3ceb3ce27c8a",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/README.md",
+        "staged_sha256": "53764be9870a086be874eee775baacd5ca9eafdcf06cefb1cbeb3ceb3ce27c8a",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "modified_copy",
+      "proposed_target": "frontend/README.md",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0236 (carried from A14; kind modified_copy); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "reconcile_modify at release: three-way semantic reconciliation against the released original tree (B01 deferred it because the gate was closed), then write the released reconciliation at the proposed target",
+      "reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0236",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0236",
+        "kind": "modified_copy",
+        "phase_b_action": "reconcile_modify",
+        "reversal": "restore_base_bytes",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": "df197ba44cf1d2d2db3626f3a405f6b834b02e0cde739eb11abade2cc0a41340",
+        "base_recorded_at": "2026-10-06T10:17:44+08:00",
+        "target_observed_exists": true
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "restore_base_bytes",
+      "restore_base_sha256": "df197ba44cf1d2d2db3626f3a405f6b834b02e0cde739eb11abade2cc0a41340"
+    },
+    {
+      "id": "BP-0007",
+      "change": "reconcile_frontend_app_js",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/app.js",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "66f698449334b91529dbd5c86e6350af3977ee9c6d5812985761f8c176c07db8",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/app.js",
+        "staged_sha256": "66f698449334b91529dbd5c86e6350af3977ee9c6d5812985761f8c176c07db8",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "modified_copy",
+      "proposed_target": "frontend/app.js",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0229 (carried from A14; kind modified_copy); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "reconcile_modify at release: three-way semantic reconciliation against the released original tree (B01 deferred it because the gate was closed), then write the released reconciliation at the proposed target",
+      "reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0229",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0229",
+        "kind": "modified_copy",
+        "phase_b_action": "reconcile_modify",
+        "reversal": "restore_base_bytes",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": "c050438a0f89ea86be0e3e94844ad776019b7f95d0ba9752fae15ccc6a9aaae0",
+        "base_recorded_at": "2026-10-06T10:17:44+08:00",
+        "target_observed_exists": true
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "restore_base_bytes",
+      "restore_base_sha256": "c050438a0f89ea86be0e3e94844ad776019b7f95d0ba9752fae15ccc6a9aaae0"
+    },
+    {
+      "id": "BP-0008",
+      "change": "install_frontend_client_mjs",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/client.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "57c55e43da46832fc967e4fc09add0cd418bcf59419596f9fd29bab0ac38802f",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/client.mjs",
+        "staged_sha256": "57c55e43da46832fc967e4fc09add0cd418bcf59419596f9fd29bab0ac38802f",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "new_file",
+      "proposed_target": "frontend/client.mjs",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0230 (carried from A14; kind new_file); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0230",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0230",
+        "kind": "new_file",
+        "phase_b_action": "add_file",
+        "reversal": "delete_file",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": null,
+        "base_recorded_at": null,
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0009",
+      "change": "install_frontend_fixture_server",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixture-server.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "424b404d25b461fd54d88d664ff882d494ac168f90943ca80a4f2742836b960b",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/fixture-server.mjs",
+        "staged_sha256": "424b404d25b461fd54d88d664ff882d494ac168f90943ca80a4f2742836b960b",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "new_file",
+      "proposed_target": "frontend/fixture-server.mjs",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0231 (carried from A14; kind new_file); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0231",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0231",
+        "kind": "new_file",
+        "phase_b_action": "add_file",
+        "reversal": "delete_file",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": null,
+        "base_recorded_at": null,
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0010",
+      "change": "keep_frontend_fixtures_provenance_staging_only",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/PROVENANCE.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "2a42aa1f095e1f25479229596cf2891c3c6e9ff05d2c48b8f124531d9a1e07bf",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/fixtures/PROVENANCE.json",
+        "staged_sha256": "2a42aa1f095e1f25479229596cf2891c3c6e9ff05d2c48b8f124531d9a1e07bf",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "staging_only_artifact",
+      "proposed_target": null,
+      "proposed_target_origin": "B01_MERGE_MAP.json not_merged exclusion: staging provenance consumed by B01; not a product file",
+      "phase_b_action": "keep in integration-staging/ only; not a product file (B01 not_merged exclusions)",
+      "reversal": "no original-project action to reverse; the file is removed only with the candidate tree",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "original_level_reversal_kind": "none",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0011",
+      "change": "install_frontend_fixtures_catalog",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/catalog.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "6344f4f2ef6433bc319741deaefd6ae96366b6214ac4df6af055dce85150ed29",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/fixtures/catalog.json",
+        "staged_sha256": "6344f4f2ef6433bc319741deaefd6ae96366b6214ac4df6af055dce85150ed29",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "new_file",
+      "proposed_target": "frontend/fixtures/catalog.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0232 (carried from A14; kind new_file); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0232",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0232",
+        "kind": "new_file",
+        "phase_b_action": "add_file",
+        "reversal": "delete_file",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": null,
+        "base_recorded_at": null,
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0012",
+      "change": "install_frontend_fixtures_resources",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/resources.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "12277f5ff5ef69bd1f513e31b1e29b5e0f50e55d596289db72862776a68b97aa",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/fixtures/resources.json",
+        "staged_sha256": "12277f5ff5ef69bd1f513e31b1e29b5e0f50e55d596289db72862776a68b97aa",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "new_file",
+      "proposed_target": "frontend/fixtures/resources.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0233 (carried from A14; kind new_file); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0233",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0233",
+        "kind": "new_file",
+        "phase_b_action": "add_file",
+        "reversal": "delete_file",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": null,
+        "base_recorded_at": null,
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0013",
+      "change": "install_frontend_fixtures_syllabi",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/syllabi.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "080d0de3838acd197b01813d71e927fdc9fb9477bf3216b354a7c90a3bb58913",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/fixtures/syllabi.json",
+        "staged_sha256": "080d0de3838acd197b01813d71e927fdc9fb9477bf3216b354a7c90a3bb58913",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "new_file",
+      "proposed_target": "frontend/fixtures/syllabi.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0234 (carried from A14; kind new_file); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0234",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0234",
+        "kind": "new_file",
+        "phase_b_action": "add_file",
+        "reversal": "delete_file",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": null,
+        "base_recorded_at": null,
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0014",
+      "change": "reconcile_frontend_index_html",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/index.html",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "c2bf9f4e32ad667bc89ce901f619a0f0643ff778d33ab383b6e11013b6e1e6c6",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/index.html",
+        "staged_sha256": "c2bf9f4e32ad667bc89ce901f619a0f0643ff778d33ab383b6e11013b6e1e6c6",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "modified_copy",
+      "proposed_target": "frontend/index.html",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0235 (carried from A14; kind modified_copy); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "reconcile_modify at release: three-way semantic reconciliation against the released original tree (B01 deferred it because the gate was closed), then write the released reconciliation at the proposed target",
+      "reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0235",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0235",
+        "kind": "modified_copy",
+        "phase_b_action": "reconcile_modify",
+        "reversal": "restore_base_bytes",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": "e10c6296a3204a5d08d82317844f4656a3ec2500374dfc472bcbaaf8dc23a064",
+        "base_recorded_at": "2026-10-06T10:17:44+08:00",
+        "target_observed_exists": true
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "restore_base_bytes",
+      "restore_base_sha256": "e10c6296a3204a5d08d82317844f4656a3ec2500374dfc472bcbaaf8dc23a064"
+    },
+    {
+      "id": "BP-0015",
+      "change": "verify_frontend_search_mjs",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/search.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/search.mjs",
+        "staged_sha256": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "copied_snapshot",
+      "proposed_target": "frontend/search.mjs",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0237 (carried from A14; kind copied_snapshot); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "verify_copy at release: if the target bytes already match staged_sha256_after, write nothing; otherwise reconcile before any write",
+      "reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0237",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0237",
+        "kind": "copied_snapshot",
+        "phase_b_action": "verify_copy",
+        "reversal": "restore_base_bytes",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+        "base_recorded_at": "2026-10-06T10:17:44+08:00",
+        "target_observed_exists": true
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "restore_base_bytes",
+      "restore_base_sha256": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db"
+    },
+    {
+      "id": "BP-0016",
+      "change": "verify_frontend_styles_css",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/styles.css",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/styles.css",
+        "staged_sha256": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "copied_snapshot",
+      "proposed_target": "frontend/styles.css",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0238 (carried from A14; kind copied_snapshot); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "verify_copy at release: if the target bytes already match staged_sha256_after, write nothing; otherwise reconcile before any write",
+      "reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0238",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0238",
+        "kind": "copied_snapshot",
+        "phase_b_action": "verify_copy",
+        "reversal": "restore_base_bytes",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+        "base_recorded_at": "2026-10-06T10:17:44+08:00",
+        "target_observed_exists": true
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "restore_base_bytes",
+      "restore_base_sha256": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5"
+    },
+    {
+      "id": "BP-0017",
+      "change": "install_frontend_tests_client",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/client.test.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "6c23e46e86af23f903b73ba273e66b0d2a64fa5f12dc0e9fa658031f394c3294",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/tests/client.test.mjs",
+        "staged_sha256": "6c23e46e86af23f903b73ba273e66b0d2a64fa5f12dc0e9fa658031f394c3294",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "new_file",
+      "proposed_target": "frontend/tests/client.test.mjs",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0239 (carried from A14; kind new_file); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0239",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0239",
+        "kind": "new_file",
+        "phase_b_action": "add_file",
+        "reversal": "delete_file",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": null,
+        "base_recorded_at": null,
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0018",
+      "change": "install_frontend_tests_flow",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/flow.test.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "c10ad67c8aca97bf15d1f62c85b6e400c740276805ebe7dcf14f767caa4bbffb",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/tests/flow.test.mjs",
+        "staged_sha256": "c10ad67c8aca97bf15d1f62c85b6e400c740276805ebe7dcf14f767caa4bbffb",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "new_file",
+      "proposed_target": "frontend/tests/flow.test.mjs",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0240 (carried from A14; kind new_file); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0240",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0240",
+        "kind": "new_file",
+        "phase_b_action": "add_file",
+        "reversal": "delete_file",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": null,
+        "base_recorded_at": null,
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null
+    },
+    {
+      "id": "BP-0019",
+      "change": "reconcile_frontend_tests_search",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/search.test.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "7fd00040fe00a4c0b2b764416ca1148a33619ed1a3dc48793142316bfb0d77ee",
+      "status": "proposal_only_not_merged",
+      "staged_source": {
+        "staged_path": "integration-staging/frontend/tests/search.test.mjs",
+        "staged_sha256": "7fd00040fe00a4c0b2b764416ca1148a33619ed1a3dc48793142316bfb0d77ee",
+        "note": "the file is new relative to the B06 parent (B05) candidate; relative to the B01 staged tree the bytes are unchanged (verified in digest_checks)"
+      },
+      "kind": "modified_copy",
+      "proposed_target": "frontend/tests/search.test.mjs",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0241 (carried from A14; kind modified_copy); the B06 candidate carries the same staged bytes",
+      "phase_b_action": "reconcile_modify at release: three-way semantic reconciliation against the released original tree (B01 deferred it because the gate was closed), then write the released reconciliation at the proposed target",
+      "reversal": "B01 records the reversal restore_base_bytes against the base at frontend/search.test.mjs (sha256_to_restore, recorded 1e50f10f...), a different path than the proposed target frontend/tests/search.test.mjs (which did not exist); the released reconciliation decides the final layout; this entry never overwrites the recorded base path and never restores a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json MM-0241",
+        "note": "byte-identical staged bytes; this entry only updates the operational record to the B06 candidate (B01 carried the entry deferred_pending_release)"
+      },
+      "b01_record": {
+        "id": "MM-0241",
+        "kind": "modified_copy",
+        "phase_b_action": "reconcile_modify",
+        "reversal": "restore_base_bytes",
+        "b01_disposition": "deferred_pending_release",
+        "base_sha256_recorded": "1e50f10f941caa7b91334a027d0a9ee67932eecc6880b425a276fbecfc350327",
+        "base_recorded_at": "2026-10-06T10:17:44+08:00",
+        "target_observed_exists": false
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "reconciliation_note",
+      "restore_base_sha256": "1e50f10f941caa7b91334a027d0a9ee67932eecc6880b425a276fbecfc350327"
+    },
+    {
+      "id": "BP-0020",
+      "change": "rewrite_frontend_server_for_the_v2_switch",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/server.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "3b34f04c91921c212ddcaf99cbc355fbe4f5670594f8f810ed39566c806d90d8",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "frontend/server.mjs",
+      "proposed_target_origin": "B01_MERGE_MAP.json planned_original_edits (packet B06); base sha256 05406d3a... observed 2026-10-06T11:43:31+08:00",
+      "phase_b_action": "reconcile_modify at release: serve the staged v2 client behind the reversible flag and keep tests/ and fixtures/ out of the static surface (the B01 planned change); the merged server's production port strategy needs an explicit human decision - the staged server defaults to an ephemeral port (0) and refuses to bind 5188/8000 as a staging safety measure",
+      "reversal": "restore the recorded base bytes (sha256 05406d3a...); never restore a sealed snapshot",
+      "supersedes": {
+        "record": "B01_MERGE_MAP.json planned_original_edits frontend/server.mjs",
+        "note": "the B01 planned edit was never applied (carried_pending_release); the B06 candidate supplies the staged bytes it described"
+      },
+      "b01_record": {
+        "id": null,
+        "kind": "planned_original_edit",
+        "phase_b_action": "reconcile_modify (planned change text in the B01 record)",
+        "reversal": "restore the recorded base bytes",
+        "b01_disposition": "carried_pending_release",
+        "base_sha256_recorded": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+        "base_recorded_at": "2026-10-06T11:43:31+08:00",
+        "target_observed_exists": true
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "restore_base_bytes",
+      "restore_base_sha256": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+      "sha_note": "the staged file is new relative to the B06 parent (B05) candidate; the B01 planned edit recorded the original target as existing with base 05406d3a...",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0021",
+      "change": "install_frontend_tests_server",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/server.test.mjs",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "75e3c7a145eccf7b09febe319a8e0d8c197acb58bd0ce9da2efa5256d2dd1b32",
+      "kind": "new_file",
+      "proposed_target": "frontend/tests/server.test.mjs",
+      "proposed_target_origin": "B06 candidate: new test-only asset covering the merged server's static surface; not linked to any B01 record (the B01 MM-0241 record covers frontend/tests/search.test.mjs only)",
+      "phase_b_action": "add_file at the proposed target with the B06 candidate bytes; test-only asset - keep tests/ and fixtures/ out of the static surface",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "the staged file is new relative to the B06 parent (B05) candidate; no original-project target is recorded for it",
+      "status": "proposal_only_not_merged"
+    }
+  ],
+  "not_merged": true,
+  "requirements_for_merge": [
+    "explicit human release opening original_paths_released with an explicit scope; the records carried from B01 (deferred_pending_release / carried_pending_release) become actionable only under that release",
+    "apply the three release-required module entries (add_file semantics; the whole integration package is new relative to the original project): install the B06 bytes at examdata/src/examdata/integration/api/app.py (superseding the unapplied B05 proposal BP-0004), examdata/src/examdata/integration/api/dataset.py (superseding R0104 RP-0005 and the unapplied B05 BP-0003) and examdata/src/examdata/integration/api/view.py (superseding A14 MM-0022, whose bytes the B06 parent carried unchanged)",
+    "install the fifteen release-required frontend entries with the B06 candidate bytes: thirteen from B01_MERGE_MAP.json (MM-0229..MM-0241; reconcile_modify for app.js, index.html, README.md and tests/search.test.mjs; verify_copy for search.mjs and styles.css - write nothing if the bytes already match), frontend/server.mjs (the B01 planned original edit) and frontend/tests/server.test.mjs (new); the two PROVENANCE entries stay staging-only and are never installed",
+    "re-verify every recorded base before writing (B01 base sha256_recorded for the frontend entries, observed 2026-10-06T10:17:44+08:00; server.mjs base_sha256 observed 2026-10-06T11:43:31+08:00); abort the affected entry if any base drifted",
+    "for the reconcile_modify entries, perform the three-way semantic reconciliation against the released original tree that B01 deferred (three_way=false, gate was closed) before writing",
+    "the merged static server must keep tests/ and fixtures/ out of the static surface (B01 MM-0232 note; covered by frontend/tests/server.test.mjs) and its production port strategy needs an explicit human decision (the staged server defaults to an ephemeral port and refuses 5188/8000 as a staging safety measure)",
+    "verify the candidate tree digest (the container entry's staged_sha256_after, recomputed with the recorded rule) immediately before any original write",
+    "re-run the isolated staged suite against the frozen B06 candidate before any original write, and re-run the B06 route probe plus the suite against the merged tree afterwards"
+  ]
+}

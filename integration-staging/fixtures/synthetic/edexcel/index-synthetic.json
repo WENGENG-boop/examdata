@@ -1,0 +1,41 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like an Edexcel subject/paper index. Contains invented titles only; no upstream Edexcel data.",
+    "created_by": "Phase A executor (packet A03)",
+    "created_at_local": "2026-10-05T19:20:00+08:00",
+    "provider": "edexcel",
+    "purpose": "Exercise the Edexcel shape: qualification levels, unit/paper codes, session labels and alias handling."
+  },
+  "board": "edexcel",
+  "subjects": [
+    {
+      "native_id": "synthetic-ial-mathematics",
+      "alias_ids": ["WMA", "synthetic-maths"],
+      "title": "Synthetic International A Level Mathematics",
+      "qualification_level": "IAL",
+      "specification_code": "SYN-IAL-MATHS-2018",
+      "units": [
+        {
+          "native_id": "SYN-WMA11",
+          "title": "Synthetic Pure Mathematics 1",
+          "unit_code": "WMA11",
+          "paper_code": "01",
+          "sessions": [
+            { "session": "2024-Jun", "date": null, "date_unknown_reason": "synthetic fixture: no date recorded" },
+            { "session": "2024-Oct", "date": null, "date_unknown_reason": "synthetic fixture: no date recorded" }
+          ],
+          "documents": [
+            { "role": "qp", "sha256": "5555555555555555555555555555555555555555555555555555555555555555" },
+            { "role": "ms", "sha256": "6666666666666666666666666666666666666666666666666666666666666666" }
+          ],
+          "lineage": { "source": "synthetic", "subject": "synthetic-ial-mathematics" }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

@@ -1,0 +1,3062 @@
+{
+  "plan_version": "rollback-plan-b01/1",
+  "status": "proposed_staged_not_merged_not_deployed",
+  "mode": "PHASE_B_PENDING_RELEASE",
+  "derived_from": {
+    "path": "docs/integration/execution/A14_MERGE_MAP.json",
+    "sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+    "a14_map_byte_unchanged": true,
+    "frozen_snapshot": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_A14_MERGE_MAP.json",
+    "frozen_snapshot_sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a"
+  },
+  "f01_rollback_semantics": {
+    "new_file": "delete only if the candidate SHA256 still matches the recorded staged digest; never 'restore bytes' for a file that had no base",
+    "existing_file": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+  },
+  "guards": [
+    "every action applies only to a path the executor owns this round",
+    "verify the resolved absolute path and its digest before any delete/restore",
+    "no delete or restore ever targets a protected original in Phase A",
+    "planned original edits are reversible only after the human release"
+  ],
+  "entries": [
+    {
+      "id": "MM-0001",
+      "staged_path": "integration-staging/src/examdata_integration/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "1bdb940d37ea92b895e61fc8575d131c62878b0a5042dce4ae0a70e587ea565c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0002",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e4fd17a5cf1e54723474d60345b0a8ed14ac373ce58692ccbd11942ed364bf8a",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0003",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/answers.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/answers.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e1e0ddeafd574c48d6401a24aea31b2e445be0cd2198ad12c3fcaccc2b2dcf67",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0004",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/bundle.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/bundle.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b297a81b92f48fdce59de895351c418441b60da30fd2f60f96e2297ad1d8897c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0005",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/cie.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/cie.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a6b421b87d4c96d24a205eb0a0fa9101c130f3853a87a8ca9d024f0f39e49758",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0006",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/documents.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/documents.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e32513aa57e37646c8e2be831ef1597aac1021b9816b940bb4b6c2571e1a40eb",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0007",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/edexcel.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/edexcel.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b090d4bb1fb90327936c0157e53f18309186991ec7886aee80fce333cecd8f9a",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0008",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/ielts.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/ielts.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e17a91b5d39afb31a98310840f0b27d5d7cb621c38b6bd3c2b79e7e0d6c8ff05",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0009",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/problems.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/problems.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "35ae4107c422a4565bf9212cf1d1e129e213afe83267f6a6b75073f0763d9f41",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0010",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/reader.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/reader.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9fda8dcf98cf4f09d6cca778e2131b89310828d3ddd9c5596c8e69d7957bd296",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0011",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/regions.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/regions.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "d0d046d66a2812ef71c69862024002b0049c570d9705924142f447127aff8fa6",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0012",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/source_reader.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/source_reader.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "42505ce1eb4a41f871db9f953b063568675591957d782776e7b344fb33466656",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0013",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/toefl.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/toefl.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e6dfdaaf3d043bb39e489663d375cee0c1ad34d2f944dfd72c8c2d4d640a42ce",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0014",
+      "staged_path": "integration-staging/src/examdata_integration/api/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/api/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "cacd0c3e7a16520b7ce20ea76f77a060fb7498ba5f2512b1be0cfd266e274a14",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0015",
+      "staged_path": "integration-staging/src/examdata_integration/api/app.py",
+      "proposed_target": "examdata/src/examdata/integration/api/app.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "afa2602e7cbf829688d4ba50d720a237c6d5991869b2fb963c1f2be5e547c04b",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0016",
+      "staged_path": "integration-staging/src/examdata_integration/api/binary.py",
+      "proposed_target": "examdata/src/examdata/integration/api/binary.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "482616943acd060c57232530a990d769c1c1c9f1fac0d2966b61033e53b02701",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0017",
+      "staged_path": "integration-staging/src/examdata_integration/api/dataset.py",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5801f31c5c1748dc5c386af8bf6064fdaadd62b0d6055f99f0fe17dba1b500d4",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0018",
+      "staged_path": "integration-staging/src/examdata_integration/api/envelope.py",
+      "proposed_target": "examdata/src/examdata/integration/api/envelope.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "4987f3bce8877dbbe00589913e31811fb26d27db355270c390fbd1cfc5d9f063",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0019",
+      "staged_path": "integration-staging/src/examdata_integration/api/links.py",
+      "proposed_target": "examdata/src/examdata/integration/api/links.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f30af3f18c3c117edcf1e595178b712441effc14068643b6a75b0d4e9bcceb9d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0020",
+      "staged_path": "integration-staging/src/examdata_integration/api/openapi.py",
+      "proposed_target": "examdata/src/examdata/integration/api/openapi.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5e346d2eda0020bb33a0a42a7d897dddfacae37750262bb9418e74d64842e30a",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0021",
+      "staged_path": "integration-staging/src/examdata_integration/api/pagination.py",
+      "proposed_target": "examdata/src/examdata/integration/api/pagination.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f069b3a0e04b2edfbfd5a3c2a9da3ee888bca3a398040134c84656275e7149ac",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0022",
+      "staged_path": "integration-staging/src/examdata_integration/api/view.py",
+      "proposed_target": "examdata/src/examdata/integration/api/view.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "441c1da3977201942baf5eae3b99448cc8a65ad37e3ef44957a5db809ccf3986",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0023",
+      "staged_path": "integration-staging/src/examdata_integration/catalog/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/catalog/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c494a22e0adf69ff83987becd685990785d8a0a07d006341d1587b83bcb134db",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0024",
+      "staged_path": "integration-staging/src/examdata_integration/catalog/builder.py",
+      "proposed_target": "examdata/src/examdata/integration/catalog/builder.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e611e1d739496d6afbfd5298d0090c9e8a3d0f8e2c11ed2bf2aeb405c22573ec",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0025",
+      "staged_path": "integration-staging/src/examdata_integration/catalog/model.py",
+      "proposed_target": "examdata/src/examdata/integration/catalog/model.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "86feda03abda8e46f21d4a8fd0226d6d1fd615cdc6197b179dd67df62a2d7e78",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0026",
+      "staged_path": "integration-staging/src/examdata_integration/catalog/revision.py",
+      "proposed_target": "examdata/src/examdata/integration/catalog/revision.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "37e8b53c3d2876ef321ba7fcc76291c11fe713822bc7815952104a81bf9d4d4d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0027",
+      "staged_path": "integration-staging/src/examdata_integration/catalog/store.py",
+      "proposed_target": "examdata/src/examdata/integration/catalog/store.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5c2bf5142cbf6f44df8524d8ca05d4b393822fc7e39b6a8b612024919d8b5ead",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0028",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6e4cf0bb4339a3ef2ce3186e08e5419d06cd68729ad2ce5330c6cb7b85184bb7",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0029",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/base.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/base.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "ad698af90e393225edb535b16feab37c30abd831806656b896c8f6ec5b5482a7",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0030",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/canonical.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/canonical.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6ee49d8fe3f9cb4f031d90edb273b5bf2c6a879e0c4f5c9540bfa4f09b8aeede",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0031",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/completeness.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/completeness.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "95f2b9032e3d17fa4fca9274047e002bf2124ecbfc6b71a8415df67a146877c7",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0032",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/enums.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/enums.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "800bb6b5ebe189c4aca5262816978d4769d3242604958d58820438eeabf5999e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0033",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/ids.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/ids.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8553d705259a9aca36387f9f6f39ddd487d81b3bfc6cb1a1eeaabfa4e4c21bd0",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0034",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/jsonschema_lite.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/jsonschema_lite.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c05e7d2684faa8fe1b7e3f594ff44083db943f350dcad6fd7e2c873f490a78f7",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0035",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/models.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/models.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b3836f8b0315886427b22349f8cf5a0b5e515335a190f6663c595f051b3b85ea",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0036",
+      "staged_path": "integration-staging/src/examdata_integration/contracts/quality.py",
+      "proposed_target": "examdata/src/examdata/integration/contracts/quality.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "4498e2599f774a324bdb4af9c6e448885242771939f21a29b80bff6bbacabf33",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0037",
+      "staged_path": "integration-staging/src/examdata_integration/legacy/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/legacy/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9032ce541993944d731dd4ec71f6adb948c3471adad2d04914528581cc187828",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0038",
+      "staged_path": "integration-staging/src/examdata_integration/legacy/bridge.py",
+      "proposed_target": "examdata/src/examdata/integration/legacy/bridge.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "028c5b98c71ded46b0838c8ac4e8439e3d7e700f7450a2cf39a87793e44b9d24",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0039",
+      "staged_path": "integration-staging/src/examdata_integration/legacy/decisions.py",
+      "proposed_target": "examdata/src/examdata/integration/legacy/decisions.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f8720683b07ec017cc5441af8d9ab793bc206562e34a4a34533fc00ed910424d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0040",
+      "staged_path": "integration-staging/src/examdata_integration/legacy/parity.py",
+      "proposed_target": "examdata/src/examdata/integration/legacy/parity.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "60f4e1a5bc18d0532942ff4c158861cddbc7b445b1faed3989e3bbe8b256db8f",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0041",
+      "staged_path": "integration-staging/src/examdata_integration/legacy/registry.json",
+      "proposed_target": "examdata/src/examdata/integration/legacy/registry.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f9e1870b79616bbb06baefeed810ac9272ad7d227cf161085cee34d3bc6f2f78",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0042",
+      "staged_path": "integration-staging/src/examdata_integration/legacy/translate.py",
+      "proposed_target": "examdata/src/examdata/integration/legacy/translate.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "322d6101e10bb66515edc7d616fb3444a9a4d6b7c17bf0fe7e4d747f020e021e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0043",
+      "staged_path": "integration-staging/src/examdata_integration/operations/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/operations/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e33e022b1c640412f6453ffe38ab68c25711385f8fd8c4edf307bdd41899728c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0044",
+      "staged_path": "integration-staging/src/examdata_integration/operations/checkpoints.py",
+      "proposed_target": "examdata/src/examdata/integration/operations/checkpoints.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "1f49dde5e36ed3aaa8b82af5b83b6fd72821d67808addc34047b3b4db580805b",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0045",
+      "staged_path": "integration-staging/src/examdata_integration/operations/coverage.py",
+      "proposed_target": "examdata/src/examdata/integration/operations/coverage.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "53e35cde7e96ea6bfe84e979de52c95fc5102a1fc1fd857c62f829080682b9e9",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0046",
+      "staged_path": "integration-staging/src/examdata_integration/providers/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/providers/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "2f2e0c2be77d03abe9e3e94b4f0a4a72c4c69d878b9859ee414b9d9306de6d7e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0047",
+      "staged_path": "integration-staging/src/examdata_integration/providers/capabilities.py",
+      "proposed_target": "examdata/src/examdata/integration/providers/capabilities.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "587c1efffd2219bd9f42ed778c530bb1adf73a3e978a62445bbfd2fa32e8c7a7",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0048",
+      "staged_path": "integration-staging/src/examdata_integration/providers/fixtures.py",
+      "proposed_target": "examdata/src/examdata/integration/providers/fixtures.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "37ee8f53e48b286294b4e36e8a6889a1132b2fa2225e6e7a6b1fe9268658f8a1",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0049",
+      "staged_path": "integration-staging/src/examdata_integration/providers/protocol.py",
+      "proposed_target": "examdata/src/examdata/integration/providers/protocol.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0c296216eda53f980901d545bdf4d9dc77ea7b4b47487e3db420a1311567bc23",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0050",
+      "staged_path": "integration-staging/src/examdata_integration/providers/registry.py",
+      "proposed_target": "examdata/src/examdata/integration/providers/registry.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "539cd0caaa296db100286b17950c451021833107064cac2a24d9c0c486755b33",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0051",
+      "staged_path": "integration-staging/src/examdata_integration/providers/results.py",
+      "proposed_target": "examdata/src/examdata/integration/providers/results.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "534cec403c7667a5d60e39d8c7aaec9858521e575056c25219d0b55074c2d434",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0052",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8e999047c922ae9b7dc5adbeced7f29294aa84429b3dbeb8592f9d541b8eb1f8",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0053",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/classification.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/classification.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "de5d92b927578d35bad97faf38c5c7323e247ae55b7bdc5ff35b8551f0d52198",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0054",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/doctor.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/doctor.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8d3f4bc812a8ce7a8502b1091ac801f086b7d9fe8694e90842ac781237f9edae",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0055",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/manifest.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/manifest.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8a56f668cc723ac60979248a070ae07e15e5d766cf534c1a16838c0ae9affeec",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0056",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/redact.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/redact.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c81dea27a5ff8042e37db1e893d8990fcc962e5f9bbeef6b0fe2b93290132647",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0057",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/runner.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/runner.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5d45f6de87fba3292eba426cc1e38b4a74562231f1f7c193b930303dbf09df13",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0058",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/settings.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/settings.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "94e825030d135013ba41e5a528074b141720656bc6f4f67cacd05fc1d3bd83e6",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0059",
+      "staged_path": "integration-staging/src/examdata_integration/testing/__init__.py",
+      "proposed_target": "examdata/src/examdata/integration/testing/__init__.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "4fa134108a8dd98ec1448837e080309eb720bbb4e8f819bfc3c8ec7b3ee3aec4",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0060",
+      "staged_path": "integration-staging/src/examdata_integration/testing/guards.py",
+      "proposed_target": "examdata/src/examdata/integration/testing/guards.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "3b0a4a0e36236ccaf01704365e4f706e623c66987843472a9bb70ca9c3cc75dd",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0061",
+      "staged_path": "integration-staging/src/examdata_integration/testing/node_guard.py",
+      "proposed_target": "examdata/src/examdata/integration/testing/node_guard.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "d1a7c4d30e98033e9177177544a6e213f89cce10dc957c5dab3d19f34026b6c1",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0062",
+      "staged_path": "integration-staging/src/examdata_integration/testing/runtime_support.py",
+      "proposed_target": "examdata/src/examdata/integration/testing/runtime_support.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "12fb79a319e4bd4cd3f6fcde66efcdddb2c10d47a2104baf2cc5ee9d5a43d7c2",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0063",
+      "staged_path": "integration-staging/tests/conftest.py",
+      "proposed_target": "examdata/tests/integration/conftest.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "d15742bd18103ef2627407c831452c8cdf432c057ee98f60b19cb8931a8f4193",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0064",
+      "staged_path": "integration-staging/tests/test_adapters_answers.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_answers.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f8a0b8a46d6deb7f262db5838e6406dbe07a4c4f6d9484e9b19f65fb9f6092df",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0065",
+      "staged_path": "integration-staging/tests/test_adapters_cie.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_cie.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b0779d8b11c737a2caa45279fd84b01c9824d6eb72e0c557e9aab28b547fe5ed",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0066",
+      "staged_path": "integration-staging/tests/test_adapters_documents.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_documents.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0bb874039a0e1fc7ebb4ed3da2f4ba65c62a06649310201e9d9930eb746a5311",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0067",
+      "staged_path": "integration-staging/tests/test_adapters_edexcel.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_edexcel.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "747ac73548e86a5c92949c43186f8712d676189f454390f2c65d81fb64b297ba",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0068",
+      "staged_path": "integration-staging/tests/test_adapters_ielts.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_ielts.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a87c79df7239059d284969708f8a5c5f463191bb7cc11e307e337999a4b27a9e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0069",
+      "staged_path": "integration-staging/tests/test_adapters_provenance.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_provenance.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "7d296ce8d65b2cca6ceef2a73eb016cf2e5301b07d0d69cccb5e44645a5e1268",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0070",
+      "staged_path": "integration-staging/tests/test_adapters_reader.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_reader.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "20fa56ad949c7fcf31c598d6cb0c841d792b16780d4748633189018a01583019",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0071",
+      "staged_path": "integration-staging/tests/test_adapters_regions.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_regions.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "41cf7c62f45217f43066f17b6c66d6662c3c57050a4f9083a3d4cc1bd77b5a43",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0072",
+      "staged_path": "integration-staging/tests/test_adapters_source_reader.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_source_reader.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8a43db80fe3c79a1476ce996c49fde55fa3d0c42f98d8aa76940bc4b2d4964af",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0073",
+      "staged_path": "integration-staging/tests/test_adapters_toefl.py",
+      "proposed_target": "examdata/tests/integration/test_adapters_toefl.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "3aacf202e776a640b0db5fdd6c90812c63a22b5bad08300cf282771d561feb94",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0074",
+      "staged_path": "integration-staging/tests/test_api_binary_fixtures.py",
+      "proposed_target": "examdata/tests/integration/test_api_binary_fixtures.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "cb3da0471050647c1555d0b85b0c03cf1130a9e5254bea9790efa7c6564e1ca7",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0075",
+      "staged_path": "integration-staging/tests/test_api_binary_store.py",
+      "proposed_target": "examdata/tests/integration/test_api_binary_store.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "819e1527568461198ab87f0070c46650c82e1ec64edf255d877edfe485a47a95",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0076",
+      "staged_path": "integration-staging/tests/test_api_binary_transport.py",
+      "proposed_target": "examdata/tests/integration/test_api_binary_transport.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a1228b440b07d82b2b09795579455799900bc6050f860e3087fc037a83919474",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0077",
+      "staged_path": "integration-staging/tests/test_api_dataset.py",
+      "proposed_target": "examdata/tests/integration/test_api_dataset.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e13dd99156e169a395502e1c54183f4ef2ec12171ef2462bf4897eed0a5c06e1",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0078",
+      "staged_path": "integration-staging/tests/test_api_envelope.py",
+      "proposed_target": "examdata/tests/integration/test_api_envelope.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "dfec18d88fbbce7db01b7fc35ae505fd49474856a24a4af6729809e64f99afbd",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0079",
+      "staged_path": "integration-staging/tests/test_api_links_openapi.py",
+      "proposed_target": "examdata/tests/integration/test_api_links_openapi.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "7f934d90864e047098a0f989a5603be00fb6599292a8bad4d576d438b3dc8d22",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0080",
+      "staged_path": "integration-staging/tests/test_api_pagination.py",
+      "proposed_target": "examdata/tests/integration/test_api_pagination.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "df102df8b3a7c05fc8478f2999596257bf8ef9b7086f202685f688e04bd96460",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0081",
+      "staged_path": "integration-staging/tests/test_api_routes.py",
+      "proposed_target": "examdata/tests/integration/test_api_routes.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "02179a4bb0bdc47c4aea8ecdadb78660c22571279d034f9b4c01d50026e6edf0",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0082",
+      "staged_path": "integration-staging/tests/test_catalog_builder.py",
+      "proposed_target": "examdata/tests/integration/test_catalog_builder.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "52abb54f2ce81c9d39e2eed90f12f7563738b0d1102e6265ef79d18efa72fe9c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0083",
+      "staged_path": "integration-staging/tests/test_catalog_revision.py",
+      "proposed_target": "examdata/tests/integration/test_catalog_revision.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "836849e6c0815c9441916b530d77a110fe3736628143e86f6e1310cf89e7fca8",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0084",
+      "staged_path": "integration-staging/tests/test_catalog_store.py",
+      "proposed_target": "examdata/tests/integration/test_catalog_store.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9a3548ebee881bb27d071a6a1840d29242c205dd8a987ea808b141cf786b0734",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0085",
+      "staged_path": "integration-staging/tests/test_config_manifest.py",
+      "proposed_target": "examdata/tests/integration/test_config_manifest.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "050b4a4349a3122849460f358ea20bac6085305debdb810de0fb2eb06e45289c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0086",
+      "staged_path": "integration-staging/tests/test_config_resolution.py",
+      "proposed_target": "examdata/tests/integration/test_config_resolution.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "18cd2340adf02dc9cb81a5f821f380376357f18b7423371605e115f19c2bf33e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0087",
+      "staged_path": "integration-staging/tests/test_contracts_completeness.py",
+      "proposed_target": "examdata/tests/integration/test_contracts_completeness.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "00856dd13103768237a6ed16f941357cb178b8b555f38ca0e91dd01a605b6116",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0088",
+      "staged_path": "integration-staging/tests/test_contracts_identity.py",
+      "proposed_target": "examdata/tests/integration/test_contracts_identity.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "4e731991955cc22e72dc4d547f8b36f908e00f6e9022c3859aa10d5bd544980e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0089",
+      "staged_path": "integration-staging/tests/test_contracts_quality.py",
+      "proposed_target": "examdata/tests/integration/test_contracts_quality.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9216bd88b317ad50b49abc929fdd87135dc4d43be9a53eb8e2b08124c6735c6d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0090",
+      "staged_path": "integration-staging/tests/test_contracts_schemas.py",
+      "proposed_target": "examdata/tests/integration/test_contracts_schemas.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "ee53c1d498f330f98234a5c75b6a727450a0954ceac4e73c5fef684406a3c4c6",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0091",
+      "staged_path": "integration-staging/tests/test_fixture_provenance.py",
+      "proposed_target": "examdata/tests/integration/test_fixture_provenance.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "eec48f48484005694750f8d98496d78446ae4aa4cbd94e26d443895627097d48",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0092",
+      "staged_path": "integration-staging/tests/test_frontend_staged_copy.py",
+      "proposed_target": "examdata/tests/integration/test_frontend_staged_copy.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9972229e9ecdafd13440d894a534f0bf04b14f1063d6b5e3bbd16b0b812312ac",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0093",
+      "staged_path": "integration-staging/tests/test_harness_isolation.py",
+      "proposed_target": "examdata/tests/integration/test_harness_isolation.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "28daeeb1fa62923359ca82c408014b03bce052f28d01cdf140e129a5edb42222",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0094",
+      "staged_path": "integration-staging/tests/test_legacy_adapters.py",
+      "proposed_target": "examdata/tests/integration/test_legacy_adapters.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6a2d23fbfcd1fb4c482efd18d94026b78ebf0ebf632031c9f37be7f59eca5ed8",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0095",
+      "staged_path": "integration-staging/tests/test_legacy_bridge_contracts.py",
+      "proposed_target": "examdata/tests/integration/test_legacy_bridge_contracts.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "359db9b7f50f5c74b32fde71687475916a1a2fb5119b341e8bb2a4b860ae1269",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0096",
+      "staged_path": "integration-staging/tests/test_legacy_decisions.py",
+      "proposed_target": "examdata/tests/integration/test_legacy_decisions.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9664efd2956951fedd12ff85db1305c853680e23813b7bbf0860961637c2a8ee",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0097",
+      "staged_path": "integration-staging/tests/test_legacy_parity.py",
+      "proposed_target": "examdata/tests/integration/test_legacy_parity.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "75f814373b0f003e7ba4d7a4080e18c3b0a75314d35c74e7d6bc9cef43cf71ee",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0098",
+      "staged_path": "integration-staging/tests/test_legacy_translate.py",
+      "proposed_target": "examdata/tests/integration/test_legacy_translate.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f4e6562eaf44385d9267eae802adeb69a9ee5bfde44db02c4fa8a5738e0b98de",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0099",
+      "staged_path": "integration-staging/tests/test_node_import_guard.py",
+      "proposed_target": "examdata/tests/integration/test_node_import_guard.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8a2cbec5b2422e0604a3055761aa68d40eca284b2834c4e74fec9511cb8bdc3f",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0100",
+      "staged_path": "integration-staging/tests/test_operations_checkpoints.py",
+      "proposed_target": "examdata/tests/integration/test_operations_checkpoints.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e6d093e142cd4d86bf529e90c5bd50431901166b0ceb5e828d9bd92419bde15d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0101",
+      "staged_path": "integration-staging/tests/test_operations_coverage.py",
+      "proposed_target": "examdata/tests/integration/test_operations_coverage.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "1e4ac3735745f89050844d14495ed86537903dc64558636d90ad8e840a32907c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0102",
+      "staged_path": "integration-staging/tests/test_providers_fixtures.py",
+      "proposed_target": "examdata/tests/integration/test_providers_fixtures.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "dd760bca78d7671f809e864f363cb421fff080d2933f22f24865fda9110303d9",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0103",
+      "staged_path": "integration-staging/tests/test_providers_registry.py",
+      "proposed_target": "examdata/tests/integration/test_providers_registry.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "1daf428f301b46129308f4f10ec7bfda8ea58b54bc43d2b69c93f30de215e7c0",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0104",
+      "staged_path": "integration-staging/tests/test_runner_classification.py",
+      "proposed_target": "examdata/tests/integration/test_runner_classification.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "1f1fbddf17b1ea231421adee2d0b6217ab28f4728642f3e3449c02e4742fdd53",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0105",
+      "staged_path": "integration-staging/tests/test_runner_limits.py",
+      "proposed_target": "examdata/tests/integration/test_runner_limits.py",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "ad539494fdfa13cbe4bbff0ef2d4f45ea60923736535d14a5f43df2cf628b42e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0106",
+      "staged_path": "integration-staging/contracts/examples/answers__cie__ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx.json",
+      "proposed_target": "examdata/contracts/examples/answers__cie__ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5de7384437c77fe46f31c66c3280f13de378dd996d6007de492d273e6f73419d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0107",
+      "staged_path": "integration-staging/contracts/examples/answers__cie__ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl.json",
+      "proposed_target": "examdata/contracts/examples/answers__cie__ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "39963bab33214509b29e344c441dab3ef171c2ffb5cbc345603a8755879643f9",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0108",
+      "staged_path": "integration-staging/contracts/examples/answers__ielts__ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh.json",
+      "proposed_target": "examdata/contracts/examples/answers__ielts__ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "16731fafb4ba52b61c197b4aa61d61941989b82a54df1cb5d0ffc667fcbb8e92",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0109",
+      "staged_path": "integration-staging/contracts/examples/answers__ielts__ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke.json",
+      "proposed_target": "examdata/contracts/examples/answers__ielts__ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5855f1ff408c929abd302493465d687a451369c378f670ecf91887d5699c0a18",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0110",
+      "staged_path": "integration-staging/contracts/examples/answers__ielts__ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb.json",
+      "proposed_target": "examdata/contracts/examples/answers__ielts__ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a1190c00547b0dd42eba5a0bf91331d7d18eadcb71e68cfabca9440fabc1ac51",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0111",
+      "staged_path": "integration-staging/contracts/examples/answers__ielts__ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo.json",
+      "proposed_target": "examdata/contracts/examples/answers__ielts__ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "145594b7c04305f140bb7e0393c143b23a5d9a38990ee7109f9d6e361cce8bea",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0112",
+      "staged_path": "integration-staging/contracts/examples/answers__ielts__ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc.json",
+      "proposed_target": "examdata/contracts/examples/answers__ielts__ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9bb3899dca966c23f9f6b192a71a6345381e9b2ed57eafaa355eab31d84f824c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0113",
+      "staged_path": "integration-staging/contracts/examples/assets__cie__asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl.json",
+      "proposed_target": "examdata/contracts/examples/assets__cie__asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "83d7f4428d3dd1892fa61fd810922b5eff213fcf24870a2c373b9d8d44c7f425",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0114",
+      "staged_path": "integration-staging/contracts/examples/assets__cie__asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd.json",
+      "proposed_target": "examdata/contracts/examples/assets__cie__asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9fcd3157f6a4e56753aaa31e1caec5bdff941b60a396256d17f1a866e0509e8a",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0115",
+      "staged_path": "integration-staging/contracts/examples/assets__ielts__asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m.json",
+      "proposed_target": "examdata/contracts/examples/assets__ielts__asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "dcd903cbfd24aab5015c93e239bf2563090801bf87cb04193b339fc835e167bf",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0116",
+      "staged_path": "integration-staging/contracts/examples/containers__cie__container_6cnnjvwpypjw2orom36k3xjazamje2x3.json",
+      "proposed_target": "examdata/contracts/examples/containers__cie__container_6cnnjvwpypjw2orom36k3xjazamje2x3.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8765688328ccbda5e1bd4023e38626ea86e5bb8f26955df3e490efeefbb6d029",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0117",
+      "staged_path": "integration-staging/contracts/examples/containers__edexcel__container_3bbmo2jmeebj3htxofgvkubtrcj23pct.json",
+      "proposed_target": "examdata/contracts/examples/containers__edexcel__container_3bbmo2jmeebj3htxofgvkubtrcj23pct.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8654d00952e4d262ce6fb2c3b4300b7f0a09035daa0dfaae305ad87c9b9b4bd4",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0118",
+      "staged_path": "integration-staging/contracts/examples/containers__ielts__container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq.json",
+      "proposed_target": "examdata/contracts/examples/containers__ielts__container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6fdd7ed31067ffcf511d43b8854c49d7567973f6bc7a00353ea5aaba8b862a28",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0119",
+      "staged_path": "integration-staging/contracts/examples/courses__cie__course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg.json",
+      "proposed_target": "examdata/contracts/examples/courses__cie__course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b6f8100bea69e509f0d54052973716b27735d156de1ef6f1f427627e8925eb9d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0120",
+      "staged_path": "integration-staging/contracts/examples/courses__edexcel__course_vfthis5jlxjijxarwasb7bbyghnx7fqt.json",
+      "proposed_target": "examdata/contracts/examples/courses__edexcel__course_vfthis5jlxjijxarwasb7bbyghnx7fqt.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "3c5811d451a0a820f98a10f829377d9f24f7c370971b30e8ed951f2efe3fdec2",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0121",
+      "staged_path": "integration-staging/contracts/examples/coverage__cie__cov_synthetic_cie.json",
+      "proposed_target": "examdata/contracts/examples/coverage__cie__cov_synthetic_cie.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "ef61cf3f563ca729548ad4cb25d0b9e68a263bcf4864cae6d57bbfc34b4a3940",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0122",
+      "staged_path": "integration-staging/contracts/examples/coverage__ielts__cov_synthetic_ielts.json",
+      "proposed_target": "examdata/contracts/examples/coverage__ielts__cov_synthetic_ielts.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "7efb5e3588f39e929770fbb1eee32a328a646bfe243b656b6d66d56be645b2ac",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0123",
+      "staged_path": "integration-staging/contracts/examples/examination_systems__synthetic__es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4.json",
+      "proposed_target": "examdata/contracts/examples/examination_systems__synthetic__es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "61712d5a6ac2a9703851c3d2616955150f15575c6e1af113fbf211db439b0510",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0124",
+      "staged_path": "integration-staging/contracts/examples/identity-registry__cie.json",
+      "proposed_target": "examdata/contracts/examples/identity-registry__cie.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "31ae154e7f54f178a7eb93679b3d9845ea46ebf7358c42230de67acd6c8d1196",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0125",
+      "staged_path": "integration-staging/contracts/examples/identity-registry__edexcel.json",
+      "proposed_target": "examdata/contracts/examples/identity-registry__edexcel.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "996be9b8a4d0aadec3bea20bc88821b956de1120cc4f1929a50fe8aa8f84c5c9",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0126",
+      "staged_path": "integration-staging/contracts/examples/identity-registry__ielts.json",
+      "proposed_target": "examdata/contracts/examples/identity-registry__ielts.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a530a6500fdbe5a9e69e58c91749ea44b863337425ed8dee628fcccdabec4828",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0127",
+      "staged_path": "integration-staging/contracts/examples/INDEX.json",
+      "proposed_target": "examdata/contracts/examples/INDEX.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "701da1411d420d77c482ef23e23018c5b492020ef90f0b4f3b78ccc5cda49713",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0128",
+      "staged_path": "integration-staging/contracts/examples/jobs__synthetic__job_6zcvxittpvvbnvtpqttigpsmos2i5zmn.json",
+      "proposed_target": "examdata/contracts/examples/jobs__synthetic__job_6zcvxittpvvbnvtpqttigpsmos2i5zmn.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "183246f02abb16e6f5cf8452726041ed1079ebde52b9a3673b1db9f4790a41aa",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0129",
+      "staged_path": "integration-staging/contracts/examples/materials__synthetic__mat_mmfjianasbw6qrncjkldxnfuavnls3ou.json",
+      "proposed_target": "examdata/contracts/examples/materials__synthetic__mat_mmfjianasbw6qrncjkldxnfuavnls3ou.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8162635cf3336530eb027ab12f62952817a081161623b3c689111fd716ff9ea7",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0130",
+      "staged_path": "integration-staging/contracts/examples/questions__cie__q_2tc2e4uhkufazt3aszordnnbilofoy6s.json",
+      "proposed_target": "examdata/contracts/examples/questions__cie__q_2tc2e4uhkufazt3aszordnnbilofoy6s.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a5f4d2685fd4cbb170e6c09c30dd35d97a46c30e61559c47fda665d08eaa65fc",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0131",
+      "staged_path": "integration-staging/contracts/examples/questions__cie__q_cb5bnkkjhe4ct7mrvespujhxowo2r3up.json",
+      "proposed_target": "examdata/contracts/examples/questions__cie__q_cb5bnkkjhe4ct7mrvespujhxowo2r3up.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "7cb1612447df2f226c7368a04e8298686db716a3df641de2499712c1b233c412",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0132",
+      "staged_path": "integration-staging/contracts/examples/questions__cie__q_ngtwfvjwc26jyirswzxxcccjeeidio56.json",
+      "proposed_target": "examdata/contracts/examples/questions__cie__q_ngtwfvjwc26jyirswzxxcccjeeidio56.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e2b235b53f8db96ccd04baf5fe9ed77f27603e756aabc14c08fc7adbe34ad23c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0133",
+      "staged_path": "integration-staging/contracts/examples/questions__cie__q_nxjtvu4225v43syunzyhurjzvxl7szhk.json",
+      "proposed_target": "examdata/contracts/examples/questions__cie__q_nxjtvu4225v43syunzyhurjzvxl7szhk.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "4f5e408713fd695cc5c42870c26370386457d11a4ebe8f4b2a07008cbee71bfb",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0134",
+      "staged_path": "integration-staging/contracts/examples/questions__cie__q_w4ecszmbbqa54chk22paau3sluucc22z.json",
+      "proposed_target": "examdata/contracts/examples/questions__cie__q_w4ecszmbbqa54chk22paau3sluucc22z.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "ba35977a0ecb940c8649ad9b5486fbad154ea39c601748eab239766d76a99268",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0135",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "59633e8096eaf21404a444ff4a52516240625a245a6d84104f77ede1792271df",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0136",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_egcwv27xjaq2elinkwd63fu6zvvq45ck.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_egcwv27xjaq2elinkwd63fu6zvvq45ck.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "170195309ae9aea6e566ba4a6ad1d1046ee39f3439bfe0c300ccf4c1cc5bd6d5",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0137",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5ea826294e0f488e5455d72c85e0d40d238db3a2462f3cd51788a979186f4dd0",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0138",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "339e7c6869e1a46367fae561c7ddc2724b8b5632f165ad6723dfba968801999a",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0139",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_rtf7wrlwtotph3p45wx5wlfpfuo32iku.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_rtf7wrlwtotph3p45wx5wlfpfuo32iku.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "bb4547bed2883916e4b575421c16d8a4619319e21010bcad884131b48b691999",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0140",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b5ccbb3b7b3edbdc5831aab6611cd39b174848f8b7873ea8bd0854ee32e740b9",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0141",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_ymm437ermxommfdifgexf7eq6dm6kdxc.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_ymm437ermxommfdifgexf7eq6dm6kdxc.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "1a0dcc7aa2bbae31b4639e9e11cf423e9ce7ceaa91e8b16cef075c7025534faf",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0142",
+      "staged_path": "integration-staging/contracts/examples/questions__ielts__q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.json",
+      "proposed_target": "examdata/contracts/examples/questions__ielts__q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "08ca96c6d79c9de4e65a5707fab9d9d5a8fbf52002e87034f5dd6816ee6e806b",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0143",
+      "staged_path": "integration-staging/contracts/examples/regions__synthetic__region_fn2r2ikszwe234bmma3a5zorsr7snsk3.json",
+      "proposed_target": "examdata/contracts/examples/regions__synthetic__region_fn2r2ikszwe234bmma3a5zorsr7snsk3.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a32ad3d8842dbed8f9b54ad3935e732c078d8dbd37ce380b75e3a0f34231695c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0144",
+      "staged_path": "integration-staging/contracts/examples/syllabi__synthetic__syl_6ytdfhso2hvo47geydgicjiuyilumcei.json",
+      "proposed_target": "examdata/contracts/examples/syllabi__synthetic__syl_6ytdfhso2hvo47geydgicjiuyilumcei.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "64f953241e3f51842058fe997a507201ffc7eb9aa14cbe2678667e82bd6a7028",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0145",
+      "staged_path": "integration-staging/contracts/examples/tags__synthetic__tag_fz2cdf3lly5r3uybtl2vmbubioquwymu.json",
+      "proposed_target": "examdata/contracts/examples/tags__synthetic__tag_fz2cdf3lly5r3uybtl2vmbubioquwymu.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f591a669c7cbe51d18d0f552dd49783feb58d39a6734a469f59c85e5f8762e5c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0146",
+      "staged_path": "integration-staging/contracts/examples/timetable_events__cie__tte_punqoxygppjubuhcuj4nkd4nbikowv3f.json",
+      "proposed_target": "examdata/contracts/examples/timetable_events__cie__tte_punqoxygppjubuhcuj4nkd4nbikowv3f.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "bdc8b4a5538f531993e2c39521c56af26cf5b40648e23b5929d3e02044b1c034",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0147",
+      "staged_path": "integration-staging/contracts/examples/timetable_events__edexcel__tte_5kfllz2yp7iibointgdo56rmvnm7zgjc.json",
+      "proposed_target": "examdata/contracts/examples/timetable_events__edexcel__tte_5kfllz2yp7iibointgdo56rmvnm7zgjc.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "10c38fb67af6819d093eca736dc2f1e98404727442644a5cbbb092a09f1d080b",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0148",
+      "staged_path": "integration-staging/contracts/examples/timetable_events__edexcel__tte_hdxrn6xaev6ihma5sgilzhroxl5olams.json",
+      "proposed_target": "examdata/contracts/examples/timetable_events__edexcel__tte_hdxrn6xaev6ihma5sgilzhroxl5olams.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "cbfed9fbfc06c76db16a9c862de2dc457b602b4cf520616aba9911ec98735b06",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0149",
+      "staged_path": "integration-staging/contracts/examples/timetable_windows__synthetic__ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv.json",
+      "proposed_target": "examdata/contracts/examples/timetable_windows__synthetic__ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9b20722978dfcbf38939030db20696cbccbac22d2f789dd6c2488ac505bac981",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0150",
+      "staged_path": "integration-staging/contracts/identity-keys.json",
+      "proposed_target": "examdata/contracts/identity-keys.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "7d52444c6801b035f48b713885f7754f411aa5cfb8c2b56d92bf1c737f0bb3df",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0151",
+      "staged_path": "integration-staging/contracts/quality-transitions.json",
+      "proposed_target": "examdata/contracts/quality-transitions.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f570b76f615424f593db625e7203d8a737c5d62294881a41e0978520e4351204",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0152",
+      "staged_path": "integration-staging/contracts/schema/answer-conflict.schema.json",
+      "proposed_target": "examdata/contracts/schema/answer-conflict.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f60af62efd1580ce179b26636b70881cc471a5365dbc9e54b1762853fb2bbb6f",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0153",
+      "staged_path": "integration-staging/contracts/schema/answer.schema.json",
+      "proposed_target": "examdata/contracts/schema/answer.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8bb77a49a74af984020cc44cdf68b446b0573b5b2a5f727c7d9ba7a1c63dde6c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0154",
+      "staged_path": "integration-staging/contracts/schema/asset.schema.json",
+      "proposed_target": "examdata/contracts/schema/asset.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c788ce9e059f69d38509cff76748ec2d897c4b6b6d41500a75c2f06062450574",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0155",
+      "staged_path": "integration-staging/contracts/schema/container.schema.json",
+      "proposed_target": "examdata/contracts/schema/container.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "29217a15dfb9b01a5a2a0f0a83a59ae5436b0f835f2dec14f51effd24d2c14d5",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0156",
+      "staged_path": "integration-staging/contracts/schema/course.schema.json",
+      "proposed_target": "examdata/contracts/schema/course.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "79813eef417497b5203121b8dfc4ccd96562d43d7c8e8a71bc59e54aa673d228",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0157",
+      "staged_path": "integration-staging/contracts/schema/coverage.schema.json",
+      "proposed_target": "examdata/contracts/schema/coverage.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "dbf36cf34118e590f10577308f0f115e0db2e71a52feb74e6740170d435ffda9",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0158",
+      "staged_path": "integration-staging/contracts/schema/examination-system.schema.json",
+      "proposed_target": "examdata/contracts/schema/examination-system.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "913f473c180118b9dcfa37181b77ee4841e25c687f8ff3352d3d6847a3b9b069",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0159",
+      "staged_path": "integration-staging/contracts/schema/gap.schema.json",
+      "proposed_target": "examdata/contracts/schema/gap.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "d1bf5ebe21281602b236704f37ac617e765e78cb5e54c8718af85bcd63d77f56",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0160",
+      "staged_path": "integration-staging/contracts/schema/job-status.schema.json",
+      "proposed_target": "examdata/contracts/schema/job-status.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "7bde25e811d353dd0ecfaae361ed984a2f5474350dd642b58c4d8d174d052e64",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0161",
+      "staged_path": "integration-staging/contracts/schema/lineage.schema.json",
+      "proposed_target": "examdata/contracts/schema/lineage.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "af343835a2d152f2f2d8f1d76fb3779d1cad4ce065404c00116b3bd9537fade1",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0162",
+      "staged_path": "integration-staging/contracts/schema/manual-decision.schema.json",
+      "proposed_target": "examdata/contracts/schema/manual-decision.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b9c4bad8ddc5e032951e133a1cc51d341226e21f6eb2cbfa0a55d5fb3347b044",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0163",
+      "staged_path": "integration-staging/contracts/schema/material.schema.json",
+      "proposed_target": "examdata/contracts/schema/material.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "24779ff02006139adf1f1eafdd07b150f6f65bc69c57c9649c3c33ec319685fb",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0164",
+      "staged_path": "integration-staging/contracts/schema/option.schema.json",
+      "proposed_target": "examdata/contracts/schema/option.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e78f8ff73b0ee7c0290faeca56d9fcbb8c5f3cb88e6d057e57a8602cc66dd6ab",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0165",
+      "staged_path": "integration-staging/contracts/schema/payload-labels.schema.json",
+      "proposed_target": "examdata/contracts/schema/payload-labels.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b22a489b8e94498c0c9e0d9ba5c90c7e231dfaf03fdc17e6d531932ea42840bc",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0166",
+      "staged_path": "integration-staging/contracts/schema/payload-matching.schema.json",
+      "proposed_target": "examdata/contracts/schema/payload-matching.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0859eaa67340796838afb6a0fcffcd8ed714f6ac7584c69247e09cbbe62f3943",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0167",
+      "staged_path": "integration-staging/contracts/schema/payload-options.schema.json",
+      "proposed_target": "examdata/contracts/schema/payload-options.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a83e658411cf76e333612b5812368a13e8031c271b825135df04a7b695fd2017",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0168",
+      "staged_path": "integration-staging/contracts/schema/payload-table.schema.json",
+      "proposed_target": "examdata/contracts/schema/payload-table.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "83b0238af34a4b69cf56f9583abb9819fe1e352509c937370ad0468fff09d825",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0169",
+      "staged_path": "integration-staging/contracts/schema/payload-text.schema.json",
+      "proposed_target": "examdata/contracts/schema/payload-text.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0abe4ac342c5a2f4c72f3bc15dbc73e68ecdb3368895d747d23751864073c13b",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0170",
+      "staged_path": "integration-staging/contracts/schema/payload-unknown.schema.json",
+      "proposed_target": "examdata/contracts/schema/payload-unknown.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c6b98535700951daf2cf9236d508fd0005b19fc5dab33dc72d37692a1896c145",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0171",
+      "staged_path": "integration-staging/contracts/schema/quality.schema.json",
+      "proposed_target": "examdata/contracts/schema/quality.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "3be2c080e5ebb3c22ef2796572d8f250187e0e675348f4afe1edf0c9e5a15d1d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0172",
+      "staged_path": "integration-staging/contracts/schema/question.schema.json",
+      "proposed_target": "examdata/contracts/schema/question.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5dbddbcf5cc453a80c5c29f4b8cf345d77178a606283376cab0379ae1b758e40",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0173",
+      "staged_path": "integration-staging/contracts/schema/region.schema.json",
+      "proposed_target": "examdata/contracts/schema/region.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "2e61d4a4b1928d1e9861080c8c5ab7aa6bfddd84fec5ad1e687020f8e68bd62d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0174",
+      "staged_path": "integration-staging/contracts/schema/source-ref.schema.json",
+      "proposed_target": "examdata/contracts/schema/source-ref.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "feb19fe8a95ad19919f2bc57de36799cfddf072b325749d87e2c84febcc79adc",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0175",
+      "staged_path": "integration-staging/contracts/schema/syllabus.schema.json",
+      "proposed_target": "examdata/contracts/schema/syllabus.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "68a6c2a4484374d5fe0002008b9bef1cece8031d468ed18cc000cdddba016210",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0176",
+      "staged_path": "integration-staging/contracts/schema/table-cell.schema.json",
+      "proposed_target": "examdata/contracts/schema/table-cell.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9b125f4488beab959bc4ae8e969b3a8399856e1f48f74891cac363d921606514",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0177",
+      "staged_path": "integration-staging/contracts/schema/tag.schema.json",
+      "proposed_target": "examdata/contracts/schema/tag.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9f2ae7bf76a64efa1d0598b1c1db44548836c3e389908b079fbd13e79b89b2dc",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0178",
+      "staged_path": "integration-staging/contracts/schema/timetable-event.schema.json",
+      "proposed_target": "examdata/contracts/schema/timetable-event.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "398b4506fb2e5375e071bf3990d05971cd71bc9fb1f2e96eb23c2217c0451513",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0179",
+      "staged_path": "integration-staging/contracts/schema/timetable-window.schema.json",
+      "proposed_target": "examdata/contracts/schema/timetable-window.schema.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0f22760f8d1c0380fe222d4ba41ced5811290ff08401c8c060825b1061985073",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0180",
+      "staged_path": "integration-staging/fixtures/copied/edexcel/subjects-source.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/edexcel/subjects-source.json",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0181",
+      "staged_path": "integration-staging/fixtures/copied/ielts/indexes-current.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/indexes-current.json",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0182",
+      "staged_path": "integration-staging/fixtures/copied/ielts/manifests-current.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/manifests-current.json",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0183",
+      "staged_path": "integration-staging/fixtures/copied/ielts/pdf-provenance.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/pdf-provenance.json",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0184",
+      "staged_path": "integration-staging/fixtures/copied/ielts/printed-pages.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/printed-pages.json",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0185",
+      "staged_path": "integration-staging/fixtures/copied/toefl/ddy-index.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/toefl/ddy-index.json",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0186",
+      "staged_path": "integration-staging/fixtures/PROVENANCE.json",
+      "proposed_target": "examdata/tests/integration/fixtures/PROVENANCE.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8e75a390f47d1e821a860e027805551c0ab17dd7f70802d7baa5a2417df867dd",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0187",
+      "staged_path": "integration-staging/fixtures/PROVENANCE.md",
+      "proposed_target": "examdata/tests/integration/fixtures/PROVENANCE.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "3d8e8b7080be6da39a02e11842828af9fa459b50ab82f4f8a57232de6b1af5dc",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0188",
+      "staged_path": "integration-staging/fixtures/README.md",
+      "proposed_target": "examdata/tests/integration/fixtures/README.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "92a53e788bcc4ee573218feeb2f19c90b4a5183d0fa2bffcf34fc97a8f65074c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0189",
+      "staged_path": "integration-staging/fixtures/synthetic/adapters/cie-index-adapters.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/adapters/cie-index-adapters.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "e4b73d1573dc198c495265d04216fcf22319f3034277859c400171f43f861785",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0190",
+      "staged_path": "integration-staging/fixtures/synthetic/adapters/edexcel-index-adapters.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/adapters/edexcel-index-adapters.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c7b917432968b35122323401a6f93a722d059fabce559d1da1bc7fe5e1a65367",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0191",
+      "staged_path": "integration-staging/fixtures/synthetic/adapters/PROVENANCE.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/adapters/PROVENANCE.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6a5e619a1c46694cab6b01e2b91645779cb426b6f21d9576fd7240a698eb76bb",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0192",
+      "staged_path": "integration-staging/fixtures/synthetic/adapters/README.md",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/adapters/README.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "bdb017eb4ffbd7bdf8f9d27f8510b4cf7ca4b44fb2b5968fd39b2d45e05ee9df",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0193",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/cie-diagram.png",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/cie-diagram.png",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0f65db46db49639505d17df5f9bad982dbcd4263ca6d96a8255b79b2f0036ca0",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0194",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/cie-ms.pdf",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/cie-ms.pdf",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "37b26bec054e2f4ef071f00d19ed0a2dd982c0f665f4ab74c597c9d784c08630",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0195",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/cie-qp.pdf",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/cie-qp.pdf",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6596e686e26208b79bef32ecb04561d8813da7b15419ceeb32728dd0c0420790",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0196",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/crop-cie-1-page2.png",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/crop-cie-1-page2.png",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b52c1698d4245b33201e250d1a47ce456961f665086fdf4c0a196c76a93bbf87",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0197",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/crop-cie-2-page3.png",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/crop-cie-2-page3.png",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0a0c6cad9c5ab5a3572cd5fcc8c46f2799d42c9110c5c3805632efaaab4ff711",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0198",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/crop-cie-3-page4.png",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/crop-cie-3-page4.png",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "eea2cac490b42d5cc34a2ff51a068b3adf08ea388064dbf6fb55205ac271a3cb",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0199",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/edexcel-ms.pdf",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/edexcel-ms.pdf",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "21e9e5f2d202fbb9bd077ee0c191e097f6abedec0f61004b36c2aef9d44a84e0",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0200",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/edexcel-qp.pdf",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/edexcel-qp.pdf",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8b40c343cf294d0e40e53bd1d086837d0f268eb8a95f4ece05ebc24ebed8130e",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0201",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/ielts-diagram.png",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/ielts-diagram.png",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "581ce430b2d8e28cd8be0dfe942c6e73a23072c12b2ec71368b8282ca7b6940f",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0202",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/manifest.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/manifest.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c9b6eace1a868d15c022dec1082f87ad0ecfeb15659bd624dd46f8ea6053576f",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0203",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/material-synthetic-cie-ins.pdf",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/material-synthetic-cie-ins.pdf",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "f5980cef27dfdb25e35a194b748da3ae274622de6dea1c97e72c410545760fef",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0204",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/PROVENANCE.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/PROVENANCE.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "1ac638740506eaa1f1b4fb19e0dc0981df900f1a0b00dd64b60cd4650b9e9d42",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0205",
+      "staged_path": "integration-staging/fixtures/synthetic/binary/syllabus-synthetic-cie-0580.pdf",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/binary/syllabus-synthetic-cie-0580.pdf",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0206",
+      "staged_path": "integration-staging/fixtures/synthetic/catalog/catalog-base-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/catalog/catalog-base-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "2ced97a6aba36b46b94a8b270d96d2293a03093f5470a5e7799577ce26ec6341",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0207",
+      "staged_path": "integration-staging/fixtures/synthetic/catalog/catalog-duplicate-native-id-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/catalog/catalog-duplicate-native-id-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "30e972c258a4bbdf8305ef0598c5069196e62ba90585ab54a14f3850f38691fe",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0208",
+      "staged_path": "integration-staging/fixtures/synthetic/catalog/catalog-incomplete-reference-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/catalog/catalog-incomplete-reference-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "14175ad8c38450133f2b13682fc33bda37d82dcf4e3d8f3bedc8b47c3418e16c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0209",
+      "staged_path": "integration-staging/fixtures/synthetic/catalog/catalog-quality-upgrade-unexplained-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/catalog/catalog-quality-upgrade-unexplained-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "3367628803788d7614d98182717dc96eaa1f63ea9c131351db67c2d8a8beab07",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0210",
+      "staged_path": "integration-staging/fixtures/synthetic/catalog/catalog-removal-unexplained-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/catalog/catalog-removal-unexplained-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9cb8b0a1a44a04533956e51b5743daaac7cb230d3a616e51ab073823cd1e5dbb",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0211",
+      "staged_path": "integration-staging/fixtures/synthetic/catalog/PROVENANCE.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/catalog/PROVENANCE.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c5d5136410d70eef69a40e8d990fd7c970334b7424043360e8c62eb278d1531b",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0212",
+      "staged_path": "integration-staging/fixtures/synthetic/cie/cie-index-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/cie/cie-index-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6f4d0d4a15972fa7aa70feb6c6bba57f5750f5afdd554dbde867422dbf250512",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0213",
+      "staged_path": "integration-staging/fixtures/synthetic/edexcel/index-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/edexcel/index-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "047ab7efb5f8e6b06f2ec71eecdd1ac2240324fa3dc0c699e34be4f64e4fd1a3",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0214",
+      "staged_path": "integration-staging/fixtures/synthetic/ielts/questions-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/ielts/questions-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "7f11b2256f3757ace21efb44d23705dcaa00bd01f0383b2ae44a9b6fc10ae6b9",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0215",
+      "staged_path": "integration-staging/fixtures/synthetic/ielts-toefl/ielts-audio-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/ielts-toefl/ielts-audio-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "37cfdb49d30584a48f1f0afc9ac493fe3511cb4af90c47eb768111a147161b39",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0216",
+      "staged_path": "integration-staging/fixtures/synthetic/ielts-toefl/ielts-questions-a08-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/ielts-toefl/ielts-questions-a08-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "9daf7fe33ee72f47289d7169bdc2d1a6a5f3c567476aeec302e1698378d85ec6",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0217",
+      "staged_path": "integration-staging/fixtures/synthetic/ielts-toefl/PROVENANCE.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/ielts-toefl/PROVENANCE.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "fd6507bfe322159162880bdcd09e48cfbe892363b9375f1ee59fb02a415a0603",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0218",
+      "staged_path": "integration-staging/fixtures/synthetic/ielts-toefl/README.md",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/ielts-toefl/README.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "cf2be3d8811002bd809c7e6a3867eb8fc1a2770245ed325364205354a7787e70",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0219",
+      "staged_path": "integration-staging/fixtures/synthetic/ielts-toefl/toefl-bad-cache-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/ielts-toefl/toefl-bad-cache-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "4669b5adef6c9acae2e18a8dc916af306d3b92afc9614a93222c13f3afb48c1d",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0220",
+      "staged_path": "integration-staging/fixtures/synthetic/ielts-toefl/toefl-questions-synthetic.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/ielts-toefl/toefl-questions-synthetic.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "cbe0a88a14b9c5e86cdddadd635765b87f4ad794d4d5b0b3ca1ac58c48f58594",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0221",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-running.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/cie-batch-checkpoint-running.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "569e684df62f142ae2980ec22801f58aa1ce6d469e5926f58380875d47c3a8bd",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0222",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-stopped.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/cie-batch-checkpoint-stopped.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "341a9d43eeaa19e786b2291e19716510c3b16c84d265c00545d02cfbf6dddc16",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0223",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok-stale.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/ielts-run-checkpoint-ok-stale.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "3fd24d8b6a9ca5c90dbb0d0e451b1e291e8167b1e321d7ddf8c683c74e9e5515",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0224",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/ielts-run-checkpoint-ok.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0364323fea0d9f37c643bf758dfc0b05b2c2cf8204df84d59e50044aad5bcf12",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0225",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-partial.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/ielts-run-checkpoint-partial.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "8e8fd6406be38831be9e7436b68e16f29fdc3074412238147351028c4733cbee",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0226",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/PROVENANCE.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/PROVENANCE.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "5ba4a5a8c5888080b92d57bac9981dbff6173cd1b27b2411034822d914dbef0c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0227",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/README.md",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/README.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "04194078a00d26a91fcfcf02621d1433cf301cac53e942b0a6052d169636b31f",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0228",
+      "staged_path": "integration-staging/fixtures/synthetic/operations/unsupported-checkpoint.json",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/unsupported-checkpoint.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "b7f2f031a2594ee29c3b89d7753d056f48b5665a0ebe303ea0a4e86f99bba414",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0229",
+      "staged_path": "integration-staging/frontend/app.js",
+      "proposed_target": "frontend/app.js",
+      "kind": "modified_copy",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0230",
+      "staged_path": "integration-staging/frontend/client.mjs",
+      "proposed_target": "frontend/client.mjs",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "57c55e43da46832fc967e4fc09add0cd418bcf59419596f9fd29bab0ac38802f",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0231",
+      "staged_path": "integration-staging/frontend/fixture-server.mjs",
+      "proposed_target": "frontend/fixture-server.mjs",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "424b404d25b461fd54d88d664ff882d494ac168f90943ca80a4f2742836b960b",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0232",
+      "staged_path": "integration-staging/frontend/fixtures/catalog.json",
+      "proposed_target": "frontend/fixtures/catalog.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6344f4f2ef6433bc319741deaefd6ae96366b6214ac4df6af055dce85150ed29",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0233",
+      "staged_path": "integration-staging/frontend/fixtures/resources.json",
+      "proposed_target": "frontend/fixtures/resources.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "12277f5ff5ef69bd1f513e31b1e29b5e0f50e55d596289db72862776a68b97aa",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0234",
+      "staged_path": "integration-staging/frontend/fixtures/syllabi.json",
+      "proposed_target": "frontend/fixtures/syllabi.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "080d0de3838acd197b01813d71e927fdc9fb9477bf3216b354a7c90a3bb58913",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0235",
+      "staged_path": "integration-staging/frontend/index.html",
+      "proposed_target": "frontend/index.html",
+      "kind": "modified_copy",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0236",
+      "staged_path": "integration-staging/frontend/README.md",
+      "proposed_target": "frontend/README.md",
+      "kind": "modified_copy",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0237",
+      "staged_path": "integration-staging/frontend/search.mjs",
+      "proposed_target": "frontend/search.mjs",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0238",
+      "staged_path": "integration-staging/frontend/styles.css",
+      "proposed_target": "frontend/styles.css",
+      "kind": "copied_snapshot",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0239",
+      "staged_path": "integration-staging/frontend/tests/client.test.mjs",
+      "proposed_target": "frontend/tests/client.test.mjs",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "6c23e46e86af23f903b73ba273e66b0d2a64fa5f12dc0e9fa658031f394c3294",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0240",
+      "staged_path": "integration-staging/frontend/tests/flow.test.mjs",
+      "proposed_target": "frontend/tests/flow.test.mjs",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "c10ad67c8aca97bf15d1f62c85b6e400c740276805ebe7dcf14f767caa4bbffb",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0241",
+      "staged_path": "integration-staging/frontend/tests/search.test.mjs",
+      "proposed_target": "frontend/tests/search.test.mjs",
+      "kind": "modified_copy",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": null,
+        "detail": "restore the B00 latest released base and verify no later modification is overwritten; do not restore an A14 snapshot"
+      }
+    },
+    {
+      "id": "MM-0242",
+      "staged_path": "integration-staging/config/staging-config.example.json",
+      "proposed_target": "examdata/config.example.json",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "0c67866416644bcd1e2ed374573144c447718140e628d3e8df0988b5f5d715bf",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0243",
+      "staged_path": "integration-staging/config/staging.env.example",
+      "proposed_target": "examdata/.env.example",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "d16bdbfb14f6a129919bbfdb0bb242b87c5c3fce6c49d0030227b69137a6612c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0244",
+      "staged_path": "integration-staging/docs/integration-guide.md",
+      "proposed_target": "examdata/docs/integration-guide.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "a34a51ec4c5a24f9fd563eb5b7f050a0e8d36d1027d1d33cc7732f189dc1ab53",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0245",
+      "staged_path": "integration-staging/docs/README.md",
+      "proposed_target": "examdata/docs/README.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "869e37e750fe8400503af615fb05c5403024f82822cc79e4c061cebfb36f8f2c",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0246",
+      "staged_path": "integration-staging/docs/release-and-rollback.md",
+      "proposed_target": "examdata/docs/release-and-rollback.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "4ae9685a486cc28491ccdc78aadd04d2b0823a372ceb02c895ea2ea4ae836756",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    },
+    {
+      "id": "MM-0247",
+      "staged_path": "integration-staging/docs/v2-api-reference.md",
+      "proposed_target": "examdata/docs/v2-api-reference.md",
+      "kind": "new_file",
+      "b01_disposition": "deferred_pending_release",
+      "rollback": {
+        "type": "delete_if_candidate_matches",
+        "guard_sha256": "fdfc30eaa0a7eab9bfb9f04efff7b8ddc3e9fe02d8502e49c013ce4f75c9b772",
+        "detail": "delete only if the deployed candidate SHA256 still matches the recorded staged digest; never restore bytes for a file that had no base"
+      }
+    }
+  ],
+  "planned_original_edits": [
+    {
+      "target_path": "examdata/src/examdata/api/app.py",
+      "packet": "B04",
+      "base_exists": true,
+      "base_sha256": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+        "detail": "restore the recorded base bytes only after the human release; verify no later modification is overwritten"
+      },
+      "b01_disposition": "carried_pending_release"
+    },
+    {
+      "target_path": "examdata/pyproject.toml",
+      "packet": "B02",
+      "base_exists": true,
+      "base_sha256": "f8d69e9dc11c66e062f2e8955fa7fbc035d347841b95354d1b052c6a57226a66",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": "f8d69e9dc11c66e062f2e8955fa7fbc035d347841b95354d1b052c6a57226a66",
+        "detail": "restore the recorded base bytes only after the human release; verify no later modification is overwritten"
+      },
+      "b01_disposition": "carried_pending_release"
+    },
+    {
+      "target_path": "examdata/src/examdata/cli.py",
+      "packet": "B02/B10",
+      "base_exists": true,
+      "base_sha256": "514f04204f85ee146d5c209d5c1a29c41a5306395ca8e40a5e1a7ee5d6b29292",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": "514f04204f85ee146d5c209d5c1a29c41a5306395ca8e40a5e1a7ee5d6b29292",
+        "detail": "restore the recorded base bytes only after the human release; verify no later modification is overwritten"
+      },
+      "b01_disposition": "carried_pending_release"
+    },
+    {
+      "target_path": "frontend/server.mjs",
+      "packet": "B06",
+      "base_exists": true,
+      "base_sha256": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+        "detail": "restore the recorded base bytes only after the human release; verify no later modification is overwritten"
+      },
+      "b01_disposition": "carried_pending_release"
+    },
+    {
+      "target_path": "examdata/docs/API.md",
+      "packet": "B10",
+      "base_exists": true,
+      "base_sha256": "aa238ecb1988635a278ae84aa4ccba635b3129a0110fd3ba703277aa37393d9d",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": "aa238ecb1988635a278ae84aa4ccba635b3129a0110fd3ba703277aa37393d9d",
+        "detail": "restore the recorded base bytes only after the human release; verify no later modification is overwritten"
+      },
+      "b01_disposition": "carried_pending_release"
+    },
+    {
+      "target_path": "docs/PROJECT_STATUS.md",
+      "packet": "B10",
+      "base_exists": true,
+      "base_sha256": "0bb307bf292169a4a015201863527784806ab2e49444af9b92786f2d07ffe080",
+      "rollback": {
+        "type": "restore_base",
+        "base_sha256": "0bb307bf292169a4a015201863527784806ab2e49444af9b92786f2d07ffe080",
+        "detail": "restore the recorded base bytes only after the human release; verify no later modification is overwritten"
+      },
+      "b01_disposition": "carried_pending_release"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+cachedir: runtime\pytest-cache
+rootdir: C:\Users\weo\Desktop\api\integration-staging
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collected 856 items
+
+tests\test_adapters_answers.py ................                          [  1%]
+tests\test_adapters_cie.py .................                             [  3%]
+tests\test_adapters_documents.py ..............                          [  5%]
+tests\test_adapters_edexcel.py .............                             [  7%]
+tests\test_adapters_ielts.py ......................                      [  9%]
+tests\test_adapters_provenance.py ......                                 [ 10%]
+tests\test_adapters_reader.py ..............                             [ 11%]
+tests\test_adapters_regions.py ..............                            [ 13%]
+tests\test_adapters_source_reader.py .......................             [ 16%]
+tests\test_adapters_toefl.py ................                            [ 18%]
+tests\test_api_binary_fixtures.py ......                                 [ 18%]
+tests\test_api_binary_store.py ......................................... [ 23%]
+......................................................................   [ 31%]
+tests\test_api_binary_transport.py ...............                       [ 33%]
+tests\test_api_dataset.py .......................                        [ 36%]
+tests\test_api_envelope.py ................................              [ 39%]
+tests\test_api_links_openapi.py ....................                     [ 42%]
+tests\test_api_pagination.py .....................                       [ 44%]
+tests\test_api_routes.py ............................................... [ 50%]
+......                                                                   [ 50%]
+tests\test_catalog_builder.py ..............                             [ 52%]
+tests\test_catalog_revision.py ..............                            [ 54%]
+tests\test_catalog_store.py ...............                              [ 55%]
+tests\test_config_manifest.py ...........................                [ 59%]
+tests\test_config_resolution.py .......................                  [ 61%]
+tests\test_contracts_completeness.py .........                           [ 62%]
+tests\test_contracts_identity.py ...............                         [ 64%]
+tests\test_contracts_quality.py ................                         [ 66%]
+tests\test_contracts_schemas.py ......                                   [ 67%]
+tests\test_fixture_provenance.py ...........                             [ 68%]
+tests\test_harness_isolation.py .............                            [ 69%]
+tests\test_legacy_adapters.py ........................                   [ 72%]
+tests\test_legacy_bridge_contracts.py .................................. [ 76%]
+................................................                         [ 82%]
+tests\test_legacy_decisions.py ...........                               [ 83%]
+tests\test_legacy_parity.py ..........                                   [ 84%]
+tests\test_legacy_translate.py ..................                        [ 86%]
+tests\test_node_import_guard.py .....                                    [ 87%]
+tests\test_providers_fixtures.py ....................................... [ 92%]
+.......                                                                  [ 92%]
+tests\test_providers_registry.py ....................                    [ 95%]
+tests\test_runner_classification.py .............................        [ 98%]
+tests\test_runner_limits.py ............                                 [100%]
+
+============================== warnings summary ===============================
+..\examdata\.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID syllabus_content_api_v2_syllabuses__id__content_get for function syllabus_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID resource_content_api_v2_resources__id__content_get for function resource_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID asset_content_api_v2_assets__id__content_get for function asset_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID question_crop_api_v2_questions__id__crop_get for function question_crop at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID material_content_api_v2_materials__id__content_get for function material_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_runner_classification.py::test_output_overflow
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-282 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+tests/test_runner_classification.py::test_timeout
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-286 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+tests/test_runner_classification.py::test_cancellation
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-290 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+tests/test_runner_classification.py::test_process_cleanup_evidence
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-294 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 856 passed, 10 warnings in 34.68s ======================

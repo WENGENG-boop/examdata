@@ -1,0 +1,276 @@
+{
+  "schema": "identity-registry/1",
+  "records": [
+    {
+      "public_id": "ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx",
+      "kind": "answer",
+      "canonical_identity": "\u001fanswer\u001esystem=CIE\u001equestion_native_id=2\u001esource=SYNTHETIC-CIE\u001enative_answer_key=primary",
+      "identity_fields": {
+        "system": "cie",
+        "question_native_id": "2",
+        "source": "synthetic-cie",
+        "native_answer_key": "primary"
+      },
+      "native_locator": {
+        "provider": "cie",
+        "question_native_id": "2",
+        "native_answer_key": "primary"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl",
+      "kind": "answer",
+      "canonical_identity": "\u001fanswer\u001esystem=CIE\u001equestion_native_id=3\u001esource=SYNTHETIC-CIE\u001enative_answer_key=primary",
+      "identity_fields": {
+        "system": "cie",
+        "question_native_id": "3",
+        "source": "synthetic-cie",
+        "native_answer_key": "primary"
+      },
+      "native_locator": {
+        "provider": "cie",
+        "question_native_id": "3",
+        "native_answer_key": "primary"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl",
+      "kind": "asset",
+      "canonical_identity": "\u001fasset\u001esystem=CIE\u001emedia_type=\u0000\u001esha256=2222222222222222222222222222222222222222222222222222222222222222\u001estorage_mode=\u0000",
+      "identity_fields": {
+        "system": "cie",
+        "media_type": null,
+        "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+        "storage_mode": null
+      },
+      "native_locator": {
+        "provider": "cie",
+        "role": "qp",
+        "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd",
+      "kind": "asset",
+      "canonical_identity": "\u001fasset\u001esystem=CIE\u001emedia_type=\u0000\u001esha256=3333333333333333333333333333333333333333333333333333333333333333\u001estorage_mode=\u0000",
+      "identity_fields": {
+        "system": "cie",
+        "media_type": null,
+        "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+        "storage_mode": null
+      },
+      "native_locator": {
+        "provider": "cie",
+        "role": "ms",
+        "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "container_6cnnjvwpypjw2orom36k3xjazamje2x3",
+      "kind": "container",
+      "canonical_identity": "\u001fcontainer\u001esystem=CIE\u001ekind=PAPER\u001enative_identity={\"paper\":\"11\",\"season\":\"JUN\",\"subject\":\"9999\",\"year\":2024}",
+      "identity_fields": {
+        "system": "cie",
+        "kind": "paper",
+        "native_identity": {
+          "subject": "9999",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11"
+        }
+      },
+      "native_locator": {
+        "provider": "cie",
+        "kind": "paper",
+        "subject": "9999",
+        "year": 2024,
+        "season": "Jun",
+        "paper": "11"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg",
+      "kind": "course",
+      "canonical_identity": "\u001fcourse\u001esystem=CIE\u001equalification=\u0000\u001enative_code=9999\u001especification_version=\u0000",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": null,
+        "native_code": "9999",
+        "specification_version": null
+      },
+      "native_locator": {
+        "provider": "cie",
+        "subject": "9999"
+      },
+      "aliases": [
+        "synthetic-subject"
+      ],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_2tc2e4uhkufazt3aszordnnbilofoy6s",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=CIE\u001econtainer_native_identity={\"paper\":\"11\",\"season\":\"JUN\",\"subject\":\"9999\",\"year\":2024}\u001enative_id=1\u001enumber_path=[\"1\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "cie",
+        "container_native_identity": {
+          "subject": "9999",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11"
+        },
+        "native_id": "1",
+        "number_path": [
+          "1"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "cie",
+        "paper": "11",
+        "question": "1"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_cb5bnkkjhe4ct7mrvespujhxowo2r3up",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=CIE\u001econtainer_native_identity={\"paper\":\"11\",\"season\":\"JUN\",\"subject\":\"9999\",\"year\":2024}\u001enative_id=1(a)\u001enumber_path=[\"1\",\"1(a)\"]\u001eparent_native_id=1",
+      "identity_fields": {
+        "system": "cie",
+        "container_native_identity": {
+          "subject": "9999",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11"
+        },
+        "native_id": "1(a)",
+        "number_path": [
+          "1",
+          "1(a)"
+        ],
+        "parent_native_id": "1"
+      },
+      "native_locator": {
+        "provider": "cie",
+        "paper": "11",
+        "question": "1(a)"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_ngtwfvjwc26jyirswzxxcccjeeidio56",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=CIE\u001econtainer_native_identity={\"paper\":\"11\",\"season\":\"JUN\",\"subject\":\"9999\",\"year\":2024}\u001enative_id=1(b)\u001enumber_path=[\"1\",\"1(b)\"]\u001eparent_native_id=1",
+      "identity_fields": {
+        "system": "cie",
+        "container_native_identity": {
+          "subject": "9999",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11"
+        },
+        "native_id": "1(b)",
+        "number_path": [
+          "1",
+          "1(b)"
+        ],
+        "parent_native_id": "1"
+      },
+      "native_locator": {
+        "provider": "cie",
+        "paper": "11",
+        "question": "1(b)"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_nxjtvu4225v43syunzyhurjzvxl7szhk",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=CIE\u001econtainer_native_identity={\"paper\":\"11\",\"season\":\"JUN\",\"subject\":\"9999\",\"year\":2024}\u001enative_id=2\u001enumber_path=[\"2\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "cie",
+        "container_native_identity": {
+          "subject": "9999",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11"
+        },
+        "native_id": "2",
+        "number_path": [
+          "2"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "cie",
+        "paper": "11",
+        "question": "2"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_w4ecszmbbqa54chk22paau3sluucc22z",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=CIE\u001econtainer_native_identity={\"paper\":\"11\",\"season\":\"JUN\",\"subject\":\"9999\",\"year\":2024}\u001enative_id=3\u001enumber_path=[\"3\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "cie",
+        "container_native_identity": {
+          "subject": "9999",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11"
+        },
+        "native_id": "3",
+        "number_path": [
+          "3"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "cie",
+        "paper": "11",
+        "question": "3"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "tte_punqoxygppjubuhcuj4nkd4nbikowv3f",
+      "kind": "timetable_event",
+      "canonical_identity": "\u001ftimetable_event\u001esystem=CIE\u001equalification=\u0000\u001ezone=\u0000\u001ecourse_native_code=9999\u001ecomponent=11\u001edate=\u0000\u001esession=JUN",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": null,
+        "zone": null,
+        "course_native_code": "9999",
+        "component": "11",
+        "date": null,
+        "session": "Jun"
+      },
+      "native_locator": {
+        "provider": "cie",
+        "subject": "9999",
+        "paper": "11"
+      },
+      "aliases": [],
+      "content_revision": null
+    }
+  ],
+  "collision_events": [],
+  "alias_events": []
+}

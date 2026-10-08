@@ -1,0 +1,16 @@
+[PASS] R1 no-credential: exit=2 REFUSED: opening 'original_paths_released' requires --credential with the human four-part release (instruction
+[PASS] R2 partial-credential: exit=2 REFUSED: gate credential missing four-part elements: ['scope', 'constraints']
+[PASS] R3 unblock-guard: exit=2 REFUSED: 'original_paths_released' is in B00's blocked_by; pass --allow-unblock to record a human release that
+[PASS] R4 forged-pass: exit=2 REFUSED: staged_pass requires concrete commands (command text with exit codes) in the record
+[PASS] R5 digest-changed: exit=2 REFUSED: input digest changed since it was recorded: docs/integration/execution/A14_MERGE_MAP.json (00000000 -
+[PASS] R5b input-missing: exit=2 REFUSED: input digest changed since it was recorded: docs/integration/execution/NO_SUCH_FILE.json (missing at 
+[PASS] R6 two-gates: exit=2 REFUSED: open gates one at a time (one credential, one gate)
+[PASS] R7 sealed-A: exit=2 REFUSED: sealed Phase A record 'A15' must never be modified
+[PASS] R8 merged_pass: exit=2 REFUSED: merged_pass claims the originals were merged; private preparation may only record staged_pass with or
+[PASS] R9 widen-roots: exit=2 REFUSED: allowed_write_roots may not be widened beyond the ledger roots: ['C:/Users/weo/Desktop/api/examdata']
+[PASS] R10 scope-mismatch: exit=2 REFUSED: credential scope 'examdata/**' does not cover declared path 'C:/Users/weo/Desktop/api/elsewhere/targe
+[PASS] R4b missing-declaration: exit=2 REFUSED: staged_pass in Phase B requires --original-changes-applied true|false (private preparation must decla
+[PASS] R11 one-gate-only: open=['original_paths_released']
+[PASS] R12 digest-match accepted: exit=0
+
+ALL REJECTIONS ENFORCED

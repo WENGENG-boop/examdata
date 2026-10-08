@@ -1,0 +1,103 @@
+{
+  "proposal_version": "b04-rollback-proposal/1",
+  "packet": "B04",
+  "generated_by": "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_proposals.py",
+  "generated_at": "2026-10-07T01:40:30+08:00",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "merge_proposal_entries": 3,
+    "candidate_manifest": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/B04_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "candidate_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    }
+  },
+  "semantics": {
+    "staging_level": {
+      "staging_candidate_tree": "delete the candidate tree only if its current tree digest still equals sha256_at_proposal, recomputed with the rule recorded in derived_from.candidate_tree_digest_rule (the candidate's own manifest is excluded, since a file cannot hash itself)"
+    },
+    "original_level": {
+      "merged_add_file": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal",
+      "merged_planned_edit": "restore the recorded base bytes (sha256_to_restore) at the proposed target; valid only after the human release has applied the edit"
+    },
+    "never": [
+      "never touch docs/integration/execution/evidence/**",
+      "never touch integration-staging/runtime/phase-b/** sealed transcripts",
+      "never touch the frozen R04 candidate under r0104-repair-20261006/candidates/**",
+      "never touch the frozen B02 candidate under b02-rehearsal-20261006/candidates/**",
+      "never touch the frozen B03 candidate under b03-rehearsal-2026-10-07/candidates/**",
+      "never restore the live execution ledger from a private copy"
+    ]
+  },
+  "guards": [
+    "verify the resolved absolute path and its sha256 (or tree digest) before any delete",
+    "no delete ever targets a protected original in Phase B private rehearsal",
+    "planned original edits are reversible only after the human release",
+    "all seven gates remain closed during rollback"
+  ],
+  "counts": {
+    "entries": 3,
+    "staging_level": {
+      "reversible_by_tree_delete": 1,
+      "reversible_by_file_delete": 1
+    },
+    "original_level": {
+      "reversible_by_delete": 1,
+      "reversible_by_restore_base": 1,
+      "no_original_action": 1
+    }
+  },
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "staged_path": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1",
+      "proposed_target": null,
+      "kind": "staging_candidate_tree",
+      "sha256_at_proposal": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc",
+      "sha256_to_restore": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5",
+      "staging_level_reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "staged_path": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/src/examdata/integration/api/compose.py",
+      "proposed_target": "examdata/src/examdata/integration/api/compose.py",
+      "kind": "new_file",
+      "sha256_at_proposal": "e220c007dba89d544cdd4c841c2ff5ab200b01e61556ba41a22a70c45f306efd",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "staged_path": null,
+      "proposed_target": "examdata/src/examdata/api/app.py",
+      "kind": "planned_edit",
+      "sha256_at_proposal": null,
+      "sha256_to_restore": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+      "staging_level_reversal": "restore the recorded base bytes (hash above)",
+      "original_level_reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target; only after the human release has applied the edit",
+      "status": "deferred_pending_release"
+    }
+  ]
+}

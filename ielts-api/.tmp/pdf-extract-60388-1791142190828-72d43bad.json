@@ -1,0 +1,95 @@
+{
+ "tool": "pdf_extract",
+ "version": 1,
+ "pdf": {
+  "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_3.pdf",
+  "sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845",
+  "pages": null
+ },
+ "pages": [
+  {
+   "file_page": 37,
+   "printed_page": 33,
+   "printed_first": 33,
+   "printed_last": null,
+   "width": 419.0,
+   "height": 595.0,
+   "rotation": 0,
+   "text_layer": true,
+   "n_words": 19,
+   "columns": 2,
+   "column_split_x": 213.69,
+   "lines": [
+    [
+     {
+      "y": 82.61,
+      "text": "Questions 16-20",
+      "x0": 50.64,
+      "x1": 110.2
+     },
+     {
+      "y": 101.46,
+      "text": "Complete the notes below.",
+      "x0": 50.64,
+      "x1": 134.19
+     },
+     {
+      "y": 119.7,
+      "text": "Write NUMBERS OR NO MORE THAN THREE",
+      "x0": 50.64,
+      "x1": 212.53
+     }
+    ],
+    [
+     {
+      "y": 59.7,
+      "text": "Listening",
+      "x0": 340.08,
+      "x1": 369.33
+     },
+     {
+      "y": 119.7,
+      "text": "WORDS for each answer.",
+      "x0": 214.69,
+      "x1": 297.66
+     },
+     {
+      "y": 495.89,
+      "text": "33",
+      "x0": 360.72,
+      "x1": 369.48
+     }
+    ]
+   ],
+   "numbers": [
+    {
+     "token": "33",
+     "n": 33,
+     "paren": false,
+     "x": 360.72,
+     "y": 495.89
+    }
+   ],
+   "figures": [
+    {
+     "kind": "image",
+     "xref": 397,
+     "bbox": [
+      99.6,
+      137.8,
+      320.4,
+      305.08
+     ],
+     "asset": "book3-p0037-fig1.png",
+     "asset_px": [
+      458,
+      352
+     ]
+    }
+   ],
+   "needs_review": false,
+   "suspected_scan": false,
+   "ocr": null
+  }
+ ]
+}

@@ -17,12 +17,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+import datetime as _dt
 from typing import Any, Optional
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
+from ..core.config import Settings
 from ..core.models import (
+    Artifact,
     Document,
     DocumentRevision,
     MarkScheme,
@@ -35,7 +38,7 @@ from ..core.models import (
 
 def _target_models() -> dict[str, Any]:
     """自然键映射用到的模型。延迟导入，避免模块级循环。"""
-    return {"question": Question, "mark_scheme_entry": MarkSchemeEntry}
+    return {"question": Question, "mark_scheme_entry": MarkSchemeEntry, "paper": Paper}
 
 
 @dataclass
@@ -198,108 +201,186 @@ def diff(before: DocumentSnapshot, after: DocumentSnapshot) -> SnapshotDiff:
     )
 
 
+class ReparseOverrideConflict(RuntimeError):
+    def __init__(self, override_id):
+        self.override_id = override_id
+        super().__init__("人工覆盖目标消失或歧义，旧结果已保留")
+
+
 def reparse_documents(
     session: Session,
     *,
     document_ids: Optional[list[int]] = None,
     limit: Optional[int] = None,
     keep_history: bool = True,
+    settings: Optional[Settings] = None,
 ) -> dict[str, Any]:
-    """重新解析历史文档，并返回新旧对比。
+    """从本地 artifact 重建目标文档的当前版本，提交由调用方负责。
 
-    不重新下载：清掉派生数据后由 ParsePipeline 从本地 artifact 重建。
-    keep_history=True 时旧的 ParseRun 记录保留（它是溯源链的一环），
-    只删除它产出的题目/条目等派生行。
+    目标和本地文件先校验，解析失败时保存点恢复旧派生数据。
+    keep_history=False 删除目标文档的旧 ParseRun，但保留复核记录。
     """
-    from ..parsing.pipeline import ParsePipeline
+    from ..parsing.pipeline import ParsePipeline, ParseStats
 
-    if document_ids:
-        docs = [session.get(Document, d) for d in document_ids]
-        docs = [d for d in docs if d is not None]
+    if limit is not None and limit <= 0:
+        raise ValueError("limit 必须大于 0")
+    if document_ids is not None:
+        if any(not isinstance(d, int) or isinstance(d, bool) or d <= 0 for d in document_ids):
+            raise ValueError("document_ids 必须是正整数列表")
+        targets = list(dict.fromkeys(document_ids))
+        docs = list(session.scalars(select(Document).where(Document.id.in_(targets)).order_by(Document.id)))
+        missing = set(targets) - {d.id for d in docs}
+        if missing:
+            raise ValueError(f"document 不存在: {sorted(missing)}")
+        if limit is not None:
+            docs = docs[:limit]
     else:
         stmt = select(Document).order_by(Document.id)
-        if limit:
+        if limit is not None:
             stmt = stmt.limit(limit)
-        docs = list(session.scalars(stmt).all())
+        docs = list(session.scalars(stmt))
 
+    empty = {
+        "documents": 0, "regressed": 0, "parse_stats": ParseStats().to_dict(),
+        "derived": {}, "relinked": {"papers": 0, "entries": 0, "linked": 0},
+        "diffs": [], "overrides": {"remapped": 0, "conflicted": 0, "orphaned": 0, "applied": 0},
+    }
+    if not docs:
+        return empty
+
+    started_at = _dt.datetime.now(_dt.timezone.utc)
+    pipe = ParsePipeline(session, settings=settings)
+    revisions: list[DocumentRevision] = []
+    for doc in docs:
+        revision = (
+            session.get(DocumentRevision, doc.current_revision_id)
+            if doc.current_revision_id is not None else session.scalar(
+                select(DocumentRevision).where(DocumentRevision.document_id == doc.id)
+                .order_by(DocumentRevision.revision_no.desc(), DocumentRevision.id.desc()).limit(1)
+            )
+        )
+        if revision is None or revision.document_id != doc.id:
+            raise ValueError(f"document {doc.id} 无有效当前 revision")
+        artifact = session.get(Artifact, revision.artifact_id)
+        if artifact is None or not pipe._artifact_path(artifact.storage_key).is_file():
+            raise ValueError(f"document {doc.id} 的本地 artifact 不存在")
+        revisions.append(revision)
+
+    targets = [d.id for d in docs]
     before = {d.id: snapshot(session, d.id) for d in docs}
-    # 删除前记录自然键 -> 旧主键。人工修正挂在主键上，而重解析会重建题目行，
-    # 主键必然变化；只有按自然键（试卷 + 题号路径）才能把修正接回新行。
-    natural_keys = _capture_natural_keys(session, [d.id for d in docs])
-    _purge_derived(session, [d.id for d in docs], keep_history=keep_history)
+    natural_keys = _capture_natural_keys(session, targets)
+    protected = _capture_protected(session, targets, natural_keys)
+    source_answers, expected_links = _capture_source_migration(session, targets)
+    preserved_similarity = _capture_preserved_similarity(session, natural_keys["question"])
+    linked_entries = list(session.scalars(
+        select(MarkSchemeEntry.id).join(Question, Question.id == MarkSchemeEntry.question_id)
+        .join(Paper, Paper.id == Question.paper_id).where(Paper.document_id.in_(targets))
+    ))
+    try:
+        with session.begin_nested():
+            # Prevent recycled integer IDs from applying an old override to a different row.
+            from ..core.models import FieldOverride
+            suspended = []
+            for ov in session.scalars(select(FieldOverride)):
+                if ov.target_id in natural_keys.get(ov.target_type, {}):
+                    suspended.append((ov, ov.target_id, ov.active))
+                    ov.active = False
+                    ov.target_id = -ov.id
+            session.flush()
+            _purge_derived(session, targets, keep_history=keep_history)
+            for revision in revisions:
+                revision.parse_status = "pending"
+                revision.parse_error = None
+            session.flush()
+            stats = pipe.run(document_ids=targets, revision_ids=[r.id for r in revisions], commit=False)
+            if stats.failed or any(r.parse_status != "parsed" for r in revisions):
+                raise RuntimeError("重新解析失败，旧结果已保留: " + "; ".join(stats.errors))
 
-    pipe = ParsePipeline(session)
-    stats = pipe.run()
+            new_entries = list(session.scalars(
+                select(MarkSchemeEntry.id).join(MarkScheme, MarkScheme.id == MarkSchemeEntry.mark_scheme_id)
+                .where(MarkScheme.document_id.in_(targets), MarkSchemeEntry.question_id.is_(None))
+            ))
+            relinked = _relink_mark_scheme_entries(session, linked_entries + new_entries, pipe=pipe)
+            if any(session.get(MarkSchemeEntry, entry_id).question_id is None for entry_id in linked_entries
+                   if session.get(MarkSchemeEntry, entry_id) is not None):
+                raise RuntimeError("原评分关联无法安全恢复，旧结果已保留")
+            _restore_protected(session, protected)
+            _restore_preserved_similarity(session, preserved_similarity)
+            for ov, old_id, active in suspended:
+                new_id = _lookup_natural_key(session, ov.target_type, natural_keys[ov.target_type][old_id])
+                if new_id is None:
+                    raise ReparseOverrideConflict(ov.id)
+                ov.target_id = new_id
+                ov.active = active
+            session.flush()
+            remap = _remap_overrides(session, overrides=[ov for ov, _, _ in suspended])
+            remap["remapped"] = sum(ov.target_id != old_id for ov, old_id, _ in suspended)
+            migrated = _finish_source_migration(session, targets, source_answers, expected_links)
+            derived = _rebuild_derived(session, targets, question_ids=migrated["question_ids"])
+            if "error" in derived:
+                raise RuntimeError("派生重建失败，旧结果已保留: " + derived["error"])
+            results = [diff(before[d.id], snapshot(session, d.id)).to_dict() for d in docs]
+            session.flush()
+    except ReparseOverrideConflict as exc:
+        from ..core.models import FieldOverride, ReviewTask
+        ov = session.get(FieldOverride, exc.override_id)
+        ov.conflict_detected = True
+        ov.conflict_detail = str(exc)
+        session.add(ReviewTask(target_type=ov.target_type, target_id=ov.target_id,
+                               reason="override_target_missing_after_reparse", priority=1, status="open"))
+        _record_reparse_failure(session, revisions, pipe.settings.parser_version, str(exc), started_at)
+        session.flush()
+        return {**empty, "documents": len(docs), "aborted": True, "reason": str(exc),
+                "parse_stats": {**ParseStats().to_dict(), "failed": 1, "errors": [str(exc)]},
+                "overrides": {"remapped": 0, "conflicted": 1, "orphaned": 0, "applied": 0}}
 
-    # 重新解析的语义是"从新的解析结果重新派生一切"。派生数据在 _purge_derived
-    # 里被清掉了，如果这里不重建，重解析过的文档就会静默地缺少知识点/难度/相似题
-    # ——数据看起来"成功"，实际上比重新解析前更不完整。
-    derived = _rebuild_derived(session)
-    relinked = _relink_mark_scheme_entries(session)
-
-    remap = _remap_overrides(session, natural_keys)
-
-    results: list[dict[str, Any]] = []
-    regressed = 0
-    for d in docs:
-        after = snapshot(session, d.id)
-        d_diff = diff(before[d.id], after)
-        if d_diff.is_regression:
-            regressed += 1
-        results.append(d_diff.to_dict())
+    except Exception as exc:
+        _record_reparse_failure(session, revisions, pipe.settings.parser_version, str(exc), started_at)
+        session.flush()
+        return {**empty, "documents": len(docs), "aborted": True, "reason": str(exc),
+                "parse_stats": {**ParseStats().to_dict(), "failed": 1, "errors": [str(exc)]}}
 
     return {
         "documents": len(docs),
-        "regressed": regressed,
+        "regressed": sum(r["is_regression"] for r in results),
         "parse_stats": stats.to_dict(),
         "derived": derived,
         "relinked": relinked,
         "diffs": results,
         "overrides": remap,
+        "source_migration": migrated,
     }
 
 
-def _relink_mark_scheme_entries(session: Session) -> dict[str, int]:
-    """把评分条目重新挂到重建后的题目上。
+def _record_reparse_failure(session, revisions, parser_version, reason, started_at):
+    from ..core.models import ParseRun
+    for revision in revisions:
+        session.add(ParseRun(document_revision_id=revision.id, parser_version=parser_version,
+            status="failed", started_at=started_at, finished_at=_dt.datetime.now(_dt.timezone.utc),
+            params={"operation": "reparse", "rolled_back": True, "error": reason}, stats={"failed": 1}))
 
-    这是重解析里最容易漏掉的一环：清题目时必须断开 MarkSchemeEntry.question_id
-    （否则外键挡住删除），但**断开的关联不会自动恢复**——因为 Mark Scheme
-    文档通常不在本次重解析范围内，它不会自己再跑一遍。
 
-    只处理当前未关联的条目，不碰已有的关联：已有的是别处（可能人工）建立的，
-    重新计算一遍可能把它们改坏。
-    """
-    from ..core.models import MarkScheme
+def _relink_mark_scheme_entries(
+    session: Session, entry_ids: list[int], *, pipe: Any
+) -> dict[str, int]:
+    """只恢复本轮断开的关联和本轮重建的评分条目。"""
     from ..markscheme.cambridge import link_entries_to_questions
 
     stats = {"papers": 0, "entries": 0, "linked": 0}
-    ms_docs = list(
-        session.scalars(
-            select(MarkScheme).where(
-                MarkScheme.id.in_(
-                    select(MarkSchemeEntry.mark_scheme_id).where(
-                        MarkSchemeEntry.question_id.is_(None)
-                    )
-                )
+    ms_docs = list(session.scalars(
+        select(MarkScheme).where(MarkScheme.id.in_(
+            select(MarkSchemeEntry.mark_scheme_id).where(
+                MarkSchemeEntry.id.in_(entry_ids), MarkSchemeEntry.question_id.is_(None)
             )
-        ).all()
-    )
-    if not ms_docs:
-        return stats
-
+        ))
+    ))
     for ms in ms_docs:
         doc = session.get(Document, ms.document_id)
         if doc is None:
             continue
-        # 找对应的试卷文档（与 pipeline._find_matching_paper 同一套身份条件）
-        paper_doc = session.scalar(
-            select(Document).where(
-                Document.board_id == doc.board_id,
-                Document.doc_type.in_(["question_paper", "specimen_paper"]),
-                Document.paper_code == doc.paper_code,
-                Document.subject_id == doc.subject_id,
-            )
-        )
+        paper_doc = pipe._find_matching_paper(doc)
+        if ms.matched_paper_document_id and (paper_doc is None or paper_doc.id != ms.matched_paper_document_id):
+            continue
         if paper_doc is None:
             continue
         paper = session.scalar(select(Paper).where(Paper.document_id == paper_doc.id))
@@ -317,6 +398,7 @@ def _relink_mark_scheme_entries(session: Session) -> dict[str, int]:
                 select(MarkSchemeEntry)
                 .where(
                     MarkSchemeEntry.mark_scheme_id == ms.id,
+                    MarkSchemeEntry.id.in_(entry_ids),
                     MarkSchemeEntry.question_id.is_(None),
                 )
                 .order_by(MarkSchemeEntry.id)
@@ -335,32 +417,81 @@ def _relink_mark_scheme_entries(session: Session) -> dict[str, int]:
     return stats
 
 
-def _rebuild_derived(session: Session) -> dict[str, Any]:
-    """重建被 _purge_derived 清掉的智能层数据。
+def _rebuild_derived(session: Session, document_ids: list[int], *, question_ids=None) -> dict[str, Any]:
+    """仅重建目标题目，缺少安全目标接口的批量能力显式延期。"""
+    from ..core.models import Difficulty, QuestionTaxonomy, Subject, TaxonomyNode
+    from ..intelligence import classify_question, generate_for_question
+    from ..intelligence.taxonomy import sync_taxonomy
+    from ..intelligence.similarity import find_similar
+    from ..intelligence.difficulty import MODEL_VERSION, SCALE, estimate
 
-    按依赖顺序：知识点标注 -> 难度（用到标注数）-> 相似题。
-    全部用 replace=True：这里要的是"与当前解析结果一致"，不是增量补。
-    失败不抛出：派生数据缺失是**可降级**的（题目本身还在），
-    不应该让整个重解析报失败；但要在返回值里如实报告。
-    """
-    out: dict[str, Any] = {}
+    out: dict[str, Any] = {
+        "taxonomy": {"scanned": 0, "assigned": 0, "unassigned": 0},
+        "difficulty": {"questions": 0, "written": 0},
+        "explanation": {"scanned": 0, "generated": 0, "skipped_no_official": 0},
+        "similarity": {},
+    }
     try:
-        from ..intelligence import (
-            assign_taxonomy,
-            estimate_all,
-            find_similar,
-            generate_explanations,
-            sync_taxonomy,
-        )
-
-        sync_taxonomy(session)
-        out["taxonomy"] = assign_taxonomy(session, replace=True)
-        out["difficulty"] = estimate_all(session, replace=True)
-        out["similarity"] = find_similar(session, replace=True)
-        # 解析生成依赖知识点与官方条目，必须排在最后
-        out["explanation"] = generate_explanations(session, replace=True)
-    except Exception as exc:  # pragma: no cover - 依赖数据缺失时的降级路径
-        out["error"] = f"{type(exc).__name__}: {exc}"
+        with session.begin_nested():
+            scope = Question.id.in_(question_ids or []) | Paper.document_id.in_(document_ids)
+            rows = session.execute(
+                select(Question, Subject.code, Document.board_id)
+                .join(Paper, Paper.id == Question.paper_id)
+                .join(Document, Document.id == Paper.document_id)
+                .outerjoin(Subject, Subject.id == Document.subject_id)
+                .where(scope).order_by(Question.id)
+            ).all()
+            sync_taxonomy(session, subject_codes={code for _, code, _ in rows if code})
+            nodes = {(n.board_id, n.code): n for n in session.scalars(select(TaxonomyNode))}
+            for question, code, board_id in rows:
+                out["taxonomy"]["scanned"] += 1
+                assigns = classify_question(question.stem_text or "", code or "")
+                assigned = set(session.scalars(select(QuestionTaxonomy.node_id).where(
+                    QuestionTaxonomy.question_id == question.id
+                )))
+                for assignment in assigns:
+                    node = nodes.get((board_id, assignment.node_code))
+                    if node is None:
+                        continue
+                    for node_id in (node.id, node.parent_id):
+                        if node_id is None or node_id in assigned:
+                            continue
+                        assigned.add(node_id)
+                        session.add(QuestionTaxonomy(
+                            question_id=question.id, node_id=node_id, source="auto",
+                            confidence=assignment.confidence if node_id == node.id else round(assignment.confidence * 0.9, 4),
+                            assigned_by="keyword-v1", reviewed=False,
+                        ))
+                        out["taxonomy"]["assigned"] += 1
+                if not assigned:
+                    out["taxonomy"]["unassigned"] += 1
+                session.flush()
+                est = estimate(
+                    marks=question.marks, stem_text=question.stem_text or "",
+                    child_count=session.scalar(select(func.count(Question.id)).where(Question.parent_id == question.id)) or 0,
+                    depth=question.depth or 0,
+                    has_asset=session.scalar(select(QuestionAsset.id).where(QuestionAsset.question_id == question.id).limit(1)) is not None,
+                    taxonomy_count=len(assigned),
+                )
+                for old in session.scalars(select(Difficulty).where(
+                    Difficulty.question_id == question.id, Difficulty.source == "estimated"
+                )):
+                    session.delete(old)
+                session.add(Difficulty(
+                    question_id=question.id, source="estimated", value=est.value,
+                    scale=SCALE, features=est.features, model_version=MODEL_VERSION,
+                ))
+                out["difficulty"]["questions"] += 1
+                out["difficulty"]["written"] += 1
+                out["explanation"]["scanned"] += 1
+                if generate_for_question(session, question.id, replace=question.id in (question_ids or [])) is None:
+                    out["explanation"]["skipped_no_official"] += 1
+                else:
+                    out["explanation"]["generated"] += 1
+            session.flush()
+            out["similarity"] = find_similar(session, question_ids=[q.id for q, _, _ in rows], replace=True)
+    except Exception as exc:
+        return {"error": f"{type(exc).__name__}: {exc}", "status": "rolled_back"}
     return out
 
 
@@ -375,10 +506,12 @@ def _capture_natural_keys(session: Session, document_ids: list[int]) -> dict[str
     - question: (document_id, number_path)
     - mark_scheme_entry: (document_id, number_path)
     """
-    keys: dict[str, dict[str, Any]] = {"question": {}, "mark_scheme_entry": {}}
+    keys: dict[str, dict[str, Any]] = {"question": {}, "mark_scheme_entry": {}, "paper": {}}
     if not document_ids:
         return keys
 
+    for paper in session.scalars(select(Paper).where(Paper.document_id.in_(document_ids))):
+        keys["paper"][paper.id] = {"document_id": paper.document_id}
     for qid, doc_id, path in session.execute(
         select(Question.id, Paper.document_id, Question.number_path).join(
             Paper, Paper.id == Question.paper_id
@@ -395,63 +528,29 @@ def _capture_natural_keys(session: Session, document_ids: list[int]) -> dict[str
     return keys
 
 
-def _remap_overrides(session: Session, natural_keys: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    """把人工修正重新挂到重解析后的新行上。
-
-    三种结果，任何一种都不静默：
-    - remapped：按自然键找到新行，修正继续生效（并重新把值写回）。
-    - conflicted：目标主体被重建但自然键已不存在（题号路径变了），
-      标记冲突并进待检查，**保留人工值**，由人来判断是算法改对了还是改错了。
-    - orphaned：目标主体本就不在本次重解析范围内，保持原样。
-    """
-    from ..core.models import FieldOverride, ReviewTask
+def _remap_overrides(session, *, overrides):
+    from ..core.models import ParseRun, ReviewTask
+    from ..parsing.pipeline import ParsePipeline
 
     stats = {"remapped": 0, "conflicted": 0, "orphaned": 0, "applied": 0}
-    for target_type, old_map in natural_keys.items():
-        if not old_map:
+    applied_targets = set()
+    pipe = ParsePipeline(session)
+    for ov in overrides:
+        if not ov.active:
             continue
-        model = _target_models()[target_type]
-        for ov in session.scalars(
-            select(FieldOverride).where(
-                FieldOverride.target_type == target_type,
-                FieldOverride.active.is_(True),
-            )
-        ).all():
-            key = old_map.get(ov.target_id)
-            if key is None:
-                stats["orphaned"] += 1
-                continue
-            new_id = _lookup_natural_key(session, target_type, key)
-            if new_id is None:
-                ov.conflict_detected = True
-                ov.conflict_detail = (
-                    f"重解析后找不到对应主体（自然键 {key}），人工值 {ov.value!r} 保留待人工确认"
-                )
-                session.add(
-                    ReviewTask(
-                        target_type=target_type,
-                        target_id=ov.target_id,
-                        reason="override_target_missing_after_reparse",
-                        priority=1,
-                        status="open",
-                    )
-                )
-                stats["conflicted"] += 1
-                continue
-            if new_id != ov.target_id:
-                ov.target_id = new_id
-                stats["remapped"] += 1
-            obj = session.get(model, new_id)
-            if obj is None:
-                continue
-            setattr(obj, ov.field_path, ov.value)
-            if hasattr(obj, "has_override"):
-                obj.has_override = True
-            # 自然键匹配上并且已重新应用，说明修正仍然有效：
-            # 清掉解析过程中可能留下的冲突标记，否则队列里会长期挂着
-            # 一条"已解决但显示冲突"的记录。
-            ov.conflict_detected = False
-            ov.conflict_detail = None
+        obj = session.get(_target_models()[ov.target_type], ov.target_id)
+        run = session.get(ParseRun, obj.parse_run_id)
+        if run is None:
+            raise RuntimeError("人工覆盖目标缺少解析轮次，旧结果已保留")
+        target = (ov.target_type, obj.id)
+        if target not in applied_targets:
+            pipe._apply_overrides(ov.target_type, obj, run)
+            applied_targets.add(target)
+        if ov.conflict_detected:
+            stats["conflicted"] += 1
+            session.add(ReviewTask(target_type=ov.target_type, target_id=obj.id,
+                                   reason="override_conflict_after_reparse", priority=1, status="open"))
+        else:
             stats["applied"] += 1
     session.flush()
     return stats
@@ -460,23 +559,161 @@ def _remap_overrides(session: Session, natural_keys: dict[str, dict[str, Any]]) 
 def _lookup_natural_key(session: Session, target_type: str, key: dict[str, Any]) -> Optional[int]:
     """按 (document_id, number_path) 找回重建后的新主键。"""
     doc_id = key["document_id"]
+    if target_type == "paper":
+        ids = list(session.scalars(select(Paper.id).where(Paper.document_id == doc_id)))
+        return ids[0] if len(ids) == 1 else None
     path = key["number_path"]
     if target_type == "question":
-        return session.scalar(
+        ids = list(session.scalars(
             select(Question.id)
             .join(Paper, Paper.id == Question.paper_id)
             .where(Paper.document_id == doc_id, Question.number_path == path)
-        )
+        ))
+        return ids[0] if len(ids) == 1 else None
     if target_type == "mark_scheme_entry":
-        return session.scalar(
+        ids = list(session.scalars(
             select(MarkSchemeEntry.id)
             .join(MarkScheme, MarkScheme.id == MarkSchemeEntry.mark_scheme_id)
             .where(MarkScheme.document_id == doc_id, MarkSchemeEntry.number_path == path)
-        )
+        ))
+        return ids[0] if len(ids) == 1 else None
     return None
 
 
 
+
+
+def _capture_preserved_similarity(session, question_keys):
+    from ..core.models import QuestionSimilarity
+    from ..intelligence.similarity import METHOD
+    records = []
+    for row in session.scalars(select(QuestionSimilarity).where(
+        (QuestionSimilarity.question_a_id.in_(question_keys) | QuestionSimilarity.question_b_id.in_(question_keys)),
+        QuestionSimilarity.method != METHOD
+    )):
+        endpoints = []
+        for qid in (row.question_a_id, row.question_b_id):
+            q = session.get(Question, qid)
+            paper = session.get(Paper, q.paper_id)
+            endpoints.append(({"document_id": paper.document_id, "number_path": q.number_path}, q.stem_text))
+        records.append(({c.name: getattr(row, c.name) for c in row.__table__.columns}, endpoints))
+    return records
+
+
+def _restore_preserved_similarity(session, records):
+    from ..core.models import QuestionSimilarity
+    for values, endpoints in records:
+        ids = []
+        for key, stem in endpoints:
+            qid = _lookup_natural_key(session, "question", key)
+            if qid is None or session.get(Question, qid).stem_text != stem:
+                raise RuntimeError("人工相似关系目标变化，旧结果已保留")
+            ids.append(qid)
+        low, high = sorted(ids)
+        session.add(QuestionSimilarity(**{**values, "question_a_id": low, "question_b_id": high}))
+    session.flush()
+
+
+def _capture_source_migration(session, targets):
+    from ..core.models import OfficialAnswer
+    answers = []
+    for row, question, paper in session.execute(
+        select(OfficialAnswer, Question, Paper).join(Question, Question.id == OfficialAnswer.question_id)
+        .join(Paper, Paper.id == Question.paper_id)
+        .where(OfficialAnswer.source_document_id.in_(targets))
+    ):
+        answers.append(({"document_id": paper.document_id, "number_path": question.number_path},
+                        row.source_document_id, row.content))
+    links = []
+    for entry, ms, question, paper in session.execute(
+        select(MarkSchemeEntry, MarkScheme, Question, Paper)
+        .join(MarkScheme, MarkScheme.id == MarkSchemeEntry.mark_scheme_id)
+        .join(Question, Question.id == MarkSchemeEntry.question_id)
+        .join(Paper, Paper.id == Question.paper_id)
+        .where(MarkScheme.document_id.in_(targets))
+    ):
+        links.append(({"document_id": ms.document_id, "number_path": entry.number_path},
+                      {"document_id": paper.document_id, "number_path": question.number_path}, entry.answer_text))
+    return answers, links
+
+
+def _finish_source_migration(session, targets, old_answers, expected_links):
+    from ..core.models import GeneratedExplanation, OfficialAnswer, ReviewTask
+    from ..markscheme.answers import rebuild_official_answers
+    changed = set()
+    for entry_key, question_key, old_text in expected_links:
+        eid = _lookup_natural_key(session, "mark_scheme_entry", entry_key)
+        qid = _lookup_natural_key(session, "question", question_key)
+        if eid is None or qid is None or session.get(MarkSchemeEntry, eid).question_id != qid:
+            raise RuntimeError("官方评分目标消失、歧义或身份变化，旧结果已保留")
+        if session.get(MarkSchemeEntry, eid).answer_text != old_text:
+            changed.add(qid)
+    rebuilt = rebuild_official_answers(session, document_ids=targets)
+    qids = set(session.scalars(select(MarkSchemeEntry.question_id).join(MarkScheme)
+                              .where(MarkScheme.document_id.in_(targets), MarkSchemeEntry.question_id.is_not(None))))
+    for key, source_id, content in old_answers:
+        qid = _lookup_natural_key(session, "question", key)
+        if qid is None:
+            raise RuntimeError("官方答案目标消失或歧义，旧结果已保留")
+        qids.add(qid)
+        contents = set(session.scalars(select(OfficialAnswer.content).where(
+            OfficialAnswer.question_id == qid, OfficialAnswer.source_document_id == source_id
+        )))
+        if content not in contents:
+            changed.add(qid)
+    for qid in changed:
+        for explanation in session.scalars(select(GeneratedExplanation).where(GeneratedExplanation.question_id == qid)):
+            reviewed = session.scalar(select(ReviewTask.id).where(
+                ReviewTask.target_type == "generated_explanation", ReviewTask.target_id == explanation.id,
+                ReviewTask.reason == "explanation_review", ReviewTask.status == "done"))
+            if explanation.provider == "rule-based" and explanation.review_status == "pending" and reviewed is None:
+                continue  # unreviewed generated content is replaced, not preserved as reviewed evidence
+            exists = session.scalar(select(ReviewTask.id).where(
+                ReviewTask.target_type == "generated_explanation", ReviewTask.target_id == explanation.id,
+                ReviewTask.reason == "official_source_changed", ReviewTask.status == "open"
+            ))
+            if exists is None:
+                session.add(ReviewTask(target_type="generated_explanation", target_id=explanation.id,
+                                       reason="official_source_changed", status="open", priority=1))
+        question = session.get(Question, qid)
+        paper = session.get(Paper, question.paper_id)
+        session.get(Document, paper.document_id).status = "needs_review"
+    session.flush()
+    return {"answers_rebuilt": rebuilt, "changed_questions": len(changed), "question_ids": sorted(qids)}
+
+
+def _capture_protected(session, targets, keys):
+    from ..core.models import Difficulty, Formula, GeneratedExplanation, OfficialAnswer, QuestionTaxonomy
+
+    if session.scalar(select(OfficialAnswer.id).where(
+        OfficialAnswer.source_document_id.in_(targets), OfficialAnswer.source != "mark_scheme"
+    ).limit(1)):
+        raise ValueError("官方来源类型没有迁移解析器，旧结果已保留")
+    records = []
+    qids = list(keys["question"])
+    for model in (GeneratedExplanation, OfficialAnswer, QuestionTaxonomy, Difficulty, Formula):
+        for row in session.scalars(select(model).where(model.question_id.in_(qids))):
+            protect = (
+                model in (GeneratedExplanation, OfficialAnswer)
+                or (model is QuestionTaxonomy and (row.source != "auto" or row.reviewed))
+                or (model is Difficulty and row.source != "estimated")
+                or (model is Formula and row.source not in {"embedded", "ocr", "llm", "inline_text"})
+            )
+            if model is OfficialAnswer and row.source_document_id in targets:
+                continue  # rebuilt from the new source entries after override migration
+            if protect:
+                records.append((model, {c.name: getattr(row, c.name) for c in model.__table__.columns},
+                                keys["question"][row.question_id], session.get(Question, row.question_id).stem_text))
+    return records
+
+
+def _restore_protected(session, records):
+    for model, values, key, stem in records:
+        qid = _lookup_natural_key(session, "question", key)
+        if qid is None or session.get(Question, qid).stem_text != stem:
+            raise RuntimeError("受保护内容对应题目消失、歧义或正文变化，旧结果已保留")
+        session.add(model(**{**values, "question_id": qid}))
+    session.flush()
 
 
 def _purge_derived(session: Session, document_ids: list[int], *, keep_history: bool) -> None:
@@ -502,6 +739,7 @@ def _purge_derived(session: Session, document_ids: list[int], *, keep_history: b
     if q_ids:
         from ..core.models import (
             Difficulty,
+            Formula,
             GeneratedExplanation,
             OfficialAnswer,
             QuestionSimilarity,
@@ -514,6 +752,8 @@ def _purge_derived(session: Session, document_ids: list[int], *, keep_history: b
         for row in session.scalars(
             select(QuestionAsset).where(QuestionAsset.question_id.in_(q_ids))
         ).all():
+            session.delete(row)
+        for row in session.scalars(select(Formula).where(Formula.question_id.in_(q_ids))).all():
             session.delete(row)
         for row in session.scalars(
             select(OfficialAnswer).where(OfficialAnswer.question_id.in_(q_ids))
@@ -576,23 +816,20 @@ def _purge_derived(session: Session, document_ids: list[int], *, keep_history: b
             session.delete(m)
     session.flush()
 
-    # 重新排队解析
-    for rev in session.scalars(
-        select(DocumentRevision).where(DocumentRevision.document_id.in_(document_ids))
-    ).all():
-        rev.parse_status = "pending"
-        rev.parse_error = None
     if not keep_history:
-        from ..core.models import ParseRun
+        from ..core.models import ParseRun, ReviewTask, ValidationFinding
 
-        for run in session.scalars(
-            select(ParseRun).where(
-                ParseRun.document_revision_id.in_(
-                    select(DocumentRevision.id).where(
-                        DocumentRevision.document_id.in_(document_ids)
-                    )
-                )
-            )
-        ).all():
+        runs = list(session.scalars(select(ParseRun).where(
+            ParseRun.document_revision_id.in_(select(DocumentRevision.id).where(
+                DocumentRevision.document_id.in_(document_ids)
+            ))
+        )))
+        run_ids = [run.id for run in runs]
+        for finding in session.scalars(select(ValidationFinding).where(ValidationFinding.parse_run_id.in_(run_ids))):
+            session.delete(finding)
+        for task in session.scalars(select(ReviewTask).where(ReviewTask.parse_run_id.in_(run_ids))):
+            task.parse_run_id = None
+        session.flush()
+        for run in runs:
             session.delete(run)
     session.flush()

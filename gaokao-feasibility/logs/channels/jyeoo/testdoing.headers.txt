@@ -1,0 +1,36 @@
+HTTP/1.1 302 Found
+Server: volc-dcdn
+Content-Type: text/html; charset=utf-8
+Content-Length: 265
+Connection: keep-alive
+Strict-Transport-Security: max-age=604800
+Date: Sun, 04 Oct 2026 10:33:58 GMT
+Cache-Control: private
+Location: /?ReturnUrl=%2fmath2%2ftraining%2ftestdoingnew%3fa%3d788a535c-2db7-4026-9312-b7bd3c89c13b%26f%3d0&a=788a535c-2db7-4026-9312-b7bd3c89c13b&f=0
+Set-Cookie: jyean=6LvhtNJU5DLAthp7ubrykQccyAlqn6kGBfaTAOIlAs7QwTuurKDLvzmklsHFQAsP7ho4AtYFlK8VorBucgDxkpArAdTF1AuI1-sOgreR1S9jn_ayzxWfjfV-bF_92EK-0; domain=jyeoo.com; expires=Sat, 12-Dec-2026 21:13:58 GMT; path=/; HttpOnly
+via: n114-080-250-149.bdcdn-shct05.ToB
+x-request-ip: 114.92.84.81
+x-tt-trace-tag: id=5
+x-dsa-trace-id: 1791110038e095ed7d894f6a67110ec2dc177ca347
+X-Dsa-Origin-Status: 302
+server-timing: cdn-cache;desc=MISS, origin;dur=35, edge;dur=0
+
+HTTP/1.1 200 OK
+Server: volc-dcdn
+Content-Type: text/html; charset=utf-8
+Content-Length: 242647
+Connection: keep-alive
+Strict-Transport-Security: max-age=604800
+Date: Sun, 04 Oct 2026 10:33:58 GMT
+Vary: Accept-Encoding
+Cache-Control: private
+Set-Cookie: jyean=9hCRVU-nyu-2oodVs3s4D41sAouJZAw7a1jM8yxE79MbzwkizjUJ9hAXKQ9Vw21IucRAfL3nwSxbsJS49DxWJA_6FM5Qsm6YzB2BpvhBbpyl9mMuLlConZXRtdX3OcD00; domain=jyeoo.com; expires=Sat, 12-Dec-2026 21:13:58 GMT; path=/; HttpOnly
+Set-Cookie: jyean=9hCRVU-nyu-2oodVs3s4D41sAouJZAw7a1jM8yxE79MbzwkizjUJ9hAXKQ9Vw21IucRAfL3nwSxbsJS49DxWJA_6FM5Qsm6YzB2BpvhBbpyl9mMuLlConZXRtdX3OcD00; domain=jyeoo.com; expires=Sat, 12-Dec-2026 21:13:58 GMT; path=/; HttpOnly
+Set-Cookie: __RequestVerificationToken=psBVliIqcJfCD85wwnlGMD9qRuRxFghg5RvQwd-lusNC1Z-bfCkeMr8-F2aKeOG_KIXsCoYFQ7LrrOWb8r0QtAA68eLPqeFdUglnYn8ObPk1; path=/; HttpOnly
+via: n114-080-250-149.bdcdn-shct05.ToB
+x-request-ip: 114.92.84.81
+x-tt-trace-tag: id=5
+x-dsa-trace-id: 179111003849cb435ab016d605df6f704a7edd45bc
+X-Dsa-Origin-Status: 200
+server-timing: cdn-cache;desc=MISS, origin;dur=97, edge;dur=0
+

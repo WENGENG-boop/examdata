@@ -1,0 +1,23 @@
+{
+  "row_count": 71,
+  "baseline_count": 71,
+  "new_in_reextract": 0,
+  "removed_from_reextract": 0,
+  "status_counts": {
+    "not_started": 64,
+    "deferred_active_owner": 7
+  },
+  "provider_counts": {
+    "mixed": 5,
+    "cie": 15,
+    "ielts": 28,
+    "materials": 4,
+    "timetable": 3,
+    "toefl": 8,
+    "platform": 8
+  },
+  "baseline_coverage": "71/71"
+}
+removed: []
+new: []
+WORKSHEET_BUILD: PASS

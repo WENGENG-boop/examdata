@@ -1,0 +1,49 @@
+HTTP/1.1 302 Found
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Sun, 04 Oct 2026 10:14:42 GMT
+Flow-Level: 3
+Location: /share/init?surl=WFFk45THwXlzntEx0cn85A&pwd=6677
+Logid: 8724693486145998551
+P3p: CP=" OTI DSP COR IVA OUR IND COM "
+Server: nginx
+Set-Cookie: PANPSC=; expires=Fri, 01-Apr-1900 00:00:00 GMT; path=/; domain=pan.baidu.com; HttpOnly;
+Set-Cookie: csrfToken=l13lfICFlf45zNKTD1A_n0NQ; path=/; secure
+Set-Cookie: BAIDUID=EE91C131F70C51AE7B850EF206F3C28C:FG=1; expires=Mon, 04-Oct-27 10:14:42 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1
+Set-Cookie: BAIDUID_BFESS=EE91C131F70C51AE7B850EF206F3C28C:FG=1; Path=/; Domain=baidu.com; Expires=Mon, 04 Oct 2027 10:14:42 GMT; Max-Age=31536000; Secure; SameSite=None
+X-Conteneur-Nom: wrBQWx8KwoUWWlzCu8OWwpnDoxcyw5cZTGvDqMO1w7/Dlg1rw6PCscK/wq3Cu3zDmmDDjURgDcO4PULCpFUjJMKMLsOu
+X-Download-Options: noopen
+X-Flow-Level: 3
+X-Powered-By: BaiduCloud
+X-Readtime: 943
+X-Request-Id: 8724693486145998551
+X-Xss-Protection: 1; mode=block
+Yld: 8724693486145998551
+Content-Length: 135
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: text/html; charset=utf-8
+Date: Sun, 04 Oct 2026 10:14:42 GMT
+Flow-Level: 3
+Logid: 8724693817659906156
+P3p: CP=" OTI DSP COR IVA OUR IND COM "
+Server: nginx
+Set-Cookie: PANPSC=; expires=Fri, 01-Apr-1900 00:00:00 GMT; path=/; domain=pan.baidu.com; HttpOnly;
+Set-Cookie: csrfToken=_n1k8n8K4TTirxpH35DkPQCj; path=/; secure
+Set-Cookie: BAIDUID=8E5B2D629E36E0803C02E2E91C436359:FG=1; expires=Mon, 04-Oct-27 10:14:42 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1
+Set-Cookie: BAIDUID_BFESS=8E5B2D629E36E0803C02E2E91C436359:FG=1; Path=/; Domain=baidu.com; Expires=Mon, 04 Oct 2027 10:14:42 GMT; Max-Age=31536000; Secure; SameSite=None
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+X-Conteneur-Nom: wrBNGgAfwpIFFhXCusOVwp7Dtw4qwo5aR3rDuMO4w6XDjihKw6jCsMO3wrDCu3zDhznDmgk5G8O3NFXCtVpjaMKEPcOtw7M=
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Flow-Level: 3
+X-Powered-By: BaiduCloud
+X-Readtime: 332
+X-Request-Id: 8724693817659906156
+X-Xss-Protection: 1; mode=block
+Yld: 8724693817659906156
+Yme: ZIGW/y8rX0gMaTQMUmr/tG5Nv+UfTgDrqwJFwSCCm+uhTlo4MAfxMdWL3A==
+Transfer-Encoding: chunked
+

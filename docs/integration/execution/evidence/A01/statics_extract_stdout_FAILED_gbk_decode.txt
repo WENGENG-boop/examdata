@@ -1,0 +1,20 @@
+Exception in thread Thread-3 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xa6 in position 77: illegal multibyte sequence
+Traceback (most recent call last):
+  File "C:\Users\weo\Desktop\api\integration-staging\tools\a01_static_inventory.py", line 363, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\weo\Desktop\api\integration-staging\tools\a01_static_inventory.py", line 334, in main
+    git["head"] = logp.stdout.strip()
+                  ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'

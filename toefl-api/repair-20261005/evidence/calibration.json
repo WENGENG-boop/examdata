@@ -1,0 +1,49 @@
+{
+ "read": {
+  "files": 1880,
+  "marker_hits": {
+   "id=\"js-stem-cont\"": 1880,
+   "class=\"question-link\"": 1880,
+   "inner js-translate-new": 1880,
+   "class=\"g-hl-2\"": 1880,
+   "class=\"question-form\"": 1695,
+   "insert-article": 185
+  },
+  "files_with_no_marker": []
+ },
+ "listen": {
+  "files": 2133,
+  "marker_hits": {
+   "question-cont js-translate-new": 2133,
+   "data-href=\"/detail/listen/": 2133,
+   "true-answer": 2133,
+   "content-logic": 14,
+   "questions-list": 2119,
+   "question-title": 2133
+  },
+  "files_with_no_marker": []
+ },
+ "speak": {
+  "files": 271,
+  "marker_hits": {
+   "class=\"item-desc": 271,
+   "js-translate-new": 271,
+   "essence-content": 271
+  },
+  "files_with_no_marker": []
+ },
+ "write": {
+  "files": 133,
+  "marker_hits": {
+   "content-subject": 133,
+   "content-title-h2": 133,
+   "content-read-main": 65,
+   "item-article": 65,
+   "class=\"question-cont\"": 133,
+   "good-composition-cont": 133,
+   "js-translate-new": 0,
+   "item-title": 65
+  },
+  "files_with_no_marker": []
+ }
+}

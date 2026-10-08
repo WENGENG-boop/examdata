@@ -1,0 +1,35 @@
+=== A06 runtime probe ===
+node: C:\Program Files\nodejs\node.EXE
+[ok] config.explicit_over_env
+[ok] config.offline_default
+[ok] manifest.no_problems
+[ok] manifest.admits_fake_cli
+[ok] manifest.command_whitelist
+[ok] runner.ok
+[ok] runner.cwd_is_component_dir
+[ok] env.staged_overrides_inherited
+[ok] env.non_allowlisted_absent
+[ok] env.data_root_injected
+[ok] argv.no_shell_interpolation
+[ok] classify.business_failure
+[ok] classify.invalid_json
+[ok] classify.multiple_json_values
+[ok] classify.nonzero_exit
+[ok] redact.stderr
+[ok] reject.component_not_allowed
+[ok] reject.command_not_allowed
+[ok] reject.missing_runtime
+[ok] reject.missing_component
+[ok] paths.spaces_ok
+[ok] bound.timeout
+[ok] cleanup.timeout_evidence
+[ok] bound.output_overflow
+[ok] cleanup.overflow_evidence
+[ok] bound.cancelled
+[ok] bound.queue_full
+[ok] classify.distinct_error_codes
+[ok] doctor.creates_nothing
+[ok] doctor.offline_compliant
+[ok] doctor.runtime_found
+
+A06_PROBE: PASS (0 failing)

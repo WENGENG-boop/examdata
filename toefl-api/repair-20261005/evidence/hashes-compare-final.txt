@@ -1,0 +1,21 @@
+[allowed] examdata/docs/TOEFL_API.md
+  before: 7a2828177bbfc7e334524bb00c2ed19d1b1e59611f949170b9a12eb54b66668a
+  after:  ccbba4d6ed8e463ae7d5cc17b2026423360950f0caaaee59b7253cc06b3c229d
+[allowed] examdata/src/examdata/api/toefl.py
+  before: fa7ad72a7468ea78d195f4280e675d559325e02cb30c76755b87585ea88f1fce
+  after:  051449da09363e1c2d392c5a57f809b9d3a30cd2feabcdca4dffaacf73d17934
+[allowed] toefl-api/REPORT.md
+  before: 24b7abca391bc173fc6517fd0be87e6b70624b9ca2d6987cbddc4a91445b3a6c
+  after:  d5aa7fa5473fcbbf6c6bf57e613df844f56b430668f4bfb8b41fa9632fedf64c
+[allowed] toefl-api/lib/jj.mjs
+  before: 920adf0f5068bd7a9d27b4fb53faa9a7d1866a8277790e362ee5bfcda933bdd7
+  after:  0c14e8a597fbb10e29e516c4f298c852da152282640fa9a2190fdb36a68464b3
+[allowed] toefl-api/lib/kmf.mjs
+  before: 6c0fc9ce87c830d9971e30ca49ab78ac3a5d59e097ef69fc3ee5e76e6b78f649
+  after:  27ea0140e86bedda524e98c7b55c507d1e6ed2ba4e3a570f1e270d35f01087d9
+[allowed] toefl-api/lib/util.mjs
+  before: 42b743ba67b9ccdc6230e989e14db9edc3e6567b61a32ad96bc5ae313d7f24aa
+  after:  edd5fc441ae4a39c7d4994ea764a1681eeea3ac71d733220d542d88fe1bc4032
+[allowed] toefl-api/toefl-cli.mjs
+  before: dba27dda4fcc50a4763e06fbd81da926be9fade14aa5506bf1c22ed90e95aac4
+  after:  9320401491bf64a38cf1bb98ced0e50e4daa7802a519117b6da5ccb6739328ca

@@ -1,0 +1,56 @@
+{
+ "generated_at": "2026-10-05T06:39:43.186Z",
+ "port": 8125,
+ "server_pid": 66336,
+ "server_up": true,
+ "server_shutdown": {
+  "pid": 66336,
+  "killed": true,
+  "code": null,
+  "signal": "SIGTERM"
+ },
+ "cases": 5,
+ "pass": 5,
+ "fail": 0,
+ "results": [
+  {
+   "name": "info 六分区+frr",
+   "http": 200,
+   "ms": 10,
+   "detail": "eras=[tpo-01-10,tpo-11-20,tpo-21-30,tpo-31-40,tpo-41-50,tpo-51-54] frr=true",
+   "pass": true
+  },
+  {
+   "name": "get tpo-54 exam_date=null",
+   "http": 200,
+   "ms": 151,
+   "ok": true,
+   "detail": "set.exam_date=null",
+   "pass": true
+  },
+  {
+   "name": "detail speak f1m9gj",
+   "http": 200,
+   "ms": 353,
+   "ok": true,
+   "detail": "qlen=125 audio=true set=tpo-54",
+   "pass": true
+  },
+  {
+   "name": "search punctuated",
+   "http": 200,
+   "ms": 5819,
+   "ok": true,
+   "detail": "matches=21 hits=21",
+   "pass": true
+  },
+  {
+   "name": "questions tpo-30 read 全部",
+   "http": 200,
+   "ms": 103,
+   "ok": true,
+   "detail": "n=10 complete=true content_complete=true bad=0",
+   "pass": true
+  }
+ ]
+}

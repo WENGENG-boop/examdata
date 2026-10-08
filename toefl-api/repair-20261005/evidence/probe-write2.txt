@@ -1,0 +1,109 @@
+### matter-content block
+  [0] len=4026
+  <div class="matter-content">
+                  <div class="content-title">
+                                              <h1 class="content-title-h2">The Salton Sea</h1>
+                                          <div class="area-action">
+                         <span class="btn-fav js-new-favorite  js-kmf-login  " data-type="1" data-qid="0" data-subject="30" data-handle="1" data-jid="75499" data-op="0">
+                                                              <i class="actionbg fav-ico"></i>
+                                  <em class="text menu-text">收藏</em>
+                                                      </span>
+                          <span class="menu js-open-error" data-uid="0"  data-uname="ztm#88b312a143b0e010fa899af5ae7d1fa0" data-aid="75499"  data-type="2" data-subject="30">
+                              <i class="actionbg modify-ico"></i>
+                              <em class="text">纠错</em>
+                          </span>
+                      </div>
+                  </div>
+                                                  
+                                          <div class="content-read-data">
+                          <h3 class="content-read-tit">阅读材料</h3>
+                          <div class="content-read-main js-translate-content" data-qid="75499">
+                              <p>The Salton Sea in California is actually a salty inland lake. The level of salt in the lake’s water—what scientists call its salinity—has been increasing steadily for years because the lake’s water is evaporating faster than it is being replaced by rainfall or rivers. If the trend continues, the lake’s water will soon become so salty that the lake will be unable to support fish and bird populations. The lake would then become essentially a dead zone. Fortunately, there are several ways to reverse the trend that is threatening the lake’s health.<br>
+  One option is direct removal of salt from the lake’s water in special desalination facilities. Water from the lake would be pumped into the facilities and heated. This would cause the water to evaporate into steam, while salt and other materials dissolved in the water would be left behind. The steam would then be cooled down and returned to the lake as salt-free water. Gradually, the high salt levels would be reduced and the lake’s overall health would be restored.<br>
+  Another possible solution is to dilute the salt level in the lake with water from the ocean. Since water in the Pacific Ocean is 20 percent less salty than water in the lake, bringing ocean water into the lake would decrease the lake’s salinity. The ocean water could be delivered through pipelines or canals.<br>
+  Yet another solution would be to control the lake’s salinity by constructing walls to divide the lake into several sections. In the smaller sections, salinity would be allowed to increase. However, in the main and largest section, salinity would be reduced and controlled by, among other things, directing all the freshwater from small rivers in the area to
+
+### content-title
+  [0] len=2525
+  <div class="content-title">
+                                              <h1 class="content-title-h2">The Salton Sea</h1>
+                                          <div class="area-action">
+                         <span class="btn-fav js-new-favorite  js-kmf-login  " data-type="1" data-qid="0" data-subject="30" data-handle="1" data-jid="75499" data-op="0">
+                                                              <i class="actionbg fav-ico"></i>
+                                  <em class="text menu-text">收藏</em>
+                                                      </span>
+                          <span class="menu js-open-error" data-uid="0"  data-uname="ztm#88b312a143b0e010fa899af5ae7d1fa0" data-aid="75499"  data-type="2" data-subject="30">
+                              <i class="actionbg modify-ico"></i>
+                              <em class="text">纠错</em>
+                          </span>
+                      </div>
+                  </div>
+                                                  
+                                          <div class="content-read-data">
+                          <h3 class="content-read-tit">阅读材料</h3>
+                          <div class="content-read-main js-translate-content" data-qid="75499">
+                              <p>The Salton Sea in California is actually a salty inland lake. The level of salt in the lake’s water—what scientists call its salinity—has been increasing steadily for years because the lake’s water is evaporating faster than it is being replaced by rainfall or rivers. If the trend continues, the lake’s water will soon become so salty that the lake will be unable to support fish and bird populations. The lake would then become essentially a dead zone. Fortunately, there are several ways to reverse the trend that is threatening the lake’s health.<br>
+  One option is direct removal of salt from the lake’s water in special desalination facilities. Water from the lake would be pumped into the facilities and heated. This would cause the water to evaporate into steam, while salt and other materials dissolved in the water would be left behind. The steam would then be cooled down and returned to the lake as salt-free water. Gradually, the high salt levels would be reduced and the lake’s overall health would be restored.<br>
+  Another possible solution is to dilute the salt level in the lake with water from the ocean. Since water in the Pacific Ocean is 20 percent less salty than water in the lake, bringing ocean water into the lake would decrease the lake’s salin
+
+### content-read-data
+  [0] len=3029
+  <div class="content-read-data">
+                          <h3 class="content-read-tit">阅读材料</h3>
+                          <div class="content-read-main js-translate-content" data-qid="75499">
+                              <p>The Salton Sea in California is actually a salty inland lake. The level of salt in the lake’s water—what scientists call its salinity—has been increasing steadily for years because the lake’s water is evaporating faster than it is being replaced by rainfall or rivers. If the trend continues, the lake’s water will soon become so salty that the lake will be unable to support fish and bird populations. The lake would then become essentially a dead zone. Fortunately, there are several ways to reverse the trend that is threatening the lake’s health.<br>
+  One option is direct removal of salt from the lake’s water in special desalination facilities. Water from the lake would be pumped into the facilities and heated. This would cause the water to evaporate into steam, while salt and other materials dissolved in the water would be left behind. The steam would then be cooled down and returned to the lake as salt-free water. Gradually, the high salt levels would be reduced and the lake’s overall health would be restored.<br>
+  Another possible solution is to dilute the salt level in the lake with water from the ocean. Since water in the Pacific Ocean is 20 percent less salty than water in the lake, bringing ocean water into the lake would decrease the lake’s salinity. The ocean water could be delivered through pipelines or canals.<br>
+  Yet another solution would be to control the lake’s salinity by constructing walls to divide the lake into several sections. In the smaller sections, salinity would be allowed to increase. However, in the main and largest section, salinity would be reduced and controlled by, among other things, directing all the freshwater from small rivers in the area to flow into that main section of the lake.<br></p>
+                          </div>
+                      </div>
+                                          <div class="item item-listen">
+                          <h3 class="item-title">听力材料
+                                                              <a  href="/listening/newdrilling/c1m97j" class="listen-exercise js-listen-exercise">精听本文&gt;&gt;&gt;</a>
+                                                      </h3>
+                          <div class="item-wrap js-item-wrap">
+                              <div class="item-player large-audio-container">
+                                  <div class="g-player-control video-left-content js-player-record" id="jp_container_1" data-url="https://img.kmf.com/toefl/listening/audio/c27cb8d3b9ea3f80853c63011b98477c.mp3" data-type="mp3">
+                                      <div class="control-play js-audio-control">
+                                          <a  class="toefl-spoken-icons play-left play jp-play" href="javascript:;">播放</a>
+                                          <a  class="toefl-spoken
+
+### content-read-tit
+  [0] len=1529
+  <h3 class="content-read-tit">阅读材料</h3>
+                          <div class="content-read-main js-translate-content" data-qid="75499">
+                              <p>The Salton Sea in California is actually a salty inland lake. The level of salt in the lake’s water—what scientists call its salinity—has been increasing steadily for years because the lake’s water is evaporating faster than it is being replaced by rainfall or rivers. If the trend continues, the lake’s water will soon become so salty that the lake will be unable to support fish and bird populations. The lake would then become essentially a dead zone. Fortunately, there are several ways to reverse the trend that is threatening the lake’s health.<br>
+  One option is direct removal of salt from the lake’s water in special desalination facilities. Water from the lake would be pumped into the facilities and heated. This would cause the water to evaporate into steam, while salt and other materials dissolved in the water would be left behind. The steam would then be cooled down and returned to the lake as salt-free water. Gradually, the high salt levels would be reduced and the lake’s overall health would be restored.<br>
+  Another possible solution is to dilute the salt level in the lake with water from the ocean. Since water in the Pacific Ocean is 20 percent less salty than water in the lake, bringing ocean water into the lake would decrease the lake’s salinity. The ocean water could be delivered through pipelines or canals.<br>
+  Yet another solution w
+
+### essence-mode list
+  [0] len=623
+  <li class="essence-mode js-essence-mode js-answer-idea  active  ">
+                                  <div class="answer-ideas js-idea-cont">
+                                  </div>
+                                  
+                                      
+                                      
+                                  
+                              </li>
+                                                          <li class="essence-mode js-essence-mode">
+                                  <div class="good-composition-cont js-good-composition">
+  
+                                  </div>
+                              </li>
+             
+  [1] len=623
+  <li class="essence-mode js-essence-mode">
+                                  <div class="i-entitled-discuss g-mod-shadow" >
+                                      <div class="entitled-discuss-wrap" id="common-discuss-area">
+                                          <!--讨论模块加载区域-->
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="essence-mode js-essence-mode">
+                                  <div class="teacher-mind">
+                                      <div class="no-content-icon"></div>
+                                  
+  ... (more omitted)
+

@@ -1,0 +1,38 @@
+HTTP/1.1 302 Object moved
+Server: nginx
+Date: Sun, 04 Oct 2026 10:22:27 GMT
+Content-Type: text/html; Charset=GBK
+Content-Length: 142
+Connection: keep-alive
+Expires: Sat, 03 Oct 2026 10:22:27 GMT
+Location: https://user.51test.net/wap/user/reg_wx.html
+Cache-Control: private,no-cache
+Set-Cookie: ASPSESSIONIDCQTBDSTB=CCKKDLPDKAEECPLJNIHFJMFK; path=/
+Accept-Ranges: none
+Pragma: no-cache
+Access-Control-Allow-Headers: Content-Type,  Authorization
+Access-Control-Allow-Origin: *
+Ohc-Cache-HIT: suz5ct64 [1], xaix209 [1]
+Ohc-File-Size: 142
+X-Cache-Status: MISS
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 04 Oct 2026 10:22:27 GMT
+Content-Type: text/html
+Content-Length: 3015
+Connection: keep-alive
+Last-Modified: Wed, 18 Mar 2026 03:22:49 GMT
+ETag: "80a307f86b6dc1:0"
+Cache-Control: max-age=86400
+Age: 1968828
+Accept-Ranges: bytes
+Access-Control-Allow-Headers: Content-Type,  Authorization
+Access-Control-Allow-Origin: *
+Ohc-Global-Saved-Time: Fri, 11 Sep 2026 15:14:14 GMT
+Ohc-Cache-HIT: suz5ct51 [4], czix51 [2]
+Ohc-File-Size: 3015
+X-Cache-Status: HIT
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+

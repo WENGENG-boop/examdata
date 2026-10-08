@@ -1,0 +1,68 @@
+# A03 leak check (fixture capture + staged test run)
+generated_at_local: 2026-10-05T19:18:10+0800
+window_start_local: 2026-10-05 18:53:04
+
+## 1. __pycache__ directories created during the window (protected roots)
+  (count: 0)
+
+## 2. .pytest_cache locations touched during the window
+  ./examdata/.pytest_cache
+  (count: 1)
+
+## 3. files created/modified in the window outside the two allowlist roots
+  ./examdata/.pytest_cache/v/cache/nodeids
+  ./examdata/docs/DEPLOY.md
+  ./examdata/examples/curl.md
+  ./examdata/pytest-of-weo/pytest-22/test_iter_seasons_filters_and_0/2025-06.pdf
+  ./examdata/pytest-of-weo/pytest-22/test_iter_seasons_filters_and_0/2026-06.pdf
+  ./examdata/pytest-of-weo/pytest-22/test_iter_seasons_filters_and_0/2026-06.txt
+  ./examdata/pytest-of-weo/pytest-22/test_iter_seasons_filters_and_0/2026-11.pdf
+  ./examdata/pytest-of-weo/pytest-22/test_iter_seasons_filters_and_0/random.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_asset_path_escape_is_deni0/secret.png
+  ./examdata/pytest-of-weo/pytest-23/test_asset_path_escape_is_deni1/secret.png
+  ./examdata/pytest-of-weo/pytest-23/test_asset_path_escape_is_deni2/secret.png
+  ./examdata/pytest-of-weo/pytest-23/test_asset_path_escape_is_deni3/secret.png
+  ./examdata/pytest-of-weo/pytest-23/test_asset_path_escape_is_deni4/secret.png
+  ./examdata/pytest-of-weo/pytest-23/test_asset_path_escape_is_deni5/secret.png
+  ./examdata/pytest-of-weo/pytest-23/test_asset_path_escape_is_deni6/secret.png
+  ./examdata/pytest-of-weo/pytest-23/test_asset_resolved_symlink_ca0/outside.png
+  ./examdata/pytest-of-weo/pytest-23/test_changed_source_refuses_ol0/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_changed_source_refuses_ol0/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_changed_source_refuses_ol0/question_indexes/cie/5dffa4787c02085243331242b3c34e0a9fa530b8c6ba0f551cfef47c543f1962.json
+  ./examdata/pytest-of-weo/pytest-23/test_cie_index_read_api_and_al0/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_cie_index_read_api_and_al0/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_cie_index_read_api_and_al0/question_indexes/cie/6a4c8bac245d234ae1b0d05f1db21af8d2b09b30ca0efe1c5c8c336aa4f18632.json
+  ./examdata/pytest-of-weo/pytest-23/test_fetch_cie_regions_in_memo0/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_fetch_cie_regions_in_memo0/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_fetch_cie_regions_in_memo0/question_indexes/cie/aba5efd93185c31b397a06d0fdcbbfbc62e8b181090f9b80883897902988bcbc.json
+  ./examdata/pytest-of-weo/pytest-23/test_import_cli0/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_import_cli0/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_import_cli0/question_indexes/cie/fba9baefab0181bcf479b07bca5cdf12e76e7c824281ac108753606d07b789f9.json
+  ./examdata/pytest-of-weo/pytest-23/test_import_roundtrip_and_no_o0/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_import_roundtrip_and_no_o0/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_import_roundtrip_and_no_o0/question_indexes/cie/853f39219bdc241f9730a9351786cca2dd3ac9fba3282a2d0f937a824a0c936d.json
+  ./examdata/pytest-of-weo/pytest-23/test_missing_ms_never_generate0/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_missing_ms_never_generate0/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_missing_ms_never_generate0/question_indexes/cie/6320ef4efdd7389797aa0e1d4812593ce3b22c182d046b765b3673b688ea02e3.json
+  ./examdata/pytest-of-weo/pytest-23/test_reject_bad_external_witho0/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_reject_bad_external_witho0/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_reject_bad_external_witho1/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_reject_bad_external_witho1/qp.pdf
+  ./examdata/pytest-of-weo/pytest-23/test_reject_bad_external_witho2/index.json
+  ./examdata/pytest-of-weo/pytest-23/test_reject_bad_external_witho2/qp.pdf
+  (count outside allowlist: 97)
+
+## 4. staged fixture tree (inside the allowlist)
+  integration-staging/fixtures/PROVENANCE.json
+  integration-staging/fixtures/PROVENANCE.md
+  integration-staging/fixtures/README.md
+  integration-staging/fixtures/copied/edexcel/subjects-source.json
+  integration-staging/fixtures/copied/ielts/indexes-current.json
+  integration-staging/fixtures/copied/ielts/manifests-current.json
+  integration-staging/fixtures/copied/ielts/pdf-provenance.json
+  integration-staging/fixtures/copied/ielts/printed-pages.json
+  integration-staging/fixtures/copied/toefl/ddy-index.json
+  integration-staging/fixtures/synthetic/cie/cie-index-synthetic.json
+  integration-staging/fixtures/synthetic/edexcel/index-synthetic.json
+  integration-staging/fixtures/synthetic/ielts/questions-synthetic.json
+  fixture files: 12, bytes: 163686

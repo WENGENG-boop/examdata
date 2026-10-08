@@ -1,0 +1,42 @@
+A00 evidence — pre-creation inspection of the Phase A write roots
+Purpose: prove that both allowed write roots were absent immediately before the executor created
+them, so no existing tree was reused, overwritten, or erased (plan §0.4). The roots were created
+at 2026-10-05T18:04:38+08:00 with mkdir exit 0 (creation record annexed to
+checks_after_root_creation.txt in this directory).
+
+--- command (verbatim) ---
+echo '--- pre-creation inspection of Phase A write roots (must be absent) ---'
+ls -ld integration-staging docs/integration/execution 2>&1
+echo '--- any integration* entries in workspace root ---'
+ls -d integration* 2>/dev/null; echo '(end of integration* listing)'
+echo '--- current docs/integration contents ---'
+ls -la docs/integration/
+echo '--- docs/integration/tools contents ---'
+ls -la docs/integration/tools/ 2>&1
+
+--- output (verbatim) ---
+--- pre-creation inspection of Phase A write roots (must be absent) ---
+ls: cannot access 'integration-staging': No such file or directory
+ls: cannot access 'docs/integration/execution': No such file or directory
+--- any integration* entries in workspace root ---
+(end of integration* listing)
+--- current docs/integration contents ---
+total 120
+drwxr-xr-x 1 weo 197121     0 Oct  5 17:54 .
+drwxr-xr-x 1 weo 197121     0 Oct  5 17:25 ..
+-rw-r--r-- 1 weo 197121  4445 Oct  5 17:54 EXECUTOR_PROMPT_EN.md
+-rw-r--r-- 1 weo 197121 79435 Oct  5 17:55 MASTER_EXECUTION_PLAN_EN.md
+-rw-r--r-- 1 weo 197121 20756 Oct  5 17:14 ROUTE_INVENTORY_CURRENT.json
+drwxr-xr-x 1 weo 197121     0 Oct  5 17:14 tools
+--- docs/integration/tools contents ---
+total 8
+drwxr-xr-x 1 weo 197121    0 Oct  5 17:14 .
+drwxr-xr-x 1 weo 197121    0 Oct  5 17:54 ..
+-rw-r--r-- 1 weo 197121 2547 Oct  5 17:14 inventory_routes.py
+
+--- interpretation ---
+- Neither `integration-staging/` nor `docs/integration/execution/` existed; ownership was
+  unambiguous, so no unique-child fallback (plan §0.4 fail action / §11 A00 fail action) was
+  needed. Both were created fresh by the executor afterwards.
+- No `integration*` entries existed in the workspace root at inspection time.
+- docs/integration/ contained only the four governing inputs (three files + tools/).

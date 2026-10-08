@@ -1,0 +1,211 @@
+# B00 F04 --validate-only transcript (packet_checks)
+cwd: C:/Users/weo/Desktop/api
+command: PYTHONDONTWRITEBYTECODE=1 ./examdata/.venv/Scripts/python.exe integration-staging/tools/b_ledger_update.py --validate-only
+--- stdout+stderr ---
+{
+  "ledger": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\execution-ledger.json",
+  "schema": "examdata.integration.ledger/1",
+  "mode": "PHASE_A_ISOLATED_ONLY",
+  "task_count": 27,
+  "gates": {
+    "original_paths_released": false,
+    "real_data_write_authorized": false,
+    "existing_service_cutover_authorized": false,
+    "upstream_requests_authorized": false,
+    "cie_resume_authorized": false,
+    "remote_deployment_authorized": false,
+    "original_cleanup_authorized": false
+  },
+  "history_events": 5,
+  "packet_checks": {
+    "B00": {
+      "status": "partial",
+      "dependencies": [
+        "A15"
+      ],
+      "dependencies_incomplete": [],
+      "required_gates": [
+        "original_paths_released"
+      ],
+      "required_gates_missing": [
+        "original_paths_released"
+      ],
+      "guarded_action_open": false
+    },
+    "B01": {
+      "status": "partial",
+      "dependencies": [
+        "B00"
+      ],
+      "dependencies_incomplete": [
+        "B00"
+      ],
+      "required_gates": [
+        "original_paths_released"
+      ],
+      "required_gates_missing": [
+        "original_paths_released"
+      ],
+      "guarded_action_open": false
+    },
+    "B02": {
+      "status": "not_started",
+      "dependencies": [
+        "B01"
+      ],
+      "dependencies_incomplete": [
+        "B01"
+      ],
+      "required_gates": [
+        "original_paths_released",
+        "existing_service_cutover_authorized"
+      ],
+      "required_gates_missing": [
+        "original_paths_released",
+        "existing_service_cutover_authorized"
+      ],
+      "guarded_action_open": false
+    },
+    "B03": {
+      "status": "not_started",
+      "dependencies": [
+        "B02"
+      ],
+      "dependencies_incomplete": [
+        "B02"
+      ],
+      "required_gates": [
+        "original_paths_released",
+        "real_data_write_authorized"
+      ],
+      "required_gates_missing": [
+        "original_paths_released",
+        "real_data_write_authorized"
+      ],
+      "guarded_action_open": false
+    },
+    "B04": {
+      "status": "not_started",
+      "dependencies": [
+        "B03"
+      ],
+      "dependencies_incomplete": [
+        "B03"
+      ],
+      "required_gates": [
+        "original_paths_released"
+      ],
+      "required_gates_missing": [
+        "original_paths_released"
+      ],
+      "guarded_action_open": false
+    },
+    "B05": {
+      "status": "not_started",
+      "dependencies": [
+        "B04"
+      ],
+      "dependencies_incomplete": [
+        "B04"
+      ],
+      "required_gates": [
+        "original_paths_released",
+        "upstream_requests_authorized"
+      ],
+      "required_gates_missing": [
+        "original_paths_released",
+        "upstream_requests_authorized"
+      ],
+      "guarded_action_open": false
+    },
+    "B06": {
+      "status": "not_started",
+      "dependencies": [
+        "B05"
+      ],
+      "dependencies_incomplete": [
+        "B05"
+      ],
+      "required_gates": [
+        "original_paths_released",
+        "existing_service_cutover_authorized"
+      ],
+      "required_gates_missing": [
+        "original_paths_released",
+        "existing_service_cutover_authorized"
+      ],
+      "guarded_action_open": false
+    },
+    "B07": {
+      "status": "not_started",
+      "dependencies": [
+        "B06"
+      ],
+      "dependencies_incomplete": [
+        "B06"
+      ],
+      "required_gates": [
+        "original_paths_released",
+        "existing_service_cutover_authorized"
+      ],
+      "required_gates_missing": [
+        "original_paths_released",
+        "existing_service_cutover_authorized"
+      ],
+      "guarded_action_open": false
+    },
+    "B08": {
+      "status": "not_started",
+      "dependencies": [
+        "B07"
+      ],
+      "dependencies_incomplete": [
+        "B07"
+      ],
+      "required_gates": [
+        "real_data_write_authorized"
+      ],
+      "required_gates_missing": [
+        "real_data_write_authorized"
+      ],
+      "guarded_action_open": false
+    },
+    "B09": {
+      "status": "not_started",
+      "dependencies": [
+        "B08"
+      ],
+      "dependencies_incomplete": [
+        "B08"
+      ],
+      "required_gates": [
+        "original_paths_released"
+      ],
+      "required_gates_missing": [
+        "original_paths_released"
+      ],
+      "guarded_action_open": false
+    },
+    "B10": {
+      "status": "not_started",
+      "dependencies": [
+        "B09"
+      ],
+      "dependencies_incomplete": [
+        "B09"
+      ],
+      "required_gates": [
+        "original_paths_released",
+        "remote_deployment_authorized",
+        "original_cleanup_authorized"
+      ],
+      "required_gates_missing": [
+        "original_paths_released",
+        "remote_deployment_authorized",
+        "original_cleanup_authorized"
+      ],
+      "guarded_action_open": false
+    }
+  }
+}
+exit_code: 0

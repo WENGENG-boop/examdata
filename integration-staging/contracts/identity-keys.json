@@ -1,0 +1,181 @@
+{
+  "schema": "identity-keys/1",
+  "x-generated-by": "a04_generate_schemas.py sha256:3693f206a4d6ce07b324aa737996f27e4b0ad6b21e79ecba754b580bb785cb4b",
+  "kinds": {
+    "examination_system": {
+      "prefix": "es",
+      "identity_keys": [
+        "system"
+      ]
+    },
+    "course": {
+      "prefix": "course",
+      "identity_keys": [
+        "system",
+        "qualification",
+        "native_code",
+        "specification_version"
+      ]
+    },
+    "syllabus": {
+      "prefix": "syl",
+      "identity_keys": [
+        "system",
+        "course_native_code",
+        "version"
+      ]
+    },
+    "container": {
+      "prefix": "container",
+      "identity_keys": [
+        "system",
+        "kind",
+        "native_identity"
+      ]
+    },
+    "question": {
+      "prefix": "q",
+      "identity_keys": [
+        "system",
+        "container_native_identity",
+        "native_id",
+        "number_path",
+        "parent_native_id"
+      ]
+    },
+    "answer": {
+      "prefix": "ans",
+      "identity_keys": [
+        "system",
+        "question_native_id",
+        "source",
+        "native_answer_key"
+      ]
+    },
+    "region": {
+      "prefix": "region",
+      "identity_keys": [
+        "system",
+        "document_role",
+        "document_sha256",
+        "page",
+        "bbox",
+        "coordinate_system"
+      ]
+    },
+    "asset": {
+      "prefix": "asset",
+      "identity_keys": [
+        "system",
+        "media_type",
+        "sha256",
+        "storage_mode"
+      ]
+    },
+    "tag": {
+      "prefix": "tag",
+      "identity_keys": [
+        "scheme",
+        "version",
+        "code"
+      ]
+    },
+    "material": {
+      "prefix": "mat",
+      "identity_keys": [
+        "system",
+        "kind",
+        "native_id",
+        "applicability"
+      ]
+    },
+    "timetable_event": {
+      "prefix": "tte",
+      "identity_keys": [
+        "system",
+        "qualification",
+        "zone",
+        "course_native_code",
+        "component",
+        "date",
+        "session"
+      ]
+    },
+    "timetable_window": {
+      "prefix": "ttw",
+      "identity_keys": [
+        "system",
+        "qualification",
+        "zone",
+        "original_text",
+        "source"
+      ]
+    },
+    "coverage": {
+      "prefix": "cov",
+      "identity_keys": [
+        "scope_kind",
+        "scope_native_identity",
+        "denominator_kind"
+      ]
+    },
+    "job_status": {
+      "prefix": "job",
+      "identity_keys": [
+        "scope",
+        "input_revision"
+      ]
+    }
+  },
+  "normalisation": {
+    "code_keys": [
+      "access_mode",
+      "applicability",
+      "availability",
+      "candidate_facing",
+      "capability",
+      "code",
+      "component",
+      "coordinate_system",
+      "denominator_kind",
+      "document_role",
+      "exam_system",
+      "kind",
+      "media_type",
+      "native_code",
+      "native_subject_code",
+      "paper",
+      "paper_code",
+      "provider_id",
+      "qualification",
+      "qualification_level",
+      "role",
+      "scheme",
+      "scope_kind",
+      "season",
+      "section_kind",
+      "session",
+      "skill",
+      "source",
+      "source_id",
+      "specification_code",
+      "specification_version",
+      "storage_mode",
+      "subject",
+      "subject_code",
+      "system",
+      "unit_code",
+      "variant",
+      "zone"
+    ],
+    "hash_keys": [
+      "content_sha256",
+      "document_sha256",
+      "input_revision",
+      "sha256"
+    ],
+    "digest_bytes": 20,
+    "absent_encoding": "\\x00",
+    "explicit_unknown_encoding": "\\x01"
+  }
+}

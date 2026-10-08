@@ -1,0 +1,11 @@
+# A03 independent fixture hash cross-check (source vs staged copy)
+generated_at_local: 2026-10-05T19:17:44+0800
+
+MATCH  ielts-indexes-current      src=b786b370117affa1 dst=b786b370117affa1 bytes=156
+MATCH  ielts-manifests-current    src=c1f3d59caa348ccf dst=c1f3d59caa348ccf bytes=157
+MATCH  ielts-pdf-provenance       src=0725aa6213084e6f dst=0725aa6213084e6f bytes=52580
+MATCH  ielts-printed-pages        src=ab876413450ca749 dst=ab876413450ca749 bytes=44949
+MATCH  edexcel-subjects-source    src=b293e88820c43f0a dst=b293e88820c43f0a bytes=22614
+MATCH  toefl-ddy-index            src=50dc50a58bb65365 dst=50dc50a58bb65365 bytes=17212
+
+independent_crosscheck: PASS  mismatches=[]

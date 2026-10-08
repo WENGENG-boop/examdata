@@ -1,8 +1,10 @@
 # examdata 统一 API 调用指南（`/api/v1`）
 
+> 2026-10-05 状态更新：整个工作区的模块进度、最新断点与验收边界见 [项目总文档](../../docs/PROJECT_STATUS.md)。本文保留的响应、路由数量和测试输出属于各次取证快照，不代表本次重新验证运行服务。
+
 这份文档只回答两件事：
 
-1. **统一网关 `/api/v1` 怎么调**——四个端点、参数、响应、错误码，以及 board 别名与自动判定；
+1. **统一网关 `/api/v1` 怎么调**——端点、参数、响应、错误码，以及 board 别名与自动判定；
 2. **部署到 VPS 之后，怎么从公网调它**——监听地址、nginx + HTTPS、防火墙、API Key、CORS、限流与故障排查。
 
 安装、CLI、Python 库、备份、升级等部署总纲见 [DEPLOY.md](DEPLOY.md)（2779 行）；本文与它互补，不重复 CLI 全量参考。
@@ -22,6 +24,9 @@
   - [3.5 `GET /api/v1/question/{question_id}`](#35-get-apiv1questionquestion_id)
   - [3.6 错误码总表](#36-错误码总表)
   - [3.7 与既有端点的关系](#37-与既有端点的关系)
+  - [3.8 `GET /api/v1/materials`（考试发放资料）](#38-get-apiv1materials考试发放资料)
+  - [3.9 `GET /api/v1/timetable`（CIE Zone 5 时间表）](#39-get-apiv1timetablecie-zone-5-时间表)
+  - [3.10 `GET /api/v1/timetable`（Edexcel 时间表）](#310-get-apiv1timetableedexcel-时间表)
 - [4 完整调用示例](#4-完整调用示例)
 - [5 公网调用](#5-公网调用)
 - [6 数据现状与能力边界](#6-数据现状与能力边界)
@@ -55,7 +60,7 @@ examdata 在内部对接**两个互不相干的上游站点**，对外只暴露*
 - 你传 `board=cambridge` 或 `board=cie` 都一样，规范名都是 `cie`；
 - 检索接口返回的 `board` 字段是**数据库 key**（`cambridge`），因为那是库里的真实取值；顶层另给一个 `board` 是规范名。两者的对应关系见 3.1 节。
 
-**四个端点**（统一网关）：
+**统一网关核心四端点**：
 
 | 端点 | 干什么 | 读什么 |
 |---|---|---|
@@ -64,7 +69,12 @@ examdata 在内部对接**两个互不相干的上游站点**，对外只暴露*
 | `GET /api/v1/search` | 跨考试局统一检索题目 | 本地数据库 |
 | `GET /api/v1/question/{id}` | 单题聚合：题目内容 + 所属试卷定位 + 可直接调用的取卷链接 | 本地数据库 |
 
-**数据现状（先知道，少走弯路）**：本地库里 Cambridge 已解析出 751 道题 / 16 卷；Edexcel 有 44 份文档（14 份 QP + 14 份 MS）但**还没有解析出题目**。因此 `/api/v1/search` 的 `by_board` 里 `edexcel` 现在是 `0`；但 `/api/v1/paper` 两个考试局都能真实取到文件。详见第 6 节。
+除核心四端点外，`/api/v1` 还提供两类能力（详见 3.8 / 3.9 / 3.10）：
+
+- **考试发放资料** `/api/v1/materials`——按科目列出考生在考试中得到/使用的官方材料（9709 MF19 公式表、各科 insert / source material、Edexcel 公式表与化学数据手册等），可公开取回的原件实时取回；印在试卷内的条目（如化学元素周期表）仅登记、不提供独立文件（取回返回 422 并说明访问方式）；
+- **考试时间表** `/api/v1/timetable`——CIE Zone 5 与 Edexcel 时间表转成结构化考试事件（CIE：25 个可得考季 + 2 个不可得考季的证据；Edexcel：106 季 + 6 个取消季 + 15 个不可得季的证据）。
+
+**最新状态摘要（2026-10-05）**：Edexcel IAL 报告现为 43856 题全部有标签、答案关联 88.5%；CIE 定位批次有 63 个服务索引，当前视觉门槛通过 19 卷，最新停止为 `8238/2025/Jun/32` HTTP 502。IAL 统计、数据库检索总数与 CIE 外部定位索引属于不同统计范围，不能混用。本文第 6 节及示例中的 43564 为较早接口快照；最新工作区状态与证据见 [项目总文档](../../docs/PROJECT_STATUS.md)。
 
 ## 2 起服务与快速验证（本机）
 
@@ -86,7 +96,7 @@ API 文档 http://127.0.0.1:8000/docs
 
 ```bash
 curl -s http://127.0.0.1:8000/health
-# {"status":"ok","papers":16}
+# {"status":"ok","papers":1549}
 
 curl -s http://127.0.0.1:8000/api/v1/boards
 # {"schema_version":"1","auto_detect":{...},"boards":[{...},{...}]}   # 见 3.2
@@ -95,7 +105,7 @@ curl -s 'http://127.0.0.1:8000/api/v1/search?subject=0580&leaves_only=true&limit
 # {"total":332,"limit":2,"offset":0,"by_board":{"cambridge":332,"edexcel":0},"items":[...],"board":null,"board_source":null}
 ```
 
-交互式文档在 `/docs`（Swagger UI）、`/redoc`、`/openapi.json`；`/api/v1` 四个端点都已在 OpenAPI 里登记（实测 `openapi.json` 共 24 条路径 = 既有 20 条 + 统一网关 4 条）。
+交互式文档在 `/docs`（Swagger UI）、`/redoc`、`/openapi.json`；实测当前 `openapi.json` 共 **71 条路径**（非 `/api/v1` 20 条 + `/api/v1` 51 条：核心四端点 4 条 + 资料 4 条 + 时间表 3 条 + 雅思/托福/索引等 40 条），全部端点在 OpenAPI 里登记。
 
 ## 3 统一网关 `/api/v1` 完整参考
 
@@ -306,13 +316,13 @@ curl -s 'http://127.0.0.1:8000/api/v1/search?limit=2'
 ```
 
 ```json
-{"total":751,"limit":2,"offset":0,"by_board":{"cambridge":751,"edexcel":0},"items":[{"question_id":752,"number_path":"1","depth":0,"kind":"question","marks":null,"page_from":3,"page_to":3,"stem_text":"Kim takes part in a race that covers a total distance of 20 000 m.\nShe cycles 17 875 m and runs the remaining distance.","board":"cambridge","subject_code":"0580","year":2025,"paper_code":"01","paper_id":17},{"question_id":753,"number_path":"1(a)","depth":1,"kind":"sub","marks":1,"page_from":3,"page_to":3,"stem_text":"Work out the distance Kim runs.\n............................................. m [1]","board":"cambridge","subject_code":"0580","year":2025,"paper_code":"01","paper_id":17}],"board":null,"board_source":null}
+{"total":44315,"limit":2,"offset":0,"by_board":{"cambridge":751,"edexcel":43564},"items":[{"question_id":752,"number_path":"1","depth":0,"kind":"question","marks":null,"page_from":3,"page_to":3,"stem_text":"Kim takes part in a race that covers a total distance of 20 000 m.\nShe cycles 17 875 m and runs the remaining distance.","board":"cambridge","subject_code":"0580","year":2025,"paper_code":"01","paper_id":17},{"question_id":753,"number_path":"1(a)","depth":1,"kind":"sub","marks":1,"page_from":3,"page_to":3,"stem_text":"Work out the distance Kim runs.\n............................................. m [1]","board":"cambridge","subject_code":"0580","year":2025,"paper_code":"01","paper_id":17}],"board":null,"board_source":null}
 ```
 
 ```bash
 # 只看 Edexcel：归一成规范名 edexcel，board_source=explicit，by_board 仍给出两局各自的数量
 curl -s 'http://127.0.0.1:8000/api/v1/search?board=pearson&limit=2'
-# {"total":0,"limit":2,"offset":0,"by_board":{"cambridge":751,"edexcel":0},"items":[],"board":"edexcel","board_source":"explicit"}
+# {"total":43564,"limit":2,"offset":0,"by_board":{"cambridge":751,"edexcel":43564},"items":[...],"board":"edexcel","board_source":"explicit"}
 
 # 大小写不敏感
 curl -s 'http://127.0.0.1:8000/api/v1/search?board=CIE&subject=0580&limit=2'
@@ -320,7 +330,7 @@ curl -s 'http://127.0.0.1:8000/api/v1/search?board=CIE&subject=0580&limit=2'
 
 # 关键词
 curl -s 'http://127.0.0.1:8000/api/v1/search?keyword=triangle&limit=1'
-# {"total":24,"limit":1,"offset":0,"by_board":{"cambridge":24,"edexcel":0},"items":[...],"board":null,"board_source":null}
+# {"total":177,"limit":1,"offset":0,"by_board":{"cambridge":24,"edexcel":153},"items":[...],"board":null,"board_source":null}
 
 # 非法 board
 curl -s 'http://127.0.0.1:8000/api/v1/search?board=xxx'
@@ -401,7 +411,7 @@ curl -s http://127.0.0.1:8000/api/v1/question/1
 
 ### 3.7 与既有端点的关系
 
-统一网关是**新增入口**，既有端点行为一律未变（回归对比仍可用）。总数 24 条路径 = 既有 20 条 + `/api/v1` 4 条。
+统一网关是**新增入口**，既有端点行为一律未变（回归对比仍可用）。本机实测当前 `openapi.json` 共 **71 条路径** = 非 `/api/v1` 20 条 + `/api/v1` 51 条（核心四端点 4 条 + 资料 4 条 + 时间表 3 条 + 雅思/托福/索引 40 条）。
 
 | 既有端点 | 与统一层的关系 |
 |---|---|
@@ -410,13 +420,133 @@ curl -s http://127.0.0.1:8000/api/v1/question/1
 | `GET /questions` | 需要显式传 `board=cambridge|edexcel`（数据库 key）；`/api/v1/search` = 它 + 别名归一 + `by_board` 分局计数 |
 | `GET /questions/{id}` | `/api/v1/question/{id}` 的 `bundle` 字段就是它的原样结果 |
 | `GET /papers`、`/papers/{id}/tree`、`/taxonomy`、`POST /sample` | 试卷检索 / 整卷题目树 / 知识点 / 随机抽题；统一层暂未包装，按 DEPLOY.md 第 8 章调用 |
-| `GET /health` | 存活探针，`{"status":"ok","papers":16}`；不受 API Key 限制 |
+| `GET /health` | 存活探针，`{"status":"ok","papers":1549}`；不受 API Key 限制 |
 | `GET /assets/{id}` | 取回图形资产原件（`Content-Type` 取资产 mime，不设 `Content-Disposition`） |
 | `GET /questions/{id}/explanation`、`/explanations/review-queue` | 生成解析与审核队列 |
 | `GET /monitor`、`/review`、`/overrides`、`/classifications`、`/provenance/coverage`、`/questions/{id}/provenance`、`/assets/{id}/provenance` | 治理与溯源视图 |
 | `GET /docs`、`/redoc`、`/openapi.json` | 交互式文档；设了 API Key 也可匿名访问 |
 
 各既有端点的逐条参数表见 [DEPLOY.md 第 8 章](DEPLOY.md#8-调用方式二-http-api)。
+
+### 3.8 `GET /api/v1/materials`（考试发放资料）
+
+按考试局/科目列出「考生在考试中实际得到或使用」的官方发放资料（公式表、元素周期表、insert、数据手册等），并对可公开获取的资料按需实时取回原件。逐科调研与实测证据：CIE 见 [`research/exam-materials-cie.md`](../research/exam-materials-cie.md)、Edexcel 见 [`research/exam-materials-edexcel.md`](../research/exam-materials-edexcel.md)。资料目录落盘于 `src/examdata/materials/data/catalog.json`。
+
+| 端点 | 作用 |
+|---|---|
+| `GET /api/v1/materials` | 资料目录（摘要）：`board` / `subject` / `kind` / `candidate_facing` 过滤；含版本、SHA256 与适用科目；响应另带 `dynamic_endpoints`（CIE 随卷发放入口） |
+| `GET /api/v1/materials/{id}` | 单条资料完整记录，附 `content_endpoint` |
+| `GET /api/v1/materials/{id}/content` | 取回原件：`format=binary`（默认 PDF）/ `format=json`（base64+sha256）；`version` 为 label 全等或 0 起索引（缺省取第一项） |
+| `GET /api/v1/materials/cie/in-paper` | CIE「随卷发放」清单/取回：按 `subject`/`year`/`season`/`paper`/`role` 定位 insert、说明页或保密须知 |
+
+目录过滤参数：
+
+| 参数 | 作用 |
+|---|---|
+| `board` | `cie`/`cambridge`/`ca` 或 `edexcel`/`edx`/`pearson`/`ial` |
+| `subject` | CIE 四位数字科目代码；Edexcel 科目 slug（如 `ial18-chemistry`） |
+| `kind` | 资料类别，如 `formula-and-statistical-tables`、`insert` |
+| `candidate_facing` | `true` 面向考生；`false` 为考务/教师文件 |
+
+`in-paper` 参数：
+
+| 参数 | 作用 |
+|---|---|
+| `subject` / `year` / `season` | 四位 CIE 科目代码 / 考季年 / `Mar`、`June`、`Nov`（大小写不敏感） |
+| `paper` | 组件号（如 `11`）；不传时返回全部命中 |
+| `role` | `in`（insert）/ `ir` / `ci`（保密须知） |
+| `download` | `false` 只列清单；`true` 取回文件（唯一命中时；多个命中返回 409 并列出 `detail.papers`） |
+| `format` | `binary`（默认）或 `json`（base64） |
+
+二进制出口带头部 `Content-Disposition` 与 `X-Material-Id` / `X-Material-Sha256` / `X-Material-Sha256-Match`（实测与快照对照一致）；没有独立可公开取回版本的条目（如印在试卷内的 CIE 元素周期表）返回 422，`detail` 说明 `access` 判定与已登记的动态入口。
+
+```bash
+# 资料目录（实测 8 条）
+curl 'http://127.0.0.1:8000/api/v1/materials'
+# 9709 的 MF19 公式与统计表：实测 200、311234 字节、sha256 c075388e…、match=true
+curl -o mf19.pdf 'http://127.0.0.1:8000/api/v1/materials/cie-mf19-formulae-and-statistical-tables/content'
+# Edexcel 一例：IAL 化学数据手册（实测 2542080 字节、sha256 a372a93d…）
+curl -o chemistry-data-booklet.pdf 'http://127.0.0.1:8000/api/v1/materials/edexcel-ial-chemistry-data-booklet/content'
+# 印在试卷内的条目：422 并说明访问方式
+curl 'http://127.0.0.1:8000/api/v1/materials/cie-periodic-table/content'
+# → {"detail":{"message":"资料 cie-periodic-table 没有可独立取回的版本","access":"in-paper","dynamic_endpoint":null}}
+# CIE 随卷发放：0500 2024 Jun 有 6 份 insert（11/12/13/21/22/23）
+curl 'http://127.0.0.1:8000/api/v1/materials/cie/in-paper?subject=0500&year=2024&season=Jun'
+# 指定组件取回：实测 200、114871 字节、sha256 7d49097c…（X-Material-Role: in / X-Material-Paper: 11）
+curl -o 0500_s24_in_11.pdf 'http://127.0.0.1:8000/api/v1/materials/cie/in-paper?subject=0500&year=2024&season=Jun&paper=11&download=true'
+```
+
+### 3.9 `GET /api/v1/timetable`（CIE Zone 5 时间表）
+
+CIE 官方按 Zone 5 发布的考试时间表（PDF）已解析为结构化考试事件（年份/考季/日期/场次/科目与卷号/时长），随仓库快照 `src/examdata/timetable/data/zone5/` 离线提供。调研与逐季核对：[`research/exam-timetable-cie-zone5.md`](../research/exam-timetable-cie-zone5.md)。
+
+| 端点 | 作用 |
+|---|---|
+| `GET /api/v1/timetable/seasons` | 考季总览：`seasons`（可得，含事件数/窗口数与原件 sha256）+ `unobtainable`（不可得，含 `reason`/`evidence`/`search_exhausted`）+ `unobtainable_search_note_zh`（穷尽检索口径） |
+| `GET /api/v1/timetable` | 结构化考试事件：`year`/`season` 必填，可按 `subject`/`date`/`session`/`level` 过滤，`limit`（≤2000，默认 200）/`offset` 分页 |
+| `GET /api/v1/timetable/windows` | 各 syllabus/component 的 "Test date windows"：`window_raw` + 解析出的 ISO `window_start`/`window_end`（737 条中 514 条成功解析，其余保留原文、日期为 null；分布见[调研报告](../research/exam-timetable-cie-zone5.md) §7） |
+
+`/api/v1/timetable` 过滤参数：
+
+| 参数 | 作用 |
+|---|---|
+| `year` / `season` | 考季年 / `Jun`（`June`）或 `Nov`（`November`），大小写不敏感 |
+| `subject` | 科目代码，前缀或全等匹配（`97` 命中 `9709`） |
+| `date` | ISO 日期 `YYYY-MM-DD` |
+| `session` | `AM` / `PM` / `EV` |
+| `level` | `IG` / `OL` / `AS` / `AL` / `PR` |
+| `limit` / `offset` | 每页条数（1–2000，默认 200）/ 跳过的条数 |
+
+当前快照（2026-10-05 生成）：25 个可得考季（2013-11 … 2026-11）、8307 条考试事件、737 条日期窗口；2 个考季不可得（2019-06、2020-11；均经穷尽检索，标 `search_exhausted: true`），接口对其返回 404 并带 `reason`/`evidence`；未收录考季（如 `2001-06`）返回 422；快照文件缺失返回 503。
+
+```bash
+curl 'http://127.0.0.1:8000/api/v1/timetable/seasons'
+curl 'http://127.0.0.1:8000/api/v1/timetable?year=2026&season=Nov&subject=9709'
+# → {"count":6,"events":[{"date":"2026-10-13","weekday":"Tuesday","session":"AM","level":"AS","subject_code":"9709","paper_code":"13",...}]}
+# 2026 Nov 实测 22 条日期窗口
+curl 'http://127.0.0.1:8000/api/v1/timetable/windows?year=2026&season=Nov'
+# 旧版式考季（2013–2016 经 Wayback 取回）同样可查：2013 Nov 实测 407 条事件，其中 9709 有 7 条
+curl 'http://127.0.0.1:8000/api/v1/timetable?year=2013&season=Nov&subject=9709'
+# → {"count":7,"events":[{"date":"2013-10-15","weekday":"Tuesday","session":"AM","level":"AS","subject_code":"9709","paper_code":"13",...}]}
+# 不可得考季：404 + reason/evidence
+curl 'http://127.0.0.1:8000/api/v1/timetable?year=2019&season=Jun'
+# → {"detail":{"message":"2019-06 时间表不可得","reason":"文件 513557-june-2019-timetable-zone-5.pdf 从未被有效存档：新域名 CDX 仅 1 条 2024-06-16 404 记录","evidence":"…"}}
+```
+
+### 3.10 `GET /api/v1/timetable`（Edexcel 时间表）
+
+Pearson Edexcel 历年时间表（官网现行文件 + Wayback 存档 PDF）已解析为结构化考试事件，随仓库快照 `src/examdata/timetable/data/edexcel/` 离线提供。覆盖四个族谱共 106 个考季（含 13 份 R 卷变体）：UK GCSE 22 季、International GCSE 37 季、International A Level 34 季、GCE A-level 13 季。调研与逐季核对：[`research/exam-timetable-edexcel.md`](../research/exam-timetable-edexcel.md)。
+
+Edexcel 查询在 CIE 参数基础上增加 `board` 与 `family`：
+
+| 参数 | 作用 |
+|---|---|
+| `board=edexcel` | 必填（别名 `edx` / `pearson`）；不传时默认按 CIE 处理 |
+| `family` | 必填：`gcse` / `intgcse` / `ial` / `gce` |
+| `year` / `season` | 考季年 / `Jan`（`January`）、`Jun`（`June`）、`Oct`（`October`）、`Nov`（`November`），大小写不敏感 |
+| `r_paper` | `true` 取 R 卷变体（仅 IntGCSE 部分考季有，快照键如 `intgcse\|2018\|06\|R`） |
+| `subject` / `date` / `session` | 科目代码前缀或全等 / ISO 日期 / `AM` / `PM`（与 CIE 相同） |
+| `limit` / `offset` | 每页条数（1–2000，默认 200）/ 跳过的条数 |
+
+当前快照（2026-10-05 生成）：106 季 / 8479 条事件 / 23 个日期窗口；6 个考季因 COVID-19 取消（返回 404 + `cancelled: true` + reason，如 `gcse\|2020\|06`）；15 个考季不可得（返回 404 + reason/evidence，如 `intgcse\|2019\|06`）；未收录考季或非法参数返回 422（`level` 参数仅适用于 CIE）。`/api/v1/timetable/seasons?board=edexcel` 另返回 `counts`（seasons / cancelled / unobtainable）与逐季明细、取消季与不可得季的完整证据。
+
+```bash
+curl 'http://127.0.0.1:8000/api/v1/timetable/seasons?board=edexcel&family=ial'
+# → {"counts":{"seasons":34,"cancelled":1,"unobtainable":0},...}
+curl 'http://127.0.0.1:8000/api/v1/timetable?board=edexcel&family=ial&year=2026&season=June'
+# → {"count":90,"events":[{"date":"2026-05-05","weekday":"Tuesday","session":"AM","subject_code":"WAC11","paper_code":"01",...}]}
+# R 卷变体
+curl 'http://127.0.0.1:8000/api/v1/timetable?board=edexcel&family=intgcse&year=2018&season=June&r_paper=true'
+# → {"count":36,"variant":"R",...}
+curl 'http://127.0.0.1:8000/api/v1/timetable/windows?board=edexcel&family=gce&year=2017&season=June'
+# → {"count":3,"date_windows":[{"subject_code":"6957","paper_code":"01","window_start":"2017-05-08","window_end":"2017-05-26",...}]}
+# 取消季：404 + cancelled 标记
+curl 'http://127.0.0.1:8000/api/v1/timetable?board=edexcel&family=gcse&year=2020&season=June'
+# → {"detail":{"message":"gcse|2020|06 考季已取消","reason":"UK GCSE summer 2020 series cancelled (COVID-19); ...","cancelled":true}}
+# 不可得季：404 + reason/evidence
+curl 'http://127.0.0.1:8000/api/v1/timetable?board=edexcel&family=intgcse&year=2019&season=June'
+# → {"detail":{"message":"intgcse|2019|06 时间表不可得","reason":"穷尽候选（Wayback + 官网直连）后无可用 PDF（非 PDF 或校验失败）","evidence":[...]}}
+```
 
 ## 4 完整调用示例
 
@@ -590,42 +720,48 @@ python scripts/smoke_public_api.py --base-url https://<你的域名> --api-key <
 python scripts/smoke_public_api.py --base-url https://<你的域名> --skip-download   # 省流量
 ```
 
-实测（对本地 8126 端口的服务，完整输出）：
+实测（对本地 8791 端口的服务，完整输出；2026-10-05 重跑）：
 
 ```text
 examdata 上线自检
-目标      http://127.0.0.1:8126
+目标      http://127.0.0.1:8791
 超时      30s（下载检查另有下限 180s）
 鉴权      未提供（不检查鉴权）
 下载检查  执行
 --------------------------------------------------------------------
-[1/6] 存活探针 GET /health
-      PASS  HTTP 200  status=ok  papers=16
+[1/8] 存活探针 GET /health
+      PASS  HTTP 200  status=ok  papers=1549
 
-[2/6] 能力发现 GET /api/v1/boards
+[2/8] 能力发现 GET /api/v1/boards
       PASS  HTTP 200  boards=cie,edexcel  schema_version=1
 
-[3/6] 跨考试局检索 GET /api/v1/search?limit=1
-      PASS  HTTP 200  total=751  by_board={"cambridge": 751, "edexcel": 0}
+[3/8] 跨考试局检索 GET /api/v1/search?limit=1
+      PASS  HTTP 200  total=44607  by_board={"cambridge": 751, "edexcel": 43856}
 
-[4/6] 清单解析 GET /api/v1/paper?download=false（不下载）
+[4/8] 考试时间表 GET /api/v1/timetable/seasons（CIE 与 Edexcel ial）
+      PASS  HTTP 200  board=cie  zone=5  totals.available_seasons=25 | edexcel family=ial counts.seasons=34（期望 34，该局总数 106）
+
+[5/8] 考试资料 GET /api/v1/materials
+      PASS  HTTP 200  count=8
+
+[6/8] 清单解析 GET /api/v1/paper?download=false（不下载）
       PASS  HTTP 200  counts.documents=12  counts.files=0  board=cie  board_source=inferred
 
-[5/6] 真实下载 GET /api/v1/paper?mode=qp（0580/2024/Jun）
-      PASS  HTTP 200  application/zip  Content-Length=2466850  实收=2466850B  文件头=PK  耗时=16.63s
+[7/8] 真实下载 GET /api/v1/paper?mode=qp（0580/2024/Jun）
+      PASS  HTTP 200  application/zip  Content-Length=2466850  实收=2466850B  文件头=PK  耗时=21.72s
 
-[6/6] 错误语义：不存在的路径必须 404
+[8/8] 错误语义：不存在的路径必须 404
       PASS  HTTP 404  detail=Not Found
 
 ====================================================================
-通过 6 / 6（失败 0，跳过 0），耗时 17.62s
+通过 8 / 8（失败 0，跳过 0），耗时 32.55s
 结论：全部通过，API 已就绪。
 ====================================================================
 ```
 
-带 `--api-key` 时会多一项鉴权检查（共 7 项，实测 6 通过 / 1 跳过 / 0 失败）。第 5 项耗时随上游波动（多次实测 16～19 秒），不必对具体秒数敏感。
+带 `--api-key` 时会多一项鉴权检查（共 9 项）。上面完整输出 8 项全过；加 `--skip-download` 时下载项会跳过（实测 7 通过 / 1 跳过 / 0 失败）。第 7 项耗时随上游波动（历次实测 16～22 秒），不必对具体秒数敏感。
 
-第 4、5 项会真的访问上游站点（CIE 走 `cie.fraft.cn`），上游临时不可用时它们会 FAIL——那是上游问题，不是你的部署问题。
+第 6、7 项会真的访问上游站点（CIE 走 `cie.fraft.cn`），上游临时不可用时它们会 FAIL——那是上游问题，不是你的部署问题。
 
 ## 5 公网调用
 
@@ -1019,7 +1155,7 @@ sudo ss -ltnp | grep ':80 '                               # HTTP-01 验证需要
 
 - [ ] `sudo systemctl status examdata` 是 `active (running)`
 - [ ] `sudo ss -ltnp | grep 8000` 显示 `127.0.0.1:8000`
-- [ ] `curl -s http://127.0.0.1:8000/health` 返回 `{"status":"ok","papers":16}`
+- [ ] `curl -s http://127.0.0.1:8000/health` 返回 `{"status":"ok","papers":1549}`
 - [ ] `curl -s https://<你的域名>/api/v1/boards` 返回 `schema_version` 与两个 board
 - [ ] `python scripts/smoke_public_api.py --base-url https://<你的域名> --api-key <API_KEY>` 全部 PASS
 - [ ] 从外部机器 `curl -m 5 http://<服务器公网IP>:8000/health` 失败
@@ -1030,13 +1166,15 @@ sudo ss -ltnp | grep ':80 '                               # HTTP-01 验证需要
 
 ## 6 数据现状与能力边界
 
-如实说明，免得你以为是接口坏了：
+> 本节原有表格与接口输出为历史取证快照。后续 Edexcel r13 报告及 CIE 16:36 汇总已更新，当前状态以 [项目总文档](../../docs/PROJECT_STATUS.md) 与其链接证据为准；不将旧响应数字改写成未经重跑的接口输出。
+
+如实说明，免得你以为是接口坏了（以下为 2026-10-05 快照）：
 
 | 项 | 现状 |
 |---|---|
 | Cambridge（`board.key=cambridge`） | **751 道题 / 16 卷**；科目 `0580`、`9709`、`0620`、`0478`；文档 35 份 |
-| Edexcel（`board.key=edexcel`） | **44 份文档**（14 份 QP + 14 份 MS + 14 份 examiner report + 2 份其它），**尚未解析出题目** |
-| `/api/v1/search` 的 `by_board` | `{"cambridge": 751, "edexcel": 0}`——**这是数据现状，不是接口缺陷** |
+| Edexcel（`board.key=edexcel`） | **43564 道题 / 1533 卷 / 3732 份文档**（1832 QP + 1884 MS + 14 examiner report + 2 其它） |
+| `/api/v1/search` 的 `by_board` | `{"cambridge": 751, "edexcel": 43564}`——**这是数据现状，不是接口缺陷** |
 | `/api/v1/paper` | **两个考试局都能真实取到文件**（本文 3.3 节的字节数都是实测值） |
 | 数据库里的考季写法 | 不规范（`june` / `june 2025` / `november 2025`），所以 `/api/v1/search` 的 `session` 按原始值匹配，不做归一；`/api/v1/question/{id}` 的 `source.session` 才是归一后的考季名 |
 | CIE 题目裁剪 | 不支持：上游只提供整份 PDF，传 `question` 会 `422` |
@@ -1057,7 +1195,10 @@ examdata parse-docs && examdata enrich
 |---|---|
 | `docs/API.md` | 本文：统一网关调用 + 公网部署 |
 | `docs/DEPLOY.md` | 部署总纲：安装、数据准备、CLI 全量参考、既有 HTTP 端点逐条说明、Python 调用、运维、备份 |
-| `src/examdata/api/unified.py` | 统一网关实现（board 归一、自动判定、四个端点） |
+| `src/examdata/api/unified.py` | 统一网关实现（board 归一、自动判定、核心四端点） |
+| `src/examdata/materials/` | 考试发放资料：目录 `catalog.py` + `data/`（`catalog.json`、逐科 `subjects_*.json`）；取回 `fetch.py` + `router.py` |
+| `src/examdata/timetable/` | 考试时间表：CIE Zone 5（解析 `parser.py` + `build.py`，快照 `data/zone5/`）与 Edexcel（解析 `edexcel_parser.py` + `build_edexcel.py`，快照 `data/edexcel/`），共用路由 `router.py` |
+| `research/` | 调研报告：`exam-materials-cie.md`、`exam-materials-edexcel.md`、`exam-timetable-cie-zone5.md`、`exam-timetable-edexcel.md`（结论与实测证据） |
 | `src/examdata/api/app.py` | 应用入口：挂载既有路由与统一网关 |
 | `src/examdata/api/security.py` | 可选安全层：`EXAMDATA_CORS_ORIGINS` 与 `EXAMDATA_API_KEY` |
 | `src/examdata/paperqa/` | 上游适配：`sources/cie_fraft.py`、`sources/pearson.py`、`locator.py`（裁剪）、`errors.py`（状态码） |

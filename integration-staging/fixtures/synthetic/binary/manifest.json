@@ -1,0 +1,130 @@
+{
+  "schema": "examdata.integration.content-manifest/1",
+  "created_by": "Phase A executor (packet A11)",
+  "created_at_local": "2026-10-05T23:30:00+08:00",
+  "created_at_utc": "2026-10-05T15:30:00+00:00",
+  "generator": "integration-staging/tools/build_binary_fixtures.py",
+  "generator_sha256": "14883708b8679e8c582fc60a8b5af653492d7eece86eccba4c86d2ec1fbb95e1",
+  "note": "Synthetic binary samples for the staged transport. 'declared_sha256' is the fixture-side placeholder identity from the frozen provider fixtures; 'sha256'/'byte_size' describe the bytes on disk.",
+  "media_whitelist": [
+    "application/pdf",
+    "image/png"
+  ],
+  "documents": [
+    {
+      "file": "cie-qp.pdf",
+      "media_type": "application/pdf",
+      "system": "cie",
+      "role": "qp",
+      "declared_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "note": "shaped like the CIE synthetic question paper (declared 2222...2)",
+      "byte_size": 817,
+      "sha256": "6596e686e26208b79bef32ecb04561d8813da7b15419ceeb32728dd0c0420790"
+    },
+    {
+      "file": "cie-ms.pdf",
+      "media_type": "application/pdf",
+      "system": "cie",
+      "role": "ms",
+      "declared_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "note": "shaped like the CIE synthetic mark scheme (declared 3333...3)",
+      "byte_size": 712,
+      "sha256": "37b26bec054e2f4ef071f00d19ed0a2dd982c0f665f4ab74c597c9d784c08630"
+    },
+    {
+      "file": "cie-diagram.png",
+      "media_type": "image/png",
+      "system": "cie",
+      "role": "graph",
+      "declared_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "note": "shaped like question 3's required diagram (declared 4444...4)",
+      "byte_size": 1448,
+      "sha256": "0f65db46db49639505d17df5f9bad982dbcd4263ca6d96a8255b79b2f0036ca0"
+    },
+    {
+      "file": "edexcel-qp.pdf",
+      "media_type": "application/pdf",
+      "system": "edexcel",
+      "role": "qp",
+      "declared_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+      "note": "shaped like the Edexcel synthetic question paper (declared 5555...5)",
+      "byte_size": 740,
+      "sha256": "8b40c343cf294d0e40e53bd1d086837d0f268eb8a95f4ece05ebc24ebed8130e"
+    },
+    {
+      "file": "edexcel-ms.pdf",
+      "media_type": "application/pdf",
+      "system": "edexcel",
+      "role": "ms",
+      "declared_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "note": "shaped like the Edexcel synthetic mark scheme (declared 6666...6)",
+      "byte_size": 717,
+      "sha256": "21e9e5f2d202fbb9bd077ee0c191e097f6abedec0f61004b36c2aef9d44a84e0"
+    },
+    {
+      "file": "ielts-diagram.png",
+      "media_type": "image/png",
+      "system": "ielts",
+      "role": "diagram",
+      "declared_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "note": "shaped like IELTS question 5's required diagram (declared 0000...0)",
+      "byte_size": 1831,
+      "sha256": "581ce430b2d8e28cd8be0dfe942c6e73a23072c12b2ec71368b8282ca7b6940f"
+    }
+  ],
+  "syllabuses": [
+    {
+      "public_id": "syl_synthetic_cie_0580",
+      "file": "syllabus-synthetic-cie-0580.pdf",
+      "media_type": "application/pdf",
+      "note": "content sample for the labelled synthetic syllabus fixture",
+      "byte_size": 667,
+      "sha256": "8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da"
+    }
+  ],
+  "materials": [
+    {
+      "public_id": "mat_synthetic_cie_ins",
+      "file": "material-synthetic-cie-ins.pdf",
+      "media_type": "application/pdf",
+      "note": "content sample for the labelled synthetic material fixture",
+      "byte_size": 655,
+      "sha256": "f5980cef27dfdb25e35a194b748da3ae274622de6dea1c97e72c410545760fef"
+    }
+  ],
+  "crops": [
+    {
+      "file": "crop-cie-1-page2.png",
+      "media_type": "image/png",
+      "system": "cie",
+      "native_id": "1",
+      "page": 2,
+      "declared_document_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "note": "crop sample for CIE question 1 on page 2 of the declared qp",
+      "byte_size": 3762,
+      "sha256": "b52c1698d4245b33201e250d1a47ce456961f665086fdf4c0a196c76a93bbf87"
+    },
+    {
+      "file": "crop-cie-2-page3.png",
+      "media_type": "image/png",
+      "system": "cie",
+      "native_id": "2",
+      "page": 3,
+      "declared_document_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "note": "crop sample for CIE question 2 on page 3 of the declared qp",
+      "byte_size": 3754,
+      "sha256": "0a0c6cad9c5ab5a3572cd5fcc8c46f2799d42c9110c5c3805632efaaab4ff711"
+    },
+    {
+      "file": "crop-cie-3-page4.png",
+      "media_type": "image/png",
+      "system": "cie",
+      "native_id": "3",
+      "page": 4,
+      "declared_document_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "note": "crop sample for CIE question 3 on page 4 of the declared qp",
+      "byte_size": 3762,
+      "sha256": "eea2cac490b42d5cc34a2ff51a068b3adf08ea388064dbf6fb55205ac271a3cb"
+    }
+  ]
+}

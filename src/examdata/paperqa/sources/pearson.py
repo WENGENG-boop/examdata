@@ -55,7 +55,8 @@ class PearsonSource:
             records = list(iter_records(self.fetcher, tags, label=subject))
         except (ServletError, ShardExhausted) as exc:
             raise UpstreamError(str(exc)) from exc
-        roles = {"qp", "ms"} if request.mode == "qa" else {"qp"}
+        roles = ({"qp", "ms"} if request.mode in {"qa", "both"}
+                 else {"ms"} if request.mode == "ms" else {"qp"})
         found: dict[tuple[str, str], Document] = {}
         restricted = False
         for record in records:
@@ -85,7 +86,7 @@ class PearsonSource:
             if restricted:
                 raise AccessDenied("Requested Pearson document is not publicly downloadable")
             raise NotFound("Requested Pearson PDFs were not found")
-        if request.mode in {"question", "qa"} and len({d.paper for d in found.values()}) != 1:
+        if request.question is not None and len({d.paper for d in found.values()}) != 1:
             raise AmbiguousDocument("Specify an exact paper identifier, such as wec11-01")
         return sorted(found.values(), key=lambda d: d.name)
 

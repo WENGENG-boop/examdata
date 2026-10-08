@@ -1,0 +1,1776 @@
+{
+  "schema": "ielts.refresh-report/1",
+  "run_id": "refresh-academic-reading-listening-20261004T165454Z",
+  "scope": "academic-reading+listening",
+  "command": "node ielts-api\\tools\\refresh.mjs --books 1,3,10,20,21 --variant academic --skills reading,listening --jobs 2 --max-requests 300 --resume",
+  "data_dir": "C:\\Users\\weo\\Desktop\\api\\ielts-data",
+  "dataset_revision": "rev-8b21015ab64bb73c",
+  "started_at": "2026-10-04T16:54:54.451Z",
+  "finished_at": "2026-10-04T16:54:54.706Z",
+  "dry_run": false,
+  "network_requests": 0,
+  "tasks_total": 40,
+  "counts": {
+    "skipped_verified": 40
+  },
+  "skipped_verified": 40,
+  "imports": {
+    "raw_imported": 0,
+    "raw_cached": 37,
+    "binary_imported": 0,
+    "binary_cached": 1
+  },
+  "gaps": [],
+  "warnings": [],
+  "audio_catalog": "runs/20261003T140007Z-repair/audio/audio-catalog.json",
+  "tasks": [
+    {
+      "key": "cambridge:1:academic:reading:1",
+      "book": 1,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:1:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-1.txt",
+          "expected_sha256": "74c9cff5967b213c15916c88bedd1b388c8397a42d7b32d304d8d3bc3fc3d562",
+          "actual_sha256": "74c9cff5967b213c15916c88bedd1b388c8397a42d7b32d304d8d3bc3fc3d562",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:1:academic:reading:2",
+      "book": 1,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:2:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-5.txt",
+          "expected_sha256": "1f51744e0f6d4583bea19508d39ae7a34e3993e522e79dcfaa9d29121f19bec8",
+          "actual_sha256": "1f51744e0f6d4583bea19508d39ae7a34e3993e522e79dcfaa9d29121f19bec8",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:1:academic:reading:3",
+      "book": 1,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:3:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-9.txt",
+          "expected_sha256": "6212d7f6928965cbd0b810c18e00f42a2dafd364393be55f31ced0aa03f09542",
+          "actual_sha256": "6212d7f6928965cbd0b810c18e00f42a2dafd364393be55f31ced0aa03f09542",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:1:academic:reading:4",
+      "book": 1,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:4:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-13.txt",
+          "expected_sha256": "940cf483089a7527a239f9cfb3749a85af2229ff279d74b82c622c0629775980",
+          "actual_sha256": "940cf483089a7527a239f9cfb3749a85af2229ff279d74b82c622c0629775980",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:1:academic:listening:1",
+      "book": 1,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:1:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-4.txt",
+          "expected_sha256": "eb59d4c4bbdd2b7cb89671c457de07719c0aa4ae09de75776d7da50fd323c41b",
+          "actual_sha256": "eb59d4c4bbdd2b7cb89671c457de07719c0aa4ae09de75776d7da50fd323c41b",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:1:shared:listening:1:P1",
+            "status": "ok",
+            "file_path": "audio/da0720f5a7efe36d74cf7a8bcf54b66c7d62af257bb161616d2e91aa0621d393.mp3",
+            "content_sha256": "da0720f5a7efe36d74cf7a8bcf54b66c7d62af257bb161616d2e91aa0621d393",
+            "bytes": 3731165,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:1:shared:listening:1:P2",
+            "status": "ok",
+            "file_path": "audio/ae284da8baef347c86ed8cdb0a4c160792af123ebcad26b7f7b976c3f21fcdf7.mp3",
+            "content_sha256": "ae284da8baef347c86ed8cdb0a4c160792af123ebcad26b7f7b976c3f21fcdf7",
+            "bytes": 1915968,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:1:shared:listening:1:P3",
+            "status": "ok",
+            "file_path": "audio/84742290f203b54109f51171ddd4f4884ec6c88b12710fa8474a42055a41a20d.mp3",
+            "content_sha256": "84742290f203b54109f51171ddd4f4884ec6c88b12710fa8474a42055a41a20d",
+            "bytes": 3153546,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:1:shared:listening:1:P4",
+            "status": "ok",
+            "file_path": "audio/4af0abaabe28f2ea0c5f70ace1ddcc8d45f0cb2e68ce974e260ef9d0680230d6.mp3",
+            "content_sha256": "4af0abaabe28f2ea0c5f70ace1ddcc8d45f0cb2e68ce974e260ef9d0680230d6",
+            "bytes": 3792605,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:1:academic:listening:2",
+      "book": 1,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:2:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-8.txt",
+          "expected_sha256": "13f7b8b06ab41068a0bebcc57160b2a570049f5bd5bc413e111e152bb61bafe9",
+          "actual_sha256": "13f7b8b06ab41068a0bebcc57160b2a570049f5bd5bc413e111e152bb61bafe9",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:1:shared:listening:2:P1",
+            "status": "ok",
+            "file_path": "audio/89b2bbf7df2be2b7320c56a0fbfd21e3673bbb88e6994ab7e7f2d114835d4217.mp3",
+            "content_sha256": "89b2bbf7df2be2b7320c56a0fbfd21e3673bbb88e6994ab7e7f2d114835d4217",
+            "bytes": 2886157,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:1:shared:listening:2:P2",
+            "status": "ok",
+            "file_path": "audio/91463bf3b4c57c0a7dcf974bc66b9368f72f9664bfb2b72a7f3dc2e4537a492e.mp3",
+            "content_sha256": "91463bf3b4c57c0a7dcf974bc66b9368f72f9664bfb2b72a7f3dc2e4537a492e",
+            "bytes": 1470843,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:1:shared:listening:2:P3",
+            "status": "ok",
+            "file_path": "audio/3aad21850dcc8cc4fd7566aedea375313c25a0222188923cc76bbbb23d229a54.mp3",
+            "content_sha256": "3aad21850dcc8cc4fd7566aedea375313c25a0222188923cc76bbbb23d229a54",
+            "bytes": 2283356,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:1:shared:listening:2:P4",
+            "status": "ok",
+            "file_path": "audio/5a392f63c041f9d29888b8662215c52108e04409881f5204d4effeb831edc35c.mp3",
+            "content_sha256": "5a392f63c041f9d29888b8662215c52108e04409881f5204d4effeb831edc35c",
+            "bytes": 2332257,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:1:academic:listening:3",
+      "book": 1,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:3:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-12.txt",
+          "expected_sha256": "c15f78aea2011945aa4b16f45c8b6d04160bb7af8ec9e22ac82ead2812c837aa",
+          "actual_sha256": "c15f78aea2011945aa4b16f45c8b6d04160bb7af8ec9e22ac82ead2812c837aa",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:1:shared:listening:3:P1",
+            "status": "ok",
+            "file_path": "audio/a68da2d14bff3caa20e75fb499d51acf79a1d3de0210c56698d6edc821628887.mp3",
+            "content_sha256": "a68da2d14bff3caa20e75fb499d51acf79a1d3de0210c56698d6edc821628887",
+            "bytes": 2811865,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:1:shared:listening:3:P2",
+            "status": "ok",
+            "file_path": "audio/29d5d2ee66febd6c9d5b67ff9b706a727463072de1aee1943484e4ea3626924c.mp3",
+            "content_sha256": "29d5d2ee66febd6c9d5b67ff9b706a727463072de1aee1943484e4ea3626924c",
+            "bytes": 2425984,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:1:shared:listening:3:P3",
+            "status": "ok",
+            "file_path": "audio/fd4cd9f293ea59b0b8920059859c0df569e7ba399f00c044aae86e55e6e7cd6d.mp3",
+            "content_sha256": "fd4cd9f293ea59b0b8920059859c0df569e7ba399f00c044aae86e55e6e7cd6d",
+            "bytes": 1948257,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:1:shared:listening:3:P4",
+            "status": "ok",
+            "file_path": "audio/7bed553c98e3da3befd88210a91d3f7ce3ca5023eb126e41700f3a58cc0d0f5f.mp3",
+            "content_sha256": "7bed553c98e3da3befd88210a91d3f7ce3ca5023eb126e41700f3a58cc0d0f5f",
+            "bytes": 2641965,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:1:academic:listening:4",
+      "book": 1,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:1:4:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-15.txt",
+          "expected_sha256": "d412038881894bc3c984cddfc7a9d197bf4c5eaa8c16de4c33a82707ce3eff11",
+          "actual_sha256": "d412038881894bc3c984cddfc7a9d197bf4c5eaa8c16de4c33a82707ce3eff11",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:1:shared:listening:4:P1",
+            "status": "ok",
+            "file_path": "audio/136160236589c26e90ebbb6b80ea987cf61d511160d862a6b799527de21c34b2.mp3",
+            "content_sha256": "136160236589c26e90ebbb6b80ea987cf61d511160d862a6b799527de21c34b2",
+            "bytes": 2825344,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:1:shared:listening:4:P2",
+            "status": "ok",
+            "file_path": "audio/cb98c349410a2eb22f3584ea219122627c1e5169f636f6b9ec88d294b2980ac2.mp3",
+            "content_sha256": "cb98c349410a2eb22f3584ea219122627c1e5169f636f6b9ec88d294b2980ac2",
+            "bytes": 2356707,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:1:shared:listening:4:P3",
+            "status": "ok",
+            "file_path": "audio/46b2ca543fc1bfc614c99eae7e5b71930899660e4dd39560beffb80d21f71948.mp3",
+            "content_sha256": "46b2ca543fc1bfc614c99eae7e5b71930899660e4dd39560beffb80d21f71948",
+            "bytes": 2708107,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:1:shared:listening:4:P4",
+            "status": "ok",
+            "file_path": "audio/70009406f2a36e112810a98c697cddbf4326563c710df28dde8f6485b6c56a78.mp3",
+            "content_sha256": "70009406f2a36e112810a98c697cddbf4326563c710df28dde8f6485b6c56a78",
+            "bytes": 2229752,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:reading:1",
+      "book": 3,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:3:1:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-35.txt",
+          "expected_sha256": "9b076f8a791ba0fd7c47d131a708ef2e378ccfe538e67b45d393c2711b11e007",
+          "actual_sha256": "9b076f8a791ba0fd7c47d131a708ef2e378ccfe538e67b45d393c2711b11e007",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:reading:2",
+      "book": 3,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:3:2:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-37.txt",
+          "expected_sha256": "eafa6c753d420b7a8cb3a5bf244952874a66fd241d4210d6a73eccee8dfa7c37",
+          "actual_sha256": "eafa6c753d420b7a8cb3a5bf244952874a66fd241d4210d6a73eccee8dfa7c37",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:reading:3",
+      "book": 3,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:3:3:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-41.txt",
+          "expected_sha256": "b39c7fee3319c217728061058918c78a8644d1e1d07020e167fb0c099c2594c5",
+          "actual_sha256": "b39c7fee3319c217728061058918c78a8644d1e1d07020e167fb0c099c2594c5",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:reading:4",
+      "book": 3,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:3:4:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-43.txt",
+          "expected_sha256": "60715060677b367a0981e367129efa14743081f2fc00ede2c730bb788e79990a",
+          "actual_sha256": "60715060677b367a0981e367129efa14743081f2fc00ede2c730bb788e79990a",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:listening:1",
+      "book": 3,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:3:1:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-34.txt",
+          "expected_sha256": "ffae804698fd2a9bdd773750e845d62389c222e0f5794296599f48a9eee365c3",
+          "actual_sha256": "ffae804698fd2a9bdd773750e845d62389c222e0f5794296599f48a9eee365c3",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:3:shared:listening:1:P1",
+            "status": "ok",
+            "file_path": "audio/248dffea60b7d2b0424e81bbfe473c560ed944ea9e3d8508762a8e4dd328c90d.mp3",
+            "content_sha256": "248dffea60b7d2b0424e81bbfe473c560ed944ea9e3d8508762a8e4dd328c90d",
+            "bytes": 3436985,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:3:shared:listening:1:P2",
+            "status": "ok",
+            "file_path": "audio/2d9c93a5ab0279e2367db053f393d65b1281e73d35d35bb6b6326bd9ea059958.mp3",
+            "content_sha256": "2d9c93a5ab0279e2367db053f393d65b1281e73d35d35bb6b6326bd9ea059958",
+            "bytes": 3669998,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:3:shared:listening:1:P3",
+            "status": "ok",
+            "file_path": "audio/279a90028977df14b538132d96e6b14e80f502a5c95771827c3716132457f9f4.mp3",
+            "content_sha256": "279a90028977df14b538132d96e6b14e80f502a5c95771827c3716132457f9f4",
+            "bytes": 2551121,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:3:shared:listening:1:P4",
+            "status": "ok",
+            "file_path": "audio/0bef5d59376959a455d4b4b48320ced97a639bbe008fb16959cbbbf94784ab48.mp3",
+            "content_sha256": "0bef5d59376959a455d4b4b48320ced97a639bbe008fb16959cbbbf94784ab48",
+            "bytes": 3688179,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:listening:2",
+      "book": 3,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pdf:3:2:listening",
+          "kind": "pdf-extract",
+          "raw_file": "tmp_audit_ielts/downloads/book_3.pdf",
+          "expected_sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845",
+          "actual_sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845",
+          "status": "cached",
+          "store": "pdf"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:3:shared:listening:2:P1",
+            "status": "ok",
+            "file_path": "audio/801e7fdc3dba3503742090a79281709c6fd7566160fc3066d951369de3942ceb.mp3",
+            "content_sha256": "801e7fdc3dba3503742090a79281709c6fd7566160fc3066d951369de3942ceb",
+            "bytes": 3340855,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:3:shared:listening:2:P2",
+            "status": "ok",
+            "file_path": "audio/4a66a90f6905679a7a8d31038bd9e09ac61ca83fbf2e57aba778bbf9536b6fb6.mp3",
+            "content_sha256": "4a66a90f6905679a7a8d31038bd9e09ac61ca83fbf2e57aba778bbf9536b6fb6",
+            "bytes": 2471709,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:3:shared:listening:2:P3",
+            "status": "ok",
+            "file_path": "audio/5cfe7effa1dd1dadd79cf255f9be777295a15ab3fc57f5bf19968bdb11683a7f.mp3",
+            "content_sha256": "5cfe7effa1dd1dadd79cf255f9be777295a15ab3fc57f5bf19968bdb11683a7f",
+            "bytes": 3131457,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:3:shared:listening:2:P4",
+            "status": "ok",
+            "file_path": "audio/e443fb234240de61d3504428567fc1d4f952dffe85d955c14df5949ebb6b9c43.mp3",
+            "content_sha256": "e443fb234240de61d3504428567fc1d4f952dffe85d955c14df5949ebb6b9c43",
+            "bytes": 3090288,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:listening:3",
+      "book": 3,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pdf:3:3:listening",
+          "kind": "pdf-extract",
+          "raw_file": "tmp_audit_ielts/downloads/book_3.pdf",
+          "expected_sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845",
+          "actual_sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845",
+          "status": "cached",
+          "store": "pdf"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:3:shared:listening:3:P1",
+            "status": "ok",
+            "file_path": "audio/5bfa876d59212882214f8c0e668c306f3fc0832cc946996c0d279e2338e50c0d.mp3",
+            "content_sha256": "5bfa876d59212882214f8c0e668c306f3fc0832cc946996c0d279e2338e50c0d",
+            "bytes": 3685044,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:3:shared:listening:3:P2",
+            "status": "ok",
+            "file_path": "audio/9f6ea2a7a18c777f364bf3cbc1f9149349348fb27a2f9bbc7e9a0f9f1ba2a0c0.mp3",
+            "content_sha256": "9f6ea2a7a18c777f364bf3cbc1f9149349348fb27a2f9bbc7e9a0f9f1ba2a0c0",
+            "bytes": 2676300,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:3:shared:listening:3:P3",
+            "status": "ok",
+            "file_path": "audio/f9d39ed3c417914aa26d3b6745caced8304c4b08f9b62902e7411dd53f6ff877.mp3",
+            "content_sha256": "f9d39ed3c417914aa26d3b6745caced8304c4b08f9b62902e7411dd53f6ff877",
+            "bytes": 2444959,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:3:shared:listening:3:P4",
+            "status": "ok",
+            "file_path": "audio/5d73e84bceda13378ed48ba895ea7a263178c769438b0e3e110df3b83a03b455.mp3",
+            "content_sha256": "5d73e84bceda13378ed48ba895ea7a263178c769438b0e3e110df3b83a03b455",
+            "bytes": 3261652,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:3:academic:listening:4",
+      "book": 3,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pdf:3:4:listening",
+          "kind": "pdf-extract",
+          "raw_file": "tmp_audit_ielts/downloads/book_3.pdf",
+          "expected_sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845",
+          "actual_sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845",
+          "status": "cached",
+          "store": "pdf"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:3:shared:listening:4:P1",
+            "status": "ok",
+            "file_path": "audio/18fe596f78f859ed9ab94b4451f0533dfbcaac7915ca2b1b70cb6ebfd37fe4fb.mp3",
+            "content_sha256": "18fe596f78f859ed9ab94b4451f0533dfbcaac7915ca2b1b70cb6ebfd37fe4fb",
+            "bytes": 3195405,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:3:shared:listening:4:P2",
+            "status": "ok",
+            "file_path": "audio/5742e98b00ae550a4d400f4fd932a975cdde12e0a7ba99a3526fc5831b94168a.mp3",
+            "content_sha256": "5742e98b00ae550a4d400f4fd932a975cdde12e0a7ba99a3526fc5831b94168a",
+            "bytes": 2553420,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:3:shared:listening:4:P3",
+            "status": "ok",
+            "file_path": "audio/50229b4e3ac255efc285fc0c5c46f120f38973e81adb2bd9be2f567c5e04b7bf.mp3",
+            "content_sha256": "50229b4e3ac255efc285fc0c5c46f120f38973e81adb2bd9be2f567c5e04b7bf",
+            "bytes": 2492816,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:3:shared:listening:4:P4",
+            "status": "ok",
+            "file_path": "audio/8fb3607d2de5c2c1b4077843dd68e77aaacf2d004ab8e017346c1f4f95ac5092.mp3",
+            "content_sha256": "8fb3607d2de5c2c1b4077843dd68e77aaacf2d004ab8e017346c1f4f95ac5092",
+            "bytes": 3504068,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:reading:1",
+      "book": 10,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:1:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-143.txt",
+          "expected_sha256": "97054ebca04d8636a264beff895613cbb206cf951231586a6c59ba763fbc489b",
+          "actual_sha256": "97054ebca04d8636a264beff895613cbb206cf951231586a6c59ba763fbc489b",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:reading:2",
+      "book": 10,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:2:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-147.txt",
+          "expected_sha256": "e46f10278364981df5e7d8c2b30e532ae76df99cb3126dddc189b1091ac26348",
+          "actual_sha256": "e46f10278364981df5e7d8c2b30e532ae76df99cb3126dddc189b1091ac26348",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:reading:3",
+      "book": 10,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:3:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-152.txt",
+          "expected_sha256": "84559d9437508523e9ff6360db1dbd8a0383686740d3fc5686085e18326ae0c5",
+          "actual_sha256": "84559d9437508523e9ff6360db1dbd8a0383686740d3fc5686085e18326ae0c5",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:reading:4",
+      "book": 10,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:4:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-155.txt",
+          "expected_sha256": "ac1a7bc7408e0bca8bf1493f2080bdca31d05387b4f2b8f9fd3d02519e3d04c5",
+          "actual_sha256": "ac1a7bc7408e0bca8bf1493f2080bdca31d05387b4f2b8f9fd3d02519e3d04c5",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:listening:1",
+      "book": 10,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:1:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-144.txt",
+          "expected_sha256": "b9ce4b8ff8a1646d681d682df45e9746169f5e31337a7c494afdf8c32d36876d",
+          "actual_sha256": "b9ce4b8ff8a1646d681d682df45e9746169f5e31337a7c494afdf8c32d36876d",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:10:shared:listening:1:P1",
+            "status": "ok",
+            "file_path": "audio/39c82e95f451177791d906ce4e71a825af51d8189bfea8069f6c8fe59ae364e6.mp3",
+            "content_sha256": "39c82e95f451177791d906ce4e71a825af51d8189bfea8069f6c8fe59ae364e6",
+            "bytes": 7279152,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:10:shared:listening:1:P2",
+            "status": "ok",
+            "file_path": "audio/9fcb8ec64bd54fbe4959c4b0fb8514f3ba70aa1b9e574ef7b46791474ec26461.mp3",
+            "content_sha256": "9fcb8ec64bd54fbe4959c4b0fb8514f3ba70aa1b9e574ef7b46791474ec26461",
+            "bytes": 6070686,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:10:shared:listening:1:P3",
+            "status": "ok",
+            "file_path": "audio/66e59fd1ff69b32f19c53177d5862b223de15e8adc35da776a67871468c96569.mp3",
+            "content_sha256": "66e59fd1ff69b32f19c53177d5862b223de15e8adc35da776a67871468c96569",
+            "bytes": 6227478,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:10:shared:listening:1:P4",
+            "status": "ok",
+            "file_path": "audio/efc23eefcf168e386b641cb7b78333777b6b4733b320ab2d34489d607620ae2d.mp3",
+            "content_sha256": "efc23eefcf168e386b641cb7b78333777b6b4733b320ab2d34489d607620ae2d",
+            "bytes": 6381351,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:listening:2",
+      "book": 10,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:2:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-148.txt",
+          "expected_sha256": "df1b1e2956fb665e20a778d5a1a18acfd8060520af297233d1600fa5e19332b1",
+          "actual_sha256": "df1b1e2956fb665e20a778d5a1a18acfd8060520af297233d1600fa5e19332b1",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:10:shared:listening:2:P1",
+            "status": "ok",
+            "file_path": "audio/6d2f974bcad007fa3e82a1f51178c3cd41ad33d549ef2c438e1565032cc84255.mp3",
+            "content_sha256": "6d2f974bcad007fa3e82a1f51178c3cd41ad33d549ef2c438e1565032cc84255",
+            "bytes": 6317967,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:10:shared:listening:2:P2",
+            "status": "ok",
+            "file_path": "audio/71b149b5f77342c6b2286a2d063f1b921261211807c7cd75cff78a3158074021.mp3",
+            "content_sha256": "71b149b5f77342c6b2286a2d063f1b921261211807c7cd75cff78a3158074021",
+            "bytes": 5778369,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:10:shared:listening:2:P3",
+            "status": "ok",
+            "file_path": "audio/bb10976d6ed326f462d84b2c644d7a5facdc90b20be24e114f989ebdc13d712e.mp3",
+            "content_sha256": "bb10976d6ed326f462d84b2c644d7a5facdc90b20be24e114f989ebdc13d712e",
+            "bytes": 7166562,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:10:shared:listening:2:P4",
+            "status": "ok",
+            "file_path": "audio/359b5837fd538a8967b4820ff63b3835ffa146455458a2cc18947e3cfa2ccb47.mp3",
+            "content_sha256": "359b5837fd538a8967b4820ff63b3835ffa146455458a2cc18947e3cfa2ccb47",
+            "bytes": 6562329,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:listening:3",
+      "book": 10,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:3:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-151.txt",
+          "expected_sha256": "bbb8bdd88cc7d43e24267f074d2df399519754dba19551e75d7567755ea8d29e",
+          "actual_sha256": "bbb8bdd88cc7d43e24267f074d2df399519754dba19551e75d7567755ea8d29e",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:10:shared:listening:3:P1",
+            "status": "ok",
+            "file_path": "audio/6516521325d66d23d3d43ddd00bf06f70e8ff766943565757664a7f410429574.mp3",
+            "content_sha256": "6516521325d66d23d3d43ddd00bf06f70e8ff766943565757664a7f410429574",
+            "bytes": 8051436,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:10:shared:listening:3:P2",
+            "status": "ok",
+            "file_path": "audio/a06d4be643fba3c93b74ee01b9e4cd7355febc41e59f3f132c35efc61b87d83f.mp3",
+            "content_sha256": "a06d4be643fba3c93b74ee01b9e4cd7355febc41e59f3f132c35efc61b87d83f",
+            "bytes": 6360918,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:10:shared:listening:3:P3",
+            "status": "ok",
+            "file_path": "audio/4ddf7928b15293aecadd090fcc0ccca7dd71c4f2f8c4d39413bdbd955308f10c.mp3",
+            "content_sha256": "4ddf7928b15293aecadd090fcc0ccca7dd71c4f2f8c4d39413bdbd955308f10c",
+            "bytes": 6760821,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:10:shared:listening:3:P4",
+            "status": "ok",
+            "file_path": "audio/700c5cb83ad86125a78d556479fcb75532b517ce02fa9281983d38e8981d3517.mp3",
+            "content_sha256": "700c5cb83ad86125a78d556479fcb75532b517ce02fa9281983d38e8981d3517",
+            "bytes": 7812495,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:10:academic:listening:4",
+      "book": 10,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:10:4:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-156.txt",
+          "expected_sha256": "0a852835c479a396af1e4629b24fc9739bbe5bf1b6d94d5ca52c2eb906073916",
+          "actual_sha256": "0a852835c479a396af1e4629b24fc9739bbe5bf1b6d94d5ca52c2eb906073916",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:10:shared:listening:4:P1",
+            "status": "ok",
+            "file_path": "audio/718d0e60f5993069b31984201ac7fe57a67e57ad9fd5eb4f760959c5e5549e05.mp3",
+            "content_sha256": "718d0e60f5993069b31984201ac7fe57a67e57ad9fd5eb4f760959c5e5549e05",
+            "bytes": 6877998,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:10:shared:listening:4:P2",
+            "status": "ok",
+            "file_path": "audio/769158231df1b766639998d4d650070dc74d826d6d9c269bae574168b1a3de12.mp3",
+            "content_sha256": "769158231df1b766639998d4d650070dc74d826d6d9c269bae574168b1a3de12",
+            "bytes": 6246243,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:10:shared:listening:4:P3",
+            "status": "ok",
+            "file_path": "audio/c22d7ea54ce6fd0acdf3a6452dd8581c6fbbfca70e3e21145cd9fde220a1a703.mp3",
+            "content_sha256": "c22d7ea54ce6fd0acdf3a6452dd8581c6fbbfca70e3e21145cd9fde220a1a703",
+            "bytes": 6913026,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:10:shared:listening:4:P4",
+            "status": "ok",
+            "file_path": "audio/c67bdad325135ddbeb1960649212cea1b7eb015d9061f44bb3212ed531540f4e.mp3",
+            "content_sha256": "c67bdad325135ddbeb1960649212cea1b7eb015d9061f44bb3212ed531540f4e",
+            "bytes": 7128198,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:reading:1",
+      "book": 20,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:1:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-303.txt",
+          "expected_sha256": "4d732d26e212b6ef80eb20e9b7d6a1a5a699e54802af8e14df8156d1d8116ac5",
+          "actual_sha256": "4d732d26e212b6ef80eb20e9b7d6a1a5a699e54802af8e14df8156d1d8116ac5",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:reading:2",
+      "book": 20,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:2:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-307.txt",
+          "expected_sha256": "dbf02d80165f3d067bf7212761fb1268c7f8b3f981c3d6300b0bfda8d8e2b2c8",
+          "actual_sha256": "dbf02d80165f3d067bf7212761fb1268c7f8b3f981c3d6300b0bfda8d8e2b2c8",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:reading:3",
+      "book": 20,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:3:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-312.txt",
+          "expected_sha256": "d2be88c07b8a203c852af7ff2204c411c77eca1c51dc69ecabf6efb3b5df0ac1",
+          "actual_sha256": "d2be88c07b8a203c852af7ff2204c411c77eca1c51dc69ecabf6efb3b5df0ac1",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:reading:4",
+      "book": 20,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:4:academic_reading",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-315.txt",
+          "expected_sha256": "5ca27418c4fe922e576d79f39e76c134421e553b12cb2ce9b081541398d83f77",
+          "actual_sha256": "5ca27418c4fe922e576d79f39e76c134421e553b12cb2ce9b081541398d83f77",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:listening:1",
+      "book": 20,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:1:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-304.txt",
+          "expected_sha256": "8326b708311e27ba1a46f62cedcf03e1da5c2992310352230454482fbe453d0c",
+          "actual_sha256": "8326b708311e27ba1a46f62cedcf03e1da5c2992310352230454482fbe453d0c",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:20:shared:listening:1:P1",
+            "status": "ok",
+            "file_path": "audio/17e2a0296bf35a49cf5002d1a637686287fce57dc5da3e4f7c29f5287dbeffbc.mp3",
+            "content_sha256": "17e2a0296bf35a49cf5002d1a637686287fce57dc5da3e4f7c29f5287dbeffbc",
+            "bytes": 7466049,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:20:shared:listening:1:P2",
+            "status": "ok",
+            "file_path": "audio/5be47ae3b5afb59face2c538df8e4efaa6c94a58cf040fd805784b19923d09a6.mp3",
+            "content_sha256": "5be47ae3b5afb59face2c538df8e4efaa6c94a58cf040fd805784b19923d09a6",
+            "bytes": 8531427,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:20:shared:listening:1:P3",
+            "status": "ok",
+            "file_path": "audio/ef95fb46f98a200dbaec07436abe97525e74f9884d39a98cf81982e496281fa9.mp3",
+            "content_sha256": "ef95fb46f98a200dbaec07436abe97525e74f9884d39a98cf81982e496281fa9",
+            "bytes": 8602898,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:20:shared:listening:1:P4",
+            "status": "ok",
+            "file_path": "audio/8514615c4ecbd3389609a17d5a83b0fe68cb470d57cb825390f2f462367833b8.mp3",
+            "content_sha256": "8514615c4ecbd3389609a17d5a83b0fe68cb470d57cb825390f2f462367833b8",
+            "bytes": 6872965,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:listening:2",
+      "book": 20,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:2:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-308.txt",
+          "expected_sha256": "f767a8a1938f33d481a31c113dd6d7a5aac0ba82f1127489f9dcb44c960c744a",
+          "actual_sha256": "f767a8a1938f33d481a31c113dd6d7a5aac0ba82f1127489f9dcb44c960c744a",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:20:shared:listening:2:P1",
+            "status": "ok",
+            "file_path": "audio/99a6c50270e9fa6ef310b1dfa6b0b1aaf8d6ae47d4f80c919fc99a37000e946a.mp3",
+            "content_sha256": "99a6c50270e9fa6ef310b1dfa6b0b1aaf8d6ae47d4f80c919fc99a37000e946a",
+            "bytes": 5971845,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:20:shared:listening:2:P2",
+            "status": "ok",
+            "file_path": "audio/93dcd493b1b015282e39826323bbab137ebc97de99e2aca4161922a31c3026ac.mp3",
+            "content_sha256": "93dcd493b1b015282e39826323bbab137ebc97de99e2aca4161922a31c3026ac",
+            "bytes": 10230431,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:20:shared:listening:2:P3",
+            "status": "ok",
+            "file_path": "audio/5f4e4a1a460f74b56d293457f1d9333459f19bdc8293eb6281355509f0da3096.mp3",
+            "content_sha256": "5f4e4a1a460f74b56d293457f1d9333459f19bdc8293eb6281355509f0da3096",
+            "bytes": 4681187,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:20:shared:listening:2:P4",
+            "status": "ok",
+            "file_path": "audio/b27274c9578bce11ef7b6c062aa4485aaf978aa3403ebc4e189eb1da07a60590.mp3",
+            "content_sha256": "b27274c9578bce11ef7b6c062aa4485aaf978aa3403ebc4e189eb1da07a60590",
+            "bytes": 8409801,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:listening:3",
+      "book": 20,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:3:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-311.txt",
+          "expected_sha256": "79266f49e0b6f4228d8a9c6899b6d8f45ea2d6ac04d3d8e747b61eedb18a1e49",
+          "actual_sha256": "79266f49e0b6f4228d8a9c6899b6d8f45ea2d6ac04d3d8e747b61eedb18a1e49",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:20:shared:listening:3:P1",
+            "status": "ok",
+            "file_path": "audio/9aa3104aa7f2d079fefc2b0d6bb3e1ac37a1697587de8bad13dbecb94a164820.mp3",
+            "content_sha256": "9aa3104aa7f2d079fefc2b0d6bb3e1ac37a1697587de8bad13dbecb94a164820",
+            "bytes": 7773667,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:20:shared:listening:3:P2",
+            "status": "ok",
+            "file_path": "audio/699cc3024aaecfb75e2e5e4000a6057299349750b439dd7713ee455ef91f18d7.mp3",
+            "content_sha256": "699cc3024aaecfb75e2e5e4000a6057299349750b439dd7713ee455ef91f18d7",
+            "bytes": 7023431,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:20:shared:listening:3:P3",
+            "status": "ok",
+            "file_path": "audio/92aa770a6475c03b6db4b45efda86444353a1803b9f563aca07208d341e2aaec.mp3",
+            "content_sha256": "92aa770a6475c03b6db4b45efda86444353a1803b9f563aca07208d341e2aaec",
+            "bytes": 8390992,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:20:shared:listening:3:P4",
+            "status": "ok",
+            "file_path": "audio/ded9dbd0894dd9d936fe803437cecd14f9e965c1c5dfcdfa45bc19b834e66b71.mp3",
+            "content_sha256": "ded9dbd0894dd9d936fe803437cecd14f9e965c1c5dfcdfa45bc19b834e66b71",
+            "bytes": 7601886,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:20:academic:listening:4",
+      "book": 20,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "pte:20:4:listening",
+          "kind": "pte-raw",
+          "raw_file": "tmp_audit_ielts/completeness_20261003/raw-316.txt",
+          "expected_sha256": "87f29fcb37c7e98b10b49e7a3201da75bd1da0d67ed9901df6d1634e9aa19229",
+          "actual_sha256": "87f29fcb37c7e98b10b49e7a3201da75bd1da0d67ed9901df6d1634e9aa19229",
+          "source": "practicepteonline",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:20:shared:listening:4:P1",
+            "status": "ok",
+            "file_path": "audio/ee0f896f976970a7e9936f52c233d4bbf46877f0d75a980c42a2786f26365bca.mp3",
+            "content_sha256": "ee0f896f976970a7e9936f52c233d4bbf46877f0d75a980c42a2786f26365bca",
+            "bytes": 6703274,
+            "catalog_status": "available"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:20:shared:listening:4:P2",
+            "status": "ok",
+            "file_path": "audio/eb3cbcd43f713ee6867343255c0bd3c6c01c70368a7b4cd5c28ba16875d20c82.mp3",
+            "content_sha256": "eb3cbcd43f713ee6867343255c0bd3c6c01c70368a7b4cd5c28ba16875d20c82",
+            "bytes": 8092570,
+            "catalog_status": "available"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:20:shared:listening:4:P3",
+            "status": "ok",
+            "file_path": "audio/f57df5f2995b94a289d4f2301b1b50b954c0d62d2867873c61a0844a6d277afb.mp3",
+            "content_sha256": "f57df5f2995b94a289d4f2301b1b50b954c0d62d2867873c61a0844a6d277afb",
+            "bytes": 8754617,
+            "catalog_status": "available"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:20:shared:listening:4:P4",
+            "status": "ok",
+            "file_path": "audio/9cfa88e6bfcc8dcc54b8beaa53578315de39070b740d699cbaf1d84aac708c7f.mp3",
+            "content_sha256": "9cfa88e6bfcc8dcc54b8beaa53578315de39070b740d699cbaf1d84aac708c7f",
+            "bytes": 6944436,
+            "catalog_status": "available"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:reading:1",
+      "book": 21,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:1:reading",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t1-reading.html",
+          "expected_sha256": "a1509dcec52f9457b8627b031464243152598b0b2bf11881688b48823f5691de",
+          "actual_sha256": "a1509dcec52f9457b8627b031464243152598b0b2bf11881688b48823f5691de",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:reading:2",
+      "book": 21,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:2:reading",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t2-reading.html",
+          "expected_sha256": "69fde7f89489805b3e1dbca132b0eadf6665ebddd1d8972bb66bc53cb6fac271",
+          "actual_sha256": "69fde7f89489805b3e1dbca132b0eadf6665ebddd1d8972bb66bc53cb6fac271",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:reading:3",
+      "book": 21,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:3:reading",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t3-reading.html",
+          "expected_sha256": "8a194018f3a55cc6b33a99c130ac670459d6ff2cb79f9fcf66c5cd3e935b5252",
+          "actual_sha256": "8a194018f3a55cc6b33a99c130ac670459d6ff2cb79f9fcf66c5cd3e935b5252",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:reading:4",
+      "book": 21,
+      "variant": "academic",
+      "skill": "reading",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:4:reading",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t4-reading.html",
+          "expected_sha256": "a50347e9d0d04cbe7a06e3a0b646a464452981b711fc35ed7202d8ffdac982ba",
+          "actual_sha256": "a50347e9d0d04cbe7a06e3a0b646a464452981b711fc35ed7202d8ffdac982ba",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": null,
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:listening:1",
+      "book": 21,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "1",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:1:listening",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t1-listening.html",
+          "expected_sha256": "20e8cded852bb2cf758a4f07270fd7fd230771ff99090eb208bfbc614b75ebcc",
+          "actual_sha256": "20e8cded852bb2cf758a4f07270fd7fd230771ff99090eb208bfbc614b75ebcc",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:21:shared:listening:1:P1",
+            "status": "ok",
+            "file_path": "audio/28454b2f1902b921571ee0dac62d764b45780d9c4ad998f576b21923ac0ec458.mp3",
+            "content_sha256": "28454b2f1902b921571ee0dac62d764b45780d9c4ad998f576b21923ac0ec458",
+            "bytes": 11216604,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:21:shared:listening:1:P2",
+            "status": "ok",
+            "file_path": "audio/57351b9cbb5ef03dd9d496117de63b88bddcbe7e1da93981c50f474b56b50389.mp3",
+            "content_sha256": "57351b9cbb5ef03dd9d496117de63b88bddcbe7e1da93981c50f474b56b50389",
+            "bytes": 10693738,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:21:shared:listening:1:P3",
+            "status": "ok",
+            "file_path": "audio/2c7a07e216123d8cd7392d8727ec75e1cbab6a58c6d989c9bbff386f64d53d72.mp3",
+            "content_sha256": "2c7a07e216123d8cd7392d8727ec75e1cbab6a58c6d989c9bbff386f64d53d72",
+            "bytes": 9999089,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:21:shared:listening:1:P4",
+            "status": "ok",
+            "file_path": "audio/b9f88f6031a5cff67f488b43117df7559ccb0b8721bd58c7f46bf983c2a2b4bd.mp3",
+            "content_sha256": "b9f88f6031a5cff67f488b43117df7559ccb0b8721bd58c7f46bf983c2a2b4bd",
+            "bytes": 13067124,
+            "catalog_status": "verified"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:listening:2",
+      "book": 21,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "2",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:2:listening",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t2-listening.html",
+          "expected_sha256": "c63005a9485df1fda28b416f0f01b5c7434151fe9c20ea6bb7d1e8fe0f1c0068",
+          "actual_sha256": "c63005a9485df1fda28b416f0f01b5c7434151fe9c20ea6bb7d1e8fe0f1c0068",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:21:shared:listening:2:P1",
+            "status": "ok",
+            "file_path": "audio/fb0d06b22e2e2fd2c6192634053e86ec45c70f49dbf5a13fd02f67d5a1570887.mp3",
+            "content_sha256": "fb0d06b22e2e2fd2c6192634053e86ec45c70f49dbf5a13fd02f67d5a1570887",
+            "bytes": 12081800,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:21:shared:listening:2:P2",
+            "status": "ok",
+            "file_path": "audio/55d1172ffda9f911ad2b402aeebe8c82592f80ae1528a7808e9b9f0f0140c98e.mp3",
+            "content_sha256": "55d1172ffda9f911ad2b402aeebe8c82592f80ae1528a7808e9b9f0f0140c98e",
+            "bytes": 8835491,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:21:shared:listening:2:P3",
+            "status": "ok",
+            "file_path": "audio/08d67a90185dffa0b14c5b9b81c19009732d903e4ff6f9cac06f36ea262a0ae6.mp3",
+            "content_sha256": "08d67a90185dffa0b14c5b9b81c19009732d903e4ff6f9cac06f36ea262a0ae6",
+            "bytes": 10705650,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:21:shared:listening:2:P4",
+            "status": "ok",
+            "file_path": "audio/98fb6ccffc0e05c2b0fab1aef80254aca92f4ffa0705954076cef1880137fb44.mp3",
+            "content_sha256": "98fb6ccffc0e05c2b0fab1aef80254aca92f4ffa0705954076cef1880137fb44",
+            "bytes": 10971902,
+            "catalog_status": "verified"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:listening:3",
+      "book": 21,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "3",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:3:listening",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t3-listening.html",
+          "expected_sha256": "7dc99079c6d48b9f723ce0ea26c2ad3a346817390f6e7f5ab50c238685f7ac1b",
+          "actual_sha256": "7dc99079c6d48b9f723ce0ea26c2ad3a346817390f6e7f5ab50c238685f7ac1b",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:21:shared:listening:3:P1",
+            "status": "ok",
+            "file_path": "audio/416f786615d82791775e771123a378883ccfb039802f83e00f72d661487a5a79.mp3",
+            "content_sha256": "416f786615d82791775e771123a378883ccfb039802f83e00f72d661487a5a79",
+            "bytes": 10367812,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:21:shared:listening:3:P2",
+            "status": "ok",
+            "file_path": "audio/0d39e4e3cd0f6262853e111acd183dc6a6761907282d356da69be0d314204317.mp3",
+            "content_sha256": "0d39e4e3cd0f6262853e111acd183dc6a6761907282d356da69be0d314204317",
+            "bytes": 9853640,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:21:shared:listening:3:P3",
+            "status": "ok",
+            "file_path": "audio/406e68c4a6302ad4321306a33bb80e1eb8766b9b5fa7b9c505006ece48080e32.mp3",
+            "content_sha256": "406e68c4a6302ad4321306a33bb80e1eb8766b9b5fa7b9c505006ece48080e32",
+            "bytes": 9407886,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:21:shared:listening:3:P4",
+            "status": "ok",
+            "file_path": "audio/3c2ca30363eecec365d2a182848418133ab5c81978210af94200a859cc213585.mp3",
+            "content_sha256": "3c2ca30363eecec365d2a182848418133ab5c81978210af94200a859cc213585",
+            "bytes": 13445228,
+            "catalog_status": "verified"
+          }
+        ]
+      },
+      "pdf": null
+    },
+    {
+      "key": "cambridge:21:academic:listening:4",
+      "book": 21,
+      "variant": "academic",
+      "skill": "listening",
+      "test": "4",
+      "kind": "raw",
+      "status": "skipped_verified",
+      "reason": null,
+      "note": null,
+      "evidence": [
+        {
+          "page_ref": "cam21:21:4:listening",
+          "kind": "cam21-html",
+          "raw_file": "tmp_audit_ielts/cam21/t4-listening.html",
+          "expected_sha256": "e070265049520561d21e8cde7e9052ee73dda5394bc473814ac3b8cb52cd519f",
+          "actual_sha256": "e070265049520561d21e8cde7e9052ee73dda5394bc473814ac3b8cb52cd519f",
+          "source": "cam21",
+          "status": "cached"
+        }
+      ],
+      "audio": {
+        "parts": [
+          {
+            "part": 1,
+            "identity": "cambridge:21:shared:listening:4:P1",
+            "status": "ok",
+            "file_path": "audio/b68d69b421351d881516ba6c4ddc2f6938a3d58864b7bcdb8593ef416cad250f.mp3",
+            "content_sha256": "b68d69b421351d881516ba6c4ddc2f6938a3d58864b7bcdb8593ef416cad250f",
+            "bytes": 10216946,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 2,
+            "identity": "cambridge:21:shared:listening:4:P2",
+            "status": "ok",
+            "file_path": "audio/a26ac0dd09e9f6b66d5b70a247bf0c1498b9b4e46dc209a71cda4823dd7c9c38.mp3",
+            "content_sha256": "a26ac0dd09e9f6b66d5b70a247bf0c1498b9b4e46dc209a71cda4823dd7c9c38",
+            "bytes": 10392181,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 3,
+            "identity": "cambridge:21:shared:listening:4:P3",
+            "status": "ok",
+            "file_path": "audio/73519e37463a19bac43c27de92ff54812761946091afd701bafa7bf20ad8601e.mp3",
+            "content_sha256": "73519e37463a19bac43c27de92ff54812761946091afd701bafa7bf20ad8601e",
+            "bytes": 9369016,
+            "catalog_status": "verified"
+          },
+          {
+            "part": 4,
+            "identity": "cambridge:21:shared:listening:4:P4",
+            "status": "ok",
+            "file_path": "audio/2c3077e251447dfa6a8bd8b3b79f9872f41780b7773dfcb77e9164a2f10078bc.mp3",
+            "content_sha256": "2c3077e251447dfa6a8bd8b3b79f9872f41780b7773dfcb77e9164a2f10078bc",
+            "bytes": 10655146,
+            "catalog_status": "verified"
+          }
+        ]
+      },
+      "pdf": null
+    }
+  ],
+  "budget": {
+    "requests": 0,
+    "bytes": 0,
+    "errors": 0,
+    "maxRequests": 300,
+    "maxBytes": 1073741824
+  },
+  "checkpoint": "runs/refresh-academic-reading-listening-20261004T165454Z/checkpoint.json"
+}

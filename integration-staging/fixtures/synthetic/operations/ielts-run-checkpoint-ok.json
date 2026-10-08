@@ -1,0 +1,28 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like a healthy IELTS run checkpoint (ielts-run-checkpoint/1). Invented source ids and counters; no upstream data, no real run state.",
+    "created_by": "Phase A executor (packet A13)",
+    "created_at_local": "2026-10-06T10:10:00+08:00",
+    "provider": "ielts",
+    "purpose": "Drive the read-only IELTS run checkpoint adapter and a healthy coverage row."
+  },
+  "schema_version": "ielts-run-checkpoint/1",
+  "run_id": "synthetic-run-ok",
+  "updated_at": "2026-10-04T19:40:15.361Z",
+  "fetcher": {
+    "counters": {
+      "requests": 4,
+      "bytes": 44,
+      "errors": 0
+    },
+    "sources": {
+      "synthetic-source-a": {
+        "requests": 4,
+        "bytes": 44,
+        "consecutive_5xx": 0,
+        "blocked": null
+      }
+    }
+  }
+}

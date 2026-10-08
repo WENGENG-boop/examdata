@@ -1,0 +1,36 @@
+{
+  "schema": "examdata.integration.b01_node_discovery/1",
+  "run_id": "b00b01-20261006T132400",
+  "probe_a_private_target_layout": {
+    "exit_code": 1,
+    "imported": false,
+    "blocked_by": "F03-GUARD-DEP",
+    "detail": "RuntimeError: staged package is not inside an 'integration-staging' tree (C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private\\src); set EXAMDATA_INTEGRATION_STAGING_ROOT to override"
+  },
+  "probe_b_staging_layout": {
+    "manifest": "integration-staging/components/manifest.json",
+    "admitted_components": [
+      "fake_cli"
+    ],
+    "admitted_count": 1,
+    "manifest_generated_by": "A06 staging fixture (synthetic, authored in integration-staging)",
+    "is_synthetic": true,
+    "entry_point_resolves_inside_root": true,
+    "node_import_guard_specifiers": [],
+    "negative_control_escape_admitted": [],
+    "negative_control_escape_codes": [
+      "not_relative_path"
+    ]
+  },
+  "not_run": [
+    "real Node component discovery: real components are not released (gate:original_paths_released closed); no synthetic stand-in is promoted"
+  ],
+  "checks": {
+    "private_layout_block_is_f03": true,
+    "exactly_one_synthetic_component": true,
+    "synthetic_labelled": true,
+    "entry_point_inside_root": true,
+    "escaping_component_refused": true
+  },
+  "verdict": "pass"
+}

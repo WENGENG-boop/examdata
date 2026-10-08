@@ -1,0 +1,40 @@
+{
+  "allowed": {
+    "toefl-api/lib/catalog.mjs": "96ea5426581abedffbca3c41e7dfa4553ba4115386bb4e8c462507b373e93229",
+    "toefl-api/lib/detail.mjs": "5e451cf0edcbcd3f132b0ce7a77f020bdf6fffd82cd69d537e6809aeaf31c593",
+    "toefl-api/lib/jj.mjs": "920adf0f5068bd7a9d27b4fb53faa9a7d1866a8277790e362ee5bfcda933bdd7",
+    "toefl-api/lib/kmf.mjs": "6c0fc9ce87c830d9971e30ca49ab78ac3a5d59e097ef69fc3ee5e76e6b78f649",
+    "toefl-api/lib/search.mjs": "39fd5ff7c9f9efc96c111af719550ed1f594d704f2725ed46c26df618877e6ba",
+    "toefl-api/lib/sources.mjs": "40c0168b7fa0289752c388aa3bea8be0af78016862d00f90fb981a58a224645e",
+    "toefl-api/lib/util.mjs": "42b743ba67b9ccdc6230e989e14db9edc3e6567b61a32ad96bc5ae313d7f24aa",
+    "toefl-api/toefl-cli.mjs": "dba27dda4fcc50a4763e06fbd81da926be9fade14aa5506bf1c22ed90e95aac4",
+    "toefl-api/tools/build_coverage.py": "34615444c9685ff005d9bb2821996b60b5cc0fb5cfa08768569264e35e61a16f",
+    "toefl-api/tools/build_jj_index.py": "2f6116ff8becc02e00dc9759e4b64f0331e6434711f8fad1c8b1d979042f1154",
+    "toefl-api/tools/build_kmf_index.py": "acbcb6d3482bde7195a2cddd0f945edda888e32bee348822d67d4b6f29229176",
+    "toefl-api/tools/live_evidence.sh": "f23783bfe87cc8f717f8ab22e820b356b1642684b49e4bbd34b9659cdf94e203",
+    "toefl-api/tools/prefetch_jj.mjs": "33936fcc6e82786754dd76d384757633c6cc0d76eb6446b05d289c96b14fc407",
+    "toefl-api/tools/prefetch_kmf.mjs": "278a95f7fef330d4dc8102a3846d26346913260c8d37a4cd456a23f0798cbcda",
+    "toefl-api/tools/prefetch_kmf_sw.mjs": "6acbdb62ed0d779168df45dac4eeb7e9955dac25992751a66a978ccf202c2321",
+    "toefl-api/tools/verify_live_evidence.mjs": "817d7e6ff018bdb446bcee3b4a1c4bb613f4e315b2731b9efe21324c1a5eba04",
+    "examdata/src/examdata/api/toefl.py": "fa7ad72a7468ea78d195f4280e675d559325e02cb30c76755b87585ea88f1fce",
+    "examdata/docs/TOEFL_API.md": "7a2828177bbfc7e334524bb00c2ed19d1b1e59611f949170b9a12eb54b66668a",
+    "toefl-api/REPORT.md": "24b7abca391bc173fc6517fd0be87e6b70624b9ca2d6987cbddc4a91445b3a6c"
+  },
+  "control": {
+    "examdata/src/examdata/adapters/cambridge/__init__.py": "2c9ff186500aec5c3aaff90c9f4ac5eb78b9a8effa0f9ccb1073bc6a7e98b257",
+    "examdata/src/examdata/adapters/cambridge/adapter.py": "5ef8e8b5250f984e859e6cdc4d11a0967b37a7e416de1d0de30242a828230946",
+    "examdata/src/examdata/adapters/cambridge/classify.py": "d76c5de68bc692b9b383acc3f342e0f3497a997ac5e9e20ec3cea58341545098",
+    "examdata/src/examdata/adapters/edexcel/__init__.py": "dbe852ba1824915161c61b210930d8948f52a8727f8f8a253316307651f57bf1",
+    "examdata/src/examdata/adapters/edexcel/adapter.py": "fc84340303f8050e2d51924570f633aeb2544f640989d0d8bce945c52999ed7a",
+    "examdata/src/examdata/adapters/edexcel/classify.py": "af25160181f19837668252eec766ca8ffc158e7e9eb20c1303f5cf5ffc1476c6",
+    "examdata/src/examdata/adapters/edexcel/servlet.py": "568f8eaf8c2a7f5ce59179adce270931d84305b70d263b5c59bcdb810947755a",
+    "examdata/src/examdata/api/ielts.py": "9d79ee009086f72e0fc2c2a94ad679c359d42d0f1e970b15a75915cce03511d3",
+    "examdata/src/examdata/api/unified.py": "9568b295d15e837e69a879cfc7dabf53f16a42d61a7a9c2859ec386fdacbe4c1",
+    "examdata/src/examdata/api/app.py": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+    "examdata/src/examdata/api/security.py": "03b6ccab07eb16f824966afd99bc0cffbc2c66d4918410654febdf648b8d63f6",
+    "ielts-api/ielts-api.mjs": "d25a56c2a67cdde9c25d6b50b16ee09f193817b7f49e07efc3d15c8684880c3a",
+    "ielts-api/ielts-cli.mjs": "bf0a952fdc3cabbf1e3b13f86819ad4fb41955e5723451a0c410986097af5ecf",
+    "ielts-api/answer-matcher.mjs": "9c23fbcafac51df87f96e6a0650b9db151a58ad9b6b0c63ed3ee138e81e5e24a",
+    "ielts-api/audio-matcher.mjs": "6ed7437821bee7e2c63f7378d101303df1777ba91d753ac8e3a04135bb5e34d8"
+  }
+}

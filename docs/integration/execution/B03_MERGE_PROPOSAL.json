@@ -1,0 +1,118 @@
+{
+  "proposal_version": "b03-merge-proposal/1",
+  "packet": "B03",
+  "generated_by": "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_proposals.py",
+  "generated_at": "2026-10-07T00:35:39+08:00",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "candidate_manifest": "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/B03_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "candidate_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "candidate_tree_digest_rule": "sha256 over 'path\\0sha256\\n' for every file under the root, sorted by path, excluding __pycache__/.pytest_cache and excluding the named manifest itself",
+    "parent_manifest": "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1/B02_CANDIDATE_MANIFEST.json",
+    "parent_manifest_sha256": "59dfc8c79b59d86ae67313cdb96048d5bb73e365405070de3e9b2a872264648d",
+    "parent_manifest_sha256_at_build": "59dfc8c79b59d86ae67313cdb96048d5bb73e365405070de3e9b2a872264648d",
+    "parent_tree": {
+      "files": 185,
+      "excludes": [
+        "B02_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf"
+    },
+    "parent_tree_including_manifest": {
+      "files": 186,
+      "excludes": [],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "a14_merge_map": "docs/integration/execution/A14_MERGE_MAP.json",
+    "a14_merge_map_sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+    "a14_merge_map_byte_unchanged": true
+  },
+  "digest_checks": {
+    "candidate_tree_reverified": true,
+    "parent_tree_reverified": true,
+    "b02_merge_crossref_matches": true,
+    "note": "tree digests recomputed from disk at proposal time with the recorded rule (sha256 over 'path\\0sha256\\n', sorted, __pycache__/.pytest_cache skipped, named manifest excluded); the B02 cross-reference checks this candidate's recorded parent against B02_MERGE_PROPOSAL.json's derived_from"
+  },
+  "scope_note": "B03 adds zero new files relative to its parent: the candidate is a byte-identical carry of the B02 shared-config candidate. The product/test payload inside the candidate is the R04 payload already proposed in R0104_MERGE_PROPOSAL.json, and the shared-configuration packaging is already proposed in B02_MERGE_PROPOSAL.json; nothing is re-proposed here. Proposal only: nothing in this file has been applied to the original project. All seven gates remain closed; the original merge stays blocked until an explicit human release.",
+  "action_level_gate_model": {
+    "principle": "A gate is required only for the action that performs that effect. Private preparation never satisfies an original-action prerequisite.",
+    "private_preparation": {
+      "gates_required": [],
+      "note": "reading, staging, private copies, offline validation, synthetic fixtures: no gate required and none is opened"
+    },
+    "original_path_write": {
+      "gates_required": [
+        "original_paths_released"
+      ],
+      "note": "any write into the original project requires the human release"
+    },
+    "other_actions": {
+      "real_data_write": "real_data_write_authorized",
+      "existing_service_cutover": "existing_service_cutover_authorized",
+      "upstream_request": "upstream_requests_authorized",
+      "cie_resume": "cie_resume_authorized",
+      "remote_deployment": "remote_deployment_authorized",
+      "original_cleanup": "original_cleanup_authorized"
+    }
+  },
+  "frozen_evidence_never_touched": [
+    "docs/integration/execution/evidence/**",
+    "integration-staging/runtime/phase-b/**",
+    "integration-staging/runtime/r0104-repair-20261006/candidates/**",
+    "integration-staging/runtime/b02-rehearsal-20261006/candidates/**",
+    "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/**"
+  ],
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "counts": {
+    "entries": 1,
+    "entries_requiring_release": 0,
+    "staging_only_entries": 1,
+    "new_files_vs_parent": 0
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "change": "candidate_container",
+      "staged_path": "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1",
+      "staged_sha256_before": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf",
+      "staged_sha256_after": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5",
+      "kind": "staging_candidate_tree",
+      "proposed_target": null,
+      "proposed_target_origin": "staging-only rehearsal container: no original-project target",
+      "phase_b_action": "keep in integration-staging/ only; no original-project action proposed",
+      "reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "sha_note": "the before digest covers the parent file set with B02's own manifest excluded (its digest rule); the after digest covers the candidate file set with B03's own manifest excluded; both use the same function and rule",
+      "status": "proposal_only_not_merged"
+    }
+  ],
+  "not_merged": true,
+  "requirements_for_merge": [
+    "explicit human release opening original_paths_released with an explicit scope",
+    "no B03-specific original action: B03 adds zero files, so the original-facing payload remains R0104_MERGE_PROPOSAL.json (R04 payload) plus B02_MERGE_PROPOSAL.json (shared-config packaging)",
+    "re-run the isolated staged suite against the frozen B03 candidate before any original write",
+    "verify the candidate tree digest (staged_sha256_after, recomputed with the recorded rule) immediately before any original write"
+  ]
+}

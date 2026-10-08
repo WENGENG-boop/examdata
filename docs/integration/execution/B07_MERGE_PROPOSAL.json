@@ -1,0 +1,526 @@
+{
+  "proposal_version": "b07-merge-proposal/1",
+  "packet": "B07",
+  "generated_by": "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_build_proposals.py",
+  "generated_at": "2026-10-07T07:15:00+08:00",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "candidate_manifest": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/B07_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "3e7d2a7721b04a1663400ca335ae213c75e7696dbb60c656b938f2c32d061784",
+    "candidate_tree": {
+      "files": 221,
+      "excludes": [
+        "B07_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179"
+    },
+    "candidate_tree_digest_rule": "sha256 over 'path\\0sha256\\n' for every file under the root, sorted by path, excluding __pycache__/.pytest_cache and excluding the named manifest itself",
+    "parent_manifest": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/B06_CANDIDATE_MANIFEST.json",
+    "parent_manifest_sha256": "9af2e849573033aceb9e4b5f0acbea1d62b91565d8b87526b99e0a3db75b82cb",
+    "parent_manifest_sha256_at_build": "9af2e849573033aceb9e4b5f0acbea1d62b91565d8b87526b99e0a3db75b82cb",
+    "parent_tree": {
+      "files": 208,
+      "excludes": [
+        "B06_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "ffe774db608ff9d86246458a38265f9baa760b40880e48197e84d887f85d53f4"
+    },
+    "parent_tree_including_manifest": {
+      "files": 209,
+      "excludes": [],
+      "sha256": "035d6219befccde30dd0100b0721eeb4eeec987c3443ac226d188ad0d41b134f"
+    },
+    "b05_merge_proposal": "docs/integration/execution/B05_MERGE_PROPOSAL.json",
+    "b05_merge_proposal_sha256": "85ae3d36eb22dcbb10f4ce4e3d2ccf03ffcb7baacff070151103be35e766b4d4",
+    "b06_merge_proposal": "docs/integration/execution/B06_MERGE_PROPOSAL.json",
+    "b06_merge_proposal_sha256": "bb44cb0438bfa60a8127b320665d0e0563540f2373b8729e4303882965bd0c87",
+    "b06_merge_crossref_matches": true,
+    "b01_merge_map": "docs/integration/execution/evidence/B01/b00b01-20261006T132400/B01_MERGE_MAP.json",
+    "b01_merge_map_sha256": "1f20f89ce4037e441f49557f6f036a3f4e3b6c471433fdcc5c66d31cff4df4ad",
+    "b01_merge_map_sha256_note": "observed at proposal time; the frozen anchor recorded in the execution ledger is the A14 map sha256 (29940a0b...), not the B01 map, so this value is recorded for traceability only and is not compared against a frozen expectation",
+    "a14_merge_map": "docs/integration/execution/A14_MERGE_MAP.json",
+    "a14_merge_map_sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+    "a14_merge_map_byte_unchanged": true,
+    "a14_byte_anchor_matches": true,
+    "source_edits_diff": "integration-staging/runtime/b07-rehearsal-2026-10-07/evidence/source_edits.diff",
+    "source_edits_diff_sha256": "56001677ea6e22cc32cbcb257e4fefe3ba05523f430f81d24acb278a6021a166"
+  },
+  "digest_checks": {
+    "candidate_tree_reverified": true,
+    "parent_tree_reverified": true,
+    "b06_merge_crossref_matches": true,
+    "edited_files_source_matches": true,
+    "new_files_exactly_twelve_vs_parent": true,
+    "only_the_two_edited_files_changed_vs_parent": true,
+    "new_modules_match_sources": true,
+    "operations_fixture_files_match_sources": true,
+    "operations_provenance_records_match": true,
+    "operations_target_conventions_match_b01": true,
+    "supersession_chains_match": true,
+    "supersession_chain_detail": {
+      "dataset_chain": true,
+      "app_chain": true
+    },
+    "operations_check_detail": {
+      "new_modules": {
+        "src/examdata/integration/operations/jobs.py": true,
+        "src/examdata/integration/operations/published.py": true
+      },
+      "fixture_root_matches_staging_tools": true,
+      "fixture_files": {
+        "fixtures/synthetic/operations/operations-root/PROVENANCE.json": true,
+        "fixtures/synthetic/operations/operations-root/README.md": true,
+        "fixtures/synthetic/operations/operations-root/cie-batch-8888-stale/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/cie-batch-8888/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/cie-location-batch/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/expected-manifest.json": true,
+        "fixtures/synthetic/operations/operations-root/run-ok-stale/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/run-ok/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/run-partial/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/unsupported/checkpoint.json": true
+      },
+      "provenance_records": {
+        "fixtures/synthetic/operations/operations-root/README.md": true,
+        "fixtures/synthetic/operations/operations-root/cie-batch-8888-stale/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/cie-batch-8888/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/cie-location-batch/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/expected-manifest.json": true,
+        "fixtures/synthetic/operations/operations-root/run-ok-stale/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/run-ok/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/run-partial/checkpoint.json": true,
+        "fixtures/synthetic/operations/operations-root/unsupported/checkpoint.json": true
+      },
+      "b01_fixture_precedent": true,
+      "b01_operations_precedent": true,
+      "no_prior_operations_root_or_new_modules_in_b01_or_a14": true,
+      "b06_a14_anchor_matches": true
+    },
+    "note": "tree digests recomputed from disk at proposal time with the recorded rule (sha256 over 'path\\0sha256\\n', sorted, __pycache__/.pytest_cache skipped, the named manifest excluded); the B06 cross-reference checks this candidate's recorded parent against B06_MERGE_PROPOSAL.json's derived_from; the operations checks compare the candidate files against the staging-owned tools/operations-root sources and the frozen B01 records only (the original tree is never read); the file-set comparison excludes only the candidate's own manifest (the child carries byte-identical copies of the parent's files, including the B06 manifest, so they appear in both sets); the supersession chains re-verify the B05/R0104/A14 and B06 records that the two rewritten modules supersede (dataset: A14 MM-0017 -> R0104 RP-0005 -> B05 BP-0003 -> B06 BP-0003 -> B07; app: A14 MM-0015 -> B05 BP-0004 -> B06 BP-0002 -> B07)"
+  },
+  "scope_note": "B07 integrates jobs, coverage and diagnostics: relative to its parent (the B06 frontend candidate) it rewrites two carried modules - src/examdata/integration/api/app.py (coverage and jobs route wiring with sanitized public diagnostics) and src/examdata/integration/api/dataset.py (read-only operations projections) - and adds twelve operations files: the new modules src/examdata/integration/operations/jobs.py and src/examdata/integration/operations/published.py (read-only views over a configured operations root; no resume, no write-back) plus the ten-file synthetic operations-root fixture subtree under fixtures/synthetic/operations/operations-root/. Everything else in the candidate is a byte-identical carry of B06. The staged bytes of the two rewritten modules supersede the bytes recorded by B06_MERGE_PROPOSAL.json BP-0002 (app.py) and BP-0003 (dataset.py), which themselves superseded B05_MERGE_PROPOSAL.json BP-0004/BP-0003 and, behind them, A14 MM-0015 / A14 MM-0017 via R0104 RP-0005; the whole integration package is new relative to the original project, so every release-required module entry is add_file semantics. The ten fixture entries extend the B01 MM-0221..MM-0228 directory mapping under the new operations-root/ subtree (all deferred_pending_release in B01); the two operations modules follow the B01 MM-0043..MM-0045 target convention; no B01 or A14 record mentions operations-root, jobs.py or published.py. B01 performed no reconciliation (three_way=false, gate was closed) and this proposal performs none either - it records the deferred state against the B07 candidate bytes; the eighteen release-required B06 entries remain as filed in B06_MERGE_PROPOSAL.json and are not re-proposed here. The active-owner seam (B05 BP-0002), the composition hook (B04), the product/test payload (R04) and the packaging (B02) remain as proposed and are not re-proposed. Proposal only: nothing in this file has been applied to the original project. All seven gates remain closed; the original merge stays blocked until an explicit human release.",
+  "action_level_gate_model": {
+    "principle": "A gate is required only for the action that performs that effect. Private preparation never satisfies an original-action prerequisite.",
+    "private_preparation": {
+      "gates_required": [],
+      "note": "reading, staging, private copies, offline validation, synthetic fixtures: no gate required and none is opened"
+    },
+    "original_path_write": {
+      "gates_required": [
+        "original_paths_released"
+      ],
+      "note": "any write into the original project requires the human release"
+    },
+    "other_actions": {
+      "real_data_write": "real_data_write_authorized",
+      "existing_service_cutover": "existing_service_cutover_authorized",
+      "upstream_request": "upstream_requests_authorized",
+      "cie_resume": "cie_resume_authorized",
+      "remote_deployment": "remote_deployment_authorized",
+      "original_cleanup": "original_cleanup_authorized"
+    }
+  },
+  "frozen_evidence_never_touched": [
+    "docs/integration/execution/evidence/**",
+    "integration-staging/runtime/phase-b/**",
+    "integration-staging/runtime/r0104-repair-20261006/candidates/**",
+    "integration-staging/runtime/b02-rehearsal-20261006/candidates/**",
+    "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/**",
+    "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/**",
+    "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/**",
+    "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/**",
+    "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/**"
+  ],
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "counts": {
+    "entries": 15,
+    "entries_requiring_release": 14,
+    "staging_only_entries": 1,
+    "new_files_vs_parent": 12,
+    "edited_files_rewritten": 2
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "change": "candidate_container",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1",
+      "staged_sha256_before": "ffe774db608ff9d86246458a38265f9baa760b40880e48197e84d887f85d53f4",
+      "staged_sha256_after": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179",
+      "kind": "staging_candidate_tree",
+      "proposed_target": null,
+      "proposed_target_origin": "staging-only rehearsal container: no original-project target",
+      "phase_b_action": "keep in integration-staging/ only; no original-project action proposed",
+      "reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "original_level_reversal_kind": "none",
+      "restore_base_sha256": null,
+      "sha_note": "the before digest covers the parent (B06) file set with B06's own manifest excluded (its digest rule); the after digest covers the candidate file set with B07's own manifest excluded; both use the same function and rule",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "change": "rewrite_integration_app_for_operations_routes_and_diagnostics",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/api/app.py",
+      "staged_sha256_before": "0edb0911aee83753f1692299cd656df614805b2b032aad6eaa8122dca6d7bc8b",
+      "staged_sha256_after": "81f9c3c9700b6a4eb243ed20b90eefe18c36edbaedf84b00d69dcb73a51fc259",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "examdata/src/examdata/integration/api/app.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json MM-0015 via B05_MERGE_PROPOSAL.json BP-0004 and B06_MERGE_PROPOSAL.json BP-0002; the B07 bytes supersede the unapplied B06 bytes",
+      "phase_b_action": "add_file at the proposed target with the B07 bytes (supersedes the unapplied B06 proposal BP-0002; the whole integration package is new relative to the original project; there is no existing original file to edit; A14 observed the target as not existing)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "supersedes": {
+        "proposal": "B06_MERGE_PROPOSAL.json BP-0002",
+        "superseded_staged_sha256_after": "0edb0911aee83753f1692299cd656df614805b2b032aad6eaa8122dca6d7bc8b",
+        "chain": "A14 MM-0015 -> B05 BP-0004 -> B06 BP-0002 -> B07"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "staged_sha256_before is the B06 bytes this rewrite replaces; the chain is re-verified in digest_checks.supersession_chain_detail",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "change": "rewrite_integration_dataset_for_operations_projections",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/api/dataset.py",
+      "staged_sha256_before": "d0edabc7a258c0a8f75dd5001475eaf2cd22f5f806c6aa83be8c32336669962b",
+      "staged_sha256_after": "c0d0d06cdcb22fc1f076b86b4c90da6bc72f09345ad512e62c141b764d428780",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json MM-0017 via R0104_MERGE_PROPOSAL.json RP-0005, B05_MERGE_PROPOSAL.json BP-0003 and B06_MERGE_PROPOSAL.json BP-0003; the B07 bytes supersede the unapplied B06 bytes",
+      "phase_b_action": "add_file at the proposed target with the B07 bytes (supersedes the unapplied B06 proposal BP-0003; the whole integration package is new relative to the original project; there is no existing original file to edit; A14 observed the target as not existing)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "supersedes": {
+        "proposal": "B06_MERGE_PROPOSAL.json BP-0003",
+        "superseded_staged_sha256_after": "d0edabc7a258c0a8f75dd5001475eaf2cd22f5f806c6aa83be8c32336669962b",
+        "chain": "A14 MM-0017 -> R0104 RP-0005 -> B05 BP-0003 -> B06 BP-0003 -> B07"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "staged_sha256_before is the B06 bytes this rewrite replaces; the chain is re-verified in digest_checks.supersession_chain_detail",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "change": "add_operations_jobs_module_read_only_views",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/operations/jobs.py",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "916ae7b195902856de2521661aaae4bf0dcd940592bf19a315536f9134427839",
+      "kind": "new_file",
+      "proposed_target": "examdata/src/examdata/integration/operations/jobs.py",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0043..MM-0045 fixed the target directory convention examdata/src/examdata/integration/operations/ for the operations package; this module is new since A14/B01 and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (read-only job views over a configured operations root: stopped jobs stay stopped and nothing is resumed or written back)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "new module relative to the A14/B01 records and to the B06 parent candidate (no B01/A14 record mentions it); bytes verified against the staging tools copy in digest_checks",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0005",
+      "change": "add_operations_published_module_sanitized_projections",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/src/examdata/integration/operations/published.py",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "54522b9e669c57b9a21564a98d1075f02664611f310cc72868cab793f82a925a",
+      "kind": "new_file",
+      "proposed_target": "examdata/src/examdata/integration/operations/published.py",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0043..MM-0045 fixed the target directory convention examdata/src/examdata/integration/operations/ for the operations package; this module is new since A14/B01 and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (sanitized published-coverage projections: derived statuses and percentages with no raw paths, keys or secrets on any leaf)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "new module relative to the A14/B01 records and to the B06 parent candidate (no B01/A14 record mentions it); bytes verified against the staging tools copy in digest_checks",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0006",
+      "change": "install_operations_root_fixture_provenance",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/PROVENANCE.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "f83617cc0a304d53c3bcf153ae199bafca8ff05151e4425282078cfe8f6f8173",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/PROVENANCE.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/PROVENANCE.json",
+        "staged_sha256": "f83617cc0a304d53c3bcf153ae199bafca8ff05151e4425282078cfe8f6f8173",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0007",
+      "change": "install_operations_root_readme",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/README.md",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "247eec4e48ff13f318948c217efd7603a4fa6da5fb021372fd323b5287b6c489",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/README.md",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/README.md",
+        "staged_sha256": "247eec4e48ff13f318948c217efd7603a4fa6da5fb021372fd323b5287b6c489",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0008",
+      "change": "install_operations_root_checkpoint_cie_batch_8888_stale",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/cie-batch-8888-stale/checkpoint.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "76559fb8ca482bd80a0075bceaea47870dc5b1932491a7d7a8eadf0aa5755673",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/cie-batch-8888-stale/checkpoint.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/cie-batch-8888-stale/checkpoint.json",
+        "staged_sha256": "76559fb8ca482bd80a0075bceaea47870dc5b1932491a7d7a8eadf0aa5755673",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0009",
+      "change": "install_operations_root_checkpoint_cie_batch_8888",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/cie-batch-8888/checkpoint.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "c31696a05ce917d471249f289d409d98217ec4064e9043d7783821a8a1ccf0e3",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/cie-batch-8888/checkpoint.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/cie-batch-8888/checkpoint.json",
+        "staged_sha256": "c31696a05ce917d471249f289d409d98217ec4064e9043d7783821a8a1ccf0e3",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0010",
+      "change": "install_operations_root_checkpoint_cie_location_batch",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/cie-location-batch/checkpoint.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "9eb281a2a56df32383be6a7b11c86b7bb067f433526b294879c6367fca4ac554",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/cie-location-batch/checkpoint.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/cie-location-batch/checkpoint.json",
+        "staged_sha256": "9eb281a2a56df32383be6a7b11c86b7bb067f433526b294879c6367fca4ac554",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0011",
+      "change": "install_operations_root_expected_manifest",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/expected-manifest.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "6f86b0211c5b873854fa21845466867b0b3e9c23b12995f15dd94bf0059f2f4a",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/expected-manifest.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/expected-manifest.json",
+        "staged_sha256": "6f86b0211c5b873854fa21845466867b0b3e9c23b12995f15dd94bf0059f2f4a",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0012",
+      "change": "install_operations_root_checkpoint_run_ok_stale",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/run-ok-stale/checkpoint.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "3519a84fd24fccb872226de0395a49c405a1c138d49086f438ff3f014fe2c220",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/run-ok-stale/checkpoint.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/run-ok-stale/checkpoint.json",
+        "staged_sha256": "3519a84fd24fccb872226de0395a49c405a1c138d49086f438ff3f014fe2c220",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0013",
+      "change": "install_operations_root_checkpoint_run_ok",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/run-ok/checkpoint.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "fa0a85c5c2df6501f4940ba02af1e093f2919c9a84394daa6f66e03ae7905493",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/run-ok/checkpoint.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/run-ok/checkpoint.json",
+        "staged_sha256": "fa0a85c5c2df6501f4940ba02af1e093f2919c9a84394daa6f66e03ae7905493",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0014",
+      "change": "install_operations_root_checkpoint_run_partial",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/run-partial/checkpoint.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "0172743731000d05c2b805233893722a445a9d08adfc8683eb773115977028e2",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/run-partial/checkpoint.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/run-partial/checkpoint.json",
+        "staged_sha256": "0172743731000d05c2b805233893722a445a9d08adfc8683eb773115977028e2",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0015",
+      "change": "install_operations_root_checkpoint_unsupported",
+      "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root/unsupported/checkpoint.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "410b6ac73370c3e143e71656aafa0ebacf12a60c9908c522d123b9f50a8e1de0",
+      "kind": "new_file",
+      "proposed_target": "examdata/tests/integration/fixtures/synthetic/operations/operations-root/unsupported/checkpoint.json",
+      "proposed_target_origin": "B01_MERGE_MAP.json MM-0221..MM-0228 mapped integration-staging/fixtures/synthetic/operations/ into examdata/tests/integration/fixtures/synthetic/operations/ (deferred_pending_release, add_file); this file extends the same mapping under the new operations-root/ subtree and has no record of its own",
+      "phase_b_action": "add_file at the proposed target with the B07 candidate bytes (labelled synthetic operations fixture)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "staged_source": {
+        "staged_path": "integration-staging/runtime/b07-rehearsal-2026-10-07/tools/operations-root/unsupported/checkpoint.json",
+        "staged_sha256": "410b6ac73370c3e143e71656aafa0ebacf12a60c9908c522d123b9f50a8e1de0",
+        "note": "staging-owned synthetic fixture; new relative to the B07 parent (B06) candidate; bytes unchanged between tools/operations-root and the candidate (verified in digest_checks)"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "original_level_reversal_kind": "delete_file",
+      "restore_base_sha256": null,
+      "sha_note": "synthetic operations fixture (labelled; the only credential-shaped value anywhere is the fixture-labelled synthetic control string); no original target is recorded for it and none existed at A14/B01",
+      "status": "proposal_only_not_merged"
+    }
+  ],
+  "not_merged": true,
+  "requirements_for_merge": [
+    "explicit human release opening original_paths_released with an explicit scope; the records carried from B01 (deferred_pending_release) become actionable only under that release; B07 does not re-propose the eighteen release-required B06 entries - the human release decision covers B06_MERGE_PROPOSAL.json and this B07 delta together, or the affected entries stay deferred",
+    "apply the two release-required module rewrites (add_file semantics; the whole integration package is new relative to the original project): install the B07 bytes at examdata/src/examdata/integration/api/app.py (superseding the unapplied B06 proposal BP-0002) and examdata/src/examdata/integration/api/dataset.py (superseding the unapplied B06 proposal BP-0003)",
+    "install the two new operations modules at examdata/src/examdata/integration/operations/jobs.py and examdata/src/examdata/integration/operations/published.py (the B01 MM-0043..MM-0045 target convention)",
+    "install the ten release-required operations fixtures under examdata/tests/integration/fixtures/synthetic/operations/operations-root/ (the B01 MM-0221..MM-0228 directory mapping extended under the new subtree); the sibling flat fixture files filed by B01 are untouched by this proposal",
+    "re-verify every recorded base before writing and re-verify the candidate tree digest (the container entry's staged_sha256_after, recomputed with the recorded rule) immediately before any original write",
+    "keep the merged operations views read-only (no resume, no restart, no write-back to any operations root) and the public diagnostics sanitized (no raw paths, keys or secrets) after merge",
+    "re-run the isolated staged suite and the B07 route probe against the frozen B07 candidate before any original write, and re-run both against the merged tree afterwards",
+    "the operations-root fixtures are labelled synthetic controls: the merged product must never point a default configuration at a real operations root without the applicable release, and no real credential may be staged or fabricated"
+  ]
+}

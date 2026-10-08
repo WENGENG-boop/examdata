@@ -1,0 +1,144 @@
+{
+  "schema": "examdata.integration.b04_rehearsal_validation/1",
+  "run_id": "b04-rehearsal-2026-10-07",
+  "packet": "B04",
+  "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+  "probe": "b04_route_probe.py",
+  "runs": [
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api",
+      "exit_code": 0,
+      "checks": 75,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp",
+      "exit_code": 0,
+      "checks": 75,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces ünïcode",
+      "exit_code": 0,
+      "checks": 75,
+      "checks_failed": 0,
+      "ok": true
+    }
+  ],
+  "discovery_identical_across_cwds": true,
+  "discovery": {
+    "ids": [
+      "fake_cli"
+    ],
+    "problems": [],
+    "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs",
+    "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1"
+  },
+  "stability_identical_across_cwds": true,
+  "stability": {
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+    "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+    "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+    "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+    "v2_operation_ids": {
+      "GET /api/v2/info": "info_api_v2_info_get",
+      "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+      "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+      "GET /api/v2/courses": "courses_api_v2_courses_get",
+      "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+      "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+      "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+      "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+      "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+      "GET /api/v2/containers": "containers_api_v2_containers_get",
+      "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+      "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+      "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+      "GET /api/v2/resources": "resources_api_v2_resources_get",
+      "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+      "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+      "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+      "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+      "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+      "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+      "GET /api/v2/questions": "questions_api_v2_questions_get",
+      "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+      "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+      "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+      "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+      "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+      "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+      "GET /api/v2/tags": "tags_api_v2_tags_get",
+      "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+      "GET /api/v2/materials": "materials_api_v2_materials_get",
+      "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+      "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+      "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+      "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+      "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+      "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+      "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+      "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+      "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+    },
+    "path_delta": 34
+  },
+  "in_process_cwds": [
+    "C:\\Users\\weo\\Desktop\\api",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces ünïcode"
+  ],
+  "candidate_tree_digest_reproducible": {
+    "files_match": true,
+    "sha256_match": true,
+    "files_on_disk": 189,
+    "on_disk_matches_recorded_plus_manifest": true,
+    "recorded": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "recomputed": {
+      "files": 188,
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "candidate_manifest_sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57"
+  },
+  "findings": [],
+  "not_run": [
+    {
+      "check": "real merge into examdata/src/examdata/api/app.py",
+      "reason": "gate original_paths_released is closed; the app.py change remains a proposal (deferred_pending_release) and the original tree was never read, imported or written"
+    },
+    {
+      "check": "real Node component execution",
+      "reason": "gate original_paths_released is closed; only synthetic fake-node-cli discovery is rehearsed, never executed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read, imported or written"
+    },
+    {
+      "check": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched; schema and data roots unchanged"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used; nothing was read, fabricated or staged"
+    }
+  ],
+  "verdict": "b04_rehearsal_valid_private_only",
+  "note": "private candidate only; not merged, not deployed; the original tree was neither read, imported nor written; frozen evidence under evidence/B01/**, evidence/B02/**, evidence/B03/**, evidence/R0104/** and the B02/B03 and R0104 runtime directories was not touched"
+}

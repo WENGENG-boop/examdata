@@ -1,0 +1,44 @@
+{
+  "schema": "question/1",
+  "public_id": "q_rtf7wrlwtotph3p45wx5wlfpfuo32iku",
+  "native_id": "Q41",
+  "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "number_path": [
+    "Q41"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "unknown",
+  "stem": null,
+  "payload": null,
+  "marks": null,
+  "required_assets": [],
+  "answers": [],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "missing",
+    "answer_verification": "unverified",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": [
+      {
+        "code": "missing_answer_slot",
+        "scope": "question",
+        "detail": "The source data has no answer slot 41 for this book; the slot is preserved as missing and must never be fabricated."
+      }
+    ]
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-kind:missing_answer_slot"
+    ],
+    "parent_refs": [],
+    "note": "The source data has no answer slot 41 for this book; the slot is preserved as missing and must never be fabricated."
+  },
+  "children": []
+}

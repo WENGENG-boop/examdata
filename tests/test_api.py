@@ -28,6 +28,42 @@ def test_health(client):
     assert body["papers"] > 0
 
 
+def test_health_does_not_leak_exception_text(client, monkeypatch):
+    """数据库故障时只回固定文案：连接串、文件路径等内部细节不能进响应体。"""
+    from contextlib import contextmanager
+    from importlib import import_module
+
+    module = import_module("examdata.api.app")
+    secret = "SECRET-EXC-TEXT-7f2c"
+
+    @contextmanager
+    def broken_scope():
+        raise RuntimeError(secret)
+
+    monkeypatch.setattr(module, "session_scope", broken_scope)
+    r = client.get("/health")
+    assert r.status_code == 503
+    assert r.json()["detail"] == "数据库不可用"
+    assert secret not in r.text
+
+
+def test_ensure_initialized_runs_init_db_once(monkeypatch):
+    """每请求依赖只做一次建表：lru_cache 命中后不再调 init_db。"""
+    from examdata.core import db as db_module
+    from examdata.core.db import ensure_initialized
+
+    calls: list[int] = []
+    monkeypatch.setattr(db_module, "init_db", lambda: calls.append(1))
+    # 前面的请求可能已经填过缓存，先清掉才能观察到真实调用次数
+    ensure_initialized.cache_clear()
+    try:
+        ensure_initialized()
+        ensure_initialized()
+    finally:
+        ensure_initialized.cache_clear()
+    assert len(calls) == 1
+
+
 def test_search_papers_by_subject(client):
     r = client.get("/papers", params={"subject": "0580", "limit": 50})
     assert r.status_code == 200

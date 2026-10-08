@@ -10,13 +10,14 @@
 - identity_key 不依赖 URL 或站点 id（Cambridge 换文件时 /Images/{id} 会变），
   而是由 考试局|资格|科目代码|年份|考试季|Paper|文档类型 决定。
   因此"文件被替换"会被识别为**同一文档的新版本**，而不是新文档。
-- 未在本轮发现中出现的候选标记为 missing，但不删除（保留版本历史）。
+- 仅完整巡检且无发现/处理异常的来源中，未出现的候选才标记为 missing，不删除历史。
 - 部分失败不阻塞其他资源。
 """
 
 from __future__ import annotations
 
 import datetime as _dt
+import time
 from dataclasses import asdict, dataclass, field
 from typing import Any, Iterable, Optional
 
@@ -25,6 +26,7 @@ from sqlalchemy.orm import Session
 
 from ..adapters.base import BoardAdapter, DiscoveredResource, SyllabusRef
 from ..core.config import Settings, get_settings
+from ..core.db import is_locked_error, with_lock_retry
 from ..core.fetch import Fetcher, RobotsDisallowed
 from ..core.ids import identity_key
 from ..core.models import (
@@ -82,7 +84,7 @@ class SyncStats:
 @dataclass
 class ResourceOutcome:
     url: str
-    action: str  # created / revision / unchanged / failed / skipped
+    action: str  # created / revision / unchanged / failed / skipped / gated / robots
     document_id: Optional[int] = None
     identity_key: Optional[str] = None
     detail: Optional[str] = None
@@ -98,11 +100,15 @@ class SyncService:
         *,
         settings: Settings | None = None,
         store: ContentAddressedStore | None = None,
+        fetcher: Fetcher | None = None,
     ) -> None:
         self.session = session
         self.adapter = adapter
         self.settings = settings or get_settings()
-        self.store = store or ContentAddressedStore()
+        self.store = store or ContentAddressedStore(self.settings.artifacts_dir)
+        # 整轮同步共用一个抓取器：每条资源各建一个会丢掉 robots 缓存与
+        # 每主机限速状态，等于对同一主机反复冷启动。
+        self._fetcher = fetcher
         self.board: Optional[Board] = None
         self.sync_run: Optional[SyncRun] = None
         self.stats = SyncStats()
@@ -111,6 +117,21 @@ class SyncService:
         self._subjects: dict[str, Subject] = {}
         self._series: dict[tuple[int, Optional[str]], ExamSeries] = {}
         self._seen_candidate_urls: set[str] = set()
+
+    # -- 抓取器 -----------------------------------------------------------
+
+    @property
+    def fetcher(self) -> Fetcher:
+        """懒创建的抓取器，整轮同步共用。close() 之后再次访问会重建。"""
+        if self._fetcher is None:
+            self._fetcher = Fetcher(self.settings)
+        return self._fetcher
+
+    def close(self) -> None:
+        """关闭抓取器，释放连接池。"""
+        if self._fetcher is not None:
+            self._fetcher.close()
+            self._fetcher = None
 
     # -- 基础实体 ---------------------------------------------------------
 
@@ -261,6 +282,7 @@ class SyncService:
         cand.last_seen_run_id = self.sync_run.id if self.sync_run else None
         cand.last_seen_at = _dt.datetime.now(_dt.timezone.utc)
         cand.status = CANDIDATE_SEEN
+        cand.error = None
         return cand
 
     def sync_resource(
@@ -334,58 +356,73 @@ class SyncService:
             existing.confidence = res.confidence
             existing.evidence = dict(res.evidence or {})
 
-        if not download:
-            return ResourceOutcome(res.url, "skipped", doc.id, idkey, "download=False")
-
-        # 已知需要登录的档：识别出它存在、登记文档，但不去抓。
-        # 这不是"失败"——是站点明示的访问限制，记成失败会污染错误统计，
-        # 让真正的问题淹没在几十条登录墙告警里。
-        # 判定放在尝试之前：既省一次必然被拒的请求，也不违反 robots。
         if res.meta.get("is_gated"):
             cand.status = CANDIDATE_SKIPPED
             cand.error = "登录墙资源，仅登记不下载"
             self.stats.gated += 1
             return ResourceOutcome(res.url, "gated", doc.id, idkey, "登录墙")
 
-        # 条件请求：无变化时零下载
-        try:
-            with Fetcher(self.settings) as fetcher:
-                result = fetcher.get(
-                    res.url,
-                    etag=cand.etag,
-                    last_modified=cand.last_modified,
-                    expect_binary=True,
-                )
-        except RobotsDisallowed as exc:
-            # robots 拒绝同样不是下载失败：这是遵守站点规则的正常结果
+        if not download:
             cand.status = CANDIDATE_SKIPPED
-            cand.error = f"robots: {exc}"
-            self.stats.robots_blocked += 1
-            return ResourceOutcome(res.url, "robots", doc.id, idkey, "robots 禁止")
-        except Exception as exc:  # 单个资源失败不得中断整轮
-            cand.status = CANDIDATE_ERROR
-            cand.error = str(exc)[:500]
-            self.stats.download_failed += 1
-            self.stats.errors.append(f"{res.url}: {exc}")
-            return ResourceOutcome(res.url, "failed", doc.id, idkey, str(exc)[:200])
+            cand.error = "download=False"
+            return ResourceOutcome(res.url, "skipped", doc.id, idkey, "download=False")
+
+        current_revision = self.session.scalar(
+            select(DocumentRevision).where(
+                DocumentRevision.id == doc.current_revision_id,
+                DocumentRevision.document_id == doc.id,
+            )
+        )
+        current_artifact = (
+            self.session.get(Artifact, current_revision.artifact_id)
+            if current_revision is not None else None
+        )
+        can_revalidate = (
+            current_artifact is not None
+            and cand.content_sha256 == current_artifact.sha256
+        )
+        # 网络下载不能开在事务里：WAL 下读快照跨过下载窗口后，回来第一次写
+        # 几乎必然撞上并发提交而立即失败（SQLITE_BUSY_SNAPSHOT，busy_timeout
+        # 不生效）。先把已完成的登记提交掉，让下载之后的写从新事务开始。
+        self.session.commit()
+        try:
+            result = self.fetcher.get(
+                res.url,
+                etag=cand.etag if can_revalidate else None,
+                last_modified=cand.last_modified if can_revalidate else None,
+                expect_binary=True,
+            )
+        except RobotsDisallowed as exc:
+            return self._skip_robots(res, cand, doc, idkey, str(exc))
+        except Exception as exc:
+            return self._fail_resource(res, cand, doc, idkey, str(exc))
+
+        if result.robots_blocked:
+            return self._skip_robots(res, cand, doc, idkey, result.error or "robots.txt 禁止")
 
         if result.not_modified:
+            if not can_revalidate:
+                cand.etag = None
+                cand.last_modified = None
+                return self._fail_resource(res, cand, doc, idkey, "304 无可复用的当前版本")
+            cand.status = CANDIDATE_SEEN
+            cand.error = None
+            cand.etag = result.etag or cand.etag
+            cand.last_modified = result.last_modified or cand.last_modified
             self.stats.unchanged += 1
             return ResourceOutcome(res.url, "unchanged", doc.id, idkey, "304 未修改")
 
         if not result.ok or result.content is None:
-            cand.status = CANDIDATE_ERROR
-            cand.error = result.error or f"HTTP {result.status}"
-            self.stats.download_failed += 1
-            self.stats.errors.append(f"{res.url}: {result.error or result.status}")
-            return ResourceOutcome(res.url, "failed", doc.id, idkey, result.error)
-
-        cand.etag = result.etag
-        cand.last_modified = result.last_modified
+            return self._fail_resource(
+                res, cand, doc, idkey, result.error or f"HTTP {result.status}"
+            )
 
         data = result.content
         mime = (result.content_type or "").split(";")[0].strip() or None
-        stored = self.store.put_bytes(data, mime)
+        try:
+            stored = self.store.put_bytes(data, mime)
+        except Exception as exc:
+            return self._fail_resource(res, cand, doc, idkey, str(exc))
         self.stats.downloaded += 1
         self.stats.bytes_downloaded += len(data)
 
@@ -408,7 +445,48 @@ class SyncService:
         else:
             self.stats.duplicates += 1
 
-        prev_rev = doc.current_revision_id
+        previous_artifact_revision = self.session.scalar(
+            select(ArtifactRevision)
+            .where(ArtifactRevision.url == res.url)
+            .order_by(ArtifactRevision.id.desc())
+            .limit(1)
+        )
+        if (
+            previous_artifact_revision is None
+            or previous_artifact_revision.artifact_id != artifact.id
+        ):
+            self.session.add(
+                ArtifactRevision(
+                    artifact_id=artifact.id,
+                    url=res.url,
+                    etag=result.etag,
+                    last_modified=result.last_modified,
+                    fetched_at=_dt.datetime.now(_dt.timezone.utc),
+                    supersedes_id=(
+                        previous_artifact_revision.id
+                        if previous_artifact_revision is not None else None
+                    ),
+                    change_kind=(
+                        "initial" if previous_artifact_revision is None else "content_changed"
+                    ),
+                )
+            )
+        else:
+            previous_artifact_revision.etag = result.etag
+            previous_artifact_revision.last_modified = result.last_modified
+            previous_artifact_revision.fetched_at = _dt.datetime.now(_dt.timezone.utc)
+
+        cand.etag = result.etag
+        cand.last_modified = result.last_modified
+        cand.content_sha256 = stored.sha256
+        cand.status = CANDIDATE_SEEN
+        cand.error = None
+        doc.title = doc.title or res.label
+        if current_artifact is not None and current_artifact.sha256 == stored.sha256:
+            self.stats.unchanged += 1
+            return ResourceOutcome(res.url, "unchanged", doc.id, idkey, "SHA256 未修改")
+
+        doc.status = "stored"
         revision = DocumentRevision(
             document_id=doc.id,
             artifact_id=artifact.id,
@@ -421,25 +499,8 @@ class SyncService:
         )
         self.session.add(revision)
         self.session.flush()
-
-        self.session.add(
-            ArtifactRevision(
-                artifact_id=artifact.id,
-                url=res.url,
-                etag=result.etag,
-                last_modified=result.last_modified,
-                fetched_at=_dt.datetime.now(_dt.timezone.utc),
-                supersedes_id=prev_rev,
-                change_kind="initial" if prev_rev is None else "content_changed",
-            )
-        )
-
         doc.current_revision_id = revision.id
-        doc.status = "stored"
-        doc.title = doc.title or res.label
-        if is_new_doc:
-            pass
-        else:
+        if not is_new_doc:
             self.stats.new_revisions += 1
 
         return ResourceOutcome(
@@ -448,6 +509,40 @@ class SyncService:
             doc.id,
             idkey,
         )
+
+    def _fail_resource(
+        self,
+        res: DiscoveredResource,
+        cand: ResourceCandidate,
+        doc: Document,
+        idkey: str,
+        reason: str,
+    ) -> ResourceOutcome:
+        cand.status = CANDIDATE_ERROR
+        cand.error = reason[:500]
+        if doc.current_revision_id is None:
+            doc.status = "failed"
+        self.stats.download_failed += 1
+        self.stats.errors.append(f"{res.url}: {reason}")
+        return ResourceOutcome(res.url, "failed", doc.id, idkey, reason[:200])
+
+    def _skip_robots(
+        self,
+        res: DiscoveredResource,
+        cand: ResourceCandidate,
+        doc: Document,
+        idkey: str,
+        reason: str,
+    ) -> ResourceOutcome:
+        """robots 拒绝的处置：资源与候选标记为跳过，单列统计。
+
+        这不是下载失败，而是遵守站点规则的正常结果；记成 download_failed
+        会让真正的问题淹没在合规拒绝里。
+        """
+        cand.status = CANDIDATE_SKIPPED
+        cand.error = f"robots: {reason}"
+        self.stats.robots_blocked += 1
+        return ResourceOutcome(res.url, "robots", doc.id, idkey, "robots 禁止")
 
     def _next_revision_no(self, document_id: int) -> int:
         existing = self.session.scalars(
@@ -467,9 +562,17 @@ class SyncService:
         download: bool = True,
         syllabus_filter: Optional[str] = None,
     ) -> SyncStats:
+        for name, limit in (("syllabus_limit", syllabus_limit), ("resource_limit", resource_limit)):
+            if limit is not None and limit < 0:
+                raise ValueError(f"{name} 必须为非负数")
+        self.stats = SyncStats()
+        self._seen_candidate_urls.clear()
+        self._clear_caches()
+        self.sync_run = None
         board = self.ensure_board()
+        board_id = board.id
         self.sync_run = SyncRun(
-            board_id=board.id,
+            board_id=board_id,
             adapter_key=self.adapter.key,
             status="running",
             started_at=_dt.datetime.now(_dt.timezone.utc),
@@ -478,68 +581,148 @@ class SyncService:
         self.session.add(self.sync_run)
         # 先固化本轮记录：后续单条资源回滚不会丢掉它
         self.session.commit()
+        run_id = self.sync_run.id
+        inspected_source_ids: set[int] = set()
+        incomplete_source_urls: set[str] = set()
+        discovered_sources = 0
 
         try:
-            refs = list(self.adapter.discover_syllabuses())
+            all_refs = list(self.adapter.discover_syllabuses())
+            refs = all_refs
             if syllabus_filter:
                 refs = [r for r in refs if r.slug == syllabus_filter or r.code == syllabus_filter]
-            if syllabus_limit:
+            if syllabus_limit is not None:
                 refs = refs[:syllabus_limit]
+            incomplete_source_urls.update(r.source_url for r in all_refs if r not in refs)
             self.stats.syllabuses = len(refs)
 
             for ref in refs:
+                source = self.ensure_source(ref)
+                source_id = source.id
+                self.session.commit()
+                source.last_checked_at = _dt.datetime.now(_dt.timezone.utc)
                 try:
                     resources = list(self.adapter.discover_resources(ref))
                 except Exception as exc:
+                    source.last_error = str(exc)[:1000]
+                    incomplete_source_urls.add(ref.source_url)
                     self.stats.errors.append(f"{ref.slug}: 发现失败 {exc}")
+                    self.session.commit()
                     continue
-                if resource_limit:
+                discovered_sources += 1
+                source.last_error = None
+                source.consecutive_empty_runs = (
+                    source.consecutive_empty_runs + 1 if not resources else 0
+                )
+                self.session.commit()
+                if resource_limit is not None and len(resources) > resource_limit:
+                    incomplete_source_urls.add(ref.source_url)
                     resources = resources[:resource_limit]
+                else:
+                    inspected_source_ids.add(source_id)
                 self.stats.discovered += len(resources)
+                self._seen_candidate_urls.update(res.url for res in resources)
                 for res in resources:
-                    try:
-                        self.sync_resource(ref, res, download=download)
-                        # 每条资源独立提交：单条失败只丢弃它自己，不影响本轮其他成果
-                        self.session.commit()
-                    except Exception as exc:
-                        self.session.rollback()
-                        # 回滚会让已缓存的基础实体失效，必须清空后重建，
-                        # 否则后续资源会引用已回滚的 id 而触发外键错误
-                        self._invalidate_caches()
-                        self.stats.errors.append(f"{res.url}: {type(exc).__name__}: {exc}")
-                        self.stats.download_failed += 1
+                    for attempt in range(6):
+                        stats_before = asdict(self.stats)
+                        try:
+                            self.sync_resource(ref, res, download=download)
+                            # 每条资源独立提交：单条失败只丢弃它自己，不影响本轮其他成果
+                            self.session.commit()
+                            break
+                        except Exception as exc:
+                            self.session.rollback()
+                            self._invalidate_caches()
+                            self.stats = SyncStats(**stats_before)
+                            if is_locked_error(exc) and attempt < 5:
+                                # WAL 下事务升级失败会立即报错，退避后重试；
+                                # BEGIN IMMEDIATE 下则是等锁超时，同样值得重试。
+                                time.sleep(min(0.25 * 2**attempt, 4.0))
+                                continue
+                            reason = f"{type(exc).__name__}: {exc}"
+                            self.stats.errors.append(f"{res.url}: {reason}")
+                            self.stats.download_failed += 1
+                            incomplete_source_urls.add(ref.source_url)
+                            try:
+                                cand = self._upsert_candidate(self.ensure_source(ref), res)
+                                cand.status = CANDIDATE_ERROR
+                                cand.error = reason[:500]
+                                # 登记记录（含文档行）在下载前已提交，异常回滚撤不掉；
+                                # 这里补上失败标记，与常规下载失败路径保持一致。
+                                doc = self.session.scalar(
+                                    select(Document).where(
+                                        Document.identity_key
+                                        == self._document_identity(ref, res)
+                                    )
+                                )
+                                if doc is not None and doc.current_revision_id is None:
+                                    doc.status = "failed"
+                                self.session.commit()
+                            except Exception as write_exc:
+                                self.session.rollback()
+                                self.stats.errors.append(
+                                    f"{res.url}: 记录失败状态时再次出错 "
+                                    f"{type(write_exc).__name__}: {write_exc}"
+                                )
+                            break
 
-            # 未在本轮出现的候选标记为 missing（保留，不删除）
-            self._mark_missing(board.id)
-
-            self.sync_run.status = "completed"
+            incomplete_source_ids = set(self.session.scalars(
+                select(ResourceSource.id).where(
+                    ResourceSource.board_id == board_id,
+                    ResourceSource.url.in_(incomplete_source_urls),
+                )
+            ))
+            self._mark_missing(board_id, inspected_source_ids - incomplete_source_ids)
+            if self.stats.errors:
+                self.sync_run.status = "partial" if discovered_sources else "failed"
+                self.sync_run.error = "\n".join(self.stats.errors)[:1000]
+            else:
+                self.sync_run.status = "completed"
         except Exception as exc:
+            self.session.rollback()
+            self._invalidate_caches()
+            self.sync_run = self.session.get(SyncRun, run_id)
             self.sync_run.status = "failed"
             self.sync_run.error = str(exc)[:1000]
+            self.stats.errors.append(f"{type(exc).__name__}: {exc}")
             raise
         finally:
-            self.sync_run.finished_at = _dt.datetime.now(_dt.timezone.utc)
-            self.sync_run.stats = self.stats.to_dict()
-            self.session.commit()
+            try:
+                self.close()
+            finally:
+                def _finish_run() -> None:
+                    self.sync_run.finished_at = _dt.datetime.now(_dt.timezone.utc)
+                    self.sync_run.stats = self.stats.to_dict()
+                    self.session.commit()
+
+                with_lock_retry(self.session, _finish_run)
         return self.stats
 
-    def _invalidate_caches(self) -> None:
-        """回滚后清空缓存的基础实体，并重建 board / sync_run 引用。"""
+    def _clear_caches(self) -> None:
         self._sources.clear()
         self._subjects.clear()
         self._qualifications.clear()
         self._series.clear()
         self.board = None
+
+    def _invalidate_caches(self) -> None:
+        """回滚后清空缓存的基础实体，并重建 board / sync_run 引用。"""
+        run_id = self.sync_run.id if self.sync_run is not None else None
+        self._clear_caches()
         self.ensure_board()
-        if self.sync_run is not None:
-            run_id = self.sync_run.id
+        if run_id is not None:
             self.sync_run = self.session.get(SyncRun, run_id)
 
-    def _mark_missing(self, board_id: int) -> None:
+    def _mark_missing(self, board_id: int, source_ids: set[int]) -> None:
+        if not source_ids:
+            return
         rows = self.session.scalars(
             select(ResourceCandidate).where(
                 ResourceCandidate.board_id == board_id,
-                ResourceCandidate.status.in_([CANDIDATE_NEW, CANDIDATE_SEEN]),
+                ResourceCandidate.source_id.in_(source_ids),
+                ResourceCandidate.status.in_([
+                    CANDIDATE_NEW, CANDIDATE_SEEN, CANDIDATE_ERROR, CANDIDATE_SKIPPED,
+                ]),
             )
         ).all()
         for cand in rows:

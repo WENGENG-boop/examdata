@@ -1,0 +1,4066 @@
+{
+ "repo": "deekur/gaokaophysics",
+ "default_branch": "main",
+ "stars": 143,
+ "pushed_at": "2026-09-27T14:18:13Z",
+ "license": "NOASSERTION",
+ "truncated": false,
+ "tree": [
+  {
+   "path": "LICENSE",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "fe463e0f7888bbf8b82e42d55f5743508ddafb7e",
+   "size": 19347,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/fe463e0f7888bbf8b82e42d55f5743508ddafb7e"
+  },
+  {
+   "path": "README.md",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "52b8bfef0c666c88b3f5ad2fbbcaa83a28f1ed5e",
+   "size": 12838,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/52b8bfef0c666c88b3f5ad2fbbcaa83a28f1ed5e"
+  },
+  {
+   "path": "春季高考",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "dd1a9ee513561afbf55e2d9d74f647b3e650c9e4",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/dd1a9ee513561afbf55e2d9d74f647b3e650c9e4"
+  },
+  {
+   "path": "春季高考/2000",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "7469943712318566be5f410bfc3056bcde83abc1",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/7469943712318566be5f410bfc3056bcde83abc1"
+  },
+  {
+   "path": "春季高考/2000/春季2000全国(北京,安徽).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2a7f48bdd3cc8255c078e6e46770f6c1fb30851c",
+   "size": 2300556,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2a7f48bdd3cc8255c078e6e46770f6c1fb30851c"
+  },
+  {
+   "path": "春季高考/2001",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "e501c1cf87f659a7ad27b02efb8c60e48c1da328",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/e501c1cf87f659a7ad27b02efb8c60e48c1da328"
+  },
+  {
+   "path": "春季高考/2001/春季2001全国(北京,安徽,内蒙古).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6b121162dc2f56eb6d5668043a229607ca63f32d",
+   "size": 2882764,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6b121162dc2f56eb6d5668043a229607ca63f32d"
+  },
+  {
+   "path": "春季高考/2002",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "983393fbd46331d7ebba2d7f25789f3585712202",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/983393fbd46331d7ebba2d7f25789f3585712202"
+  },
+  {
+   "path": "春季高考/2002/春季2002全国理综(北京,安徽,内蒙古).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7177c53aa748468e12aeceaaacc84123125232f7",
+   "size": 158055,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7177c53aa748468e12aeceaaacc84123125232f7"
+  },
+  {
+   "path": "春季高考/2003",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "311970f6d804b52dab91d181e2001cb16d674f6d",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/311970f6d804b52dab91d181e2001cb16d674f6d"
+  },
+  {
+   "path": "春季高考/2003/春季2003全国理综(北京,安徽,内蒙古).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "85f86b62afceae2ca38911b51da5f98e5ff873b1",
+   "size": 794814,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/85f86b62afceae2ca38911b51da5f98e5ff873b1"
+  },
+  {
+   "path": "春季高考/2004",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "1a12706472d8c0479bfa9e2b6a43fc5bcbc36189",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/1a12706472d8c0479bfa9e2b6a43fc5bcbc36189"
+  },
+  {
+   "path": "春季高考/2004/春季2004全国理综(北京,安徽).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4a08d736029d933db4c35025591a081fe4258513",
+   "size": 2286291,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4a08d736029d933db4c35025591a081fe4258513"
+  },
+  {
+   "path": "春季高考/2005",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "4c76e2e2f2c27d83e4ef92ffd61a9e52b26964e9",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/4c76e2e2f2c27d83e4ef92ffd61a9e52b26964e9"
+  },
+  {
+   "path": "春季高考/2005/春季2005全国理综(北京,安徽).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1449d6f6d0a8e9e6502f1263ae8df4c8a848bd74",
+   "size": 634117,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1449d6f6d0a8e9e6502f1263ae8df4c8a848bd74"
+  },
+  {
+   "path": "普通高考",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "82199eb3a79c60fd017286725fd22522a7e28769",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/82199eb3a79c60fd017286725fd22522a7e28769"
+  },
+  {
+   "path": "普通高考/1952",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "2fd683c0542057393eef07b4642f4930a69acb77",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/2fd683c0542057393eef07b4642f4930a69acb77"
+  },
+  {
+   "path": "普通高考/1952/1952.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "01b57ff1f6739b560cfd95d7334463d84f4f46fa",
+   "size": 733429,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/01b57ff1f6739b560cfd95d7334463d84f4f46fa"
+  },
+  {
+   "path": "普通高考/1953",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "10251c62ce0634db6be3bff13d775e6c2892ee8b",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/10251c62ce0634db6be3bff13d775e6c2892ee8b"
+  },
+  {
+   "path": "普通高考/1953/1953.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b0e74f0d16e6a32b722d1477f1ac3d3abf25b146",
+   "size": 1138472,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b0e74f0d16e6a32b722d1477f1ac3d3abf25b146"
+  },
+  {
+   "path": "普通高考/1954",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "386085ec7d18f4a9ccad9f8b2bd44e8ef722d48d",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/386085ec7d18f4a9ccad9f8b2bd44e8ef722d48d"
+  },
+  {
+   "path": "普通高考/1954/1954.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "64bea69f8cb1a9a8f996ca388a444b4a97febd1e",
+   "size": 649960,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/64bea69f8cb1a9a8f996ca388a444b4a97febd1e"
+  },
+  {
+   "path": "普通高考/1955",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "33dddd36631450d44e72d4b3a05ad0f402448cbe",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/33dddd36631450d44e72d4b3a05ad0f402448cbe"
+  },
+  {
+   "path": "普通高考/1955/1955.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c383799ab7a5a83f7e78f81e694f41742e4e1d47",
+   "size": 583805,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c383799ab7a5a83f7e78f81e694f41742e4e1d47"
+  },
+  {
+   "path": "普通高考/1956",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "fa0457ca7a99c5ce42e681e5c53ad7c78c5b59bb",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/fa0457ca7a99c5ce42e681e5c53ad7c78c5b59bb"
+  },
+  {
+   "path": "普通高考/1956/1956.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a8fe8f337a04036573a40984b4dfb3469a5e875f",
+   "size": 842562,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a8fe8f337a04036573a40984b4dfb3469a5e875f"
+  },
+  {
+   "path": "普通高考/1957",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "07b726c79867da1417910ec2890f2dff76abaeed",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/07b726c79867da1417910ec2890f2dff76abaeed"
+  },
+  {
+   "path": "普通高考/1957/1957.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1eb40a3b872c4cbcf889be2b143f23c51bc138e7",
+   "size": 912664,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1eb40a3b872c4cbcf889be2b143f23c51bc138e7"
+  },
+  {
+   "path": "普通高考/1958",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "08ed24132f1a8a2d3b4a31ba62990a79e2b2661a",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/08ed24132f1a8a2d3b4a31ba62990a79e2b2661a"
+  },
+  {
+   "path": "普通高考/1958/1958上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2a5c117fa11f2b8833ac359d3ca147318bcc0b51",
+   "size": 1407805,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2a5c117fa11f2b8833ac359d3ca147318bcc0b51"
+  },
+  {
+   "path": "普通高考/1958/1958北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7c7f1dc10310cd4f170d780092dbae65bfde8eff",
+   "size": 1409659,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7c7f1dc10310cd4f170d780092dbae65bfde8eff"
+  },
+  {
+   "path": "普通高考/1958/1958河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "66a405eea1cb6f9ca4b26fc2a967bf20ae064300",
+   "size": 1091540,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/66a405eea1cb6f9ca4b26fc2a967bf20ae064300"
+  },
+  {
+   "path": "普通高考/1959",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "70a9777e704ac15f340fa2b7f5aa9b29aa38f4bf",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/70a9777e704ac15f340fa2b7f5aa9b29aa38f4bf"
+  },
+  {
+   "path": "普通高考/1959/1959.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9fbf081d230d64e400c635d18d6695b4f30d451b",
+   "size": 972875,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9fbf081d230d64e400c635d18d6695b4f30d451b"
+  },
+  {
+   "path": "普通高考/1960",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "46c89365a472debc04872762d360150ed8fbae5b",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/46c89365a472debc04872762d360150ed8fbae5b"
+  },
+  {
+   "path": "普通高考/1960/1960.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "66fcea7a930734a015d6b4dbfcb496cf1dc2121a",
+   "size": 1206158,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/66fcea7a930734a015d6b4dbfcb496cf1dc2121a"
+  },
+  {
+   "path": "普通高考/1961",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "872e06dc61ba3eee11495793fdb618cd53ad1018",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/872e06dc61ba3eee11495793fdb618cd53ad1018"
+  },
+  {
+   "path": "普通高考/1961/1961.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9e826b0c7c84ba42dc1ff716b09eab7f1017abfe",
+   "size": 1435456,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9e826b0c7c84ba42dc1ff716b09eab7f1017abfe"
+  },
+  {
+   "path": "普通高考/1962",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "9bd768f6fcfe7a521ff16e1fcd18877e380514ef",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/9bd768f6fcfe7a521ff16e1fcd18877e380514ef"
+  },
+  {
+   "path": "普通高考/1962/1962.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7c05ef31aab8d93a509d4f246bbeb3d24d8070b5",
+   "size": 1364357,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7c05ef31aab8d93a509d4f246bbeb3d24d8070b5"
+  },
+  {
+   "path": "普通高考/1963",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "d77692c252aa111f78cd30b19748dc7a095229e8",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/d77692c252aa111f78cd30b19748dc7a095229e8"
+  },
+  {
+   "path": "普通高考/1963/1963.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b2b12ad1c61e7661f8ed0d5f4bc053e3577f33bb",
+   "size": 2065458,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b2b12ad1c61e7661f8ed0d5f4bc053e3577f33bb"
+  },
+  {
+   "path": "普通高考/1964",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "31ef0c4b2728463b1aa82496cbe838ee67d73b7a",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/31ef0c4b2728463b1aa82496cbe838ee67d73b7a"
+  },
+  {
+   "path": "普通高考/1964/1964.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3c07a162af4e19e52bad65b5195fb162eb0a2ca4",
+   "size": 1359606,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3c07a162af4e19e52bad65b5195fb162eb0a2ca4"
+  },
+  {
+   "path": "普通高考/1965",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "b91b807283bf74643205c67a2ba4129394dbf539",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/b91b807283bf74643205c67a2ba4129394dbf539"
+  },
+  {
+   "path": "普通高考/1965/1965.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f7b0d0fcb75fbecf5701f5e37bfde7a74c0aff2b",
+   "size": 1864589,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f7b0d0fcb75fbecf5701f5e37bfde7a74c0aff2b"
+  },
+  {
+   "path": "普通高考/1977",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "565f6964ba85adb04e0bc8def104890e1832617b",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/565f6964ba85adb04e0bc8def104890e1832617b"
+  },
+  {
+   "path": "普通高考/1977/1977上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d7c3108d77d58438177bc0b859e8137d291cf234",
+   "size": 3302180,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d7c3108d77d58438177bc0b859e8137d291cf234"
+  },
+  {
+   "path": "普通高考/1977/1977云南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "bceb343ad81f306bd122a512762cab9016eda67c",
+   "size": 69784,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/bceb343ad81f306bd122a512762cab9016eda67c"
+  },
+  {
+   "path": "普通高考/1977/1977内蒙古.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5f5e769e59b7618e53805db569ae8ac4c24f6bc6",
+   "size": 1138500,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5f5e769e59b7618e53805db569ae8ac4c24f6bc6"
+  },
+  {
+   "path": "普通高考/1977/1977北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2678c85df8f5b4f9b4d35d560ab4f6f8f031f762",
+   "size": 4023899,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2678c85df8f5b4f9b4d35d560ab4f6f8f031f762"
+  },
+  {
+   "path": "普通高考/1977/1977吉林.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "63cd2be603b2359ab869675333331c66a6be4acf",
+   "size": 2093448,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/63cd2be603b2359ab869675333331c66a6be4acf"
+  },
+  {
+   "path": "普通高考/1977/1977四川.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a3cf03fc39b595437468d4c370b680fad7bb6ff7",
+   "size": 78276,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a3cf03fc39b595437468d4c370b680fad7bb6ff7"
+  },
+  {
+   "path": "普通高考/1977/1977天津.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b4451eff2d064eefa7733b496ac63a3c1a4a58ed",
+   "size": 1961432,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b4451eff2d064eefa7733b496ac63a3c1a4a58ed"
+  },
+  {
+   "path": "普通高考/1977/1977宁夏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "29fe6bf49961b2875d5237849d6ca53ca19fb61c",
+   "size": 1884852,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/29fe6bf49961b2875d5237849d6ca53ca19fb61c"
+  },
+  {
+   "path": "普通高考/1977/1977安徽.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c059140c7525589800392e930797e6d339e63d0a",
+   "size": 1658858,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c059140c7525589800392e930797e6d339e63d0a"
+  },
+  {
+   "path": "普通高考/1977/1977山东A卷.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f7e47da97f1fe5b15945f0ea539c255142cde1c0",
+   "size": 1615154,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f7e47da97f1fe5b15945f0ea539c255142cde1c0"
+  },
+  {
+   "path": "普通高考/1977/1977山东B卷.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "db849ca3253f7ed3734b23e83182b9c8fd0ea411",
+   "size": 57380,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/db849ca3253f7ed3734b23e83182b9c8fd0ea411"
+  },
+  {
+   "path": "普通高考/1977/1977山西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "61839694c58790e3fe501e54df97d6fad11b5a82",
+   "size": 909261,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/61839694c58790e3fe501e54df97d6fad11b5a82"
+  },
+  {
+   "path": "普通高考/1977/1977广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6767cc961ff5e7d8d38eeabd0a96390a40b0a653",
+   "size": 82602,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6767cc961ff5e7d8d38eeabd0a96390a40b0a653"
+  },
+  {
+   "path": "普通高考/1977/1977广西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1dab8ef5e8d5ab8a75e0000a637abecf569aa6ca",
+   "size": 2046807,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1dab8ef5e8d5ab8a75e0000a637abecf569aa6ca"
+  },
+  {
+   "path": "普通高考/1977/1977新疆.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "18112ea67e7a3029365b16f2faf6582aaf888ec0",
+   "size": 2059284,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/18112ea67e7a3029365b16f2faf6582aaf888ec0"
+  },
+  {
+   "path": "普通高考/1977/1977江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c77b6b7886b7eab4f5e0f3263df2cf1acbcfce37",
+   "size": 2871828,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c77b6b7886b7eab4f5e0f3263df2cf1acbcfce37"
+  },
+  {
+   "path": "普通高考/1977/1977江西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "29ba0bdb38befadb480b6883758577dce3475bf4",
+   "size": 1733129,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/29ba0bdb38befadb480b6883758577dce3475bf4"
+  },
+  {
+   "path": "普通高考/1977/1977河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d74b22f8eb4b7d3f46fd3e813956fb2272497804",
+   "size": 969943,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d74b22f8eb4b7d3f46fd3e813956fb2272497804"
+  },
+  {
+   "path": "普通高考/1977/1977河南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "55cb457296e568c52d57afeffa3c0f8b524b5a91",
+   "size": 108001,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/55cb457296e568c52d57afeffa3c0f8b524b5a91"
+  },
+  {
+   "path": "普通高考/1977/1977浙江.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "52525c85e6665fa69c4e2937caf1e23751a67747",
+   "size": 1062288,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/52525c85e6665fa69c4e2937caf1e23751a67747"
+  },
+  {
+   "path": "普通高考/1977/1977湖北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e23ba7367e130fcc9e6e0e406953dda00c71f151",
+   "size": 86760,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e23ba7367e130fcc9e6e0e406953dda00c71f151"
+  },
+  {
+   "path": "普通高考/1977/1977湖南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b7f3720a2d9d33d4bdddcbb95b8e62f4c806bea4",
+   "size": 1862194,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b7f3720a2d9d33d4bdddcbb95b8e62f4c806bea4"
+  },
+  {
+   "path": "普通高考/1977/1977甘肃.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "38fb9dae68fbcc0a68cb68721180d0978348a483",
+   "size": 943334,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/38fb9dae68fbcc0a68cb68721180d0978348a483"
+  },
+  {
+   "path": "普通高考/1977/1977福建.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "46e9df865a4f511bcfb3928d66cad99274c271b3",
+   "size": 2105127,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/46e9df865a4f511bcfb3928d66cad99274c271b3"
+  },
+  {
+   "path": "普通高考/1977/1977西藏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2b69af6e0af41e93b615c2528fce2f9b40d4c6b0",
+   "size": 66759,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2b69af6e0af41e93b615c2528fce2f9b40d4c6b0"
+  },
+  {
+   "path": "普通高考/1977/1977贵州.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "931d54be6b9c3f118bb08f95e1b135a4f37abb29",
+   "size": 84029,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/931d54be6b9c3f118bb08f95e1b135a4f37abb29"
+  },
+  {
+   "path": "普通高考/1977/1977辽宁.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "cec44037529bf9b320d2da31335960626e001944",
+   "size": 693893,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/cec44037529bf9b320d2da31335960626e001944"
+  },
+  {
+   "path": "普通高考/1977/1977陕西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "db278eebd999b74c427cf74c4cb16c5321e4b84c",
+   "size": 75969,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/db278eebd999b74c427cf74c4cb16c5321e4b84c"
+  },
+  {
+   "path": "普通高考/1977/1977青海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "21300a2915fd539085ec899fe72a512e08f64c82",
+   "size": 121936,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/21300a2915fd539085ec899fe72a512e08f64c82"
+  },
+  {
+   "path": "普通高考/1977/1977黑龙江.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "eb070d72ed6a738d198409e5392ef9b24a4cbc76",
+   "size": 181138,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/eb070d72ed6a738d198409e5392ef9b24a4cbc76"
+  },
+  {
+   "path": "普通高考/1978",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "d1e458f7f8b8b0609d98e052ff2d670bb0c5d2f2",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/d1e458f7f8b8b0609d98e052ff2d670bb0c5d2f2"
+  },
+  {
+   "path": "普通高考/1978/1978.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ec4c7cfd278b86eda32d4a4a6f5424f347ee95cd",
+   "size": 1042090,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ec4c7cfd278b86eda32d4a4a6f5424f347ee95cd"
+  },
+  {
+   "path": "普通高考/1979",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "7ceacea03e17085a35c436d6cb49950dee22ba40",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/7ceacea03e17085a35c436d6cb49950dee22ba40"
+  },
+  {
+   "path": "普通高考/1979/1979.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6262c1474111ba246bfd2b9b6e5e3d3587a1c3d9",
+   "size": 1593822,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6262c1474111ba246bfd2b9b6e5e3d3587a1c3d9"
+  },
+  {
+   "path": "普通高考/1980",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "ab1671b75e85b0fa1e7c192a282c104976335ca8",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/ab1671b75e85b0fa1e7c192a282c104976335ca8"
+  },
+  {
+   "path": "普通高考/1980/1980.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2491853a1880c68b08afc56f1b7eeed73470bd4a",
+   "size": 1985935,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2491853a1880c68b08afc56f1b7eeed73470bd4a"
+  },
+  {
+   "path": "普通高考/1981",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "1238b81f2d66e90db0ed46c6da4acf875160e51d",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/1238b81f2d66e90db0ed46c6da4acf875160e51d"
+  },
+  {
+   "path": "普通高考/1981/1981.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "49a1802c6588c4af792db8a2dc2c363237391fd7",
+   "size": 2471805,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/49a1802c6588c4af792db8a2dc2c363237391fd7"
+  },
+  {
+   "path": "普通高考/1982",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "f17879354f9c93e3a355e1cb662d68556368e90a",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/f17879354f9c93e3a355e1cb662d68556368e90a"
+  },
+  {
+   "path": "普通高考/1982/1982.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "556339b9f9920b6f5396c9b2365af22d4f312f04",
+   "size": 2349009,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/556339b9f9920b6f5396c9b2365af22d4f312f04"
+  },
+  {
+   "path": "普通高考/1983",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "1364bf7c63ebe9445d515fe198ae61c83ffd44bf",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/1364bf7c63ebe9445d515fe198ae61c83ffd44bf"
+  },
+  {
+   "path": "普通高考/1983/1983.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4edad29620ce494c80230875eee39d8920ef9e5a",
+   "size": 3018535,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4edad29620ce494c80230875eee39d8920ef9e5a"
+  },
+  {
+   "path": "普通高考/1984",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "8d7d4059885f7925c4992b1e372d747deecabd84",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/8d7d4059885f7925c4992b1e372d747deecabd84"
+  },
+  {
+   "path": "普通高考/1984/1984.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "86c3aaa26e75e8758f10e1679feb644831a6d20a",
+   "size": 1957424,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/86c3aaa26e75e8758f10e1679feb644831a6d20a"
+  },
+  {
+   "path": "普通高考/1985",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "f373336e4e8263f0ed36f0756f59c74d2b7ba7fe",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/f373336e4e8263f0ed36f0756f59c74d2b7ba7fe"
+  },
+  {
+   "path": "普通高考/1985/1985上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "eef5e9027610b9ab0b6e2dfa04dd2b04f7dfb215",
+   "size": 220366,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/eef5e9027610b9ab0b6e2dfa04dd2b04f7dfb215"
+  },
+  {
+   "path": "普通高考/1985/1985全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6aa9abd8990c65d35294c6246cd447857ebe7bc0",
+   "size": 2472094,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6aa9abd8990c65d35294c6246cd447857ebe7bc0"
+  },
+  {
+   "path": "普通高考/1986",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "0b2f4234873a64f0f20253e0ca902758dab93f16",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/0b2f4234873a64f0f20253e0ca902758dab93f16"
+  },
+  {
+   "path": "普通高考/1986/1986上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "01e4ba20a7cac7d27581cc5e9337fc7154fdf5d5",
+   "size": 189766,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/01e4ba20a7cac7d27581cc5e9337fc7154fdf5d5"
+  },
+  {
+   "path": "普通高考/1986/1986全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7eedb3c92ef46df8a6e819683dfbe720fa583128",
+   "size": 2375863,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7eedb3c92ef46df8a6e819683dfbe720fa583128"
+  },
+  {
+   "path": "普通高考/1986/1986广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "987f428a9d81942a490811b2941c51288d5ef09d",
+   "size": 458371,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/987f428a9d81942a490811b2941c51288d5ef09d"
+  },
+  {
+   "path": "普通高考/1987",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "10de118b37d0acd5a6daedaf6d9cea86e2b15262",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/10de118b37d0acd5a6daedaf6d9cea86e2b15262"
+  },
+  {
+   "path": "普通高考/1987/1987全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c8391117ef5637a3ce828afd07f5ae9d657d8629",
+   "size": 2510392,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c8391117ef5637a3ce828afd07f5ae9d657d8629"
+  },
+  {
+   "path": "普通高考/1987/1987广东山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5c14b462f1e948e72f34973e8477c00430a97fd8",
+   "size": 1268801,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5c14b462f1e948e72f34973e8477c00430a97fd8"
+  },
+  {
+   "path": "普通高考/1988",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "b3271361920104e05742c995470297616f5f3f2c",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/b3271361920104e05742c995470297616f5f3f2c"
+  },
+  {
+   "path": "普通高考/1988/1988上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ada9a16aef142e084483386635e279e5a70c112f",
+   "size": 284009,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ada9a16aef142e084483386635e279e5a70c112f"
+  },
+  {
+   "path": "普通高考/1988/1988全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0fe767faef5244dbc8a15b2103deb8bd1ecdb409",
+   "size": 2060399,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0fe767faef5244dbc8a15b2103deb8bd1ecdb409"
+  },
+  {
+   "path": "普通高考/1988/1988广东山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3abceda9f9aac90076a8217d397fdb0c5532ccab",
+   "size": 3249375,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3abceda9f9aac90076a8217d397fdb0c5532ccab"
+  },
+  {
+   "path": "普通高考/1989",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "36de63c1a8bf692ed7e864fe1ea9b5d11a1cd97f",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/36de63c1a8bf692ed7e864fe1ea9b5d11a1cd97f"
+  },
+  {
+   "path": "普通高考/1989/1989上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "29fe71c5c6241a3899fb51a3bd96d1f117278d5f",
+   "size": 220965,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/29fe71c5c6241a3899fb51a3bd96d1f117278d5f"
+  },
+  {
+   "path": "普通高考/1989/1989全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0589e56e2b111d7be1237d172d8e9b63bb7cc841",
+   "size": 2428664,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0589e56e2b111d7be1237d172d8e9b63bb7cc841"
+  },
+  {
+   "path": "普通高考/1990",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "521833524fbc8475f3daef34668ea0821e6591e1",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/521833524fbc8475f3daef34668ea0821e6591e1"
+  },
+  {
+   "path": "普通高考/1990/1990全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "fdb1b6aabc1c3a23f20ea8babf654ba3823c8b73",
+   "size": 2366309,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/fdb1b6aabc1c3a23f20ea8babf654ba3823c8b73"
+  },
+  {
+   "path": "普通高考/1990/1990广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2e93e6367702c8f5c7c1a081267a28c76695ac4b",
+   "size": 3848726,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2e93e6367702c8f5c7c1a081267a28c76695ac4b"
+  },
+  {
+   "path": "普通高考/1991",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "aef41152d08911dcb55fbdc9d939805ad28340eb",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/aef41152d08911dcb55fbdc9d939805ad28340eb"
+  },
+  {
+   "path": "普通高考/1991/1991三南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6770e5e441b19bad40eec1d79e1b99e6fe365c57",
+   "size": 2416686,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6770e5e441b19bad40eec1d79e1b99e6fe365c57"
+  },
+  {
+   "path": "普通高考/1991/1991上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a29e80dd4c20b33167ac834d593e1f16313e8b7f",
+   "size": 248780,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a29e80dd4c20b33167ac834d593e1f16313e8b7f"
+  },
+  {
+   "path": "普通高考/1991/1991全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6d47285ea149f541dc6e6dcbb10fa346b809ab0d",
+   "size": 2352387,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6d47285ea149f541dc6e6dcbb10fa346b809ab0d"
+  },
+  {
+   "path": "普通高考/1992",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "1d036f3e8583588e36e22ea96fe662a3dce224ea",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/1d036f3e8583588e36e22ea96fe662a3dce224ea"
+  },
+  {
+   "path": "普通高考/1992/1992三南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a24d5561ca7b289f0a340e65c7bb75ed89e155ea",
+   "size": 1907524,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a24d5561ca7b289f0a340e65c7bb75ed89e155ea"
+  },
+  {
+   "path": "普通高考/1992/1992上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "401ae5f11f2df519494a97a8e448aa339db56cc2",
+   "size": 297338,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/401ae5f11f2df519494a97a8e448aa339db56cc2"
+  },
+  {
+   "path": "普通高考/1992/1992全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "07074f76e7b73788f63167b345e6b93409713839",
+   "size": 2054608,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/07074f76e7b73788f63167b345e6b93409713839"
+  },
+  {
+   "path": "普通高考/1993",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "b3804488cf16c060341a94033cb3be0844a8924b",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/b3804488cf16c060341a94033cb3be0844a8924b"
+  },
+  {
+   "path": "普通高考/1993/1993三南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "10b4ba029992761e523bd5d41d55f6111db65f00",
+   "size": 3081548,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/10b4ba029992761e523bd5d41d55f6111db65f00"
+  },
+  {
+   "path": "普通高考/1993/1993上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7a2bb170dc1b4bac47f83a02122f2e6fb00d5e56",
+   "size": 3060112,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7a2bb170dc1b4bac47f83a02122f2e6fb00d5e56"
+  },
+  {
+   "path": "普通高考/1993/1993全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2c685bfad5ef3e2b8993dcfb7683f3c18a45fac4",
+   "size": 3090807,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2c685bfad5ef3e2b8993dcfb7683f3c18a45fac4"
+  },
+  {
+   "path": "普通高考/1994",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "46163039782e8172e8ca4a91ddbafe5b18e8d4f6",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/46163039782e8172e8ca4a91ddbafe5b18e8d4f6"
+  },
+  {
+   "path": "普通高考/1994/1994上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "356cc2e7920a671fd97ef961af98133143eac3cd",
+   "size": 1794934,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/356cc2e7920a671fd97ef961af98133143eac3cd"
+  },
+  {
+   "path": "普通高考/1994/1994上海试点教材.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2dc3a4690d5f6da6f690d443e1b6d611efe853bd",
+   "size": 1904887,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2dc3a4690d5f6da6f690d443e1b6d611efe853bd"
+  },
+  {
+   "path": "普通高考/1994/1994新科目组.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3b8e5e493df29ecf04bf853b77383808191fe562",
+   "size": 674407,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3b8e5e493df29ecf04bf853b77383808191fe562"
+  },
+  {
+   "path": "普通高考/1994/1994旧科目组.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c6d9aa2423b3b2e337697a90f268e3bdfb53a97b",
+   "size": 3448112,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c6d9aa2423b3b2e337697a90f268e3bdfb53a97b"
+  },
+  {
+   "path": "普通高考/1995",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "49de3abb7d1d8ef7da6661ee2b281ad252aa1f06",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/49de3abb7d1d8ef7da6661ee2b281ad252aa1f06"
+  },
+  {
+   "path": "普通高考/1995/1995上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f748306c69e12e2f0bca32128870e012bb2da303",
+   "size": 622952,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f748306c69e12e2f0bca32128870e012bb2da303"
+  },
+  {
+   "path": "普通高考/1995/1995全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "521eda679ece87d2ca9012fbf8202e3ad62a8a89",
+   "size": 820158,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/521eda679ece87d2ca9012fbf8202e3ad62a8a89"
+  },
+  {
+   "path": "普通高考/1996",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "9fd948a51f53fbf8172fdc6b6faa8c15e2e09a0d",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/9fd948a51f53fbf8172fdc6b6faa8c15e2e09a0d"
+  },
+  {
+   "path": "普通高考/1996/1996上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "adfd7213d74f6928efe3a67a0e11223b6476521d",
+   "size": 626509,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/adfd7213d74f6928efe3a67a0e11223b6476521d"
+  },
+  {
+   "path": "普通高考/1996/1996全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "041dd41c3aafba3e94f7c3594117531140cb5ea9",
+   "size": 709703,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/041dd41c3aafba3e94f7c3594117531140cb5ea9"
+  },
+  {
+   "path": "普通高考/1997",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "fd1b49414a858f0f34eee2d3ae9ef6a39f5f30b8",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/fd1b49414a858f0f34eee2d3ae9ef6a39f5f30b8"
+  },
+  {
+   "path": "普通高考/1997/1997上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e6cadf25b2330cb748b78888104e8e4a6a837d4c",
+   "size": 623928,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e6cadf25b2330cb748b78888104e8e4a6a837d4c"
+  },
+  {
+   "path": "普通高考/1997/1997全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5929fc24c2c1c7def8c2a7fa0816181d51bdf6e3",
+   "size": 787968,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5929fc24c2c1c7def8c2a7fa0816181d51bdf6e3"
+  },
+  {
+   "path": "普通高考/1998",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "5b67707ba7bfb49ec1326896f169acf1546bc861",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/5b67707ba7bfb49ec1326896f169acf1546bc861"
+  },
+  {
+   "path": "普通高考/1998/1998上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7aefd358dcd2ba3cf05d6452af08466e50613db4",
+   "size": 542070,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7aefd358dcd2ba3cf05d6452af08466e50613db4"
+  },
+  {
+   "path": "普通高考/1998/1998全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "782d67138896db2ab4320bf549cc2eb39b40ea64",
+   "size": 3138592,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/782d67138896db2ab4320bf549cc2eb39b40ea64"
+  },
+  {
+   "path": "普通高考/1999",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "84254cc9e423144538a91b74f8ce6c1d838c00e9",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/84254cc9e423144538a91b74f8ce6c1d838c00e9"
+  },
+  {
+   "path": "普通高考/1999/1999上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3f4c0649ea137a4a4dd7bb38c0e6591e4c636770",
+   "size": 596173,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3f4c0649ea137a4a4dd7bb38c0e6591e4c636770"
+  },
+  {
+   "path": "普通高考/1999/1999全国.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7d31a8cc809cd1c277175d1a9b02452736689481",
+   "size": 3274844,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7d31a8cc809cd1c277175d1a9b02452736689481"
+  },
+  {
+   "path": "普通高考/1999/1999广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6b324bca50eeafcdd0a3f2319a5bd6d894322536",
+   "size": 2923168,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6b324bca50eeafcdd0a3f2319a5bd6d894322536"
+  },
+  {
+   "path": "普通高考/2000",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "61558e35a377426ebabe67360da24892a2035395",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/61558e35a377426ebabe67360da24892a2035395"
+  },
+  {
+   "path": "普通高考/2000/2000上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "aff7900888ddff9b70c96e0aaf91aae98c4e7f77",
+   "size": 617015,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/aff7900888ddff9b70c96e0aaf91aae98c4e7f77"
+  },
+  {
+   "path": "普通高考/2000/2000全国新课程(天津、江西卷).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "894f4aea715b2763b1e8f802d3592460e0683edf",
+   "size": 3183244,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/894f4aea715b2763b1e8f802d3592460e0683edf"
+  },
+  {
+   "path": "普通高考/2000/2000全国新课程理综(山西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "934adc6bbd6c6c7ff915eda6e486137f8a1a6f9e",
+   "size": 559800,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/934adc6bbd6c6c7ff915eda6e486137f8a1a6f9e"
+  },
+  {
+   "path": "普通高考/2000/2000全国旧课程.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "585152d91fd3751a97a956a2a1063b06df6c1086",
+   "size": 3277841,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/585152d91fd3751a97a956a2a1063b06df6c1086"
+  },
+  {
+   "path": "普通高考/2000/2000全国旧课程理综(浙江,江苏,吉林).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "510e69ded1607e78ec9c19b3eef441021f7c0e30",
+   "size": 2853078,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/510e69ded1607e78ec9c19b3eef441021f7c0e30"
+  },
+  {
+   "path": "普通高考/2000/2000广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c1755fd7d7d875bde648146892221ae25bafa81a",
+   "size": 3360080,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c1755fd7d7d875bde648146892221ae25bafa81a"
+  },
+  {
+   "path": "普通高考/2001",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "0766c7f21a426d08b190af213ba0fce5ea01bb32",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/0766c7f21a426d08b190af213ba0fce5ea01bb32"
+  },
+  {
+   "path": "普通高考/2001/2001上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "abccc41c4152266220d67eaa6737e79f6ab8a957",
+   "size": 847513,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/abccc41c4152266220d67eaa6737e79f6ab8a957"
+  },
+  {
+   "path": "普通高考/2001/2001全国新课程(江西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e852f245194de0203be72e14d9011ef4b3b574c0",
+   "size": 3136294,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e852f245194de0203be72e14d9011ef4b3b574c0"
+  },
+  {
+   "path": "普通高考/2001/2001全国新课程理综(天津,山西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f6c3618903be332f747d6cb2c32be0315d137096",
+   "size": 2875179,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f6c3618903be332f747d6cb2c32be0315d137096"
+  },
+  {
+   "path": "普通高考/2001/2001全国旧课程(北京,河北,山东,广西,重庆,贵州,云南,西藏,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "015a5699265f2842f88643ed394cf3c1fef137a2",
+   "size": 3134963,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/015a5699265f2842f88643ed394cf3c1fef137a2"
+  },
+  {
+   "path": "普通高考/2001/2001全国旧课程理综(内蒙古,辽宁,吉林,黑龙江,江苏,浙江,安徽,福建,湖北,湖南,海南,四川,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1ea0f533ac608d233cf8674012942896309d4405",
+   "size": 483153,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1ea0f533ac608d233cf8674012942896309d4405"
+  },
+  {
+   "path": "普通高考/2001/2001广东河南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "873d9271fa93313fc609fd7f1c8c19794c78b60e",
+   "size": 2834285,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/873d9271fa93313fc609fd7f1c8c19794c78b60e"
+  },
+  {
+   "path": "普通高考/2002",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "772ec2ba20b3ff6fcae86a4d7b28f6eb48f2b887",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/772ec2ba20b3ff6fcae86a4d7b28f6eb48f2b887"
+  },
+  {
+   "path": "普通高考/2002/2002上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b0dccc129bdc102ecd75e7ff5a6285d4dac30e4d",
+   "size": 663353,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b0dccc129bdc102ecd75e7ff5a6285d4dac30e4d"
+  },
+  {
+   "path": "普通高考/2002/2002全国新课程理综(天津,山西,江西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f5405c54d0462ef2e93120747bf419804af84cd1",
+   "size": 614855,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f5405c54d0462ef2e93120747bf419804af84cd1"
+  },
+  {
+   "path": "普通高考/2002/2002全国旧课程(河南,广东,广西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "16d8459a8400a70efdf0698fecb75c8bf84aecea",
+   "size": 754101,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/16d8459a8400a70efdf0698fecb75c8bf84aecea"
+  },
+  {
+   "path": "普通高考/2002/2002全国旧课程理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "03f8fa3d69356bc693e80c2ed8c54e328ba2f324",
+   "size": 603746,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/03f8fa3d69356bc693e80c2ed8c54e328ba2f324"
+  },
+  {
+   "path": "普通高考/2003",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "89677b8bc7b9f621290d03117b3142b5ad653ebc",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/89677b8bc7b9f621290d03117b3142b5ad653ebc"
+  },
+  {
+   "path": "普通高考/2003/2003上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e95d411df620fce312d2e16df37b1aa4e763f448",
+   "size": 694320,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e95d411df620fce312d2e16df37b1aa4e763f448"
+  },
+  {
+   "path": "普通高考/2003/2003全国新课程(河南,江苏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5bb7b89ff560be2575dac7af72c80d4da2c4b445",
+   "size": 4725807,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5bb7b89ff560be2575dac7af72c80d4da2c4b445"
+  },
+  {
+   "path": "普通高考/2003/2003全国新课程理综(天津,山西,黑龙江,安徽,江西,山东,青海).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "bbefc2e5157a4ed9a720886595cdcef00f886be2",
+   "size": 632286,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/bbefc2e5157a4ed9a720886595cdcef00f886be2"
+  },
+  {
+   "path": "普通高考/2003/2003全国旧课程(广东,广西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "137f638db27d14cf1e0d40f7e9d8fdf6f87d947b",
+   "size": 703955,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/137f638db27d14cf1e0d40f7e9d8fdf6f87d947b"
+  },
+  {
+   "path": "普通高考/2003/2003全国旧课程理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c9591344d6fbcde53fc0f43b854ec7f7e3d51f3f",
+   "size": 2883024,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c9591344d6fbcde53fc0f43b854ec7f7e3d51f3f"
+  },
+  {
+   "path": "普通高考/2004",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "fa9ed9756b5cad78f5bcb2964773242aa5835a34",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/fa9ed9756b5cad78f5bcb2964773242aa5835a34"
+  },
+  {
+   "path": "普通高考/2004/2004上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "59dc94dbc9ccdee672a54c7aa8f13f5b71b43aba",
+   "size": 882841,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/59dc94dbc9ccdee672a54c7aa8f13f5b71b43aba"
+  },
+  {
+   "path": "普通高考/2004/2004全国1理综(河南,河北,山西,浙江,安徽,福建,江西,山东).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4ebd5a1d56c8daff1108f97537e2b698b6133468",
+   "size": 609928,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4ebd5a1d56c8daff1108f97537e2b698b6133468"
+  },
+  {
+   "path": "普通高考/2004/2004全国2理综(吉林,黑龙江,湖北,湖南,重庆,四川,贵州,云南).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e04599ecbd9079ccf61b0fdb4e5d70f846bb45ff",
+   "size": 615715,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e04599ecbd9079ccf61b0fdb4e5d70f846bb45ff"
+  },
+  {
+   "path": "普通高考/2004/2004全国3理综(内蒙古,海南,西藏,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e8a990ec3ec147d58a67ea457c3be26f46e7361d",
+   "size": 562971,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e8a990ec3ec147d58a67ea457c3be26f46e7361d"
+  },
+  {
+   "path": "普通高考/2004/2004全国4理综(甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "73886f30819687b24cd2d8c781a950e8ac3b5458",
+   "size": 581059,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/73886f30819687b24cd2d8c781a950e8ac3b5458"
+  },
+  {
+   "path": "普通高考/2004/2004北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "826784ac771008ccc6d692937c6d75c5f369f950",
+   "size": 705019,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/826784ac771008ccc6d692937c6d75c5f369f950"
+  },
+  {
+   "path": "普通高考/2004/2004天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "cf756b5d4b3512a2e3236271fb61455d2f96e8b6",
+   "size": 628123,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/cf756b5d4b3512a2e3236271fb61455d2f96e8b6"
+  },
+  {
+   "path": "普通高考/2004/2004广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d707e0e244d2fcee2d25a32fa1b0c7653d4bfa14",
+   "size": 733436,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d707e0e244d2fcee2d25a32fa1b0c7653d4bfa14"
+  },
+  {
+   "path": "普通高考/2004/2004广西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c450fc1924a746fd58c016d43a866ee96654b6e1",
+   "size": 3427226,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c450fc1924a746fd58c016d43a866ee96654b6e1"
+  },
+  {
+   "path": "普通高考/2004/2004江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f8e72c4a9c8a1e365de5c1ba2059185d2dbfddf3",
+   "size": 965254,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f8e72c4a9c8a1e365de5c1ba2059185d2dbfddf3"
+  },
+  {
+   "path": "普通高考/2005",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "7c40cbfacce2ae2aa6fa40283ea4fa20b793f586",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/7c40cbfacce2ae2aa6fa40283ea4fa20b793f586"
+  },
+  {
+   "path": "普通高考/2005/2005上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6a6a49c1f8568f269eb4a9a1228fe6b205d77303",
+   "size": 846250,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6a6a49c1f8568f269eb4a9a1228fe6b205d77303"
+  },
+  {
+   "path": "普通高考/2005/2005全国1理综(河南,河北,山西,浙江,安徽,福建,江西,山东,湖北,湖南,海南).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0f435d7ba7ea11c21fb009ebf7ba3e3450c6bdc9",
+   "size": 701743,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0f435d7ba7ea11c21fb009ebf7ba3e3450c6bdc9"
+  },
+  {
+   "path": "普通高考/2005/2005全国2理综(内蒙古,吉林,黑龙江,广西,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "faa04fe24177487d9930e7e4f47ae4327dc98c3e",
+   "size": 455958,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/faa04fe24177487d9930e7e4f47ae4327dc98c3e"
+  },
+  {
+   "path": "普通高考/2005/2005全国3理综(重庆,四川,贵州,云南,西藏,陕西,甘肃,青海).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d4daaddd387943805f4bd8d911379cf58cca9ace",
+   "size": 379515,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d4daaddd387943805f4bd8d911379cf58cca9ace"
+  },
+  {
+   "path": "普通高考/2005/2005北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d74227cb2c32c3cfef951ac19a85bbf2740cf526",
+   "size": 454823,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d74227cb2c32c3cfef951ac19a85bbf2740cf526"
+  },
+  {
+   "path": "普通高考/2005/2005天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "80cc9d661911a74781791e1f8b65b0778d0c34ec",
+   "size": 496845,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/80cc9d661911a74781791e1f8b65b0778d0c34ec"
+  },
+  {
+   "path": "普通高考/2005/2005广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6c725a4d2a414585cea2e3d28f2c22a94c4c1806",
+   "size": 573846,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6c725a4d2a414585cea2e3d28f2c22a94c4c1806"
+  },
+  {
+   "path": "普通高考/2005/2005江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e10e9d137827419cf2212de814ca0ece35ce1fe2",
+   "size": 605701,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e10e9d137827419cf2212de814ca0ece35ce1fe2"
+  },
+  {
+   "path": "普通高考/2006",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "742e62618e27585cc00c0ef34651cc13e4c26012",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/742e62618e27585cc00c0ef34651cc13e4c26012"
+  },
+  {
+   "path": "普通高考/2006/2006上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "87d7ddd14bc376fc556072c1eed66bb2a5870237",
+   "size": 878692,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/87d7ddd14bc376fc556072c1eed66bb2a5870237"
+  },
+  {
+   "path": "普通高考/2006/2006全国1理综(河南,河北,山西,辽宁,浙江,安徽,福建,江西,山东,湖北,湖南,广西,海南,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e9e7e46d7950afcf9eaf5e37100e6fcfb2c48cbf",
+   "size": 562765,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e9e7e46d7950afcf9eaf5e37100e6fcfb2c48cbf"
+  },
+  {
+   "path": "普通高考/2006/2006全国2理综(内蒙古,吉林,黑龙江,贵州,云南,西藏,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8a4a4c6794cc8f867c745d9757af2ee22b7ed295",
+   "size": 504373,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8a4a4c6794cc8f867c745d9757af2ee22b7ed295"
+  },
+  {
+   "path": "普通高考/2006/2006北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8668a94c733ddde0e4f41edd66a105c5e6c26d72",
+   "size": 705897,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8668a94c733ddde0e4f41edd66a105c5e6c26d72"
+  },
+  {
+   "path": "普通高考/2006/2006四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "37e25e36d868314f135f13c74b61740b77266136",
+   "size": 413403,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/37e25e36d868314f135f13c74b61740b77266136"
+  },
+  {
+   "path": "普通高考/2006/2006天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f29411127c39833310a2318df23ba0e75369c8d3",
+   "size": 660683,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f29411127c39833310a2318df23ba0e75369c8d3"
+  },
+  {
+   "path": "普通高考/2006/2006广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b1d4aa0273cc08d57a8a5c0171995c028a5c6a79",
+   "size": 788125,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b1d4aa0273cc08d57a8a5c0171995c028a5c6a79"
+  },
+  {
+   "path": "普通高考/2006/2006江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c2e27f0df475c15a7d4cbe4f07ca5aba809ce164",
+   "size": 747035,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c2e27f0df475c15a7d4cbe4f07ca5aba809ce164"
+  },
+  {
+   "path": "普通高考/2006/2006重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "93c0ade83bb1ec078e2d6d26a5b628d926cc3fda",
+   "size": 530224,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/93c0ade83bb1ec078e2d6d26a5b628d926cc3fda"
+  },
+  {
+   "path": "普通高考/2007",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "7ed29562b67a2a0c439acf791c069e00818717fc",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/7ed29562b67a2a0c439acf791c069e00818717fc"
+  },
+  {
+   "path": "普通高考/2007/2007上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2b472edff18113f81ef57289c9b8c16db7762aed",
+   "size": 799749,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2b472edff18113f81ef57289c9b8c16db7762aed"
+  },
+  {
+   "path": "普通高考/2007/2007北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "792f30fed61aaeca8befa792cbe2e6f4067a4f81",
+   "size": 620031,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/792f30fed61aaeca8befa792cbe2e6f4067a4f81"
+  },
+  {
+   "path": "普通高考/2007/2007四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "629433a16b8554f327a74f1f5089980955f7573b",
+   "size": 513542,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/629433a16b8554f327a74f1f5089980955f7573b"
+  },
+  {
+   "path": "普通高考/2007/2007大纲1理综(河南,河北,山西,辽宁,浙江,安徽,福建,江西,湖北,湖南,广西,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "966c28b080ea4ff3797bc6de0b312c31f1ea6c7b",
+   "size": 538693,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/966c28b080ea4ff3797bc6de0b312c31f1ea6c7b"
+  },
+  {
+   "path": "普通高考/2007/2007大纲2理综(内蒙古,吉林,黑龙江,贵州,云南,西藏,甘肃,青海,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3841e2ec43172bf86cc3b05c2e324d3b213dc075",
+   "size": 488020,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3841e2ec43172bf86cc3b05c2e324d3b213dc075"
+  },
+  {
+   "path": "普通高考/2007/2007天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "13cfb26b4432277d85129170c6f03575b5f516f3",
+   "size": 673337,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/13cfb26b4432277d85129170c6f03575b5f516f3"
+  },
+  {
+   "path": "普通高考/2007/2007山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0336cd11302515f3e384ec5f2cc1e35ef31c1414",
+   "size": 491975,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0336cd11302515f3e384ec5f2cc1e35ef31c1414"
+  },
+  {
+   "path": "普通高考/2007/2007广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e15e66ee21e2714f57427705467795c6def0726b",
+   "size": 801114,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e15e66ee21e2714f57427705467795c6def0726b"
+  },
+  {
+   "path": "普通高考/2007/2007新课标理综(宁夏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "58c4e5aa5fcaefee84c32b491aafadc1ac773119",
+   "size": 503035,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/58c4e5aa5fcaefee84c32b491aafadc1ac773119"
+  },
+  {
+   "path": "普通高考/2007/2007江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8dc4a884323939387f2b8ae465a0336915945441",
+   "size": 750536,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8dc4a884323939387f2b8ae465a0336915945441"
+  },
+  {
+   "path": "普通高考/2007/2007海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ff2ef0338c3337c60577ac73b128fbf6902d06ac",
+   "size": 683078,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ff2ef0338c3337c60577ac73b128fbf6902d06ac"
+  },
+  {
+   "path": "普通高考/2007/2007重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f9db3daa850f4995ecc7895a92542efbada61631",
+   "size": 520344,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f9db3daa850f4995ecc7895a92542efbada61631"
+  },
+  {
+   "path": "普通高考/2008",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "3d5aabcfb21374927acf626ba9be89552e760e08",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/3d5aabcfb21374927acf626ba9be89552e760e08"
+  },
+  {
+   "path": "普通高考/2008/2008上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "bdecb5d6552153fcff67485b9da9c9d3cf98fd97",
+   "size": 807893,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/bdecb5d6552153fcff67485b9da9c9d3cf98fd97"
+  },
+  {
+   "path": "普通高考/2008/2008北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "422b794970e100a4b3d54abc691553e2ae0f0cc7",
+   "size": 467705,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/422b794970e100a4b3d54abc691553e2ae0f0cc7"
+  },
+  {
+   "path": "普通高考/2008/2008四川延考理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8e8395ceb4321a37cad9bc5830128327f40da930",
+   "size": 3495742,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8e8395ceb4321a37cad9bc5830128327f40da930"
+  },
+  {
+   "path": "普通高考/2008/2008四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ab0d3d8699b719e9178b173a0b08e688d274a1a9",
+   "size": 512310,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ab0d3d8699b719e9178b173a0b08e688d274a1a9"
+  },
+  {
+   "path": "普通高考/2008/2008大纲1理综(河南,河北,山西,辽宁,浙江,安徽,福建,江西,湖北,湖南,广西,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8177fb1c725fde1175494e8f5a086187aafa42c9",
+   "size": 423739,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8177fb1c725fde1175494e8f5a086187aafa42c9"
+  },
+  {
+   "path": "普通高考/2008/2008大纲2理综(内蒙古,吉林,黑龙江,贵州,云南,西藏,甘肃,青海,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "cc7d4b3fedcaf4cffd319c2f4e70327904c26eab",
+   "size": 470948,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/cc7d4b3fedcaf4cffd319c2f4e70327904c26eab"
+  },
+  {
+   "path": "普通高考/2008/2008天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6a816b15a6d981c56e5e1a00b6fa244ca71d6ec1",
+   "size": 522163,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6a816b15a6d981c56e5e1a00b6fa244ca71d6ec1"
+  },
+  {
+   "path": "普通高考/2008/2008山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "14acc636cc56e3b5585700be9bbfc54f93313a3a",
+   "size": 588467,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/14acc636cc56e3b5585700be9bbfc54f93313a3a"
+  },
+  {
+   "path": "普通高考/2008/2008广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1f27d73ba734829012ab3160a3bccc4cdd338068",
+   "size": 608539,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1f27d73ba734829012ab3160a3bccc4cdd338068"
+  },
+  {
+   "path": "普通高考/2008/2008新课标理综(宁夏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e47e1124392ae11a6219b75aab0fe5827c8eb1b5",
+   "size": 833571,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e47e1124392ae11a6219b75aab0fe5827c8eb1b5"
+  },
+  {
+   "path": "普通高考/2008/2008江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f8ba28e4d15380d23cfe74ad49d55d8df632172f",
+   "size": 745526,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f8ba28e4d15380d23cfe74ad49d55d8df632172f"
+  },
+  {
+   "path": "普通高考/2008/2008海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "501626e31d267f869ff75573d5395e89d8cfe9fb",
+   "size": 655096,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/501626e31d267f869ff75573d5395e89d8cfe9fb"
+  },
+  {
+   "path": "普通高考/2008/2008重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "baa5b07ed8aa8b7930e744f2e641947e7c279575",
+   "size": 686906,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/baa5b07ed8aa8b7930e744f2e641947e7c279575"
+  },
+  {
+   "path": "普通高考/2009",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "5b1e7a25e539b506365e5d3f0a359dd38d47c4db",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/5b1e7a25e539b506365e5d3f0a359dd38d47c4db"
+  },
+  {
+   "path": "普通高考/2009/2009上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8fb5da60f0f6b9730ccf8e239d595e2a180ff0de",
+   "size": 754581,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8fb5da60f0f6b9730ccf8e239d595e2a180ff0de"
+  },
+  {
+   "path": "普通高考/2009/2009北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "db19146fa42ba8a4a62db1e1881a65b77f2c26da",
+   "size": 590566,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/db19146fa42ba8a4a62db1e1881a65b77f2c26da"
+  },
+  {
+   "path": "普通高考/2009/2009四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4ad7c8e9521c298919d89b5f4a7d7d1876112d43",
+   "size": 525806,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4ad7c8e9521c298919d89b5f4a7d7d1876112d43"
+  },
+  {
+   "path": "普通高考/2009/2009大纲1理综(河南,河北,山西,江西,湖北,湖南,广西,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5b303cb08b66fc64973e395312e6a1ea9204798b",
+   "size": 518642,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5b303cb08b66fc64973e395312e6a1ea9204798b"
+  },
+  {
+   "path": "普通高考/2009/2009大纲2理综(内蒙古,吉林,黑龙江,贵州,云南,西藏,甘肃,青海,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "390f1cb9ce8b07cdb76580d419d93724cc2a7182",
+   "size": 508346,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/390f1cb9ce8b07cdb76580d419d93724cc2a7182"
+  },
+  {
+   "path": "普通高考/2009/2009天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b809e2b7c96206ab8133402ff7e7c637d1aa38d5",
+   "size": 530508,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b809e2b7c96206ab8133402ff7e7c637d1aa38d5"
+  },
+  {
+   "path": "普通高考/2009/2009安徽理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b75affbfb64c995483cc6ebac449ef0b5c2fa0fd",
+   "size": 715477,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b75affbfb64c995483cc6ebac449ef0b5c2fa0fd"
+  },
+  {
+   "path": "普通高考/2009/2009山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "da8ec49cd5cb1c30214d313ab66a4b69bf1d5a29",
+   "size": 544479,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/da8ec49cd5cb1c30214d313ab66a4b69bf1d5a29"
+  },
+  {
+   "path": "普通高考/2009/2009广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f7bf99cbdcf7d74fd66976e11fad0f423402eb05",
+   "size": 232440,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f7bf99cbdcf7d74fd66976e11fad0f423402eb05"
+  },
+  {
+   "path": "普通高考/2009/2009新课标理综(辽宁,宁夏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d4ffcd709d9a30cb4ebb43c4863cdb5bb3242a4e",
+   "size": 618745,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d4ffcd709d9a30cb4ebb43c4863cdb5bb3242a4e"
+  },
+  {
+   "path": "普通高考/2009/2009江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d8c941b1cbc4627be5caf4062925faa7ca56e32f",
+   "size": 660673,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d8c941b1cbc4627be5caf4062925faa7ca56e32f"
+  },
+  {
+   "path": "普通高考/2009/2009浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d9a4c620eb0f3d20f533530c0f14c94c1834aa3f",
+   "size": 730940,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d9a4c620eb0f3d20f533530c0f14c94c1834aa3f"
+  },
+  {
+   "path": "普通高考/2009/2009海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5ca960a5ab4f60effc7655a14275ab7e48b5809a",
+   "size": 663461,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5ca960a5ab4f60effc7655a14275ab7e48b5809a"
+  },
+  {
+   "path": "普通高考/2009/2009福建理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "964666e572983e8df1142275302a8fdd486f9a29",
+   "size": 544674,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/964666e572983e8df1142275302a8fdd486f9a29"
+  },
+  {
+   "path": "普通高考/2009/2009重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "79ae8bf84ff7b4d26dfae8d270cdcda37fc0b158",
+   "size": 612163,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/79ae8bf84ff7b4d26dfae8d270cdcda37fc0b158"
+  },
+  {
+   "path": "普通高考/2010",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "9c8963ea99e6fc0a85078ad95469e09c90554ffe",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/9c8963ea99e6fc0a85078ad95469e09c90554ffe"
+  },
+  {
+   "path": "普通高考/2010/2010上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ca04c6c2eaf162cb4acd6f0106614b9c7ba7bb47",
+   "size": 751996,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ca04c6c2eaf162cb4acd6f0106614b9c7ba7bb47"
+  },
+  {
+   "path": "普通高考/2010/2010北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1294ccc9f893aa58382a2fe3be2b51900de55ee7",
+   "size": 571762,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1294ccc9f893aa58382a2fe3be2b51900de55ee7"
+  },
+  {
+   "path": "普通高考/2010/2010四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "51b2e581a5f3487348e207402237e6b93cd6c772",
+   "size": 468478,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/51b2e581a5f3487348e207402237e6b93cd6c772"
+  },
+  {
+   "path": "普通高考/2010/2010大纲1理综(河南,河北,山西,江西,湖北,广西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3d89ba6acde4b39ddcd66ecb22a2074928dbeecf",
+   "size": 572852,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3d89ba6acde4b39ddcd66ecb22a2074928dbeecf"
+  },
+  {
+   "path": "普通高考/2010/2010大纲2理综(内蒙古,贵州,云南,西藏,甘肃,青海,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "140bb22769aae3a488945d1a0aebed9d65a40e08",
+   "size": 523449,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/140bb22769aae3a488945d1a0aebed9d65a40e08"
+  },
+  {
+   "path": "普通高考/2010/2010天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "93d6b44e71ff47db3d01d1e8aa59d91c90c41a74",
+   "size": 499892,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/93d6b44e71ff47db3d01d1e8aa59d91c90c41a74"
+  },
+  {
+   "path": "普通高考/2010/2010安徽理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f73d58640ccc9b1a97c8b4228000ec45d5736fbf",
+   "size": 583852,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f73d58640ccc9b1a97c8b4228000ec45d5736fbf"
+  },
+  {
+   "path": "普通高考/2010/2010山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9bbea6ab1619c9af538c32adcad9b06b58661479",
+   "size": 534519,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9bbea6ab1619c9af538c32adcad9b06b58661479"
+  },
+  {
+   "path": "普通高考/2010/2010广东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e745b577942bc0291e80721a1c51c9045fc2f29d",
+   "size": 534653,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e745b577942bc0291e80721a1c51c9045fc2f29d"
+  },
+  {
+   "path": "普通高考/2010/2010新课标理综(辽宁,吉林,黑龙江,湖南,陕西,宁夏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "18bfc7355d5871357434ee7552264bf1b8717788",
+   "size": 570787,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/18bfc7355d5871357434ee7552264bf1b8717788"
+  },
+  {
+   "path": "普通高考/2010/2010江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7a5d6b4a0c87dc97ae59f7f033abe1254b5631ee",
+   "size": 588760,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7a5d6b4a0c87dc97ae59f7f033abe1254b5631ee"
+  },
+  {
+   "path": "普通高考/2010/2010浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5a7af74824afeee1109f2733717cee071e4d6267",
+   "size": 557089,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5a7af74824afeee1109f2733717cee071e4d6267"
+  },
+  {
+   "path": "普通高考/2010/2010海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "447f7ead3e48e46310fd988b452a59ab06a63a45",
+   "size": 711945,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/447f7ead3e48e46310fd988b452a59ab06a63a45"
+  },
+  {
+   "path": "普通高考/2010/2010福建理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c7160af7712cefc77588b303895c3b6a564ae393",
+   "size": 632428,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c7160af7712cefc77588b303895c3b6a564ae393"
+  },
+  {
+   "path": "普通高考/2010/2010重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "fb14622744c0b504688944298fdb77a871cedb1b",
+   "size": 494480,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/fb14622744c0b504688944298fdb77a871cedb1b"
+  },
+  {
+   "path": "普通高考/2011",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "c529ea1f135e5a8099fd8a5873919e2453b48e77",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/c529ea1f135e5a8099fd8a5873919e2453b48e77"
+  },
+  {
+   "path": "普通高考/2011/2011上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "43681e49698378cdb8911f15ee172d68f64a84a7",
+   "size": 890417,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/43681e49698378cdb8911f15ee172d68f64a84a7"
+  },
+  {
+   "path": "普通高考/2011/2011北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "46307480bea08475024322541f7276d38751eab0",
+   "size": 767557,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/46307480bea08475024322541f7276d38751eab0"
+  },
+  {
+   "path": "普通高考/2011/2011四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f543febb22e33edfd60c8f48be42fae3b2132084",
+   "size": 432588,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f543febb22e33edfd60c8f48be42fae3b2132084"
+  },
+  {
+   "path": "普通高考/2011/2011大纲理综(河北,内蒙古,湖北,广西,贵州,云南,西藏,甘肃,青海).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2a1dca598200e1641be7c80c1869c22e716861ed",
+   "size": 688197,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2a1dca598200e1641be7c80c1869c22e716861ed"
+  },
+  {
+   "path": "普通高考/2011/2011天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4222cae9355e6b28fb0380897379975ed2ecd7db",
+   "size": 521651,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4222cae9355e6b28fb0380897379975ed2ecd7db"
+  },
+  {
+   "path": "普通高考/2011/2011安徽理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "135fa7058f06bd024934386e67a4b1d66c35446c",
+   "size": 772777,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/135fa7058f06bd024934386e67a4b1d66c35446c"
+  },
+  {
+   "path": "普通高考/2011/2011山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "07260d0a7cb98f7ac6607c13f02f8aa450586a30",
+   "size": 608933,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/07260d0a7cb98f7ac6607c13f02f8aa450586a30"
+  },
+  {
+   "path": "普通高考/2011/2011广东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1dda4c28576859077f825cbd571e8d3ff6db57d2",
+   "size": 803946,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1dda4c28576859077f825cbd571e8d3ff6db57d2"
+  },
+  {
+   "path": "普通高考/2011/2011新课标理综(河南,山西,辽宁,吉林,黑龙江,江西,湖南,陕西,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c070bcf95f44d8925b9723f5141f30209344c71d",
+   "size": 561236,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c070bcf95f44d8925b9723f5141f30209344c71d"
+  },
+  {
+   "path": "普通高考/2011/2011江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "350d2091cc7525b988b557ecafc45892af47c260",
+   "size": 720200,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/350d2091cc7525b988b557ecafc45892af47c260"
+  },
+  {
+   "path": "普通高考/2011/2011浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2d3b7cf5ef3400431aa6d9a6f4f8aa614afae244",
+   "size": 594540,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2d3b7cf5ef3400431aa6d9a6f4f8aa614afae244"
+  },
+  {
+   "path": "普通高考/2011/2011海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ab08968d9ac4235ab2aeedd28e66424b5c18d45d",
+   "size": 906119,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ab08968d9ac4235ab2aeedd28e66424b5c18d45d"
+  },
+  {
+   "path": "普通高考/2011/2011福建理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b27c40343531b6107efbbe9311d8a43d5ce31ea1",
+   "size": 551951,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b27c40343531b6107efbbe9311d8a43d5ce31ea1"
+  },
+  {
+   "path": "普通高考/2011/2011重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "48692a439e5da9a59b8c7bdab0372262d8618ba8",
+   "size": 540794,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/48692a439e5da9a59b8c7bdab0372262d8618ba8"
+  },
+  {
+   "path": "普通高考/2012",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "4470b4de378d1c4022b1af1cda63fc15b0c5facd",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/4470b4de378d1c4022b1af1cda63fc15b0c5facd"
+  },
+  {
+   "path": "普通高考/2012/2012上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3f2554cee53d88184c3d856f46defad50097174c",
+   "size": 730625,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3f2554cee53d88184c3d856f46defad50097174c"
+  },
+  {
+   "path": "普通高考/2012/2012北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "40af07167a7111c4466bcc3258c4944e09faa3af",
+   "size": 626792,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/40af07167a7111c4466bcc3258c4944e09faa3af"
+  },
+  {
+   "path": "普通高考/2012/2012四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "78d14225f4ae46743016b6d5fab9a11aa1226fc4",
+   "size": 463225,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/78d14225f4ae46743016b6d5fab9a11aa1226fc4"
+  },
+  {
+   "path": "普通高考/2012/2012大纲理综(广西,贵州,西藏,甘肃,青海).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "91bf625e22e90425b94edd88e1c106d696220739",
+   "size": 452715,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/91bf625e22e90425b94edd88e1c106d696220739"
+  },
+  {
+   "path": "普通高考/2012/2012天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8c964dece71958b4f81295ed39ecd0878adaa3cf",
+   "size": 500873,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8c964dece71958b4f81295ed39ecd0878adaa3cf"
+  },
+  {
+   "path": "普通高考/2012/2012安徽理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8e38a77ee832545507428d5979240f0f4911a200",
+   "size": 595330,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8e38a77ee832545507428d5979240f0f4911a200"
+  },
+  {
+   "path": "普通高考/2012/2012山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d7818066853a0f4854d975f4b706c09d4541fbc1",
+   "size": 520606,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d7818066853a0f4854d975f4b706c09d4541fbc1"
+  },
+  {
+   "path": "普通高考/2012/2012广东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "fc267f694177026d0ba104915dfb62102b149274",
+   "size": 511031,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/fc267f694177026d0ba104915dfb62102b149274"
+  },
+  {
+   "path": "普通高考/2012/2012新课标理综(河南,河北,山西,内蒙古,辽宁,吉林,黑龙江,江西,湖北,湖南,云南,陕西,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "72949649615747c3cb6ee971c424f23786fe7a15",
+   "size": 548943,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/72949649615747c3cb6ee971c424f23786fe7a15"
+  },
+  {
+   "path": "普通高考/2012/2012江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "822f609d9c1d12326cb304991356338ee5133e9a",
+   "size": 584595,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/822f609d9c1d12326cb304991356338ee5133e9a"
+  },
+  {
+   "path": "普通高考/2012/2012浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a0159f19bef84b43870da8378a0dda3ca5295ff1",
+   "size": 526720,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a0159f19bef84b43870da8378a0dda3ca5295ff1"
+  },
+  {
+   "path": "普通高考/2012/2012海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f7e7a1c2cae949f3443628a780cd9d075ee46b6a",
+   "size": 583638,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f7e7a1c2cae949f3443628a780cd9d075ee46b6a"
+  },
+  {
+   "path": "普通高考/2012/2012福建理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8d807805e2f272480363fb6b1d5dd4d8aba30252",
+   "size": 546488,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8d807805e2f272480363fb6b1d5dd4d8aba30252"
+  },
+  {
+   "path": "普通高考/2012/2012重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ba1dcf433d8efdcb8ec9c8d78f72b806ba30323e",
+   "size": 557334,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ba1dcf433d8efdcb8ec9c8d78f72b806ba30323e"
+  },
+  {
+   "path": "普通高考/2013",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "bca3f4c33d5dc4ebb1c55de56ba2d417b4b53b3a",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/bca3f4c33d5dc4ebb1c55de56ba2d417b4b53b3a"
+  },
+  {
+   "path": "普通高考/2013/2013上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "968b77f762739bf75649818c766445274068a85b",
+   "size": 814084,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/968b77f762739bf75649818c766445274068a85b"
+  },
+  {
+   "path": "普通高考/2013/2013北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7596bbe842c42d86975bf9ed45fbcf355a025e22",
+   "size": 446705,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7596bbe842c42d86975bf9ed45fbcf355a025e22"
+  },
+  {
+   "path": "普通高考/2013/2013四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ce1e5adb2246cc2c206964be98ba0050605a8181",
+   "size": 446421,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ce1e5adb2246cc2c206964be98ba0050605a8181"
+  },
+  {
+   "path": "普通高考/2013/2013大纲理综(广西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5ef188bba047b5310c4783fdac016d720e9c56a5",
+   "size": 475545,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5ef188bba047b5310c4783fdac016d720e9c56a5"
+  },
+  {
+   "path": "普通高考/2013/2013天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7508e5f29ff28af2d098e49a9dcabc05add5d707",
+   "size": 519651,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7508e5f29ff28af2d098e49a9dcabc05add5d707"
+  },
+  {
+   "path": "普通高考/2013/2013安徽理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e22335c32f400f208621d2b3d89b53b91b873174",
+   "size": 497507,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e22335c32f400f208621d2b3d89b53b91b873174"
+  },
+  {
+   "path": "普通高考/2013/2013山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "59deed7cbfb3eb33e68d006c4e49e7c9d3d825e7",
+   "size": 520439,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/59deed7cbfb3eb33e68d006c4e49e7c9d3d825e7"
+  },
+  {
+   "path": "普通高考/2013/2013广东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6ec884fee22211e1e75f8ba7a0e35e32ec787f5b",
+   "size": 499686,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6ec884fee22211e1e75f8ba7a0e35e32ec787f5b"
+  },
+  {
+   "path": "普通高考/2013/2013新课标1理综(河南,河北,山西,江西,湖北,湖南,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2f745d2ee3bdb6fd1883f88e8d5149abd860626c",
+   "size": 592371,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2f745d2ee3bdb6fd1883f88e8d5149abd860626c"
+  },
+  {
+   "path": "普通高考/2013/2013新课标2理综(内蒙古,辽宁,吉林,黑龙江,贵州,云南,西藏,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2a4062c4b36c898b77db2ef2255f16e093caf45b",
+   "size": 506841,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2a4062c4b36c898b77db2ef2255f16e093caf45b"
+  },
+  {
+   "path": "普通高考/2013/2013江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "daa3b007077da52cd27a49be2fa018e2f383eeef",
+   "size": 711305,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/daa3b007077da52cd27a49be2fa018e2f383eeef"
+  },
+  {
+   "path": "普通高考/2013/2013浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8adf393b58e773b0688050396affb2137cbf5adc",
+   "size": 477296,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8adf393b58e773b0688050396affb2137cbf5adc"
+  },
+  {
+   "path": "普通高考/2013/2013海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "64009b3386311c4a3ea78f7a2fe7aa9f0abe715c",
+   "size": 536706,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/64009b3386311c4a3ea78f7a2fe7aa9f0abe715c"
+  },
+  {
+   "path": "普通高考/2013/2013福建理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ba2cc1330d5efcf4de674172e35bae052ac99788",
+   "size": 580022,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ba2cc1330d5efcf4de674172e35bae052ac99788"
+  },
+  {
+   "path": "普通高考/2013/2013重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d7ac7585ae160bbd7132c79c2c2968c6eb11a34d",
+   "size": 410587,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d7ac7585ae160bbd7132c79c2c2968c6eb11a34d"
+  },
+  {
+   "path": "普通高考/2014",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "74531f77de0e5ee213ca4cbe85c62424d6f91425",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/74531f77de0e5ee213ca4cbe85c62424d6f91425"
+  },
+  {
+   "path": "普通高考/2014/2014上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "32b93f0f9ad3ec6731049c6fdb7600c9467836a5",
+   "size": 694335,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/32b93f0f9ad3ec6731049c6fdb7600c9467836a5"
+  },
+  {
+   "path": "普通高考/2014/2014北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7099d8d3c7fc2cbff2f6078a7462c41f3625f5be",
+   "size": 453996,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7099d8d3c7fc2cbff2f6078a7462c41f3625f5be"
+  },
+  {
+   "path": "普通高考/2014/2014四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ab9b9f4806b1409db918a9eb32b066ca3b7f2c0d",
+   "size": 565095,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ab9b9f4806b1409db918a9eb32b066ca3b7f2c0d"
+  },
+  {
+   "path": "普通高考/2014/2014大纲理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "718024c4db0c1da35ce2d0a2527e6088a8bcd0a4",
+   "size": 453254,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/718024c4db0c1da35ce2d0a2527e6088a8bcd0a4"
+  },
+  {
+   "path": "普通高考/2014/2014天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d6b4f88249962b040f0d9f614d08ddfbb6d699aa",
+   "size": 486121,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d6b4f88249962b040f0d9f614d08ddfbb6d699aa"
+  },
+  {
+   "path": "普通高考/2014/2014安徽理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3b7b5a80d2545d615fc7eb47e7e6a1a0c019a9e6",
+   "size": 535318,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3b7b5a80d2545d615fc7eb47e7e6a1a0c019a9e6"
+  },
+  {
+   "path": "普通高考/2014/2014山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4bf484e650d6bdd1bd0b49f6075252344faf5836",
+   "size": 612775,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4bf484e650d6bdd1bd0b49f6075252344faf5836"
+  },
+  {
+   "path": "普通高考/2014/2014广东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "aca2e53f961db9cc8d124fd4e8b4a24316433900",
+   "size": 388303,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/aca2e53f961db9cc8d124fd4e8b4a24316433900"
+  },
+  {
+   "path": "普通高考/2014/2014新课标1理综(河南,河北,山西,江西,湖北,湖南,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e2772ecf05eb8cc8ff94c08d956e8050cb702fd8",
+   "size": 617797,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e2772ecf05eb8cc8ff94c08d956e8050cb702fd8"
+  },
+  {
+   "path": "普通高考/2014/2014新课标2理综(内蒙古,辽宁,吉林,黑龙江,贵州,云南,西藏,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "05fdff5ce1e1040de52c2143bc72540a56235b99",
+   "size": 684384,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/05fdff5ce1e1040de52c2143bc72540a56235b99"
+  },
+  {
+   "path": "普通高考/2014/2014江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e1e3b8fa2046dbe09085f12ed26c6d890e5223d8",
+   "size": 582399,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e1e3b8fa2046dbe09085f12ed26c6d890e5223d8"
+  },
+  {
+   "path": "普通高考/2014/2014浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5a2dd019c165d7dceb594b78b71f0c8b50995e18",
+   "size": 595946,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5a2dd019c165d7dceb594b78b71f0c8b50995e18"
+  },
+  {
+   "path": "普通高考/2014/2014海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b9fff8d3e36e56f5adf2dc3f0e3c5e84541a64ef",
+   "size": 550909,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b9fff8d3e36e56f5adf2dc3f0e3c5e84541a64ef"
+  },
+  {
+   "path": "普通高考/2014/2014福建理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "456ce32e320a0126f8e4ac364fcd7f38d4bb83f2",
+   "size": 638724,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/456ce32e320a0126f8e4ac364fcd7f38d4bb83f2"
+  },
+  {
+   "path": "普通高考/2014/2014重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f4524d87e4c5125641163eac0f931548a10c7b3c",
+   "size": 590333,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f4524d87e4c5125641163eac0f931548a10c7b3c"
+  },
+  {
+   "path": "普通高考/2015",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "989170874d25c8f0944b7cd356a1e9f029b91bf9",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/989170874d25c8f0944b7cd356a1e9f029b91bf9"
+  },
+  {
+   "path": "普通高考/2015/2015上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6321b1801578485f820b84059e87fd59272e1c80",
+   "size": 658764,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6321b1801578485f820b84059e87fd59272e1c80"
+  },
+  {
+   "path": "普通高考/2015/2015全国1理综(河南,河北,山西,江西,湖北,湖南,陕西).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3c17563904701f8d9343cb985542a3a8db98e02a",
+   "size": 541036,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3c17563904701f8d9343cb985542a3a8db98e02a"
+  },
+  {
+   "path": "普通高考/2015/2015全国2理综(内蒙古,辽宁,吉林,黑龙江,广西,贵州,云南,西藏,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ed452460c916a4404b3aff007382ffd9e94ffc36",
+   "size": 575870,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ed452460c916a4404b3aff007382ffd9e94ffc36"
+  },
+  {
+   "path": "普通高考/2015/2015北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "914f8e56260da1f364873862137b59c0fc84e9d0",
+   "size": 375268,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/914f8e56260da1f364873862137b59c0fc84e9d0"
+  },
+  {
+   "path": "普通高考/2015/2015四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "bf082b22763aa0164a1640534a080837343dfe95",
+   "size": 536161,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/bf082b22763aa0164a1640534a080837343dfe95"
+  },
+  {
+   "path": "普通高考/2015/2015天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "46e19521fb347b7dc4313be038c8e55e2b634544",
+   "size": 567609,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/46e19521fb347b7dc4313be038c8e55e2b634544"
+  },
+  {
+   "path": "普通高考/2015/2015安徽理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "13796fe31e6929d8505c243d57920d396111990a",
+   "size": 483270,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/13796fe31e6929d8505c243d57920d396111990a"
+  },
+  {
+   "path": "普通高考/2015/2015山东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "835158c0204f80b3e6a8402d61e7101c6bfc652f",
+   "size": 577606,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/835158c0204f80b3e6a8402d61e7101c6bfc652f"
+  },
+  {
+   "path": "普通高考/2015/2015广东理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a41c82e7d0139b6ed01b19dfb33606c1e0fedcd2",
+   "size": 442960,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a41c82e7d0139b6ed01b19dfb33606c1e0fedcd2"
+  },
+  {
+   "path": "普通高考/2015/2015江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "16e69bc74ce633712762061b50d671c69c117670",
+   "size": 645830,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/16e69bc74ce633712762061b50d671c69c117670"
+  },
+  {
+   "path": "普通高考/2015/2015浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "aa4f049b34440033d9e84afeed60f97026bdff2f",
+   "size": 565857,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/aa4f049b34440033d9e84afeed60f97026bdff2f"
+  },
+  {
+   "path": "普通高考/2015/2015海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "11847448e3ca87826b0655221c7c0b2a0c960439",
+   "size": 612399,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/11847448e3ca87826b0655221c7c0b2a0c960439"
+  },
+  {
+   "path": "普通高考/2015/2015福建理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "857710fb1ea4a86b2c31b7eec6a9e216d6e6bdee",
+   "size": 551908,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/857710fb1ea4a86b2c31b7eec6a9e216d6e6bdee"
+  },
+  {
+   "path": "普通高考/2015/2015重庆理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "830165f24ed299aead4c4b2bf5afc6ea3becb45d",
+   "size": 445692,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/830165f24ed299aead4c4b2bf5afc6ea3becb45d"
+  },
+  {
+   "path": "普通高考/2016",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "6b0193ad41cde13e823952df7292a46689378be2",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/6b0193ad41cde13e823952df7292a46689378be2"
+  },
+  {
+   "path": "普通高考/2016/2016上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9d96871202d5024ff156591e66306de58d6c4f0f",
+   "size": 702544,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9d96871202d5024ff156591e66306de58d6c4f0f"
+  },
+  {
+   "path": "普通高考/2016/2016全国1理综(河南,河北,山西,安徽,福建,江西,山东,湖北,湖南,广东).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a3c53d51963c224e576d51563a4f82564854064b",
+   "size": 907931,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a3c53d51963c224e576d51563a4f82564854064b"
+  },
+  {
+   "path": "普通高考/2016/2016全国2理综(内蒙古,辽宁,吉林,黑龙江,重庆,西藏,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "88d20cdf0a3fc81b92c51922e2c8da0f8eb17313",
+   "size": 1114801,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/88d20cdf0a3fc81b92c51922e2c8da0f8eb17313"
+  },
+  {
+   "path": "普通高考/2016/2016全国3理综(广西,贵州,云南).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1e4e3572c36f97bdb1761cbaa9b6b27a0ca2249c",
+   "size": 486726,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1e4e3572c36f97bdb1761cbaa9b6b27a0ca2249c"
+  },
+  {
+   "path": "普通高考/2016/2016北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "257424916fa587acd6e5aac8057ce7d70b0557c7",
+   "size": 594531,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/257424916fa587acd6e5aac8057ce7d70b0557c7"
+  },
+  {
+   "path": "普通高考/2016/2016四川理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6cce14547aa2dd600a0c8b3a87a2d22aa09b0749",
+   "size": 434611,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6cce14547aa2dd600a0c8b3a87a2d22aa09b0749"
+  },
+  {
+   "path": "普通高考/2016/2016天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "50b2c27b0fd8a61316a0b399aafbde10a2a89271",
+   "size": 720962,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/50b2c27b0fd8a61316a0b399aafbde10a2a89271"
+  },
+  {
+   "path": "普通高考/2016/2016江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ec3ae278234281753bd43d0d79b73b8b90efa328",
+   "size": 874154,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ec3ae278234281753bd43d0d79b73b8b90efa328"
+  },
+  {
+   "path": "普通高考/2016/2016浙江理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9dc66457e681ff4cf55179f78ea789d520568545",
+   "size": 460090,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9dc66457e681ff4cf55179f78ea789d520568545"
+  },
+  {
+   "path": "普通高考/2016/2016海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e94c53eb9917586b9e4965c7370dc611f83beeff",
+   "size": 634018,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e94c53eb9917586b9e4965c7370dc611f83beeff"
+  },
+  {
+   "path": "普通高考/2017",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "459a3742b9afca0af2cc93ac01be57c04a95788b",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/459a3742b9afca0af2cc93ac01be57c04a95788b"
+  },
+  {
+   "path": "普通高考/2017/2015浙江10月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "60c6818e084b7bb016bc633f6b1a2fd136135358",
+   "size": 4567322,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/60c6818e084b7bb016bc633f6b1a2fd136135358"
+  },
+  {
+   "path": "普通高考/2017/2016浙江10月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2e5101f4721b62686ca6025bf2f964b5c647f2ff",
+   "size": 1014718,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2e5101f4721b62686ca6025bf2f964b5c647f2ff"
+  },
+  {
+   "path": "普通高考/2017/2016浙江4月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "00dd720146053cf0ad0dd550727be3984be9a367",
+   "size": 1045749,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/00dd720146053cf0ad0dd550727be3984be9a367"
+  },
+  {
+   "path": "普通高考/2017/2017上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "341e6dd6e8ea5308ce3e60880aff138d85207b15",
+   "size": 524926,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/341e6dd6e8ea5308ce3e60880aff138d85207b15"
+  },
+  {
+   "path": "普通高考/2017/2017全国1理综(河南,河北,山西,安徽,福建,江西,山东,湖北,湖南,广东).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8dc54c7a20ba8032a28bbc4daaf7c21d8e7dd754",
+   "size": 712660,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8dc54c7a20ba8032a28bbc4daaf7c21d8e7dd754"
+  },
+  {
+   "path": "普通高考/2017/2017全国2理综(内蒙古,辽宁,吉林,黑龙江,重庆,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7ac21b7dad205cbe38d5fa83a083461e249612da",
+   "size": 693428,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7ac21b7dad205cbe38d5fa83a083461e249612da"
+  },
+  {
+   "path": "普通高考/2017/2017全国3理综(广西,四川,贵州,云南,西藏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8031b9636b932d2451399fa08699b71c788a603b",
+   "size": 662081,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8031b9636b932d2451399fa08699b71c788a603b"
+  },
+  {
+   "path": "普通高考/2017/2017北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "aee0f2c54c6ecc0e62a591641aa10e2f2b6e0aa0",
+   "size": 711575,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/aee0f2c54c6ecc0e62a591641aa10e2f2b6e0aa0"
+  },
+  {
+   "path": "普通高考/2017/2017天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "763fcc2a29640b85ef4db412e025008ae68bda07",
+   "size": 617634,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/763fcc2a29640b85ef4db412e025008ae68bda07"
+  },
+  {
+   "path": "普通高考/2017/2017江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "bd080835537734f86182992f2401c096027ad065",
+   "size": 752005,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/bd080835537734f86182992f2401c096027ad065"
+  },
+  {
+   "path": "普通高考/2017/2017浙江4月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "aa386c8c98c5daecc7279195a8e48e6d90c474ec",
+   "size": 894266,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/aa386c8c98c5daecc7279195a8e48e6d90c474ec"
+  },
+  {
+   "path": "普通高考/2017/2017海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "711cd17abf4f621c0a0b0672fdb9e90784f274f2",
+   "size": 691655,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/711cd17abf4f621c0a0b0672fdb9e90784f274f2"
+  },
+  {
+   "path": "普通高考/2018",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "b9dadc75c39ed3db32fb7bd76cfd2d5b3b629d75",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/b9dadc75c39ed3db32fb7bd76cfd2d5b3b629d75"
+  },
+  {
+   "path": "普通高考/2018/2017浙江11月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4bbc6908ca54cf344f518476e35beead01d23292",
+   "size": 844584,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4bbc6908ca54cf344f518476e35beead01d23292"
+  },
+  {
+   "path": "普通高考/2018/2018上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "32d40c3252951159d4a3b660f38bd3a1ea6b5b5b",
+   "size": 862195,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/32d40c3252951159d4a3b660f38bd3a1ea6b5b5b"
+  },
+  {
+   "path": "普通高考/2018/2018全国1理综(河南,河北,山西,安徽,福建,江西,山东,湖北,湖南,广东).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5aff52535a16d0d3cb14efdf56a0ff9601ab7d61",
+   "size": 526631,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5aff52535a16d0d3cb14efdf56a0ff9601ab7d61"
+  },
+  {
+   "path": "普通高考/2018/2018全国2理综(内蒙古,辽宁,吉林,黑龙江,重庆,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c7b29999222050599737b31f7bbd1f6e5d4e861b",
+   "size": 538033,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c7b29999222050599737b31f7bbd1f6e5d4e861b"
+  },
+  {
+   "path": "普通高考/2018/2018全国3理综(广西,四川,贵州,云南,西藏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "07d97291e6338c7e084cd1a64f7730ab75d6b798",
+   "size": 531752,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/07d97291e6338c7e084cd1a64f7730ab75d6b798"
+  },
+  {
+   "path": "普通高考/2018/2018北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "24aae90d576dd4e42ca9b4e31b50d44c04cf28e2",
+   "size": 538628,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/24aae90d576dd4e42ca9b4e31b50d44c04cf28e2"
+  },
+  {
+   "path": "普通高考/2018/2018天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7e7f5c0956cfcdefc73a0eb430c0cbb1c6858abc",
+   "size": 622637,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7e7f5c0956cfcdefc73a0eb430c0cbb1c6858abc"
+  },
+  {
+   "path": "普通高考/2018/2018江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e69341c9f1d590156ad802eb97a0fcdb800c062b",
+   "size": 631074,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e69341c9f1d590156ad802eb97a0fcdb800c062b"
+  },
+  {
+   "path": "普通高考/2018/2018浙江4月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "62e1b28afae5b0e533b05746a1db6e4af775bba0",
+   "size": 843910,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/62e1b28afae5b0e533b05746a1db6e4af775bba0"
+  },
+  {
+   "path": "普通高考/2018/2018海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e115f24b1d65b35336ce4661edaa4cb28c545d39",
+   "size": 753296,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e115f24b1d65b35336ce4661edaa4cb28c545d39"
+  },
+  {
+   "path": "普通高考/2019",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "8d497da72fbb6fcf07f1e1330e85166d284fe625",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/8d497da72fbb6fcf07f1e1330e85166d284fe625"
+  },
+  {
+   "path": "普通高考/2019/2018浙江11月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "780b5a62e19f2767886eb22ed2dbdad2453e8b9d",
+   "size": 887411,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/780b5a62e19f2767886eb22ed2dbdad2453e8b9d"
+  },
+  {
+   "path": "普通高考/2019/2019上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1d9f0decbbcb2ca67864ccefcba0d32fd6555b51",
+   "size": 444270,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1d9f0decbbcb2ca67864ccefcba0d32fd6555b51"
+  },
+  {
+   "path": "普通高考/2019/2019全国1理综(河南,河北,山西,安徽,福建,江西,山东,湖北,湖南,广东).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "85f3e34a003b2d9299958d6915cfecd2b65ebd70",
+   "size": 612077,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/85f3e34a003b2d9299958d6915cfecd2b65ebd70"
+  },
+  {
+   "path": "普通高考/2019/2019全国2理综(内蒙古,辽宁,吉林,黑龙江,重庆,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4e9425bf11fd48f8651efd440b2eb677c08a0b7f",
+   "size": 888199,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4e9425bf11fd48f8651efd440b2eb677c08a0b7f"
+  },
+  {
+   "path": "普通高考/2019/2019全国3理综(广西,四川,贵州,云南,西藏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "10837c03512fa4f496665f0c645033bd0bac5e74",
+   "size": 669825,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/10837c03512fa4f496665f0c645033bd0bac5e74"
+  },
+  {
+   "path": "普通高考/2019/2019北京理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6df3ab7cb5ce936dc504d4de205e7d4b7b4815c4",
+   "size": 587366,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6df3ab7cb5ce936dc504d4de205e7d4b7b4815c4"
+  },
+  {
+   "path": "普通高考/2019/2019天津理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "60350ff0b77b868c5d8fd64e19eece3b8eb47a85",
+   "size": 755570,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/60350ff0b77b868c5d8fd64e19eece3b8eb47a85"
+  },
+  {
+   "path": "普通高考/2019/2019江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "669337abb8e3769f34e546eca2b951e1e01ecd8e",
+   "size": 732819,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/669337abb8e3769f34e546eca2b951e1e01ecd8e"
+  },
+  {
+   "path": "普通高考/2019/2019浙江4月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e309e4d956012512a092c0d76d19a557f599687e",
+   "size": 792329,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e309e4d956012512a092c0d76d19a557f599687e"
+  },
+  {
+   "path": "普通高考/2019/2019海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "92a40bf51aef3974a2139d68b93cbb0888d60afe",
+   "size": 565712,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/92a40bf51aef3974a2139d68b93cbb0888d60afe"
+  },
+  {
+   "path": "普通高考/2020",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "af869e64f86e2c903a1b6b4fdb69825d457ef6c7",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/af869e64f86e2c903a1b6b4fdb69825d457ef6c7"
+  },
+  {
+   "path": "普通高考/2020/2020上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b184af9bfbe25a206fafc428e81cab9d45eb4f01",
+   "size": 544477,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b184af9bfbe25a206fafc428e81cab9d45eb4f01"
+  },
+  {
+   "path": "普通高考/2020/2020全国1理综(河南,河北,山西,安徽,福建,江西,湖北,湖南,广东).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "635f99f8b4e114497e8cd931ec10cc26be39f56b",
+   "size": 796837,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/635f99f8b4e114497e8cd931ec10cc26be39f56b"
+  },
+  {
+   "path": "普通高考/2020/2020全国2理综(内蒙古,辽宁,吉林,黑龙江,重庆,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6a28f534e6149c670ebbf4c37a5d8cd9149ce9cc",
+   "size": 844867,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6a28f534e6149c670ebbf4c37a5d8cd9149ce9cc"
+  },
+  {
+   "path": "普通高考/2020/2020全国3理综(广西,四川,贵州,云南,西藏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "cdb412003007b93cf2f135106f130340c8971011",
+   "size": 836888,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/cdb412003007b93cf2f135106f130340c8971011"
+  },
+  {
+   "path": "普通高考/2020/2020北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6a91d02a11dc3d7820cdb6e0ae4e2943fe3f2e51",
+   "size": 905795,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6a91d02a11dc3d7820cdb6e0ae4e2943fe3f2e51"
+  },
+  {
+   "path": "普通高考/2020/2020天津.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ceb591bc28f4734d56d3f40faae80d68315f646e",
+   "size": 764733,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ceb591bc28f4734d56d3f40faae80d68315f646e"
+  },
+  {
+   "path": "普通高考/2020/2020山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6abb804e13d924338dcab2e38daf82da460163bd",
+   "size": 1042056,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6abb804e13d924338dcab2e38daf82da460163bd"
+  },
+  {
+   "path": "普通高考/2020/2020江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5477654b0acc493a65ee862ce77a5e44b06df912",
+   "size": 866941,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5477654b0acc493a65ee862ce77a5e44b06df912"
+  },
+  {
+   "path": "普通高考/2020/2020浙江1月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c9c4fa2bf538f6ac0a78fef42101d42943d7c92b",
+   "size": 876285,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c9c4fa2bf538f6ac0a78fef42101d42943d7c92b"
+  },
+  {
+   "path": "普通高考/2020/2020浙江7月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ac3f3af14f0113e78e8aae1c20ce35037de7ab89",
+   "size": 1236621,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ac3f3af14f0113e78e8aae1c20ce35037de7ab89"
+  },
+  {
+   "path": "普通高考/2020/2020海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "852f47664fd6e220a832252ba4b59a5a6e69d739",
+   "size": 929065,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/852f47664fd6e220a832252ba4b59a5a6e69d739"
+  },
+  {
+   "path": "普通高考/2021",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "6a7677afdc377bc17a5e519165919e8cd128c75e",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/6a7677afdc377bc17a5e519165919e8cd128c75e"
+  },
+  {
+   "path": "普通高考/2021/2021上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "713cb6f0b25692a855f798ccd39ff773a2a54237",
+   "size": 549475,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/713cb6f0b25692a855f798ccd39ff773a2a54237"
+  },
+  {
+   "path": "普通高考/2021/2021全国乙理综(河南,山西,内蒙古,吉林,黑龙江,安徽,江西,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "cdb0e583d52aa333a177cb92934892967ae77353",
+   "size": 765561,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/cdb0e583d52aa333a177cb92934892967ae77353"
+  },
+  {
+   "path": "普通高考/2021/2021全国甲理综(广西,四川,贵州,云南,西藏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7f7c35c39ce04e999a9d39dcafe4b330feef8065",
+   "size": 822810,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7f7c35c39ce04e999a9d39dcafe4b330feef8065"
+  },
+  {
+   "path": "普通高考/2021/2021北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "927390d00d2b4127628eb1b1f0c8a99193cfe70b",
+   "size": 927112,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/927390d00d2b4127628eb1b1f0c8a99193cfe70b"
+  },
+  {
+   "path": "普通高考/2021/2021天津.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "64aa50f002654e058e96803cd9760e6809f0f61f",
+   "size": 598663,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/64aa50f002654e058e96803cd9760e6809f0f61f"
+  },
+  {
+   "path": "普通高考/2021/2021山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e3de115d58af74a9ae09089d9e8b4d89f007694c",
+   "size": 1022849,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e3de115d58af74a9ae09089d9e8b4d89f007694c"
+  },
+  {
+   "path": "普通高考/2021/2021广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "145b68d584d253b2de3bd510d3e09ae9ee4d9d9e",
+   "size": 838622,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/145b68d584d253b2de3bd510d3e09ae9ee4d9d9e"
+  },
+  {
+   "path": "普通高考/2021/2021江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1ad0a38b5d90b7eb3c761e3323ea1584dbf78aa7",
+   "size": 889230,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1ad0a38b5d90b7eb3c761e3323ea1584dbf78aa7"
+  },
+  {
+   "path": "普通高考/2021/2021河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ec375cb43c8bd9192a66679d4e86bef7d896b478",
+   "size": 1027312,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ec375cb43c8bd9192a66679d4e86bef7d896b478"
+  },
+  {
+   "path": "普通高考/2021/2021浙江1月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "687ea99013e14be2d9adaa99fd1b0ecbe8ce72b4",
+   "size": 1079492,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/687ea99013e14be2d9adaa99fd1b0ecbe8ce72b4"
+  },
+  {
+   "path": "普通高考/2021/2021浙江6月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "34e571ed451ba16bd0eda8724a2051f68603289d",
+   "size": 1487900,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/34e571ed451ba16bd0eda8724a2051f68603289d"
+  },
+  {
+   "path": "普通高考/2021/2021海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1498b613048fc80c8c9c15b4d87baeb9f880f3f0",
+   "size": 774166,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1498b613048fc80c8c9c15b4d87baeb9f880f3f0"
+  },
+  {
+   "path": "普通高考/2021/2021湖北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7a54732f5167759184ce65ba9bdeddf742151613",
+   "size": 723771,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7a54732f5167759184ce65ba9bdeddf742151613"
+  },
+  {
+   "path": "普通高考/2021/2021湖南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "66e5b76a56a5e691d824792cf890c4754a38a0a5",
+   "size": 1188528,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/66e5b76a56a5e691d824792cf890c4754a38a0a5"
+  },
+  {
+   "path": "普通高考/2021/2021福建.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "07488684191b2e04e58c378c50a7d7ddf98d71ad",
+   "size": 804377,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/07488684191b2e04e58c378c50a7d7ddf98d71ad"
+  },
+  {
+   "path": "普通高考/2021/2021辽宁.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "16cf7ba328284869903f4aec325ca262c84c843a",
+   "size": 739805,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/16cf7ba328284869903f4aec325ca262c84c843a"
+  },
+  {
+   "path": "普通高考/2021/2021重庆.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c0608b4ca957762da174e3e0a7171d993701cd5a",
+   "size": 814201,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c0608b4ca957762da174e3e0a7171d993701cd5a"
+  },
+  {
+   "path": "普通高考/2022",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "5dfa17a97e49c6a43bb196af68a459887fa8d34c",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/5dfa17a97e49c6a43bb196af68a459887fa8d34c"
+  },
+  {
+   "path": "普通高考/2022/2022上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9e83e612a725e2d706e5eccbb8b3ea3579cabc3a",
+   "size": 434571,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9e83e612a725e2d706e5eccbb8b3ea3579cabc3a"
+  },
+  {
+   "path": "普通高考/2022/2022全国乙理综(河南,山西,内蒙古,吉林,黑龙江,安徽,江西,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3461a533b40db2a27b2f16d1a3a1f8a012486fd2",
+   "size": 988995,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3461a533b40db2a27b2f16d1a3a1f8a012486fd2"
+  },
+  {
+   "path": "普通高考/2022/2022全国甲理综(广西,四川,贵州,云南,西藏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "772dca77f5c6feb99bcefcd4e325c6a33cb09eee",
+   "size": 898104,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/772dca77f5c6feb99bcefcd4e325c6a33cb09eee"
+  },
+  {
+   "path": "普通高考/2022/2022北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "81abffe4c8b2c5e42e3096b553ad74a8404aa6b5",
+   "size": 1055131,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/81abffe4c8b2c5e42e3096b553ad74a8404aa6b5"
+  },
+  {
+   "path": "普通高考/2022/2022天津.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f6593834336454c094186485a8041dd5e4bbeda9",
+   "size": 1251842,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f6593834336454c094186485a8041dd5e4bbeda9"
+  },
+  {
+   "path": "普通高考/2022/2022山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "aa03cbf7ed18582903bd24c7deee035aee084aae",
+   "size": 1360791,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/aa03cbf7ed18582903bd24c7deee035aee084aae"
+  },
+  {
+   "path": "普通高考/2022/2022广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7afc0b807fe023a245b4a3125e03f94ec2ee97b4",
+   "size": 976375,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7afc0b807fe023a245b4a3125e03f94ec2ee97b4"
+  },
+  {
+   "path": "普通高考/2022/2022江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0d37c0f80cdf78947d913d609bd2cda2bcf85d55",
+   "size": 916448,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0d37c0f80cdf78947d913d609bd2cda2bcf85d55"
+  },
+  {
+   "path": "普通高考/2022/2022河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "06fd14bf944dad2924b47eb83caa6ad370307554",
+   "size": 1246711,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/06fd14bf944dad2924b47eb83caa6ad370307554"
+  },
+  {
+   "path": "普通高考/2022/2022浙江1月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "19ef648c02895ca15bc427f691bc1e44895630b5",
+   "size": 1031702,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/19ef648c02895ca15bc427f691bc1e44895630b5"
+  },
+  {
+   "path": "普通高考/2022/2022浙江6月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a1b06c5a2f9842af988cc0a0a53f1736acf7aa66",
+   "size": 1370779,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a1b06c5a2f9842af988cc0a0a53f1736acf7aa66"
+  },
+  {
+   "path": "普通高考/2022/2022海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2ef50f65e28f92b83d6492023475bc5576903827",
+   "size": 626557,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2ef50f65e28f92b83d6492023475bc5576903827"
+  },
+  {
+   "path": "普通高考/2022/2022湖北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "02720d64740a1c26b15d15f7b33cd502add6b1b2",
+   "size": 914488,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/02720d64740a1c26b15d15f7b33cd502add6b1b2"
+  },
+  {
+   "path": "普通高考/2022/2022湖南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "d0f3db129d7fafc28d4ed56fa669c64916b7dd04",
+   "size": 1271451,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/d0f3db129d7fafc28d4ed56fa669c64916b7dd04"
+  },
+  {
+   "path": "普通高考/2022/2022福建.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c3bdfed1f3951ca8df7f1f427e3f16316139aabd",
+   "size": 877714,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c3bdfed1f3951ca8df7f1f427e3f16316139aabd"
+  },
+  {
+   "path": "普通高考/2022/2022辽宁.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "19260c49ef8b2817113674870c71056a07654034",
+   "size": 894515,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/19260c49ef8b2817113674870c71056a07654034"
+  },
+  {
+   "path": "普通高考/2022/2022重庆.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5549b5096d73467f8b21b93a541c667534190d48",
+   "size": 1067429,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5549b5096d73467f8b21b93a541c667534190d48"
+  },
+  {
+   "path": "普通高考/2023",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "b4b2d586d6c96c9a22424c8ac1d4019c7d2f1e6b",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/b4b2d586d6c96c9a22424c8ac1d4019c7d2f1e6b"
+  },
+  {
+   "path": "普通高考/2023/2023上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "fa16915bf8ad9241a773d6cef7bc2ac560853a8a",
+   "size": 623157,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/fa16915bf8ad9241a773d6cef7bc2ac560853a8a"
+  },
+  {
+   "path": "普通高考/2023/2023全国乙理综(河南,内蒙古,江西,陕西,甘肃,青海,宁夏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5d3cc3716649eb0d57c26772d2e2d5adfc2a2e70",
+   "size": 703528,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5d3cc3716649eb0d57c26772d2e2d5adfc2a2e70"
+  },
+  {
+   "path": "普通高考/2023/2023全国甲理综(广西,四川,贵州,西藏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "53c0dfdf207cc57fc2f85620edc3a97136d0a8e2",
+   "size": 987192,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/53c0dfdf207cc57fc2f85620edc3a97136d0a8e2"
+  },
+  {
+   "path": "普通高考/2023/2023北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "90b4f6035f961231a1fe8e4c2a158bfa79fe4b07",
+   "size": 730080,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/90b4f6035f961231a1fe8e4c2a158bfa79fe4b07"
+  },
+  {
+   "path": "普通高考/2023/2023天津.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "98c572223c9f8d4c188132c3c249d7a40a2cdb7e",
+   "size": 583089,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/98c572223c9f8d4c188132c3c249d7a40a2cdb7e"
+  },
+  {
+   "path": "普通高考/2023/2023山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ff6c87acbaee202277e509a1a34366114c174d26",
+   "size": 1022526,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ff6c87acbaee202277e509a1a34366114c174d26"
+  },
+  {
+   "path": "普通高考/2023/2023广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e420821a7e9660621f0e34b9345376fce68de94a",
+   "size": 609813,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e420821a7e9660621f0e34b9345376fce68de94a"
+  },
+  {
+   "path": "普通高考/2023/2023新高考理综(山西,吉林,黑龙江,安徽,云南).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "cbd104670b47a0e32b46dca2db85dba45cecf224",
+   "size": 601773,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/cbd104670b47a0e32b46dca2db85dba45cecf224"
+  },
+  {
+   "path": "普通高考/2023/2023江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "10e2c957001ab3032b30a794a18f11a7c0ce03da",
+   "size": 758300,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/10e2c957001ab3032b30a794a18f11a7c0ce03da"
+  },
+  {
+   "path": "普通高考/2023/2023河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "fbfbe4d54cc841e5c224b9426ab24dc5d545f34d",
+   "size": 1111106,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/fbfbe4d54cc841e5c224b9426ab24dc5d545f34d"
+  },
+  {
+   "path": "普通高考/2023/2023浙江1月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5ec5380f5e4d37891b2c5ba6c6689ab4cc66c09f",
+   "size": 1121658,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5ec5380f5e4d37891b2c5ba6c6689ab4cc66c09f"
+  },
+  {
+   "path": "普通高考/2023/2023浙江6月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f502b244ec00d6612d0855f8bb386f1815685c01",
+   "size": 988222,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f502b244ec00d6612d0855f8bb386f1815685c01"
+  },
+  {
+   "path": "普通高考/2023/2023海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "cd38e6ecfa9629c0ea9ee0731dbf70080e1de073",
+   "size": 776636,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/cd38e6ecfa9629c0ea9ee0731dbf70080e1de073"
+  },
+  {
+   "path": "普通高考/2023/2023湖北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0da79cf15530f44895d73133b68c2f4d82cb5f21",
+   "size": 977963,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0da79cf15530f44895d73133b68c2f4d82cb5f21"
+  },
+  {
+   "path": "普通高考/2023/2023湖南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "dddd573f01653bb81b60ed69c2c7313769f952de",
+   "size": 1178880,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/dddd573f01653bb81b60ed69c2c7313769f952de"
+  },
+  {
+   "path": "普通高考/2023/2023福建.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3fb3785d86cf1a914eddbc7b36af1e96ff374872",
+   "size": 6573906,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3fb3785d86cf1a914eddbc7b36af1e96ff374872"
+  },
+  {
+   "path": "普通高考/2023/2023辽宁.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5d33130bb596418107ef3a216fe23be552de1c2d",
+   "size": 1012881,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5d33130bb596418107ef3a216fe23be552de1c2d"
+  },
+  {
+   "path": "普通高考/2023/2023重庆.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0fa76eeff9d48c212e4bd210ec3996e8c90d573c",
+   "size": 905879,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0fa76eeff9d48c212e4bd210ec3996e8c90d573c"
+  },
+  {
+   "path": "普通高考/2024",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "fcebc0478c54ed33c632f1af80654867c43fe21c",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/fcebc0478c54ed33c632f1af80654867c43fe21c"
+  },
+  {
+   "path": "普通高考/2024/2024上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "aee816c323cab51fb7bd8c2e022681184031d939",
+   "size": 615262,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/aee816c323cab51fb7bd8c2e022681184031d939"
+  },
+  {
+   "path": "普通高考/2024/2024全国理综(内蒙古,四川,西藏,陕西,青海,宁夏).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "5ee3104ca405567e8b6a33c92f01fb4cc7c59029",
+   "size": 605200,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/5ee3104ca405567e8b6a33c92f01fb4cc7c59029"
+  },
+  {
+   "path": "普通高考/2024/2024北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9ff1697aca5212a8bb0f9ecf5b574299f8bc488f",
+   "size": 704732,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9ff1697aca5212a8bb0f9ecf5b574299f8bc488f"
+  },
+  {
+   "path": "普通高考/2024/2024天津.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "db3fc4f201f7f858d24ca5b163604d83b18876e4",
+   "size": 949788,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/db3fc4f201f7f858d24ca5b163604d83b18876e4"
+  },
+  {
+   "path": "普通高考/2024/2024安徽.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a76f096cc6ffbd3f887010563c6ab5262d5c693e",
+   "size": 590955,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a76f096cc6ffbd3f887010563c6ab5262d5c693e"
+  },
+  {
+   "path": "普通高考/2024/2024山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8ed2a56191bf033e342bd81f2f602d3dc7e191e3",
+   "size": 821445,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8ed2a56191bf033e342bd81f2f602d3dc7e191e3"
+  },
+  {
+   "path": "普通高考/2024/2024广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a700a7e3a450c24ae49ce55ef8ed29fb8252a900",
+   "size": 692674,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a700a7e3a450c24ae49ce55ef8ed29fb8252a900"
+  },
+  {
+   "path": "普通高考/2024/2024广西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "76ba8fe01bafae1664de7e6ac1f4487951a5a70c",
+   "size": 628773,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/76ba8fe01bafae1664de7e6ac1f4487951a5a70c"
+  },
+  {
+   "path": "普通高考/2024/2024新高考理综(河南,山西,云南,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4916a19f7768a2a46bcab1a7eb1d6d3cd5d770d1",
+   "size": 706752,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4916a19f7768a2a46bcab1a7eb1d6d3cd5d770d1"
+  },
+  {
+   "path": "普通高考/2024/2024江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e3994162cdf1832ae2a50018e9247256bae59782",
+   "size": 538563,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e3994162cdf1832ae2a50018e9247256bae59782"
+  },
+  {
+   "path": "普通高考/2024/2024江西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "715147553495ee8800db13ba2834bc181783089d",
+   "size": 737549,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/715147553495ee8800db13ba2834bc181783089d"
+  },
+  {
+   "path": "普通高考/2024/2024河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c74e5905f8dec740c80c50a4cde0b7157a8704ab",
+   "size": 798143,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c74e5905f8dec740c80c50a4cde0b7157a8704ab"
+  },
+  {
+   "path": "普通高考/2024/2024浙江1月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "34a8e07cc823d35529a72bc09f7fa40066f41734",
+   "size": 976279,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/34a8e07cc823d35529a72bc09f7fa40066f41734"
+  },
+  {
+   "path": "普通高考/2024/2024浙江6月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "42de64aab2891a5a8106824a0111bedf38a0e09a",
+   "size": 813659,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/42de64aab2891a5a8106824a0111bedf38a0e09a"
+  },
+  {
+   "path": "普通高考/2024/2024海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "8384ff9fdae03dfb403f5139673cb5df3d93efe3",
+   "size": 722188,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/8384ff9fdae03dfb403f5139673cb5df3d93efe3"
+  },
+  {
+   "path": "普通高考/2024/2024湖北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "70a66f562fac6fd60e7a8163c73fce134c2cffa8",
+   "size": 713020,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/70a66f562fac6fd60e7a8163c73fce134c2cffa8"
+  },
+  {
+   "path": "普通高考/2024/2024湖南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "3e8eea39f5d78d121d01a258845c319242a26ba2",
+   "size": 742229,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/3e8eea39f5d78d121d01a258845c319242a26ba2"
+  },
+  {
+   "path": "普通高考/2024/2024甘肃.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "620a4bc33f64e9a32ff9cf5c83a0aad0c7075b93",
+   "size": 636082,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/620a4bc33f64e9a32ff9cf5c83a0aad0c7075b93"
+  },
+  {
+   "path": "普通高考/2024/2024福建.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6092582994ee0e23737ba64a7cdfb342c4dd38c1",
+   "size": 711678,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6092582994ee0e23737ba64a7cdfb342c4dd38c1"
+  },
+  {
+   "path": "普通高考/2024/2024贵州.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "22602168bd9282fa5675b5007d8e434f561a2137",
+   "size": 766150,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/22602168bd9282fa5675b5007d8e434f561a2137"
+  },
+  {
+   "path": "普通高考/2024/2024重庆.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "10dafc8e863a6a65650622ec83bf010a12bcd7ef",
+   "size": 607148,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/10dafc8e863a6a65650622ec83bf010a12bcd7ef"
+  },
+  {
+   "path": "普通高考/2024/2024黑吉辽.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "74f16d2a984e0ce03b2660004c4cdfe4e9d92e86",
+   "size": 695888,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/74f16d2a984e0ce03b2660004c4cdfe4e9d92e86"
+  },
+  {
+   "path": "普通高考/2025",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "3836e80754cdb17e07213cd9db42f1d15454f2b6",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/3836e80754cdb17e07213cd9db42f1d15454f2b6"
+  },
+  {
+   "path": "普通高考/2025/2025上海.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "83f1dec9d3b3b1d0c2483a543f2915767e867433",
+   "size": 824884,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/83f1dec9d3b3b1d0c2483a543f2915767e867433"
+  },
+  {
+   "path": "普通高考/2025/2025云南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "78855316219889c3dde3f8511e67448004e4e838",
+   "size": 669960,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/78855316219889c3dde3f8511e67448004e4e838"
+  },
+  {
+   "path": "普通高考/2025/2025全国理综(西藏,新疆).pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "94a4181cc6997554b9bd376f9aed16f61f0de9b1",
+   "size": 478989,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/94a4181cc6997554b9bd376f9aed16f61f0de9b1"
+  },
+  {
+   "path": "普通高考/2025/2025北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "1cc08594f4b1f356f20f04cc1a478a9d6c55cab5",
+   "size": 566669,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/1cc08594f4b1f356f20f04cc1a478a9d6c55cab5"
+  },
+  {
+   "path": "普通高考/2025/2025四川.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e0d35037ba9e74aa36622c1ef9f7778d0453b097",
+   "size": 620255,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e0d35037ba9e74aa36622c1ef9f7778d0453b097"
+  },
+  {
+   "path": "普通高考/2025/2025天津.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "ab0ac8d18cf86e11efafcb6af2de9ce314deb52f",
+   "size": 594222,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/ab0ac8d18cf86e11efafcb6af2de9ce314deb52f"
+  },
+  {
+   "path": "普通高考/2025/2025安徽.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "48c56a1a05f15fbd51e199a8f4d240250a682719",
+   "size": 614551,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/48c56a1a05f15fbd51e199a8f4d240250a682719"
+  },
+  {
+   "path": "普通高考/2025/2025山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "47824cc2a35328c1a8950b0d85ab37dd6d6b716b",
+   "size": 780756,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/47824cc2a35328c1a8950b0d85ab37dd6d6b716b"
+  },
+  {
+   "path": "普通高考/2025/2025广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b6889a9fdf7e6d78f8710e737ae2d92ebcf29e80",
+   "size": 726550,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b6889a9fdf7e6d78f8710e737ae2d92ebcf29e80"
+  },
+  {
+   "path": "普通高考/2025/2025广西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "598100638546fe312daef8c76dc15f3a1b6a5cfd",
+   "size": 635536,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/598100638546fe312daef8c76dc15f3a1b6a5cfd"
+  },
+  {
+   "path": "普通高考/2025/2025江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "7a4d27a0285043fd7e3a77635d8cf7885654fd9a",
+   "size": 548127,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/7a4d27a0285043fd7e3a77635d8cf7885654fd9a"
+  },
+  {
+   "path": "普通高考/2025/2025江西.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f2dfd675a624f6cafc9229dedbafc05a2c23a890",
+   "size": 722859,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f2dfd675a624f6cafc9229dedbafc05a2c23a890"
+  },
+  {
+   "path": "普通高考/2025/2025河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "397c7881bbadb185dbdde3f6d2818179c69abada",
+   "size": 669633,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/397c7881bbadb185dbdde3f6d2818179c69abada"
+  },
+  {
+   "path": "普通高考/2025/2025河南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "2f8fe8fba37a0497ce62253b97158892728f11ba",
+   "size": 623164,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/2f8fe8fba37a0497ce62253b97158892728f11ba"
+  },
+  {
+   "path": "普通高考/2025/2025浙江1月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "e74468ac27fc1c887018f95c6d81e9440f96f4bc",
+   "size": 949869,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/e74468ac27fc1c887018f95c6d81e9440f96f4bc"
+  },
+  {
+   "path": "普通高考/2025/2025浙江6月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "934a0d1182e87d60da33e60daf0422f2b4322e00",
+   "size": 898907,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/934a0d1182e87d60da33e60daf0422f2b4322e00"
+  },
+  {
+   "path": "普通高考/2025/2025海南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4915a09123461290104f471922cf9ec2cce795b4",
+   "size": 647484,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4915a09123461290104f471922cf9ec2cce795b4"
+  },
+  {
+   "path": "普通高考/2025/2025湖北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "702617e12fbb67df26d64724824201b5dfae936a",
+   "size": 588340,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/702617e12fbb67df26d64724824201b5dfae936a"
+  },
+  {
+   "path": "普通高考/2025/2025湖南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "346b1f9cfed861bf293058fd2b571ec2674307d1",
+   "size": 692641,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/346b1f9cfed861bf293058fd2b571ec2674307d1"
+  },
+  {
+   "path": "普通高考/2025/2025甘肃.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a135bf4fa2d4e96c9a3a81725aa52919eeafdb03",
+   "size": 706424,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a135bf4fa2d4e96c9a3a81725aa52919eeafdb03"
+  },
+  {
+   "path": "普通高考/2025/2025福建.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f8a084204f2d4fca605c9a05ff1062bdfb4fd2f1",
+   "size": 770673,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f8a084204f2d4fca605c9a05ff1062bdfb4fd2f1"
+  },
+  {
+   "path": "普通高考/2025/2025贵州.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "22b6d7ff3e1bb445a9eabcb3b39a4743fb1fb16d",
+   "size": 677100,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/22b6d7ff3e1bb445a9eabcb3b39a4743fb1fb16d"
+  },
+  {
+   "path": "普通高考/2025/2025重庆.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "fefb9f89ef79de49f97dd6e5bd9097da3fa5a7af",
+   "size": 644123,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/fefb9f89ef79de49f97dd6e5bd9097da3fa5a7af"
+  },
+  {
+   "path": "普通高考/2025/2025陕晋宁青.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "f1c6c294e85c00b901fa5908bb6eca4df30e241c",
+   "size": 657366,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/f1c6c294e85c00b901fa5908bb6eca4df30e241c"
+  },
+  {
+   "path": "普通高考/2025/2025黑吉辽蒙.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "da9162f30ed6f61167dfbc62edaa1c61623c12cf",
+   "size": 673740,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/da9162f30ed6f61167dfbc62edaa1c61623c12cf"
+  },
+  {
+   "path": "普通高考/2026",
+   "mode": "040000",
+   "type": "tree",
+   "sha": "5165ec94e61e2bd5ca2b8136619a2b0aaefd9080",
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/trees/5165ec94e61e2bd5ca2b8136619a2b0aaefd9080"
+  },
+  {
+   "path": "普通高考/2026/2026云南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4838d18492994e0eb19c21e706894411256a9e99",
+   "size": 788755,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4838d18492994e0eb19c21e706894411256a9e99"
+  },
+  {
+   "path": "普通高考/2026/2026全国理综.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "dc8a22292387dcf8999d52cad2d9d8b88dd34c21",
+   "size": 573070,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/dc8a22292387dcf8999d52cad2d9d8b88dd34c21"
+  },
+  {
+   "path": "普通高考/2026/2026北京.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c5f4b340a086b8178c94dae7c6ac136bda432add",
+   "size": 784489,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c5f4b340a086b8178c94dae7c6ac136bda432add"
+  },
+  {
+   "path": "普通高考/2026/2026四川.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c033524013f79f65d878e04b16c61ad9b9ee0a76",
+   "size": 629136,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c033524013f79f65d878e04b16c61ad9b9ee0a76"
+  },
+  {
+   "path": "普通高考/2026/2026山东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "c23e84edd8d1f187c968d3ca35c41aab55377930",
+   "size": 770772,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/c23e84edd8d1f187c968d3ca35c41aab55377930"
+  },
+  {
+   "path": "普通高考/2026/2026广东.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "9ce1f9d48f4e862a3ccb582a7090987c9b169998",
+   "size": 756307,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/9ce1f9d48f4e862a3ccb582a7090987c9b169998"
+  },
+  {
+   "path": "普通高考/2026/2026江苏.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "0c3c0b2e471cff41dc46158fab2686b3fc001d0a",
+   "size": 956631,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/0c3c0b2e471cff41dc46158fab2686b3fc001d0a"
+  },
+  {
+   "path": "普通高考/2026/2026河北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "92ea20ac26dbbf126f6f79e8d3f52bd543a698b9",
+   "size": 673970,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/92ea20ac26dbbf126f6f79e8d3f52bd543a698b9"
+  },
+  {
+   "path": "普通高考/2026/2026河南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "4ad03d496a6fc05c6eddfbf32c843472ad2decfc",
+   "size": 687762,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/4ad03d496a6fc05c6eddfbf32c843472ad2decfc"
+  },
+  {
+   "path": "普通高考/2026/2026浙江1月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "6e5414b057367e47288d47c788fe9c2ae42b1e5c",
+   "size": 1137449,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/6e5414b057367e47288d47c788fe9c2ae42b1e5c"
+  },
+  {
+   "path": "普通高考/2026/2026浙江6月.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "97050584cc2fa79f1133d69672ae48a08a060ee6",
+   "size": 938101,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/97050584cc2fa79f1133d69672ae48a08a060ee6"
+  },
+  {
+   "path": "普通高考/2026/2026湖北.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "001ea1cccb09e4db08ffae08e6c9b46abc7537e3",
+   "size": 541751,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/001ea1cccb09e4db08ffae08e6c9b46abc7537e3"
+  },
+  {
+   "path": "普通高考/2026/2026湖南.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "b959ae5a0ace988fd774062980a737cbdf95e008",
+   "size": 573510,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/b959ae5a0ace988fd774062980a737cbdf95e008"
+  },
+  {
+   "path": "普通高考/2026/2026甘肃.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "a72c3aaea41f9cbf387ea735a35ba2923b6ec639",
+   "size": 524031,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/a72c3aaea41f9cbf387ea735a35ba2923b6ec639"
+  },
+  {
+   "path": "普通高考/2026/2026贵州.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "de935bfb072ab43c6a110dae7f1bafd34b7df91f",
+   "size": 685982,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/de935bfb072ab43c6a110dae7f1bafd34b7df91f"
+  },
+  {
+   "path": "普通高考/2026/2026重庆.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "eaceb4bc323ec85f8081a82ebf5eaf73ba468904",
+   "size": 1037593,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/eaceb4bc323ec85f8081a82ebf5eaf73ba468904"
+  },
+  {
+   "path": "普通高考/2026/2026陕晋青宁.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "355a10a1813cf57a9a6a4d8f1b02be1d8cf05eae",
+   "size": 616052,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/355a10a1813cf57a9a6a4d8f1b02be1d8cf05eae"
+  },
+  {
+   "path": "普通高考/2026/2026黑吉辽蒙.pdf",
+   "mode": "100644",
+   "type": "blob",
+   "sha": "19e78c36005056136793f39731c7ee1c95d13581",
+   "size": 626019,
+   "url": "https://api.github.com/repos/deekur/gaokaophysics/git/blobs/19e78c36005056136793f39731c7ee1c95d13581"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+A00 evidence — active-owner observation
+Observed: 2026-10-05T18:00:44+08:00 (UTC 10:00:48Z), read-only commands only.
+Purpose: record that the Kimi Code owner process is actively working in the original project, so
+original paths stay protected and all Phase B gates stay closed. At observation time the executor
+had performed no writes and sent no instructions to any running session.
+
+--- command (verbatim) ---
+echo "local: $(date --iso-8601=seconds)"; echo "utc:   $(date -u --iso-8601=seconds)"
+echo '--- kimi sessions root ---'
+S="$HOME/.kimi-code/sessions/wd_api_8f9bde7994a5"
+ls -ld "$S" 2>&1
+ls -lt "$S" 2>&1 | head -8
+echo '--- newest session wire (main agent), if present ---'
+ls -l "$S/session_de1b801c-5d3c-454f-bc4f-dc6382e0afca/agents/main/wire.jsonl" 2>&1
+echo '--- tmp_edexcel_tt_probe mtimes (active-owner signal) ---'
+ls -lt tmp_edexcel_tt_probe 2>&1 | head -6
+
+--- output (verbatim) ---
+local: 2026-10-05T18:00:44+08:00
+utc:   2026-10-05T10:00:48+00:00
+--- kimi sessions root ---
+drwxr-xr-x 1 weo 197121 0 Oct  5 17:56 /c/Users/weo/.kimi-code/sessions/wd_api_8f9bde7994a5
+total 80
+drwxr-xr-x 1 weo 197121 0 Oct  5 17:58 session_278e5996-bc2d-4809-ad6c-2a9d3061648a
+drwxr-xr-x 1 weo 197121 0 Oct  5 16:59 session_de1b801c-5d3c-454f-bc4f-dc6382e0afca
+drwxr-xr-x 1 weo 197121 0 Oct  5 16:43 session_3d2a1756-9c55-4155-9ed3-95700893b574
+drwxr-xr-x 1 weo 197121 0 Oct  5 16:06 session_08decdcf-1f0e-4c8c-b664-4c2eebc98d1c
+drwxr-xr-x 1 weo 197121 0 Oct  5 15:35 session_d883c71d-510f-483d-9810-d178a60ee98c
+drwxr-xr-x 1 weo 197121 0 Oct  5 15:06 session_a7a5c90b-750e-4de9-84b7-d613d6052f26
+drwxr-xr-x 1 weo 197121 0 Oct  5 11:18 session_0e26c9a2-36bf-4448-b691-16a904611a52
+--- newest session wire (main agent), if present ---
+-rw-r--r-- 1 weo 197121 52885432 Oct  5 18:01 /c/Users/weo/.kimi-code/sessions/wd_api_8f9bde7994a5/session_de1b801c-5d3c-454f-bc4f-dc6382e0afca/agents/main/wire.jsonl
+--- tmp_edexcel_tt_probe mtimes (active-owner signal) ---
+total 286
+-rw-r--r-- 1 weo 197121 18006 Oct  5 17:56 validate_round3.txt
+-rw-r--r-- 1 weo 197121   494 Oct  5 17:53 probe_round2d.py
+-rw-r--r-- 1 weo 197121  1134 Oct  5 17:51 probe_drop_scan.py
+-rw-r--r-- 1 weo 197121   885 Oct  5 17:49 probe_round2c.py
+-rw-r--r-- 1 weo 197121 18006 Oct  5 17:48 validate_round2.txt
+
+--- interpretation ---
+- Owner framework: Kimi Code; sessions root last modified 17:56; newest session directory
+  session_278e5996-bc2d-4809-ad6c-2a9d3061648a created 17:58.
+- The plan session wire (session_de1b801c-5d3c-454f-bc4f-dc6382e0afca, main agent) was last
+  written 18:01, 52,885,432 bytes — the owner was writing at observation time.
+- tmp_edexcel_tt_probe/ shows owner writes at 17:48–17:56 (validate round 2/3, probe scripts).
+- Conclusion: owner ACTIVE. Original paths remain protected; only an explicit human instruction
+  can release them for Phase B (see ownership.json active_owner.release_rule).

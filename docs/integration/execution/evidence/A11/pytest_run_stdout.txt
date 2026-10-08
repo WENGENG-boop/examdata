@@ -1,0 +1,73 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+cachedir: runtime\pytest-cache
+rootdir: C:\Users\weo\Desktop\api\integration-staging
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collected 711 items
+
+tests\test_adapters_answers.py ................                          [  2%]
+tests\test_adapters_cie.py .................                             [  4%]
+tests\test_adapters_documents.py ..............                          [  6%]
+tests\test_adapters_edexcel.py .............                             [  8%]
+tests\test_adapters_ielts.py ......................                      [ 11%]
+tests\test_adapters_provenance.py ......                                 [ 12%]
+tests\test_adapters_reader.py ..............                             [ 14%]
+tests\test_adapters_regions.py ..............                            [ 16%]
+tests\test_adapters_source_reader.py .......................             [ 19%]
+tests\test_adapters_toefl.py ................                            [ 21%]
+tests\test_api_binary_fixtures.py ......                                 [ 22%]
+tests\test_api_binary_store.py ......................................... [ 28%]
+......................................................................   [ 38%]
+tests\test_api_binary_transport.py ...............                       [ 40%]
+tests\test_api_dataset.py .......................                        [ 43%]
+tests\test_api_envelope.py ................................              [ 48%]
+tests\test_api_links_openapi.py ....................                     [ 50%]
+tests\test_api_pagination.py .....................                       [ 53%]
+tests\test_api_routes.py ............................................... [ 60%]
+......                                                                   [ 61%]
+tests\test_catalog_builder.py ..............                             [ 63%]
+tests\test_catalog_revision.py ..............                            [ 65%]
+tests\test_catalog_store.py ...............                              [ 67%]
+tests\test_config_manifest.py ...........................                [ 71%]
+tests\test_config_resolution.py .......................                  [ 74%]
+tests\test_contracts_completeness.py .........                           [ 75%]
+tests\test_contracts_identity.py ...............                         [ 77%]
+tests\test_contracts_quality.py ................                         [ 80%]
+tests\test_contracts_schemas.py ......                                   [ 80%]
+tests\test_fixture_provenance.py ...........                             [ 82%]
+tests\test_harness_isolation.py .............                            [ 84%]
+tests\test_node_import_guard.py .....                                    [ 84%]
+tests\test_providers_fixtures.py ....................................... [ 90%]
+.......                                                                  [ 91%]
+tests\test_providers_registry.py ....................                    [ 94%]
+tests\test_runner_classification.py .............................        [ 98%]
+tests\test_runner_limits.py ............                                 [100%]
+
+============================== warnings summary ===============================
+..\examdata\.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID syllabus_content_api_v2_syllabuses__id__content_head for function syllabus_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID resource_content_api_v2_resources__id__content_head for function resource_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID asset_content_api_v2_assets__id__content_head for function asset_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID question_crop_api_v2_questions__id__crop_head for function question_crop at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID material_content_api_v2_materials__id__content_head for function material_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 711 passed, 6 warnings in 28.17s =======================

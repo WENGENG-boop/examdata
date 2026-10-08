@@ -1,0 +1,236 @@
+{
+  "proposal_version": "r0104-rollback-proposal/1",
+  "generated_by": "integration-staging/runtime/r0104-repair-20261006/r0104_build_proposals.py",
+  "generated_at": "2026-10-06T22:56:37+08:00",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "merge_proposal_entries": 16,
+    "change_manifest": "integration-staging/runtime/r0104-repair-20261006/evidence/R0104_CHANGE_MANIFEST.json",
+    "change_manifest_sha256": "6c77d80940c98d44ea3ddf17c81f689ee8af66eeea4ca502ff75628006076d36"
+  },
+  "semantics": {
+    "staging_level": {
+      "modified_staged_file": "restore the recorded staged_sha256_before bytes only if the current staged file still matches staged_sha256_after; never restore a sealed snapshot",
+      "new_file": "delete only if the current file still matches staged_sha256_after",
+      "staging_tooling_edit": "remove the recorded added line"
+    },
+    "original_level": {
+      "merged_add_file": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after"
+    },
+    "never": [
+      "never touch docs/integration/execution/evidence/**",
+      "never touch integration-staging/runtime/phase-b/** sealed transcripts",
+      "never restore the live execution ledger from a private copy"
+    ]
+  },
+  "guards": [
+    "verify the resolved absolute path and its sha256 before any delete/restore",
+    "no delete or restore ever targets a protected original in Phase A",
+    "planned original edits are reversible only after the human release",
+    "all seven gates remain closed during rollback"
+  ],
+  "counts": {
+    "entries": 16,
+    "staging_level": {
+      "reversible_by_delete": 1,
+      "reversible_by_restore": 8,
+      "reversible_by_line_removal": 7
+    },
+    "original_level": {
+      "reversible_by_delete": 8,
+      "no_original_action": 8
+    }
+  },
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "entries": [
+    {
+      "id": "RP-0001",
+      "staged_path": "integration-staging/tools/b_ledger_update.py",
+      "proposed_target": null,
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "ec80a56ac2c950e9c7fa3ccb87acfe24c336c515a3235b92260c99e899f2702b",
+      "sha256_to_restore": "ac9b01cbfc2733496f5041aa4cd0ace879a0ac8e40aae97c3c9a951ee1dd62b8",
+      "staging_level_reversal": "no reversal needed: the file never leaves integration-staging/",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0002",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/manifest.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/manifest.py",
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "7ff0e084db5de5897870cce3bd3b90fd91376c4f3f917c856700764842cbebc3",
+      "sha256_to_restore": "8a56f668cc723ac60979248a070ae07e15e5d766cf534c1a16838c0ae9affeec",
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0003",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/runner.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/runner.py",
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "75001ddba5a65bd471143f9c74a2378db7c8aa5d59cd678b0b4690ebaea91bab",
+      "sha256_to_restore": "5d45f6de87fba3292eba426cc1e38b4a74562231f1f7c193b930303dbf09df13",
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0004",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/settings.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/settings.py",
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "320f9e39fe65c6a3049b7cba73afc3a5b249eeab13ebbd292d0e11508f9322b5",
+      "sha256_to_restore": "94e825030d135013ba41e5a528074b141720656bc6f4f67cacd05fc1d3bd83e6",
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0005",
+      "staged_path": "integration-staging/src/examdata_integration/api/dataset.py",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "c341ce3018f1b2c0944d458e40365dade153914b0cf80835a6bfce2893f6eeb3",
+      "sha256_to_restore": "5801f31c5c1748dc5c386af8bf6064fdaadd62b0d6055f99f0fe17dba1b500d4",
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0006",
+      "staged_path": "integration-staging/src/examdata_integration/adapters/source_reader.py",
+      "proposed_target": "examdata/src/examdata/integration/adapters/source_reader.py",
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "eb77e0004d3a002f9f4ac338bcf65c5ae1af19f75f6990f519c1d413928cb56f",
+      "sha256_to_restore": "42505ce1eb4a41f871db9f953b063568675591957d782776e7b344fb33466656",
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0007",
+      "staged_path": "integration-staging/tests/conftest.py",
+      "proposed_target": "examdata/tests/integration/conftest.py",
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "4b28ad52a9bba0c8546d78b540c5faf5281c829b4cee91284dc128c73bcb395d",
+      "sha256_to_restore": "d15742bd18103ef2627407c831452c8cdf432c057ee98f60b19cb8931a8f4193",
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0008",
+      "staged_path": "integration-staging/tests/test_config_resolution.py",
+      "proposed_target": "examdata/tests/integration/test_config_resolution.py",
+      "kind": "modified_staged_file",
+      "sha256_at_proposal": "cc0a8fb6611dd576e08540c0c20cad11f481779cdb88e998170ac296270da64e",
+      "sha256_to_restore": "18cd2340adf02dc9cb81a5f821f380376357f18b7423371605e115f19c2bf33e",
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0009",
+      "staged_path": "integration-staging/src/examdata_integration/runtime/paths.py",
+      "proposed_target": "examdata/src/examdata/integration/runtime/paths.py",
+      "kind": "new_file",
+      "sha256_at_proposal": "d0207fc79d66114c114a6bc65cca0ce123111cdfed0378ccbc7ca8494d60d0fb",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0010",
+      "staged_path": "integration-staging/tools/a06_probe_runner.py",
+      "proposed_target": null,
+      "kind": "staging_tooling_edit",
+      "sha256_at_proposal": "3f9d5f172ba35f82a2e70ccf80d359e09dc836fa542101fedd7525eeb9c4a7b7",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the added os.environ.setdefault(EXAMDATA_INTEGRATION_ROOT, ...) line (exact line recorded in the change manifest)",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0011",
+      "staged_path": "integration-staging/tools/a06_final_checks.py",
+      "proposed_target": null,
+      "kind": "staging_tooling_edit",
+      "sha256_at_proposal": "e461eb5f93948e1186a874cfc1015705d5379f3dd03ffc70648639961181d2ce",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the added os.environ.setdefault(EXAMDATA_INTEGRATION_ROOT, ...) line (exact line recorded in the change manifest)",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0012",
+      "staged_path": "integration-staging/tools/a08_probe_adapters.py",
+      "proposed_target": null,
+      "kind": "staging_tooling_edit",
+      "sha256_at_proposal": "76d253aa4ab88a190ab7a43af98db2d29f0df3198d8dfd6ae812d91c1c080f80",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the added os.environ.setdefault(EXAMDATA_INTEGRATION_ROOT, ...) line (exact line recorded in the change manifest)",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0013",
+      "staged_path": "integration-staging/tools/a10_probe_api.py",
+      "proposed_target": null,
+      "kind": "staging_tooling_edit",
+      "sha256_at_proposal": "676848ef34e34b3b9c100e4fb10dff891209496372bcabea0aeaa3511f26e8a9",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the added os.environ.setdefault(EXAMDATA_INTEGRATION_ROOT, ...) line (exact line recorded in the change manifest)",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0014",
+      "staged_path": "integration-staging/tools/a11_probe_binary.py",
+      "proposed_target": null,
+      "kind": "staging_tooling_edit",
+      "sha256_at_proposal": "a0099f4e50fe8be202c495c631c462b1a2c649e5ae8b3190817fbd564f02eead",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the added os.environ.setdefault(EXAMDATA_INTEGRATION_ROOT, ...) line (exact line recorded in the change manifest)",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0015",
+      "staged_path": "integration-staging/tools/a14_build_artifacts.py",
+      "proposed_target": null,
+      "kind": "staging_tooling_edit",
+      "sha256_at_proposal": "3173adc76bf0ad5a36ddc8af94572e107436b2e2e516fd79fd5409a852d7b176",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the added os.environ.setdefault(EXAMDATA_INTEGRATION_ROOT, ...) line (exact line recorded in the change manifest)",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "RP-0016",
+      "staged_path": "integration-staging/tools/a14_final_checks.py",
+      "proposed_target": null,
+      "kind": "staging_tooling_edit",
+      "sha256_at_proposal": "923b5414c00deb86c1769bc09de4790bd8381cfb19a7bfb9668e91f3f040e2b5",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "remove the added os.environ.setdefault(EXAMDATA_INTEGRATION_ROOT, ...) line (exact line recorded in the change manifest)",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    }
+  ]
+}

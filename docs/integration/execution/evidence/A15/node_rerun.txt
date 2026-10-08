@@ -1,0 +1,35 @@
+✔ fetchEnvelope parses the staged envelope and absolutises the path (2.9851ms)
+✔ fetchEnvelope raises typed errors for failures, bad JSON and unknown envelopes (1.0451ms)
+✔ documentFromResource maps discovery fields to the legacy document shape (0.4639ms)
+✔ documentFromResource marks unavailable items and drops unknown roles (0.2584ms)
+✔ searchDocuments fans out over every board season and merges documents (2.5879ms)
+✔ a failed season is reported without discarding the others (0.6084ms)
+✔ an all-failed fan-out rejects instead of claiming no matches (0.4661ms)
+✔ a chosen season queries only that season with the edexcel selector set (0.5711ms)
+✔ a paper number joins the per-season query token list (0.5835ms)
+✔ the v2 client flag is on by default and reversible (0.3795ms)
+✔ the staged page, modules and snapshots are served (68.5455ms)
+✔ the staged app.js uses the v2 client, keeps both selector sets and no /gateway (13.2271ms)
+✔ the resources list responds with the examdata.v2/1 envelope (7.3594ms)
+✔ staged content bytes match the declared hash and evidence headers (6.9156ms)
+✔ the failure map produces the staged error envelope (5.4711ms)
+✔ unknown api routes answer with the route_not_found envelope (5.6501ms)
+✔ no key material appears in the staged files (3.8562ms)
+✔ code with a Chinese name and full-width digits is exact (0.9203ms)
+✔ three-digit numeric input preserves leading-zero syllabus codes (0.3342ms)
+✔ math defaults to 9709 while explicit IGCSE stays selectable (0.5338ms)
+✔ qualification resolves a duplicate subject title (0.1313ms)
+✔ name and code pair resolves exact code, not all named subjects (0.6151ms)
+✔ unknown but valid syllabus codes can query live without catalog membership (0.0758ms)
+✔ partial number cannot match arbitrary syllabus codes (0.0837ms)
+✔ paper prefixes and zero padding normalize consistently (0.2281ms)
+✔ Edexcel variant and Chinese subject alias normalize (0.1909ms)
+✔ paper and mark scheme pair only with a complete matching identity (0.2666ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 284.6348

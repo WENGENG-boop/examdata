@@ -78,35 +78,74 @@ class ParsePipeline:
 
         self.session = session
         self.settings = settings or get_settings()
-        self.store = ContentAddressedStore()
+        self.store = ContentAddressedStore(root=self.settings.artifacts_dir)
         self.stats = ParseStats()
 
     # -- 对外入口 ---------------------------------------------------------
 
-    def run(self, *, limit: Optional[int] = None, document_id: Optional[int] = None) -> ParseStats:
+    def run(
+        self,
+        *,
+        limit: Optional[int] = None,
+        document_id: Optional[int] = None,
+        document_ids: Optional[list[int]] = None,
+        revision_ids: Optional[list[int]] = None,
+        retry_failed: bool = False,
+        commit: bool = True,
+    ) -> ParseStats:
+        if limit is not None and limit <= 0:
+            raise ValueError("limit 必须大于 0")
+        if document_id is not None and document_ids is not None:
+            raise ValueError("document_id 与 document_ids 不能同时指定")
+        targets = [document_id] if document_id is not None else document_ids
+        if targets is not None:
+            targets = list(dict.fromkeys(targets))
+            found = set(self.session.scalars(select(Document.id).where(Document.id.in_(targets))))
+            missing = set(targets) - found
+            if missing:
+                raise ValueError(f"document 不存在: {sorted(missing)}")
+        if revision_ids is not None:
+            revision_ids = list(dict.fromkeys(revision_ids))
+            found_revs = list(self.session.scalars(
+                select(DocumentRevision).where(DocumentRevision.id.in_(revision_ids))
+            ))
+            missing_revs = set(revision_ids) - {rev.id for rev in found_revs}
+            if missing_revs:
+                raise ValueError(f"revision 不存在: {sorted(missing_revs)}")
+            if targets is not None and any(rev.document_id not in targets for rev in found_revs):
+                raise ValueError("revision 不属于指定 document 范围")
+
+        self.stats = ParseStats()
+        statuses = ["pending", "failed"] if retry_failed else ["pending"]
         stmt = (
             select(DocumentRevision)
-            .where(DocumentRevision.parse_status == "pending")
+            .where(DocumentRevision.parse_status.in_(statuses))
             .order_by(DocumentRevision.id)
         )
-        if document_id is not None:
-            stmt = stmt.where(DocumentRevision.document_id == document_id)
-        if limit:
+        if targets is not None:
+            stmt = stmt.where(DocumentRevision.document_id.in_(targets))
+        if revision_ids is not None:
+            stmt = stmt.where(DocumentRevision.id.in_(revision_ids))
+        if limit is not None:
             stmt = stmt.limit(limit)
 
         revisions = list(self.session.scalars(stmt).all())
-        # 两阶段解析：必须先解析试卷，再解析评分标准。
-        # 否则 Mark Scheme 找不到对应的 Paper/Question，条目无法挂到题目上。
         revisions.sort(key=self._phase_key)
         for rev in revisions:
+            revision_id = rev.id
+            counters = {k: v for k, v in self.stats.__dict__.items() if k != "errors"}
             try:
-                self.parse_revision(rev)
-                self.session.commit()
+                with self.session.begin_nested():
+                    self.parse_revision(rev)
+                    self.session.flush()
             except Exception as exc:
-                self.session.rollback()
+                attempted = {key: getattr(self.stats, key) - value for key, value in counters.items()}
+                for key, value in counters.items():
+                    setattr(self.stats, key, value)
                 self.stats.failed += 1
-                self.stats.errors.append(f"revision {rev.id}: {type(exc).__name__}: {exc}")
-                self._mark_failed(rev.id, str(exc))
+                self.stats.errors.append(f"revision {revision_id}: {type(exc).__name__}: {exc}")
+                self._mark_failed(revision_id, f"{type(exc).__name__}: {exc}", attempted=attempted)
+            if commit:
                 self.session.commit()
         return self.stats
 
@@ -123,35 +162,32 @@ class ParsePipeline:
             return 1
         return 2
 
-    def _mark_failed(self, revision_id: int, error: str) -> None:
+    def _mark_failed(self, revision_id: int, error: str, *, attempted=None) -> None:
         rev = self.session.get(DocumentRevision, revision_id)
         if rev is not None:
             rev.parse_status = "failed"
             rev.parse_error = error[:1000]
+            self.session.add(ParseRun(document_revision_id=rev.id, parser_version=self.settings.parser_version,
+                status="failed", started_at=_dt.datetime.now(_dt.timezone.utc), finished_at=_dt.datetime.now(_dt.timezone.utc),
+                params={"error": error, "attempted_stats": attempted or {}}, stats={"failed": 1}))
+            self.session.flush()
 
     # -- 单条解析 ---------------------------------------------------------
 
     def parse_revision(self, rev: DocumentRevision) -> None:
         doc = self.session.get(Document, rev.document_id)
         if doc is None:
-            self.stats.skipped += 1
-            return
+            raise ValueError(f"document {rev.document_id} 不存在")
 
         artifact = (
             self.session.get(Artifact, rev.artifact_id) if rev.artifact_id else None
         )
         if artifact is None:
-            rev.parse_status = "failed"
-            rev.parse_error = "revision 无 artifact"
-            self.stats.skipped += 1
-            return
+            raise ValueError("revision 无 artifact")
 
         path = self._artifact_path(artifact.storage_key)
-        if not path.exists():
-            rev.parse_status = "failed"
-            rev.parse_error = f"文件缺失: {path}"
-            self.stats.skipped += 1
-            return
+        if not path.is_file():
+            raise ValueError(f"文件缺失: {path}")
 
         parse_run = ParseRun(
             document_revision_id=rev.id,
@@ -164,6 +200,9 @@ class ParsePipeline:
         self.session.add(parse_run)
         self.session.flush()
 
+        run_counters = {
+            key: value for key, value in self.stats.__dict__.items() if key != "errors"
+        }
         self.stats.revisions += 1
         if doc.doc_type in ("question_paper", "specimen_paper"):
             self._parse_question_paper(doc, rev, parse_run, path)
@@ -175,7 +214,11 @@ class ParsePipeline:
 
         parse_run.status = "completed" if parse_run.status == "running" else parse_run.status
         parse_run.finished_at = _dt.datetime.now(_dt.timezone.utc)
-        parse_run.stats = {"questions": self.stats.questions, "entries": self.stats.entries}
+        parse_run.stats = {
+            key: getattr(self.stats, key) - run_counters.get(key, 0)
+            for key in ("revisions", "papers", "questions", "mark_schemes", "entries",
+                        "entries_linked", "assets", "findings", "review_tasks", "failed", "skipped")
+        }
 
         rev.parse_status = "parsed"
         rev.parse_error = None
@@ -188,14 +231,12 @@ class ParsePipeline:
         """该文档的所有解析轮次中是否出现过 error/critical 级校验发现。"""
         row = self.session.scalar(
             select(ValidationFinding.id)
-            .join(
-                DocumentRevision,
-                DocumentRevision.id == ParseRun.document_revision_id,
-            )
             .join(ParseRun, ParseRun.id == ValidationFinding.parse_run_id)
+            .join(DocumentRevision, DocumentRevision.id == ParseRun.document_revision_id)
             .where(
                 DocumentRevision.document_id == document_id,
                 ValidationFinding.severity.in_(["error", "critical"]),
+                ValidationFinding.status == "open",
             )
             .limit(1)
         )
@@ -333,7 +374,11 @@ class ParsePipeline:
     def _upsert_asset(self, asset_ref) -> Asset:
         """资产按内容寻址存储后再落库，天然去重。"""
         mime = asset_ref.mime or None
+        from ..core.storage import lock_transaction_object, track_transaction_file
+        from ..core.ids import sha256_bytes
+        lock_transaction_object(self.session, sha256_bytes(asset_ref.data))
         stored = self.store.put_bytes(asset_ref.data, mime)
+        track_transaction_file(self.session, stored)
         existing = self.session.scalar(
             select(Asset).where(Asset.sha256 == stored.sha256)
         )
@@ -481,16 +526,20 @@ class ParsePipeline:
 
     def _find_matching_paper(self, doc: Document) -> Optional[Document]:
         """按同一身份（考试局/资格/科目/年份/季/Paper）找对应试卷。"""
-        stmt = select(Document).where(
+        family = "specimen_paper" if doc.doc_type == "specimen_mark_scheme" else "question_paper"
+        stmt = select(Document).join(Paper, Paper.document_id == Document.id).join(
+            ParseRun, ParseRun.id == Paper.parse_run_id
+        ).where(
             Document.board_id == doc.board_id,
-            Document.doc_type.in_(["question_paper", "specimen_paper"]),
+            Document.doc_type == family,
             Document.paper_code == doc.paper_code,
+            ParseRun.document_revision_id == Document.current_revision_id,
+            ParseRun.status == "completed",
         )
-        if doc.subject_id is not None:
-            stmt = stmt.where(Document.subject_id == doc.subject_id)
-        if doc.year is not None:
-            stmt = stmt.where(Document.year == doc.year)
-        return self.session.scalar(stmt)
+        for field in ("qualification_id", "subject_id", "series_id", "year", "component", "variant", "level"):
+            stmt = stmt.where(getattr(Document, field) == getattr(doc, field))
+        matches = list(self.session.scalars(stmt))
+        return matches[0] if len(matches) == 1 else None
 
     # -- 校验与人工修正 ---------------------------------------------------
 
@@ -559,17 +608,25 @@ class ParsePipeline:
         ).all()
         for ov in overrides:
             applies = ov.applies_to_parser_versions
-            if applies and parse_run.parser_version not in applies:
-                ov.conflict_detected = True
-                ov.conflict_detail = (
-                    f"解析器版本 {parse_run.parser_version} 与 override 适用范围不一致"
+            # "*"（或空）表示适用于所有版本。不能直接 `version not in applies`：
+            # applies 为字符串时那是子串匹配，为 "*" 时任何版本都会被误判为不适用。
+            if applies and applies != "*":
+                allowed = (
+                    applies if isinstance(applies, (list, tuple, set)) else [applies]
                 )
-                continue
+                if parse_run.parser_version not in allowed:
+                    ov.conflict_detected = True
+                    ov.conflict_detail = (
+                        f"解析器版本 {parse_run.parser_version} 与 override 适用范围不一致"
+                    )
+                    continue
             current = getattr(obj, ov.field_path, None)
-            if current is not None and ov.source_value is not None and current != ov.source_value:
+            if current != ov.source_value:
                 ov.conflict_detected = True
                 ov.conflict_detail = f"自动解析值 {current!r} 与人工值 {ov.value!r} 冲突"
                 continue
+            ov.conflict_detected = False
+            ov.conflict_detail = None
             setattr(obj, ov.field_path, ov.value)
             if hasattr(obj, "has_override"):
                 obj.has_override = True

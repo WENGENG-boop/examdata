@@ -1,0 +1,109 @@
+=== A10 isolated v2 API probe ===
+
+-- route inventory --
+[ok] routes.runtime_equals_spec :: 34 vs 34
+[ok] routes.spec_equals_advertised :: 34 vs 34
+[ok] routes.implemented_count :: 34
+[ok] routes.deferred_count :: 0
+[ok] routes.all_implemented_are_get
+[ok] routes.openapi_agreement :: []
+[ok] routes.openapi_builds
+[ok] routes.no_doc_routes_served
+
+-- envelope contract --
+[ok] envelope.info_200
+[ok] envelope.valid_schema :: []
+[ok] envelope.error_null_on_success
+[ok] envelope.schema_version
+[ok] envelope.request_id_present
+[ok] envelope.retrieved_at_present
+[ok] envelope.dataset_revision_present
+[ok] envelope.request_id_echoed_safe
+[ok] envelope.request_id_replaced_unsafe
+
+-- info discovery --
+[ok] info.counts_match_snapshot
+[ok] info.evidence_synthetic
+[ok] info.systems_are_all_known_systems
+[ok] info.available_paths_are_full_paths
+[ok] info.deferred_paths_listed
+[ok] info.error_map_matches_constant
+
+-- error map --
+[ok] error.unknown_path_404
+[ok] error.unknown_identity_404
+[ok] error.bad_limit_400
+[ok] error.over_budget_limit_422
+[ok] error.unsupported_filter_422
+[ok] error.wrong_method_405_framework
+[ok] error./api/v2/nothing-here.envelope_valid
+[ok] error./api/v2/courses/does-not-exist.envelope_valid
+[ok] error./api/v2/questions.envelope_valid
+[ok] error./api/v2/questions.envelope_valid
+[ok] error./api/v2/courses.envelope_valid
+[ok] error.every_emitted_status_is_mapped
+
+-- identity + hierarchy --
+[ok] identity.container_native_identity_preserved
+[ok] identity.container_question_order_is_native :: ['1', '1(a)', '1(b)', '2', '3']
+[ok] identity.question_public_ids_are_catalog_ids :: ['q_lkfcr6zycmxmr4bdx2edj437sxpxkylo', 'q_oqpgybtsng7f3gch3hibwmchxregopvy', 'q_npc7mw6tr3hykvii5hokuq2uze2bfvrp', 'q_y4jdjciydgwnmnipurwlstb6ud26p4r5', 'q_p37hkvm7kf37fqhmwn3gmolw3a2oy3iy']
+[ok] identity.question_hierarchy_kept
+[ok] identity.question_public_id_is_catalog
+
+-- answers: conflicts and missing slots --
+[ok] answers.conflict_surfaced :: {'answer_conflict'}
+[ok] answers.conflict_candidates_kept :: [{'public_id': 'ans_pwrmdv5aq2dxdxtaxdljyx7flhmwiucx', 'question_ref': '3', 'original_value': 'synthetic-mark-scheme-answer', 'normalized_value': None, 'alternatives': [], 'ordering_rule': None, 'matching_method': 'unresolved', 'verification': 'unverified', 'source': {'source_id': 'synthetic-ms', 'provider_id': 'cie_index_fixture', 'locator': {'fixture': 'cie-index-synthetic.json'}, 'content_class': 'synthetic', 'retrieved_at': None}, 'conflicts': [{'value': 'synthetic-mark-scheme-answer', 'source': 'synthetic-ms', 'evidence': None, 'decision': None}, {'value': 'synthetic-alternate-answer', 'source': 'synthetic-examiner-report', 'evidence': None, 'decision': None}], 'manual_decision': None, 'content_class': 'synthetic', 'lineage': {'operation': 'synthetic_fixture_map', 'source_refs': [], 'parent_refs': ['3'], 'note': 'synthetic mark scheme'}}]
+[ok] answers.conflict_candidates_unresolved
+[ok] answers.manual_decision_absent
+[ok] answers.never_promoted_to_verified
+[ok] answers.missing_slot_is_empty_with_gap
+
+-- regions: document hash + evidence status --
+[ok] regions.item_present
+[ok] regions.document_sha256_preserved
+[ok] regions.document_role_qp
+[ok] regions.evidence_status_unverified
+[ok] regions.missing_region_gap
+[ok] regions.unsupported_capability_422
+
+-- audio never dispatches --
+[ok] audio.empty_and_unassociated
+
+-- pagination + cursors --
+[ok] pagination.limit_honoured
+[ok] pagination.next_cursor_present
+[ok] pagination.no_overlap_and_stable
+[ok] pagination.revision_in_envelope
+[ok] pagination.stale_cursor_409
+[ok] pagination.tampered_cursor_400
+
+-- deferred families are labelled, never fabricated --
+[ok] deferred.materials_200_and_unknown
+[ok] deferred.materials_rows_labelled :: materials
+[ok] deferred.materials_warns
+[ok] deferred.timetables_200_and_unknown
+[ok] deferred.timetables_rows_labelled :: timetables
+[ok] deferred.timetables_warns
+[ok] deferred.timetable_events_200_and_unknown
+[ok] deferred.timetable_events_rows_labelled :: timetable_events
+[ok] deferred.timetable_events_warns
+[ok] deferred.timetable_windows_200_and_unknown
+[ok] deferred.timetable_windows_rows_labelled :: timetable_windows
+[ok] deferred.timetable_windows_warns
+[ok] deferred.syllabuses_200_and_unknown
+[ok] deferred.syllabuses_rows_labelled :: syllabuses
+[ok] deferred.syllabuses_warns
+[ok] deferred.tags_empty_with_gap
+[ok] deferred.tags_questions_explicit
+[ok] deferred.job_fixture_200
+[ok] deferred.job_unknown_404
+
+-- coverage never invents a denominator --
+[ok] coverage.rows_present
+[ok] coverage.unknown_denominator_has_no_percentage
+
+-- sanitization + containment --
+[ok] leak.no_original_path_in_info
+[ok] leak.filter_detail_is_sanitized
+
+A10_PROBE: PASS (0 failing)

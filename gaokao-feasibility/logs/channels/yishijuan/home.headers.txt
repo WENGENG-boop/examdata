@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 04 Oct 2026 10:10:42 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=31536000
+Alt-Svc: quic=":443"; h3=":443"; h3-29=":443"; h3-27=":443";h3-25=":443"; h3-T050=":443"; h3-Q050=":443";h3-Q049=":443";h3-Q048=":443"; h3-Q046=":443"; h3-Q043=":443"
+

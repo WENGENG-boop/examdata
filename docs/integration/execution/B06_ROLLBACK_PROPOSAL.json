@@ -1,0 +1,332 @@
+{
+  "proposal_version": "b06-rollback-proposal/1",
+  "packet": "B06",
+  "generated_by": "integration-staging/runtime/b06-rehearsal-2026-10-07/b06_build_proposals.py",
+  "generated_at": "2026-10-07T05:02:05+08:00",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "merge_proposal_entries": 21,
+    "candidate_manifest": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/B06_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "9af2e849573033aceb9e4b5f0acbea1d62b91565d8b87526b99e0a3db75b82cb",
+    "candidate_tree": {
+      "files": 208,
+      "excludes": [
+        "B06_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "ffe774db608ff9d86246458a38265f9baa760b40880e48197e84d887f85d53f4"
+    }
+  },
+  "semantics": {
+    "staging_level": {
+      "staging_candidate_tree": "delete the candidate tree only if its current tree digest still equals sha256_at_proposal, recomputed with the rule recorded in derived_from.candidate_tree_digest_rule (the candidate's own manifest is excluded, since a file cannot hash itself)",
+      "staged_file_changes": "the seventeen added frontend files and the three rewritten modules live only inside the candidate tree: the container tree delete removes them; the three rewritten modules can alternatively be reversed by restoring the parent's staged bytes (staging_sha256_to_restore)"
+    },
+    "original_level": {
+      "merged_add_file": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal",
+      "merged_staged_file_rewrite": "only the frontend/server.mjs rewrite has an existing original target (restore its recorded base bytes, original_base_sha256); the three rewritten modules never existed in the original project, so their original-level reversal is a delete, never a restore of the superseded staged versions",
+      "merged_reconcile_modify": "restore the recorded base bytes (original_base_sha256) at the proposed target, and only if the target's current sha256 still equals sha256_at_proposal; never restore a sealed snapshot",
+      "merged_verify_copy": "if the release wrote nothing (the bytes already matched), there is nothing to reverse; otherwise restore the recorded base bytes, guarded on the target sha",
+      "frontend_tests_search_note": "B01 records restore_base_bytes against the base at frontend/search.test.mjs (a different path than the empty proposed target frontend/tests/search.test.mjs); the released reconciliation decides the final layout and this entry never overwrites the recorded base path"
+    },
+    "never": [
+      "never touch docs/integration/execution/evidence/**",
+      "never touch integration-staging/runtime/phase-b/** sealed transcripts",
+      "never touch the frozen R04 candidate under r0104-repair-20261006/candidates/**",
+      "never touch the frozen B02 candidate under b02-rehearsal-20261006/candidates/**",
+      "never touch the frozen B03 candidate under b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/**",
+      "never touch the frozen B04 candidate under b04-rehearsal-2026-10-07/candidates/b04-routes-v1/**",
+      "never touch the frozen B05 candidate under b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/**",
+      "never restore the live execution ledger from a private copy"
+    ]
+  },
+  "guards": [
+    "verify the resolved absolute path and its sha256 (or tree digest) before any delete",
+    "no delete ever targets a protected original in Phase B private rehearsal",
+    "planned original writes are reversible only after the human release",
+    "the three rewritten integration modules never existed in the original project; their original-level reversal is a delete, never a restore of the superseded staged versions",
+    "the base restores (app.js, index.html, README.md, search.mjs, styles.css, server.mjs) restore only the sha256 recorded by B01 (frozen records) and abort if the target drifted from sha256_at_proposal",
+    "all seven gates remain closed during rollback"
+  ],
+  "counts": {
+    "entries": 21,
+    "staging_level": {
+      "reversible_by_tree_delete": 1,
+      "entries_removed_with_the_tree": 20,
+      "reversible_by_restore_parent_bytes": 3
+    },
+    "original_level": {
+      "reversible_by_target_delete": 11,
+      "reversible_by_restore_base": 6,
+      "reconciliation_cases": 1,
+      "no_original_action": 3
+    }
+  },
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1",
+      "proposed_target": null,
+      "kind": "staging_candidate_tree",
+      "sha256_at_proposal": "ffe774db608ff9d86246458a38265f9baa760b40880e48197e84d887f85d53f4",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "delete the candidate tree, and only if its current tree digest still equals sha256_at_proposal",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/src/examdata/integration/api/app.py",
+      "proposed_target": "examdata/src/examdata/integration/api/app.py",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "0edb0911aee83753f1692299cd656df614805b2b032aad6eaa8122dca6d7bc8b",
+      "staging_sha256_to_restore": "aa3ba9c5e7da3277dbbadbe4ba40cc7b07b961b0c2ba43da801451c7410736f0",
+      "original_base_sha256": null,
+      "staging_level_reversal": "restore the parent's staged bytes (staging_sha256_to_restore) inside the candidate; the candidate itself stays private",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/src/examdata/integration/api/dataset.py",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "d0edabc7a258c0a8f75dd5001475eaf2cd22f5f806c6aa83be8c32336669962b",
+      "staging_sha256_to_restore": "a9a72a7a56f87fd7a854793ca8e191fce6b801a79be40e3971d2ed6c73358a4e",
+      "original_base_sha256": null,
+      "staging_level_reversal": "restore the parent's staged bytes (staging_sha256_to_restore) inside the candidate; the candidate itself stays private",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/src/examdata/integration/api/view.py",
+      "proposed_target": "examdata/src/examdata/integration/api/view.py",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "f03e549f5be4eb6f2041acd570851d7fda57f9bacdd0e5943b8af69dc6c3620f",
+      "staging_sha256_to_restore": "441c1da3977201942baf5eae3b99448cc8a65ad37e3ef44957a5db809ccf3986",
+      "original_base_sha256": null,
+      "staging_level_reversal": "restore the parent's staged bytes (staging_sha256_to_restore) inside the candidate; the candidate itself stays private",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; the superseded staged versions are never restored because the target never existed in the original project",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0005",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/PROVENANCE.json",
+      "proposed_target": null,
+      "kind": "staging_only_artifact",
+      "sha256_at_proposal": "bc7d167bc1419a0a17ae28796579ef7a25df548a5fad8f4dbcef570d2987fde1",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "removed only with the candidate tree; the file has no separate staging reversal",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0006",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/README.md",
+      "proposed_target": "frontend/README.md",
+      "kind": "modified_copy",
+      "sha256_at_proposal": "53764be9870a086be874eee775baacd5ca9eafdcf06cefb1cbeb3ceb3ce27c8a",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": "df197ba44cf1d2d2db3626f3a405f6b834b02e0cde739eb11abade2cc0a41340",
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0007",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/app.js",
+      "proposed_target": "frontend/app.js",
+      "kind": "modified_copy",
+      "sha256_at_proposal": "66f698449334b91529dbd5c86e6350af3977ee9c6d5812985761f8c176c07db8",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": "c050438a0f89ea86be0e3e94844ad776019b7f95d0ba9752fae15ccc6a9aaae0",
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0008",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/client.mjs",
+      "proposed_target": "frontend/client.mjs",
+      "kind": "new_file",
+      "sha256_at_proposal": "57c55e43da46832fc967e4fc09add0cd418bcf59419596f9fd29bab0ac38802f",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0009",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixture-server.mjs",
+      "proposed_target": "frontend/fixture-server.mjs",
+      "kind": "new_file",
+      "sha256_at_proposal": "424b404d25b461fd54d88d664ff882d494ac168f90943ca80a4f2742836b960b",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0010",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/PROVENANCE.json",
+      "proposed_target": null,
+      "kind": "staging_only_artifact",
+      "sha256_at_proposal": "2a42aa1f095e1f25479229596cf2891c3c6e9ff05d2c48b8f124531d9a1e07bf",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "removed only with the candidate tree; the file has no separate staging reversal",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0011",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/catalog.json",
+      "proposed_target": "frontend/fixtures/catalog.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "6344f4f2ef6433bc319741deaefd6ae96366b6214ac4df6af055dce85150ed29",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0012",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/resources.json",
+      "proposed_target": "frontend/fixtures/resources.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "12277f5ff5ef69bd1f513e31b1e29b5e0f50e55d596289db72862776a68b97aa",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0013",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/fixtures/syllabi.json",
+      "proposed_target": "frontend/fixtures/syllabi.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "080d0de3838acd197b01813d71e927fdc9fb9477bf3216b354a7c90a3bb58913",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0014",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/index.html",
+      "proposed_target": "frontend/index.html",
+      "kind": "modified_copy",
+      "sha256_at_proposal": "c2bf9f4e32ad667bc89ce901f619a0f0643ff778d33ab383b6e11013b6e1e6c6",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": "e10c6296a3204a5d08d82317844f4656a3ec2500374dfc472bcbaaf8dc23a064",
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0015",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/search.mjs",
+      "proposed_target": "frontend/search.mjs",
+      "kind": "copied_snapshot",
+      "sha256_at_proposal": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0016",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/styles.css",
+      "proposed_target": "frontend/styles.css",
+      "kind": "copied_snapshot",
+      "sha256_at_proposal": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "restore the recorded base bytes (sha256_to_restore) at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0017",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/client.test.mjs",
+      "proposed_target": "frontend/tests/client.test.mjs",
+      "kind": "new_file",
+      "sha256_at_proposal": "6c23e46e86af23f903b73ba273e66b0d2a64fa5f12dc0e9fa658031f394c3294",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0018",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/flow.test.mjs",
+      "proposed_target": "frontend/tests/flow.test.mjs",
+      "kind": "new_file",
+      "sha256_at_proposal": "c10ad67c8aca97bf15d1f62c85b6e400c740276805ebe7dcf14f767caa4bbffb",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0019",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/search.test.mjs",
+      "proposed_target": "frontend/tests/search.test.mjs",
+      "kind": "modified_copy",
+      "sha256_at_proposal": "7fd00040fe00a4c0b2b764416ca1148a33619ed1a3dc48793142316bfb0d77ee",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": "1e50f10f941caa7b91334a027d0a9ee67932eecc6880b425a276fbecfc350327",
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "B01 records the reversal restore_base_bytes against the base at frontend/search.test.mjs (sha256_to_restore, recorded 1e50f10f...), a different path than the proposed target frontend/tests/search.test.mjs (which did not exist); the released reconciliation decides the final layout; this entry never overwrites the recorded base path and never restores a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0020",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/server.mjs",
+      "proposed_target": "frontend/server.mjs",
+      "kind": "staged_file_rewrite",
+      "sha256_at_proposal": "3b34f04c91921c212ddcaf99cbc355fbe4f5670594f8f810ed39566c806d90d8",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "restore the recorded base bytes (sha256 05406d3a...); never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0021",
+      "staged_path": "integration-staging/runtime/b06-rehearsal-2026-10-07/candidates/b06-frontend-v1/frontend/tests/server.test.mjs",
+      "proposed_target": "frontend/tests/server.test.mjs",
+      "kind": "new_file",
+      "sha256_at_proposal": "75e3c7a145eccf7b09febe319a8e0d8c197acb58bd0ce9da2efa5256d2dd1b32",
+      "staging_sha256_to_restore": null,
+      "original_base_sha256": null,
+      "staging_level_reversal": "remove the staged file; it does not exist in the parent candidate, so the candidate then differs from its recorded digest and is rebuilt from the parent if needed",
+      "original_level_reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    }
+  ]
+}

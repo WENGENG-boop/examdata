@@ -1,0 +1,102 @@
+{
+  "fixture_kind": "synthetic",
+  "schema_version": "1",
+  "board": "ielts",
+  "_provenance": {
+    "note": "Hand-authored synthetic IELTS question set for the A08 read adapter. Invented prompts and answers only; no upstream IELTS content, no real document hashes. Carries a question variant, edition uncertainty, raw source ids and special numbering so the adapter can be checked for preserving them.",
+    "created_by": "Phase A executor (packet A08)",
+    "created_at_local": "2026-10-06T00:20:00+08:00",
+    "provider": "ielts",
+    "purpose": "Exercise IELTS question variants, edition uncertainty, raw source ids, special numbering, a missing answer slot and an unresolved answer conflict."
+  },
+  "dataset_revision": "rev-synthetic-a08-ielts-questions",
+  "book": {
+    "native_id": "synthetic-book-2",
+    "alias_ids": ["SB2"],
+    "title": "Synthetic IELTS practice book 2",
+    "variant": "academic",
+    "edition": null,
+    "edition_uncertain": true,
+    "edition_note": "The synthetic source records no edition; the edition must stay unresolved."
+  },
+  "questions": [
+    {
+      "native_id": "S2Q1",
+      "numbering": "1",
+      "raw_source_id": "synthetic-src-0001",
+      "variant": "academic",
+      "kind": "fill_blank",
+      "prompt": "Synthetic prompt for book 2 question 1.",
+      "answer": "synthetic-answer-s2q1",
+      "alternative_answers": [],
+      "answer_slot": 1,
+      "missing_answer": false,
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-2" }
+    },
+    {
+      "native_id": "S2Q7",
+      "numbering": "7(b)(ii)",
+      "raw_source_id": "synthetic-src-0007",
+      "variant": "academic",
+      "kind": "fill_blank",
+      "prompt": "Synthetic prompt with special numbering for book 2 question 7(b)(ii).",
+      "answer": "synthetic-answer-s2q7",
+      "alternative_answers": [],
+      "answer_slot": 7,
+      "missing_answer": false,
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-2" }
+    },
+    {
+      "native_id": "S2Q24",
+      "numbering": "24",
+      "raw_source_id": "synthetic-src-0024",
+      "variant": "academic",
+      "kind": "answer_conflict",
+      "prompt": "Synthetic question 24 with two disagreeing candidate answers.",
+      "answer": "synthetic-answer-s2q24a",
+      "alternative_answers": ["synthetic-answer-s2q24b"],
+      "answer_slot": 24,
+      "missing_answer": false,
+      "answer_conflicts": [
+        { "value": "synthetic-answer-s2q24a", "source": "synthetic-source-a", "decision": null },
+        { "value": "synthetic-answer-s2q24b", "source": "synthetic-source-b", "decision": null }
+      ],
+      "manual_decision": null,
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-2" }
+    },
+    {
+      "native_id": "S2Q41",
+      "numbering": "41",
+      "raw_source_id": "synthetic-src-0041",
+      "variant": "academic",
+      "kind": "missing_answer_slot",
+      "prompt": null,
+      "answer": null,
+      "alternative_answers": [],
+      "answer_slot": 41,
+      "missing_answer": true,
+      "missing_reason": "The synthetic source has no answer slot 41 for this book; the slot is preserved as missing and must never be fabricated.",
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-2" }
+    }
+  ],
+  "answer_slots": {
+    "present": [1, 7, 24],
+    "missing": [41],
+    "note": "Slot 41 is intentionally absent; the identity model must preserve the gap."
+  },
+  "documents": [
+    {
+      "role": "question_paper",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "note": "placeholder hash for a synthetic document"
+    }
+  ],
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

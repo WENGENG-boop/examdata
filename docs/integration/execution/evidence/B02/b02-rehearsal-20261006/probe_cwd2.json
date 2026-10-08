@@ -1,0 +1,272 @@
+{
+  "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp",
+  "exit_code": 0,
+  "report": {
+    "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1",
+    "workspace_root": "C:\\Users\\weo\\Desktop\\api",
+    "cwd_at_start": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp",
+    "pythonpath_env": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1",
+    "staging_override_present": false,
+    "startup": {
+      "files_before_import": 214,
+      "files_after_import": 214,
+      "added": []
+    },
+    "module_origin": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\__init__.py",
+    "paths_module": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\paths.py",
+    "precedence": {
+      "explicit": 9,
+      "environment": 8,
+      "config_file": 7,
+      "manifest_default": 6,
+      "default": 4
+    },
+    "env_mutation": {
+      "mutated": false,
+      "names_added": []
+    },
+    "legacy_aliases": {
+      "ielts_dir": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\data\\ielts",
+      "ielts_origin": "env:IELTS_API_DIR",
+      "toefl_dir": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\data\\toefl",
+      "toefl_origin": "env:TOEFL_API_DIR",
+      "warnings": [
+        "ielts_dir: IELTS_API_DIR is a deprecated alias for EXAMDATA_IELTS_DIR; the alias still works but will be removed",
+        "toefl_dir: TOEFL_API_DIR is a deprecated alias for EXAMDATA_TOEFL_DIR; the alias still works but will be removed"
+      ]
+    },
+    "canonical_name": {
+      "warnings": [],
+      "origin": "env:EXAMDATA_IELTS_DIR"
+    },
+    "alias_conflict": {
+      "raised": true,
+      "detail": "conflicting values for ielts_dir: EXAMDATA_IELTS_DIR='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b02-rehearsal-20261006\\\\evidence\\\\tmp\\\\data\\\\ielts2', IELTS_API_DIR='C:\\\\Users\\\\weo\\\\D"
+    },
+    "env_template_tokens": {
+      "IELTS_API_DIR": true,
+      "TOEFL_API_DIR": true
+    },
+    "ensure_directories_refusal": {
+      "refused": true,
+      "detail": "refusing to create catalog_root outside the staging tree: C:\\Users\\weo\\Desktop\\api\\docs\\b02-should-not-create",
+      "created": false
+    },
+    "discovery": {
+      "from_candidate_cwd": {
+        "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp",
+        "ids": [
+          "fake_cli"
+        ],
+        "problems": [],
+        "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\components\\fake-node-cli\\fake-cli.mjs"
+      },
+      "from_alt_cwd": {
+        "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\probe-alt-cwd",
+        "ids": [
+          "fake_cli"
+        ],
+        "problems": [],
+        "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\components\\fake-node-cli\\fake-cli.mjs"
+      }
+    },
+    "entry_points": {
+      "examdata.integration.runtime": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\__init__.py",
+      "examdata.integration.runtime.settings": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\settings.py",
+      "examdata.integration.runtime.runner": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\runner.py",
+      "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\manifest.py",
+      "examdata.integration.runtime.paths": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\paths.py",
+      "examdata.integration.runtime.doctor": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\doctor.py",
+      "examdata.integration.legacy": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\legacy\\__init__.py",
+      "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    "entry_errors": {},
+    "not_run": [
+      {
+        "check": "real legacy Node gateway execution (ielts-api / toefl-api)",
+        "reason": "gate original_paths_released is closed; no original service is started"
+      },
+      {
+        "check": "real Node component execution",
+        "reason": "gate original_paths_released is closed; synthetic fixture only"
+      },
+      {
+        "check": "real database schema / data-root migration",
+        "reason": "gate real_data_write_authorized is closed; schema and data roots unchanged"
+      }
+    ],
+    "counts": {
+      "checks": 32,
+      "checks_failed": 0,
+      "entry_points_ok": 8,
+      "legacy_aliases_preserved": 2,
+      "discovery_cwds": 2
+    },
+    "checks": [
+      {
+        "name": "startup.import_creates_nothing",
+        "ok": true,
+        "detail": "added=[]"
+      },
+      {
+        "name": "startup.no_staging_override",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "startup.root_env_is_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1"
+      },
+      {
+        "name": "origin.runtime_within_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\__init__.py"
+      },
+      {
+        "name": "origin.paths_within_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\paths.py"
+      },
+      {
+        "name": "precedence.order_unchanged",
+        "ok": true,
+        "detail": "{\"explicit\": 9, \"environment\": 8, \"config_file\": 7, \"manifest_default\": 6, \"default\": 4}"
+      },
+      {
+        "name": "startup.resolve_config_does_not_mutate_environ",
+        "ok": true,
+        "detail": "{\"mutated\": false, \"names_added\": []}"
+      },
+      {
+        "name": "alias.ielts_legacy_resolves",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\data\\ielts"
+      },
+      {
+        "name": "alias.ielts_origin_is_legacy_name",
+        "ok": true,
+        "detail": "env:IELTS_API_DIR"
+      },
+      {
+        "name": "alias.toefl_legacy_resolves",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\data\\toefl"
+      },
+      {
+        "name": "alias.deprecation_warned",
+        "ok": true,
+        "detail": "[\"ielts_dir: IELTS_API_DIR is a deprecated alias for EXAMDATA_IELTS_DIR; the alias still works but will be removed\", \"toefl_dir: TOEFL_API_DIR is a deprecated alias for EXAMDATA_TOEFL_DIR; the alias still works but will be removed\"]"
+      },
+      {
+        "name": "alias.canonical_name_needs_no_warning",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "alias.conflicting_values_still_rejected",
+        "ok": true,
+        "detail": "conflicting values for ielts_dir: EXAMDATA_IELTS_DIR='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b02-rehearsal-20261006\\\\evidence\\\\tmp\\\\data\\\\i"
+      },
+      {
+        "name": "alias.same_value_only_warns",
+        "ok": true,
+        "detail": "[\"ielts_dir: legacy alias(es) ['IELTS_API_DIR'] duplicate EXAMDATA_IELTS_DIR; prefer EXAMDATA_IELTS_DIR\"]"
+      },
+      {
+        "name": "alias.env_template_still_documents_aliases",
+        "ok": true,
+        "detail": "{\"IELTS_API_DIR\": true, \"TOEFL_API_DIR\": true}"
+      },
+      {
+        "name": "startup.resolve_creates_no_directory",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\b02-not-created\\catalog"
+      },
+      {
+        "name": "startup.ensure_directories_refuses_outside_root",
+        "ok": true,
+        "detail": "refusing to create catalog_root outside the staging tree: C:\\Users\\weo\\Desktop\\api\\docs\\b02-should-not-create"
+      },
+      {
+        "name": "startup.secret_not_rendered",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "packaging.component_manifest_packaged",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\components\\manifest.json"
+      },
+      {
+        "name": "packaging.exactly_fake_cli",
+        "ok": true,
+        "detail": "['fake_cli']"
+      },
+      {
+        "name": "packaging.no_problems",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "packaging.entry_point_inside_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\components\\fake-node-cli\\fake-cli.mjs"
+      },
+      {
+        "name": "packaging.discovery_independent_of_cwd",
+        "ok": true,
+        "detail": "{'ids': ['fake_cli'], 'problems': [], 'entry_path': 'C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b02-rehearsal-20261006\\\\candidates\\\\b02-shared-config-v1\\\\components\\\\fake-node-cli\\\\fake-cli.mjs'} != {'ids': ['fake_cli'], 'problems': [], 'entry_path': 'C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b02-rehearsal-20261006\\\\candidates\\\\b02-shared-config-v1\\\\components\\\\fake-node-cli\\\\fake-cli.mjs'}"
+      },
+      {
+        "name": "packaging.discovery_recorded_two_cwds",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp vs C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\evidence\\tmp\\probe-alt-cwd"
+      },
+      {
+        "name": "entry.examdata.integration.runtime",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\__init__.py"
+      },
+      {
+        "name": "entry.examdata.integration.runtime.settings",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\settings.py"
+      },
+      {
+        "name": "entry.examdata.integration.runtime.runner",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\runner.py"
+      },
+      {
+        "name": "entry.examdata.integration.runtime.manifest",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+      },
+      {
+        "name": "entry.examdata.integration.runtime.paths",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\paths.py"
+      },
+      {
+        "name": "entry.examdata.integration.runtime.doctor",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\runtime\\doctor.py"
+      },
+      {
+        "name": "entry.examdata.integration.legacy",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\legacy\\__init__.py"
+      },
+      {
+        "name": "entry.examdata.integration.legacy.bridge",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b02-rehearsal-20261006\\candidates\\b02-shared-config-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+      }
+    ],
+    "failed": [],
+    "ok": true
+  },
+  "stderr": ""
+}

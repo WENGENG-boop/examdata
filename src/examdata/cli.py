@@ -17,6 +17,7 @@ from typing import Optional
 import typer
 from rich.console import Console
 from rich.table import Table
+from rich.text import Text
 
 from .core.config import get_settings
 from .core.db import init_db, session_scope
@@ -25,6 +26,23 @@ from .adapters.registry import get_adapter_class, available_adapters
 from .sync.service import SyncService
 
 app = typer.Typer(add_completion=False, help="国际考试真题统一数据服务")
+
+
+@app.command("import-cie-index")
+def cmd_import_cie_index(
+    manifest: str = typer.Argument(..., help="外部 AI 生成的 JSON"),
+    qp: str = typer.Option(..., "--qp", help="同一份试卷 PDF"),
+    ms: Optional[str] = typer.Option(None, "--ms", help="可选评分标准 PDF"),
+):
+    from pathlib import Path
+    from .paperqa.external_index import import_index
+    try:
+        result = import_index(Path(manifest), Path(qp), Path(ms) if ms else None,
+                              get_settings().data_dir)
+    except (ValueError, OSError) as exc:
+        console.print(f"[red]索引导入失败：{exc}[/red]")
+        raise typer.Exit(1) from exc
+    console.print_json(json.dumps(result, ensure_ascii=False))
 console = Console()
 
 
@@ -301,8 +319,9 @@ def cmd_sync(
 
 @app.command("parse-docs")
 def cmd_parse_docs(
-    limit: Optional[int] = typer.Option(None, "--limit", help="仅解析前 N 个待解析版本"),
-    document_id: Optional[int] = typer.Option(None, "--document-id", help="仅解析指定文档"),
+    limit: Optional[int] = typer.Option(None, "--limit", min=1, help="仅解析前 N 个待解析版本"),
+    document_id: Optional[int] = typer.Option(None, "--document-id", min=1, help="仅解析指定文档"),
+    retry_failed: bool = typer.Option(False, "--retry-failed", help="重试失败版本"),
     show_tree: bool = typer.Option(False, "--show-tree", help="打印解析出的题目树"),
 ) -> None:
     """解析已下载的 PDF：题目结构化 + 评分标准关联 + 校验落库。
@@ -318,7 +337,7 @@ def cmd_parse_docs(
     init_db()
     with session_scope() as session:
         pipe = ParsePipeline(session)
-        stats = pipe.run(limit=limit, document_id=document_id)
+        stats = pipe.run(limit=limit, document_id=document_id, retry_failed=retry_failed)
 
         if show_tree:
             rows = session.scalars(
@@ -354,7 +373,9 @@ def cmd_search_papers(
     component: Optional[str] = typer.Option(None, "--component"),
     variant: Optional[str] = typer.Option(None, "--variant"),
     level: Optional[str] = typer.Option(None, "--level"),
-    limit: int = typer.Option(50, "--limit"),
+    # 非法 limit 交给参数层拦下：查询层是抛 ValueError（整屏 traceback），
+    # 参数层给的是用法错误提示。
+    limit: int = typer.Option(50, "--limit", min=1),
     as_json: bool = typer.Option(False, "--json", help="输出 JSON"),
 ) -> None:
     """按考试信息检索试卷（需求：试卷检索能力）。"""
@@ -413,7 +434,8 @@ def cmd_search_questions(
     has_asset: bool = typer.Option(False, "--has-asset", help="只取带图形/图表的题"),
     has_answer: bool = typer.Option(False, "--has-answer", help="只取有官方答案的题"),
     taxonomy_code: Optional[str] = typer.Option(None, "--taxonomy", help="知识点代码"),
-    limit: int = typer.Option(20, "--limit"),
+    # 同 search-papers：非法 limit 在参数层报错，不落到查询层抛 ValueError。
+    limit: int = typer.Option(20, "--limit", min=1),
     as_json: bool = typer.Option(False, "--json"),
 ) -> None:
     """题目级检索（需求：题目检索能力）。"""
@@ -501,7 +523,7 @@ def cmd_show_question(
             table.add_row(
                 e["number_path"] or "",
                 str(e["marks"] if e["marks"] is not None else ""),
-                (e["answer_text"] or "")[:40],
+                Text((e["answer_text"] or "")[:40]),
                 f"{e['method_marks']}/{e['accuracy_marks']}/{e['independent_marks']}",
                 str(e["ecf"]),
             )
@@ -521,6 +543,17 @@ def cmd_sample_questions(
     """随机抽题 / 自动组题基础能力（数据层，不含学生端逻辑）。"""
     from .query import QuestionFilter, sample_questions
 
+    # 与 HTTP /sample 同一套约束：两个目标都不给会退化成"把池子全倒出来"，
+    # 那不是抽题；范围上限同样对齐 HTTP。
+    if count is None and marks_target is None:
+        console.print("[red]--count 与 --marks 至少给一个[/red]")
+        raise typer.Exit(code=1)
+    if count is not None and not 1 <= count <= 200:
+        console.print("[red]--count 必须在 1..200[/red]")
+        raise typer.Exit(code=1)
+    if marks_target is not None and not 1 <= marks_target <= 300:
+        console.print("[red]--marks 必须在 1..300[/red]")
+        raise typer.Exit(code=1)
     f = QuestionFilter(
         subject_code=subject_code,
         year=year,
@@ -616,7 +649,7 @@ def cmd_taxonomy_sync() -> None:
 def cmd_taxonomy_assign(
     subject: Optional[str] = typer.Option(None, "--subject", help="仅处理指定科目代码"),
     replace: bool = typer.Option(False, "--replace", help="覆盖已有的 auto 标注（不动 manual）"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    limit: Optional[int] = typer.Option(None, "--limit", min=1),
 ) -> None:
     """给题目自动标注知识点（关键词打分，确定性可复现）。"""
     from .intelligence import assign_taxonomy, sync_taxonomy
@@ -729,15 +762,22 @@ def cmd_classify_content(
     """
     from sqlalchemy import select as _select
 
-    from .core.models import Artifact, Document, DocumentRevision
+    from .core.models import (
+        Artifact, DocClassification, Document, DocumentRevision, ParseRun, ReviewTask,
+    )
     from .parsing.content_classify import classify_content, reconcile
 
     init_db()
-    rows: list[tuple[int, str, str, str, str]] = []
+    reports = []
+    artifacts_dir = get_settings().artifacts_dir
     with session_scope() as session:
         stmt = (
-            _select(Document.id, Document.doc_type, Document.title, Artifact.storage_key)
-            .join(DocumentRevision, DocumentRevision.document_id == Document.id)
+            _select(Document, DocumentRevision, Artifact)
+            .join(
+                DocumentRevision,
+                (DocumentRevision.id == Document.current_revision_id)
+                & (DocumentRevision.document_id == Document.id),
+            )
             .join(Artifact, Artifact.id == DocumentRevision.artifact_id)
             .order_by(Document.id)
         )
@@ -747,25 +787,27 @@ def cmd_classify_content(
             stmt = stmt.join(Subject, Subject.id == Document.subject_id).where(
                 Subject.code == subject
             )
-        rows = [tuple(r) for r in session.execute(stmt).all()]
+        rows = session.execute(stmt).all()
+        for doc, revision, artifact in rows:
+            ev = classify_content(artifacts_dir / artifact.storage_key)
+            final, conf, method = reconcile(doc.doc_type, ev)
+            reports.append((doc.id, doc.doc_type, ev, final, conf, method))
 
-        if apply:
-            from .core.models import DocClassification
-
-            # 幂等：先删掉这些文档已有的内容级判定再重写。
-            # 否则每跑一次就多一批行，监控视图里会看到几十条互相矛盾的判定。
-            content_methods = ("label+content", "content", "conflict", "label")
+        if apply and reports:
+            target_ids = [row[0] for row in reports]
+            content_methods = ("label+content", "content", "conflict", "label", "none")
             for old in session.scalars(
                 _select(DocClassification).where(
-                    DocClassification.method.in_(content_methods)
+                    DocClassification.document_id.in_(target_ids),
+                    DocClassification.method.in_(content_methods),
                 )
             ).all():
-                session.delete(old)
+                if old.method != "label" or "content" in (old.evidence or {}):
+                    session.delete(old)
             session.flush()
 
-            for did, label_type, title, storage_key in rows:
-                ev = classify_content(get_settings().artifacts_dir / storage_key)
-                final, conf, method = reconcile(label_type, ev)
+            for (doc, revision, artifact), report in zip(rows, reports):
+                did, label_type, ev, final, conf, method = report
                 session.add(
                     DocClassification(
                         document_id=did,
@@ -775,18 +817,45 @@ def cmd_classify_content(
                             "label_type": label_type,
                             "content": ev.to_dict(),
                             "final_type": final,
+                            "document_revision_id": revision.id,
+                            "artifact_sha256": artifact.sha256,
                         },
                         method=method,
                     )
                 )
+                if method == "conflict":
+                    doc.status = "needs_review"
+                    existing = session.scalar(
+                        _select(ReviewTask.id).where(
+                            ReviewTask.target_type == "document",
+                            ReviewTask.target_id == did,
+                            ReviewTask.reason == "doc_type_content_conflict",
+                            ReviewTask.status.in_(("open", "in_progress")),
+                        )
+                    )
+                    if existing is None:
+                        parse_run_id = session.scalar(
+                            _select(ParseRun.id)
+                            .where(ParseRun.document_revision_id == revision.id)
+                            .order_by(ParseRun.id.desc())
+                            .limit(1)
+                        )
+                        session.add(
+                            ReviewTask(
+                                target_type="document",
+                                target_id=did,
+                                reason="doc_type_content_conflict",
+                                priority=2,
+                                status="open",
+                                parse_run_id=parse_run_id,
+                            )
+                        )
 
-    table = Table(title=f"内容级文件类型识别（{len(rows)} 份）")
+    table = Table(title=f"内容级文件类型识别（{len(reports)} 份）")
     for col in ("doc", "标签判定", "内容判定", "最终", "置信度", "方式"):
         table.add_column(col)
     conflicts = 0
-    for did, label_type, _title, storage_key in rows:
-        ev = classify_content(get_settings().artifacts_dir / storage_key)
-        final, conf, method = reconcile(label_type, ev)
+    for did, label_type, ev, final, conf, method in reports:
         if method == "conflict":
             conflicts += 1
         table.add_row(
@@ -799,9 +868,10 @@ def cmd_classify_content(
         )
     console.print(table)
     if conflicts:
-        console.print(f"[yellow]{conflicts} 份文件的标签判定与内容判定冲突，已进入待检查[/yellow]")
+        action = "已进入待检查" if apply else "未写入待检查（使用 --apply 写入）"
+        console.print(f"[yellow]{conflicts} 份文件的标签判定与内容判定冲突，{action}[/yellow]")
     else:
-        console.print("[green]标签判定与内容判定全部一致[/green]")
+        console.print("[green]未发现标签判定与内容判定冲突[/green]")
 
 
 @app.command("override-set")
@@ -880,11 +950,17 @@ def cmd_override_list(
 @app.command("review-list")
 def cmd_review_list(
     status: str = typer.Option("open", "--status", help="open / in_progress / done / dismissed"),
-    limit: int = typer.Option(50, "--limit"),
+    limit: int = typer.Option(50, "--limit", min=1),
 ) -> None:
     """待人工检查队列。"""
     from .governance import list_reviews
 
+    # list_reviews 对未知状态只返回空表，会被误读成"队列为空"，
+    # 因此取值错误必须在这里拦下，而不是交给查询层。
+    allowed = ("open", "in_progress", "done", "dismissed")
+    if status not in allowed:
+        console.print(f"[red]--status 只能是 {' / '.join(allowed)}，收到 {status!r}[/red]")
+        raise typer.Exit(code=1)
     init_db()
     with session_scope() as session:
         rows = list_reviews(session, status=status, limit=limit)
@@ -982,8 +1058,8 @@ def cmd_provenance_trace(
 
 @app.command("reparse")
 def cmd_reparse(
-    document_id: Optional[int] = typer.Option(None, "--document-id"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    document_id: Optional[int] = typer.Option(None, "--document-id", min=1),
+    limit: Optional[int] = typer.Option(None, "--limit", min=1),
     as_json: bool = typer.Option(False, "--json"),
 ) -> None:
     """用当前算法重新解析历史资源，并对比新旧结果。
@@ -1001,7 +1077,12 @@ def cmd_reparse(
         )
     if as_json:
         console.print_json(json.dumps(result, ensure_ascii=False))
+        if result.get("aborted"):
+            raise typer.Exit(1)
         return
+    if result.get("aborted"):
+        console.print(f"[red]重新解析已回滚：{result['reason']}[/red]")
+        raise typer.Exit(1)
     console.print(
         f"[bold]重新解析 {result['documents']} 份文档[/bold]，"
         f"其中 {result['regressed']} 份出现回归"
@@ -1033,7 +1114,7 @@ def cmd_reparse(
 @app.command("explain")
 def cmd_explain(
     subject: Optional[str] = typer.Option(None, "--subject"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    limit: Optional[int] = typer.Option(None, "--limit", min=1),
     replace: bool = typer.Option(False, "--replace", help="重算已有解析"),
 ) -> None:
     """生成学生向解题解析（规则式，从官方 Mark Scheme 派生）。
@@ -1218,6 +1299,213 @@ def cmd_paper_qa(
         console.print(table)
     if out is None:
         typer.echo("Files returned in memory; use --out to save them.")
+
+
+# --------------------------------------------------------------------------
+# 标签（spec 知识点）-> 题目 / 题目裁剪
+# --------------------------------------------------------------------------
+
+
+def _filter_tag_tree(roots: list, needle: str) -> list:
+    """标签树按 code/名称过滤：命中的节点保留整棵子树，祖先只保留命中分支。"""
+    lowered = needle.lower()
+
+    def matches(node: dict) -> bool:
+        return lowered in node["code"].lower() or lowered in (node["name"] or "").lower()
+
+    def walk(node: dict):
+        if matches(node):
+            return node
+        children = [child for child in (walk(c) for c in node["children"]) if child]
+        if children:
+            return {**node, "children": children}
+        return None
+
+    return [node for node in (walk(root) for root in roots) if node]
+
+
+def _flatten_tag_node(node: dict, depth: int, unit: str) -> list:
+    rows = [(depth, unit, node)]
+    for child in node["children"]:
+        rows.extend(_flatten_tag_node(child, depth + 1, unit))
+    return rows
+
+
+def _flatten_tag_tree(roots: list) -> list:
+    """展平标签树：每行是 (深度, 所属 unit code, 节点)。"""
+    rows = []
+    for root in roots:
+        rows.extend(_flatten_tag_node(root, 0, root["code"]))
+    return rows
+
+
+def _count_tag_nodes(roots: list) -> int:
+    return sum(1 + _count_tag_nodes(node["children"]) for node in roots)
+
+
+@app.command("tags")
+def cmd_tags(
+    board: str = typer.Option("edexcel", "--board", help="考试局 key（默认 edexcel）"),
+    subject: Optional[str] = typer.Option(None, "--subject", help="科目代码，如 ial-mathematics"),
+    search: Optional[str] = typer.Option(None, "--search", help="按标签 code 或名称过滤"),
+    with_counts: bool = typer.Option(
+        True, "--with-counts/--no-counts", help="显示每个标签的可选题数"
+    ),
+    as_json: bool = typer.Option(False, "--json"),
+) -> None:
+    """spec 标签树总览：unit -> topic -> subtopic -> point，带每个标签的题数。"""
+    from .query import tag_overview
+
+    init_db()
+    with session_scope() as session:
+        roots = tag_overview(session, board=board, subject_code=subject, include_zero=True)
+    if search:
+        roots = _filter_tag_tree(roots, search)
+    total = _count_tag_nodes(roots)
+    if as_json:
+        console.print_json(json.dumps(
+            {"board": board, "subject": subject, "total": total, "roots": roots},
+            ensure_ascii=False,
+        ))
+        return
+    table = Table(title=f"标签树 {board}（共 {total} 个标签）")
+    for col in ("code", "名称", "层级", "unit"):
+        table.add_column(col, overflow="fold")
+    if with_counts:
+        table.add_column("可选题数", justify="right")
+    for depth, unit, node in _flatten_tag_tree(roots):
+        row = [f"{'  ' * depth}{node['code']}", node["name"], node["node_type"], unit]
+        if with_counts:
+            row.append(str(node["subtree_questions"]))
+        table.add_row(*row)
+    console.print(table)
+
+
+def _answer_cell(answer: Optional[dict], *, limit: int = 60) -> str:
+    """表格里的答案摘要：`来源 + 截断文本`，压平空白；未解析出答案时留空。"""
+    if not answer:
+        return ""
+    text = " ".join((answer.get("text") or "").split())
+    if len(text) > limit:
+        text = text[:limit] + "..."
+    return f"[{answer.get('source', '')}] {text}"
+
+
+@app.command("tag-questions")
+def cmd_tag_questions(
+    tag: str = typer.Option(..., "--tag", help="标签 code，如 WBI11-1.1"),
+    board: str = typer.Option("edexcel", "--board", help="考试局 key（默认 edexcel）"),
+    subject: Optional[str] = typer.Option(None, "--subject"),
+    year_from: Optional[int] = typer.Option(None, "--year-from"),
+    year_to: Optional[int] = typer.Option(None, "--year-to"),
+    session_name: Optional[str] = typer.Option(None, "--session", help="考季，如 june"),
+    paper_code: Optional[str] = typer.Option(None, "--paper"),
+    min_confidence: Optional[float] = typer.Option(None, "--min-confidence"),
+    limit: int = typer.Option(50, "--limit", min=1),
+    as_json: bool = typer.Option(False, "--json"),
+) -> None:
+    """按标签查题目：标签 -> 题目列表（题号、分值、来源试卷、答案解析）。"""
+    from .query import tagged_questions
+
+    init_db()
+    with session_scope() as session:
+        result = tagged_questions(
+            session,
+            board=board,
+            taxonomy_code=tag,
+            subject_code=subject,
+            year_from=year_from,
+            year_to=year_to,
+            session_name=session_name,
+            paper_code=paper_code,
+            min_confidence=min_confidence,
+            limit=limit,
+        )
+    if as_json:
+        console.print_json(json.dumps(result, ensure_ascii=False))
+        return
+    table = Table(title=f"标签 {tag}（共 {result['total']} 题，显示 {len(result['items'])}）")
+    for col in ("id", "题号", "分值", "科目", "年份", "考季", "试卷", "标签", "置信度", "题干", "答案"):
+        table.add_column(col, overflow="fold")
+    for item in result["items"]:
+        table.add_row(
+            str(item["question_id"]),
+            item["number_path"] or "",
+            str(item["marks"] if item["marks"] is not None else ""),
+            item["subject_code"] or "",
+            str(item["year"] or ""),
+            item["session"] or "",
+            item["paper_code"] or "",
+            item["taxonomy_code"],
+            "" if item["confidence"] is None else f"{item['confidence']:.2f}",
+            item["stem_excerpt"] or "",
+            Text(_answer_cell(item.get("answer"))),
+        )
+    console.print(table)
+
+
+def _safe_crop_filename(question_id: int, number_path: Optional[str], role: str, page: int) -> str:
+    """裁剪 PNG 的安全文件名：只留字母数字和 . _ -，不含路径分隔符与 ..。"""
+    import re
+
+    stem = re.sub(r"[^0-9A-Za-z._-]+", "_", number_path or "").strip("._-")
+    return f"q{question_id}-{stem or 'question'}-{role}-p{page}.png"
+
+
+@app.command("question-crop")
+def cmd_question_crop(
+    question_id: int = typer.Argument(..., help="题目 id"),
+    out: str = typer.Option(..., "--out", help="输出目录；同名文件已存在时不覆盖"),
+    role: str = typer.Option("qp", "--role", help="qp=题目区；ms=评分标准区"),
+    as_json: bool = typer.Option(False, "--json"),
+) -> None:
+    """把题目在原始 PDF 上的裁剪区渲染成 PNG，写入 --out 目录。"""
+    from pathlib import Path
+
+    from .core.models import Question
+    from .query import question_crops
+
+    if role not in {"qp", "ms"}:
+        console.print(f"[red]--role 只能是 qp 或 ms（当前为 {role}）[/red]")
+        raise typer.Exit(code=1)
+    init_db()
+    try:
+        with session_scope() as session:
+            crops = question_crops(session, question_id, role=role)
+            question = session.get(Question, question_id)
+            number_path = question.number_path if question else None
+    except ValueError as exc:
+        console.print(f"[red]裁剪失败：{exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    out_dir = Path(out)
+    try:
+        out_dir.mkdir(parents=True, exist_ok=True)
+    except OSError as exc:
+        console.print(f"[red]输出目录不可用：{exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    files = []
+    for crop in crops:
+        name = _safe_crop_filename(question_id, number_path, role, crop["page"])
+        target = out_dir / name
+        # 文件名已消毒；这里再挡一道目录逃逸，避免将来改消毒规则时静默写出目录外。
+        if target.name != name or target.parent.resolve() != out_dir.resolve():
+            console.print(f"[red]拒绝写出不安全的路径：{target}[/red]")
+            raise typer.Exit(code=1)
+        try:
+            with target.open("xb") as handle:
+                handle.write(crop["png"])
+        except FileExistsError as exc:
+            console.print(f"[red]文件已存在，不覆盖：{target}[/red]")
+            raise typer.Exit(code=1) from exc
+        files.append({"page": crop["page"], "bbox": list(crop["bbox"]), "path": str(target)})
+    if as_json:
+        console.print_json(json.dumps(
+            {"question_id": question_id, "role": role, "files": files},
+            ensure_ascii=False,
+        ))
+        return
+    for item in files:
+        console.print(f"p{item['page']} -> {item['path']}", soft_wrap=True)
 
 
 if __name__ == "__main__":

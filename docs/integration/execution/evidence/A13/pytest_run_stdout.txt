@@ -1,0 +1,40 @@
+........................................................................ [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 32%]
+........................................................................ [ 40%]
+........................................................................ [ 48%]
+........................................................................ [ 56%]
+........................................................................ [ 64%]
+........................................................................ [ 73%]
+........................................................................ [ 81%]
+........................................................................ [ 89%]
+........................................................................ [ 97%]
+.......................                                                  [100%]
+============================== warnings summary ===============================
+..\examdata\.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID syllabus_content_api_v2_syllabuses__id__content_head for function syllabus_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID resource_content_api_v2_resources__id__content_head for function resource_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID asset_content_api_v2_assets__id__content_head for function asset_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID question_crop_api_v2_questions__id__crop_head for function question_crop at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+tests/test_api_links_openapi.py::test_openapi_matches_the_registry_exactly
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\fastapi\openapi\utils.py:303: UserWarning: Duplicate Operation ID material_content_api_v2_materials__id__content_head for function material_content at C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\api\app.py
+    warnings.warn(message, stacklevel=1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+887 passed, 6 warnings in 48.32s

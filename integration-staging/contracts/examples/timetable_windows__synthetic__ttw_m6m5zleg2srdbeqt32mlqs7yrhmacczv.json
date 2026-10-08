@@ -1,0 +1,23 @@
+{
+  "schema": "timetable-window/1",
+  "public_id": "ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv",
+  "original_text": "Synthetic window text",
+  "parsed_start": null,
+  "parsed_end": null,
+  "parsing_status": "unparsed",
+  "components": [],
+  "system": "cie",
+  "qualification": null,
+  "zone": null,
+  "source": {
+    "source_id": "synthetic-cie",
+    "provider_id": "cie",
+    "locator": {
+      "fixture": "synthetic/cie",
+      "detail": "window"
+    },
+    "content_class": "synthetic",
+    "retrieved_at": "2026-10-05T19:20:00+08:00"
+  },
+  "revision": null
+}

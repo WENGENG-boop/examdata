@@ -14,27 +14,34 @@ from __future__ import annotations
 from io import BytesIO
 from pathlib import Path
 import re
+import json
+from urllib.parse import quote
 from zipfile import ZipFile, ZIP_DEFLATED
 
 from ..core.config import Settings
 from ..core.fetch import Fetcher
-from .errors import InvalidRequest
-from .locator import crop_question
+from .errors import AmbiguousDocument, InvalidRequest, UpstreamError
+from .budget import RequestBudget, BudgetedFetcher, MAX_DOCUMENTS
+from .locator import crop_question, index_questions
 from .models import Request, Result, OutputFile
 from .sources.cie_fraft import CieFraftSource
 from .sources.pearson import PearsonSource
 
 
 def _run(request: Request, fetcher: Fetcher, download: bool) -> Result:
-    source = CieFraftSource(fetcher) if request.board == "cie" else PearsonSource(fetcher)
-    result = Result(request, source.resolve(request))
+    budget = RequestBudget()
+    counted = BudgetedFetcher(fetcher, budget)
+    source = CieFraftSource(counted) if request.board == "cie" else PearsonSource(counted)
+    result = Result(request, source.resolve(request), budget=budget)
+    if len(result.documents) > MAX_DOCUMENTS:
+        raise UpstreamError("Request document limit exceeded")
     if download:
         for document in result.documents:
             data = source.download(document)
-            if request.mode in {"question", "qa"}:
+            if request.question is not None:
                 # 裁剪结果自带来源（1 起页码 + PDF 用户空间 bbox），
                 # 一并带进 Result，调用方才能回到原件复核这一小块。
-                for crop in crop_question(data, request.question, document.role):
+                for crop in crop_question(data, request.question, document.role, budget=result.budget):
                     label = request.question.replace("(", "-").replace(")", "")
                     name = f"{document.name[:-4]}-q{label}-p{crop.page}.png"
                     result.files.append(
@@ -45,6 +52,7 @@ def _run(request: Request, fetcher: Fetcher, download: bool) -> Result:
                     )
             else:
                 result.files.append(OutputFile(document.name, data, document.media_type, document.role))
+            result.budget.check_files(len(result.files))
     return result
 
 
@@ -54,6 +62,33 @@ def resolve(board, subject, year, season, paper=None, question=None, mode=None, 
         return _run(request, fetcher, False)
     with Fetcher(Settings()) as owned:
         return _run(request, owned, False)
+
+
+def index_paper(subject, year, season, paper, mode="both", *, fetcher=None) -> dict:
+    """Edexcel-only geometric QP/MS index; source content is not an AI answer."""
+    if mode not in {"qp", "ms", "both"}:
+        raise InvalidRequest("index mode must be qp, ms or both")
+    result = query("edexcel", subject, year, season, paper, mode=mode, fetcher=fetcher)
+    if len({document.paper for document in result.documents}) != 1:
+        raise AmbiguousDocument("Index requires one exact paper variant")
+    documents = []
+    questions = {}
+    for file in result.files:
+        rows = index_questions(file.data, file.role)
+        documents.append({"name": file.name, "role": file.role, "sha256": file.sha256})
+        for row in rows:
+            entry = questions.setdefault(row["question"], {
+                "question": row["question"], "qp": [], "ms": [],
+            })
+            entry[file.role].extend({**region, "sha256": file.sha256} for region in row["regions"])
+    payload = {"schema_version": "1", "board": "edexcel", "request": {
+        "subject": result.request.subject, "year": year, "season": result.request.season,
+        "paper": result.request.paper, "mode": mode,
+    }, "coordinate_system": "unrotated_pdf_points_top_left", "page_base": 1,
+        "method": "left_column_algorithm", "reviewed": False,
+        "documents": documents, "questions": list(questions.values())}
+    result.budget.charge(len(json.dumps(payload).encode("utf-8")), "question index")
+    return payload
 
 
 def query(board, subject, year, season, paper=None, question=None, mode=None, out_dir=None, *, fetcher=None) -> Result:
@@ -82,13 +117,34 @@ def response_payload(result: Result) -> OutputFile:
 
     ZIP 只存在于内存，不落盘；成员名就是各自的 `Result.files` 名称。
     """
+    budget = result.budget or RequestBudget()
+    budget.check_files(len(result.files))
     if len(result.files) == 1:
         return result.files[0]
-    buffer = BytesIO()
+    class BoundedBuffer(BytesIO):
+        def write(self, data):
+            growth = max(0, self.tell() + len(data) - len(self.getbuffer()))
+            budget.charge(growth, "ZIP serialization")
+            return super().write(data)
+    buffer = BoundedBuffer()
     with ZipFile(buffer, "w", ZIP_DEFLATED) as archive:
         for file in result.files:
             archive.writestr(file.name, file.data)
     return OutputFile("paper-qa.zip", buffer.getvalue(), "application/zip", "bundle")
+
+
+def content_disposition(name: str) -> str:
+    """RFC 6266 附件头：引号/控制字符消毒，非 ASCII 名附 `filename*`。
+
+    名字直接拼进 `filename="..."` 会出两类问题：引号或换行破坏头部结构
+    （可注入），非 ASCII 字符让 Starlette 以 latin-1 编码响应头时抛错
+    （500）。回退名只保留可打印 ASCII，原名以 RFC 5987 的百分号编码
+    放进 `filename*`，兼容的客户端优先用它。
+    """
+    fallback = re.sub(r'[^\x20-\x7e]|["\\]', "_", name).strip() or "download"
+    if fallback == name:
+        return f'attachment; filename="{fallback}"'
+    return f"attachment; filename=\"{fallback}\"; filename*=UTF-8''{quote(name, safe='')}"
 
 
 def json_payload(result: Result) -> dict:

@@ -1,0 +1,315 @@
+{
+ "server_pid": 63128,
+ "server_up": true,
+ "cases": 30,
+ "pass": 28,
+ "fail": 0,
+ "results": [
+  {
+   "name": "info",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/info",
+   "http": 200,
+   "ms": 10,
+   "detail": "eras=[tpo-01-10,tpo-11-20,tpo-21-30,tpo-31-40,tpo-41-50,tpo-51-54] frr=true",
+   "pass": true,
+   "era_ids": [
+    "tpo-01-10",
+    "tpo-11-20",
+    "tpo-21-30",
+    "tpo-31-40",
+    "tpo-41-50",
+    "tpo-51-54"
+   ],
+   "has_frr": true
+  },
+  {
+   "name": "coverage",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/coverage",
+   "http": 200,
+   "ms": 238,
+   "ok": true,
+   "pass": true
+  },
+  {
+   "name": "sets tpo-51-54",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/sets?era=tpo-51-54&page-size=4",
+   "http": 200,
+   "ms": 212,
+   "ok": true,
+   "pass": true,
+   "total": 4
+  },
+  {
+   "name": "get tpo-54",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/get?set=tpo-54",
+   "http": 200,
+   "ms": 215,
+   "ok": true,
+   "pass": true,
+   "set_id": "tpo-54"
+  },
+  {
+   "name": "questions read tpo-30 全部",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/questions?set=tpo-30&section=read&item=1",
+   "http": 200,
+   "ms": 234,
+   "ok": true,
+   "detail": "fetched=10/10 content_complete=true bad=0",
+   "pass": true,
+   "set_id": "tpo-30",
+   "complete": true,
+   "content_complete": true,
+   "fetched": 10,
+   "expected": 10,
+   "n_questions": 10
+  },
+  {
+   "name": "questions listen tpo-54 全部",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/questions?set=tpo-54&section=listen&item=1",
+   "http": 200,
+   "ms": 258,
+   "ok": true,
+   "detail": "fetched=5/5 content_complete=true bad=0",
+   "pass": true,
+   "set_id": "tpo-54",
+   "complete": true,
+   "content_complete": true,
+   "fetched": 5,
+   "expected": 5,
+   "n_questions": 5
+  },
+  {
+   "name": "detail speak f1m9gj",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/detail?url=https%3A%2F%2Ftoefl.kmf.com%2Fdetail%2Fspeak%2Ff1m9gj.html",
+   "http": 200,
+   "ms": 359,
+   "ok": true,
+   "detail": "q=125 audio=true",
+   "pass": true,
+   "set_id": "tpo-54",
+   "question_chars": 125,
+   "audio": true
+  },
+  {
+   "name": "detail write c1m97j",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/detail?url=https%3A%2F%2Ftoefl.kmf.com%2Fdetail%2Fwrite%2Fc1m97j.html",
+   "http": 200,
+   "ms": 352,
+   "ok": true,
+   "detail": "prompt=142 essay=0",
+   "pass": true,
+   "set_id": "tpo-54",
+   "prompt_chars": 142,
+   "essay_chars": 0,
+   "audio": true
+  },
+  {
+   "name": "search punctuated",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/search?q=punctuated&limit=30",
+   "http": 200,
+   "ms": 7201,
+   "ok": true,
+   "pass": true,
+   "total_matches": 21
+  },
+  {
+   "name": "search 口语题干独特短语",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/search?q=childhood%20is%20the%20best%20time&limit=10",
+   "http": 200,
+   "ms": 2128,
+   "ok": true,
+   "detail": "matches=1 hits=1",
+   "pass": true,
+   "total_matches": 1
+  },
+  {
+   "name": "jj 汇总",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/jj",
+   "http": 200,
+   "ms": 176,
+   "ok": true,
+   "detail": "[\"source\",\"built_at\",\"time_dimension\",\"exam_form\",\"counts\",\"lock_note\",\"cache\"]",
+   "pass": true
+  },
+  {
+   "name": "jj read 82df4j(/1 后缀)",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/jj?url=https%3A%2F%2Ftoefl.kmf.com%2Fdetail%2Fread%2F82df4j.html%2F1",
+   "http": 200,
+   "ms": 248,
+   "ok": true,
+   "pass": true,
+   "complete": true,
+   "content_complete": true,
+   "fetched": 10,
+   "expected": 10,
+   "n_questions": 10
+  },
+  {
+   "name": "jj listen 62dr7j",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/jj?url=https%3A%2F%2Ftoefl.kmf.com%2Fdetail%2Flisten%2F62dr7j.html",
+   "http": 200,
+   "ms": 275,
+   "ok": true,
+   "pass": true,
+   "complete": true,
+   "content_complete": true,
+   "fetched": 5,
+   "expected": 5,
+   "n_questions": 5
+  },
+  {
+   "name": "jj speak 52ds6j",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/jj?url=https%3A%2F%2Ftoefl.kmf.com%2Fdetail%2Fspeak%2F52ds6j.html",
+   "http": 200,
+   "ms": 255,
+   "ok": true,
+   "detail": "q=315 audio=true",
+   "pass": true,
+   "question_chars": 315,
+   "audio": true
+  },
+  {
+   "name": "jj write 22dsaj",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/jj?url=https%3A%2F%2Ftoefl.kmf.com%2Fdetail%2Fwrite%2F22dsaj.html",
+   "http": 200,
+   "ms": 213,
+   "ok": true,
+   "detail": "prompt=135 essay=1655",
+   "pass": true,
+   "prompt_chars": 135,
+   "essay_chars": 1655,
+   "audio": true
+  },
+  {
+   "name": "jj locked 列表(read)",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/jj?section=read&locked=1&list=1",
+   "http": 200,
+   "ms": 152,
+   "ok": true,
+   "detail": "n=18 all_locked_url_null=true",
+   "pass": true,
+   "total": 18,
+   "n_items": 18,
+   "items_all_locked_url_null": true
+  },
+  {
+   "name": "缺 url → 422",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/detail",
+   "http": 422,
+   "ms": 9,
+   "pass": true
+  },
+  {
+   "name": "非法 url(example.com)",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/detail?url=https%3A%2F%2Fexample.com%2Fnope",
+   "http": 200,
+   "ms": 177,
+   "ok": false,
+   "pass": true,
+   "error": "--url 需为 kmf 详情页（https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.html）：https://example.com/nope"
+  },
+  {
+   "name": "非法 url(http evil)",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/detail?url=http%3A%2F%2Fevil.example.com%2Fdetail%2Fread%2Fabc.html",
+   "http": 200,
+   "ms": 149,
+   "ok": false,
+   "pass": true,
+   "error": "--url 需为 kmf 详情页（https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.html）：http://evil.example.com/detail/read/abc.html"
+  },
+  {
+   "name": "非法 url(子域伪装)",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/detail?url=https%3A%2F%2Ftoefl.kmf.com.evil.com%2Fdetail%2Fread%2Fabc.html",
+   "http": 200,
+   "ms": 139,
+   "ok": false,
+   "pass": true,
+   "error": "--url 需为 kmf 详情页（https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.html）：https://toefl.kmf.com.evil.com/detail/read/abc.html"
+  },
+  {
+   "name": "非法 section",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/questions?set=tpo-54&section=bad",
+   "http": 200,
+   "ms": 143,
+   "ok": false,
+   "pass": true,
+   "error": "未知 section：bad（可用 reading/listening/speaking/writing）"
+  },
+  {
+   "name": "非法 era pre-2023-07",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/sets?era=pre-2023-07",
+   "http": 200,
+   "ms": 157,
+   "ok": false,
+   "pass": true,
+   "error": "未知 era：pre-2023-07（可用：tpo-01-10、tpo-11-20、tpo-21-30、tpo-31-40、tpo-41-50、tpo-51-54；pre/post-2023-07 仅为格式改版参考，不支持筛选）"
+  },
+  {
+   "name": "非法 era post-2023-07",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/sets?era=post-2023-07",
+   "http": 200,
+   "ms": 145,
+   "ok": false,
+   "pass": true,
+   "error": "未知 era：post-2023-07（可用：tpo-01-10、tpo-11-20、tpo-21-30、tpo-31-40、tpo-41-50、tpo-51-54；pre/post-2023-07 仅为格式改版参考，不支持筛选）"
+  },
+  {
+   "name": "非法 set garbage54",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/get?set=garbage54",
+   "http": 200,
+   "ms": 182,
+   "ok": false,
+   "pass": true,
+   "error": "set 需为 tpo-N（N 为正整数，例：--set=tpo-30）"
+  },
+  {
+   "name": "非法 set tpo-540",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/get?set=tpo-540",
+   "http": 200,
+   "ms": 194,
+   "ok": false,
+   "pass": true,
+   "error": "未收录 TPO 540：该套在所有源中都没有条目（可用 sets 查看可用套次）"
+  },
+  {
+   "name": "非法 set tpo-54junk",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/get?set=tpo-54junk",
+   "http": 200,
+   "ms": 168,
+   "ok": false,
+   "pass": true,
+   "error": "set 需为 tpo-N（N 为正整数，例：--set=tpo-30）"
+  },
+  {
+   "name": "page=0",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/sets?page=0",
+   "http": 200,
+   "ms": 183,
+   "ok": false,
+   "pass": true,
+   "error": "page 需在 1–1000"
+  },
+  {
+   "name": "questions 非法 url",
+   "url": "http://127.0.0.1:8125/api/v1/toefl/questions?set=tpo-30&section=read&url=http%3A%2F%2Fevil.example.com%2Fdetail%2Fread%2Fabc.html",
+   "http": 200,
+   "ms": 166,
+   "ok": false,
+   "pass": true,
+   "error": "--url 需为 kmf 详情页（https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.html）：http://evil.example.com/detail/read/abc.html"
+  },
+  {
+   "name": "cache-mtime-diff",
+   "changed": 0,
+   "added": 0,
+   "changed_files": []
+  },
+  {
+   "name": "server-shutdown",
+   "pid": 63128,
+   "killed": true,
+   "code": null,
+   "signal": "SIGTERM"
+  }
+ ]
+}

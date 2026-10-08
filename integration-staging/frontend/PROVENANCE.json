@@ -1,0 +1,114 @@
+{
+  "provenance_version": "frontend-provenance/1",
+  "generated_by": "tools/a13_frontend_provenance.py",
+  "generated_at": "2026-10-06T10:17:44+08:00",
+  "source_root": "frontend",
+  "staged_root": "integration-staging/frontend",
+  "files": [
+    {
+      "path": "index.html",
+      "kind": "modified_copy",
+      "source_path": "frontend/index.html",
+      "source_sha256": "e10c6296a3204a5d08d82317844f4656a3ec2500374dfc472bcbaaf8dc23a064",
+      "staged_sha256": "b5b0915e2ad4e22eb8db415be510485672692e592b5ff167cb7b5bca40b36b5a",
+      "changes": [
+        "inserted #staged-banner notice after the site header (staged fixture validation wording)",
+        "inserted the 集成旅程 staged journeys section before the footer: tablist with five journey tabs (sources/ielts/toefl/library/diagnostics) and five empty tabpanels"
+      ]
+    },
+    {
+      "path": "app.js",
+      "kind": "modified_copy",
+      "source_path": "frontend/app.js",
+      "source_sha256": "c050438a0f89ea86be0e3e94844ad776019b7f95d0ba9752fae15ccc6a9aaae0",
+      "staged_sha256": "7115a0db289470eef9706630598f278f24d541e28f15dd70e8f9e993f8b74a9d",
+      "changes": [
+        "added import {searchDocuments,clientEnabled} from './client.mjs'",
+        "removed dead const params and the unused async api() helper that fetched '/gateway'",
+        "liveSearch() calls searchDocuments() (per-season fan-out); honors the examdata.v2-client flag; results note labels staged fixture validation origin",
+        "detail() source label shows 'STAGED FIXTURE · 合成夹具' for rows with quality==='synthetic_fixture'",
+        "extended the client import with fetchEnvelope,ApiClientError for the staged integration journeys",
+        "appended the staged integration journeys module (Part B): five read-only journeys over the staged /api/v2 envelope with per-step badges, tables, crops and read-only job views",
+        "resource byte check reports the x-content-sha256 header as not observable through the staged proxy (server.mjs forwards only content-type/content-disposition) instead of failing the row"
+      ]
+    },
+    {
+      "path": "styles.css",
+      "kind": "modified_copy",
+      "source_path": "frontend/styles.css",
+      "source_sha256": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+      "staged_sha256": "e555da7adf84703ab44c1bfa9e1cc2176a8c95f16b97885506a86cc7a04ee9ac",
+      "changes": [
+        "appended staged journey styles (journeys section, tabs, panels, step badges, tables, crops) used by the five frontend journeys"
+      ]
+    },
+    {
+      "path": "search.mjs",
+      "kind": "copied_snapshot",
+      "source_path": "frontend/search.mjs",
+      "source_sha256": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "staged_sha256": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "changes": []
+    },
+    {
+      "path": "README.md",
+      "kind": "modified_copy",
+      "source_path": "frontend/README.md",
+      "source_sha256": "df197ba44cf1d2d2db3626f3a405f6b834b02e0cde739eb11abade2cc0a41340",
+      "staged_sha256": "53764be9870a086be874eee775baacd5ca9eafdcf06cefb1cbeb3ceb3ce27c8a",
+      "changes": [
+        "rewritten as staged-copy notes (staged != merged, offline run, Phase B merge requirements); shares only the file name with the original document, which the merge must reconcile"
+      ]
+    },
+    {
+      "path": "tests/search.test.mjs",
+      "kind": "modified_copy",
+      "source_path": "frontend/search.test.mjs",
+      "source_sha256": "1e50f10f941caa7b91334a027d0a9ee67932eecc6880b425a276fbecfc350327",
+      "staged_sha256": "7fd00040fe00a4c0b2b764416ca1148a33619ed1a3dc48793142316bfb0d77ee",
+      "changes": [
+        "keeps the 10 subject/paper normalization tests verbatim (original lines 1-14); module import repointed to ../search.mjs; the resources.mjs test block (original lines 15-39) is retired with the staged copy; line endings normalised to LF"
+      ]
+    },
+    {
+      "path": "client.mjs",
+      "kind": "new_file",
+      "source_path": null,
+      "source_sha256": null,
+      "staged_sha256": "57c55e43da46832fc967e4fc09add0cd418bcf59419596f9fd29bab0ac38802f",
+      "changes": [
+        "staged v2 API client: envelope parsing, typed errors, per-season fan-out, resource->document mapping"
+      ]
+    },
+    {
+      "path": "fixture-server.mjs",
+      "kind": "new_file",
+      "source_path": null,
+      "source_sha256": null,
+      "staged_sha256": "424b404d25b461fd54d88d664ff882d494ac168f90943ca80a4f2742836b960b",
+      "changes": [
+        "offline fixture server speaking the staged /api/v2 envelope over private fixtures"
+      ]
+    },
+    {
+      "path": "tests/client.test.mjs",
+      "kind": "new_file",
+      "source_path": null,
+      "source_sha256": null,
+      "staged_sha256": "6c23e46e86af23f903b73ba273e66b0d2a64fa5f12dc0e9fa658031f394c3294",
+      "changes": [
+        "client.mjs unit tests over injected fetch (envelope, errors, fan-out, mapping)"
+      ]
+    },
+    {
+      "path": "tests/flow.test.mjs",
+      "kind": "new_file",
+      "source_path": null,
+      "source_sha256": null,
+      "staged_sha256": "c10ad67c8aca97bf15d1f62c85b6e400c740276805ebe7dcf14f767caa4bbffb",
+      "changes": [
+        "end-to-end flow tests against the in-process fixture server"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "timetable-event/1",
+  "public_id": "tte_5kfllz2yp7iibointgdo56rmvnm7zgjc",
+  "system": "edexcel",
+  "qualification": "IAL",
+  "zone": null,
+  "course_ref": "course_vfthis5jlxjijxarwasb7bbyghnx7fqt",
+  "component": "WMA11",
+  "date": null,
+  "session": "2024-Oct",
+  "timezone": null,
+  "duration_minutes": null,
+  "source": {
+    "source_id": "synthetic-edexcel",
+    "provider_id": "edexcel",
+    "locator": {
+      "fixture": "synthetic/edexcel",
+      "detail": "date_unknown_reason:synthetic fixture: no date recorded"
+    },
+    "content_class": "synthetic",
+    "retrieved_at": "2026-10-05T19:20:00+08:00"
+  },
+  "revision": null
+}

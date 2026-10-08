@@ -1,0 +1,386 @@
+{
+  "ledger_version": "b04-private-progress-ledger/1",
+  "generated_by": "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_report.py",
+  "generated_at": "2026-10-07T01:43:30+08:00",
+  "kind": "private_progress_ledger",
+  "note": "Private progress record for the B04 rehearsal. This is NOT the live execution ledger and does not replace it.",
+  "packet": "B04",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "live_execution_ledger": {
+    "path": "docs/integration/execution/execution-ledger.json",
+    "sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "expected_frozen_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "byte_unchanged": true,
+    "gates_open": [],
+    "all_gates_closed": true,
+    "written_by_this_rehearsal": false
+  },
+  "status": "b04_private_rehearsal_complete_pending_human_release",
+  "not_claimed": [
+    "merged_pass",
+    "deployment",
+    "full B00/B01 completion"
+  ],
+  "changed_counts": {
+    "new_staging_scripts": 5,
+    "new_candidate_module_source_files": 1,
+    "candidates": 1,
+    "candidate_files_copied_from_parent": 187,
+    "new_files_added_by_b04": 1,
+    "candidate_tree_files": 188,
+    "candidate_files_on_disk": 189,
+    "parent_tree_files": 186,
+    "original_project_files_written": 0,
+    "frozen_evidence_files_rewritten": 0
+  },
+  "count_explanations": {
+    "new_staging_scripts": "5 new B04 scripts: b04_build_candidate.py, b04_route_probe.py, b04_validate.py, b04_build_proposals.py, b04_build_report.py",
+    "new_candidate_module_source_files": "1 new private module source: tools/compose.py, byte-identical to the candidate's src/examdata/integration/api/compose.py (both sha256 e220c007…)",
+    "candidates": "1 new private candidate: b04-routes-v1, a child of the B03 candidate",
+    "candidate_files_copied_from_parent": "187 = the B03 on-disk files (186 digest files + B03_CANDIDATE_MANIFEST.json) carried byte-identically",
+    "new_files_added_by_b04": "1 = src/examdata/integration/api/compose.py (the composition hook); everything else is carried verbatim",
+    "candidate_tree_files": "188 digest files = 187 carried + 1 new module; B04's digest rule excludes its own manifest",
+    "candidate_files_on_disk": "189 = 188 digest files + B04_CANDIDATE_MANIFEST.json",
+    "parent_tree_files": "186 = B03's digest count, which excluded B03's own manifest (B03 on-disk was 187); the two numbers describe different file sets by rule",
+    "original_project_files_written": "0: nothing was written outside integration-staging/ and docs/integration/execution/",
+    "frozen_evidence_files_rewritten": "0: evidence/B01/**, B02/**, B03/**, evidence/R0104/**, the B02/B03/R0104 runtime candidates and runtime/phase-b/** were read-only or untouched"
+  },
+  "hashes": {
+    "candidate_manifest": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/B04_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "candidate_tree_sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc",
+    "parent_manifest_sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "parent_tree_sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5",
+    "validation_sha256": "ee496b9a32296b6dbf192dd5ec8ade66a0bc984fc213a900562b6330ff80aff8",
+    "merge_proposal_sha256": "799121753f803135ac023252a374fed854db928a150e279c1ff9321a97048dd5",
+    "rollback_proposal_sha256": "61c4c623b258b13707af923abeafe41ac33a4ff05f66f818543831582b5721a0",
+    "suite_transcript_sha256": "1ef8aa25d05e7e9d2923770046b41057b50b071be4ad03284428f081633306c0"
+  },
+  "test_counts": {
+    "b04_route_probe": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_validate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "runs": 3,
+      "checks_per_run": 75,
+      "checks_total": 225,
+      "checks_failed": 0,
+      "new_suite": true,
+      "explanation": "New B04 route probe written for this rehearsal: 75 checks covering candidate import and root configuration (section A, 12), v2 spec/registry/worksheet agreement and route ordering (B, 14), legacy and composed host mechanics plus v2 envelope behaviour (C, 18), the combined OpenAPI document (D, 8), byte stability and manifest recomputation (E, 7) and the negative controls N1-N6 (16, of which 15 are negative and N1_legacy_probes_unchanged is a positive control); 15 negative and 30 positive controls in total. Executed from 3 different working directories (75 x 3 = 225 check executions). There is no earlier count to compare against; the first manual iteration failed exactly one check (B_no_pattern_intersections self-pair false positive) and the failed and clean captures are both kept in evidence/."
+    },
+    "isolated_staged_suite": {
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "passed": 887,
+      "failed": 0,
+      "summary": "887 passed, 1 warning in 44.76s",
+      "collected": 887,
+      "baseline_passed": 887,
+      "explanation": "Count is unchanged from the R04/B02/B03 baseline (887 passed). The B04 rehearsal adds no test files to the staged suite; its new product module is exercised by the B04 route probe instead, so a changed suite count would itself have been the finding."
+    },
+    "candidate_build": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_candidate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "checks_total": 11,
+      "checks_passed": 11,
+      "new_suite": true,
+      "explanation": "11 build-time checks on the candidate itself (parent carried byte-identically, exactly one new file, new module matches its source and compiles, digest excludes the manifest); all new."
+    }
+  },
+  "probe_verdict": "b04_rehearsal_valid_private_only",
+  "probe_findings": [],
+  "discovery_identical_across_cwds": true,
+  "stability_identical_across_cwds": true,
+  "candidate_tree_digest_reproducible": true,
+  "probe_stability": {
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+    "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+    "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+    "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+    "v2_operation_ids": {
+      "GET /api/v2/info": "info_api_v2_info_get",
+      "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+      "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+      "GET /api/v2/courses": "courses_api_v2_courses_get",
+      "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+      "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+      "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+      "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+      "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+      "GET /api/v2/containers": "containers_api_v2_containers_get",
+      "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+      "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+      "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+      "GET /api/v2/resources": "resources_api_v2_resources_get",
+      "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+      "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+      "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+      "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+      "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+      "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+      "GET /api/v2/questions": "questions_api_v2_questions_get",
+      "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+      "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+      "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+      "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+      "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+      "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+      "GET /api/v2/tags": "tags_api_v2_tags_get",
+      "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+      "GET /api/v2/materials": "materials_api_v2_materials_get",
+      "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+      "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+      "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+      "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+      "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+      "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+      "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+      "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+      "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+    },
+    "path_delta": 34
+  },
+  "import_status_checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runti…"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    }
+  ],
+  "negative_checks": [
+    "N1_raw_include_serves_v2_unshaped_errors",
+    "N1_raw_include_binary_row_keeps_application_json",
+    "N2_unscoped_install_changes_exactly_three_probes",
+    "N2_unscoped_legacy_500_becomes_json_envelope",
+    "N2_unscoped_legacy_422_becomes_400_envelope",
+    "N2_unscoped_legacy_404_becomes_envelope",
+    "N2_post_build_handler_install_is_invisible",
+    "N3_mount_documents_no_v2_paths",
+    "N3_mount_direct_info_is_wrong_route_envelope",
+    "N3_mount_requires_doubled_prefix",
+    "N4_double_attach_refused",
+    "N4_double_attach_leaves_host_unchanged",
+    "N5_late_attach_refused",
+    "N5_late_attach_no_v2_paths",
+    "N6_non_fastapi_host_refused"
+  ],
+  "positive_checks": [
+    "B_ordering_get_first_match_own_route",
+    "B_ordering_head_first_match_own_route",
+    "B_no_param_static_shadowing",
+    "B_no_pattern_intersections",
+    "C_route_table_prefix_kept",
+    "C_route_table_single_wrapper_appended",
+    "C_legacy_inventory_byte_identical",
+    "C_legacy_extras_byte_identical",
+    "C_legacy_boom_bytes_pinned",
+    "C_binary_fixture_ids_pinned",
+    "C_binary_content_200",
+    "C_binary_range_206",
+    "C_binary_conditional_304",
+    "C_binary_head_200",
+    "C_v2_typed_400_invalid_request",
+    "C_v2_stack_boom_500_internal_error",
+    "C_v2_jobs_404_not_found",
+    "C_v2_unknown_404_route_not_found",
+    "C_v2_post_info_405_method_not_allowed",
+    "C_v2_info_200_envelope",
+    "C_v2_controls_differ_from_baseline",
+    "D_path_delta_is_exactly_registry",
+    "D_pre_paths_operations_unchanged",
+    "D_operation_ids_unique",
+    "D_v2_operation_ids_match_standalone",
+    "D_binary_rows_documented",
+    "D_nonbinary_200_schema_is_envelope",
+    "D_openapi_route_serves_same_document",
+    "D_second_instance_document_digest_equal",
+    "N1_legacy_probes_unchanged"
+  ],
+  "artifacts": {
+    "candidate_manifest": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/B04_CANDIDATE_MANIFEST.json",
+    "merge_proposal": "docs/integration/execution/B04_MERGE_PROPOSAL.json",
+    "rollback_proposal": "docs/integration/execution/B04_ROLLBACK_PROPOSAL.json",
+    "layout_validation": "docs/integration/execution/evidence/B04/b04-rehearsal-2026-10-07/B04_LAYOUT_VALIDATION.json",
+    "suite_transcript": "integration-staging/runtime/b04-rehearsal-2026-10-07/evidence/isolated_staged_suite.txt",
+    "scripts": [
+      "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_candidate.py",
+      "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_route_probe.py",
+      "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_validate.py",
+      "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_proposals.py",
+      "integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_report.py"
+    ]
+  },
+  "proposal_counts": {
+    "merge_entries": 3,
+    "merge_entries_requiring_release": 2,
+    "merge_staging_only_entries": 1,
+    "merge_new_files_vs_parent": 1,
+    "rollback_entries": 3
+  },
+  "commands": [
+    {
+      "step": "build candidate",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_candidate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "route probe, manual iteration 1",
+      "command": "B04_CANDIDATE_ROOT=integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1 B04_WORKSPACE_ROOT=C:/Users/weo/Desktop/api B04_TMP_DIR=integration-staging/runtime/b04-rehearsal-2026-10-07/evidence/tmp EXAMDATA_INTEGRATION_ROOT=integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1 PYTHONIOENCODING=utf-8 ./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_route_probe.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 1,
+      "note": "failed B_no_pattern_intersections on GET/HEAD self-pairs of the same path (741 raw route pairs); the probe was fixed to compare each distinct path pattern once (561 pairs). Evidence kept as evidence/probe_run1.json"
+    },
+    {
+      "step": "route probe, manual iteration 2",
+      "command": "B04_CANDIDATE_ROOT=integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1 B04_WORKSPACE_ROOT=C:/Users/weo/Desktop/api B04_TMP_DIR=integration-staging/runtime/b04-rehearsal-2026-10-07/evidence/tmp EXAMDATA_INTEGRATION_ROOT=integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1 PYTHONIOENCODING=utf-8 ./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_route_probe.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "note": "75/75 checks clean; evidence kept as evidence/probe_run2.json"
+    },
+    {
+      "step": "validate (probe from 3 cwds)",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_validate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "isolated staged suite",
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "merge + rollback proposals",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_proposals.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "review report + progress ledger",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b04-rehearsal-2026-10-07/b04_build_report.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    }
+  ],
+  "frozen_evidence_written": false,
+  "not_run": [
+    {
+      "check": "real merge into examdata/src/examdata/api/app.py",
+      "reason": "gate original_paths_released is closed; the app.py change remains a proposal (deferred_pending_release) and the original tree was never read, imported or written"
+    },
+    {
+      "check": "real Node component execution",
+      "reason": "gate original_paths_released is closed; only synthetic fake-node-cli discovery is rehearsed, never executed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read, imported or written"
+    },
+    {
+      "check": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched; schema and data roots unchanged"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used; nothing was read, fabricated or staged"
+    }
+  ],
+  "remaining_blockers": [
+    {
+      "blocker": "original-project merge of the B04 entries",
+      "reason": "gate original_paths_released is closed; an explicit human release with an explicit scope is required. The merge proposal has 2 release-required entries: add examdata/src/examdata/integration/api/compose.py and the planned edit to examdata/src/examdata/api/app.py, which stays deferred_pending_release; the app.py base hash (753749fa…) must be re-verified at release time."
+    },
+    {
+      "blocker": "real Node component execution (ielts-api / toefl-api)",
+      "reason": "the original components are not released; only the synthetic fake-node-cli fixture is discovered and it is never executed"
+    },
+    {
+      "blocker": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; schema and data roots are deliberately unchanged by B04"
+    },
+    {
+      "blocker": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; the candidate is private-only"
+    }
+  ],
+  "process_observations": [
+    {
+      "observation": "The B04 probe's first manual run failed exactly one check, B_no_pattern_intersections: the check compared all raw route pairs, so the GET and HEAD variants of the same binary path were compared with themselves and reported 5 trivial self-pair 'intersections' (741 raw pairs).",
+      "handling": "The check now compares each distinct path pattern once (561 pairs, matching the pre-verified scratch truth); the probe was rerun clean 75/75, and both the failing capture (probe_run1.json/.err, exit 1) and the clean capture (probe_run2.json/.err, exit 0) remain in the run directory's evidence/ directory."
+    },
+    {
+      "observation": "While the composition hook was being written, its first version let the legacy stack-boom probe answer with an empty 500 body (sha256 e3b0c442…, the empty-string hash) instead of the baseline's text/plain body.",
+      "handling": "Fixed by an explicit default server-error handler in tools/compose.py; the probe now pins the restored body sha256 e41656eb… (C_legacy_boom_bytes_pinned) and the pre-fix run is kept as evidence in evidence/tmp_manual/."
+    },
+    {
+      "observation": "The parent tree digest covers 186 files while the B04 candidate tree digest covers 188; the numbers describe different file sets by rule, which a reader could mistake for an unexplained count change.",
+      "handling": "Explained everywhere the numbers appear: B03's digest excluded B03's own manifest (B03 on-disk 187); B04 carries all 187 on-disk files and adds 1 new module, so the digest covers 188 and on-disk is 189 = 188 + the B04 manifest."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+copied_snapshot  copied                     integration-staging/fixtures/copied/ielts/indexes-current.json
+copied_snapshot  copied                     integration-staging/fixtures/copied/ielts/manifests-current.json
+copied_snapshot  copied                     integration-staging/fixtures/copied/ielts/pdf-provenance.json
+copied_snapshot  copied                     integration-staging/fixtures/copied/ielts/printed-pages.json
+copied_snapshot  copied                     integration-staging/fixtures/copied/edexcel/subjects-source.json
+copied_snapshot  copied                     integration-staging/fixtures/copied/toefl/ddy-index.json
+synthetic        present                    integration-staging/fixtures/synthetic/ielts/questions-synthetic.json
+synthetic        present                    integration-staging/fixtures/synthetic/cie/cie-index-synthetic.json
+synthetic        present                    integration-staging/fixtures/synthetic/edexcel/index-synthetic.json
+{
+  "entries": 9,
+  "by_kind": {
+    "copied_snapshot": 6,
+    "synthetic": 3
+  },
+  "copied": 6,
+  "copied_bytes": 137668,
+  "synthetic": 3,
+  "deferred": 0,
+  "skipped": 0
+}
+manifest=C:\Users\weo\Desktop\api\integration-staging\fixtures\PROVENANCE.json entries=9 problems=[]

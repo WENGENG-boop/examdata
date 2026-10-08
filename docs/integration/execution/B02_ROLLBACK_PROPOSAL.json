@@ -1,0 +1,111 @@
+{
+  "proposal_version": "b02-rollback-proposal/1",
+  "packet": "B02",
+  "generated_by": "integration-staging/runtime/b02-rehearsal-20261006/b02_build_proposals.py",
+  "generated_at": "2026-10-06T23:50:55+08:00",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "merge_proposal_entries": 4,
+    "candidate_manifest": "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1/B02_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "59dfc8c79b59d86ae67313cdb96048d5bb73e365405070de3e9b2a872264648d",
+    "candidate_tree": {
+      "files": 185,
+      "excludes": [
+        "B02_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf"
+    }
+  },
+  "semantics": {
+    "staging_level": {
+      "staging_candidate_tree": "delete the candidate tree only if its current tree digest still equals sha256_at_proposal, recomputed with the rule recorded in derived_from.candidate_tree_digest_rule (the candidate's own manifest is excluded, since a file cannot hash itself)",
+      "new_file": "delete only if the current file still matches sha256_at_proposal"
+    },
+    "original_level": {
+      "merged_add_file": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal"
+    },
+    "never": [
+      "never touch docs/integration/execution/evidence/**",
+      "never touch integration-staging/runtime/phase-b/** sealed transcripts",
+      "never touch the frozen R04 candidate under r0104-repair-20261006/candidates/**",
+      "never restore the live execution ledger from a private copy"
+    ]
+  },
+  "guards": [
+    "verify the resolved absolute path and its sha256 (or tree digest) before any delete",
+    "no delete ever targets a protected original in Phase B private rehearsal",
+    "planned original edits are reversible only after the human release",
+    "all seven gates remain closed during rollback"
+  ],
+  "counts": {
+    "entries": 4,
+    "staging_level": {
+      "reversible_by_tree_delete": 1,
+      "reversible_by_file_delete": 3
+    },
+    "original_level": {
+      "reversible_by_delete": 2,
+      "no_original_action": 2
+    }
+  },
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "staged_path": "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1",
+      "proposed_target": null,
+      "kind": "staging_candidate_tree",
+      "sha256_at_proposal": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf",
+      "sha256_to_restore": "c84973e0072fdc9b35f14d8ad1f5a3746f3f8793c340aefc304eb18c51e16098",
+      "staging_level_reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "staged_path": "integration-staging/config/README.md",
+      "proposed_target": null,
+      "kind": "new_file",
+      "sha256_at_proposal": "2beeb31ed2520b60031a4a28e702a471149450e9e73a73bc7752927a7a5912e6",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "no reversal needed: the file never leaves integration-staging/",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "staged_path": "integration-staging/config/staging-config.example.json",
+      "proposed_target": "examdata/config.example.json",
+      "kind": "new_file",
+      "sha256_at_proposal": "0c67866416644bcd1e2ed374573144c447718140e628d3e8df0988b5f5d715bf",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "delete_file at examdata/config.example.json, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "staged_path": "integration-staging/config/staging.env.example",
+      "proposed_target": "examdata/.env.example",
+      "kind": "new_file",
+      "sha256_at_proposal": "d16bdbfb14f6a129919bbfdb0bb242b87c5c3fce6c49d0030227b69137a6612c",
+      "sha256_to_restore": null,
+      "staging_level_reversal": "delete_file at examdata/.env.example, and only if the target's current sha256 still equals staged_sha256_after",
+      "original_level_reversal": "delete_file at the proposed target, and only if its sha256 still equals sha256_at_proposal; never restore a sealed snapshot",
+      "status": "proposal_only_not_merged"
+    }
+  ]
+}

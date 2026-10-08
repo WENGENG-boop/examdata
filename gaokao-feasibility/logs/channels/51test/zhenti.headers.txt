@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 04 Oct 2026 10:17:23 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Expires: Tue, 06 Oct 2026 09:19:31 GMT
+Last-Modified: Wed, 30 Sep 2026 09:05:08 GMT
+Cache-Control: max-age=259200
+Age: 1977
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+x-bce-debug-id: ufA9RxLge2Xb1IYDK08XLA/VHb3JZO3p28OM0w3ZhzdThDXbyoJIko9XuM5cPKxcRPclocGwTz4QQHz1LLmFAQ==
+x-bce-flow-control-type: -1
+x-bce-is-transition: false
+x-bce-request-id: 027f259b-5d38-4733-847f-c08743885b45
+Ohc-Global-Saved-Time: Sat, 03 Oct 2026 09:19:31 GMT
+Ohc-Cache-HIT: suz5ct55 [4], qdix55 [4]
+Ohc-File-Size: 43175
+X-Cache-Status: HIT
+Access-Control-Allow-Methods: GET, OPTIONS
+

@@ -18,16 +18,15 @@ from typing import Optional
 #   (a)      小问
 #   (i)      子小问
 #   6 (a)    大题与小问同行
+#   6(a)(ii) 大题、小问与子小问同行
 # 分值形如 [2] 或 (2 marks)
-_TOP_LEVEL = re.compile(r"^\s*(\d{1,2})\s+(?=\S)")
-_TOP_LEVEL_BARE = re.compile(r"^\s*(\d{1,2})\s*$")
-_INLINE_SUB = re.compile(r"^\s*(\d{1,2})\s*\(([a-z])\)")
-_SUB_PAREN_ALPHA = re.compile(r"^\s*\(([a-z])\)")
-_SUB_PAREN_ROMAN = re.compile(r"^\s*\(([ivx]+)\)")
 _MARKS_BRACKET = re.compile(r"\[(\d{1,3})\]")
 _MARKS_PAREN = re.compile(r"\((\d{1,3})\s*marks?\)", re.I)
 
-_ROMAN_VALUES = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8}
+_ROMAN_VALUES = {
+    "i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5,
+    "vi": 6, "vii": 7, "viii": 8, "ix": 9, "x": 10,
+}
 
 # 页眉页脚与噪声：题号识别前必须剥离
 _NOISE_PATTERNS = [
@@ -74,61 +73,45 @@ def match_numbers(text: str) -> list[NumberMatch]:
     if not s:
         return []
 
-    # 大题号与小问同行："6 (a) ..."
-    m = _INLINE_SUB.match(s)
-    if m:
-        return [
-            NumberMatch(label=m.group(1), depth=0, kind="question", rest="", confidence=0.85),
+    chain: list[NumberMatch] = []
+    top = re.match(r"^(\d{1,2})(?=\s|\(|$)", s)
+    if top:
+        chain.append(
             NumberMatch(
-                label=f"({m.group(2)})",
-                depth=1,
-                kind="sub",
-                rest=s[m.end():].strip(),
-                confidence=0.9,
-            ),
-        ]
-
-    m = _TOP_LEVEL.match(s)
-    if m:
-        return [
-            NumberMatch(
-                label=m.group(1),
+                label=top.group(1),
                 depth=0,
                 kind="question",
-                rest=s[m.end():].strip(),
-                confidence=0.85,
+                confidence=0.8 if top.end() == len(s) else 0.85,
             )
-        ]
+        )
+        s = s[top.end():].lstrip()
 
-    m = _TOP_LEVEL_BARE.match(s)
-    if m:
-        return [NumberMatch(label=m.group(1), depth=0, kind="question", rest="", confidence=0.8)]
-
-    m = _SUB_PAREN_ALPHA.match(s)
-    if m:
-        return [
+    while True:
+        sub = re.match(r"^\(([a-z]+)\)", s)
+        if sub is None:
+            break
+        value = sub.group(1)
+        if len(value) != 1 and roman_to_int(value) is None:
+            break
+        depth = 1 if len(value) == 1 else 2
+        if chain and chain[-1].depth >= depth:
+            if depth == 1 and is_ambiguous_sub_label(f"({value})"):
+                depth = 2
+            else:
+                break
+        chain.append(
             NumberMatch(
-                label=f"({m.group(1)})",
-                depth=1,
-                kind="sub",
-                rest=s[m.end():].strip(),
+                label=f"({value})",
+                depth=depth,
+                kind="sub" if depth == 1 else "part",
                 confidence=0.9,
             )
-        ]
+        )
+        s = s[sub.end():].lstrip()
 
-    m = _SUB_PAREN_ROMAN.match(s)
-    if m:
-        return [
-            NumberMatch(
-                label=f"({m.group(1)})",
-                depth=2,
-                kind="part",
-                rest=s[m.end():].strip(),
-                confidence=0.9,
-            )
-        ]
-
-    return []
+    if chain:
+        chain[-1].rest = s
+    return chain
 
 
 def match_number(text: str) -> Optional[NumberMatch]:

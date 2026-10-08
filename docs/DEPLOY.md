@@ -167,6 +167,8 @@ examdata 是一个把 Cambridge International 与 Pearson Edexcel 的**公开**�
 | 图形资产原件 | 按内容寻址取回 PNG/JPEG 等资产 | `GET /assets/{id}` |
 | 按需取真题文件 | CIE 整份 PDF；Edexcel 整卷 PDF 或裁剪出的题目/答案 PNG | `/paper-qa/resolve`、`/paper-qa/query`、`examdata paper-qa` |
 
+统一网关（`/api/v1`）在此之外还提供**考试发放资料**（公式表、元素周期表、随卷 insert 等，`GET /api/v1/materials`）与**考试时间表**（CIE Zone 5 与 Edexcel 历年考季，`GET /api/v1/timetable`）；字段级说明与实测示例见 [API.md](API.md) §3.8–3.10、[examples/curl.md](../examples/curl.md) §5–6。
+
 ### 2.2 不能查什么
 
 | 限制 | 说明 |
@@ -448,7 +450,7 @@ export EXAMDATA_DATABASE_URL=sqlite:////srv/examdata/.data/examdata.db
 - 会写知识点节点、知识点标注、难度估计、相似题对、生成解析。
 - 可选：`--subject 0580` 只处理指定科目；`--min-score` 调整相似度阈值（默认 `0.62`）。
 - **耗时**：本地计算。相似题是两两比较，题目多时明显变慢。
-- 跑完会打印提示：生成解析均为 `provider=rule-based`、`review_status=pending`，需人工审核后才可视为可信材料。
+- 跑完会打印提示：新生成解析默认 `provider=rule-based`、`review_status=pending`，已有审核结果保留，需人工审核后才可视为可信材料。
 
 **`provenance-rebuild`** — 重建溯源边。纯投影、幂等，**不出网**。可选 `--board cambridge` 限定考试局。耗时：亚秒到秒级。
 
@@ -577,9 +579,9 @@ curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8000/docs
 .venv/bin/uvicorn examdata.api.app:app --host 127.0.0.1 --port 8000 --workers 4 --log-level info
 ```
 
-注意：`uvicorn` 直启**不会**执行 `examdata serve` 里的那次 `init_db()`，app 本身也没有 lifespan / startup 钩子。除 `/health`、`/paper-qa/resolve`、`/paper-qa/query` 三条之外，其余 17 条路由都在 `get_session` 依赖里调 `init_db()`（第一行），所以它们不受影响——只是首次请求会多花一点时间。实测 `init_db()` 的耗时是 **1.18 ms**，不是性能问题。
+注意：`uvicorn` 直启**不会**执行 `examdata serve` 里的那次 `init_db()`，app 本身也没有 lifespan / startup 钩子。除 `/health`、`/paper-qa/resolve`、`/paper-qa/query` 三条之外，其余 17 条路由都在 `get_session` 依赖里调 `ensure_initialized()`（第一行）——它是 `init_db()` 的进程内一次性包装，所以它们不受影响——只是首个请求会多花一点时间。实测 `init_db()` 的耗时是 **1.18 ms**，不是性能问题。
 
-但 `/health` 走的是 `session_scope()`，**不调 `init_db()`**。库还是空的时候（一个表都没建），`GET /health` 不会返回 6.3 节那种 `{"status":"ok","papers":0}`，而是 `503`，`detail` 形如 `数据库不可用: no such table: paper`。所以用 uvicorn 直启时，先跑一次 `examdata initdb`（或先访问任意一条建表路由），再验证 `/health`。
+但 `/health` 走的是 `session_scope()`，**不调 `init_db()`**。库还是空的时候（一个表都没建），`GET /health` 不会返回 6.3 节那种 `{"status":"ok","papers":0}`，而是 `503`，`detail` 固定为 `数据库不可用`（不回显异常文本）。所以用 uvicorn 直启时，先跑一次 `examdata initdb`（或先访问任意一条建表路由），再验证 `/health`。
 
 `--reload` 与 `--workers` 同时给**不会报错**：uvicorn 只发一条 warning（`"workers" flag is ignored when reloading is enabled.`）并忽略 `--workers`，实际仍是单进程热重载。
 
@@ -750,7 +752,7 @@ examdata sample-questions --subject 0580 --marks 10 --seed 7
 └─────┴───────────┴──────┴───────┴────────────────────────────────────────────┘
 ```
 
-`--marks` 是目标总分，`--count` 是目标题数。两者至少给一个，但**校验只在 HTTP 层**：`POST /sample` 都不给会返回 422（`{"detail":"count 与 marks_target 至少给一个"}`），**CLI 不校验**——`examdata sample-questions --subject 0580` 不报错，会直接把筛选条件下的全部叶子题都抽出来（实测 327 题、合计 693 分），别把它当成默认值。给了 `--seed` 后同样的库 + 同样的参数必然得到同样的结果，方便复现。注意 HTTP 的 `POST /sample` 里这个参数叫 `marks_target`，与 CLI 的 `--marks` 是同一个东西的两个名字。
+`--marks` 是目标总分，`--count` 是目标题数。两者至少给一个：`POST /sample` 都不给会返回 422（`{"detail":"count 与 marks_target 至少给一个"}`）；CLI 同样校验，`examdata sample-questions --subject 0580` 会直接报错退出（`--count` 限 1..200、`--marks` 限 1..300，与 HTTP 层一致），不会退化成"把筛选条件下的全部叶子题都抽出来"。给了 `--seed` 后同样的库 + 同样的参数必然得到同样的结果，方便复现。注意 HTTP 的 `POST /sample` 里这个参数叫 `marks_target`，与 CLI 的 `--marks` 是同一个东西的两个名字。
 
 **看同步与解析状态**
 
@@ -902,7 +904,7 @@ curl -s http://127.0.0.1:8000/openapi.json | head -c 400
 
 **执行模型**：所有路由函数都是同步 `def`，FastAPI 会把它们丢进线程池执行，不会阻塞事件循环。慢请求（`/paper-qa/query`）不会卡住其他请求，但线程池大小有限，并发很高时会排队。
 
-**每次请求都建表**：除 `/health`、`/paper-qa/resolve`、`/paper-qa/query` 三条之外，其余 17 条路由的数据库依赖第一行都会执行一次 `init_db()`（`CREATE TABLE IF NOT EXISTS`，幂等）。实测耗时约 1.18 ms，不是性能问题；但这意味着服务进程需要对数据库文件所在目录有写权限。
+**建表时机**：除 `/health`、`/paper-qa/resolve`、`/paper-qa/query` 三条之外，其余 17 条路由的数据库依赖第一行都会调 `ensure_initialized()`——`init_db()`（`CREATE TABLE IF NOT EXISTS`，幂等）的进程内一次性包装，只有首个请求真正执行，实测耗时约 1.18 ms；但这意味着服务进程需要对数据库文件所在目录有写权限。
 
 **分页**：`/papers` 和 `/questions` 用 `limit` + `offset`，响应形如 `{"total": <过滤后总数>, "limit": <本次 limit>, "offset": <本次 offset>, "items": [...]}`。`total` 是**过滤后**的总数，不是全库总数。`/review`、`/overrides`、`/classifications` 用 `count` + `items`，没有 `offset`。
 
@@ -925,7 +927,7 @@ curl -s http://127.0.0.1:8000/openapi.json | head -c 400
 | `status` | string | 固定 `ok` |
 | `papers` | int | 全库试卷总数（不带任何过滤） |
 
-状态码：`200` 正常；`503` 数据库不可用，`detail` 形如 `数据库不可用: <异常文本>`。除两条 paper-qa 路由外，这是唯一不触发 `init_db()` 的路由，也是唯一一条把异常转成 503 的路由。
+状态码：`200` 正常；`503` 数据库不可用，`detail` 固定为 `数据库不可用`（不回显异常文本，避免泄露内部细节）。除两条 paper-qa 路由外，这是唯一不触发 `ensure_initialized()` 的路由，也是唯一一条把异常转成 503 的路由。
 
 ```bash
 curl -s http://127.0.0.1:8000/health
@@ -1058,7 +1060,7 @@ curl -s 'http://127.0.0.1:8000/taxonomy?board=cambridge'
 | `marks_target` | int | 无 | 目标总分，范围 1–300 |
 | `seed` | int | 无 | 随机种子，便于复现 |
 
-没有请求体，参数全在 query string。`count` 和 `marks_target` **至少要给一个**，否则 422，`detail` 是字符串 `count 与 marks_target 至少给一个`。抽题池固定是叶子题（等价于强制 `leaves_only=true`）、上限 5000 条。
+没有请求体，参数全在 query string。`count` 和 `marks_target` **至少要给一个**，否则 422，`detail` 是字符串 `count 与 marks_target 至少给一个`。抽题池固定是叶子题（等价于强制 `leaves_only=true`），从完整候选池抽样。
 
 响应：`{marks_total, requested_marks, question_count, questions}`。
 
@@ -2474,7 +2476,8 @@ examdata reparse --document-id <文档id>
 **破坏性重置（最后手段）**。`scripts/reset_derived.py` 会清空 15 张派生表（`question_asset`、`official_answer`、`generated_explanation`、`mark_scheme_entry`、`formula`、`question_taxonomy`、`difficulty`、`question_similarity`、`asset`、`question`、`mark_scheme`、`paper`、`validation_finding`、`review_task`、`parse_run`），把 `document_revision.parse_status` 重置成 `pending`、`document.status` 重置成 `stored`：
 
 ```bash
-python scripts/reset_derived.py
+python scripts/reset_derived.py --dry-run
+# 仅限无受保护内容的 SQLite 副本；检查目标后才显式 --yes
 examdata parse-docs
 examdata enrich
 examdata provenance-rebuild
@@ -2777,3 +2780,24 @@ curl -s 'http://127.0.0.1:8000/paper-qa/query?board=cie&subject=9709&year=2026&s
 | 生产部署建议 | 代码 `/srv/examdata`，数据 `/var/lib/examdata` |
 | systemd 单元 | `/etc/systemd/system/examdata.service` |
 | nginx 站点 | `/etc/nginx/sites-available/examdata` |
+
+
+### 2026-09-30 重解析与测试保护
+
+`parse-docs --document-id N --limit N --retry-failed` 可限定范围和重试失败版本；空目标列表不会扩成全库。
+重解析保留官方答案、生成解析（包括待审核）、人工/已审核知识点与非估算难度。
+按文档与题号唯一匹配，正文一致时恢复记录和审核引用 ID；目标消失、歧义或正文变化则回滚整批，保留旧结果。
+人工覆盖按版本与原始基线判断；目标消失时回滚并写冲突审核记录，CLI 显示回滚而非成功。
+mark_scheme 官方来源支持范围迁移；唯一关联不成立时整批回滚，答案变化触发人工复核与 requires_review。无对应解析器的其他官方来源仍拒绝迁移。
+自动 Formula 在删除题目之前清理；人工来源公式受保护。原评分关联不能安全恢复时也回滚。
+自动相似题按目标范围重建，保留范围外与人工方法关系，MS-only 同时刷新关联 QP 智能数据。
+
+paper-qa 单请求累计预算为 256 MiB、64 文档及 256 输出文件，涵盖上游、PDF、裁剪和编码/打包；超限返回 502，不代表进程 RSS 硬上限。完整实际验收与剩余边界见 [REMAINING_WORK_RESULTS.md](REMAINING_WORK_RESULTS.md)。
+
+reset 仅支持 SQLite，默认拒绝执行，`--dry-run` 只计数，`--yes` 也不能绕过人工覆盖（包括撤销历史）、
+官方答案、已审核/人工生成解析、审核处置、人工知识点、官方难度和人工公式保护。
+建议先备份并使用副本；不要把开发库当测试写入目标。
+
+pytest 默认禁止真实 HTTP，正常语料由只读 SQLite backup 复制到私有目录并复制原件。
+显式指定数据库时必须使用私有地址；直接指定开发 SQLite 库会拒绝。空库场景按语料依赖逐项 skip，
+合成回归继续执行。SQLite 临时存储在测试进程使用内存，避免 Windows 临时目录权限影响保存点。

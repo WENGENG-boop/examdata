@@ -1,0 +1,4082 @@
+{
+  "schema": "examdata.integration.a01_static_inventory/1",
+  "generated_at_local": "2026-10-05T18:34:46+08:00",
+  "generated_at_utc": "2026-10-05T10:34:46Z",
+  "workspace_root": "C:/Users/weo/Desktop/api",
+  "tool_path": "integration-staging/tools/a01_static_inventory.py",
+  "read_only_note": "static text reads only; no original application import or execution",
+  "component_layout": {
+    "examdata": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": ".data",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T15:12:37+08:00"
+        },
+        {
+          "name": ".git",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:29:10+08:00"
+        },
+        {
+          "name": ".gitignore",
+          "kind": "file",
+          "size": 516,
+          "mtime": "2026-09-29T16:17:49+08:00"
+        },
+        {
+          "name": ".paperqa-test-3EkSxA",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T15:49:50+08:00"
+        },
+        {
+          "name": ".piptmp",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T14:53:35+08:00"
+        },
+        {
+          "name": ".pytest_cache",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:25:11+08:00"
+        },
+        {
+          "name": ".venv",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-28T21:31:48+08:00"
+        },
+        {
+          "name": "LICENSE",
+          "kind": "file",
+          "size": 1069,
+          "mtime": "2026-09-29T16:18:16+08:00"
+        },
+        {
+          "name": "README.md",
+          "kind": "file",
+          "size": 12441,
+          "mtime": "2026-10-05T18:26:46+08:00"
+        },
+        {
+          "name": "__pycache__",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:33:15+08:00"
+        },
+        {
+          "name": "_dbnode.txt",
+          "kind": "file",
+          "size": 14064,
+          "mtime": "2026-10-04T15:17:35+08:00"
+        },
+        {
+          "name": "_dbq.txt",
+          "kind": "file",
+          "size": 6131,
+          "mtime": "2026-10-04T15:17:05+08:00"
+        },
+        {
+          "name": "_dbschema.txt",
+          "kind": "file",
+          "size": 783,
+          "mtime": "2026-10-04T15:16:16+08:00"
+        },
+        {
+          "name": "build",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:24:17+08:00"
+        },
+        {
+          "name": "docs",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T00:36:18+08:00"
+        },
+        {
+          "name": "examples",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-29T20:14:37+08:00"
+        },
+        {
+          "name": "explore-examdata.db",
+          "kind": "file",
+          "size": 4182016,
+          "mtime": "2026-09-30T07:59:11+08:00"
+        },
+        {
+          "name": "proto-examdata.db",
+          "kind": "file",
+          "size": 4182016,
+          "mtime": "2026-09-30T08:00:55+08:00"
+        },
+        {
+          "name": "proto2-examdata.db",
+          "kind": "file",
+          "size": 4182016,
+          "mtime": "2026-09-30T08:02:32+08:00"
+        },
+        {
+          "name": "pyproject.toml",
+          "kind": "file",
+          "size": 1358,
+          "mtime": "2026-10-05T18:07:34+08:00"
+        },
+        {
+          "name": "pytest-of-weo",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:25:09+08:00"
+        },
+        {
+          "name": "qsvc_check.db",
+          "kind": "file",
+          "size": 4182016,
+          "mtime": "2026-09-30T08:01:24+08:00"
+        },
+        {
+          "name": "research",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:21:25+08:00"
+        },
+        {
+          "name": "scripts",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-29T20:08:09+08:00"
+        },
+        {
+          "name": "src",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-28T21:34:54+08:00"
+        },
+        {
+          "name": "tests",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:12:22+08:00"
+        },
+        {
+          "name": "tmp",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T17:38:28+08:00"
+        },
+        {
+          "name": "tmp_acct_ctx.py",
+          "kind": "file",
+          "size": 2555,
+          "mtime": "2026-10-04T12:17:27+08:00"
+        },
+        {
+          "name": "tmp_acct_paper.py",
+          "kind": "file",
+          "size": 2496,
+          "mtime": "2026-10-04T12:58:03+08:00"
+        },
+        {
+          "name": "tmp_acct_pdf.py",
+          "kind": "file",
+          "size": 2512,
+          "mtime": "2026-10-04T12:36:51+08:00"
+        },
+        {
+          "name": "tmp_acct_points.txt",
+          "kind": "file",
+          "size": 30935,
+          "mtime": "2026-10-04T12:24:03+08:00"
+        },
+        {
+          "name": "tmp_acct_probe.py",
+          "kind": "file",
+          "size": 2515,
+          "mtime": "2026-10-04T12:23:21+08:00"
+        },
+        {
+          "name": "tmp_anchor_dump.py",
+          "kind": "file",
+          "size": 3461,
+          "mtime": "2026-10-03T06:10:32+08:00"
+        },
+        {
+          "name": "tmp_anchors_1.txt",
+          "kind": "file",
+          "size": 13489,
+          "mtime": "2026-10-03T05:50:14+08:00"
+        },
+        {
+          "name": "tmp_anchors_2.txt",
+          "kind": "file",
+          "size": 28854,
+          "mtime": "2026-10-03T05:50:17+08:00"
+        },
+        {
+          "name": "tmp_anchors_after_1.txt",
+          "kind": "file",
+          "size": 11385,
+          "mtime": "2026-10-03T05:56:17+08:00"
+        },
+        {
+          "name": "tmp_anchors_after_2.txt",
+          "kind": "file",
+          "size": 32201,
+          "mtime": "2026-10-03T05:56:54+08:00"
+        },
+        {
+          "name": "tmp_ans_health.py",
+          "kind": "file",
+          "size": 1210,
+          "mtime": "2026-10-04T14:52:55+08:00"
+        },
+        {
+          "name": "tmp_ans_normalize.py",
+          "kind": "file",
+          "size": 2943,
+          "mtime": "2026-10-04T14:30:46+08:00"
+        },
+        {
+          "name": "tmp_answer_gap_report.json",
+          "kind": "file",
+          "size": 75948,
+          "mtime": "2026-10-03T11:43:36+08:00"
+        }
+      ],
+      "truncated": true
+    },
+    "frontend": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": ".gitignore",
+          "kind": "file",
+          "size": 6,
+          "mtime": "2026-10-02T14:13:51+08:00"
+        },
+        {
+          "name": "README.md",
+          "kind": "file",
+          "size": 3307,
+          "mtime": "2026-10-02T22:38:44+08:00"
+        },
+        {
+          "name": "app.js",
+          "kind": "file",
+          "size": 22253,
+          "mtime": "2026-10-02T22:46:42+08:00"
+        },
+        {
+          "name": "build-catalog.mjs",
+          "kind": "file",
+          "size": 2036,
+          "mtime": "2026-10-02T18:12:28+08:00"
+        },
+        {
+          "name": "build-syllabi.mjs",
+          "kind": "file",
+          "size": 8492,
+          "mtime": "2026-10-02T20:51:41+08:00"
+        },
+        {
+          "name": "catalog.json",
+          "kind": "file",
+          "size": 577635,
+          "mtime": "2026-10-02T18:13:26+08:00"
+        },
+        {
+          "name": "edexcel-subjects-source.json",
+          "kind": "file",
+          "size": 22614,
+          "mtime": "2026-10-02T18:10:33+08:00"
+        },
+        {
+          "name": "index.html",
+          "kind": "file",
+          "size": 5106,
+          "mtime": "2026-10-02T18:16:34+08:00"
+        },
+        {
+          "name": "opening-preview.png",
+          "kind": "file",
+          "size": 13101,
+          "mtime": "2026-10-02T17:35:27+08:00"
+        },
+        {
+          "name": "package.json",
+          "kind": "file",
+          "size": 233,
+          "mtime": "2026-10-02T14:04:29+08:00"
+        },
+        {
+          "name": "preview.png",
+          "kind": "file",
+          "size": 49730,
+          "mtime": "2026-10-02T14:51:22+08:00"
+        },
+        {
+          "name": "resources.mjs",
+          "kind": "file",
+          "size": 6405,
+          "mtime": "2026-10-02T22:38:12+08:00"
+        },
+        {
+          "name": "search.mjs",
+          "kind": "file",
+          "size": 4209,
+          "mtime": "2026-10-02T18:16:34+08:00"
+        },
+        {
+          "name": "search.test.mjs",
+          "kind": "file",
+          "size": 5160,
+          "mtime": "2026-10-02T18:31:35+08:00"
+        },
+        {
+          "name": "server-error.log",
+          "kind": "file",
+          "size": 0,
+          "mtime": "2026-10-02T18:31:39+08:00"
+        },
+        {
+          "name": "server.log",
+          "kind": "file",
+          "size": 41,
+          "mtime": "2026-10-02T18:31:39+08:00"
+        },
+        {
+          "name": "server.mjs",
+          "kind": "file",
+          "size": 3799,
+          "mtime": "2026-10-02T22:38:12+08:00"
+        },
+        {
+          "name": "styles.css",
+          "kind": "file",
+          "size": 20375,
+          "mtime": "2026-10-02T22:37:59+08:00"
+        },
+        {
+          "name": "syllabi.json",
+          "kind": "file",
+          "size": 171914,
+          "mtime": "2026-10-02T22:35:18+08:00"
+        },
+        {
+          "name": "syllabi.test.mjs",
+          "kind": "file",
+          "size": 3006,
+          "mtime": "2026-10-02T22:37:59+08:00"
+        },
+        {
+          "name": "tech-preview.png",
+          "kind": "file",
+          "size": 70671,
+          "mtime": "2026-10-02T17:28:53+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "ielts-api": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": ".tmp",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T03:29:54+08:00"
+        },
+        {
+          "name": "API.md",
+          "kind": "file",
+          "size": 32498,
+          "mtime": "2026-10-05T03:17:35+08:00"
+        },
+        {
+          "name": "AUDIT_REPORT.md",
+          "kind": "file",
+          "size": 19448,
+          "mtime": "2026-10-02T23:48:49+08:00"
+        },
+        {
+          "name": "DEVELOPMENT.md",
+          "kind": "file",
+          "size": 19048,
+          "mtime": "2026-10-05T03:25:22+08:00"
+        },
+        {
+          "name": "adjudications.mjs",
+          "kind": "file",
+          "size": 71902,
+          "mtime": "2026-10-04T07:56:03+08:00"
+        },
+        {
+          "name": "alignment-provider.mjs",
+          "kind": "file",
+          "size": 16486,
+          "mtime": "2026-10-04T10:45:25+08:00"
+        },
+        {
+          "name": "answer-matcher.mjs",
+          "kind": "file",
+          "size": 37529,
+          "mtime": "2026-10-04T05:47:23+08:00"
+        },
+        {
+          "name": "audio-catalog.mjs",
+          "kind": "file",
+          "size": 25253,
+          "mtime": "2026-10-04T09:07:42+08:00"
+        },
+        {
+          "name": "audio-matcher.mjs",
+          "kind": "file",
+          "size": 33097,
+          "mtime": "2026-10-04T09:49:00+08:00"
+        },
+        {
+          "name": "book3-listening.mjs",
+          "kind": "file",
+          "size": 33060,
+          "mtime": "2026-10-04T20:41:11+08:00"
+        },
+        {
+          "name": "cam21.mjs",
+          "kind": "file",
+          "size": 37403,
+          "mtime": "2026-10-04T14:48:39+08:00"
+        },
+        {
+          "name": "catalog.mjs",
+          "kind": "file",
+          "size": 8222,
+          "mtime": "2026-10-03T23:45:27+08:00"
+        },
+        {
+          "name": "contract.test.mjs",
+          "kind": "file",
+          "size": 10070,
+          "mtime": "2026-10-04T22:45:57+08:00"
+        },
+        {
+          "name": "coverage.mjs",
+          "kind": "file",
+          "size": 31051,
+          "mtime": "2026-10-04T16:16:08+08:00"
+        },
+        {
+          "name": "data",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T23:47:10+08:00"
+        },
+        {
+          "name": "data-store.mjs",
+          "kind": "file",
+          "size": 15458,
+          "mtime": "2026-10-04T04:37:30+08:00"
+        },
+        {
+          "name": "fetch-source.mjs",
+          "kind": "file",
+          "size": 19095,
+          "mtime": "2026-10-03T23:56:05+08:00"
+        },
+        {
+          "name": "html-questions.mjs",
+          "kind": "file",
+          "size": 63985,
+          "mtime": "2026-10-04T21:27:07+08:00"
+        },
+        {
+          "name": "ielts-api.mjs",
+          "kind": "file",
+          "size": 69172,
+          "mtime": "2026-10-05T03:26:06+08:00"
+        },
+        {
+          "name": "ielts-cli.mjs",
+          "kind": "file",
+          "size": 12457,
+          "mtime": "2026-10-04T23:24:16+08:00"
+        },
+        {
+          "name": "iprog.mjs",
+          "kind": "file",
+          "size": 5065,
+          "mtime": "2026-10-04T03:55:38+08:00"
+        },
+        {
+          "name": "ito.mjs",
+          "kind": "file",
+          "size": 9981,
+          "mtime": "2026-10-04T03:55:08+08:00"
+        },
+        {
+          "name": "lfs.mjs",
+          "kind": "file",
+          "size": 8848,
+          "mtime": "2026-10-05T03:26:06+08:00"
+        },
+        {
+          "name": "pdf-adapter.mjs",
+          "kind": "file",
+          "size": 11370,
+          "mtime": "2026-10-04T04:43:04+08:00"
+        },
+        {
+          "name": "pte.mjs",
+          "kind": "file",
+          "size": 27621,
+          "mtime": "2026-10-04T21:25:45+08:00"
+        },
+        {
+          "name": "question-index.mjs",
+          "kind": "file",
+          "size": 52650,
+          "mtime": "2026-10-04T20:33:08+08:00"
+        },
+        {
+          "name": "resolver.mjs",
+          "kind": "file",
+          "size": 39871,
+          "mtime": "2026-10-04T20:35:20+08:00"
+        },
+        {
+          "name": "schema.mjs",
+          "kind": "file",
+          "size": 8586,
+          "mtime": "2026-10-03T23:48:02+08:00"
+        },
+        {
+          "name": "taxonomy.mjs",
+          "kind": "file",
+          "size": 26096,
+          "mtime": "2026-10-04T20:31:03+08:00"
+        },
+        {
+          "name": "tests",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T02:56:55+08:00"
+        },
+        {
+          "name": "tools",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T06:12:46+08:00"
+        },
+        {
+          "name": "transcript-matcher.mjs",
+          "kind": "file",
+          "size": 14384,
+          "mtime": "2026-10-04T10:32:46+08:00"
+        },
+        {
+          "name": "v2-api.mjs",
+          "kind": "file",
+          "size": 30421,
+          "mtime": "2026-10-04T23:43:17+08:00"
+        },
+        {
+          "name": "verify-pdfs.mjs",
+          "kind": "file",
+          "size": 8941,
+          "mtime": "2026-10-05T03:25:52+08:00"
+        },
+        {
+          "name": "zhan.mjs",
+          "kind": "file",
+          "size": 6161,
+          "mtime": "2026-10-04T03:55:54+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "toefl-api": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": ".data",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T09:47:17+08:00"
+        },
+        {
+          "name": ".gitignore",
+          "kind": "file",
+          "size": 175,
+          "mtime": "2026-10-05T00:35:36+08:00"
+        },
+        {
+          "name": "AGENT_FIX_PROMPT_20261005.md",
+          "kind": "file",
+          "size": 9140,
+          "mtime": "2026-10-05T11:51:40+08:00"
+        },
+        {
+          "name": "AUDIT_REPORT_20261005.md",
+          "kind": "file",
+          "size": 12185,
+          "mtime": "2026-10-05T11:58:14+08:00"
+        },
+        {
+          "name": "REPORT.md",
+          "kind": "file",
+          "size": 43793,
+          "mtime": "2026-10-05T14:28:25+08:00"
+        },
+        {
+          "name": "audit-20261005",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:58:25+08:00"
+        },
+        {
+          "name": "data",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T09:47:45+08:00"
+        },
+        {
+          "name": "lib",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T10:44:07+08:00"
+        },
+        {
+          "name": "probe",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:52:29+08:00"
+        },
+        {
+          "name": "repair-20261005",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T14:44:01+08:00"
+        },
+        {
+          "name": "toefl-cli.mjs",
+          "kind": "file",
+          "size": 15518,
+          "mtime": "2026-10-05T13:06:19+08:00"
+        },
+        {
+          "name": "tools",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T10:44:24+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "ielts-data": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "assets",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T05:06:21+08:00"
+        },
+        {
+          "name": "audio",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T09:00:19+08:00"
+        },
+        {
+          "name": "decisions",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T04:45:09+08:00"
+        },
+        {
+          "name": "derived",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T04:45:09+08:00"
+        },
+        {
+          "name": "indexes",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:20:36+08:00"
+        },
+        {
+          "name": "manifests",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:20:36+08:00"
+        },
+        {
+          "name": "normalized",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T00:06:49+08:00"
+        },
+        {
+          "name": "pdf",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T00:52:50+08:00"
+        },
+        {
+          "name": "raw",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T08:28:26+08:00"
+        },
+        {
+          "name": "refresh",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T00:56:44+08:00"
+        },
+        {
+          "name": "runs",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:20:18+08:00"
+        },
+        {
+          "name": "test-examdata",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T22:00:59+08:00"
+        },
+        {
+          "name": "test-s03",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T03:40:15+08:00"
+        },
+        {
+          "name": "test-s06",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T03:41:02+08:00"
+        },
+        {
+          "name": "test-s15",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T03:40:14+08:00"
+        },
+        {
+          "name": "tools",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T09:38:34+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-index-batch-2026-10-01": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "9709",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T10:35:39+08:00"
+        },
+        {
+          "name": "review",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T05:03:06+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-location-batch": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": ".data",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T16:25:13+08:00"
+        },
+        {
+          "name": ".pytest_cache",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T12:57:44+08:00"
+        },
+        {
+          "name": "CONTINUATION_REPORT.md",
+          "kind": "file",
+          "size": 5304,
+          "mtime": "2026-10-02T13:34:46+08:00"
+        },
+        {
+          "name": "GOAL-SPEC.md",
+          "kind": "file",
+          "size": 18381,
+          "mtime": "2026-10-04T15:57:03+08:00"
+        },
+        {
+          "name": "KIMI_502_RECOVERY_PLAN_2026-10-05.md",
+          "kind": "file",
+          "size": 3749,
+          "mtime": "2026-10-05T11:51:51+08:00"
+        },
+        {
+          "name": "RESUME_PLAN.md",
+          "kind": "file",
+          "size": 1657,
+          "mtime": "2026-10-02T13:21:01+08:00"
+        },
+        {
+          "name": "_verify_qp_0478.html",
+          "kind": "file",
+          "size": 1999,
+          "mtime": "2026-10-01T17:00:03+08:00"
+        },
+        {
+          "name": "_verify_qp_0478b.html",
+          "kind": "file",
+          "size": 1433,
+          "mtime": "2026-10-01T17:05:52+08:00"
+        },
+        {
+          "name": "_verify_qp_0478c.html",
+          "kind": "file",
+          "size": 692,
+          "mtime": "2026-10-01T17:17:22+08:00"
+        },
+        {
+          "name": "catalogue-grid.json",
+          "kind": "file",
+          "size": 8013304,
+          "mtime": "2026-10-01T13:26:09+08:00"
+        },
+        {
+          "name": "checkpoint.json",
+          "kind": "file",
+          "size": 4041,
+          "mtime": "2026-10-05T16:36:05+08:00"
+        },
+        {
+          "name": "cie-index-schema.json",
+          "kind": "file",
+          "size": 2561,
+          "mtime": "2026-10-01T11:49:50+08:00"
+        },
+        {
+          "name": "cleanup.jsonl",
+          "kind": "file",
+          "size": 999457,
+          "mtime": "2026-10-05T09:15:45+08:00"
+        },
+        {
+          "name": "errors.jsonl",
+          "kind": "file",
+          "size": 187745,
+          "mtime": "2026-10-05T16:36:05+08:00"
+        },
+        {
+          "name": "indexes",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:56:01+08:00"
+        },
+        {
+          "name": "papers.json",
+          "kind": "file",
+          "size": 5843642,
+          "mtime": "2026-10-05T16:30:15+08:00"
+        },
+        {
+          "name": "pending-work.json",
+          "kind": "file",
+          "size": 431700,
+          "mtime": "2026-10-04T08:53:50+08:00"
+        },
+        {
+          "name": "service-index-manifest.json",
+          "kind": "file",
+          "size": 95438,
+          "mtime": "2026-10-05T16:36:52+08:00"
+        },
+        {
+          "name": "subjects.json",
+          "kind": "file",
+          "size": 240007,
+          "mtime": "2026-10-01T13:26:09+08:00"
+        },
+        {
+          "name": "summary.json",
+          "kind": "file",
+          "size": 48123,
+          "mtime": "2026-10-05T16:36:53+08:00"
+        },
+        {
+          "name": "tmp",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T21:32:51+08:00"
+        },
+        {
+          "name": "tools",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T04:28:29+08:00"
+        },
+        {
+          "name": "verification.jsonl",
+          "kind": "file",
+          "size": 5699309,
+          "mtime": "2026-10-05T03:10:59+08:00"
+        },
+        {
+          "name": "work",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T16:54:49+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-question-crops": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": ".pytest_cache",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T22:49:43+08:00"
+        },
+        {
+          "name": "DESIGN.md",
+          "kind": "file",
+          "size": 10726,
+          "mtime": "2026-10-03T22:53:02+08:00"
+        },
+        {
+          "name": "__pycache__",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T22:47:50+08:00"
+        },
+        {
+          "name": "crop_questions.py",
+          "kind": "file",
+          "size": 24096,
+          "mtime": "2026-10-03T22:47:40+08:00"
+        },
+        {
+          "name": "out",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T22:49:16+08:00"
+        },
+        {
+          "name": "pytest-of-weo",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T23:03:10+08:00"
+        },
+        {
+          "name": "tests",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T22:49:42+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "gaokao-feasibility": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "REPORT.md",
+          "kind": "file",
+          "size": 8433,
+          "mtime": "2026-10-04T20:31:54+08:00"
+        },
+        {
+          "name": "channels.md",
+          "kind": "file",
+          "size": 8609,
+          "mtime": "2026-10-04T20:31:22+08:00"
+        },
+        {
+          "name": "coverage-matrix.csv",
+          "kind": "file",
+          "size": 3917,
+          "mtime": "2026-10-04T20:18:49+08:00"
+        },
+        {
+          "name": "logs",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T19:48:30+08:00"
+        },
+        {
+          "name": "samples",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T18:47:29+08:00"
+        },
+        {
+          "name": "scope-map.md",
+          "kind": "file",
+          "size": 5213,
+          "mtime": "2026-10-04T19:58:20+08:00"
+        },
+        {
+          "name": "scripts",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T20:03:15+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "docs": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "PROJECT_INTEGRATION_PLAN.md",
+          "kind": "file",
+          "size": 1058,
+          "mtime": "2026-10-05T17:54:50+08:00"
+        },
+        {
+          "name": "PROJECT_STATUS.md",
+          "kind": "file",
+          "size": 8272,
+          "mtime": "2026-10-05T18:27:01+08:00"
+        },
+        {
+          "name": "README.md",
+          "kind": "file",
+          "size": 1026,
+          "mtime": "2026-10-05T17:25:19+08:00"
+        },
+        {
+          "name": "ielts",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T04:21:21+08:00"
+        },
+        {
+          "name": "integration",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:04:46+08:00"
+        },
+        {
+          "name": "toefl",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T15:03:35+08:00"
+        }
+      ],
+      "truncated": false
+    }
+  },
+  "examdata_subpackages": [
+    "adapters",
+    "api",
+    "core",
+    "edexcel_papers",
+    "gaokao",
+    "governance",
+    "intelligence",
+    "markscheme",
+    "materials",
+    "paperqa",
+    "parsing",
+    "query",
+    "specs",
+    "sync",
+    "tagging",
+    "timetable"
+  ],
+  "python_metadata": {
+    "project": {
+      "name": "examdata",
+      "version": "0.1.0",
+      "requires_python": ">=3.11",
+      "dependencies": [
+        "httpx>=0.27",
+        "beautifulsoup4>=4.12",
+        "lxml>=5.0",
+        "sqlalchemy>=2.0",
+        "pydantic>=2.6",
+        "pydantic-settings>=2.2",
+        "pymupdf>=1.24",
+        "typer>=0.12",
+        "rich>=13.7",
+        "fastapi>=0.115",
+        "uvicorn>=0.30"
+      ],
+      "scripts": {
+        "examdata": "examdata.cli:app"
+      },
+      "optional_dependencies": {
+        "dev": [
+          "pytest>=8.0",
+          "pytest-cov>=5.0"
+        ],
+        "postgres": [
+          "psycopg[binary]>=3.2"
+        ]
+      }
+    },
+    "pytest_ini_options": {
+      "testpaths": [
+        "tests"
+      ],
+      "norecursedirs": [
+        "tmpwork",
+        ".venv",
+        ".data",
+        "wheels",
+        ".piptmp"
+      ],
+      "addopts": "-q"
+    },
+    "pyproject_sha256": "f8d69e9dc11c66e062f2e8955fa7fbc035d347841b95354d1b052c6a57226a66",
+    "main_guards": [
+      {
+        "file": "examdata/src/examdata/cli.py",
+        "line": 1511,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/src/examdata/edexcel_papers/__main__.py",
+        "line": 501,
+        "text": "if __name__ == \"__main__\":  # pragma: no cover"
+      },
+      {
+        "file": "examdata/src/examdata/specs/loader.py",
+        "line": 286,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/src/examdata/specs/runner.py",
+        "line": 140,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/src/examdata/tagging/__main__.py",
+        "line": 7,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/src/examdata/timetable/build.py",
+        "line": 214,
+        "text": "if __name__ == \"__main__\":  # pragma: no cover"
+      },
+      {
+        "file": "examdata/src/examdata/timetable/build_edexcel.py",
+        "line": 285,
+        "text": "if __name__ == \"__main__\":  # pragma: no cover"
+      },
+      {
+        "file": "examdata/scripts/pip_sandbox.py",
+        "line": 65,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/scripts/probe_edexcel.py",
+        "line": 517,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/scripts/reset_derived.py",
+        "line": 112,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/scripts/smoke_public_api.py",
+        "line": 812,
+        "text": "if __name__ == \"__main__\":"
+      },
+      {
+        "file": "examdata/scripts/verify_state.py",
+        "line": 141,
+        "text": "if __name__ == \"__main__\":"
+      }
+    ],
+    "cli_py": {
+      "path": "examdata/src/examdata/cli.py",
+      "sha256": "514f04204f85ee146d5c209d5c1a29c41a5306395ca8e40a5e1a7ee5d6b29292",
+      "def_count": 45,
+      "commands": [
+        {
+          "name": "cmd_import_cie_index",
+          "args": "\"import-cie-index\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_initdb",
+          "args": "\"initdb\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_adapters",
+          "args": "\"adapters\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_cambridge_syllabuses",
+          "args": "\"cambridge-syllabuses\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_cambridge_probe",
+          "args": "\"cambridge-probe\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_cambridge_discover",
+          "args": "\"cambridge-discover\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_fetch",
+          "args": "\"fetch\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_parse_pdf",
+          "args": "\"parse-pdf\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_sync",
+          "args": "\"sync\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_parse_docs",
+          "args": "\"parse-docs\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_search_papers",
+          "args": "\"search-papers\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_search_questions",
+          "args": "\"search-questions\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_show_question",
+          "args": "\"show-question\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_sample_questions",
+          "args": "\"sample-questions\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_monitor",
+          "args": "\"monitor\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_taxonomy_sync",
+          "args": "\"taxonomy-sync\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_taxonomy_assign",
+          "args": "\"taxonomy-assign\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_difficulty_estimate",
+          "args": "\"difficulty-estimate\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_similarity_find",
+          "args": "\"similarity-find\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_enrich",
+          "args": "\"enrich\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_classify_content",
+          "args": "\"classify-content\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_override_set",
+          "args": "\"override-set\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_override_list",
+          "args": "\"override-list\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_review_list",
+          "args": "\"review-list\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_review_resolve",
+          "args": "\"review-resolve\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_provenance_rebuild",
+          "args": "\"provenance-rebuild\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_provenance_trace",
+          "args": "\"provenance-trace\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_reparse",
+          "args": "\"reparse\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_explain",
+          "args": "\"explain\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_explain_review",
+          "args": "\"explain-review\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_serve",
+          "args": "\"serve\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_db_stats",
+          "args": "\"db-stats\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_paper_qa",
+          "args": "\"paper-qa\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_tags",
+          "args": "\"tags\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_tag_questions",
+          "args": "\"tag-questions\"",
+          "decorator": "app"
+        },
+        {
+          "name": "cmd_question_crop",
+          "args": "\"question-crop\"",
+          "decorator": "app"
+        }
+      ]
+    }
+  },
+  "node_metadata": [
+    {
+      "path": "frontend/package.json",
+      "exists": true,
+      "sha256": "d56c9707063df96c28f8923145be7ddffd01a6ca8f7cf82c27ec6a3b77977b0b",
+      "json": {
+        "name": "examdata-workspace",
+        "version": "1.0.0",
+        "private": true,
+        "type": "module",
+        "scripts": {
+          "start": "node server.mjs",
+          "check": "node --check server.mjs && node --check app.js"
+        },
+        "engines": {
+          "node": ">=20"
+        }
+      }
+    },
+    {
+      "path": "ielts-api/package.json",
+      "exists": false
+    },
+    {
+      "path": "toefl-api/package.json",
+      "exists": false
+    },
+    {
+      "path": "examdata/package.json",
+      "exists": false
+    }
+  ],
+  "node_cli_candidates": [
+    {
+      "file": "ielts-api/ielts-api.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": false,
+      "size": 69172
+    },
+    {
+      "file": "ielts-api/ielts-cli.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 12457
+    },
+    {
+      "file": "ielts-api/pdf-adapter.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 11370
+    },
+    {
+      "file": "ielts-api/verify-pdfs.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 8941
+    },
+    {
+      "file": "ielts-api/tools/audit-all.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 36251
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 11536
+    },
+    {
+      "file": "ielts-api/tools/build-alignment-gold.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 12441
+    },
+    {
+      "file": "ielts-api/tools/build-index.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 12074
+    },
+    {
+      "file": "ielts-api/tools/build-manifest.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": false,
+      "size": 16760
+    },
+    {
+      "file": "ielts-api/tools/build-question-index.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": false,
+      "size": 10667
+    },
+    {
+      "file": "ielts-api/tools/check-route-inventory.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 9142
+    },
+    {
+      "file": "ielts-api/tools/compare-official.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 10192
+    },
+    {
+      "file": "ielts-api/tools/import-pdf.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 11744
+    },
+    {
+      "file": "ielts-api/tools/refresh.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 28287
+    },
+    {
+      "file": "ielts-api/tools/run-alignment.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 18033
+    },
+    {
+      "file": "ielts-api/tools/verify-audio.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 37921
+    },
+    {
+      "file": "ielts-api/tools/verify-decisions.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 11902
+    },
+    {
+      "file": "toefl-api/toefl-cli.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 15518
+    },
+    {
+      "file": "toefl-api/repair-20261005/backup/toefl-api/toefl-cli.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 13914
+    },
+    {
+      "file": "toefl-api/tools/prefetch_jj.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 3905
+    },
+    {
+      "file": "toefl-api/tools/prefetch_kmf.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 3850
+    },
+    {
+      "file": "toefl-api/tools/prefetch_kmf_sw.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 4633
+    },
+    {
+      "file": "toefl-api/tools/verify_live_evidence.mjs",
+      "shebang": "#!/usr/bin/env node",
+      "has_process_argv": true,
+      "size": 7332
+    },
+    {
+      "file": "frontend/build-syllabi.mjs",
+      "shebang": "",
+      "has_process_argv": true,
+      "size": 8492
+    }
+  ],
+  "gateway_spawn_facts": [
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 5,
+      "text": "Node 聚合器（`<repo>/ielts-api/ielts-cli.mjs`，零 npm 依赖），把多个公开"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 11,
+      "text": "- 每次请求用 `node ielts-cli.mjs <cmd> …` 起一个短命子进程，并限制并发，"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 18,
+      "text": "- 聚合器目录可用 `EXAMDATA_IELTS_DIR`（或 `IELTS_API_DIR`）覆盖；"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 19,
+      "text": "node 可执行文件可用 `EXAMDATA_NODE` 覆盖；全部超时可用"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 20,
+      "text": "`EXAMDATA_IELTS_TIMEOUT`（秒）整体覆盖。"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 43,
+      "text": "_SCRIPT_NAME = \"ielts-cli.mjs\""
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 47,
+      "text": "def _gate() -> asyncio.Semaphore:"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 55,
+      "text": "capacity = int(os.environ.get(\"EXAMDATA_IELTS_MAX_CONCURRENT\", \"4\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 60,
+      "text": "semaphore = asyncio.Semaphore(capacity)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 68,
+      "text": "queue_timeout = float(os.environ.get(\"EXAMDATA_IELTS_QUEUE_TIMEOUT\", \"5\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 74,
+      "text": "await asyncio.wait_for(semaphore.acquire(), timeout=queue_timeout)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 78,
+      "text": "return await _run_process(cmd, *args, timeout=timeout)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 85,
+      "text": "env = os.environ.get(\"EXAMDATA_IELTS_DIR\") or os.environ.get(\"IELTS_API_DIR\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 99,
+      "text": "if (directory / _SCRIPT_NAME).is_file():"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 105,
+      "text": "raw = os.environ.get(\"EXAMDATA_IELTS_TIMEOUT\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 123,
+      "text": "detail=f\"IELTS 聚合器未找到（缺少 {_SCRIPT_NAME}）；已尝试：{tried}\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 125,
+      "text": "node = os.environ.get(\"EXAMDATA_NODE\") or shutil.which(\"node\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 128,
+      "text": "status_code=503, detail=\"找不到 node 可执行文件（可用 EXAMDATA_NODE 指定）\""
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 131,
+      "text": "argv = [node, str(directory / _SCRIPT_NAME), cmd, *(str(a) for a in args)]"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 133,
+      "text": "proc = await asyncio.create_subprocess_exec("
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 144,
+      "text": "out, err = await asyncio.wait_for(proc.communicate(), timeout=limit)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 212,
+      "text": "\"aggregator\": \"ielts-api/ielts-cli.mjs（Node ≥18，零 npm 依赖）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 225,
+      "text": "\"EXAMDATA_IELTS_DIR / IELTS_API_DIR\": \"聚合器目录（默认 <repo>/ielts-api）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 226,
+      "text": "\"EXAMDATA_NODE\": \"node 可执行文件（默认从 PATH 找）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 227,
+      "text": "\"EXAMDATA_IELTS_TIMEOUT\": \"所有 IELTS 路由的子进程超时（秒）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 228,
+      "text": "\"EXAMDATA_IELTS_MAX_CONCURRENT\": \"每进程同时执行的 IELTS 子进程数（默认 4，1–64）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 229,
+      "text": "\"EXAMDATA_IELTS_QUEUE_TIMEOUT\": \"等待并发槽位超时秒数（默认 5，超时返回 503）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 230,
+      "text": "\"EXAMDATA_IELTS_DATA_DIR\": \"v2 索引/覆盖数据根（透传给 Node resolver；默认仓库旁 ielts-data）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 248,
+      "text": "return await _run(\"pte-book\", book, timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 256,
+      "text": "return await _run(\"reading\", book, test, timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 257,
+      "text": "return await _run(\"reading\", book, test, passage, timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 264,
+      "text": "return await _run(\"reading-enriched\", book, test, passage, timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 269,
+      "text": "return await _run(\"listening-qa\", book, test, timeout=180)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 276,
+      "text": "\"单册单套的完整视图，等价于 CLI `node ielts-cli.mjs aggregate <book> <test>`。\""
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 285,
+      "text": "return await _run(\"aggregate\", book, test, timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 290,
+      "text": "return await _run(\"coverage\", timeout=600)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 300,
+      "text": "return await _run(\"cam21-reading\", test, timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 305,
+      "text": "return await _run(\"cam21-listening\", test, timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 310,
+      "text": "return await _run(\"cam21-coverage\", timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 320,
+      "text": "return await _run(\"ito-script\", book, test, timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 325,
+      "text": "return await _run(\"ito-coverage\", timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 330,
+      "text": "return await _run(\"listening-script\", book, timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 337,
+      "text": "return await _run(\"listening-audio\", book, test, part, timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 347,
+      "text": "return await _run(\"pdf\", book, timeout=600)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 352,
+      "text": "return await _run(\"lfs-coverage\", timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 357,
+      "text": "return await _run(\"pdf21\", timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 367,
+      "text": "return await _run(\"iprog-listening\", book, test, timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 372,
+      "text": "return await _run(\"iprog-coverage\", timeout=90)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 379,
+      "text": "return await _run(\"zhan-reading\", book, test, passage, timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 384,
+      "text": "return await _run(\"zhan-coverage\", timeout=180)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 394,
+      "text": "return await _run(\"info\", timeout=60)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 399,
+      "text": "return await _run(\"books-v2\", timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 411,
+      "text": "return await _run(\"test-v2\", *args, timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 442,
+      "text": "return await _run(\"questions-v2\", *args, timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 447,
+      "text": "return await _run(\"question-v2\", question_id, timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 460,
+      "text": "return await _run(\"coverage-v2\", *args, timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 465,
+      "text": "meta = await _run(\"asset-v2\", asset_id, timeout=60)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 6,
+      "text": "（`<repo>/toefl-api/toefl-cli.mjs`，零 npm 依赖），把考满分（toefl.kmf.com）"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 14,
+      "text": "- 每次请求用 `node toefl-cli.mjs <cmd> …` 起一个短命子进程，并限制并发，"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 21,
+      "text": "- 聚合器目录可用 `EXAMDATA_TOEFL_DIR`（或 `TOEFL_API_DIR`）覆盖；"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 22,
+      "text": "node 可执行文件可用 `EXAMDATA_NODE` 覆盖；全部超时可用"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 23,
+      "text": "`EXAMDATA_TOEFL_TIMEOUT`（秒）整体覆盖。"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 45,
+      "text": "_SCRIPT_NAME = \"toefl-cli.mjs\""
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 49,
+      "text": "def _gate() -> asyncio.Semaphore:"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 57,
+      "text": "capacity = int(os.environ.get(\"EXAMDATA_TOEFL_MAX_CONCURRENT\", \"4\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 62,
+      "text": "semaphore = asyncio.Semaphore(capacity)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 70,
+      "text": "queue_timeout = float(os.environ.get(\"EXAMDATA_TOEFL_QUEUE_TIMEOUT\", \"5\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 76,
+      "text": "await asyncio.wait_for(semaphore.acquire(), timeout=queue_timeout)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 80,
+      "text": "return await _run_process(cmd, *args, timeout=timeout)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 87,
+      "text": "env = os.environ.get(\"EXAMDATA_TOEFL_DIR\") or os.environ.get(\"TOEFL_API_DIR\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 101,
+      "text": "if (directory / _SCRIPT_NAME).is_file():"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 107,
+      "text": "raw = os.environ.get(\"EXAMDATA_TOEFL_TIMEOUT\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 125,
+      "text": "detail=f\"TOEFL 聚合器未找到（缺少 {_SCRIPT_NAME}）；已尝试：{tried}\","
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 127,
+      "text": "node = os.environ.get(\"EXAMDATA_NODE\") or shutil.which(\"node\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 130,
+      "text": "status_code=503, detail=\"找不到 node 可执行文件（可用 EXAMDATA_NODE 指定）\""
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 133,
+      "text": "argv = [node, str(directory / _SCRIPT_NAME), cmd, *(str(a) for a in args)]"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 135,
+      "text": "proc = await asyncio.create_subprocess_exec("
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 146,
+      "text": "out, err = await asyncio.wait_for(proc.communicate(), timeout=limit)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 196,
+      "text": "\"aggregator\": \"toefl-api/toefl-cli.mjs（Node ≥18，零 npm 依赖）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 226,
+      "text": "\"EXAMDATA_TOEFL_DIR / TOEFL_API_DIR\": \"聚合器目录（默认 <repo>/toefl-api）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 227,
+      "text": "\"EXAMDATA_NODE\": \"node 可执行文件（默认从 PATH 找）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 228,
+      "text": "\"EXAMDATA_TOEFL_TIMEOUT\": \"所有 TOEFL 路由的子进程超时（秒）\","
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 245,
+      "text": "return await _run(\"coverage\", timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 264,
+      "text": "return await _run(\"sets\", *args, timeout=60)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 286,
+      "text": "return await _run(\"get\", *args, timeout=120)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 305,
+      "text": "return await _run(\"questions\", *args, timeout=240)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 321,
+      "text": "return await _run(\"detail\", *args, timeout=240)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 338,
+      "text": "return await _run(\"search\", *args, timeout=300)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 363,
+      "text": "return await _run(\"jj\", *args, timeout=240)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 376,
+      "text": "return await _run(\"jj\", *args, timeout=60)"
+    }
+  ],
+  "frontend_network_calls": {
+    "hits": [
+      {
+        "file": "frontend/app.js",
+        "line": 18,
+        "text": "async function api(path) {const r = await fetch('/gateway' + path);const data = await r.json();if (!r.ok) throw new Error(typeof data.detail === 'string' ? data"
+      },
+      {
+        "file": "frontend/app.js",
+        "line": 52,
+        "text": "try {const response=await fetch('/resources?'+params(query));const data=await response.json();if(!response.ok) throw new Error(data.detail || '来源查询失败');if (id !"
+      },
+      {
+        "file": "frontend/app.js",
+        "line": 89,
+        "text": "try {const response = await fetch('/syllabi.json');if (response.ok) syllabi = await response.json();} catch {}"
+      },
+      {
+        "file": "frontend/app.js",
+        "line": 90,
+        "text": "try {const response = await fetch('/catalog.json');if (!response.ok) throw new Error('目录快照加载失败');const data=await response.json();catalog=data.items;edexcelSubj"
+      },
+      {
+        "file": "frontend/build-syllabi.mjs",
+        "line": 8,
+        "text": "const CIE_ORIGIN = 'https://www.cambridgeinternational.org';"
+      },
+      {
+        "file": "frontend/build-syllabi.mjs",
+        "line": 9,
+        "text": "const PEARSON_ORIGIN = 'https://qualifications.pearson.com';"
+      },
+      {
+        "file": "frontend/build-syllabi.mjs",
+        "line": 12,
+        "text": "'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-advanced/cambridge-international-as-and-a-levels/subjects/',"
+      },
+      {
+        "file": "frontend/build-syllabi.mjs",
+        "line": 13,
+        "text": "'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/subjects/',"
+      },
+      {
+        "file": "frontend/build-syllabi.mjs",
+        "line": 14,
+        "text": "'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-o-level/subjects/',"
+      },
+      {
+        "file": "frontend/build-syllabi.mjs",
+        "line": 76,
+        "text": "const response = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Language': 'en' }, signal: AbortSignal.timeout(timeout), redirect: 'follow' });"
+      },
+      {
+        "file": "frontend/index.html",
+        "line": 2,
+        "text": "<html lang=\"zh-CN\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta name=\"theme-color\" content=\"#ffffff\"><t"
+      },
+      {
+        "file": "frontend/resources.mjs",
+        "line": 2,
+        "text": "const origin='https://qualifications.pearson.com';"
+      },
+      {
+        "file": "frontend/resources.mjs",
+        "line": 10,
+        "text": "return [{...query,type:types[m[4]],paper:m[5] || '',url:`https://cie.fraft.cn/obj/Common/Fetch/redir/${name}`,title:name,origin:'live'}];"
+      },
+      {
+        "file": "frontend/resources.mjs",
+        "line": 27,
+        "text": "const res=await fetch(url,{...options,signal:AbortSignal.timeout(45000),redirect:'error'});"
+      },
+      {
+        "file": "frontend/resources.mjs",
+        "line": 59,
+        "text": "const res=await request('https://cie.fraft.cn/obj/Common/Fetch/renum',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSe"
+      },
+      {
+        "file": "frontend/resources.mjs",
+        "line": 76,
+        "text": "const probe=await fetch(origin+path,{method:'HEAD',signal:AbortSignal.timeout(20000),redirect:'error'});"
+      },
+      {
+        "file": "frontend/search.test.mjs",
+        "line": 14,
+        "text": "test('paper and mark scheme pair only with a complete matching identity',()=>{const base={board:'cie',code:'9709',year:2024,season:'Jun',paper:'11'};const group"
+      },
+      {
+        "file": "frontend/search.test.mjs",
+        "line": 16,
+        "text": "import {cieDocuments,pearsonDocuments,allSeasonResources} from './resources.mjs';"
+      },
+      {
+        "file": "frontend/search.test.mjs",
+        "line": 25,
+        "text": "return {documents:[{...q,code:q.subject,url:`https://test/${q.season}`,type:'question_paper'}],warning:''};"
+      },
+      {
+        "file": "frontend/search.test.mjs",
+        "line": 33,
+        "text": "return {documents:q.season==='Jun'?[{url:'https://test/june',season:q.season}]:[],warning:''};"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 5,
+        "text": "import { resources } from './resources.mjs';"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 8,
+        "text": "const upstream = new URL(process.env.EXAMDATA_URL || 'http://127.0.0.1:8000');"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 22,
+        "text": "const url = new URL(req.url, 'http://localhost');"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 26,
+        "text": "if (url.pathname === '/resources') {"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 34,
+        "text": "if (url.pathname.startsWith('/gateway/')) {"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 35,
+        "text": "const path = url.pathname.slice('/gateway'.length);"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 40,
+        "text": "const response = await fetch(target, {"
+      },
+      {
+        "file": "frontend/server.mjs",
+        "line": 63,
+        "text": "}).listen(port, '127.0.0.1', () => console.log(`Examdata frontend: http://127.0.0.1:${port}`));"
+      },
+      {
+        "file": "frontend/syllabi.test.mjs",
+        "line": 4,
+        "text": "import { syllabusFor } from './resources.mjs';"
+      },
+      {
+        "file": "frontend/syllabi.test.mjs",
+        "line": 21,
+        "text": "url: 'https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf',"
+      },
+      {
+        "file": "frontend/syllabi.test.mjs",
+        "line": 33,
+        "text": "url: 'https://qualifications.pearson.com/content/dam/pdf/x/spec.pdf',"
+      },
+      {
+        "file": "frontend/syllabi.test.mjs",
+        "line": 39,
+        "text": "cie: { '9709': { title: 'Mathematics - 9709', page: 'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level"
+      },
+      {
+        "file": "frontend/syllabi.test.mjs",
+        "line": 40,
+        "text": "edexcel: { 'ial18-biology': { title: 'Biology (2018)', page: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/biology"
+      }
+    ],
+    "counts_by_file": {
+      "frontend/app.js": 4,
+      "frontend/build-syllabi.mjs": 6,
+      "frontend/index.html": 1,
+      "frontend/resources.mjs": 5,
+      "frontend/search.test.mjs": 4,
+      "frontend/server.mjs": 8,
+      "frontend/syllabi.test.mjs": 5
+    }
+  },
+  "env_reads_python": [
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 55,
+      "var": "EXAMDATA_IELTS_MAX_CONCURRENT",
+      "text": "capacity = int(os.environ.get(\"EXAMDATA_IELTS_MAX_CONCURRENT\", \"4\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 68,
+      "var": "EXAMDATA_IELTS_QUEUE_TIMEOUT",
+      "text": "queue_timeout = float(os.environ.get(\"EXAMDATA_IELTS_QUEUE_TIMEOUT\", \"5\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 85,
+      "var": "EXAMDATA_IELTS_DIR",
+      "text": "env = os.environ.get(\"EXAMDATA_IELTS_DIR\") or os.environ.get(\"IELTS_API_DIR\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 105,
+      "var": "EXAMDATA_IELTS_TIMEOUT",
+      "text": "raw = os.environ.get(\"EXAMDATA_IELTS_TIMEOUT\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 125,
+      "var": "EXAMDATA_NODE",
+      "text": "node = os.environ.get(\"EXAMDATA_NODE\") or shutil.which(\"node\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/security.py",
+      "line": 99,
+      "var": "",
+      "text": "raw = os.environ.get(CORS_ORIGINS_ENV, \"\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/security.py",
+      "line": 110,
+      "var": "",
+      "text": "api_key = os.environ.get(API_KEY_ENV)"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 57,
+      "var": "EXAMDATA_TOEFL_MAX_CONCURRENT",
+      "text": "capacity = int(os.environ.get(\"EXAMDATA_TOEFL_MAX_CONCURRENT\", \"4\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 70,
+      "var": "EXAMDATA_TOEFL_QUEUE_TIMEOUT",
+      "text": "queue_timeout = float(os.environ.get(\"EXAMDATA_TOEFL_QUEUE_TIMEOUT\", \"5\"))"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 87,
+      "var": "EXAMDATA_TOEFL_DIR",
+      "text": "env = os.environ.get(\"EXAMDATA_TOEFL_DIR\") or os.environ.get(\"TOEFL_API_DIR\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 107,
+      "var": "EXAMDATA_TOEFL_TIMEOUT",
+      "text": "raw = os.environ.get(\"EXAMDATA_TOEFL_TIMEOUT\")"
+    },
+    {
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 127,
+      "var": "EXAMDATA_NODE",
+      "text": "node = os.environ.get(\"EXAMDATA_NODE\") or shutil.which(\"node\")"
+    },
+    {
+      "file": "examdata/src/examdata/timetable/build.py",
+      "line": 39,
+      "var": "EXAMDATA_ZONE5_PDF_DIR",
+      "text": "env = os.environ.get(\"EXAMDATA_ZONE5_PDF_DIR\")"
+    },
+    {
+      "file": "examdata/src/examdata/timetable/build.py",
+      "line": 46,
+      "var": "EXAMDATA_ZONE5_MATRIX",
+      "text": "env = os.environ.get(\"EXAMDATA_ZONE5_MATRIX\")"
+    },
+    {
+      "file": "examdata/src/examdata/timetable/build_edexcel.py",
+      "line": 37,
+      "var": "EXAMDATA_EDEXCEL_PDF_DIR",
+      "text": "env = os.environ.get(\"EXAMDATA_EDEXCEL_PDF_DIR\")"
+    },
+    {
+      "file": "examdata/src/examdata/timetable/build_edexcel.py",
+      "line": 44,
+      "var": "EXAMDATA_EDEXCEL_MANIFEST",
+      "text": "env = os.environ.get(\"EXAMDATA_EDEXCEL_MANIFEST\")"
+    }
+  ],
+  "env_reads_node": [
+    {
+      "file": "ielts-api/data-store.mjs",
+      "line": 36,
+      "var": "EXAMDATA_IELTS_DATA_DIR",
+      "text": "const dir = explicit || process.env.EXAMDATA_IELTS_DATA_DIR || path.join(WORKSPACE_ROOT, \"ielts-data\");"
+    },
+    {
+      "file": "ielts-api/fetch-source.mjs",
+      "line": 39,
+      "var": "EXAMDATA_IELTS_MAX_REQUESTS",
+      "text": "maxRequests: Number(process.env.EXAMDATA_IELTS_MAX_REQUESTS || 200),"
+    },
+    {
+      "file": "ielts-api/fetch-source.mjs",
+      "line": 40,
+      "var": "EXAMDATA_IELTS_MAX_BYTES",
+      "text": "maxBytes: Number(process.env.EXAMDATA_IELTS_MAX_BYTES || 1024 * MiB),"
+    },
+    {
+      "file": "ielts-api/fetch-source.mjs",
+      "line": 41,
+      "var": "EXAMDATA_IELTS_MAX_BYTES_PER_REQUEST",
+      "text": "maxBytesPerRequest: Number(process.env.EXAMDATA_IELTS_MAX_BYTES_PER_REQUEST || 512 * MiB),"
+    },
+    {
+      "file": "ielts-api/pdf-adapter.mjs",
+      "line": 46,
+      "var": "EXAMDATA_IELTS_PYTHON",
+      "text": "process.env.EXAMDATA_IELTS_PYTHON ||"
+    },
+    {
+      "file": "ielts-api/pte.mjs",
+      "line": 129,
+      "var": "IELTS_RUN_ID",
+      "text": "runId: process.env.IELTS_RUN_ID || process.env.EXAMDATA_IELTS_RUN_ID || \"pte-\" + day,"
+    },
+    {
+      "file": "ielts-api/pte.mjs",
+      "line": 129,
+      "var": "EXAMDATA_IELTS_RUN_ID",
+      "text": "runId: process.env.IELTS_RUN_ID || process.env.EXAMDATA_IELTS_RUN_ID || \"pte-\" + day,"
+    },
+    {
+      "file": "ielts-api/tests/ielts-store-fetch.test.mjs",
+      "line": 140,
+      "var": "C_ROOT",
+      "text": "const r = storeRaw({ root: process.env.C_ROOT, source: \"s-conc\", body: Buffer.from(process.env.C_BODY), meta: { note: \"proc-\" + process.pid } });"
+    },
+    {
+      "file": "ielts-api/tests/ielts-store-fetch.test.mjs",
+      "line": 140,
+      "var": "C_BODY",
+      "text": "const r = storeRaw({ root: process.env.C_ROOT, source: \"s-conc\", body: Buffer.from(process.env.C_BODY), meta: { note: \"proc-\" + process.pid } });"
+    },
+    {
+      "file": "ielts-api/tests/ielts-taxonomy.test.mjs",
+      "line": 49,
+      "var": "EXAMDATA_IELTS_DATA_DIR",
+      "text": "const DATA_ROOT = process.env.EXAMDATA_IELTS_DATA_DIR || path.resolve(__dirname, \"..\", \"..\", \"ielts-data\");"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 40,
+      "var": "EXAMDATA_IELTS_DATA_DIR",
+      "text": "const DATA_DIR = process.env.EXAMDATA_IELTS_DATA_DIR || path.join(WORKSPACE, \"ielts-data\");"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 251,
+      "var": "EXAMDATA_IELTS_DATA_DIR",
+      "text": "EXAMDATA_IELTS_DATA_DIR: process.env.EXAMDATA_IELTS_DATA_DIR ?? null,"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 252,
+      "var": "EXAMDATA_IELTS_DIR",
+      "text": "EXAMDATA_IELTS_DIR: process.env.EXAMDATA_IELTS_DIR ?? null,"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 253,
+      "var": "EXAMDATA_NODE",
+      "text": "EXAMDATA_NODE: process.env.EXAMDATA_NODE ?? null,"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 254,
+      "var": "EXAMDATA_DATA_DIR",
+      "text": "EXAMDATA_DATA_DIR: process.env.EXAMDATA_DATA_DIR ?? null,"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 255,
+      "var": "EXAMDATA_IELTS_TIMEOUT",
+      "text": "EXAMDATA_IELTS_TIMEOUT: process.env.EXAMDATA_IELTS_TIMEOUT ?? null,"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 272,
+      "var": "EXAMDATA_IELTS_DIR",
+      "text": "resolved: process.env.EXAMDATA_IELTS_DIR || IELTS_API_DIR,"
+    },
+    {
+      "file": "ielts-api/tools/baseline.mjs",
+      "line": 273,
+      "var": "EXAMDATA_IELTS_DIR",
+      "text": "exists: fs.existsSync(process.env.EXAMDATA_IELTS_DIR || IELTS_API_DIR),"
+    },
+    {
+      "file": "ielts-api/tools/build-question-index.mjs",
+      "line": 31,
+      "var": "EXAMDATA_IELTS_DATA_DIR",
+      "text": "const DATA_ROOT = process.env.EXAMDATA_IELTS_DATA_DIR || path.join(REPO, \"ielts-data\");"
+    },
+    {
+      "file": "frontend/server.mjs",
+      "line": 8,
+      "var": "EXAMDATA_URL",
+      "text": "const upstream = new URL(process.env.EXAMDATA_URL || 'http://127.0.0.1:8000');"
+    },
+    {
+      "file": "frontend/server.mjs",
+      "line": 9,
+      "var": "FRONTEND_PORT",
+      "text": "const port = Number(process.env.FRONTEND_PORT || 5188);"
+    },
+    {
+      "file": "frontend/server.mjs",
+      "line": 42,
+      "var": "EXAMDATA_API_KEY",
+      "text": "headers: process.env.EXAMDATA_API_KEY ? { 'X-API-Key': process.env.EXAMDATA_API_KEY } : {},"
+    },
+    {
+      "file": "frontend/server.mjs",
+      "line": 42,
+      "var": "EXAMDATA_API_KEY",
+      "text": "headers: process.env.EXAMDATA_API_KEY ? { 'X-API-Key': process.env.EXAMDATA_API_KEY } : {},"
+    }
+  ],
+  "env_templates": [],
+  "data_root_dirs": {
+    ".data": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "artifacts",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:14:10+08:00"
+        },
+        {
+          "name": "assets",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:14:10+08:00"
+        },
+        {
+          "name": "raw_pages",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:14:10+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "examdata/.data": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "artifacts",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T07:49:55+08:00"
+        },
+        {
+          "name": "assets",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-28T21:35:23+08:00"
+        },
+        {
+          "name": "backup",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T21:50:09+08:00"
+        },
+        {
+          "name": "discovery.json",
+          "kind": "file",
+          "size": 1583357,
+          "mtime": "2026-09-28T21:50:15+08:00"
+        },
+        {
+          "name": "discovery.log",
+          "kind": "file",
+          "size": 12312,
+          "mtime": "2026-09-28T21:50:15+08:00"
+        },
+        {
+          "name": "download_specs.py",
+          "kind": "file",
+          "size": 2835,
+          "mtime": "2026-10-02T23:50:07+08:00"
+        },
+        {
+          "name": "edexcel_papers",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T02:41:57+08:00"
+        },
+        {
+          "name": "examdata.db",
+          "kind": "file",
+          "size": 312188928,
+          "mtime": "2026-10-05T14:37:19+08:00"
+        },
+        {
+          "name": "examdata.db-shm",
+          "kind": "file",
+          "size": 98304,
+          "mtime": "2026-10-03T12:55:13+08:00"
+        },
+        {
+          "name": "examdata.db-wal",
+          "kind": "file",
+          "size": 36544432,
+          "mtime": "2026-10-05T14:38:43+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-jev-apply2",
+          "kind": "file",
+          "size": 297164800,
+          "mtime": "2026-10-04T00:11:34+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-jev-apply2-shm",
+          "kind": "file",
+          "size": 32768,
+          "mtime": "2026-10-05T08:49:52+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-jev-apply2-wal",
+          "kind": "file",
+          "size": 0,
+          "mtime": "2026-10-05T08:49:52+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-provrebuild",
+          "kind": "file",
+          "size": 310452224,
+          "mtime": "2026-10-05T14:36:46+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r13",
+          "kind": "file",
+          "size": 309915648,
+          "mtime": "2026-10-05T13:48:24+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r13-shm",
+          "kind": "file",
+          "size": 32768,
+          "mtime": "2026-10-05T15:12:37+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r13-wal",
+          "kind": "file",
+          "size": 0,
+          "mtime": "2026-10-05T15:12:37+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r13fix",
+          "kind": "file",
+          "size": 310448128,
+          "mtime": "2026-10-05T14:03:41+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r13fix-shm",
+          "kind": "file",
+          "size": 32768,
+          "mtime": "2026-10-05T15:12:37+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r13fix-wal",
+          "kind": "file",
+          "size": 0,
+          "mtime": "2026-10-05T15:12:37+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r2-apply",
+          "kind": "file",
+          "size": 297295872,
+          "mtime": "2026-10-04T01:12:37+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r2-apply-shm",
+          "kind": "file",
+          "size": 32768,
+          "mtime": "2026-10-05T08:49:52+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r2-apply-wal",
+          "kind": "file",
+          "size": 0,
+          "mtime": "2026-10-05T08:49:52+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r7",
+          "kind": "file",
+          "size": 305393664,
+          "mtime": "2026-10-05T08:42:56+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r7-shm",
+          "kind": "file",
+          "size": 32768,
+          "mtime": "2026-10-05T08:49:52+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r7-wal",
+          "kind": "file",
+          "size": 0,
+          "mtime": "2026-10-05T08:49:52+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r8",
+          "kind": "file",
+          "size": 305405952,
+          "mtime": "2026-10-05T11:20:53+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r8-shm",
+          "kind": "file",
+          "size": 32768,
+          "mtime": "2026-10-05T15:12:37+08:00"
+        },
+        {
+          "name": "examdata.db.bak-pre-r8-wal",
+          "kind": "file",
+          "size": 0,
+          "mtime": "2026-10-05T15:12:37+08:00"
+        },
+        {
+          "name": "extract_spec_text.py",
+          "kind": "file",
+          "size": 836,
+          "mtime": "2026-10-02T23:55:33+08:00"
+        },
+        {
+          "name": "probe_bio_parse.py",
+          "kind": "file",
+          "size": 1773,
+          "mtime": "2026-10-03T00:04:04+08:00"
+        },
+        {
+          "name": "probe_edx.py",
+          "kind": "file",
+          "size": 2305,
+          "mtime": "2026-10-02T23:45:58+08:00"
+        },
+        {
+          "name": "probe_maths_parse.py",
+          "kind": "file",
+          "size": 1118,
+          "mtime": "2026-10-03T00:02:57+08:00"
+        },
+        {
+          "name": "probe_maths_parse2.py",
+          "kind": "file",
+          "size": 1818,
+          "mtime": "2026-10-03T00:03:27+08:00"
+        },
+        {
+          "name": "probe_season.py",
+          "kind": "file",
+          "size": 1011,
+          "mtime": "2026-10-02T23:48:37+08:00"
+        },
+        {
+          "name": "probe_spec_layout.py",
+          "kind": "file",
+          "size": 1737,
+          "mtime": "2026-10-02T23:54:14+08:00"
+        },
+        {
+          "name": "question_indexes",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T10:48:55+08:00"
+        },
+        {
+          "name": "raw_pages",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-28T21:35:23+08:00"
+        },
+        {
+          "name": "samples",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-28T21:39:14+08:00"
+        },
+        {
+          "name": "specs",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T00:09:03+08:00"
+        }
+      ],
+      "truncated": true
+    },
+    "examdata/.pytest_cache": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": ".gitignore",
+          "kind": "file",
+          "size": 37,
+          "mtime": "2026-09-28T21:34:59+08:00"
+        },
+        {
+          "name": "CACHEDIR.TAG",
+          "kind": "file",
+          "size": 191,
+          "mtime": "2026-09-28T21:34:59+08:00"
+        },
+        {
+          "name": "README.md",
+          "kind": "file",
+          "size": 302,
+          "mtime": "2026-09-28T21:34:59+08:00"
+        },
+        {
+          "name": "accept-build-final.log",
+          "kind": "file",
+          "size": 942,
+          "mtime": "2026-09-30T19:34:21+08:00"
+        },
+        {
+          "name": "accept-build.log",
+          "kind": "file",
+          "size": 942,
+          "mtime": "2026-09-30T19:28:16+08:00"
+        },
+        {
+          "name": "accept-corpus-final",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:36:42+08:00"
+        },
+        {
+          "name": "accept-corpus-wheel-final.log",
+          "kind": "file",
+          "size": 2203,
+          "mtime": "2026-09-30T19:36:42+08:00"
+        },
+        {
+          "name": "accept-diff-check.log",
+          "kind": "file",
+          "size": 3743,
+          "mtime": "2026-09-30T19:40:59+08:00"
+        },
+        {
+          "name": "accept-empty",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-02T15:30:08+08:00"
+        },
+        {
+          "name": "accept-empty-wheel-final.log",
+          "kind": "file",
+          "size": 3047,
+          "mtime": "2026-09-30T19:36:28+08:00"
+        },
+        {
+          "name": "accept-empty-wheel.log",
+          "kind": "file",
+          "size": 3128,
+          "mtime": "2026-09-30T19:31:39+08:00"
+        },
+        {
+          "name": "accept-empty.log",
+          "kind": "file",
+          "size": 2863,
+          "mtime": "2026-09-30T19:25:20+08:00"
+        },
+        {
+          "name": "accept-installed",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:28:17+08:00"
+        },
+        {
+          "name": "accept-installed-final",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:34:23+08:00"
+        },
+        {
+          "name": "accept-missing-wheel-final.log",
+          "kind": "file",
+          "size": 3047,
+          "mtime": "2026-09-30T19:35:41+08:00"
+        },
+        {
+          "name": "accept-missing-wheel.log",
+          "kind": "file",
+          "size": 3128,
+          "mtime": "2026-09-30T19:29:19+08:00"
+        },
+        {
+          "name": "accept-normal.log",
+          "kind": "file",
+          "size": 1973,
+          "mtime": "2026-09-30T19:34:42+08:00"
+        },
+        {
+          "name": "accept-portable",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:32:02+08:00"
+        },
+        {
+          "name": "accept-portable-final",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:36:52+08:00"
+        },
+        {
+          "name": "accept-postgres-review.log",
+          "kind": "file",
+          "size": 102,
+          "mtime": "2026-09-30T20:21:53+08:00"
+        },
+        {
+          "name": "accept-uninitialized-wheel-final.log",
+          "kind": "file",
+          "size": 3047,
+          "mtime": "2026-09-30T19:36:03+08:00"
+        },
+        {
+          "name": "accept-uninitialized-wheel.log",
+          "kind": "file",
+          "size": 3128,
+          "mtime": "2026-09-30T19:31:18+08:00"
+        },
+        {
+          "name": "accept-unparsed-wheel-final.log",
+          "kind": "file",
+          "size": 3047,
+          "mtime": "2026-09-30T19:36:52+08:00"
+        },
+        {
+          "name": "accept-unparsed-wheel.log",
+          "kind": "file",
+          "size": 3128,
+          "mtime": "2026-09-30T19:32:02+08:00"
+        },
+        {
+          "name": "accept-wheel",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:24:18+08:00"
+        },
+        {
+          "name": "accept-wheel-final",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:34:21+08:00"
+        },
+        {
+          "name": "accept-wheel-http-final.log",
+          "kind": "file",
+          "size": 842,
+          "mtime": "2026-09-30T19:35:31+08:00"
+        },
+        {
+          "name": "accept-wheel-http.log",
+          "kind": "file",
+          "size": 836,
+          "mtime": "2026-09-30T19:30:31+08:00"
+        },
+        {
+          "name": "callable-api",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-02T10:58:37+08:00"
+        },
+        {
+          "name": "check_cie_pilot_offline.py",
+          "kind": "file",
+          "size": 1789,
+          "mtime": "2026-10-01T11:07:24+08:00"
+        },
+        {
+          "name": "cie-pilot-offline-check",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T11:07:26+08:00"
+        },
+        {
+          "name": "cie-prompt-diff-check.log",
+          "kind": "file",
+          "size": 3806,
+          "mtime": "2026-10-01T11:53:47+08:00"
+        },
+        {
+          "name": "continuation-ielts",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-02T14:02:15+08:00"
+        },
+        {
+          "name": "examdata-tests-92s8iqyp",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:45:58+08:00"
+        },
+        {
+          "name": "examdata-tests-l4lz8b1o",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T14:15:35+08:00"
+        },
+        {
+          "name": "governance-final.log",
+          "kind": "file",
+          "size": 914,
+          "mtime": "2026-09-30T19:20:31+08:00"
+        },
+        {
+          "name": "index-retrieval-build.log",
+          "kind": "file",
+          "size": 1104,
+          "mtime": "2026-10-01T09:28:30+08:00"
+        },
+        {
+          "name": "index-retrieval-diff-check.log",
+          "kind": "file",
+          "size": 3806,
+          "mtime": "2026-10-01T09:28:57+08:00"
+        },
+        {
+          "name": "index-retrieval-installed",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T09:28:30+08:00"
+        },
+        {
+          "name": "index-retrieval-wheel",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T09:28:29+08:00"
+        }
+      ],
+      "truncated": true
+    },
+    "examdata/pytest-of-weo": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "pytest-10",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T11:51:38+08:00"
+        },
+        {
+          "name": "pytest-16",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T14:21:42+08:00"
+        },
+        {
+          "name": "pytest-19",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:23:15+08:00"
+        },
+        {
+          "name": "pytest-20",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:23:46+08:00"
+        },
+        {
+          "name": "pytest-21",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T18:25:09+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "ielts-data": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "assets",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T05:06:21+08:00"
+        },
+        {
+          "name": "audio",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T09:00:19+08:00"
+        },
+        {
+          "name": "decisions",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T04:45:09+08:00"
+        },
+        {
+          "name": "derived",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T04:45:09+08:00"
+        },
+        {
+          "name": "indexes",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:20:36+08:00"
+        },
+        {
+          "name": "manifests",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:20:36+08:00"
+        },
+        {
+          "name": "normalized",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T00:06:49+08:00"
+        },
+        {
+          "name": "pdf",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T00:52:50+08:00"
+        },
+        {
+          "name": "raw",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T08:28:26+08:00"
+        },
+        {
+          "name": "refresh",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T00:56:44+08:00"
+        },
+        {
+          "name": "runs",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:20:18+08:00"
+        },
+        {
+          "name": "test-examdata",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T22:00:59+08:00"
+        },
+        {
+          "name": "test-s03",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T03:40:15+08:00"
+        },
+        {
+          "name": "test-s06",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T03:41:02+08:00"
+        },
+        {
+          "name": "test-s15",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T03:40:14+08:00"
+        },
+        {
+          "name": "tools",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-04T09:38:34+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "toefl-api/data": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "coverage.json",
+          "kind": "file",
+          "size": 70041,
+          "mtime": "2026-10-05T00:02:35+08:00"
+        },
+        {
+          "name": "ddy-index.json",
+          "kind": "file",
+          "size": 17212,
+          "mtime": "2026-10-05T00:02:35+08:00"
+        },
+        {
+          "name": "jj-index.json",
+          "kind": "file",
+          "size": 83225,
+          "mtime": "2026-10-05T09:47:45+08:00"
+        },
+        {
+          "name": "kmf-index.json",
+          "kind": "file",
+          "size": 130205,
+          "mtime": "2026-10-05T00:00:54+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "toefl-api/audit-20261005": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "audio-summary.json",
+          "kind": "file",
+          "size": 1147,
+          "mtime": "2026-10-05T11:48:14+08:00"
+        },
+        {
+          "name": "cache-summary.json",
+          "kind": "file",
+          "size": 5072,
+          "mtime": "2026-10-05T11:48:14+08:00"
+        },
+        {
+          "name": "cleanup-manifest.json",
+          "kind": "file",
+          "size": 37897,
+          "mtime": "2026-10-05T11:52:30+08:00"
+        },
+        {
+          "name": "flow-summary.json",
+          "kind": "file",
+          "size": 11170,
+          "mtime": "2026-10-05T11:48:00+08:00"
+        },
+        {
+          "name": "pytest-first-failure.log",
+          "kind": "file",
+          "size": 1480,
+          "mtime": "2026-10-05T11:56:44+08:00"
+        },
+        {
+          "name": "pytest-incomplete.log",
+          "kind": "file",
+          "size": 553,
+          "mtime": "2026-10-05T11:58:12+08:00"
+        },
+        {
+          "name": "server.log",
+          "kind": "file",
+          "size": 3134,
+          "mtime": "2026-10-05T11:46:16+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "toefl-api/repair-20261005": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "PLAN.md",
+          "kind": "file",
+          "size": 3364,
+          "mtime": "2026-10-05T12:18:53+08:00"
+        },
+        {
+          "name": "REPAIR_REPORT.md",
+          "kind": "file",
+          "size": 19785,
+          "mtime": "2026-10-05T14:44:29+08:00"
+        },
+        {
+          "name": "backup",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T12:18:48+08:00"
+        },
+        {
+          "name": "cleanup-manifest.json",
+          "kind": "file",
+          "size": 5383,
+          "mtime": "2026-10-05T14:44:01+08:00"
+        },
+        {
+          "name": "evidence",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T14:39:43+08:00"
+        },
+        {
+          "name": "evidence-summary.json",
+          "kind": "file",
+          "size": 5911,
+          "mtime": "2026-10-05T14:44:01+08:00"
+        },
+        {
+          "name": "hash_files.py",
+          "kind": "file",
+          "size": 3436,
+          "mtime": "2026-10-05T12:18:53+08:00"
+        },
+        {
+          "name": "hashes-before.json",
+          "kind": "file",
+          "size": 3791,
+          "mtime": "2026-10-05T12:19:10+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-location-batch/indexes": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "0413",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T13:34:05+08:00"
+        },
+        {
+          "name": "0472",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T17:07:39+08:00"
+        },
+        {
+          "name": "0478",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:29:31+08:00"
+        },
+        {
+          "name": "0495",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:25:40+08:00"
+        },
+        {
+          "name": "0509",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T13:33:54+08:00"
+        },
+        {
+          "name": "0580",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-05T01:56:01+08:00"
+        },
+        {
+          "name": "8238",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T22:37:40+08:00"
+        },
+        {
+          "name": "8386",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T22:09:07+08:00"
+        },
+        {
+          "name": "9389",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:26:29+08:00"
+        },
+        {
+          "name": "9396",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:29:55+08:00"
+        },
+        {
+          "name": "9489",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:27:20+08:00"
+        },
+        {
+          "name": "9608",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:25:56+08:00"
+        },
+        {
+          "name": "9618",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:25:21+08:00"
+        },
+        {
+          "name": "9707",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:27:25+08:00"
+        },
+        {
+          "name": "9709",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T15:01:53+08:00"
+        },
+        {
+          "name": "9713",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:25:02+08:00"
+        },
+        {
+          "name": "9715",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T14:29:50+08:00"
+        },
+        {
+          "name": "9868",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T13:32:41+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-location-batch/work": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "0413-2026-Jun-11-agent-merge.json",
+          "kind": "file",
+          "size": 1588,
+          "mtime": "2026-10-03T04:32:40+08:00"
+        },
+        {
+          "name": "0413-current-crop-manifest.json",
+          "kind": "file",
+          "size": 41143,
+          "mtime": "2026-10-02T14:29:48+08:00"
+        },
+        {
+          "name": "0413-index-before-visual-repair.json",
+          "kind": "file",
+          "size": 43384,
+          "mtime": "2026-10-02T17:52:28+08:00"
+        },
+        {
+          "name": "0413_calib_overlay.py",
+          "kind": "file",
+          "size": 2083,
+          "mtime": "2026-10-03T03:27:37+08:00"
+        },
+        {
+          "name": "0413_ink_edges.out.txt",
+          "kind": "file",
+          "size": 7162,
+          "mtime": "2026-10-03T03:31:36+08:00"
+        },
+        {
+          "name": "0413_ink_edges.py",
+          "kind": "file",
+          "size": 1874,
+          "mtime": "2026-10-03T03:30:57+08:00"
+        },
+        {
+          "name": "0413_probe_lines.py",
+          "kind": "file",
+          "size": 1170,
+          "mtime": "2026-10-02T14:47:54+08:00"
+        },
+        {
+          "name": "0413_render_verify.py",
+          "kind": "file",
+          "size": 4424,
+          "mtime": "2026-10-03T03:20:22+08:00"
+        },
+        {
+          "name": "0413_repair_index.py",
+          "kind": "file",
+          "size": 14721,
+          "mtime": "2026-10-03T03:51:42+08:00"
+        },
+        {
+          "name": "0413_zoom_edges.py",
+          "kind": "file",
+          "size": 757,
+          "mtime": "2026-10-03T03:26:02+08:00"
+        },
+        {
+          "name": "0413_zoom_edges2.py",
+          "kind": "file",
+          "size": 1036,
+          "mtime": "2026-10-03T03:29:06+08:00"
+        },
+        {
+          "name": "0472-12-edges.txt",
+          "kind": "file",
+          "size": 5729,
+          "mtime": "2026-10-03T22:55:34+08:00"
+        },
+        {
+          "name": "0472-12-lines-p45.txt",
+          "kind": "file",
+          "size": 3641,
+          "mtime": "2026-10-03T22:44:52+08:00"
+        },
+        {
+          "name": "0472-12-lines.txt",
+          "kind": "file",
+          "size": 36831,
+          "mtime": "2026-10-03T22:43:40+08:00"
+        },
+        {
+          "name": "0472-2025-12-fix-report.json",
+          "kind": "file",
+          "size": 24174,
+          "mtime": "2026-10-03T22:52:44+08:00"
+        },
+        {
+          "name": "0472-2025-12-index-before-fix.json",
+          "kind": "file",
+          "size": 27083,
+          "mtime": "2026-10-03T22:52:43+08:00"
+        },
+        {
+          "name": "0472-2025-21-region-notes.jsonl",
+          "kind": "file",
+          "size": 1636,
+          "mtime": "2026-10-04T00:30:04+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-21-fix-report.json",
+          "kind": "file",
+          "size": 8213,
+          "mtime": "2026-10-04T01:15:19+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-21-index-before-fix.json",
+          "kind": "file",
+          "size": 44873,
+          "mtime": "2026-10-04T01:14:41+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-22-fix-report.json",
+          "kind": "file",
+          "size": 8257,
+          "mtime": "2026-10-04T03:28:31+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-22-fix2-report.json",
+          "kind": "file",
+          "size": 482,
+          "mtime": "2026-10-04T04:58:15+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-22-index-before-fix.json",
+          "kind": "file",
+          "size": 44173,
+          "mtime": "2026-10-04T03:28:31+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-22-index-before-fix2.json",
+          "kind": "file",
+          "size": 47574,
+          "mtime": "2026-10-04T04:58:15+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-41-fix-report.json",
+          "kind": "file",
+          "size": 1534,
+          "mtime": "2026-10-04T05:40:04+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-41-index-before-fix.json",
+          "kind": "file",
+          "size": 6416,
+          "mtime": "2026-10-04T05:40:04+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-42-fix-report.json",
+          "kind": "file",
+          "size": 1534,
+          "mtime": "2026-10-04T06:24:36+08:00"
+        },
+        {
+          "name": "0472-2025-Jun-42-index-before-fix.json",
+          "kind": "file",
+          "size": 6415,
+          "mtime": "2026-10-04T06:24:36+08:00"
+        },
+        {
+          "name": "0472-2025-fix-report.json",
+          "kind": "file",
+          "size": 16930,
+          "mtime": "2026-10-03T21:20:18+08:00"
+        },
+        {
+          "name": "0472-2025-index-before-fix.json",
+          "kind": "file",
+          "size": 26750,
+          "mtime": "2026-10-03T21:19:54+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-11-fix-report.json",
+          "kind": "file",
+          "size": 685,
+          "mtime": "2026-10-04T07:27:52+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-11-index-before-fix.json",
+          "kind": "file",
+          "size": 24314,
+          "mtime": "2026-10-04T07:27:52+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-12-fix-report.json",
+          "kind": "file",
+          "size": 860,
+          "mtime": "2026-10-04T08:13:40+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-12-index-before-fix.json",
+          "kind": "file",
+          "size": 27796,
+          "mtime": "2026-10-04T08:13:40+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-21-fix-report.json",
+          "kind": "file",
+          "size": 695,
+          "mtime": "2026-10-04T09:31:36+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-21-fix-report2.json",
+          "kind": "file",
+          "size": 17432,
+          "mtime": "2026-10-04T10:42:24+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-21-index-before-fix.json",
+          "kind": "file",
+          "size": 43626,
+          "mtime": "2026-10-04T09:31:36+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-21-index-before-fix2.json",
+          "kind": "file",
+          "size": 43161,
+          "mtime": "2026-10-04T10:42:24+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-22-fix-report.json",
+          "kind": "file",
+          "size": 2608,
+          "mtime": "2026-10-04T21:37:28+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-22-index-before-fix.json",
+          "kind": "file",
+          "size": 43119,
+          "mtime": "2026-10-04T21:37:28+08:00"
+        },
+        {
+          "name": "0472-2026-Jun-41-fix-report.json",
+          "kind": "file",
+          "size": 2068,
+          "mtime": "2026-10-05T15:50:37+08:00"
+        }
+      ],
+      "truncated": true
+    },
+    "cie-location-batch/.data": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "artifacts",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T16:25:13+08:00"
+        },
+        {
+          "name": "assets",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T16:25:13+08:00"
+        },
+        {
+          "name": "examdata.db",
+          "kind": "file",
+          "size": 4096,
+          "mtime": "2026-10-01T16:25:13+08:00"
+        },
+        {
+          "name": "examdata.db-shm",
+          "kind": "file",
+          "size": 32768,
+          "mtime": "2026-10-02T15:30:03+08:00"
+        },
+        {
+          "name": "examdata.db-wal",
+          "kind": "file",
+          "size": 477952,
+          "mtime": "2026-10-01T16:25:13+08:00"
+        },
+        {
+          "name": "raw_pages",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T16:25:13+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-index-batch-2026-10-01": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "9709",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T10:35:39+08:00"
+        },
+        {
+          "name": "review",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T05:03:06+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-question-crops/out": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "9709_m26_qp_12",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T22:49:17+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "examdata/build": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "bdist.win-amd64",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T09:28:29+08:00"
+        },
+        {
+          "name": "lib",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-09-30T19:24:17+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "examdata/research": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "cambridge.md",
+          "kind": "file",
+          "size": 11301,
+          "mtime": "2026-09-28T21:32:00+08:00"
+        },
+        {
+          "name": "edexcel.md",
+          "kind": "file",
+          "size": 26102,
+          "mtime": "2026-09-29T10:06:28+08:00"
+        },
+        {
+          "name": "exam-materials-cie.md",
+          "kind": "file",
+          "size": 16148,
+          "mtime": "2026-10-05T11:02:45+08:00"
+        },
+        {
+          "name": "exam-materials-edexcel.md",
+          "kind": "file",
+          "size": 11230,
+          "mtime": "2026-10-05T10:39:02+08:00"
+        },
+        {
+          "name": "exam-timetable-cie-zone5.md",
+          "kind": "file",
+          "size": 12485,
+          "mtime": "2026-10-05T10:10:42+08:00"
+        },
+        {
+          "name": "exam-timetable-edexcel.md",
+          "kind": "file",
+          "size": 20035,
+          "mtime": "2026-10-05T18:21:25+08:00"
+        },
+        {
+          "name": "implementation-status.md",
+          "kind": "file",
+          "size": 16704,
+          "mtime": "2026-09-29T16:19:21+08:00"
+        }
+      ],
+      "truncated": false
+    }
+  },
+  "db_files": [
+    {
+      "path": "explore-examdata.db",
+      "exists": false
+    },
+    {
+      "path": "proto-examdata.db",
+      "exists": false
+    },
+    {
+      "path": "proto2-examdata.db",
+      "exists": false
+    },
+    {
+      "path": "qsvc_check.db",
+      "exists": false
+    },
+    {
+      "path": "examdata/explore-examdata.db",
+      "size": 4182016,
+      "mtime": "2026-09-30T07:59:11+08:00"
+    },
+    {
+      "path": "examdata/proto-examdata.db",
+      "size": 4182016,
+      "mtime": "2026-09-30T08:00:55+08:00"
+    },
+    {
+      "path": "examdata/proto2-examdata.db",
+      "size": 4182016,
+      "mtime": "2026-09-30T08:02:32+08:00"
+    },
+    {
+      "path": "examdata/qsvc_check.db",
+      "size": 4182016,
+      "mtime": "2026-09-30T08:01:24+08:00"
+    }
+  ],
+  "reports_manifest": [
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "size": 8272,
+      "mtime": "2026-10-05T18:27:01+08:00",
+      "sha256": "0bb307bf292169a4a015201863527784806ab2e49444af9b92786f2d07ffe080"
+    },
+    {
+      "path": "docs/integration/MASTER_EXECUTION_PLAN_EN.md",
+      "size": 79435,
+      "mtime": "2026-10-05T17:55:34+08:00",
+      "sha256": "a81355545c4d4a4e6d3202767042685d1168456d9d8552d6c817602fcb19699b"
+    },
+    {
+      "path": "docs/integration/EXECUTOR_PROMPT_EN.md",
+      "size": 4445,
+      "mtime": "2026-10-05T17:54:18+08:00",
+      "sha256": "ee1ab92bc154cf63f59e588de138dce605189e6d6554c9deb29c1203c4b9953c"
+    },
+    {
+      "path": "docs/integration/ROUTE_INVENTORY_CURRENT.json",
+      "size": 20756,
+      "mtime": "2026-10-05T17:14:24+08:00",
+      "sha256": "946d3e90cbccd54dc9ac9005f36f8f940b6b7d2fe1a5ae515b119d3c00e55baf"
+    },
+    {
+      "path": "SESSION_CONTINUATION_PLAN.md",
+      "size": 1945,
+      "mtime": "2026-10-02T14:00:07+08:00",
+      "sha256": "7d9bb269b84edadb0c433e61008b4afa9ed7862994627d30a0a3a75e24e85b21"
+    },
+    {
+      "path": "gaokao-feasibility/REPORT.md",
+      "size": 8433,
+      "mtime": "2026-10-04T20:31:54+08:00",
+      "sha256": "eb6ae1ca587dce5c225351870f65b8c35a71eaffcb2ac529d8efeb8ad4fd3864"
+    },
+    {
+      "path": "gaokao-feasibility/channels.md",
+      "size": 8609,
+      "mtime": "2026-10-04T20:31:22+08:00",
+      "sha256": "b2357e9805befb0b4379900fb07fe5c8e8e5c1c495c3ad4c1d2535fa25551f22"
+    },
+    {
+      "path": "gaokao-feasibility/coverage-matrix.csv",
+      "size": 3917,
+      "mtime": "2026-10-04T20:18:49+08:00",
+      "sha256": "aefab84c64b215126cf776f4c772b08ea34a446e943b142a028784b27b374fd9"
+    },
+    {
+      "path": "gaokao-feasibility/scope-map.md",
+      "size": 5213,
+      "mtime": "2026-10-04T19:58:20+08:00",
+      "sha256": "cce27a99fa09b036eda6a662965de136cf278e8ee9a86d1ddc7e3a2ad63254d6"
+    },
+    {
+      "path": "toefl-api/REPORT.md",
+      "size": 43793,
+      "mtime": "2026-10-05T14:28:25+08:00",
+      "sha256": "d5aa7fa5473fcbbf6c6bf57e613df844f56b430668f4bfb8b41fa9632fedf64c"
+    },
+    {
+      "path": "toefl-api/AUDIT_REPORT_20261005.md",
+      "size": 12185,
+      "mtime": "2026-10-05T11:58:14+08:00",
+      "sha256": "bc2e2dd0e47e0583c96b7aa406c78244d5a6b6ea6be2e8400580a7113019d0ca"
+    },
+    {
+      "path": "toefl-api/AGENT_FIX_PROMPT_20261005.md",
+      "size": 9140,
+      "mtime": "2026-10-05T11:51:40+08:00",
+      "sha256": "60e9f747b90a32d9b6a9eadcd909176240b98c61ea1fb5997f60b15869d442be"
+    },
+    {
+      "path": "ielts-api/API.md",
+      "size": 32498,
+      "mtime": "2026-10-05T03:17:35+08:00",
+      "sha256": "c5debe7e19a20d8099f2ad0ca3967a2ffd5e929f6a04c15d5dccb47e3b3fd7c7"
+    },
+    {
+      "path": "ielts-api/AUDIT_REPORT.md",
+      "size": 19448,
+      "mtime": "2026-10-02T23:48:49+08:00",
+      "sha256": "149bb8995663b19e4fbd21194e2b91a7f78b2bf14fe9a3e1c8e71c7926d98034"
+    },
+    {
+      "path": "ielts-api/DEVELOPMENT.md",
+      "size": 19048,
+      "mtime": "2026-10-05T03:25:22+08:00",
+      "sha256": "0b5c9cafb0b4044b7e2cacf9868caa412468ae45346c9f7276311fd959312ade"
+    },
+    {
+      "path": "examdata/README.md",
+      "size": 12441,
+      "mtime": "2026-10-05T18:26:46+08:00",
+      "sha256": "503787d25301d1e6cc2420a0fafc3635a54501a065c02fb20c2ada385f7d84c8"
+    },
+    {
+      "path": "frontend/README.md",
+      "size": 3307,
+      "mtime": "2026-10-02T22:38:44+08:00",
+      "sha256": "df197ba44cf1d2d2db3626f3a405f6b834b02e0cde739eb11abade2cc0a41340"
+    }
+  ],
+  "report_dirs": {
+    "examdata/docs": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "AGENT_HANDOFF.md",
+          "kind": "file",
+          "size": 23537,
+          "mtime": "2026-09-30T20:43:22+08:00"
+        },
+        {
+          "name": "API.md",
+          "kind": "file",
+          "size": 70285,
+          "mtime": "2026-10-05T18:22:52+08:00"
+        },
+        {
+          "name": "CIE_AI_PARSE_PROMPT.md",
+          "kind": "file",
+          "size": 5235,
+          "mtime": "2026-10-01T11:42:29+08:00"
+        },
+        {
+          "name": "CIE_ALL_SUBJECTS_EXECUTION_PROMPT.md",
+          "kind": "file",
+          "size": 20207,
+          "mtime": "2026-10-01T11:53:47+08:00"
+        },
+        {
+          "name": "DEPLOY.md",
+          "kind": "file",
+          "size": 149064,
+          "mtime": "2026-09-30T20:43:22+08:00"
+        },
+        {
+          "name": "IELTS_API.md",
+          "kind": "file",
+          "size": 8827,
+          "mtime": "2026-10-05T03:25:52+08:00"
+        },
+        {
+          "name": "INDEPENDENT_REVIEW_CONTEXT.md",
+          "kind": "file",
+          "size": 1501,
+          "mtime": "2026-09-30T20:43:22+08:00"
+        },
+        {
+          "name": "INDEX_RETRIEVAL_ACCEPTANCE.md",
+          "kind": "file",
+          "size": 2489,
+          "mtime": "2026-10-01T09:29:36+08:00"
+        },
+        {
+          "name": "REMAINING_WORK_PLAN.md",
+          "kind": "file",
+          "size": 1650,
+          "mtime": "2026-09-30T20:43:42+08:00"
+        },
+        {
+          "name": "REMAINING_WORK_RESULTS.md",
+          "kind": "file",
+          "size": 5426,
+          "mtime": "2026-09-30T20:43:22+08:00"
+        },
+        {
+          "name": "REVIEW_ACCEPTANCE.md",
+          "kind": "file",
+          "size": 7562,
+          "mtime": "2026-09-30T19:40:59+08:00"
+        },
+        {
+          "name": "TOEFL_API.md",
+          "kind": "file",
+          "size": 16674,
+          "mtime": "2026-10-05T14:15:52+08:00"
+        },
+        {
+          "name": "UNIFIED_PAPER_API.md",
+          "kind": "file",
+          "size": 3278,
+          "mtime": "2026-10-01T11:42:55+08:00"
+        },
+        {
+          "name": "UNIFIED_WORKFLOW_ACCEPTANCE.md",
+          "kind": "file",
+          "size": 2737,
+          "mtime": "2026-10-01T09:16:53+08:00"
+        },
+        {
+          "name": "schemas",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T09:12:34+08:00"
+        }
+      ],
+      "truncated": false
+    },
+    "cie-index-batch-2026-10-01": {
+      "exists": true,
+      "top_level": [
+        {
+          "name": "9709",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-01T10:35:39+08:00"
+        },
+        {
+          "name": "review",
+          "kind": "dir",
+          "size": null,
+          "mtime": "2026-10-03T05:03:06+08:00"
+        }
+      ],
+      "truncated": false
+    }
+  },
+  "source_and_tool_hashes": {
+    "examdata/src/examdata/api/app.py": {
+      "sha256": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+      "size": 22552,
+      "mtime": "2026-10-05T00:36:05+08:00"
+    },
+    "examdata/src/examdata/api/unified.py": {
+      "sha256": "9568b295d15e837e69a879cfc7dabf53f16a42d61a7a9c2859ec386fdacbe4c1",
+      "size": 22189,
+      "mtime": "2026-10-01T09:25:11+08:00"
+    },
+    "examdata/src/examdata/api/ielts.py": {
+      "sha256": "9d79ee009086f72e0fc2c2a94ad679c359d42d0f1e970b15a75915cce03511d3",
+      "size": 22083,
+      "mtime": "2026-10-05T03:26:06+08:00"
+    },
+    "examdata/src/examdata/api/toefl.py": {
+      "sha256": "051449da09363e1c2d392c5a57f809b9d3a30cd2feabcdca4dffaacf73d17934",
+      "size": 18367,
+      "mtime": "2026-10-05T13:12:21+08:00"
+    },
+    "examdata/src/examdata/materials/router.py": {
+      "sha256": "492dc6217ea9578495f6b7cba0d6d901932222891736cbbadc28dde6e52edc40",
+      "size": 10125,
+      "mtime": "2026-10-05T00:34:26+08:00"
+    },
+    "examdata/src/examdata/timetable/router.py": {
+      "sha256": "ce9b3cbf91e26aa38a3dcd92192c57fc0922f1d77d904006a55421774e9b2332",
+      "size": 16321,
+      "mtime": "2026-10-05T18:10:36+08:00"
+    },
+    "docs/integration/ROUTE_INVENTORY_CURRENT.json": {
+      "sha256": "946d3e90cbccd54dc9ac9005f36f8f940b6b7d2fe1a5ae515b119d3c00e55baf",
+      "size": 20756,
+      "mtime": "2026-10-05T17:14:24+08:00"
+    },
+    "docs/integration/tools/inventory_routes.py": {
+      "sha256": "5ad62a0db00b65d6212fb32843f903438b77ddc9abd4f8a0aaa6af7b58d7bea7",
+      "size": 2547,
+      "mtime": "2026-10-05T17:14:24+08:00"
+    },
+    "integration-staging/tools/a01_inventory_routes.py": {
+      "sha256": "d6cdc8859a0051469093308aa68fb4380b71b6c2b8993b67454fb0cc867d86be",
+      "size": 3073,
+      "mtime": "2026-10-05T18:32:13+08:00"
+    },
+    "integration-staging/tools/a01_static_inventory.py": {
+      "sha256": "8af1c7e366ec7483c6655a34694e71a90b445a8841e2b15bd8404708663e38e9",
+      "size": 15638,
+      "mtime": "2026-10-05T18:34:25+08:00"
+    }
+  },
+  "git_snapshot": {
+    "status_entries": 1269,
+    "status_head": [
+      " M README.md",
+      " M docs/API.md",
+      " M docs/DEPLOY.md",
+      " M examples/browser.html",
+      " M pyproject.toml",
+      " M scripts/reset_derived.py",
+      " M scripts/smoke_public_api.py",
+      " M src/examdata/adapters/edexcel/adapter.py",
+      " M src/examdata/adapters/edexcel/classify.py",
+      " M src/examdata/adapters/edexcel/servlet.py",
+      " M src/examdata/adapters/registry.py",
+      " M src/examdata/api/app.py",
+      " M src/examdata/api/security.py",
+      " M src/examdata/api/unified.py",
+      " M src/examdata/cli.py",
+      " M src/examdata/core/db.py",
+      " M src/examdata/core/fetch.py",
+      " M src/examdata/core/storage.py",
+      " M src/examdata/governance/override.py",
+      " M src/examdata/governance/provenance.py",
+      " M src/examdata/governance/reparse.py",
+      " M src/examdata/intelligence/explanation.py",
+      " M src/examdata/intelligence/similarity.py",
+      " M src/examdata/intelligence/taxonomy.py",
+      " M src/examdata/markscheme/cambridge.py",
+      " M src/examdata/paperqa/api.py",
+      " M src/examdata/paperqa/locator.py",
+      " M src/examdata/paperqa/models.py",
+      " M src/examdata/paperqa/sources/base.py",
+      " M src/examdata/paperqa/sources/pearson.py"
+    ],
+    "head": "8da3a0917e017a6cbf5d3e58e1fbeb9d0b0b83c8|2026-10-05 15:05:10 +0800|feat: 托福 API 接入 /api/v1/toefl 与 TOEFL_API.md（含 URL 严格校验、听力表格题、era/套次身份修复）"
+  }
+}

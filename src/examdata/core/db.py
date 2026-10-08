@@ -6,16 +6,67 @@
 
 from __future__ import annotations
 
+import functools
+import time
 from contextlib import contextmanager
-from typing import Iterator
+from typing import Callable, Iterator, TypeVar
 
 from sqlalchemy import create_engine, event
+from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import Session, sessionmaker
 
 from .config import get_settings
 
 _engine = None
 _SessionLocal: sessionmaker[Session] | None = None
+
+# 批量 CLI 进程的开关：事务改为 BEGIN IMMEDIATE，并放宽 busy_timeout。
+# WAL 下「先读后写」的事务升级撞上并发写者会立即失败（SQLITE_BUSY_SNAPSHOT /
+# SQLITE_BUSY，busy handler 不生效），多进程批量跑时慢者会被饿死；
+# BEGIN IMMEDIATE 在事务开始就取写锁，等待交给 busy_timeout。
+# 只在批量命令入口调用，API 与既有单进程流程保持 deferred BEGIN 不变。
+_immediate_writes = False
+_busy_timeout_ms = 10000
+
+
+def enable_immediate_writes(*, busy_timeout_ms: int = 30000) -> None:
+    """批量命令入口调用：BEGIN IMMEDIATE + 更长的锁等待窗口。"""
+    global _immediate_writes, _busy_timeout_ms
+    _immediate_writes = True
+    _busy_timeout_ms = busy_timeout_ms
+
+
+def is_locked_error(exc: BaseException) -> bool:
+    """SQLite 锁竞争错误。SQLITE_BUSY 与 SQLITE_BUSY_SNAPSHOT 都报 database is locked。"""
+    message = str(exc).lower()
+    return "database is locked" in message or "database table is locked" in message
+
+
+_T = TypeVar("_T")
+
+
+def with_lock_retry(
+    session: Session,
+    action: Callable[[], _T],
+    *,
+    attempts: int = 6,
+    base_delay: float = 0.25,
+    max_delay: float = 4.0,
+) -> _T:
+    """执行 ``action``；遇 SQLite 锁竞争时回滚会话并指数退避重试。
+
+    action 需要可重复执行：调用方应保证其副作用幂等（重新 SELECT/upsert）。
+    非锁错误原样抛出；重试耗尽后抛最后一个锁错误。
+    """
+    for attempt in range(attempts):
+        try:
+            return action()
+        except OperationalError as exc:
+            if not is_locked_error(exc) or attempt == attempts - 1:
+                raise
+            session.rollback()
+            time.sleep(min(base_delay * (2**attempt), max_delay))
+    raise AssertionError("unreachable")
 
 
 def get_engine():
@@ -43,12 +94,19 @@ def get_engine():
                 cur.execute("PRAGMA journal_mode=WAL")
                 cur.execute("PRAGMA synchronous=NORMAL")
                 # Windows 上文件可能被短暂占用，给 SQLite 重试窗口
-                cur.execute("PRAGMA busy_timeout=10000")
+                cur.execute(f"PRAGMA busy_timeout={_busy_timeout_ms}")
+                # 语句日志等临时数据放内存：Git Bash 下 TMP=/tmp 对原生 SQLite 无效
+                # （解析为不存在的 C:\tmp），带外键检查的 DELETE 建临时文件失败会报
+                # "unable to open database file"。
+                cur.execute("PRAGMA temp_store=MEMORY")
                 cur.close()
 
             @event.listens_for(_engine, "begin")
             def _sqlite_begin(conn):  # pragma: no cover - 驱动细节
-                conn.exec_driver_sql("BEGIN")
+                if _immediate_writes:
+                    conn.exec_driver_sql("BEGIN IMMEDIATE")
+                else:
+                    conn.exec_driver_sql("BEGIN")
 
     return _engine
 
@@ -90,9 +148,9 @@ def _ensure_added_columns(engine) -> list[str]:
     from sqlalchemy import inspect, text
 
     applied: list[str] = []
-    inspector = inspect(engine)
-    existing_tables = set(inspector.get_table_names())
     with engine.begin() as conn:
+        inspector = inspect(conn)
+        existing_tables = set(inspector.get_table_names())
         for table, column, ddl in _ADDED_COLUMNS:
             if table not in existing_tables:
                 continue  # 表还不存在时 create_all 会带着新列一起建
@@ -113,5 +171,25 @@ def init_db() -> None:
     from . import models  # noqa: F401  确保模型已注册
 
     engine = get_engine()
-    models.Base.metadata.create_all(engine)
-    _ensure_added_columns(engine)
+    # 多进程并发跑批时，别的进程可能长时间持有写锁；create_all 与补列都幂等，
+    # 撞锁退避重试，避免进程在启动阶段直接失败。
+    for attempt in range(8):
+        try:
+            models.Base.metadata.create_all(engine)
+            _ensure_added_columns(engine)
+            return
+        except OperationalError as exc:
+            if not is_locked_error(exc) or attempt == 7:
+                raise
+            time.sleep(min(0.5 * (2**attempt), 8.0))
+
+
+@functools.lru_cache(maxsize=1)
+def ensure_initialized() -> None:
+    """进程内只初始化一次，供 API 的每请求依赖调用。
+
+    API 的每个请求都会走到数据库依赖：create_all + 补列虽然幂等，
+    但没有必要每请求都跑一遍，因此把首次调用的结果缓存下来。
+    CLI 仍在命令开头直接调 init_db()，语义不变。
+    """
+    init_db()

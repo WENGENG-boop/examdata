@@ -1,0 +1,231 @@
+{
+  "schema": "examdata.integration.b00_baseline/1",
+  "run_id": "b00b01-20261006T132400",
+  "generated_at_local": "2026-10-06T13:45:59+08:00",
+  "observation_kind": "observed_only",
+  "release_present": false,
+  "release_note": "no human release credential exists in this session; this baseline records the current active-owner tree by observation only, it does not claim any original path was released or merged",
+  "git": {
+    "examdata_head": "8da3a0917e017a6cbf5d3e58e1fbeb9d0b0b83c8",
+    "tracked_modified_count": 49,
+    "untracked_count": 1220,
+    "tracked_modified_files": [
+      "docs/API.md",
+      "docs/DEPLOY.md",
+      "examples/browser.html",
+      "examples/curl.md",
+      "pyproject.toml",
+      "scripts/reset_derived.py",
+      "scripts/smoke_public_api.py",
+      "src/examdata/adapters/edexcel/adapter.py",
+      "src/examdata/adapters/edexcel/classify.py",
+      "src/examdata/adapters/edexcel/servlet.py",
+      "src/examdata/adapters/registry.py",
+      "src/examdata/api/app.py",
+      "src/examdata/api/security.py",
+      "src/examdata/api/unified.py",
+      "src/examdata/cli.py",
+      "src/examdata/core/db.py",
+      "src/examdata/core/fetch.py",
+      "src/examdata/core/storage.py",
+      "src/examdata/governance/override.py",
+      "src/examdata/governance/provenance.py",
+      "src/examdata/governance/reparse.py",
+      "src/examdata/intelligence/explanation.py",
+      "src/examdata/intelligence/similarity.py",
+      "src/examdata/intelligence/taxonomy.py",
+      "src/examdata/markscheme/cambridge.py",
+      "src/examdata/paperqa/api.py",
+      "src/examdata/paperqa/locator.py",
+      "src/examdata/paperqa/models.py",
+      "src/examdata/paperqa/sources/base.py",
+      "src/examdata/paperqa/sources/pearson.py",
+      "src/examdata/parsing/content_classify.py",
+      "src/examdata/parsing/numbering.py",
+      "src/examdata/parsing/pipeline.py",
+      "src/examdata/parsing/segment.py",
+      "src/examdata/query/__init__.py",
+      "src/examdata/query/service.py",
+      "src/examdata/sync/service.py",
+      "tests/conformance/test_adapter_contract.py",
+      "tests/test_api.py",
+      "tests/test_api_unified.py",
+      "tests/test_classification_validation.py",
+      "tests/test_edexcel_adapter.py",
+      "tests/test_explanation.py",
+      "tests/test_governance.py",
+      "tests/test_intelligence.py",
+      "tests/test_paperqa.py",
+      "tests/test_paperqa_api.py",
+      "tests/test_paperqa_locator.py",
+      "tests/test_parsing_regressions.py"
+    ],
+    "note": "read-only git status; no index write, no stash/reset/commit"
+  },
+  "a14_bases": [
+    {
+      "staged_path": "integration-staging/fixtures/copied/edexcel/subjects-source.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/edexcel/subjects-source.json",
+      "source_path": "frontend/edexcel-subjects-source.json",
+      "base_sha256": "b293e88820c43f0af404f36571dd83a040c12881312e528764919f7aa015a9bc",
+      "current_sha256": "b293e88820c43f0af404f36571dd83a040c12881312e528764919f7aa015a9bc",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/fixtures/copied/ielts/indexes-current.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/indexes-current.json",
+      "source_path": "ielts-data/indexes/current",
+      "base_sha256": "b786b370117affa1a18c26f300c770f93690d438550bace4676965d149db77f7",
+      "current_sha256": "b786b370117affa1a18c26f300c770f93690d438550bace4676965d149db77f7",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/fixtures/copied/ielts/manifests-current.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/manifests-current.json",
+      "source_path": "ielts-data/manifests/current",
+      "base_sha256": "c1f3d59caa348ccf2280a9e1ef7897d8dcf0034b7686f733f16d11bd5d9e685c",
+      "current_sha256": "c1f3d59caa348ccf2280a9e1ef7897d8dcf0034b7686f733f16d11bd5d9e685c",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/fixtures/copied/ielts/pdf-provenance.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/pdf-provenance.json",
+      "source_path": "ielts-data/manifests/pdf-provenance.json",
+      "base_sha256": "0725aa6213084e6fee1411451c66943f2e89225ebec935aa4f7a7342ca7aca2a",
+      "current_sha256": "0725aa6213084e6fee1411451c66943f2e89225ebec935aa4f7a7342ca7aca2a",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/fixtures/copied/ielts/printed-pages.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/ielts/printed-pages.json",
+      "source_path": "ielts-api/data/printed-pages.json",
+      "base_sha256": "ab876413450ca749355e1b4489843c1acef235fd6059cea48dc76b52e8856432",
+      "current_sha256": "ab876413450ca749355e1b4489843c1acef235fd6059cea48dc76b52e8856432",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/fixtures/copied/toefl/ddy-index.json",
+      "proposed_target": "examdata/tests/integration/fixtures/copied/toefl/ddy-index.json",
+      "source_path": "toefl-api/data/ddy-index.json",
+      "base_sha256": "50dc50a58bb6536507bf1f508b1d959945e949d82a8aa0fe56149b11a8c37500",
+      "current_sha256": "50dc50a58bb6536507bf1f508b1d959945e949d82a8aa0fe56149b11a8c37500",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/frontend/app.js",
+      "proposed_target": "frontend/app.js",
+      "source_path": "frontend/app.js",
+      "base_sha256": "c050438a0f89ea86be0e3e94844ad776019b7f95d0ba9752fae15ccc6a9aaae0",
+      "current_sha256": "c050438a0f89ea86be0e3e94844ad776019b7f95d0ba9752fae15ccc6a9aaae0",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/frontend/index.html",
+      "proposed_target": "frontend/index.html",
+      "source_path": "frontend/index.html",
+      "base_sha256": "e10c6296a3204a5d08d82317844f4656a3ec2500374dfc472bcbaaf8dc23a064",
+      "current_sha256": "e10c6296a3204a5d08d82317844f4656a3ec2500374dfc472bcbaaf8dc23a064",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/frontend/README.md",
+      "proposed_target": "frontend/README.md",
+      "source_path": "frontend/README.md",
+      "base_sha256": "df197ba44cf1d2d2db3626f3a405f6b834b02e0cde739eb11abade2cc0a41340",
+      "current_sha256": "df197ba44cf1d2d2db3626f3a405f6b834b02e0cde739eb11abade2cc0a41340",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/frontend/search.mjs",
+      "proposed_target": "frontend/search.mjs",
+      "source_path": "frontend/search.mjs",
+      "base_sha256": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "current_sha256": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/frontend/styles.css",
+      "proposed_target": "frontend/styles.css",
+      "source_path": "frontend/styles.css",
+      "base_sha256": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+      "current_sha256": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+      "exists": true,
+      "drift": false
+    },
+    {
+      "staged_path": "integration-staging/frontend/tests/search.test.mjs",
+      "proposed_target": "frontend/tests/search.test.mjs",
+      "source_path": "frontend/search.test.mjs",
+      "base_sha256": "1e50f10f941caa7b91334a027d0a9ee67932eecc6880b425a276fbecfc350327",
+      "current_sha256": "1e50f10f941caa7b91334a027d0a9ee67932eecc6880b425a276fbecfc350327",
+      "exists": true,
+      "drift": false
+    }
+  ],
+  "a14_planned_original_edits": [
+    {
+      "target_path": "examdata/src/examdata/api/app.py",
+      "base_exists": true,
+      "base_sha256": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+      "current_sha256": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d",
+      "currently_exists": true,
+      "drift": false
+    },
+    {
+      "target_path": "examdata/pyproject.toml",
+      "base_exists": true,
+      "base_sha256": "f8d69e9dc11c66e062f2e8955fa7fbc035d347841b95354d1b052c6a57226a66",
+      "current_sha256": "f8d69e9dc11c66e062f2e8955fa7fbc035d347841b95354d1b052c6a57226a66",
+      "currently_exists": true,
+      "drift": false
+    },
+    {
+      "target_path": "examdata/cli.py",
+      "base_exists": false,
+      "base_sha256": null,
+      "current_sha256": null,
+      "currently_exists": false,
+      "drift": false
+    },
+    {
+      "target_path": "frontend/server.mjs",
+      "base_exists": true,
+      "base_sha256": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+      "current_sha256": "05406d3aa9bc308abf9117e13281a3b1f88c18a0d8e2ddac3113cd738eb6e810",
+      "currently_exists": true,
+      "drift": false
+    },
+    {
+      "target_path": "examdata/docs/API.md",
+      "base_exists": true,
+      "base_sha256": "aa238ecb1988635a278ae84aa4ccba635b3129a0110fd3ba703277aa37393d9d",
+      "current_sha256": "aa238ecb1988635a278ae84aa4ccba635b3129a0110fd3ba703277aa37393d9d",
+      "currently_exists": true,
+      "drift": false
+    },
+    {
+      "target_path": "docs/PROJECT_STATUS.md",
+      "base_exists": true,
+      "base_sha256": "0bb307bf292169a4a015201863527784806ab2e49444af9b92786f2d07ffe080",
+      "current_sha256": "0bb307bf292169a4a015201863527784806ab2e49444af9b92786f2d07ffe080",
+      "currently_exists": true,
+      "drift": false
+    }
+  ],
+  "summary": {
+    "a14_bases_total": 12,
+    "a14_bases_drifted": 0,
+    "planned_edits_total": 6,
+    "planned_edits_drifted": 0
+  }
+}

@@ -1,0 +1,37 @@
+=== diff: planning copy -> staged copy (plan section 14 staging change) ===
+--- original: docs/integration/tools/inventory_routes.py (sha256 5ad62a0db00b65d6212fb32843f903438b77ddc9abd4f8a0aaa6af7b58d7bea7)
+--- staged:   integration-staging/tools/a01_inventory_routes.py
+--- docs/integration/tools/inventory_routes.py	2026-10-05 17:14:24.414221300 +0800
++++ integration-staging/tools/a01_inventory_routes.py	2026-10-05 18:32:13.760253700 +0800
+@@ -1,9 +1,19 @@
+-"""Read route decorators with AST; never import app or initialize its database."""
++"""Read route decorators with AST; never import app or initialize its database.
++
++Staged copy of docs/integration/tools/inventory_routes.py (plan section 14):
++the original output path overwrites the planning baseline, so it must not be
++run as-is. This staged copy changes only:
++  1. ROOT resolution (this file sits one level higher than the planning copy,
++     so the workspace root is parents[2], not parents[3]);
++  2. the output path, now under docs/integration/execution/evidence/A01/;
++  3. this provenance docstring.
++Everything else is byte-identical to the reviewed original.
++"""
+ import ast
+ import json
+ from pathlib import Path
+ 
+-ROOT = Path(__file__).resolve().parents[3]
++ROOT = Path(__file__).resolve().parents[2]
+ FILES = {
+     "examdata/src/examdata/api/app.py": "",
+     "examdata/src/examdata/api/unified.py": "/api/v1",
+@@ -39,7 +49,7 @@
+           "explicit_route_count": len(routes), "unique_path_count": len({r["path"] for r in routes}),
+           "duplicate_method_paths": sorted({f"{m} {p}" for m, p in keys if keys.count((m, p)) > 1}),
+           "groups": groups, "routes": routes}
+-output = ROOT / "docs/integration/ROUTE_INVENTORY_CURRENT.json"
++output = ROOT / "docs/integration/execution/evidence/A01/route_inventory_reextract.json"
+ output.parent.mkdir(parents=True, exist_ok=True)
+ output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+ print(json.dumps({k: v for k, v in result.items() if k != "routes"}, ensure_ascii=False, indent=2))
+diff_exit=1

@@ -1,0 +1,104 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like a raw CIE paper index. Invented question text only; no upstream CIE data, no real document hashes. Shaped to exercise the A07 adapter cases: exact/ancestor/descendants answer resolution, a missing mark scheme, a document hash conflict, multiple regions per question and rotated-page metadata.",
+    "created_by": "Phase A executor (packet A07)",
+    "created_at_local": "2026-10-05T21:05:00+08:00",
+    "provider": "cie",
+    "purpose": "Drive the CIE read adapter against raw-index shapes without reading any protected source."
+  },
+  "schema_version": "1",
+  "board": "cie",
+  "identity": {
+    "subject": "8888",
+    "subject_alias": "adapter-subject",
+    "year": 2025,
+    "season": "Jun",
+    "paper": "21",
+    "date": null,
+    "date_unknown_reason": "The synthetic raw index carries no session date; the adapter must keep it unknown."
+  },
+  "coordinate_system": "unrotated_pdf_points_top_left",
+  "page_base": 1,
+  "documents": [
+    { "role": "qp", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "media_type": "application/pdf", "pages": 8 },
+    { "role": "in", "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "media_type": "application/pdf", "pages": 2 }
+  ],
+  "pages": [
+    { "page": 2, "rotation_degrees": 90, "rotation_transform": [0, 1, -1, 0, 0, 0] },
+    { "page": 3, "rotation_degrees": 0, "rotation_transform": [1, 0, 0, 1, 0, 0] },
+    { "page": 4, "rotation_degrees": 180, "rotation_transform": [-1, 0, 0, -1, 595, 842] }
+  ],
+  "answer_resolution": { "default_mode": "exact" },
+  "questions": [
+    {
+      "question": "1",
+      "parent": null,
+      "text": "Synthetic question 1 whose answer is stated only for its parts.",
+      "page": 2,
+      "marks": 6,
+      "answer_mode": "descendants",
+      "parts": [
+        { "question": "1(a)", "parent": "1", "text": "Synthetic part (a).", "page": 2, "marks": 3,
+          "answer": "answer-a", "answer_mode": "exact" },
+        { "question": "1(b)", "parent": "1", "text": "Synthetic part (b).", "page": 2, "marks": 3,
+          "answer": "answer-b", "answer_mode": "exact" }
+      ],
+      "regions": [
+        { "page": 2, "bbox": [40, 100, 300, 160], "document_role": "qp" },
+        { "page": 2, "bbox": [40, 180, 300, 240], "document_role": "qp" }
+      ],
+      "lineage": { "source": "synthetic", "document_role": "qp", "page": 2 }
+    },
+    {
+      "question": "2",
+      "parent": null,
+      "text": "Synthetic question 2 with a direct answer.",
+      "page": 3,
+      "marks": 4,
+      "answer": "answer-2",
+      "answer_mode": "exact",
+      "regions": [
+        { "page": 3, "bbox": [40, 100, 300, 200], "document_role": "qp" },
+        { "page": 9, "bbox": [40, 210, 300, 260], "document_role": "qp" }
+      ],
+      "lineage": { "source": "synthetic", "document_role": "qp", "page": 3 }
+    },
+    {
+      "question": "3",
+      "parent": null,
+      "text": "Synthetic question 3 whose answer is stated for the parent only.",
+      "page": 3,
+      "marks": 5,
+      "answer": "answer-3-parent",
+      "answer_mode": "ancestor",
+      "parts": [
+        { "question": "3(a)", "parent": "3", "text": "Synthetic part (a) with no answer of its own.",
+          "page": 3, "marks": 5, "answer_mode": "ancestor" }
+      ],
+      "regions": [
+        { "page": 3, "bbox": [40, 260, 300, 380], "document_role": "qp" }
+      ],
+      "lineage": { "source": "synthetic", "document_role": "qp", "page": 3 }
+    },
+    {
+      "question": "4",
+      "parent": null,
+      "text": "Synthetic question 4 whose region cites a document hash that disagrees with the index.",
+      "page": 4,
+      "marks": 3,
+      "answer": "answer-4",
+      "answer_mode": "exact",
+      "document_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "regions": [
+        { "page": 4, "bbox": [40, 100, 300, 160], "document_role": "qp",
+          "document_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" }
+      ],
+      "lineage": { "source": "synthetic", "document_role": "qp", "page": 4 }
+    }
+  ],
+  "verification": {
+    "status": "synthetic",
+    "note": "Nothing in this fixture may be promoted to verified content; it is a synthetic shape test."
+  }
+}

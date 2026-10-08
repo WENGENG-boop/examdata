@@ -14,26 +14,28 @@
 参数：
     --base-url       必填。API 根地址，如 https://exam.example.com（结尾斜杠可有可无）。
     --api-key        可选。以 `X-API-Key` 头发送（部署层若用别的头，请自行调整）。
-                     给了它就额外做第 7 项：不带 key 的请求必须被拒。
-    --timeout        可选。单次请求超时秒数，默认 30。第 5 项下载另有下限 180s：
+                     给了它就额外做第 9 项：不带 key 的请求必须被拒。
+    --timeout        可选。单次请求超时秒数，默认 30。第 7 项下载另有下限 180s：
                      服务端要先把上游多份 PDF 取回并打完 ZIP 才发第一个字节，
                      0580/2024/Jun 的 qp 整包（12 份 PDF、约 2.4MB）本机实测 15–50s，
                      沿用 30s 会把正常部署误判成超时。
     --json           可选。只输出机器可读 JSON，不打印人类可读文本（便于接监控）。
     --insecure       可选。跳过 TLS 证书校验，给自签证书的临时域名用。
-    --skip-download  可选。跳过第 5 项真实下载检查，省流量（第 4 项仍会解析上游清单）。
+    --skip-download  可选。跳过第 7 项真实下载检查，省流量（第 6 项仍会解析上游清单）。
 
 检查项（逐项打印 PASS/FAIL 与关键数值）：
     1. GET /health                       存活探针，`status` 必须是 `ok`。
     2. GET /api/v1/boards                能力发现，`cie` 与 `edexcel` 都要在。
     3. GET /api/v1/search?limit=1        跨考试局检索，`total > 0`。
-    4. GET /api/v1/paper?download=false  清单解析，`counts.documents > 0`（不下载）。
-    5. GET /api/v1/paper?mode=qp         真实下载：Content-Type / Content-Length / 文件头。
-    6. 打一个不存在的路径                错误语义必须是 404。
-    7. 不带 key 的请求（仅当传了 --api-key）  必须被拒 401。
+    4. GET /api/v1/timetable/seasons     时间表快照：CIE 25 个考季（另验 Edexcel ial 34 个）。
+    5. GET /api/v1/materials             考试资料目录，`count > 0`。
+    6. GET /api/v1/paper?download=false  清单解析，`counts.documents > 0`（不下载）。
+    7. GET /api/v1/paper?mode=qp         真实下载：Content-Type / Content-Length / 文件头。
+    8. 打一个不存在的路径                错误语义必须是 404。
+    9. 不带 key 的请求（仅当传了 --api-key）  必须被拒 401。
 
 退出码：全部通过 0；有任一失败非 0（跳过项不算失败）。
-第 4、5 项会真的访问上游（Cambridge 走 cie.fraft.cn），上游临时不可用时它们会 FAIL，
+第 6、7 项会真的访问上游（Cambridge 走 cie.fraft.cn），上游临时不可用时它们会 FAIL，
 提示里会说明是上游问题而不是你的部署问题。
 """
 
@@ -60,6 +62,11 @@ SKIP = "SKIP"
 SMOKE_SUBJECT = "0580"
 SMOKE_YEAR = 2024
 SMOKE_SEASON = "Jun"
+
+# 时间表快照随仓库一起发布（离线自带，运行时不联网）。这两个数字与仓库里的
+# 快照数据同步：重建快照后（如新增考季）请同步更新，否则自检会报"快照不匹配"。
+SMOKE_TIMETABLE_CIE_SEASONS = 25
+SMOKE_TIMETABLE_EDEXCEL_IAL_SEASONS = 34
 
 # /api/v1/boards 里每个 board 至少该给出的字段（网关契约）。
 BOARD_REQUIRED_FIELDS = (
@@ -428,6 +435,116 @@ class Smoke:
             check.hint = "库里没数据：确认数据库已灌入并指向正确的 EXAMDATA_DATABASE_URL。"
         return check
 
+    def check_timetable(self) -> Check:
+        check = Check(
+            "timetable",
+            "考试时间表 GET /api/v1/timetable/seasons（CIE 与 Edexcel ial）",
+        )
+        result = self.client.get("/api/v1/timetable/seasons")
+        if not result.connected:
+            return self._fatal(check, result)
+        if result.status != 200:
+            check.status = FAIL
+            check.detail = f"HTTP {result.status}（期望 200）{result.error_detail()}"
+            check.hint = _http_hint(result.status)
+            return check
+
+        body = _as_dict(result.json())
+        totals = _as_dict(body.get("totals"))
+        cie_seasons = totals.get("available_seasons")
+        check.metrics = {
+            "status_code": result.status,
+            "board": body.get("board"),
+            "zone": body.get("zone"),
+            "cie_available_seasons": cie_seasons,
+            "cie_events": totals.get("events"),
+        }
+        detail = (
+            f"HTTP 200  board={body.get('board')}  zone={body.get('zone')}"
+            f"  totals.available_seasons={cie_seasons}"
+        )
+        if cie_seasons != SMOKE_TIMETABLE_CIE_SEASONS:
+            check.status = FAIL
+            check.detail = f"{detail}（期望 {SMOKE_TIMETABLE_CIE_SEASONS}）"
+            check.hint = (
+                "时间表快照缺失或与仓库不同步：确认部署包带上 timetable 数据目录"
+                "（快照离线自带、无需联网）；若是快照更新，请同步改脚本顶部的 "
+                "SMOKE_TIMETABLE_* 常量。"
+            )
+            return check
+
+        # 第二个请求验证 Edexcel：family=ial 应只返回 ial 系列（34 季，少于
+        # 该考试局总数），顺带确认 family 过滤没有被忽略。
+        result = self.client.get(
+            "/api/v1/timetable/seasons", params={"board": "edexcel", "family": "ial"}
+        )
+        if not result.connected:
+            return self._fatal(check, result)
+        if result.status != 200:
+            check.status = FAIL
+            check.detail = f"HTTP {result.status}（期望 200）{result.error_detail()}"
+            check.hint = _http_hint(result.status)
+            return check
+
+        body = _as_dict(result.json())
+        counts = _as_dict(body.get("counts"))
+        totals = _as_dict(body.get("totals"))
+        ial_seasons = counts.get("seasons")
+        board_total = totals.get("available_seasons")
+        check.metrics.update(
+            {
+                "edexcel_ial_seasons": ial_seasons,
+                "edexcel_available_seasons": board_total,
+            }
+        )
+        detail += (
+            f" | edexcel family=ial counts.seasons={ial_seasons}"
+            f"（期望 {SMOKE_TIMETABLE_EDEXCEL_IAL_SEASONS}，该局总数 {board_total}）"
+        )
+        check.detail = detail
+        if ial_seasons == SMOKE_TIMETABLE_EDEXCEL_IAL_SEASONS:
+            check.status = PASS
+        else:
+            check.status = FAIL
+            check.hint = (
+                "Edexcel 时间表不匹配：确认部署包含 edexcel 时间表快照"
+                f"（ial {SMOKE_TIMETABLE_EDEXCEL_IAL_SEASONS} 季）；"
+                "若是快照更新，请同步改脚本顶部的 SMOKE_TIMETABLE_* 常量。"
+            )
+        return check
+
+    def check_materials(self) -> Check:
+        check = Check("materials", "考试资料 GET /api/v1/materials")
+        result = self.client.get("/api/v1/materials")
+        if not result.connected:
+            return self._fatal(check, result)
+        if result.status != 200:
+            check.status = FAIL
+            check.detail = f"HTTP {result.status}（期望 200）{result.error_detail()}"
+            check.hint = _http_hint(result.status)
+            return check
+
+        body = _as_dict(result.json())
+        count = body.get("count")
+        items = body.get("items")
+        check.metrics = {
+            "status_code": result.status,
+            "count": count,
+            "items": len(items) if isinstance(items, list) else 0,
+        }
+        detail = f"HTTP 200  count={count}"
+        if isinstance(count, int) and count > 0:
+            check.status = PASS
+            check.detail = detail
+        else:
+            check.status = FAIL
+            check.detail = f"{detail}（期望 count > 0）"
+            check.hint = (
+                "资料目录为空或缺失：确认部署包含 materials 数据文件"
+                "（src/examdata/materials/data/catalog.json）。"
+            )
+        return check
+
     def check_manifest(self) -> Check:
         check = Check(
             "manifest",
@@ -612,6 +729,12 @@ class Smoke:
             ("存活探针 GET /health", "health", self.check_health),
             ("能力发现 GET /api/v1/boards", "boards", self.check_boards),
             ("跨考试局检索 GET /api/v1/search?limit=1", "search", self.check_search),
+            (
+                "考试时间表 GET /api/v1/timetable/seasons（CIE 与 Edexcel ial）",
+                "timetable",
+                self.check_timetable,
+            ),
+            ("考试资料 GET /api/v1/materials", "materials", self.check_materials),
             (
                 "清单解析 GET /api/v1/paper?download=false（不下载）",
                 "manifest",

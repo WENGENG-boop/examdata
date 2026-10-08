@@ -1,0 +1,2298 @@
+===== cwd=C:\Users\weo\Desktop\api =====
+$ cd C:\Users\weo\Desktop\api && C:\Users\weo\Desktop\api\examdata\.venv\Scripts\python.exe C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\b04_route_probe.py
+env PYTHONPATH=<unset> EXAMDATA_INTEGRATION_STAGING_ROOT=<unset> EXAMDATA_INTEGRATION_ROOT=C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\candidates\b04-routes-v1
+[exit 0]
+--- stdout ---
+{
+  "schema": "examdata.integration.b04_route_probe/1",
+  "run_id": "b04-rehearsal-2026-10-07",
+  "packet": "B04",
+  "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+  "environment": {
+    "cwd": "C:\\Users\\weo\\Desktop\\api",
+    "python": "3.14.7",
+    "executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+    "pythonpath": null,
+    "staging_override": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+    "dont_write_bytecode": true
+  },
+  "candidate_manifest": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\B04_CANDIDATE_MANIFEST.json",
+    "sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "recorded_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "recomputed_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "digest_matches": true,
+    "counts": {
+      "files_copied_from_parent": 187,
+      "new_files_added_by_b04": 1,
+      "digest_files": 188,
+      "candidate_files_on_disk_after_manifest": 189
+    }
+  },
+  "module_origins": {
+    "examdata.integration.api.app": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\app.py",
+    "examdata.integration.api.compose": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\compose.py",
+    "examdata.integration.api.links": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\links.py",
+    "examdata.integration.api.openapi": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\openapi.py",
+    "examdata.integration.api.envelope": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\envelope.py",
+    "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\dataset.py",
+    "examdata.integration.api.binary": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\binary.py",
+    "examdata.integration.api.pagination": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\pagination.py",
+    "examdata.integration.api.view": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\view.py",
+    "examdata.integration.catalog.builder": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\builder.py",
+    "examdata.integration.catalog.model": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\model.py",
+    "examdata.integration.catalog.store": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\store.py",
+    "examdata.integration.catalog.revision": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\revision.py",
+    "examdata.integration.providers.registry": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\registry.py",
+    "examdata.integration.providers.fixtures": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\fixtures.py",
+    "examdata.integration.providers.capabilities": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\capabilities.py",
+    "examdata.integration.contracts.quality": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\quality.py",
+    "examdata.integration.contracts.ids": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\ids.py",
+    "examdata.integration.contracts.enums": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\enums.py",
+    "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\legacy\\bridge.py",
+    "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+  },
+  "discovery": {
+    "from_candidate_cwd": {
+      "ids": [
+        "fake_cli"
+      ],
+      "problems": [],
+      "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs",
+      "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+      "cwd": "C:\\Users\\weo\\Desktop\\api"
+    }
+  },
+  "worksheet": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\A12_ROUTE_COMPATIBILITY_WORKSHEET.json",
+    "sha256": "76ce0abc077b389aa17c7e946a101553d3ddb4a02ce74abfc59d766026b8ee34",
+    "rows": 71,
+    "methods": {
+      "GET": 70,
+      "POST": 1
+    },
+    "post_row": {
+      "method": "POST",
+      "path": "/sample"
+    },
+    "baseline_count": 71,
+    "recorded_app_hash": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+  },
+  "v2_specs": {
+    "specs": 34,
+    "implemented": 34,
+    "deferred": 0,
+    "binary": 5,
+    "unique_paths": 34,
+    "advertised_pairs": 34,
+    "agreement_problems": null
+  },
+  "ordering": {
+    "get_cases": 34,
+    "head_cases": 5,
+    "get_failures": [],
+    "head_failures": [],
+    "shadowing_problems": [],
+    "pairs_checked": 561,
+    "intersection_problems": []
+  },
+  "mechanics": {
+    "route_count_pre": 80,
+    "route_count_post": 81,
+    "pre_doc_paths": 76,
+    "post_doc_paths": 110,
+    "route_table_delta": 1,
+    "wrapper_entry": [
+      null,
+      [],
+      "_IncludedRouter"
+    ]
+  },
+  "combined_doc": {
+    "pre_paths": 76,
+    "post_paths": 110,
+    "path_delta": 34,
+    "pre_paths_operations_changed": [],
+    "operation_count": 115,
+    "v2_operation_id_count": 39,
+    "served_equals_direct": true,
+    "second_instance_digest_equal": true,
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4"
+  },
+  "negatives": {
+    "n1": {
+      "info": [
+        200,
+        "application/json"
+      ],
+      "unknown": [
+        404,
+        "application/json",
+        {
+          "detail": "Not Found"
+        }
+      ],
+      "apierror": [
+        500,
+        "text/plain; charset=utf-8",
+        "Internal Server Error"
+      ],
+      "binary_200_content": [
+        "application/json",
+        "application/pdf",
+        "image/png"
+      ],
+      "legacy_changed": []
+    },
+    "n2": {
+      "changed": [
+        "absent_404",
+        "boom_500",
+        "numbers_422"
+      ],
+      "after": {
+        "papers_200": [
+          200,
+          "application/json",
+          "600bfa81b1561fa6281505a8630327ec94da208976f36c142c781b0b46a95725"
+        ],
+        "numbers_default": [
+          200,
+          "application/json",
+          "75123c719259f40d968aa6c89f1b9fce35c79602c5da132d21bf32268defbef3"
+        ],
+        "numbers_422": [
+          400,
+          "application/json",
+          "72f2895d2cb5e04a9c0117d5fc04b79208feb97b497e81b3e17966234e529b69"
+        ],
+        "boom_500": [
+          500,
+          "application/json",
+          "2ca266614b4d7fc1055c1fae3729733006691b8944e9070a98b7985d74d0b61b"
+        ],
+        "absent_404": [
+          404,
+          "application/json",
+          "86889c528b993ed1882beb390b7f66926152fcf8072648a71f07ec0fabf8db7a"
+        ]
+      },
+      "shapes": {
+        "boom_500": {
+          "schema_version": "examdata.v2/1",
+          "code": "internal_error",
+          "detail": null
+        },
+        "numbers_422": {
+          "schema_version": "examdata.v2/1",
+          "code": "invalid_request",
+          "detail": null
+        },
+        "absent_404": {
+          "schema_version": "examdata.v2/1",
+          "code": "route_not_found",
+          "detail": null
+        }
+      }
+    },
+    "n3": {
+      "direct": [
+        404,
+        "application/json"
+      ],
+      "direct_code": "route_not_found",
+      "doubled_status": 200,
+      "doc_v2_paths": []
+    },
+    "n4": {
+      "refused": true,
+      "message": "the staged v2 app is already attached to this host",
+      "routes_unchanged": true,
+      "doc_unchanged": true
+    },
+    "n5": {
+      "middleware_built": true,
+      "refused": true,
+      "message": "attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built",
+      "v2_paths_after": []
+    },
+    "n6": {
+      "None": "attach_v2 expects a FastAPI application",
+      "'x'": "attach_v2 expects a FastAPI application"
+    }
+  },
+  "stability": {
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+    "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+    "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+    "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+    "v2_operation_ids": {
+      "GET /api/v2/info": "info_api_v2_info_get",
+      "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+      "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+      "GET /api/v2/courses": "courses_api_v2_courses_get",
+      "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+      "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+      "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+      "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+      "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+      "GET /api/v2/containers": "containers_api_v2_containers_get",
+      "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+      "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+      "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+      "GET /api/v2/resources": "resources_api_v2_resources_get",
+      "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+      "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+      "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+      "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+      "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+      "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+      "GET /api/v2/questions": "questions_api_v2_questions_get",
+      "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+      "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+      "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+      "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+      "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+      "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+      "GET /api/v2/tags": "tags_api_v2_tags_get",
+      "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+      "GET /api/v2/materials": "materials_api_v2_materials_get",
+      "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+      "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+      "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+      "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+      "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+      "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+      "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+      "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+      "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+    },
+    "path_delta": 34
+  },
+  "checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    {
+      "name": "B_worksheet_rows_71",
+      "ok": true,
+      "detail": "71 row(s)"
+    },
+    {
+      "name": "B_worksheet_methods_70_get_1_post",
+      "ok": true,
+      "detail": "{'GET': 70, 'POST': 1}"
+    },
+    {
+      "name": "B_worksheet_post_row_is_sample",
+      "ok": true,
+      "detail": "{'method': 'POST', 'path': '/sample'}"
+    },
+    {
+      "name": "B_worksheet_baseline_count_71",
+      "ok": true,
+      "detail": "baseline_count=71"
+    },
+    {
+      "name": "B_worksheet_app_hash_recorded",
+      "ok": true,
+      "detail": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+    },
+    {
+      "name": "B_worksheet_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 legacy paths"
+    },
+    {
+      "name": "B_v2_spec_counts",
+      "ok": true,
+      "detail": "specs=34 implemented=34 deferred=0 binary=5 unique_paths=34"
+    },
+    {
+      "name": "B_v2_runtime_spec_registry_agree",
+      "ok": true,
+      "detail": "runtime=34 spec=34 advertised=34"
+    },
+    {
+      "name": "B_v2_head_pairs_binary_only",
+      "ok": true,
+      "detail": "runtime_head=5 spec_head=5"
+    },
+    {
+      "name": "B_v2_agreement_problems_empty",
+      "ok": true,
+      "detail": "no agreement problems"
+    },
+    {
+      "name": "B_ordering_get_first_match_own_route",
+      "ok": true,
+      "detail": "34 GET case(s); failures=none"
+    },
+    {
+      "name": "B_ordering_head_first_match_own_route",
+      "ok": true,
+      "detail": "5 HEAD case(s); failures=none"
+    },
+    {
+      "name": "B_no_param_static_shadowing",
+      "ok": true,
+      "detail": "no shadowed routes"
+    },
+    {
+      "name": "B_no_pattern_intersections",
+      "ok": true,
+      "detail": "561 distinct-pattern pair(s); intersections=none"
+    },
+    {
+      "name": "C_host_shape_pre_attach",
+      "ok": true,
+      "detail": "routes=80 doc_paths=76 middleware_built=False"
+    },
+    {
+      "name": "C_route_table_prefix_kept",
+      "ok": true,
+      "detail": "before=80 after=81"
+    },
+    {
+      "name": "C_route_table_single_wrapper_appended",
+      "ok": true,
+      "detail": "[[None, [], '_IncludedRouter']]"
+    },
+    {
+      "name": "C_legacy_inventory_byte_identical",
+      "ok": true,
+      "detail": "71 row probe(s); changed=none"
+    },
+    {
+      "name": "C_legacy_extras_byte_identical",
+      "ok": true,
+      "detail": "7 extra probe(s); changed=none"
+    },
+    {
+      "name": "C_legacy_boom_bytes_pinned",
+      "ok": true,
+      "detail": "[500, 'text/plain; charset=utf-8', 'e41656eb2ba6c6293bf6dd928e5a88cdbc50535cab661c1969e0f598e497ed62']"
+    },
+    {
+      "name": "C_binary_fixture_ids_pinned",
+      "ok": true,
+      "detail": "['syl_synthetic_cie_0580', 'syl_synthetic_ielts_book']"
+    },
+    {
+      "name": "C_binary_content_200",
+      "ok": true,
+      "detail": "[200, 'application/pdf', 667, '\"8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da\"']"
+    },
+    {
+      "name": "C_binary_range_206",
+      "ok": true,
+      "detail": "[206, 'bytes 0-9/667', 10]"
+    },
+    {
+      "name": "C_binary_conditional_304",
+      "ok": true,
+      "detail": "[304, 0]"
+    },
+    {
+      "name": "C_binary_head_200",
+      "ok": true,
+      "detail": "[200, '667']"
+    },
+    {
+      "name": "C_v2_typed_400_invalid_request",
+      "ok": true,
+      "detail": "{'status': 400, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_stack_boom_500_internal_error",
+      "ok": true,
+      "detail": "{'status': 500, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_jobs_404_not_found",
+      "ok": true,
+      "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'not_found', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_unknown_404_route_not_found",
+      "ok": true,
+      "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_post_info_405_method_not_allowed",
+      "ok": true,
+      "detail": "{'status': 405, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'method_not_allowed', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_info_200_envelope",
+      "ok": true,
+      "detail": "{'status': 200, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': None, 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_controls_differ_from_baseline",
+      "ok": true,
+      "detail": "6 control(s); identical=none"
+    },
+    {
+      "name": "D_path_delta_is_exactly_registry",
+      "ok": true,
+      "detail": "added=34 removed=0 unexpected_added=none"
+    },
+    {
+      "name": "D_pre_paths_operations_unchanged",
+      "ok": true,
+      "detail": "76 pre-attach path(s); changed=none"
+    },
+    {
+      "name": "D_operation_ids_unique",
+      "ok": true,
+      "detail": "115 operation(s); duplicates=none"
+    },
+    {
+      "name": "D_v2_operation_ids_match_standalone",
+      "ok": true,
+      "detail": "standalone=39 composed=39 mismatch=none"
+    },
+    {
+      "name": "D_binary_rows_documented",
+      "ok": true,
+      "detail": "5 binary row(s) documented with their media types"
+    },
+    {
+      "name": "D_nonbinary_200_schema_is_envelope",
+      "ok": true,
+      "detail": "29 non-binary route(s); mismatches=none"
+    },
+    {
+      "name": "D_openapi_route_serves_same_document",
+      "ok": true,
+      "detail": "status=200 equal=True"
+    },
+    {
+      "name": "D_second_instance_document_digest_equal",
+      "ok": true,
+      "detail": "96afb249bffe0b5e vs 96afb249bffe0b5e"
+    },
+    {
+      "name": "E_candidate_bytes_unchanged",
+      "ok": true,
+      "detail": "identical"
+    },
+    {
+      "name": "E_fixture_and_contract_digests_unchanged",
+      "ok": true,
+      "detail": "fixtures=76ef844ccfa0 contracts=9421088a68a2"
+    },
+    {
+      "name": "E_manifest_recompute_matches_recorded",
+      "ok": true,
+      "detail": "files=188 sha=fd806f4c6116c3f5"
+    },
+    {
+      "name": "E_manifest_counts_disclosed",
+      "ok": true,
+      "detail": "digest_files=188 on_disk_non_cache=189"
+    },
+    {
+      "name": "E_compose_hook_frozen",
+      "ok": true,
+      "detail": "candidate=e220c007dba89d54 tools=e220c007dba89d54 expected=e220c007dba89d54"
+    },
+    {
+      "name": "E_no_embedded_data_payloads",
+      "ok": true,
+      "detail": "no data: URIs in fixtures"
+    },
+    {
+      "name": "E_scratch_marker_written",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp\\routing\\probe_scratch.json"
+    },
+    {
+      "name": "N1_raw_include_serves_v2_unshaped_errors",
+      "ok": true,
+      "detail": "{'info': [200, 'application/json'], 'unknown': [404, 'application/json', {'detail': 'Not Found'}], 'apierror': [500, 'text/plain; charset=utf-8', 'Internal Server Error'], 'binary_200_content': ['application/json', 'application/pdf', 'image/png'], 'legacy_changed': []}"
+    },
+    {
+      "name": "N1_raw_include_binary_row_keeps_application_json",
+      "ok": true,
+      "detail": "['application/json', 'application/pdf', 'image/png']"
+    },
+    {
+      "name": "N1_legacy_probes_unchanged",
+      "ok": true,
+      "detail": "5 probe(s) identical"
+    },
+    {
+      "name": "N2_unscoped_install_changes_exactly_three_probes",
+      "ok": true,
+      "detail": "['absent_404', 'boom_500', 'numbers_422']"
+    },
+    {
+      "name": "N2_unscoped_legacy_500_becomes_json_envelope",
+      "ok": true,
+      "detail": "{'after': [500, 'application/json', '2ca266614b4d7fc1055c1fae3729733006691b8944e9070a98b7985d74d0b61b'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'detail': None}}"
+    },
+    {
+      "name": "N2_unscoped_legacy_422_becomes_400_envelope",
+      "ok": true,
+      "detail": "{'after': [400, 'application/json', '72f2895d2cb5e04a9c0117d5fc04b79208feb97b497e81b3e17966234e529b69'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'detail': None}}"
+    },
+    {
+      "name": "N2_unscoped_legacy_404_becomes_envelope",
+      "ok": true,
+      "detail": "{'after': [404, 'application/json', '86889c528b993ed1882beb390b7f66926152fcf8072648a71f07ec0fabf8db7a'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'detail': None}}"
+    },
+    {
+      "name": "N2_post_build_handler_install_is_invisible",
+      "ok": true,
+      "detail": "middleware_built=True changed=none"
+    },
+    {
+      "name": "N3_mount_documents_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 paths"
+    },
+    {
+      "name": "N3_mount_direct_info_is_wrong_route_envelope",
+      "ok": true,
+      "detail": "{'direct': [404, 'application/json'], 'direct_code': 'route_not_found', 'doubled_status': 200, 'doc_v2_paths': []}"
+    },
+    {
+      "name": "N3_mount_requires_doubled_prefix",
+      "ok": true,
+      "detail": "GET /api/v2/api/v2/info -> 200"
+    },
+    {
+      "name": "N4_double_attach_refused",
+      "ok": true,
+      "detail": "{'refused': True, 'message': 'the staged v2 app is already attached to this host', 'routes_unchanged': True, 'doc_unchanged': True}"
+    },
+    {
+      "name": "N4_double_attach_leaves_host_unchanged",
+      "ok": true,
+      "detail": "{'routes': True, 'doc': True}"
+    },
+    {
+      "name": "N5_late_attach_refused",
+      "ok": true,
+      "detail": "{'middleware_built': True, 'refused': True, 'message': 'attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built', 'v2_paths_after': []}"
+    },
+    {
+      "name": "N5_late_attach_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 paths after the refused attach"
+    },
+    {
+      "name": "N6_non_fastapi_host_refused",
+      "ok": true,
+      "detail": "{'None': 'attach_v2 expects a FastAPI application', \"'x'\": 'attach_v2 expects a FastAPI application'}"
+    }
+  ],
+  "counts": {
+    "checks": 75,
+    "checks_failed": 0,
+    "negative_checks": 15,
+    "positive_checks": 30
+  },
+  "negative_checks": [
+    "N1_raw_include_serves_v2_unshaped_errors",
+    "N1_raw_include_binary_row_keeps_application_json",
+    "N2_unscoped_install_changes_exactly_three_probes",
+    "N2_unscoped_legacy_500_becomes_json_envelope",
+    "N2_unscoped_legacy_422_becomes_400_envelope",
+    "N2_unscoped_legacy_404_becomes_envelope",
+    "N2_post_build_handler_install_is_invisible",
+    "N3_mount_documents_no_v2_paths",
+    "N3_mount_direct_info_is_wrong_route_envelope",
+    "N3_mount_requires_doubled_prefix",
+    "N4_double_attach_refused",
+    "N4_double_attach_leaves_host_unchanged",
+    "N5_late_attach_refused",
+    "N5_late_attach_no_v2_paths",
+    "N6_non_fastapi_host_refused"
+  ],
+  "positive_checks": [
+    "B_ordering_get_first_match_own_route",
+    "B_ordering_head_first_match_own_route",
+    "B_no_param_static_shadowing",
+    "B_no_pattern_intersections",
+    "C_route_table_prefix_kept",
+    "C_route_table_single_wrapper_appended",
+    "C_legacy_inventory_byte_identical",
+    "C_legacy_extras_byte_identical",
+    "C_legacy_boom_bytes_pinned",
+    "C_binary_fixture_ids_pinned",
+    "C_binary_content_200",
+    "C_binary_range_206",
+    "C_binary_conditional_304",
+    "C_binary_head_200",
+    "C_v2_typed_400_invalid_request",
+    "C_v2_stack_boom_500_internal_error",
+    "C_v2_jobs_404_not_found",
+    "C_v2_unknown_404_route_not_found",
+    "C_v2_post_info_405_method_not_allowed",
+    "C_v2_info_200_envelope",
+    "C_v2_controls_differ_from_baseline",
+    "D_path_delta_is_exactly_registry",
+    "D_pre_paths_operations_unchanged",
+    "D_operation_ids_unique",
+    "D_v2_operation_ids_match_standalone",
+    "D_binary_rows_documented",
+    "D_nonbinary_200_schema_is_envelope",
+    "D_openapi_route_serves_same_document",
+    "D_second_instance_document_digest_equal",
+    "N1_legacy_probes_unchanged"
+  ],
+  "failed": [],
+  "ok": true,
+  "not_run": [
+    {
+      "check": "real merge into examdata/src/examdata/api/app.py",
+      "reason": "gate original_paths_released is closed; the plan entry remains a proposal (deferred_pending_release) and the original tree was never read or written"
+    },
+    {
+      "check": "real baseline verification against the actual legacy application",
+      "reason": "gate original_paths_released is closed; the legacy side was simulated from the frozen A12 route-compatibility worksheet, not from the original app"
+    },
+    {
+      "check": "real Node component execution (fake-cli.mjs run via the Node runtime)",
+      "reason": "gate original_paths_released is closed; only synthetic discovery and importability of the component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "cutover of the existing service",
+      "reason": "gate existing_service_cutover_authorized is closed"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "cleanup of the original project",
+      "reason": "gate original_cleanup_authorized is closed"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used, read, fabricated or staged; the routing controls are synthetic request parameters with no secret values"
+    }
+  ],
+  "note": "private rehearsal only; not merged, not deployed; the original tree was never read, imported or written; frozen evidence was not touched; scratch space was confined to the run directory's evidence/tmp; no credential was used, read or fabricated"
+}
+--- stderr ---
+C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\b04_route_probe.py:175: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient  # noqa: E402
+
+===== cwd=C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\evidence\tmp =====
+$ cd C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\evidence\tmp && C:\Users\weo\Desktop\api\examdata\.venv\Scripts\python.exe C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\b04_route_probe.py
+env PYTHONPATH=<unset> EXAMDATA_INTEGRATION_STAGING_ROOT=<unset> EXAMDATA_INTEGRATION_ROOT=C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\candidates\b04-routes-v1
+[exit 0]
+--- stdout ---
+{
+  "schema": "examdata.integration.b04_route_probe/1",
+  "run_id": "b04-rehearsal-2026-10-07",
+  "packet": "B04",
+  "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+  "environment": {
+    "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp",
+    "python": "3.14.7",
+    "executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+    "pythonpath": null,
+    "staging_override": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+    "dont_write_bytecode": true
+  },
+  "candidate_manifest": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\B04_CANDIDATE_MANIFEST.json",
+    "sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "recorded_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "recomputed_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "digest_matches": true,
+    "counts": {
+      "files_copied_from_parent": 187,
+      "new_files_added_by_b04": 1,
+      "digest_files": 188,
+      "candidate_files_on_disk_after_manifest": 189
+    }
+  },
+  "module_origins": {
+    "examdata.integration.api.app": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\app.py",
+    "examdata.integration.api.compose": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\compose.py",
+    "examdata.integration.api.links": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\links.py",
+    "examdata.integration.api.openapi": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\openapi.py",
+    "examdata.integration.api.envelope": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\envelope.py",
+    "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\dataset.py",
+    "examdata.integration.api.binary": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\binary.py",
+    "examdata.integration.api.pagination": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\pagination.py",
+    "examdata.integration.api.view": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\view.py",
+    "examdata.integration.catalog.builder": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\builder.py",
+    "examdata.integration.catalog.model": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\model.py",
+    "examdata.integration.catalog.store": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\store.py",
+    "examdata.integration.catalog.revision": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\revision.py",
+    "examdata.integration.providers.registry": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\registry.py",
+    "examdata.integration.providers.fixtures": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\fixtures.py",
+    "examdata.integration.providers.capabilities": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\capabilities.py",
+    "examdata.integration.contracts.quality": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\quality.py",
+    "examdata.integration.contracts.ids": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\ids.py",
+    "examdata.integration.contracts.enums": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\enums.py",
+    "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\legacy\\bridge.py",
+    "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+  },
+  "discovery": {
+    "from_candidate_cwd": {
+      "ids": [
+        "fake_cli"
+      ],
+      "problems": [],
+      "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs",
+      "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp"
+    }
+  },
+  "worksheet": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\A12_ROUTE_COMPATIBILITY_WORKSHEET.json",
+    "sha256": "76ce0abc077b389aa17c7e946a101553d3ddb4a02ce74abfc59d766026b8ee34",
+    "rows": 71,
+    "methods": {
+      "GET": 70,
+      "POST": 1
+    },
+    "post_row": {
+      "method": "POST",
+      "path": "/sample"
+    },
+    "baseline_count": 71,
+    "recorded_app_hash": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+  },
+  "v2_specs": {
+    "specs": 34,
+    "implemented": 34,
+    "deferred": 0,
+    "binary": 5,
+    "unique_paths": 34,
+    "advertised_pairs": 34,
+    "agreement_problems": null
+  },
+  "ordering": {
+    "get_cases": 34,
+    "head_cases": 5,
+    "get_failures": [],
+    "head_failures": [],
+    "shadowing_problems": [],
+    "pairs_checked": 561,
+    "intersection_problems": []
+  },
+  "mechanics": {
+    "route_count_pre": 80,
+    "route_count_post": 81,
+    "pre_doc_paths": 76,
+    "post_doc_paths": 110,
+    "route_table_delta": 1,
+    "wrapper_entry": [
+      null,
+      [],
+      "_IncludedRouter"
+    ]
+  },
+  "combined_doc": {
+    "pre_paths": 76,
+    "post_paths": 110,
+    "path_delta": 34,
+    "pre_paths_operations_changed": [],
+    "operation_count": 115,
+    "v2_operation_id_count": 39,
+    "served_equals_direct": true,
+    "second_instance_digest_equal": true,
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4"
+  },
+  "negatives": {
+    "n1": {
+      "info": [
+        200,
+        "application/json"
+      ],
+      "unknown": [
+        404,
+        "application/json",
+        {
+          "detail": "Not Found"
+        }
+      ],
+      "apierror": [
+        500,
+        "text/plain; charset=utf-8",
+        "Internal Server Error"
+      ],
+      "binary_200_content": [
+        "application/json",
+        "application/pdf",
+        "image/png"
+      ],
+      "legacy_changed": []
+    },
+    "n2": {
+      "changed": [
+        "absent_404",
+        "boom_500",
+        "numbers_422"
+      ],
+      "after": {
+        "papers_200": [
+          200,
+          "application/json",
+          "600bfa81b1561fa6281505a8630327ec94da208976f36c142c781b0b46a95725"
+        ],
+        "numbers_default": [
+          200,
+          "application/json",
+          "75123c719259f40d968aa6c89f1b9fce35c79602c5da132d21bf32268defbef3"
+        ],
+        "numbers_422": [
+          400,
+          "application/json",
+          "6468cee51ef9496a96ea338acdff22ca57ba6715e8d3f2817ddfab9ec9bce716"
+        ],
+        "boom_500": [
+          500,
+          "application/json",
+          "ba67677ca5575c2b9d577b736951573503bcff64d068ea9594ab3a23d6526961"
+        ],
+        "absent_404": [
+          404,
+          "application/json",
+          "5c2f493eca06e7384d01d0da514b3f7daa66a205db0f8fcbde6aa7d55e1dcf8e"
+        ]
+      },
+      "shapes": {
+        "boom_500": {
+          "schema_version": "examdata.v2/1",
+          "code": "internal_error",
+          "detail": null
+        },
+        "numbers_422": {
+          "schema_version": "examdata.v2/1",
+          "code": "invalid_request",
+          "detail": null
+        },
+        "absent_404": {
+          "schema_version": "examdata.v2/1",
+          "code": "route_not_found",
+          "detail": null
+        }
+      }
+    },
+    "n3": {
+      "direct": [
+        404,
+        "application/json"
+      ],
+      "direct_code": "route_not_found",
+      "doubled_status": 200,
+      "doc_v2_paths": []
+    },
+    "n4": {
+      "refused": true,
+      "message": "the staged v2 app is already attached to this host",
+      "routes_unchanged": true,
+      "doc_unchanged": true
+    },
+    "n5": {
+      "middleware_built": true,
+      "refused": true,
+      "message": "attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built",
+      "v2_paths_after": []
+    },
+    "n6": {
+      "None": "attach_v2 expects a FastAPI application",
+      "'x'": "attach_v2 expects a FastAPI application"
+    }
+  },
+  "stability": {
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+    "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+    "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+    "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+    "v2_operation_ids": {
+      "GET /api/v2/info": "info_api_v2_info_get",
+      "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+      "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+      "GET /api/v2/courses": "courses_api_v2_courses_get",
+      "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+      "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+      "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+      "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+      "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+      "GET /api/v2/containers": "containers_api_v2_containers_get",
+      "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+      "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+      "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+      "GET /api/v2/resources": "resources_api_v2_resources_get",
+      "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+      "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+      "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+      "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+      "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+      "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+      "GET /api/v2/questions": "questions_api_v2_questions_get",
+      "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+      "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+      "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+      "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+      "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+      "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+      "GET /api/v2/tags": "tags_api_v2_tags_get",
+      "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+      "GET /api/v2/materials": "materials_api_v2_materials_get",
+      "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+      "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+      "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+      "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+      "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+      "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+      "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+      "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+      "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+    },
+    "path_delta": 34
+  },
+  "checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    {
+      "name": "B_worksheet_rows_71",
+      "ok": true,
+      "detail": "71 row(s)"
+    },
+    {
+      "name": "B_worksheet_methods_70_get_1_post",
+      "ok": true,
+      "detail": "{'GET': 70, 'POST': 1}"
+    },
+    {
+      "name": "B_worksheet_post_row_is_sample",
+      "ok": true,
+      "detail": "{'method': 'POST', 'path': '/sample'}"
+    },
+    {
+      "name": "B_worksheet_baseline_count_71",
+      "ok": true,
+      "detail": "baseline_count=71"
+    },
+    {
+      "name": "B_worksheet_app_hash_recorded",
+      "ok": true,
+      "detail": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+    },
+    {
+      "name": "B_worksheet_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 legacy paths"
+    },
+    {
+      "name": "B_v2_spec_counts",
+      "ok": true,
+      "detail": "specs=34 implemented=34 deferred=0 binary=5 unique_paths=34"
+    },
+    {
+      "name": "B_v2_runtime_spec_registry_agree",
+      "ok": true,
+      "detail": "runtime=34 spec=34 advertised=34"
+    },
+    {
+      "name": "B_v2_head_pairs_binary_only",
+      "ok": true,
+      "detail": "runtime_head=5 spec_head=5"
+    },
+    {
+      "name": "B_v2_agreement_problems_empty",
+      "ok": true,
+      "detail": "no agreement problems"
+    },
+    {
+      "name": "B_ordering_get_first_match_own_route",
+      "ok": true,
+      "detail": "34 GET case(s); failures=none"
+    },
+    {
+      "name": "B_ordering_head_first_match_own_route",
+      "ok": true,
+      "detail": "5 HEAD case(s); failures=none"
+    },
+    {
+      "name": "B_no_param_static_shadowing",
+      "ok": true,
+      "detail": "no shadowed routes"
+    },
+    {
+      "name": "B_no_pattern_intersections",
+      "ok": true,
+      "detail": "561 distinct-pattern pair(s); intersections=none"
+    },
+    {
+      "name": "C_host_shape_pre_attach",
+      "ok": true,
+      "detail": "routes=80 doc_paths=76 middleware_built=False"
+    },
+    {
+      "name": "C_route_table_prefix_kept",
+      "ok": true,
+      "detail": "before=80 after=81"
+    },
+    {
+      "name": "C_route_table_single_wrapper_appended",
+      "ok": true,
+      "detail": "[[None, [], '_IncludedRouter']]"
+    },
+    {
+      "name": "C_legacy_inventory_byte_identical",
+      "ok": true,
+      "detail": "71 row probe(s); changed=none"
+    },
+    {
+      "name": "C_legacy_extras_byte_identical",
+      "ok": true,
+      "detail": "7 extra probe(s); changed=none"
+    },
+    {
+      "name": "C_legacy_boom_bytes_pinned",
+      "ok": true,
+      "detail": "[500, 'text/plain; charset=utf-8', 'e41656eb2ba6c6293bf6dd928e5a88cdbc50535cab661c1969e0f598e497ed62']"
+    },
+    {
+      "name": "C_binary_fixture_ids_pinned",
+      "ok": true,
+      "detail": "['syl_synthetic_cie_0580', 'syl_synthetic_ielts_book']"
+    },
+    {
+      "name": "C_binary_content_200",
+      "ok": true,
+      "detail": "[200, 'application/pdf', 667, '\"8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da\"']"
+    },
+    {
+      "name": "C_binary_range_206",
+      "ok": true,
+      "detail": "[206, 'bytes 0-9/667', 10]"
+    },
+    {
+      "name": "C_binary_conditional_304",
+      "ok": true,
+      "detail": "[304, 0]"
+    },
+    {
+      "name": "C_binary_head_200",
+      "ok": true,
+      "detail": "[200, '667']"
+    },
+    {
+      "name": "C_v2_typed_400_invalid_request",
+      "ok": true,
+      "detail": "{'status': 400, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_stack_boom_500_internal_error",
+      "ok": true,
+      "detail": "{'status': 500, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_jobs_404_not_found",
+      "ok": true,
+      "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'not_found', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_unknown_404_route_not_found",
+      "ok": true,
+      "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_post_info_405_method_not_allowed",
+      "ok": true,
+      "detail": "{'status': 405, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'method_not_allowed', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_info_200_envelope",
+      "ok": true,
+      "detail": "{'status': 200, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': None, 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_controls_differ_from_baseline",
+      "ok": true,
+      "detail": "6 control(s); identical=none"
+    },
+    {
+      "name": "D_path_delta_is_exactly_registry",
+      "ok": true,
+      "detail": "added=34 removed=0 unexpected_added=none"
+    },
+    {
+      "name": "D_pre_paths_operations_unchanged",
+      "ok": true,
+      "detail": "76 pre-attach path(s); changed=none"
+    },
+    {
+      "name": "D_operation_ids_unique",
+      "ok": true,
+      "detail": "115 operation(s); duplicates=none"
+    },
+    {
+      "name": "D_v2_operation_ids_match_standalone",
+      "ok": true,
+      "detail": "standalone=39 composed=39 mismatch=none"
+    },
+    {
+      "name": "D_binary_rows_documented",
+      "ok": true,
+      "detail": "5 binary row(s) documented with their media types"
+    },
+    {
+      "name": "D_nonbinary_200_schema_is_envelope",
+      "ok": true,
+      "detail": "29 non-binary route(s); mismatches=none"
+    },
+    {
+      "name": "D_openapi_route_serves_same_document",
+      "ok": true,
+      "detail": "status=200 equal=True"
+    },
+    {
+      "name": "D_second_instance_document_digest_equal",
+      "ok": true,
+      "detail": "96afb249bffe0b5e vs 96afb249bffe0b5e"
+    },
+    {
+      "name": "E_candidate_bytes_unchanged",
+      "ok": true,
+      "detail": "identical"
+    },
+    {
+      "name": "E_fixture_and_contract_digests_unchanged",
+      "ok": true,
+      "detail": "fixtures=76ef844ccfa0 contracts=9421088a68a2"
+    },
+    {
+      "name": "E_manifest_recompute_matches_recorded",
+      "ok": true,
+      "detail": "files=188 sha=fd806f4c6116c3f5"
+    },
+    {
+      "name": "E_manifest_counts_disclosed",
+      "ok": true,
+      "detail": "digest_files=188 on_disk_non_cache=189"
+    },
+    {
+      "name": "E_compose_hook_frozen",
+      "ok": true,
+      "detail": "candidate=e220c007dba89d54 tools=e220c007dba89d54 expected=e220c007dba89d54"
+    },
+    {
+      "name": "E_no_embedded_data_payloads",
+      "ok": true,
+      "detail": "no data: URIs in fixtures"
+    },
+    {
+      "name": "E_scratch_marker_written",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp\\routing\\probe_scratch.json"
+    },
+    {
+      "name": "N1_raw_include_serves_v2_unshaped_errors",
+      "ok": true,
+      "detail": "{'info': [200, 'application/json'], 'unknown': [404, 'application/json', {'detail': 'Not Found'}], 'apierror': [500, 'text/plain; charset=utf-8', 'Internal Server Error'], 'binary_200_content': ['application/json', 'application/pdf', 'image/png'], 'legacy_changed': []}"
+    },
+    {
+      "name": "N1_raw_include_binary_row_keeps_application_json",
+      "ok": true,
+      "detail": "['application/json', 'application/pdf', 'image/png']"
+    },
+    {
+      "name": "N1_legacy_probes_unchanged",
+      "ok": true,
+      "detail": "5 probe(s) identical"
+    },
+    {
+      "name": "N2_unscoped_install_changes_exactly_three_probes",
+      "ok": true,
+      "detail": "['absent_404', 'boom_500', 'numbers_422']"
+    },
+    {
+      "name": "N2_unscoped_legacy_500_becomes_json_envelope",
+      "ok": true,
+      "detail": "{'after': [500, 'application/json', 'ba67677ca5575c2b9d577b736951573503bcff64d068ea9594ab3a23d6526961'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'detail': None}}"
+    },
+    {
+      "name": "N2_unscoped_legacy_422_becomes_400_envelope",
+      "ok": true,
+      "detail": "{'after': [400, 'application/json', '6468cee51ef9496a96ea338acdff22ca57ba6715e8d3f2817ddfab9ec9bce716'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'detail': None}}"
+    },
+    {
+      "name": "N2_unscoped_legacy_404_becomes_envelope",
+      "ok": true,
+      "detail": "{'after': [404, 'application/json', '5c2f493eca06e7384d01d0da514b3f7daa66a205db0f8fcbde6aa7d55e1dcf8e'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'detail': None}}"
+    },
+    {
+      "name": "N2_post_build_handler_install_is_invisible",
+      "ok": true,
+      "detail": "middleware_built=True changed=none"
+    },
+    {
+      "name": "N3_mount_documents_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 paths"
+    },
+    {
+      "name": "N3_mount_direct_info_is_wrong_route_envelope",
+      "ok": true,
+      "detail": "{'direct': [404, 'application/json'], 'direct_code': 'route_not_found', 'doubled_status': 200, 'doc_v2_paths': []}"
+    },
+    {
+      "name": "N3_mount_requires_doubled_prefix",
+      "ok": true,
+      "detail": "GET /api/v2/api/v2/info -> 200"
+    },
+    {
+      "name": "N4_double_attach_refused",
+      "ok": true,
+      "detail": "{'refused': True, 'message': 'the staged v2 app is already attached to this host', 'routes_unchanged': True, 'doc_unchanged': True}"
+    },
+    {
+      "name": "N4_double_attach_leaves_host_unchanged",
+      "ok": true,
+      "detail": "{'routes': True, 'doc': True}"
+    },
+    {
+      "name": "N5_late_attach_refused",
+      "ok": true,
+      "detail": "{'middleware_built': True, 'refused': True, 'message': 'attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built', 'v2_paths_after': []}"
+    },
+    {
+      "name": "N5_late_attach_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 paths after the refused attach"
+    },
+    {
+      "name": "N6_non_fastapi_host_refused",
+      "ok": true,
+      "detail": "{'None': 'attach_v2 expects a FastAPI application', \"'x'\": 'attach_v2 expects a FastAPI application'}"
+    }
+  ],
+  "counts": {
+    "checks": 75,
+    "checks_failed": 0,
+    "negative_checks": 15,
+    "positive_checks": 30
+  },
+  "negative_checks": [
+    "N1_raw_include_serves_v2_unshaped_errors",
+    "N1_raw_include_binary_row_keeps_application_json",
+    "N2_unscoped_install_changes_exactly_three_probes",
+    "N2_unscoped_legacy_500_becomes_json_envelope",
+    "N2_unscoped_legacy_422_becomes_400_envelope",
+    "N2_unscoped_legacy_404_becomes_envelope",
+    "N2_post_build_handler_install_is_invisible",
+    "N3_mount_documents_no_v2_paths",
+    "N3_mount_direct_info_is_wrong_route_envelope",
+    "N3_mount_requires_doubled_prefix",
+    "N4_double_attach_refused",
+    "N4_double_attach_leaves_host_unchanged",
+    "N5_late_attach_refused",
+    "N5_late_attach_no_v2_paths",
+    "N6_non_fastapi_host_refused"
+  ],
+  "positive_checks": [
+    "B_ordering_get_first_match_own_route",
+    "B_ordering_head_first_match_own_route",
+    "B_no_param_static_shadowing",
+    "B_no_pattern_intersections",
+    "C_route_table_prefix_kept",
+    "C_route_table_single_wrapper_appended",
+    "C_legacy_inventory_byte_identical",
+    "C_legacy_extras_byte_identical",
+    "C_legacy_boom_bytes_pinned",
+    "C_binary_fixture_ids_pinned",
+    "C_binary_content_200",
+    "C_binary_range_206",
+    "C_binary_conditional_304",
+    "C_binary_head_200",
+    "C_v2_typed_400_invalid_request",
+    "C_v2_stack_boom_500_internal_error",
+    "C_v2_jobs_404_not_found",
+    "C_v2_unknown_404_route_not_found",
+    "C_v2_post_info_405_method_not_allowed",
+    "C_v2_info_200_envelope",
+    "C_v2_controls_differ_from_baseline",
+    "D_path_delta_is_exactly_registry",
+    "D_pre_paths_operations_unchanged",
+    "D_operation_ids_unique",
+    "D_v2_operation_ids_match_standalone",
+    "D_binary_rows_documented",
+    "D_nonbinary_200_schema_is_envelope",
+    "D_openapi_route_serves_same_document",
+    "D_second_instance_document_digest_equal",
+    "N1_legacy_probes_unchanged"
+  ],
+  "failed": [],
+  "ok": true,
+  "not_run": [
+    {
+      "check": "real merge into examdata/src/examdata/api/app.py",
+      "reason": "gate original_paths_released is closed; the plan entry remains a proposal (deferred_pending_release) and the original tree was never read or written"
+    },
+    {
+      "check": "real baseline verification against the actual legacy application",
+      "reason": "gate original_paths_released is closed; the legacy side was simulated from the frozen A12 route-compatibility worksheet, not from the original app"
+    },
+    {
+      "check": "real Node component execution (fake-cli.mjs run via the Node runtime)",
+      "reason": "gate original_paths_released is closed; only synthetic discovery and importability of the component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "cutover of the existing service",
+      "reason": "gate existing_service_cutover_authorized is closed"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "cleanup of the original project",
+      "reason": "gate original_cleanup_authorized is closed"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used, read, fabricated or staged; the routing controls are synthetic request parameters with no secret values"
+    }
+  ],
+  "note": "private rehearsal only; not merged, not deployed; the original tree was never read, imported or written; frozen evidence was not touched; scratch space was confined to the run directory's evidence/tmp; no credential was used, read or fabricated"
+}
+--- stderr ---
+C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\b04_route_probe.py:175: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient  # noqa: E402
+
+===== cwd=C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\evidence\tmp\cwd with spaces ünïcode =====
+$ cd C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\evidence\tmp\cwd with spaces ünïcode && C:\Users\weo\Desktop\api\examdata\.venv\Scripts\python.exe C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\b04_route_probe.py
+env PYTHONPATH=<unset> EXAMDATA_INTEGRATION_STAGING_ROOT=<unset> EXAMDATA_INTEGRATION_ROOT=C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\candidates\b04-routes-v1
+[exit 0]
+--- stdout ---
+{
+  "schema": "examdata.integration.b04_route_probe/1",
+  "run_id": "b04-rehearsal-2026-10-07",
+  "packet": "B04",
+  "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+  "environment": {
+    "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces \u00fcn\u00efcode",
+    "python": "3.14.7",
+    "executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+    "pythonpath": null,
+    "staging_override": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+    "dont_write_bytecode": true
+  },
+  "candidate_manifest": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\B04_CANDIDATE_MANIFEST.json",
+    "sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "recorded_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "recomputed_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "digest_matches": true,
+    "counts": {
+      "files_copied_from_parent": 187,
+      "new_files_added_by_b04": 1,
+      "digest_files": 188,
+      "candidate_files_on_disk_after_manifest": 189
+    }
+  },
+  "module_origins": {
+    "examdata.integration.api.app": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\app.py",
+    "examdata.integration.api.compose": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\compose.py",
+    "examdata.integration.api.links": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\links.py",
+    "examdata.integration.api.openapi": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\openapi.py",
+    "examdata.integration.api.envelope": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\envelope.py",
+    "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\dataset.py",
+    "examdata.integration.api.binary": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\binary.py",
+    "examdata.integration.api.pagination": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\pagination.py",
+    "examdata.integration.api.view": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\api\\view.py",
+    "examdata.integration.catalog.builder": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\builder.py",
+    "examdata.integration.catalog.model": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\model.py",
+    "examdata.integration.catalog.store": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\store.py",
+    "examdata.integration.catalog.revision": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\catalog\\revision.py",
+    "examdata.integration.providers.registry": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\registry.py",
+    "examdata.integration.providers.fixtures": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\fixtures.py",
+    "examdata.integration.providers.capabilities": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\providers\\capabilities.py",
+    "examdata.integration.contracts.quality": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\quality.py",
+    "examdata.integration.contracts.ids": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\ids.py",
+    "examdata.integration.contracts.enums": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\contracts\\enums.py",
+    "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\legacy\\bridge.py",
+    "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+  },
+  "discovery": {
+    "from_candidate_cwd": {
+      "ids": [
+        "fake_cli"
+      ],
+      "problems": [],
+      "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs",
+      "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1",
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces \u00fcn\u00efcode"
+    }
+  },
+  "worksheet": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\A12_ROUTE_COMPATIBILITY_WORKSHEET.json",
+    "sha256": "76ce0abc077b389aa17c7e946a101553d3ddb4a02ce74abfc59d766026b8ee34",
+    "rows": 71,
+    "methods": {
+      "GET": 70,
+      "POST": 1
+    },
+    "post_row": {
+      "method": "POST",
+      "path": "/sample"
+    },
+    "baseline_count": 71,
+    "recorded_app_hash": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+  },
+  "v2_specs": {
+    "specs": 34,
+    "implemented": 34,
+    "deferred": 0,
+    "binary": 5,
+    "unique_paths": 34,
+    "advertised_pairs": 34,
+    "agreement_problems": null
+  },
+  "ordering": {
+    "get_cases": 34,
+    "head_cases": 5,
+    "get_failures": [],
+    "head_failures": [],
+    "shadowing_problems": [],
+    "pairs_checked": 561,
+    "intersection_problems": []
+  },
+  "mechanics": {
+    "route_count_pre": 80,
+    "route_count_post": 81,
+    "pre_doc_paths": 76,
+    "post_doc_paths": 110,
+    "route_table_delta": 1,
+    "wrapper_entry": [
+      null,
+      [],
+      "_IncludedRouter"
+    ]
+  },
+  "combined_doc": {
+    "pre_paths": 76,
+    "post_paths": 110,
+    "path_delta": 34,
+    "pre_paths_operations_changed": [],
+    "operation_count": 115,
+    "v2_operation_id_count": 39,
+    "served_equals_direct": true,
+    "second_instance_digest_equal": true,
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4"
+  },
+  "negatives": {
+    "n1": {
+      "info": [
+        200,
+        "application/json"
+      ],
+      "unknown": [
+        404,
+        "application/json",
+        {
+          "detail": "Not Found"
+        }
+      ],
+      "apierror": [
+        500,
+        "text/plain; charset=utf-8",
+        "Internal Server Error"
+      ],
+      "binary_200_content": [
+        "application/json",
+        "application/pdf",
+        "image/png"
+      ],
+      "legacy_changed": []
+    },
+    "n2": {
+      "changed": [
+        "absent_404",
+        "boom_500",
+        "numbers_422"
+      ],
+      "after": {
+        "papers_200": [
+          200,
+          "application/json",
+          "600bfa81b1561fa6281505a8630327ec94da208976f36c142c781b0b46a95725"
+        ],
+        "numbers_default": [
+          200,
+          "application/json",
+          "75123c719259f40d968aa6c89f1b9fce35c79602c5da132d21bf32268defbef3"
+        ],
+        "numbers_422": [
+          400,
+          "application/json",
+          "5d0fd6973291f14200ab50dbdcc2e2addbafb0b5e06390e9043c66f8138fe628"
+        ],
+        "boom_500": [
+          500,
+          "application/json",
+          "97f482bc3943f43d67c8f5ef2732005c83d4f07e26906f0bcc544edbddd16d75"
+        ],
+        "absent_404": [
+          404,
+          "application/json",
+          "d52f277a7fd30a57a8e73735a06a147486a56983b60f4947aae7f35970d11eb3"
+        ]
+      },
+      "shapes": {
+        "boom_500": {
+          "schema_version": "examdata.v2/1",
+          "code": "internal_error",
+          "detail": null
+        },
+        "numbers_422": {
+          "schema_version": "examdata.v2/1",
+          "code": "invalid_request",
+          "detail": null
+        },
+        "absent_404": {
+          "schema_version": "examdata.v2/1",
+          "code": "route_not_found",
+          "detail": null
+        }
+      }
+    },
+    "n3": {
+      "direct": [
+        404,
+        "application/json"
+      ],
+      "direct_code": "route_not_found",
+      "doubled_status": 200,
+      "doc_v2_paths": []
+    },
+    "n4": {
+      "refused": true,
+      "message": "the staged v2 app is already attached to this host",
+      "routes_unchanged": true,
+      "doc_unchanged": true
+    },
+    "n5": {
+      "middleware_built": true,
+      "refused": true,
+      "message": "attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built",
+      "v2_paths_after": []
+    },
+    "n6": {
+      "None": "attach_v2 expects a FastAPI application",
+      "'x'": "attach_v2 expects a FastAPI application"
+    }
+  },
+  "stability": {
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+    "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+    "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+    "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+    "v2_operation_ids": {
+      "GET /api/v2/info": "info_api_v2_info_get",
+      "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+      "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+      "GET /api/v2/courses": "courses_api_v2_courses_get",
+      "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+      "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+      "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+      "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+      "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+      "GET /api/v2/containers": "containers_api_v2_containers_get",
+      "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+      "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+      "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+      "GET /api/v2/resources": "resources_api_v2_resources_get",
+      "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+      "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+      "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+      "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+      "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+      "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+      "GET /api/v2/questions": "questions_api_v2_questions_get",
+      "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+      "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+      "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+      "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+      "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+      "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+      "GET /api/v2/tags": "tags_api_v2_tags_get",
+      "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+      "GET /api/v2/materials": "materials_api_v2_materials_get",
+      "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+      "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+      "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+      "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+      "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+      "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+      "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+      "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+      "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+    },
+    "path_delta": 34
+  },
+  "checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b04-rehearsal-2026-10-07\\\\candidates\\\\b04-routes-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\candidates\\b04-routes-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    {
+      "name": "B_worksheet_rows_71",
+      "ok": true,
+      "detail": "71 row(s)"
+    },
+    {
+      "name": "B_worksheet_methods_70_get_1_post",
+      "ok": true,
+      "detail": "{'GET': 70, 'POST': 1}"
+    },
+    {
+      "name": "B_worksheet_post_row_is_sample",
+      "ok": true,
+      "detail": "{'method': 'POST', 'path': '/sample'}"
+    },
+    {
+      "name": "B_worksheet_baseline_count_71",
+      "ok": true,
+      "detail": "baseline_count=71"
+    },
+    {
+      "name": "B_worksheet_app_hash_recorded",
+      "ok": true,
+      "detail": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+    },
+    {
+      "name": "B_worksheet_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 legacy paths"
+    },
+    {
+      "name": "B_v2_spec_counts",
+      "ok": true,
+      "detail": "specs=34 implemented=34 deferred=0 binary=5 unique_paths=34"
+    },
+    {
+      "name": "B_v2_runtime_spec_registry_agree",
+      "ok": true,
+      "detail": "runtime=34 spec=34 advertised=34"
+    },
+    {
+      "name": "B_v2_head_pairs_binary_only",
+      "ok": true,
+      "detail": "runtime_head=5 spec_head=5"
+    },
+    {
+      "name": "B_v2_agreement_problems_empty",
+      "ok": true,
+      "detail": "no agreement problems"
+    },
+    {
+      "name": "B_ordering_get_first_match_own_route",
+      "ok": true,
+      "detail": "34 GET case(s); failures=none"
+    },
+    {
+      "name": "B_ordering_head_first_match_own_route",
+      "ok": true,
+      "detail": "5 HEAD case(s); failures=none"
+    },
+    {
+      "name": "B_no_param_static_shadowing",
+      "ok": true,
+      "detail": "no shadowed routes"
+    },
+    {
+      "name": "B_no_pattern_intersections",
+      "ok": true,
+      "detail": "561 distinct-pattern pair(s); intersections=none"
+    },
+    {
+      "name": "C_host_shape_pre_attach",
+      "ok": true,
+      "detail": "routes=80 doc_paths=76 middleware_built=False"
+    },
+    {
+      "name": "C_route_table_prefix_kept",
+      "ok": true,
+      "detail": "before=80 after=81"
+    },
+    {
+      "name": "C_route_table_single_wrapper_appended",
+      "ok": true,
+      "detail": "[[None, [], '_IncludedRouter']]"
+    },
+    {
+      "name": "C_legacy_inventory_byte_identical",
+      "ok": true,
+      "detail": "71 row probe(s); changed=none"
+    },
+    {
+      "name": "C_legacy_extras_byte_identical",
+      "ok": true,
+      "detail": "7 extra probe(s); changed=none"
+    },
+    {
+      "name": "C_legacy_boom_bytes_pinned",
+      "ok": true,
+      "detail": "[500, 'text/plain; charset=utf-8', 'e41656eb2ba6c6293bf6dd928e5a88cdbc50535cab661c1969e0f598e497ed62']"
+    },
+    {
+      "name": "C_binary_fixture_ids_pinned",
+      "ok": true,
+      "detail": "['syl_synthetic_cie_0580', 'syl_synthetic_ielts_book']"
+    },
+    {
+      "name": "C_binary_content_200",
+      "ok": true,
+      "detail": "[200, 'application/pdf', 667, '\"8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da\"']"
+    },
+    {
+      "name": "C_binary_range_206",
+      "ok": true,
+      "detail": "[206, 'bytes 0-9/667', 10]"
+    },
+    {
+      "name": "C_binary_conditional_304",
+      "ok": true,
+      "detail": "[304, 0]"
+    },
+    {
+      "name": "C_binary_head_200",
+      "ok": true,
+      "detail": "[200, '667']"
+    },
+    {
+      "name": "C_v2_typed_400_invalid_request",
+      "ok": true,
+      "detail": "{'status': 400, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_stack_boom_500_internal_error",
+      "ok": true,
+      "detail": "{'status': 500, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_jobs_404_not_found",
+      "ok": true,
+      "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'not_found', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_unknown_404_route_not_found",
+      "ok": true,
+      "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_post_info_405_method_not_allowed",
+      "ok": true,
+      "detail": "{'status': 405, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'method_not_allowed', 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_info_200_envelope",
+      "ok": true,
+      "detail": "{'status': 200, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': None, 'validation': [], 'has_data': True}"
+    },
+    {
+      "name": "C_v2_controls_differ_from_baseline",
+      "ok": true,
+      "detail": "6 control(s); identical=none"
+    },
+    {
+      "name": "D_path_delta_is_exactly_registry",
+      "ok": true,
+      "detail": "added=34 removed=0 unexpected_added=none"
+    },
+    {
+      "name": "D_pre_paths_operations_unchanged",
+      "ok": true,
+      "detail": "76 pre-attach path(s); changed=none"
+    },
+    {
+      "name": "D_operation_ids_unique",
+      "ok": true,
+      "detail": "115 operation(s); duplicates=none"
+    },
+    {
+      "name": "D_v2_operation_ids_match_standalone",
+      "ok": true,
+      "detail": "standalone=39 composed=39 mismatch=none"
+    },
+    {
+      "name": "D_binary_rows_documented",
+      "ok": true,
+      "detail": "5 binary row(s) documented with their media types"
+    },
+    {
+      "name": "D_nonbinary_200_schema_is_envelope",
+      "ok": true,
+      "detail": "29 non-binary route(s); mismatches=none"
+    },
+    {
+      "name": "D_openapi_route_serves_same_document",
+      "ok": true,
+      "detail": "status=200 equal=True"
+    },
+    {
+      "name": "D_second_instance_document_digest_equal",
+      "ok": true,
+      "detail": "96afb249bffe0b5e vs 96afb249bffe0b5e"
+    },
+    {
+      "name": "E_candidate_bytes_unchanged",
+      "ok": true,
+      "detail": "identical"
+    },
+    {
+      "name": "E_fixture_and_contract_digests_unchanged",
+      "ok": true,
+      "detail": "fixtures=76ef844ccfa0 contracts=9421088a68a2"
+    },
+    {
+      "name": "E_manifest_recompute_matches_recorded",
+      "ok": true,
+      "detail": "files=188 sha=fd806f4c6116c3f5"
+    },
+    {
+      "name": "E_manifest_counts_disclosed",
+      "ok": true,
+      "detail": "digest_files=188 on_disk_non_cache=189"
+    },
+    {
+      "name": "E_compose_hook_frozen",
+      "ok": true,
+      "detail": "candidate=e220c007dba89d54 tools=e220c007dba89d54 expected=e220c007dba89d54"
+    },
+    {
+      "name": "E_no_embedded_data_payloads",
+      "ok": true,
+      "detail": "no data: URIs in fixtures"
+    },
+    {
+      "name": "E_scratch_marker_written",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b04-rehearsal-2026-10-07\\evidence\\tmp\\routing\\probe_scratch.json"
+    },
+    {
+      "name": "N1_raw_include_serves_v2_unshaped_errors",
+      "ok": true,
+      "detail": "{'info': [200, 'application/json'], 'unknown': [404, 'application/json', {'detail': 'Not Found'}], 'apierror': [500, 'text/plain; charset=utf-8', 'Internal Server Error'], 'binary_200_content': ['application/json', 'application/pdf', 'image/png'], 'legacy_changed': []}"
+    },
+    {
+      "name": "N1_raw_include_binary_row_keeps_application_json",
+      "ok": true,
+      "detail": "['application/json', 'application/pdf', 'image/png']"
+    },
+    {
+      "name": "N1_legacy_probes_unchanged",
+      "ok": true,
+      "detail": "5 probe(s) identical"
+    },
+    {
+      "name": "N2_unscoped_install_changes_exactly_three_probes",
+      "ok": true,
+      "detail": "['absent_404', 'boom_500', 'numbers_422']"
+    },
+    {
+      "name": "N2_unscoped_legacy_500_becomes_json_envelope",
+      "ok": true,
+      "detail": "{'after': [500, 'application/json', '97f482bc3943f43d67c8f5ef2732005c83d4f07e26906f0bcc544edbddd16d75'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'detail': None}}"
+    },
+    {
+      "name": "N2_unscoped_legacy_422_becomes_400_envelope",
+      "ok": true,
+      "detail": "{'after': [400, 'application/json', '5d0fd6973291f14200ab50dbdcc2e2addbafb0b5e06390e9043c66f8138fe628'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'detail': None}}"
+    },
+    {
+      "name": "N2_unscoped_legacy_404_becomes_envelope",
+      "ok": true,
+      "detail": "{'after': [404, 'application/json', 'd52f277a7fd30a57a8e73735a06a147486a56983b60f4947aae7f35970d11eb3'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'detail': None}}"
+    },
+    {
+      "name": "N2_post_build_handler_install_is_invisible",
+      "ok": true,
+      "detail": "middleware_built=True changed=none"
+    },
+    {
+      "name": "N3_mount_documents_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 paths"
+    },
+    {
+      "name": "N3_mount_direct_info_is_wrong_route_envelope",
+      "ok": true,
+      "detail": "{'direct': [404, 'application/json'], 'direct_code': 'route_not_found', 'doubled_status': 200, 'doc_v2_paths': []}"
+    },
+    {
+      "name": "N3_mount_requires_doubled_prefix",
+      "ok": true,
+      "detail": "GET /api/v2/api/v2/info -> 200"
+    },
+    {
+      "name": "N4_double_attach_refused",
+      "ok": true,
+      "detail": "{'refused': True, 'message': 'the staged v2 app is already attached to this host', 'routes_unchanged': True, 'doc_unchanged': True}"
+    },
+    {
+      "name": "N4_double_attach_leaves_host_unchanged",
+      "ok": true,
+      "detail": "{'routes': True, 'doc': True}"
+    },
+    {
+      "name": "N5_late_attach_refused",
+      "ok": true,
+      "detail": "{'middleware_built': True, 'refused': True, 'message': 'attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built', 'v2_paths_after': []}"
+    },
+    {
+      "name": "N5_late_attach_no_v2_paths",
+      "ok": true,
+      "detail": "no /api/v2 paths after the refused attach"
+    },
+    {
+      "name": "N6_non_fastapi_host_refused",
+      "ok": true,
+      "detail": "{'None': 'attach_v2 expects a FastAPI application', \"'x'\": 'attach_v2 expects a FastAPI application'}"
+    }
+  ],
+  "counts": {
+    "checks": 75,
+    "checks_failed": 0,
+    "negative_checks": 15,
+    "positive_checks": 30
+  },
+  "negative_checks": [
+    "N1_raw_include_serves_v2_unshaped_errors",
+    "N1_raw_include_binary_row_keeps_application_json",
+    "N2_unscoped_install_changes_exactly_three_probes",
+    "N2_unscoped_legacy_500_becomes_json_envelope",
+    "N2_unscoped_legacy_422_becomes_400_envelope",
+    "N2_unscoped_legacy_404_becomes_envelope",
+    "N2_post_build_handler_install_is_invisible",
+    "N3_mount_documents_no_v2_paths",
+    "N3_mount_direct_info_is_wrong_route_envelope",
+    "N3_mount_requires_doubled_prefix",
+    "N4_double_attach_refused",
+    "N4_double_attach_leaves_host_unchanged",
+    "N5_late_attach_refused",
+    "N5_late_attach_no_v2_paths",
+    "N6_non_fastapi_host_refused"
+  ],
+  "positive_checks": [
+    "B_ordering_get_first_match_own_route",
+    "B_ordering_head_first_match_own_route",
+    "B_no_param_static_shadowing",
+    "B_no_pattern_intersections",
+    "C_route_table_prefix_kept",
+    "C_route_table_single_wrapper_appended",
+    "C_legacy_inventory_byte_identical",
+    "C_legacy_extras_byte_identical",
+    "C_legacy_boom_bytes_pinned",
+    "C_binary_fixture_ids_pinned",
+    "C_binary_content_200",
+    "C_binary_range_206",
+    "C_binary_conditional_304",
+    "C_binary_head_200",
+    "C_v2_typed_400_invalid_request",
+    "C_v2_stack_boom_500_internal_error",
+    "C_v2_jobs_404_not_found",
+    "C_v2_unknown_404_route_not_found",
+    "C_v2_post_info_405_method_not_allowed",
+    "C_v2_info_200_envelope",
+    "C_v2_controls_differ_from_baseline",
+    "D_path_delta_is_exactly_registry",
+    "D_pre_paths_operations_unchanged",
+    "D_operation_ids_unique",
+    "D_v2_operation_ids_match_standalone",
+    "D_binary_rows_documented",
+    "D_nonbinary_200_schema_is_envelope",
+    "D_openapi_route_serves_same_document",
+    "D_second_instance_document_digest_equal",
+    "N1_legacy_probes_unchanged"
+  ],
+  "failed": [],
+  "ok": true,
+  "not_run": [
+    {
+      "check": "real merge into examdata/src/examdata/api/app.py",
+      "reason": "gate original_paths_released is closed; the plan entry remains a proposal (deferred_pending_release) and the original tree was never read or written"
+    },
+    {
+      "check": "real baseline verification against the actual legacy application",
+      "reason": "gate original_paths_released is closed; the legacy side was simulated from the frozen A12 route-compatibility worksheet, not from the original app"
+    },
+    {
+      "check": "real Node component execution (fake-cli.mjs run via the Node runtime)",
+      "reason": "gate original_paths_released is closed; only synthetic discovery and importability of the component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "cutover of the existing service",
+      "reason": "gate existing_service_cutover_authorized is closed"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "cleanup of the original project",
+      "reason": "gate original_cleanup_authorized is closed"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used, read, fabricated or staged; the routing controls are synthetic request parameters with no secret values"
+    }
+  ],
+  "note": "private rehearsal only; not merged, not deployed; the original tree was never read, imported or written; frozen evidence was not touched; scratch space was confined to the run directory's evidence/tmp; no credential was used, read or fabricated"
+}
+--- stderr ---
+C:\Users\weo\Desktop\api\integration-staging\runtime\b04-rehearsal-2026-10-07\b04_route_probe.py:175: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient  # noqa: E402
+

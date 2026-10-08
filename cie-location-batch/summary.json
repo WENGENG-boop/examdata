@@ -1,0 +1,1210 @@
+{
+  "generated_at": "2026-10-05T16:36:52+0800",
+  "source": "https://cie.fraft.cn",
+  "subject_universe": {
+    "union_codes": 205,
+    "third_party_listed": 43,
+    "third_party_entries": 43,
+    "third_party_only": 7,
+    "official_only": 162,
+    "third_party_completeness": "proven",
+    "status_counts": {
+      "subject_unavailable": 162,
+      "scanned": 43
+    },
+    "not_fully_scanned": []
+  },
+  "catalogue_cells": {
+    "expected_total": 16605,
+    "actually_requested": 3807,
+    "inferred_not_requested": 12798,
+    "unqueried": 0,
+    "status_counts": {
+      "subject_unavailable": 324,
+      "subject_unavailable_inferred": 12798,
+      "no_resources": 1778,
+      "complete": 1705
+    },
+    "complete": 1705,
+    "no_resources": 1778,
+    "business_rejected_subject_unavailable": 324,
+    "failed": 0,
+    "failed_cells": []
+  },
+  "papers": {
+    "total_discovered": 13877,
+    "kind_counts": {
+      "ms_only": 81,
+      "paired": 13274,
+      "qp_only": 522
+    },
+    "stage_counts": {
+      "discovered": 13813,
+      "cleaned": 61,
+      "downloaded": 1,
+      "download_interrupted": 1,
+      "download_failed": 1
+    },
+    "by_subject": {
+      "0413": {
+        "discovered": 89,
+        "cleaned": 1
+      },
+      "0450": {
+        "discovered": 244
+      },
+      "0452": {
+        "discovered": 263
+      },
+      "0455": {
+        "discovered": 317
+      },
+      "0460": {
+        "discovered": 345
+      },
+      "0470": {
+        "discovered": 329
+      },
+      "0472": {
+        "discovered": 11,
+        "cleaned": 12,
+        "downloaded": 1
+      },
+      "0478": {
+        "discovered": 156,
+        "cleaned": 1
+      },
+      "0495": {
+        "discovered": 125,
+        "cleaned": 1
+      },
+      "0500": {
+        "discovered": 265
+      },
+      "0509": {
+        "discovered": 99,
+        "cleaned": 1
+      },
+      "0510": {
+        "discovered": 477
+      },
+      "0511": {
+        "discovered": 328
+      },
+      "0580": {
+        "discovered": 512,
+        "cleaned": 1
+      },
+      "0606": {
+        "discovered": 253
+      },
+      "0607": {
+        "discovered": 553
+      },
+      "0610": {
+        "discovered": 709
+      },
+      "0620": {
+        "discovered": 710
+      },
+      "0625": {
+        "discovered": 723
+      },
+      "0680": {
+        "discovered": 313
+      },
+      "8238": {
+        "discovered": 6,
+        "cleaned": 19,
+        "download_interrupted": 1,
+        "download_failed": 1
+      },
+      "8386": {
+        "cleaned": 15
+      },
+      "9093": {
+        "discovered": 336
+      },
+      "9231": {
+        "discovered": 316
+      },
+      "9389": {
+        "discovered": 179,
+        "cleaned": 1
+      },
+      "9396": {
+        "discovered": 99,
+        "cleaned": 1
+      },
+      "9489": {
+        "discovered": 149,
+        "cleaned": 1
+      },
+      "9608": {
+        "discovered": 166,
+        "cleaned": 1
+      },
+      "9609": {
+        "discovered": 248
+      },
+      "9618": {
+        "discovered": 129,
+        "cleaned": 1
+      },
+      "9696": {
+        "discovered": 387
+      },
+      "9698": {
+        "discovered": 209
+      },
+      "9700": {
+        "discovered": 736
+      },
+      "9701": {
+        "discovered": 737
+      },
+      "9702": {
+        "discovered": 739
+      },
+      "9706": {
+        "discovered": 461
+      },
+      "9707": {
+        "discovered": 135,
+        "cleaned": 1
+      },
+      "9708": {
+        "discovered": 520
+      },
+      "9709": {
+        "cleaned": 1,
+        "discovered": 865
+      },
+      "9713": {
+        "discovered": 154,
+        "cleaned": 1
+      },
+      "9715": {
+        "discovered": 157,
+        "cleaned": 1
+      },
+      "9868": {
+        "discovered": 26,
+        "cleaned": 1
+      },
+      "9990": {
+        "discovered": 238
+      }
+    }
+  },
+  "subject_coverage": {
+    "union_codes": 205,
+    "subjects_with_papers": 43,
+    "subjects_with_index": 18,
+    "subjects_without_index": 187,
+    "indexed_subjects": [
+      "0413",
+      "0472",
+      "0478",
+      "0495",
+      "0509",
+      "0580",
+      "8238",
+      "8386",
+      "9389",
+      "9396",
+      "9489",
+      "9608",
+      "9618",
+      "9707",
+      "9709",
+      "9713",
+      "9715",
+      "9868"
+    ],
+    "third_party_declared": 43,
+    "third_party_declared_with_index": [
+      "0413",
+      "0472",
+      "0478",
+      "0495",
+      "0509",
+      "0580",
+      "8238",
+      "8386",
+      "9389",
+      "9396",
+      "9489",
+      "9608",
+      "9618",
+      "9707",
+      "9709",
+      "9713",
+      "9715",
+      "9868"
+    ],
+    "third_party_declared_without_index": [
+      "0450",
+      "0452",
+      "0455",
+      "0460",
+      "0470",
+      "0500",
+      "0510",
+      "0511",
+      "0606",
+      "0607",
+      "0610",
+      "0620",
+      "0625",
+      "0680",
+      "9093",
+      "9231",
+      "9609",
+      "9696",
+      "9698",
+      "9700",
+      "9701",
+      "9702",
+      "9706",
+      "9708",
+      "9990"
+    ],
+    "service_index_manifest": "service-index-manifest.json"
+  },
+  "service_index": {
+    "manifest": "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\service-index-manifest.json",
+    "generated_at": "2026-10-05T16:36:52+0800",
+    "disk_index_files": 63,
+    "in_service": 63,
+    "not_in_service": 0,
+    "comparison_counts": {
+      "identical": 62,
+      "different": 1
+    },
+    "visual_gate_passed": 19,
+    "entries": [
+      {
+        "key": "0413/2026/Jun/11",
+        "qp_sha256": "d17f5aabe907cf4e5dad69dff7b6615bbedb3ab7cb6900808ff632c2996dfeed",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/d17f5aabe907cf4e5dad69dff7b6615bbedb3ab7cb6900808ff632c2996dfeed.json"
+      },
+      {
+        "key": "0472/2024/Jun/11",
+        "qp_sha256": "4eb41e978791e7a6e5f73939139194266eeb5b367ea673f4ed56d2793ef6f7ae",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4eb41e978791e7a6e5f73939139194266eeb5b367ea673f4ed56d2793ef6f7ae.json"
+      },
+      {
+        "key": "0472/2025/Jun/11",
+        "qp_sha256": "d153f8c3c15695bc0ed4934184c65b68cf6f7b89b6bb72ec203f8365df6136fa",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/d153f8c3c15695bc0ed4934184c65b68cf6f7b89b6bb72ec203f8365df6136fa.json"
+      },
+      {
+        "key": "0472/2025/Jun/12",
+        "qp_sha256": "b9f92eca40e44117e7f67786966d13456e6dd8dff1d8a7fa4f6f8286da5fe418",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/b9f92eca40e44117e7f67786966d13456e6dd8dff1d8a7fa4f6f8286da5fe418.json"
+      },
+      {
+        "key": "0472/2025/Jun/21",
+        "qp_sha256": "17b585241929b45908b5c9bb0d3b26e889292ccc65f4c315411b5f66796461ca",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/17b585241929b45908b5c9bb0d3b26e889292ccc65f4c315411b5f66796461ca.json"
+      },
+      {
+        "key": "0472/2025/Jun/22",
+        "qp_sha256": "85a2b90d272060a555c88cd2ff033cbd367285cbc6d03f73d4591b141cf6531e",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/85a2b90d272060a555c88cd2ff033cbd367285cbc6d03f73d4591b141cf6531e.json"
+      },
+      {
+        "key": "0472/2025/Jun/41",
+        "qp_sha256": "570664801c63788144b91f792fd9188024d1d29cdff6a602ca6d9731e2b45d81",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/570664801c63788144b91f792fd9188024d1d29cdff6a602ca6d9731e2b45d81.json"
+      },
+      {
+        "key": "0472/2025/Jun/42",
+        "qp_sha256": "6ef8efa6d6d79605de6faff52235d2962a0a303fbf3d7abf53a2f48f4fe83ddd",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/6ef8efa6d6d79605de6faff52235d2962a0a303fbf3d7abf53a2f48f4fe83ddd.json"
+      },
+      {
+        "key": "0472/2026/Jun/11",
+        "qp_sha256": "a71c8e2e988f184e3492f3ccb7ff06b3f5f175c6e4496b5584201f7b0c5e32b1",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a71c8e2e988f184e3492f3ccb7ff06b3f5f175c6e4496b5584201f7b0c5e32b1.json"
+      },
+      {
+        "key": "0472/2026/Jun/12",
+        "qp_sha256": "6cfeb2312dc36a6e4c828e53bff310e9be26d52af68130f1a4d51038c9193333",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/6cfeb2312dc36a6e4c828e53bff310e9be26d52af68130f1a4d51038c9193333.json"
+      },
+      {
+        "key": "0472/2026/Jun/21",
+        "qp_sha256": "dbd6c20e6deec23464eb41f147ad1726573568d04e7aef1ff002b2cbe47a5848",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/dbd6c20e6deec23464eb41f147ad1726573568d04e7aef1ff002b2cbe47a5848.json"
+      },
+      {
+        "key": "0472/2026/Jun/22",
+        "qp_sha256": "05073848ed56bb5ea88ea70e7157e7bbf1114f66c5c276b4056f9db1895573b8",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/05073848ed56bb5ea88ea70e7157e7bbf1114f66c5c276b4056f9db1895573b8.json"
+      },
+      {
+        "key": "0472/2026/Jun/41",
+        "qp_sha256": "4cd9c4040e74082d5a9e027036008928ac588bc16d2ff7ee02cdae495c71600a",
+        "in_service": true,
+        "comparison": "different",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4cd9c4040e74082d5a9e027036008928ac588bc16d2ff7ee02cdae495c71600a.json"
+      },
+      {
+        "key": "0472/2026/Jun/42",
+        "qp_sha256": "1ada7b022f2b16e7284a35380ace14b934f37afb8f3df1b0bfaa3071c77a09b5",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/1ada7b022f2b16e7284a35380ace14b934f37afb8f3df1b0bfaa3071c77a09b5.json"
+      },
+      {
+        "key": "0478/2026/Jun/11",
+        "qp_sha256": "4d2276506711b9b0391e6bddfc924ca612027d7e220c029368f3115193b08dc8",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4d2276506711b9b0391e6bddfc924ca612027d7e220c029368f3115193b08dc8.json"
+      },
+      {
+        "key": "0495/2026/Jun/11",
+        "qp_sha256": "e8796e446c5b9800bebfdab880fe4d091546cf5ff528b13a84d5dd412d6e4937",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e8796e446c5b9800bebfdab880fe4d091546cf5ff528b13a84d5dd412d6e4937.json"
+      },
+      {
+        "key": "0509/2026/Jun/11",
+        "qp_sha256": "e6ec6f3ab18ae4e1714b94653f7698cd5abdcb3e39a59f46db9c9accc2bf00e9",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e6ec6f3ab18ae4e1714b94653f7698cd5abdcb3e39a59f46db9c9accc2bf00e9.json"
+      },
+      {
+        "key": "0580/2024/Jun/11",
+        "qp_sha256": "7bb859681ac2ffff4190c95be71d006f79f3bfc3a4a17b630509b8fc695f29bb",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7bb859681ac2ffff4190c95be71d006f79f3bfc3a4a17b630509b8fc695f29bb.json"
+      },
+      {
+        "key": "8238/2024/Nov/11",
+        "qp_sha256": "3c7c636456e4c744647eceefa662f6d2bc441c37673c3cf0e3c855c71962acfd",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/3c7c636456e4c744647eceefa662f6d2bc441c37673c3cf0e3c855c71962acfd.json"
+      },
+      {
+        "key": "8238/2024/Nov/12",
+        "qp_sha256": "38b600f8af1f115e1d3fa27ce66c536b1a7bc00c76ada6bb40f04c46e6099779",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/38b600f8af1f115e1d3fa27ce66c536b1a7bc00c76ada6bb40f04c46e6099779.json"
+      },
+      {
+        "key": "8238/2024/Nov/13",
+        "qp_sha256": "159f58ccb84a60c3824301a21afc4277db76d26f9ba639eceb0d9ffec491ac90",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/159f58ccb84a60c3824301a21afc4277db76d26f9ba639eceb0d9ffec491ac90.json"
+      },
+      {
+        "key": "8238/2024/Nov/21",
+        "qp_sha256": "01f1059dc70a7b261101ed81ee4dcc755d713280807d5474887ba99b85177eef",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/01f1059dc70a7b261101ed81ee4dcc755d713280807d5474887ba99b85177eef.json"
+      },
+      {
+        "key": "8238/2024/Nov/22",
+        "qp_sha256": "05c009e6686e6311bf39be5696113464a0b33ac31aa258322630158b22fc2507",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/05c009e6686e6311bf39be5696113464a0b33ac31aa258322630158b22fc2507.json"
+      },
+      {
+        "key": "8238/2025/Jun/12",
+        "qp_sha256": "618439c698af054d78ecccbf14f051a371b0d482bbf3a6e3775258db8f7e4028",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/618439c698af054d78ecccbf14f051a371b0d482bbf3a6e3775258db8f7e4028.json"
+      },
+      {
+        "key": "8238/2025/Jun/22",
+        "qp_sha256": "41046f6d528297fb2e3c70e34539399ef631ad2d670d88c06a58fa7a8a3d4680",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/41046f6d528297fb2e3c70e34539399ef631ad2d670d88c06a58fa7a8a3d4680.json"
+      },
+      {
+        "key": "8238/2025/Jun/32",
+        "qp_sha256": "5b42caf0af12e95d0a78047506de4282fd621cd145aa67f1a699a2d25076d653",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/5b42caf0af12e95d0a78047506de4282fd621cd145aa67f1a699a2d25076d653.json"
+      },
+      {
+        "key": "8238/2025/Nov/11",
+        "qp_sha256": "e5268fbc7311cb46c3464c7f35deb7998832ac8f5ef01abdd2a62f943ae566e3",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e5268fbc7311cb46c3464c7f35deb7998832ac8f5ef01abdd2a62f943ae566e3.json"
+      },
+      {
+        "key": "8238/2025/Nov/12",
+        "qp_sha256": "2b0329ab0c7fe5eed666893c814e5732c5a01f3de1af2c833527539f32d8878f",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/2b0329ab0c7fe5eed666893c814e5732c5a01f3de1af2c833527539f32d8878f.json"
+      },
+      {
+        "key": "8238/2025/Nov/13",
+        "qp_sha256": "0d7c6f519aaac513eece2365c058b877ab213a783e4d517458bcbb5e82e14d79",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/0d7c6f519aaac513eece2365c058b877ab213a783e4d517458bcbb5e82e14d79.json"
+      },
+      {
+        "key": "8238/2025/Nov/21",
+        "qp_sha256": "43690c10efc261c0e176c2c5ae62481c4d257a44fa2827d0d8bbad93b5915e0f",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/43690c10efc261c0e176c2c5ae62481c4d257a44fa2827d0d8bbad93b5915e0f.json"
+      },
+      {
+        "key": "8238/2025/Nov/22",
+        "qp_sha256": "57cffd04b7880f462b7d29134321c365d381d7969c20c31c3b472a644d51e48d",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/57cffd04b7880f462b7d29134321c365d381d7969c20c31c3b472a644d51e48d.json"
+      },
+      {
+        "key": "8238/2025/Nov/23",
+        "qp_sha256": "8ef1c7f86f4a3c8177f6171e94931f5b5d6ed9bf50d0852c9594b9600714f18c",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/8ef1c7f86f4a3c8177f6171e94931f5b5d6ed9bf50d0852c9594b9600714f18c.json"
+      },
+      {
+        "key": "8238/2025/Nov/31",
+        "qp_sha256": "7d5651496a1376acfc447c3290c13be8f33bbfdb821d5a6b1387cc853772e987",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7d5651496a1376acfc447c3290c13be8f33bbfdb821d5a6b1387cc853772e987.json"
+      },
+      {
+        "key": "8238/2025/Nov/32",
+        "qp_sha256": "5a6d67134ba26ad660332d380920f4de6dd2b05d100e72bd9dc87b8a27570d38",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/5a6d67134ba26ad660332d380920f4de6dd2b05d100e72bd9dc87b8a27570d38.json"
+      },
+      {
+        "key": "8238/2025/Nov/33",
+        "qp_sha256": "53a428b5a52a018a7eb8b890e9db57e1ea98365a039a5ecfd45b558584b2298d",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/53a428b5a52a018a7eb8b890e9db57e1ea98365a039a5ecfd45b558584b2298d.json"
+      },
+      {
+        "key": "8238/2026/Jun/12",
+        "qp_sha256": "7f060b7a896701aa00810515ee76553ecff43e2dd73c376dbbb4101ba709d6b7",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7f060b7a896701aa00810515ee76553ecff43e2dd73c376dbbb4101ba709d6b7.json"
+      },
+      {
+        "key": "8238/2026/Jun/22",
+        "qp_sha256": "55e344cb6e7e286effef562ace02f1baece87ccd367ac0f1607449ec5c45d92a",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/55e344cb6e7e286effef562ace02f1baece87ccd367ac0f1607449ec5c45d92a.json"
+      },
+      {
+        "key": "8238/2026/Jun/32",
+        "qp_sha256": "819ab513d36c7bf310dba3d8c79e5e31b40d6c913efefe2f1a083244d7831f46",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/819ab513d36c7bf310dba3d8c79e5e31b40d6c913efefe2f1a083244d7831f46.json"
+      },
+      {
+        "key": "8386/2024/Jun/11",
+        "qp_sha256": "43781604f9de8550dea0434bedbefb4588c2ff62b91e5f789356c91c078ee042",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/43781604f9de8550dea0434bedbefb4588c2ff62b91e5f789356c91c078ee042.json"
+      },
+      {
+        "key": "8386/2024/Jun/12",
+        "qp_sha256": "c7f4fa0526e01651b9256370712a5a262edb64fafa6ad94cb545e0c5fab346ef",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/c7f4fa0526e01651b9256370712a5a262edb64fafa6ad94cb545e0c5fab346ef.json"
+      },
+      {
+        "key": "8386/2024/Jun/13",
+        "qp_sha256": "46c006d968ded257d990fac2fce98ed0f120f44ec6cf1e6237f0610884f0bb47",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/46c006d968ded257d990fac2fce98ed0f120f44ec6cf1e6237f0610884f0bb47.json"
+      },
+      {
+        "key": "8386/2024/Nov/11",
+        "qp_sha256": "e5a8a451b98880cca43aaa792294841a234337b205d32805c52a3437e96f425f",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e5a8a451b98880cca43aaa792294841a234337b205d32805c52a3437e96f425f.json"
+      },
+      {
+        "key": "8386/2024/Nov/12",
+        "qp_sha256": "ba39d3b973303a9e5ef2fb56d6ac909e3ecfedca6369a6dc5e63a3b244434dbe",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/ba39d3b973303a9e5ef2fb56d6ac909e3ecfedca6369a6dc5e63a3b244434dbe.json"
+      },
+      {
+        "key": "8386/2024/Nov/13",
+        "qp_sha256": "0589aba86cae4b13b9d186ca7c31af77712826265a8e9323380e5ffa8112990f",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/0589aba86cae4b13b9d186ca7c31af77712826265a8e9323380e5ffa8112990f.json"
+      },
+      {
+        "key": "8386/2025/Jun/11",
+        "qp_sha256": "017aeda478549889207bca60e0dc1a77f10455a671ef8e2c3c6ccedfcfe5a3f0",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/017aeda478549889207bca60e0dc1a77f10455a671ef8e2c3c6ccedfcfe5a3f0.json"
+      },
+      {
+        "key": "8386/2025/Jun/12",
+        "qp_sha256": "2189b06ddb3dd710a649e481c916f14fb821478a608d05ba39e5986abe7f3b54",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/2189b06ddb3dd710a649e481c916f14fb821478a608d05ba39e5986abe7f3b54.json"
+      },
+      {
+        "key": "8386/2025/Jun/13",
+        "qp_sha256": "a9afb948791b5a2b08054ae54f0da1b5f44db42ba0e1285e09a4f8d8f130f71e",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a9afb948791b5a2b08054ae54f0da1b5f44db42ba0e1285e09a4f8d8f130f71e.json"
+      },
+      {
+        "key": "8386/2025/Nov/11",
+        "qp_sha256": "a7bb14d605175e5ad079d441964cee6a54ae7871f1f5c9fce2441be139667a7c",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a7bb14d605175e5ad079d441964cee6a54ae7871f1f5c9fce2441be139667a7c.json"
+      },
+      {
+        "key": "8386/2025/Nov/12",
+        "qp_sha256": "1a9273227104932c7993df9f086dbc036d3399b98dc9e12bed452b4264c071ac",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/1a9273227104932c7993df9f086dbc036d3399b98dc9e12bed452b4264c071ac.json"
+      },
+      {
+        "key": "8386/2025/Nov/13",
+        "qp_sha256": "5fabd8d50758b2434fcaa4eccff5d2fc00a460cd11004f335a8021e183fec718",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/5fabd8d50758b2434fcaa4eccff5d2fc00a460cd11004f335a8021e183fec718.json"
+      },
+      {
+        "key": "8386/2026/Jun/11",
+        "qp_sha256": "9d4f3d29f367047f3af4dfc9443a934cc8f3708f571b7617d81c3f82d52d3799",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/9d4f3d29f367047f3af4dfc9443a934cc8f3708f571b7617d81c3f82d52d3799.json"
+      },
+      {
+        "key": "8386/2026/Jun/12",
+        "qp_sha256": "a6873f59608a908c1bfc57aed55888ed37e83bc361f64cd05dc96ea0d31cc4bb",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a6873f59608a908c1bfc57aed55888ed37e83bc361f64cd05dc96ea0d31cc4bb.json"
+      },
+      {
+        "key": "8386/2026/Jun/13",
+        "qp_sha256": "4fe4754979171e90cf573a40d3f3d822252421351df5a3d4f939f0bf6b8a4b12",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4fe4754979171e90cf573a40d3f3d822252421351df5a3d4f939f0bf6b8a4b12.json"
+      },
+      {
+        "key": "9389/2021/Nov/11",
+        "qp_sha256": "cce5233d424a6e2f3435c38fb85a543c631fbdbfd9574a859304a5e60a9a189a",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/cce5233d424a6e2f3435c38fb85a543c631fbdbfd9574a859304a5e60a9a189a.json"
+      },
+      {
+        "key": "9396/2023/Nov/11",
+        "qp_sha256": "30eaf6e225a849b0b709929a566c125b4a1a83fb13f5fa373455a3a297c19db1",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/30eaf6e225a849b0b709929a566c125b4a1a83fb13f5fa373455a3a297c19db1.json"
+      },
+      {
+        "key": "9489/2026/Jun/11",
+        "qp_sha256": "c92c1f04b21885e80ce7d18a033a958eea146e846fd4ad32d306dc312a583996",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/c92c1f04b21885e80ce7d18a033a958eea146e846fd4ad32d306dc312a583996.json"
+      },
+      {
+        "key": "9608/2021/Nov/11",
+        "qp_sha256": "8bbe183f58ef1b89e38b029d09c32f4ddead9971c04019e336c6610c69481860",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/8bbe183f58ef1b89e38b029d09c32f4ddead9971c04019e336c6610c69481860.json"
+      },
+      {
+        "key": "9618/2026/Jun/11",
+        "qp_sha256": "78bf5259021f349a06ff95c0842c35d92b0dc24d4090f48fa876f57b08ab1f7c",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/78bf5259021f349a06ff95c0842c35d92b0dc24d4090f48fa876f57b08ab1f7c.json"
+      },
+      {
+        "key": "9707/2015/Nov/11",
+        "qp_sha256": "9fd0596a906a4164096e7d25b64f9bff074c50834dc49288e35bc69c91d17421",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/9fd0596a906a4164096e7d25b64f9bff074c50834dc49288e35bc69c91d17421.json"
+      },
+      {
+        "key": "9709/2024/Jun/11",
+        "qp_sha256": "7dd8ce4a25dc6acaf730b86d7346ab993b6625879622fad8ec79cea9896d52da",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7dd8ce4a25dc6acaf730b86d7346ab993b6625879622fad8ec79cea9896d52da.json"
+      },
+      {
+        "key": "9713/2017/Nov/11",
+        "qp_sha256": "d699cd2e6cca9fe85f965e45c6cd2221938c06a1df8df9d8a4c06ffa7448f137",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/d699cd2e6cca9fe85f965e45c6cd2221938c06a1df8df9d8a4c06ffa7448f137.json"
+      },
+      {
+        "key": "9715/2023/Nov/21",
+        "qp_sha256": "12f0088d98e6651575b5f8a9bc34560d2b8fa9dc11289a5d93b5253bd2702826",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": true,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/12f0088d98e6651575b5f8a9bc34560d2b8fa9dc11289a5d93b5253bd2702826.json"
+      },
+      {
+        "key": "9868/2026/Jun/12",
+        "qp_sha256": "7a1cfa9542ffb3d2c55fcc5af7f6950c7b4dd886778566f36adffe0b67924d36",
+        "in_service": true,
+        "comparison": "identical",
+        "visual_gate_passed": false,
+        "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7a1cfa9542ffb3d2c55fcc5af7f6950c7b4dd886778566f36adffe0b67924d36.json"
+      }
+    ]
+  },
+  "pipeline": {
+    "local_visual_verified": 19,
+    "downloaded": 62,
+    "fully_verified": 19,
+    "historical_verified_stage": 61,
+    "cleaned_needing_reverification": 42,
+    "imported_verified": 0,
+    "cleaned": 61,
+    "validation_partial": 0,
+    "conflict": 0,
+    "blocked": 0,
+    "verification_records": 9082,
+    "verification_questions_covered": 1877,
+    "verification_records_with_issues": 392
+  },
+  "cleanup": {
+    "cleaned_papers": 63,
+    "cleaned_records": 78,
+    "pending_records": 74,
+    "pending": 0,
+    "failed": 0,
+    "failed_records": 0,
+    "deleted_files": 6452,
+    "deleted_pdfs": 126,
+    "deleted_images": 5223,
+    "freed_bytes": 645067869,
+    "freed_mb": 615.18,
+    "sweeps": {
+      "records": 37,
+      "files": 36569,
+      "freed_bytes": 22382765308,
+      "by_stage": {
+        "scratch_sweep": 3,
+        "debug_script_sweep": 1,
+        "image_sweep": 1,
+        "work_scratch_sweep": 1,
+        "test_scratch_sweep": 1,
+        "leftover_sweep": 3,
+        "work_media_sweep": 2,
+        "residual_sweep": 1,
+        "work_media_sweep_ext": 1,
+        "codex_verify_sweep": 1,
+        "repo_scratch_sweep": 19,
+        "repo_scratch_sweep_summary": 1,
+        "audit_stray_sweep": 1,
+        "audit_stray_sweep_summary": 1
+      }
+    },
+    "total_freed_bytes": 23027833177
+  },
+  "storage": {
+    "index_files": 63,
+    "index_bytes": 1663831,
+    "index_mb": 1.587,
+    "tmp_bytes": 6563562,
+    "tmp_mb": 6.26,
+    "tmp_pdf_count": 2,
+    "tmp_png_count": 53,
+    "tmp_part_count": 0,
+    "tmp_residue": [
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\0472_s26_ms_41.pdf",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\0472_s26_qp_41.pdf",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\_diag_p3_full.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\_diag_p3_r1.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\_diag_p3_r2.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\_diag_p4_grid.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\_diag_q2_bottom.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-000-ms-p7.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-001-ms-p8.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-002-ms-p9.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-003-ms-p10.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-003-ms-p9.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-004-ms-p10.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-004-ms-p11.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-005-ms-p11.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-005-ms-p12.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-006-ms-p11.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-006-ms-p13.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-007-ms-p11.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-007-ms-p14.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-008-ms-p11.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-009-ms-p12.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-010-ms-p13.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-011-ms-p14.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-012-ms-p11.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-013-ms-p12.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-014-ms-p13.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-msreg-015-ms-p14.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-qp-regions-000-qp-p2.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-qp-regions-001-qp-p3.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-qp-regions-002-qp-p4.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-qp-regions-003-qp-p4.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\crops\\stack-0472-2026-Jun-41-qp-regions-004-qp-p4.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p001.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p002.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p003.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p004.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p005.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p006.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p007.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p008.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p009.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p010.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p011.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p012.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p013.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\ms-p014.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p001.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p002.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p003.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p004.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p005.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p006.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p007.png",
+      "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\tmp\\0472\\2026-Jun-41\\pages\\qp-p008.png"
+    ]
+  },
+  "errors": {
+    "total_records": 226,
+    "kinds": {
+      "catalogue_incomplete": 1,
+      "classification_correction": 1,
+      "import_failed": 2,
+      "scan_crashed_local_io": 1,
+      "import": 7,
+      "imported_verified": 78,
+      "readback_failed": 3,
+      "conflict": 10,
+      "validation_partial": 35,
+      "missed_stop_error": 1,
+      "stage_correction": 3,
+      "service_index_drift": 7,
+      "field_correction": 6,
+      "premature_cleanup": 1,
+      "pilot_retained": 1,
+      "pipeline_gate_correction": 1,
+      "stop_rule_hardening": 1,
+      "continuation_audit": 1,
+      "user_authorized_network_resume": 10,
+      "download_error": 10,
+      "local_visual_repair": 1,
+      "checkpoint_timestamp_correction": 1,
+      "bbox_snap": 6,
+      "service_index_replaced": 17,
+      "service_data_dir_mismatch": 1,
+      "service_data_dir_fixed": 1,
+      "agent_visual_review_merged": 11,
+      "checkpoint_totals_correction": 1,
+      "final_audit": 1,
+      "independent_reaudit": 1,
+      "backup_path_rotated": 2,
+      "state_correction": 1,
+      "local_fix_offline_verification": 1,
+      "offline_diagnosis": 1
+    },
+    "download_errors": 10
+  },
+  "checkpoint": {
+    "current_cell": null,
+    "current_paper": "8238/2025/Jun/32",
+    "stage": "stopped",
+    "stop_reason": "download_error",
+    "updated_at": "2026-10-05T16:36:05+0800"
+  },
+  "unresolved": {
+    "papers_not_cleaned": 13816,
+    "papers_not_cleaned_sample": [
+      "0413/2011/Jun/11",
+      "0413/2011/Jun/13",
+      "0413/2011/Nov/13",
+      "0413/2012/Jun/11",
+      "0413/2012/Jun/12",
+      "0413/2012/Jun/13",
+      "0413/2012/Nov/11",
+      "0413/2012/Nov/12",
+      "0413/2012/Nov/13",
+      "0413/2013/Jun/11",
+      "0413/2013/Jun/12",
+      "0413/2013/Jun/13",
+      "0413/2013/Nov/11",
+      "0413/2013/Nov/12",
+      "0413/2013/Nov/13",
+      "0413/2014/Jun/11",
+      "0413/2014/Jun/12",
+      "0413/2014/Jun/13",
+      "0413/2014/Nov/11",
+      "0413/2014/Nov/12",
+      "0413/2014/Nov/13",
+      "0413/2015/Jun/11",
+      "0413/2015/Jun/12",
+      "0413/2015/Jun/13",
+      "0413/2015/Nov/11",
+      "0413/2015/Nov/12",
+      "0413/2015/Nov/13",
+      "0413/2016/Jun/11",
+      "0413/2016/Jun/12",
+      "0413/2016/Jun/13",
+      "0413/2016/Nov/11",
+      "0413/2016/Nov/12",
+      "0413/2016/Nov/13",
+      "0413/2017/Jun/11",
+      "0413/2017/Jun/12",
+      "0413/2017/Jun/13",
+      "0413/2017/Nov/11",
+      "0413/2017/Nov/12",
+      "0413/2017/Nov/13",
+      "0413/2018/Jun/11",
+      "0413/2018/Jun/12",
+      "0413/2018/Jun/13",
+      "0413/2018/Nov/11",
+      "0413/2018/Nov/12",
+      "0413/2018/Nov/13",
+      "0413/2019/Jun/11",
+      "0413/2019/Jun/12",
+      "0413/2019/Jun/13",
+      "0413/2019/Nov/11",
+      "0413/2019/Nov/12",
+      "0413/2019/Nov/13",
+      "0413/2020/Jun/11",
+      "0413/2020/Jun/12",
+      "0413/2020/Jun/13",
+      "0413/2020/Nov/11",
+      "0413/2020/Nov/12",
+      "0413/2020/Nov/13",
+      "0413/2021/Jun/11",
+      "0413/2021/Jun/12",
+      "0413/2021/Jun/13",
+      "0413/2021/Nov/11",
+      "0413/2021/Nov/12",
+      "0413/2021/Nov/13",
+      "0413/2022/Jun/11",
+      "0413/2022/Jun/12",
+      "0413/2022/Jun/13",
+      "0413/2022/Nov/11",
+      "0413/2022/Nov/12",
+      "0413/2022/Nov/13",
+      "0413/2023/Jun/11",
+      "0413/2023/Jun/12",
+      "0413/2023/Jun/13",
+      "0413/2023/Nov/11",
+      "0413/2023/Nov/12",
+      "0413/2023/Nov/13",
+      "0413/2024/Jun/11",
+      "0413/2024/Jun/12",
+      "0413/2024/Jun/13",
+      "0413/2024/Nov/11",
+      "0413/2024/Nov/12",
+      "0413/2024/Nov/13",
+      "0413/2025/Jun/11",
+      "0413/2025/Jun/12",
+      "0413/2025/Jun/13",
+      "0413/2025/Nov/11",
+      "0413/2025/Nov/12",
+      "0413/2025/Nov/13",
+      "0413/2026/Jun/12",
+      "0413/2026/Jun/13",
+      "0450/2003/Nov/1",
+      "0450/2005/Jun/1",
+      "0450/2005/Jun/2",
+      "0450/2005/Nov/1",
+      "0450/2005/Nov/2",
+      "0450/2006/Jun/1",
+      "0450/2006/Jun/2",
+      "0450/2006/Nov/1",
+      "0450/2006/Nov/2",
+      "0450/2007/Jun/1",
+      "0450/2007/Jun/2",
+      "0450/2007/Nov/1",
+      "0450/2007/Nov/2",
+      "0450/2008/Jun/1",
+      "0450/2008/Jun/2",
+      "0450/2008/Nov/01",
+      "0450/2008/Nov/1",
+      "0450/2008/Nov/2",
+      "0450/2009/Jun/1",
+      "0450/2009/Jun/2",
+      "0450/2009/Nov/11",
+      "0450/2009/Nov/12",
+      "0450/2009/Nov/2",
+      "0450/2010/Jun/11",
+      "0450/2010/Jun/12",
+      "0450/2010/Jun/13",
+      "0450/2010/Jun/21",
+      "0450/2010/Jun/22",
+      "0450/2010/Jun/23",
+      "0450/2010/Nov/11",
+      "0450/2010/Nov/12",
+      "0450/2010/Nov/13",
+      "0450/2010/Nov/21",
+      "0450/2010/Nov/22",
+      "0450/2010/Nov/23",
+      "0450/2011/Jun/11",
+      "0450/2011/Jun/12",
+      "0450/2011/Jun/21",
+      "0450/2011/Jun/22",
+      "0450/2011/Nov/11",
+      "0450/2011/Nov/12",
+      "0450/2011/Nov/13",
+      "0450/2011/Nov/21",
+      "0450/2011/Nov/22",
+      "0450/2011/Nov/23",
+      "0450/2012/Jun/11",
+      "0450/2012/Jun/12",
+      "0450/2012/Jun/13",
+      "0450/2012/Jun/21",
+      "0450/2012/Jun/22",
+      "0450/2012/Jun/23",
+      "0450/2012/Nov/11",
+      "0450/2012/Nov/12",
+      "0450/2012/Nov/13",
+      "0450/2012/Nov/21",
+      "0450/2012/Nov/22",
+      "0450/2012/Nov/23",
+      "0450/2013/Jun/11",
+      "0450/2013/Jun/12",
+      "0450/2013/Jun/13",
+      "0450/2013/Jun/21",
+      "0450/2013/Jun/22",
+      "0450/2013/Jun/23",
+      "0450/2013/Nov/11",
+      "0450/2013/Nov/12",
+      "0450/2013/Nov/13",
+      "0450/2013/Nov/21",
+      "0450/2013/Nov/22",
+      "0450/2013/Nov/23",
+      "0450/2014/Jun/11",
+      "0450/2014/Jun/12",
+      "0450/2014/Jun/13",
+      "0450/2014/Jun/21",
+      "0450/2014/Jun/22",
+      "0450/2014/Jun/23",
+      "0450/2014/Nov/11",
+      "0450/2014/Nov/12",
+      "0450/2014/Nov/13",
+      "0450/2014/Nov/21",
+      "0450/2014/Nov/22",
+      "0450/2014/Nov/23",
+      "0450/2015/Jun/11",
+      "0450/2015/Jun/12",
+      "0450/2015/Jun/13",
+      "0450/2015/Jun/21",
+      "0450/2015/Jun/22",
+      "0450/2015/Jun/23",
+      "0450/2015/Mar/12",
+      "0450/2015/Mar/22",
+      "0450/2015/Nov/11",
+      "0450/2015/Nov/12",
+      "0450/2015/Nov/13",
+      "0450/2015/Nov/21",
+      "0450/2015/Nov/22",
+      "0450/2015/Nov/23",
+      "0450/2016/Jun/11",
+      "0450/2016/Jun/12",
+      "0450/2016/Jun/13",
+      "0450/2016/Jun/21",
+      "0450/2016/Jun/22",
+      "0450/2016/Jun/23",
+      "0450/2016/Mar/12",
+      "0450/2016/Mar/22",
+      "0450/2016/Nov/11",
+      "0450/2016/Nov/12",
+      "0450/2016/Nov/13",
+      "0450/2016/Nov/21",
+      "0450/2016/Nov/22",
+      "0450/2016/Nov/23",
+      "0450/2017/Jun/11",
+      "0450/2017/Jun/12"
+    ],
+    "cleaned_needing_reverification": [
+      "0472/2026/Jun/42",
+      "0478/2026/Jun/11",
+      "0495/2026/Jun/11",
+      "8238/2024/Nov/11",
+      "8238/2024/Nov/12",
+      "8238/2024/Nov/13",
+      "8238/2024/Nov/21",
+      "8238/2024/Nov/22",
+      "8238/2025/Jun/12",
+      "8238/2025/Jun/22",
+      "8238/2025/Nov/11",
+      "8238/2025/Nov/12",
+      "8238/2025/Nov/13",
+      "8238/2025/Nov/21",
+      "8238/2025/Nov/22",
+      "8238/2025/Nov/23",
+      "8238/2025/Nov/31",
+      "8238/2025/Nov/32",
+      "8238/2025/Nov/33",
+      "8238/2026/Jun/12",
+      "8238/2026/Jun/22",
+      "8238/2026/Jun/32",
+      "8386/2024/Jun/11",
+      "8386/2024/Jun/12",
+      "8386/2024/Jun/13",
+      "8386/2024/Nov/11",
+      "8386/2024/Nov/12",
+      "8386/2024/Nov/13",
+      "8386/2025/Jun/11",
+      "8386/2025/Jun/12",
+      "8386/2025/Jun/13",
+      "8386/2025/Nov/11",
+      "8386/2025/Nov/12",
+      "8386/2025/Nov/13",
+      "8386/2026/Jun/12",
+      "8386/2026/Jun/13",
+      "9389/2021/Nov/11",
+      "9489/2026/Jun/11",
+      "9608/2021/Nov/11",
+      "9618/2026/Jun/11",
+      "9707/2015/Nov/11",
+      "9868/2026/Jun/12"
+    ],
+    "service_conflicts": [
+      "0472/2026/Jun/41"
+    ],
+    "needs_user_resume": true
+  }
+}

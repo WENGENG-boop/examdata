@@ -1,0 +1,1016 @@
+{
+  "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\evidence\\tmp",
+  "exit_code": 0,
+  "report": {
+    "schema": "examdata.integration.b05_route_probe/1",
+    "run_id": "b05-rehearsal-2026-10-07",
+    "packet": "B05",
+    "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1",
+    "environment": {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\evidence\\tmp",
+      "python": "3.14.7",
+      "executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+      "pythonpath": null,
+      "staging_override": null,
+      "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1",
+      "dont_write_bytecode": true
+    },
+    "candidate_manifest": {
+      "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\B05_CANDIDATE_MANIFEST.json",
+      "sha256": "c4341576bf1a6b5d56a01098f46a77eb4081db30225c7f5cc4176be2abe9e008",
+      "recorded_tree": {
+        "files": 190,
+        "excludes": [
+          "B05_CANDIDATE_MANIFEST.json"
+        ],
+        "sha256": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955"
+      },
+      "recomputed_tree": {
+        "files": 190,
+        "excludes": [
+          "B05_CANDIDATE_MANIFEST.json"
+        ],
+        "sha256": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955"
+      },
+      "digest_matches": true,
+      "counts": {
+        "files_copied_from_parent": 189,
+        "new_files_added_by_b05": 1,
+        "edited_files_rewritten_by_b05": 2,
+        "carried_verbatim_files": 187,
+        "digest_files": 190,
+        "candidate_files_on_disk_after_manifest": 191
+      }
+    },
+    "module_origins": {
+      "examdata.integration.adapters.active_owner": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\adapters\\active_owner.py",
+      "examdata.integration.api.app": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\app.py",
+      "examdata.integration.api.compose": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\compose.py",
+      "examdata.integration.api.links": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\links.py",
+      "examdata.integration.api.openapi": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\openapi.py",
+      "examdata.integration.api.envelope": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\envelope.py",
+      "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\dataset.py",
+      "examdata.integration.api.binary": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\binary.py",
+      "examdata.integration.api.pagination": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\pagination.py",
+      "examdata.integration.api.view": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\api\\view.py",
+      "examdata.integration.catalog.builder": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\catalog\\builder.py",
+      "examdata.integration.catalog.model": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\catalog\\model.py",
+      "examdata.integration.catalog.store": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\catalog\\store.py",
+      "examdata.integration.catalog.revision": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\catalog\\revision.py",
+      "examdata.integration.providers.registry": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\providers\\registry.py",
+      "examdata.integration.providers.fixtures": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\providers\\fixtures.py",
+      "examdata.integration.providers.capabilities": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\providers\\capabilities.py",
+      "examdata.integration.contracts.quality": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\contracts\\quality.py",
+      "examdata.integration.contracts.ids": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\contracts\\ids.py",
+      "examdata.integration.contracts.enums": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\contracts\\enums.py",
+      "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\legacy\\bridge.py",
+      "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+    },
+    "discovery": {
+      "from_candidate_cwd": {
+        "ids": [
+          "fake_cli"
+        ],
+        "problems": [],
+        "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\components\\fake-node-cli\\fake-cli.mjs",
+        "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1",
+        "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\evidence\\tmp"
+      }
+    },
+    "worksheet": {
+      "path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\A12_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "sha256": "76ce0abc077b389aa17c7e946a101553d3ddb4a02ce74abfc59d766026b8ee34",
+      "rows": 71,
+      "methods": {
+        "GET": 70,
+        "POST": 1
+      },
+      "post_row": {
+        "method": "POST",
+        "path": "/sample"
+      },
+      "baseline_count": 71,
+      "recorded_app_hash": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+    },
+    "v2_specs": {
+      "specs": 34,
+      "implemented": 34,
+      "deferred": 0,
+      "binary": 5,
+      "unique_paths": 34,
+      "advertised_pairs": 34,
+      "agreement_problems": null
+    },
+    "ordering": {
+      "get_cases": 34,
+      "head_cases": 5,
+      "get_failures": [],
+      "head_failures": [],
+      "shadowing_problems": [],
+      "pairs_checked": 561,
+      "intersection_problems": []
+    },
+    "mechanics": {
+      "route_count_pre": 80,
+      "route_count_post": 81,
+      "pre_doc_paths": 76,
+      "post_doc_paths": 110,
+      "route_table_delta": 1,
+      "wrapper_entry": [
+        null,
+        [],
+        "_IncludedRouter"
+      ]
+    },
+    "combined_doc": {
+      "pre_paths": 76,
+      "post_paths": 110,
+      "path_delta": 34,
+      "pre_paths_operations_changed": [],
+      "operation_count": 115,
+      "v2_operation_id_count": 39,
+      "served_equals_direct": true,
+      "second_instance_digest_equal": true,
+      "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+      "b05_vs_b04_stability": {
+        "ledger_path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\B04_PROGRESS_LEDGER.json",
+        "ledger_sha256": "f59bd258410c59598a28a7d6dd3e2c9d12643d74429f094f3644476462dd8c4a",
+        "digest_mismatches": {},
+        "ids_match": true,
+        "ledger_ids": 39,
+        "probe_ids": 39,
+        "ledger_path_delta": 34,
+        "probe_path_delta": 34
+      }
+    },
+    "negatives": {
+      "n1": {
+        "info": [
+          200,
+          "application/json"
+        ],
+        "unknown": [
+          404,
+          "application/json",
+          {
+            "detail": "Not Found"
+          }
+        ],
+        "apierror": [
+          500,
+          "text/plain; charset=utf-8",
+          "Internal Server Error"
+        ],
+        "binary_200_content": [
+          "application/json",
+          "application/pdf",
+          "image/png"
+        ],
+        "legacy_changed": []
+      },
+      "n2": {
+        "changed": [
+          "absent_404",
+          "boom_500",
+          "numbers_422"
+        ],
+        "after": {
+          "papers_200": [
+            200,
+            "application/json",
+            "600bfa81b1561fa6281505a8630327ec94da208976f36c142c781b0b46a95725"
+          ],
+          "numbers_default": [
+            200,
+            "application/json",
+            "75123c719259f40d968aa6c89f1b9fce35c79602c5da132d21bf32268defbef3"
+          ],
+          "numbers_422": [
+            400,
+            "application/json",
+            "da5262b6b0deb044067c28b70cc8f4408477fc3d0b4eea8055f851196c7da516"
+          ],
+          "boom_500": [
+            500,
+            "application/json",
+            "a01a26481536328369da87c5e4568ab2163b65d47609c2b7be758881eb5202c9"
+          ],
+          "absent_404": [
+            404,
+            "application/json",
+            "f3dbb9e07e8acd80b5e3507d5528fc51b38b943e0d244d8d0c5cbde6f040fd10"
+          ]
+        },
+        "shapes": {
+          "boom_500": {
+            "schema_version": "examdata.v2/1",
+            "code": "internal_error",
+            "detail": null
+          },
+          "numbers_422": {
+            "schema_version": "examdata.v2/1",
+            "code": "invalid_request",
+            "detail": null
+          },
+          "absent_404": {
+            "schema_version": "examdata.v2/1",
+            "code": "route_not_found",
+            "detail": null
+          }
+        }
+      },
+      "n3": {
+        "direct": [
+          404,
+          "application/json"
+        ],
+        "direct_code": "route_not_found",
+        "doubled_status": 200,
+        "doc_v2_paths": []
+      },
+      "n4": {
+        "refused": true,
+        "message": "the staged v2 app is already attached to this host",
+        "routes_unchanged": true,
+        "doc_unchanged": true
+      },
+      "n5": {
+        "middleware_built": true,
+        "refused": true,
+        "message": "attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built",
+        "v2_paths_after": []
+      },
+      "n6": {
+        "None": "attach_v2 expects a FastAPI application",
+        "'x'": "attach_v2 expects a FastAPI application"
+      },
+      "n7a": [
+        true,
+        "syllabus syl_synthetic_cie_0580 is not labelled 'synthetic_fixture' (found None); every staged row must carry the synthetic evidence marker"
+      ],
+      "n7b": [
+        true,
+        "syllabus syl_synthetic_cie_0580 is not labelled 'deferred_active_owner' (found None); the real active-owner integration stays deferred"
+      ],
+      "n7c": [
+        true,
+        "syllabus syl_synthetic_cie_0580 source_evidence ['upstream'] does not carry 'synthetic_fixture'"
+      ],
+      "n7d": [
+        true,
+        "material mat_synthetic_cie_ins declares access_mode 'live'; the staged layer serves fixture-only materials and never claims live access"
+      ],
+      "n7e": [
+        true,
+        "timetable season cie/June/2026 is unavailable without a reason; an unavailable season is reported explicitly, never silently dropped"
+      ],
+      "n7f": [
+        true,
+        "timetable event edexcel/zone5/SYNTH-UNIT-1/None carries a date without the raw timetable line it came from; a date may never be inferred"
+      ],
+      "n7g": [
+        true,
+        "timetable window cie/zone5 declares 'start' unknown but carries a parsed 'start' of '2026-06-01'"
+      ],
+      "n7h": [
+        true,
+        "timetable window cie/zone5 has no parsed 'end' and does not declare it unknown; a missing boundary must be declared, never defaulted"
+      ],
+      "n7i": [
+        true,
+        "syllabuses() must return a list of rows, found NoneType"
+      ],
+      "n7j": [
+        true,
+        "syllabuses() must return a list of rows, found NoneType"
+      ]
+    },
+    "stability": {
+      "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+      "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+      "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+      "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+      "v2_operation_ids": {
+        "GET /api/v2/info": "info_api_v2_info_get",
+        "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+        "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+        "GET /api/v2/courses": "courses_api_v2_courses_get",
+        "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+        "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+        "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+        "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+        "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+        "GET /api/v2/containers": "containers_api_v2_containers_get",
+        "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+        "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+        "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+        "GET /api/v2/resources": "resources_api_v2_resources_get",
+        "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+        "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+        "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+        "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+        "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+        "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+        "GET /api/v2/questions": "questions_api_v2_questions_get",
+        "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+        "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+        "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+        "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+        "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+        "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+        "GET /api/v2/tags": "tags_api_v2_tags_get",
+        "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+        "GET /api/v2/materials": "materials_api_v2_materials_get",
+        "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+        "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+        "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+        "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+        "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+        "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+        "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+        "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+        "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+      },
+      "path_delta": 34
+    },
+    "seam": {
+      "fixture_counts": {
+        "syllabuses": 2,
+        "materials": 2,
+        "timetable_seasons": 2,
+        "timetable_events": 2,
+        "timetable_windows": 2
+      },
+      "deferred": {
+        "families_equal": true,
+        "tags": [],
+        "jobs": [
+          "job_synthetic_coverage"
+        ],
+        "reason_len": 145
+      },
+      "route_statuses": {
+        "syllabuses": 200,
+        "materials": 200,
+        "timetables": 200,
+        "events": 200,
+        "windows": 200
+      },
+      "route_counts": {
+        "syllabuses": 2,
+        "materials": 2,
+        "events": 2,
+        "windows": 2,
+        "seasons": 2
+      },
+      "private_injection": {
+        "syllabus_ids": [
+          "syl_probe_private"
+        ],
+        "material_ids": [
+          "mat_probe_private"
+        ],
+        "detail_statuses": [
+          404,
+          200,
+          404,
+          200
+        ]
+      },
+      "default_syllabus_ids": [
+        "syl_synthetic_cie_0580",
+        "syl_synthetic_ielts_book"
+      ]
+    },
+    "b05_vs_b04_stability": {
+      "ledger_path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\B04_PROGRESS_LEDGER.json",
+      "ledger_sha256": "f59bd258410c59598a28a7d6dd3e2c9d12643d74429f094f3644476462dd8c4a",
+      "digest_mismatches": {},
+      "ids_match": true,
+      "ledger_ids": 39,
+      "probe_ids": 39,
+      "ledger_path_delta": 34,
+      "probe_path_delta": 34
+    },
+    "checks": [
+      {
+        "name": "A_env_root_is_candidate",
+        "ok": true,
+        "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b05-rehearsal-2026-10-07\\\\candidates\\\\b05-adapters-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1"
+      },
+      {
+        "name": "A_no_staging_override",
+        "ok": true,
+        "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+      },
+      {
+        "name": "A_no_pythonpath",
+        "ok": true,
+        "detail": "PYTHONPATH=None"
+      },
+      {
+        "name": "A_candidate_src_first_on_path",
+        "ok": true,
+        "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b05-rehearsal-2026-10-07\\\\candidates\\\\b05-adapters-v1\\\\src'"
+      },
+      {
+        "name": "A_module_origins_within_candidate",
+        "ok": true,
+        "detail": "all candidate"
+      },
+      {
+        "name": "A_no_original_tree_module_loaded",
+        "ok": true,
+        "detail": "no module from the original tree"
+      },
+      {
+        "name": "A_product_no_testing_guard_imports",
+        "ok": true,
+        "detail": "no product import of testing guards"
+      },
+      {
+        "name": "A_schema_files_parse",
+        "ok": true,
+        "detail": "28 schema file(s); malformed: none"
+      },
+      {
+        "name": "A_quality_dimensions_match_code",
+        "ok": true,
+        "detail": "all dimensions agree"
+      },
+      {
+        "name": "A_identity_kinds_match_code",
+        "ok": true,
+        "detail": "14 kind(s); unrecognised: none"
+      },
+      {
+        "name": "A_node_discovery_candidate_root",
+        "ok": true,
+        "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\components\\fake-node-cli\\fake-cli.mjs"
+      },
+      {
+        "name": "A_legacy_bridge_entry_imports_within_candidate",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\candidates\\b05-adapters-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+      },
+      {
+        "name": "S_fixture_source_valid_counts",
+        "ok": true,
+        "detail": "{'syllabuses': 2, 'materials': 2, 'timetable_seasons': 2, 'timetable_events': 2, 'timetable_windows': 2}"
+      },
+      {
+        "name": "S_default_dataset_uses_fixture_source",
+        "ok": true,
+        "detail": "FixtureFeatureSource"
+      },
+      {
+        "name": "S_rows_copy_isolated",
+        "ok": true,
+        "detail": "{'after_len': 2, 'fresh_len': 2, 'first': {'public_id': 'mat_synthetic_cie_ins', 'evidence': 'synthetic_fixture', 'integration_status': 'deferred_active_owner'}}"
+      },
+      {
+        "name": "S_deferred_fixtures_through_seam",
+        "ok": true,
+        "detail": "{'families_equal': True, 'tags': [], 'jobs': ['job_synthetic_coverage'], 'reason_len': 145}"
+      },
+      {
+        "name": "S_route_rows_carry_markers",
+        "ok": true,
+        "detail": "{'statuses': {'syllabuses': 200, 'materials': 200, 'timetables': 200, 'events': 200, 'windows': 200}, 'counts': {'syllabuses': 2, 'materials': 2, 'events': 2, 'windows': 2, 'seasons': 2}}"
+      },
+      {
+        "name": "S_cie_event_null_fields_preserved",
+        "ok": true,
+        "detail": "{'date': None, 'session': None, 'raw_text': None}"
+      },
+      {
+        "name": "S_seasons_unavailable_with_reason",
+        "ok": true,
+        "detail": "{'availability': 'unavailable', 'rows': [('cie', 'unavailable', True), ('edexcel', 'unavailable', True)]}"
+      },
+      {
+        "name": "S_windows_unknown_boundaries_declared",
+        "ok": true,
+        "detail": "{'cie': {'unknown': ['start', 'end'], 'parsed': {'start': None, 'end': None}}, 'edexcel': {'unknown': ['end'], 'parsed': {'start': '2026-06-01', 'end': None}}}"
+      },
+      {
+        "name": "S_private_source_served_by_routes",
+        "ok": true,
+        "detail": "{'syllabus_ids': ['syl_probe_private'], 'material_ids': ['mat_probe_private'], 'detail_statuses': [404, 200, 404, 200]}"
+      },
+      {
+        "name": "S_fixture_path_still_serves_after_injection",
+        "ok": true,
+        "detail": "['syl_synthetic_cie_0580', 'syl_synthetic_ielts_book']"
+      },
+      {
+        "name": "B_worksheet_rows_71",
+        "ok": true,
+        "detail": "71 row(s)"
+      },
+      {
+        "name": "B_worksheet_methods_70_get_1_post",
+        "ok": true,
+        "detail": "{'GET': 70, 'POST': 1}"
+      },
+      {
+        "name": "B_worksheet_post_row_is_sample",
+        "ok": true,
+        "detail": "{'method': 'POST', 'path': '/sample'}"
+      },
+      {
+        "name": "B_worksheet_baseline_count_71",
+        "ok": true,
+        "detail": "baseline_count=71"
+      },
+      {
+        "name": "B_worksheet_app_hash_recorded",
+        "ok": true,
+        "detail": "753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d"
+      },
+      {
+        "name": "B_worksheet_no_v2_paths",
+        "ok": true,
+        "detail": "no /api/v2 legacy paths"
+      },
+      {
+        "name": "B_v2_spec_counts",
+        "ok": true,
+        "detail": "specs=34 implemented=34 deferred=0 binary=5 unique_paths=34"
+      },
+      {
+        "name": "B_v2_runtime_spec_registry_agree",
+        "ok": true,
+        "detail": "runtime=34 spec=34 advertised=34"
+      },
+      {
+        "name": "B_v2_head_pairs_binary_only",
+        "ok": true,
+        "detail": "runtime_head=5 spec_head=5"
+      },
+      {
+        "name": "B_v2_agreement_problems_empty",
+        "ok": true,
+        "detail": "no agreement problems"
+      },
+      {
+        "name": "B_ordering_get_first_match_own_route",
+        "ok": true,
+        "detail": "34 GET case(s); failures=none"
+      },
+      {
+        "name": "B_ordering_head_first_match_own_route",
+        "ok": true,
+        "detail": "5 HEAD case(s); failures=none"
+      },
+      {
+        "name": "B_no_param_static_shadowing",
+        "ok": true,
+        "detail": "no shadowed routes"
+      },
+      {
+        "name": "B_no_pattern_intersections",
+        "ok": true,
+        "detail": "561 distinct-pattern pair(s); intersections=none"
+      },
+      {
+        "name": "C_host_shape_pre_attach",
+        "ok": true,
+        "detail": "routes=80 doc_paths=76 middleware_built=False"
+      },
+      {
+        "name": "C_route_table_prefix_kept",
+        "ok": true,
+        "detail": "before=80 after=81"
+      },
+      {
+        "name": "C_route_table_single_wrapper_appended",
+        "ok": true,
+        "detail": "[[None, [], '_IncludedRouter']]"
+      },
+      {
+        "name": "C_legacy_inventory_byte_identical",
+        "ok": true,
+        "detail": "71 row probe(s); changed=none"
+      },
+      {
+        "name": "C_legacy_extras_byte_identical",
+        "ok": true,
+        "detail": "7 extra probe(s); changed=none"
+      },
+      {
+        "name": "C_legacy_boom_bytes_pinned",
+        "ok": true,
+        "detail": "[500, 'text/plain; charset=utf-8', 'e41656eb2ba6c6293bf6dd928e5a88cdbc50535cab661c1969e0f598e497ed62']"
+      },
+      {
+        "name": "C_binary_fixture_ids_pinned",
+        "ok": true,
+        "detail": "['syl_synthetic_cie_0580', 'syl_synthetic_ielts_book']"
+      },
+      {
+        "name": "C_binary_content_200",
+        "ok": true,
+        "detail": "[200, 'application/pdf', 667, '\"8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da\"']"
+      },
+      {
+        "name": "C_binary_range_206",
+        "ok": true,
+        "detail": "[206, 'bytes 0-9/667', 10]"
+      },
+      {
+        "name": "C_binary_conditional_304",
+        "ok": true,
+        "detail": "[304, 0]"
+      },
+      {
+        "name": "C_binary_head_200",
+        "ok": true,
+        "detail": "[200, '667']"
+      },
+      {
+        "name": "C_material_content_200_pinned",
+        "ok": true,
+        "detail": "[200, 'application/pdf', 655, '\"f5980cef27dfdb25e35a194b748da3ae274622de6dea1c97e72c410545760fef\"']"
+      },
+      {
+        "name": "C_v2_typed_400_invalid_request",
+        "ok": true,
+        "detail": "{'status': 400, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'validation': [], 'has_data': True}"
+      },
+      {
+        "name": "C_v2_stack_boom_500_internal_error",
+        "ok": true,
+        "detail": "{'status': 500, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'validation': [], 'has_data': True}"
+      },
+      {
+        "name": "C_v2_jobs_404_not_found",
+        "ok": true,
+        "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'not_found', 'validation': [], 'has_data': True}"
+      },
+      {
+        "name": "C_v2_unknown_404_route_not_found",
+        "ok": true,
+        "detail": "{'status': 404, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'validation': [], 'has_data': True}"
+      },
+      {
+        "name": "C_v2_post_info_405_method_not_allowed",
+        "ok": true,
+        "detail": "{'status': 405, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': 'method_not_allowed', 'validation': [], 'has_data': True}"
+      },
+      {
+        "name": "C_v2_info_200_envelope",
+        "ok": true,
+        "detail": "{'status': 200, 'content_type': 'application/json', 'schema_version': 'examdata.v2/1', 'code': None, 'validation': [], 'has_data': True}"
+      },
+      {
+        "name": "C_v2_controls_differ_from_baseline",
+        "ok": true,
+        "detail": "6 control(s); identical=none"
+      },
+      {
+        "name": "D_path_delta_is_exactly_registry",
+        "ok": true,
+        "detail": "added=34 removed=0 unexpected_added=none"
+      },
+      {
+        "name": "D_pre_paths_operations_unchanged",
+        "ok": true,
+        "detail": "76 pre-attach path(s); changed=none"
+      },
+      {
+        "name": "D_operation_ids_unique",
+        "ok": true,
+        "detail": "115 operation(s); duplicates=none"
+      },
+      {
+        "name": "D_v2_operation_ids_match_standalone",
+        "ok": true,
+        "detail": "standalone=39 composed=39 mismatch=none"
+      },
+      {
+        "name": "D_binary_rows_documented",
+        "ok": true,
+        "detail": "5 binary row(s) documented with their media types"
+      },
+      {
+        "name": "D_nonbinary_200_schema_is_envelope",
+        "ok": true,
+        "detail": "29 non-binary route(s); mismatches=none"
+      },
+      {
+        "name": "D_openapi_route_serves_same_document",
+        "ok": true,
+        "detail": "status=200 equal=True"
+      },
+      {
+        "name": "D_second_instance_document_digest_equal",
+        "ok": true,
+        "detail": "96afb249bffe0b5e vs 96afb249bffe0b5e"
+      },
+      {
+        "name": "D_stability_digests_match_b04_ledger",
+        "ok": true,
+        "detail": "four digests equal to the B04 ledger"
+      },
+      {
+        "name": "D_stability_ids_and_delta_match_b04_ledger",
+        "ok": true,
+        "detail": "{'ledger_ids': 39, 'probe_ids': 39, 'ledger_path_delta': 34, 'probe_path_delta': 34}"
+      },
+      {
+        "name": "E_candidate_bytes_unchanged",
+        "ok": true,
+        "detail": "identical"
+      },
+      {
+        "name": "E_fixture_and_contract_digests_unchanged",
+        "ok": true,
+        "detail": "fixtures=76ef844ccfa0 contracts=9421088a68a2"
+      },
+      {
+        "name": "E_manifest_recompute_matches_recorded",
+        "ok": true,
+        "detail": "files=190 sha=d38a124e8595b61d"
+      },
+      {
+        "name": "E_manifest_counts_disclosed",
+        "ok": true,
+        "detail": "digest_files=190 on_disk_non_cache=191"
+      },
+      {
+        "name": "E_compose_hook_frozen",
+        "ok": true,
+        "detail": "candidate=e220c007dba89d54 b04=e220c007dba89d54 expected=e220c007dba89d54"
+      },
+      {
+        "name": "E_no_embedded_data_payloads",
+        "ok": true,
+        "detail": "no data: URIs in fixtures"
+      },
+      {
+        "name": "E_scratch_marker_written",
+        "ok": true,
+        "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\evidence\\tmp\\routing\\probe_scratch.json"
+      },
+      {
+        "name": "N1_raw_include_serves_v2_unshaped_errors",
+        "ok": true,
+        "detail": "{'info': [200, 'application/json'], 'unknown': [404, 'application/json', {'detail': 'Not Found'}], 'apierror': [500, 'text/plain; charset=utf-8', 'Internal Server Error'], 'binary_200_content': ['application/json', 'application/pdf', 'image/png'], 'legacy_changed': []}"
+      },
+      {
+        "name": "N1_raw_include_binary_row_keeps_application_json",
+        "ok": true,
+        "detail": "['application/json', 'application/pdf', 'image/png']"
+      },
+      {
+        "name": "N1_legacy_probes_unchanged",
+        "ok": true,
+        "detail": "5 probe(s) identical"
+      },
+      {
+        "name": "N2_unscoped_install_changes_exactly_three_probes",
+        "ok": true,
+        "detail": "['absent_404', 'boom_500', 'numbers_422']"
+      },
+      {
+        "name": "N2_unscoped_legacy_500_becomes_json_envelope",
+        "ok": true,
+        "detail": "{'after': [500, 'application/json', 'a01a26481536328369da87c5e4568ab2163b65d47609c2b7be758881eb5202c9'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'internal_error', 'detail': None}}"
+      },
+      {
+        "name": "N2_unscoped_legacy_422_becomes_400_envelope",
+        "ok": true,
+        "detail": "{'after': [400, 'application/json', 'da5262b6b0deb044067c28b70cc8f4408477fc3d0b4eea8055f851196c7da516'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'invalid_request', 'detail': None}}"
+      },
+      {
+        "name": "N2_unscoped_legacy_404_becomes_envelope",
+        "ok": true,
+        "detail": "{'after': [404, 'application/json', 'f3dbb9e07e8acd80b5e3507d5528fc51b38b943e0d244d8d0c5cbde6f040fd10'], 'shape': {'schema_version': 'examdata.v2/1', 'code': 'route_not_found', 'detail': None}}"
+      },
+      {
+        "name": "N2_post_build_handler_install_is_invisible",
+        "ok": true,
+        "detail": "middleware_built=True changed=none"
+      },
+      {
+        "name": "N3_mount_documents_no_v2_paths",
+        "ok": true,
+        "detail": "no /api/v2 paths"
+      },
+      {
+        "name": "N3_mount_direct_info_is_wrong_route_envelope",
+        "ok": true,
+        "detail": "{'direct': [404, 'application/json'], 'direct_code': 'route_not_found', 'doubled_status': 200, 'doc_v2_paths': []}"
+      },
+      {
+        "name": "N3_mount_requires_doubled_prefix",
+        "ok": true,
+        "detail": "GET /api/v2/api/v2/info -> 200"
+      },
+      {
+        "name": "N4_double_attach_refused",
+        "ok": true,
+        "detail": "{'refused': True, 'message': 'the staged v2 app is already attached to this host', 'routes_unchanged': True, 'doc_unchanged': True}"
+      },
+      {
+        "name": "N4_double_attach_leaves_host_unchanged",
+        "ok": true,
+        "detail": "{'routes': True, 'doc': True}"
+      },
+      {
+        "name": "N5_late_attach_refused",
+        "ok": true,
+        "detail": "{'middleware_built': True, 'refused': True, 'message': 'attach_v2 must be called before the host serves its first request: the middleware stack snapshots the exception handlers when it is built', 'v2_paths_after': []}"
+      },
+      {
+        "name": "N5_late_attach_no_v2_paths",
+        "ok": true,
+        "detail": "no /api/v2 paths after the refused attach"
+      },
+      {
+        "name": "N6_non_fastapi_host_refused",
+        "ok": true,
+        "detail": "{'None': 'attach_v2 expects a FastAPI application', \"'x'\": 'attach_v2 expects a FastAPI application'}"
+      },
+      {
+        "name": "N7_refuses_missing_evidence_marker",
+        "ok": true,
+        "detail": "syllabus syl_synthetic_cie_0580 is not labelled 'synthetic_fixture' (found None); every staged row must carry the synthetic evidence marker"
+      },
+      {
+        "name": "N7_refuses_missing_status_marker",
+        "ok": true,
+        "detail": "syllabus syl_synthetic_cie_0580 is not labelled 'deferred_active_owner' (found None); the real active-owner integration stays deferred"
+      },
+      {
+        "name": "N7_refuses_non_synthetic_source_evidence",
+        "ok": true,
+        "detail": "syllabus syl_synthetic_cie_0580 source_evidence ['upstream'] does not carry 'synthetic_fixture'"
+      },
+      {
+        "name": "N7_refuses_live_access_material",
+        "ok": true,
+        "detail": "material mat_synthetic_cie_ins declares access_mode 'live'; the staged layer serves fixture-only materials and never claims live access"
+      },
+      {
+        "name": "N7_refuses_unavailable_season_without_reason",
+        "ok": true,
+        "detail": "timetable season cie/June/2026 is unavailable without a reason; an unavailable season is reported explicitly, never silently dropped"
+      },
+      {
+        "name": "N7_refuses_date_without_raw_text",
+        "ok": true,
+        "detail": "timetable event edexcel/zone5/SYNTH-UNIT-1/None carries a date without the raw timetable line it came from; a date may never be inferred"
+      },
+      {
+        "name": "N7_refuses_unknown_boundary_with_parsed_value",
+        "ok": true,
+        "detail": "timetable window cie/zone5 declares 'start' unknown but carries a parsed 'start' of '2026-06-01'"
+      },
+      {
+        "name": "N7_refuses_undeclared_missing_boundary",
+        "ok": true,
+        "detail": "timetable window cie/zone5 has no parsed 'end' and does not declare it unknown; a missing boundary must be declared, never defaulted"
+      },
+      {
+        "name": "N7_refuses_non_list_family_rows",
+        "ok": true,
+        "detail": "syllabuses() must return a list of rows, found NoneType"
+      },
+      {
+        "name": "N7_dataset_refuses_unvalidated_source",
+        "ok": true,
+        "detail": "syllabuses() must return a list of rows, found NoneType"
+      }
+    ],
+    "counts": {
+      "checks": 98,
+      "checks_failed": 0,
+      "negative_checks": 25,
+      "positive_checks": 43
+    },
+    "negative_checks": [
+      "N1_raw_include_serves_v2_unshaped_errors",
+      "N1_raw_include_binary_row_keeps_application_json",
+      "N2_unscoped_install_changes_exactly_three_probes",
+      "N2_unscoped_legacy_500_becomes_json_envelope",
+      "N2_unscoped_legacy_422_becomes_400_envelope",
+      "N2_unscoped_legacy_404_becomes_envelope",
+      "N2_post_build_handler_install_is_invisible",
+      "N3_mount_documents_no_v2_paths",
+      "N3_mount_direct_info_is_wrong_route_envelope",
+      "N3_mount_requires_doubled_prefix",
+      "N4_double_attach_refused",
+      "N4_double_attach_leaves_host_unchanged",
+      "N5_late_attach_refused",
+      "N5_late_attach_no_v2_paths",
+      "N6_non_fastapi_host_refused",
+      "N7_refuses_missing_evidence_marker",
+      "N7_refuses_missing_status_marker",
+      "N7_refuses_non_synthetic_source_evidence",
+      "N7_refuses_live_access_material",
+      "N7_refuses_unavailable_season_without_reason",
+      "N7_refuses_date_without_raw_text",
+      "N7_refuses_unknown_boundary_with_parsed_value",
+      "N7_refuses_undeclared_missing_boundary",
+      "N7_refuses_non_list_family_rows",
+      "N7_dataset_refuses_unvalidated_source"
+    ],
+    "positive_checks": [
+      "S_fixture_source_valid_counts",
+      "S_default_dataset_uses_fixture_source",
+      "S_rows_copy_isolated",
+      "S_deferred_fixtures_through_seam",
+      "S_route_rows_carry_markers",
+      "S_cie_event_null_fields_preserved",
+      "S_seasons_unavailable_with_reason",
+      "S_windows_unknown_boundaries_declared",
+      "S_private_source_served_by_routes",
+      "S_fixture_path_still_serves_after_injection",
+      "B_ordering_get_first_match_own_route",
+      "B_ordering_head_first_match_own_route",
+      "B_no_param_static_shadowing",
+      "B_no_pattern_intersections",
+      "C_route_table_prefix_kept",
+      "C_route_table_single_wrapper_appended",
+      "C_legacy_inventory_byte_identical",
+      "C_legacy_extras_byte_identical",
+      "C_legacy_boom_bytes_pinned",
+      "C_binary_fixture_ids_pinned",
+      "C_binary_content_200",
+      "C_binary_range_206",
+      "C_binary_conditional_304",
+      "C_binary_head_200",
+      "C_material_content_200_pinned",
+      "C_v2_typed_400_invalid_request",
+      "C_v2_stack_boom_500_internal_error",
+      "C_v2_jobs_404_not_found",
+      "C_v2_unknown_404_route_not_found",
+      "C_v2_post_info_405_method_not_allowed",
+      "C_v2_info_200_envelope",
+      "C_v2_controls_differ_from_baseline",
+      "D_path_delta_is_exactly_registry",
+      "D_pre_paths_operations_unchanged",
+      "D_operation_ids_unique",
+      "D_v2_operation_ids_match_standalone",
+      "D_binary_rows_documented",
+      "D_nonbinary_200_schema_is_envelope",
+      "D_openapi_route_serves_same_document",
+      "D_second_instance_document_digest_equal",
+      "D_stability_digests_match_b04_ledger",
+      "D_stability_ids_and_delta_match_b04_ledger",
+      "N1_legacy_probes_unchanged"
+    ],
+    "failed": [],
+    "ok": true,
+    "not_run": [
+      {
+        "check": "real merge into the original project",
+        "reason": "gate original_paths_released is closed; the plan entry remains a proposal (deferred_pending_release) and the original tree was never read or written"
+      },
+      {
+        "check": "real active-owner integration (materials, syllabuses and timetables served by the original owner modules)",
+        "reason": "no owner release exists for the active-owner families; the seam serves only clearly labelled synthetic fixtures and the real integration stays deferred_active_owner"
+      },
+      {
+        "check": "real baseline verification against the actual legacy application",
+        "reason": "gate original_paths_released is closed; the legacy side was simulated from the frozen A12 route-compatibility worksheet, not from the original app"
+      },
+      {
+        "check": "real Node component execution (fake-cli.mjs run via the Node runtime)",
+        "reason": "gate original_paths_released is closed; only synthetic discovery and importability of the component are rehearsed"
+      },
+      {
+        "check": "real Node/source validation against the original project",
+        "reason": "gate original_paths_released is closed; the original tree was never read"
+      },
+      {
+        "check": "real database schema / data migration",
+        "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+      },
+      {
+        "check": "live service / upstream provider calls",
+        "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+      },
+      {
+        "check": "cutover of the existing service",
+        "reason": "gate existing_service_cutover_authorized is closed"
+      },
+      {
+        "check": "deployment to any target",
+        "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+      },
+      {
+        "check": "cleanup of the original project",
+        "reason": "gate original_cleanup_authorized is closed"
+      },
+      {
+        "check": "credential usage of any kind",
+        "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used, read, fabricated or staged; the routing controls are synthetic request parameters with no secret values"
+      }
+    ],
+    "note": "private rehearsal only; not merged, not deployed; the original tree was never read, imported or written; frozen evidence was not touched; scratch space was confined to the run directory's evidence/tmp; the active-owner seam was rehearsed against labelled synthetic fixtures only; no credential was used, read or fabricated"
+  },
+  "stderr": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b05-rehearsal-2026-10-07\\b05_route_probe.py:195: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient  # noqa: E402\n"
+}

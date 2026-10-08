@@ -1,0 +1,157 @@
+{
+  "proposal_version": "b02-merge-proposal/1",
+  "packet": "B02",
+  "generated_by": "integration-staging/runtime/b02-rehearsal-20261006/b02_build_proposals.py",
+  "generated_at": "2026-10-06T23:50:55+08:00",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "candidate_manifest": "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1/B02_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "59dfc8c79b59d86ae67313cdb96048d5bb73e365405070de3e9b2a872264648d",
+    "candidate_tree": {
+      "files": 185,
+      "excludes": [
+        "B02_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf"
+    },
+    "candidate_tree_digest_rule": "sha256 over 'path\\0sha256\\n' for every file under the root, sorted by path, excluding __pycache__/.pytest_cache and excluding the named manifest itself",
+    "parent_manifest": "integration-staging/runtime/r0104-repair-20261006/candidates/r04-target-layout-v2/R04_CANDIDATE_MANIFEST.json",
+    "parent_manifest_sha256": "923e7a298179ef22c6cb715deb701d9ec79b2fa2b1159136af1802c24c988c6a",
+    "parent_manifest_sha256_at_build": "923e7a298179ef22c6cb715deb701d9ec79b2fa2b1159136af1802c24c988c6a",
+    "parent_tree": {
+      "files": 182,
+      "excludes": [],
+      "sha256": "c84973e0072fdc9b35f14d8ad1f5a3746f3f8793c340aefc304eb18c51e16098"
+    },
+    "a14_merge_map": "docs/integration/execution/A14_MERGE_MAP.json",
+    "a14_merge_map_sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+    "a14_merge_map_byte_unchanged": true
+  },
+  "scope_note": "B02 delta relative to its parent R04 candidate is the shared-configuration packaging only; the product/test payload inside the candidate is the R04 payload already proposed in R0104_MERGE_PROPOSAL.json and is not re-proposed here. Proposal only: nothing in this file has been applied to the original project. All seven gates remain closed; the original merge stays blocked until an explicit human release.",
+  "action_level_gate_model": {
+    "principle": "A gate is required only for the action that performs that effect. Private preparation never satisfies an original-action prerequisite.",
+    "private_preparation": {
+      "gates_required": [],
+      "note": "reading, staging, private copies, offline validation, synthetic fixtures: no gate required and none is opened"
+    },
+    "original_path_write": {
+      "gates_required": [
+        "original_paths_released"
+      ],
+      "note": "any write into the original project requires the human release"
+    },
+    "other_actions": {
+      "real_data_write": "real_data_write_authorized",
+      "existing_service_cutover": "existing_service_cutover_authorized",
+      "upstream_request": "upstream_requests_authorized",
+      "cie_resume": "cie_resume_authorized",
+      "remote_deployment": "remote_deployment_authorized",
+      "original_cleanup": "original_cleanup_authorized"
+    }
+  },
+  "frozen_evidence_never_touched": [
+    "docs/integration/execution/evidence/**",
+    "integration-staging/runtime/phase-b/**",
+    "integration-staging/runtime/r0104-repair-20261006/candidates/**",
+    "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1/**"
+  ],
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "counts": {
+    "entries": 4,
+    "entries_requiring_release": 2,
+    "staging_only_entries": 2
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "change": "candidate_container",
+      "staged_path": "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1",
+      "staged_sha256_before": "c84973e0072fdc9b35f14d8ad1f5a3746f3f8793c340aefc304eb18c51e16098",
+      "staged_sha256_after": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf",
+      "kind": "staging_candidate_tree",
+      "proposed_target": null,
+      "proposed_target_origin": "staging-only rehearsal container: no original-project target",
+      "phase_b_action": "keep in integration-staging/ only; no original-project action proposed",
+      "reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "change": "shared_config_packaging",
+      "staged_path": "integration-staging/config/README.md",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "2beeb31ed2520b60031a4a28e702a471149450e9e73a73bc7752927a7a5912e6",
+      "kind": "new_file",
+      "proposed_target": null,
+      "proposed_target_origin": "A14_MERGE_MAP.json excluded list: staging notes; the configuration precedence text is folded into docs/integration-guide.md",
+      "phase_b_action": "keep in integration-staging/ only; no original-project action proposed",
+      "reversal": "no reversal needed: the file never leaves integration-staging/",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "verification": [],
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "change": "shared_config_packaging",
+      "staged_path": "integration-staging/config/staging-config.example.json",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "0c67866416644bcd1e2ed374573144c447718140e628d3e8df0988b5f5d715bf",
+      "kind": "new_file",
+      "proposed_target": "examdata/config.example.json",
+      "proposed_target_origin": "A14_MERGE_MAP.json entry MM-0242",
+      "phase_b_action": "add_file at examdata/config.example.json (new relative to the original project; there is no existing original file to edit)",
+      "reversal": "delete_file at examdata/config.example.json, and only if the target's current sha256 still equals staged_sha256_after",
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "verification": [
+        "tests/test_config_resolution.py, tests/test_config_manifest.py"
+      ],
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "change": "shared_config_packaging",
+      "staged_path": "integration-staging/config/staging.env.example",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "d16bdbfb14f6a129919bbfdb0bb242b87c5c3fce6c49d0030227b69137a6612c",
+      "kind": "new_file",
+      "proposed_target": "examdata/.env.example",
+      "proposed_target_origin": "A14_MERGE_MAP.json entry MM-0243",
+      "phase_b_action": "add_file at examdata/.env.example (new relative to the original project; there is no existing original file to edit)",
+      "reversal": "delete_file at examdata/.env.example, and only if the target's current sha256 still equals staged_sha256_after",
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "verification": [
+        "tests/test_config_resolution.py, tests/test_config_manifest.py"
+      ],
+      "status": "proposal_only_not_merged"
+    }
+  ],
+  "not_merged": true,
+  "requirements_for_merge": [
+    "explicit human release opening original_paths_released with an explicit scope",
+    "re-run the isolated staged suite against the frozen B02 candidate",
+    "verify each proposed target's sha256 before and after the add_file"
+  ]
+}

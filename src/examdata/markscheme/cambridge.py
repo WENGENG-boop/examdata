@@ -90,113 +90,144 @@ class CambridgeMarkSchemeParser:
     # -- 内部 -----------------------------------------------------------
 
     def _consume_matrix(self, matrix, draft: MarkSchemeDraft, *, page_number: int) -> None:
-        header_cols = self._find_header(matrix)
-        if header_cols is None:
-            return
-        q_col, a_col, m_col, g_col = header_cols
-
-        # 2025 specimen 的版式是"横排"的：表头 Question/Answer/Marks/Partial Marks
-        # 不是列名，而是**行名**，每个题号占一列。此时按列解析会把 "Question"
-        # 当成题号、把整页内容塞进一条条目。先检测并转置成常规竖排表。
         matrix = self._maybe_transpose(matrix)
+        pending: Optional[MarkSchemeEntryDraft] = None
+        if draft.entries:
+            previous = draft.entries[-1]
+            pages = previous.raw.get("pages", [previous.raw.get("page")])
+            if pages and pages[-1] == page_number - 1:
+                pending = previous
         header_cols = self._find_header(matrix)
+        started = header_cols is None
+        if header_cols is None:
+            header_cols = pending.raw.get("columns") if pending is not None else None
         if header_cols is None:
             return
         q_col, a_col, m_col, g_col = header_cols
-        started = False
-
-        # 当前条目累积的行（含续行）。多行 Marks 单元必须累加：
-        # 例如 Q14 = M1(本行) + A1(续行) = 2 分，Q22 = M1 + A1 + A1 = 3 分。
-        pending: Optional[MarkSchemeEntryDraft] = None
-        pending_rows: list[dict[str, str]] = []
-
-        def flush() -> None:
-            nonlocal pending, pending_rows
-            if pending is not None:
-                pending.marks = self._resolve_marks(pending_rows)
-                self._extract_marking_vocabulary(pending)
-                pending.raw["rows"] = pending_rows
-                # 分值解析成功应提升置信度（跨续行累加后才知道真实分值）
-                if pending.marks is not None:
-                    pending.parse_confidence = round(
-                        min(pending.parse_confidence + 0.15, 1.0), 3
-                    )
-                draft.entries.append(pending)
-            pending = None
-            pending_rows = []
+        if started and any(len(row) <= max(q_col, a_col, m_col, g_col) for row in matrix):
+            return
+        touched: dict[int, MarkSchemeEntryDraft] = {}
 
         for r, row in enumerate(matrix):
             cells = [normalize_chars(c.text).strip() for c in row]
             if not any(cells):
                 continue
-            first = cells[q_col].lower() if q_col < len(cells) else ""
+            label = cells[q_col] if q_col < len(cells) else ""
+            if label.lower().startswith("question"):
+                started = True
+                continue
             if not started:
-                if first.startswith("question"):
-                    started = True
                 continue
 
-            label = cells[q_col] if q_col < len(cells) else ""
             answer = cells[a_col] if a_col < len(cells) else ""
             marks_txt = cells[m_col] if m_col < len(cells) else ""
-            guide = cells[g_col] if g_col < len(cells) and g_col >= 0 else ""
-
-            if not label:
-                # 续行：并入当前条目（答案、说明、分值都要累积）
-                if pending is not None:
-                    if answer:
-                        pending.answer_text = ((pending.answer_text or "") + " " + answer).strip()
-                    if guide:
-                        pending.partial_marks = (
-                            ((pending.partial_marks or "") + " " + guide).strip()
-                        )
-                        pending.guidance = pending.partial_marks
-                    pending_rows.append({"marks": marks_txt, "partial": guide})
+            guide = cells[g_col] if 0 <= g_col < len(cells) else ""
+            if label:
+                if not _NUMBER.fullmatch(normalize_number_path(label)):
+                    continue
+                pending = MarkSchemeEntryDraft(
+                    number_label=label.strip(),
+                    number_path=normalize_number_path(label),
+                    raw={
+                        "page": page_number,
+                        "row": r,
+                        "cells": cells,
+                        "columns": header_cols,
+                        "pages": [],
+                        "rows": [],
+                        "base_confidence": self._entry_confidence(label, answer, marks_txt),
+                    },
+                )
+                draft.entries.append(pending)
+            elif pending is None:
+                if answer or marks_txt or guide:
+                    draft.findings.append(
+                        {
+                            "rule": "ms_orphan_continuation",
+                            "severity": "warning",
+                            "message": "评分续行没有可确认的前页条目",
+                            "evidence": {"page": page_number, "row": r, "cells": cells},
+                        }
+                    )
                 continue
 
-            if not _NUMBER.match(label):
-                continue
+            if answer:
+                pending.answer_text = ((pending.answer_text or "") + " " + answer).strip()
+            if guide:
+                pending.partial_marks = ((pending.partial_marks or "") + " " + guide).strip()
+                pending.guidance = pending.partial_marks
+            pending.raw["rows"].append({"marks": marks_txt, "partial": guide})
+            if page_number not in pending.raw["pages"]:
+                pending.raw["pages"].append(page_number)
+            touched[len(draft.entries) - 1] = pending
 
-            # 新条目：先结算上一条
-            flush()
-            path = normalize_number_path(label)
-            pending = MarkSchemeEntryDraft(
-                number_label=label.strip(),
-                number_path=path,
-                answer_text=answer or None,
-                partial_marks=guide or None,
-                guidance=guide or None,
-                raw={"page": page_number, "row": r, "cells": cells},
-                parse_confidence=self._entry_confidence(label, answer, marks_txt),
+        for entry_index, entry in touched.items():
+            entry.marks, issue = self._marks_resolution(entry.raw["rows"])
+            entry.parse_confidence = round(
+                min(entry.raw["base_confidence"] + (0.15 if entry.marks is not None else 0), 1.0),
+                3,
             )
-            pending_rows = [{"marks": marks_txt, "partial": guide}]
-
-        flush()
+            self._extract_marking_vocabulary(entry)
+            draft.findings[:] = [
+                f for f in draft.findings
+                if not (f.get("rule") == "ms_marks_ambiguous"
+                        and f.get("evidence", {}).get("entry_index") == entry_index)
+            ]
+            if issue:
+                draft.findings.append(
+                    {
+                        "rule": "ms_marks_ambiguous",
+                        "severity": "error",
+                        "message": issue,
+                        "evidence": {
+                            "entry_index": entry_index,
+                            "number_path": entry.number_path,
+                            "pages": list(entry.raw["pages"]),
+                            "rows": list(entry.raw["rows"]),
+                        },
+                    }
+                )
 
     @staticmethod
     def _resolve_marks(rows: list[dict[str, str]]) -> Optional[int]:
-        """由条目所有行（含续行）解析分值。
+        return CambridgeMarkSchemeParser._marks_resolution(rows)[0]
 
-        优先级：
-        1. Marks 列出现纯整数 -> 取该整数（如 "1"、"2"、"3"）。
-        2. Partial Marks 列以数字开头 -> 取该数字（如 "2 B1 for ..."）。
-        3. 否则统计 M/A/B 记号的个数（如 M1 + A1 = 2 分）。
-        """
+    @staticmethod
+    def _marks_resolution(rows: list[dict[str, str]]) -> tuple[Optional[int], Optional[str]]:
+        numeric: list[int] = []
+        marks_tokens: list[int] = []
         for row in rows:
-            val = _parse_marks(row.get("marks", ""))
-            if val is not None:
-                return val
+            text = (row.get("marks", "") or "").strip()
+            if not text:
+                continue
+            value = _parse_marks(text)
+            if value is not None:
+                numeric.append(value)
+            elif re.fullmatch(r"[MAB]\d{1,2}(?:[\s+]+[MAB]\d{1,2})*", text):
+                marks_tokens.extend(int(v) for v in re.findall(r"[MAB](\d{1,2})", text))
+            else:
+                return None, "Marks 单元包含无法确定的多行或非分值内容"
+        if len(numeric) > 1:
+            return None, "同一评分条目有多个整数分值，无法确定是总分还是分项"
+        if numeric:
+            return numeric[0], None
 
-        for row in rows:
-            m = re.match(r"^\s*(\d{1,2})\b", row.get("partial", "") or "")
-            if m:
-                return int(m.group(1))
+        first_partial = (rows[0].get("partial", "") or "") if rows else ""
+        total_match = re.match(r"^\s*(\d{1,2})(?=\s+[MAB]\d\b|\s*$)", first_partial)
+        if total_match:
+            return int(total_match.group(1)), None
 
-        total = 0
+        partial_tokens: list[int] = []
         for row in rows:
-            blob = (row.get("marks", "") or "") + " " + (row.get("partial", "") or "")
-            for tok in re.findall(r"\b([MAB])(\d)\b", blob):
-                total += int(tok[1])
-        return total or None
+            text = row.get("partial", "") or ""
+            if re.search(r"\b(?:or|alternatively)\b.*\b[MAB]\d\b", text, re.I | re.S):
+                return None, "无明确总分且评分说明包含替代评分路径"
+            for line in text.splitlines():
+                token = re.match(r"^\s*[MAB](\d{1,2})\b", line)
+                if token:
+                    partial_tokens.append(int(token.group(1)))
+        total = sum(marks_tokens) + sum(partial_tokens)
+        return (total or None), None
 
     @staticmethod
     def _row_labels(matrix) -> list[str]:
@@ -328,24 +359,53 @@ class CambridgeMarkSchemeParser:
                 }
             )
             return
-        # 题号连续性
-        seen: list[str] = []
-        for e in draft.entries:
-            if e.number_path not in seen:
-                seen.append(e.number_path)
+        counts: dict[str, int] = {}
+        for entry in draft.entries:
+            counts[entry.number_path] = counts.get(entry.number_path, 0) + 1
         draft.metadata["entry_count"] = len(draft.entries)
-        draft.metadata["distinct_numbers"] = len(seen)
-        draft.metadata["total_marks"] = sum(e.marks or 0 for e in draft.entries)
-
-        dupes = {n for n in seen if seen.count(n) > 1}
+        draft.metadata["distinct_numbers"] = len(counts)
+        dupes = sorted(path for path, count in counts.items() if count > 1)
         if dupes:
             draft.findings.append(
                 {
                     "rule": "ms_duplicate_numbers",
                     "severity": "warning",
-                    "message": f"重复题号: {sorted(dupes)[:20]}",
+                    "message": f"重复题号: {dupes[:20]}",
+                    "evidence": {"counts": {path: counts[path] for path in dupes}},
                 }
             )
+
+        overlap = {
+            entry.number_path: [
+                child.number_path for child in draft.entries
+                if child.number_path.startswith(entry.number_path + "(")
+                and child.marks is not None
+            ]
+            for entry in draft.entries if entry.marks is not None
+        }
+        overlap = {path: children for path, children in overlap.items() if children}
+        if overlap:
+            draft.findings.append(
+                {
+                    "rule": "ms_parent_child_marks_ambiguous",
+                    "severity": "warning",
+                    "message": "父题和子题均有分值，保留原值而不重复求和",
+                    "evidence": {"paths": overlap},
+                }
+            )
+        missing = [entry.number_path for entry in draft.entries if entry.marks is None]
+        if missing:
+            draft.findings.append(
+                {
+                    "rule": "ms_marks_missing",
+                    "severity": "warning",
+                    "message": "部分评分条目未能确定分值",
+                    "evidence": {"paths": missing},
+                }
+            )
+        draft.metadata["total_marks"] = (
+            None if dupes or overlap or missing else sum(entry.marks for entry in draft.entries)
+        )
 
 
 def link_entries_to_questions(

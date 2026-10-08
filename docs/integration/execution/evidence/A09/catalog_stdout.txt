@@ -1,0 +1,54 @@
+=== A09 catalog probe ===
+synthetic fixtures: C:\Users\weo\Desktop\api\integration-staging\fixtures\synthetic\catalog
+
+-- identity mapping --
+[ok] identity.stable_ids
+[ok] identity.native_locator_round_trips
+[ok] identity.deterministic_across_stores
+
+-- duplicates, collisions, aliases --
+[ok] store.duplicate_native_id_recorded_and_raised
+[ok] store.benign_duplicate_deduplicates
+[ok] store.identity_collision_recorded
+[ok] store.alias_conflict_recorded_atomic
+
+-- reference completeness --
+[ok] build.incomplete_reference_rejected
+[ok] build.incomplete_reference_maps_to_gap
+
+-- build: reproducibility + diff --
+[ok] build.valid_snapshot
+[ok] build.reproducible_revision
+[ok] build.diff_of_identical_is_empty
+
+-- build: removal must be explained --
+[ok] build.unexplained_removal_rejected
+[ok] build.explained_removal_accepted
+
+-- build: quality promotion needs authoritative evidence --
+[ok] build.unexplained_quality_upgrade_rejected
+[ok] build.authoritative_quality_upgrade_accepted
+[ok] build.synthetic_never_authoritative
+
+-- explicit UNKNOWN is lossless --
+[ok] unknown.token_in_json
+[ok] unknown.round_trips_to_sentinel
+
+-- publication: immutable revision, atomic pointer, CAS, rollback --
+[ok] publish.pointer_and_revision_written
+[ok] publish.none_leaves_pointer_untouched
+[ok] publish.compare_and_swap_refuses_stale
+[ok] publish.rollback_restores_previous
+
+-- cursors --
+[ok] cursor.round_trips
+[ok] cursor.tamper_is_invalid
+[ok] cursor.stale_revision_is_409
+[ok] cursor.bound_to_retained_revision_resolves
+
+-- provenance --
+[ok] prov.all_fixtures_listed
+[ok] prov.all_synthetic
+[ok] prov.no_upstream_hash_claim
+
+A09_PROBE: PASS (0 failing)

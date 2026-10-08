@@ -1,0 +1,67 @@
+{
+ "entries_before": 971,
+ "entries_after": 971,
+ "new_failures": 0,
+ "fixed_entries": 0,
+ "changed_entries": 34,
+ "changed_questions": 48,
+ "expected_question_changes": 48,
+ "table_questions": 14,
+ "table_problems": 0,
+ "assert_11dwej": {
+  "index_url_entry": "tpo|https://toefl.kmf.com/detail/listen/914lxj.html",
+  "index_rows": 4,
+  "index_answer": "B A A B",
+  "index_ok": true,
+  "audit_url": "https://toefl.kmf.com/detail/listen/11dwej.html",
+  "audit_rows": 4,
+  "audit_answer": "B A A B",
+  "audit_ok": true,
+  "answer_is_B_A_A_B": true,
+  "problems": []
+ },
+ "audit_url_checks": {
+  "urls": 14,
+  "ok": 14,
+  "fail": 0,
+  "error": null
+ },
+ "essay_char_diffs": 0,
+ "unexpected": 0
+}
+
+变化条目列表:
+  tpo|https://toefl.kmf.com/detail/listen/81mb9j.html  entryDiff=[]  qDiffs=[75647:type,75647:answer]
+  tpo|https://toefl.kmf.com/detail/listen/f1f8wj.html  entryDiff=[]  qDiffs=[67531:type,67531:answer]
+  tpo|https://toefl.kmf.com/detail/listen/b1es9j.html  entryDiff=[]  qDiffs=[66386:type,66386:answer]
+  tpo|https://toefl.kmf.com/detail/listen/e1fyvj.html  entryDiff=[]  qDiffs=[68017:type,68017:answer]
+  tpo|https://toefl.kmf.com/detail/listen/f1ftsj.html  entryDiff=[]  qDiffs=[67977:type,67977:answer]
+  tpo|https://toefl.kmf.com/detail/listen/61fsdj.html  entryDiff=[]  qDiffs=[67831:type,67831:answer]
+  tpo|https://toefl.kmf.com/detail/listen/21fc5j.html  entryDiff=[]  qDiffs=[67742:type,67742:answer]
+  tpo|https://toefl.kmf.com/detail/listen/a14xjj.html  entryDiff=[]  qDiffs=[64674:type,64674:answer]
+  tpo|https://toefl.kmf.com/detail/listen/314ucj.html  entryDiff=[]  qDiffs=[64673:type,64673:answer]
+  tpo|https://toefl.kmf.com/detail/listen/115x5j.html  entryDiff=[]  qDiffs=[64672:type,64672:answer]
+  tpo|https://toefl.kmf.com/detail/listen/714nsj.html  entryDiff=[]  qDiffs=[64671:type,64671:answer]
+  tpo|https://toefl.kmf.com/detail/listen/914lxj.html  entryDiff=[]  qDiffs=[64670:type,64670:answer]
+  tpo|https://toefl.kmf.com/detail/listen/314joj.html  entryDiff=[]  qDiffs=[64680:type,64680:answer]
+  tpo|https://toefl.kmf.com/detail/listen/b15wvj.html  entryDiff=[]  qDiffs=[64669:type,64669:answer]
+  tpo|https://toefl.kmf.com/detail/read/b1chsj.html  entryDiff=[]  qDiffs=[62851:n_options]
+  tpo|https://toefl.kmf.com/detail/read/f1cfgj.html  entryDiff=[]  qDiffs=[62769:n_options]
+  tpo|https://toefl.kmf.com/detail/read/a1eqtj.html  entryDiff=[]  qDiffs=[66211:n_options]
+  tpo|https://toefl.kmf.com/detail/read/d1eqjj.html  entryDiff=[]  qDiffs=[66150:n_options]
+  tpo|https://toefl.kmf.com/detail/read/91eifj.html  entryDiff=[]  qDiffs=[65579:n_options]
+  tpo|https://toefl.kmf.com/detail/read/c1edwj.html  entryDiff=[]  qDiffs=[65580:n_options]
+  tpo|https://toefl.kmf.com/detail/read/51epwj.html  entryDiff=[]  qDiffs=[65868:n_options]
+  tpo|https://toefl.kmf.com/detail/read/91eptj.html  entryDiff=[]  qDiffs=[65832:n_options]
+  tpo|https://toefl.kmf.com/detail/read/b1fn4j.html  entryDiff=[]  qDiffs=[66941:n_options]
+  tpo|https://toefl.kmf.com/detail/read/a161tj.html  entryDiff=[]  qDiffs=[55311:n_options]
+  tpo|https://toefl.kmf.com/detail/read/2161aj.html  entryDiff=[]  qDiffs=[55186:n_options]
+  tpo|https://toefl.kmf.com/detail/read/f1618j.html  entryDiff=[]  qDiffs=[55093:n_options]
+  tpo|https://toefl.kmf.com/detail/read/91616j.html  entryDiff=[]  qDiffs=[55016:n_options]
+  jj|https://toefl.kmf.com/detail/read/f2dsrj.html/1  entryDiff=[]  qDiffs=[111209:n_options]
+  jj|https://toefl.kmf.com/detail/read/62dacj.html/1  entryDiff=[]  qDiffs=[110537:n_options]
+  jj|https://toefl.kmf.com/detail/read/42culj.html/1  entryDiff=[]  qDiffs=[109966:n_options]
+  jj|https://toefl.kmf.com/detail/read/c2cqgj.html/1  entryDiff=[]  qDiffs=[109818:n_options]
+  jj|https://toefl.kmf.com/detail/read/12cqrj.html/1  entryDiff=[]  qDiffs=[109830:n_options]
+  jj|https://toefl.kmf.com/detail/read/d2cntj.html/1  entryDiff=[]  qDiffs=[109729:n_options]
+  jj|https://toefl.kmf.com/detail/read/b2cjvj.html/1  entryDiff=[]  qDiffs=[109702:n_options]

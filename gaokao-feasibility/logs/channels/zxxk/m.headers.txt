@@ -1,0 +1,19 @@
+HTTP/1.1 301 Moved Permanently
+Date: Sun, 04 Oct 2026 10:25:54 GMT
+Content-Type: text/html
+Content-Length: 166
+Connection: keep-alive
+Set-Cookie: acw_tc=781bad4a17911095541687060e501e10509d548daeb806dcb48b21c56119ee;path=/;HttpOnly;Max-Age=1800
+Server: openresty
+Location: https://www.zxxk.com/gaokao/
+Origin-Agent-Cluster: ?0
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Sun, 04 Oct 2026 10:25:54 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Pragma: no-cache
+cache-control: no-cache, no-store
+

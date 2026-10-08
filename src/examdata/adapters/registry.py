@@ -10,6 +10,7 @@ adapters/ 下的所有子包并导入，每个子包在 import 时用 @register 
 from __future__ import annotations
 
 import importlib
+import logging
 import pkgutil
 from typing import TYPE_CHECKING
 
@@ -17,6 +18,8 @@ if TYPE_CHECKING:  # pragma: no cover
     from .base import BoardAdapter
 
 _REGISTRY: dict[str, type["BoardAdapter"]] = {}
+_LOGGER = logging.getLogger(__name__)
+LOAD_FAILURES: list[str] = []
 
 
 def register(cls: type["BoardAdapter"]) -> type["BoardAdapter"]:
@@ -30,7 +33,8 @@ def register(cls: type["BoardAdapter"]) -> type["BoardAdapter"]:
 
 def get_adapter_class(key: str) -> type["BoardAdapter"]:
     if key not in _REGISTRY:
-        raise KeyError(f"未注册的适配器: {key}（已注册: {sorted(_REGISTRY)}）")
+        details = f"；加载失败: {'; '.join(LOAD_FAILURES)}" if LOAD_FAILURES else ""
+        raise KeyError(f"未注册的适配器: {key}（已注册: {sorted(_REGISTRY)}{details}）")
     return _REGISTRY[key]
 
 
@@ -39,18 +43,21 @@ def available_adapters() -> list[str]:
 
 
 def _load_builtin() -> list[str]:
-    """导入 adapters/ 下的每个子包以触发注册。返回导入失败的包名。"""
+    """导入子包并注册；返回包含包名、异常类型及原因的失败诊断。"""
     package = importlib.import_module("examdata.adapters")
     failures: list[str] = []
     for info in pkgutil.iter_modules(package.__path__):
         if not info.ispkg or info.name.startswith("_"):
             continue
+        previous = dict(_REGISTRY)
         try:
             importlib.import_module(f"examdata.adapters.{info.name}")
         except Exception as exc:  # noqa: BLE001
-            # 一个适配器导入失败不应拖垮其他适配器：
-            # 需求要求"同步任务发生局部错误时，不应影响其他考试局继续运行"。
-            failures.append(f"{info.name}: {type(exc).__name__}: {exc}")
+            _REGISTRY.clear()
+            _REGISTRY.update(previous)
+            diagnostic = f"{info.name}: {type(exc).__name__}: {exc}"
+            failures.append(diagnostic)
+            _LOGGER.warning("Adapter load failed: %s", diagnostic)
     return failures
 
 

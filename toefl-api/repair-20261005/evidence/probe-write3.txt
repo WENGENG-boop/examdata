@@ -1,0 +1,60 @@
+KW 'Directions': 0 hits
+
+KW '写作': 9 hits
+   ... <!doctype html> <html> <head>     <title>【托福考满分ETS写作官方真题】Official 54 Task 1真题_Official 54 Task 1题目/听力材料/高分范文-托福ETS综合写作练习-托福考满分</title>     <meta charset="utf-8">     <meta name="keywords" content="Official 54 Task 1,ETS TPO,ETS写作T
+   ... <!doctype html> <html> <head>     <title>【托福考满分ETS写作官方真题】Official 54 Task 1真题_Official 54 Task 1题目/听力材料/高分范文-托福ETS综合写作练习-托福考满分</title>     <meta charset="utf-8">     <meta name="keywords" content="Official 54 Task 1,ETS TPO,ETS写作Task1,托福综合写作,TOEFL,托福考满分"/>     <meta name="description" content="【
+   ... 文-托福ETS综合写作练习-托福考满分</title>     <meta charset="utf-8">     <meta name="keywords" content="Official 54 Task 1,ETS TPO,ETS写作Task1,托福综合写作,TOEFL,托福考满分"/>     <meta name="description" content="【ETS Official官方写作Task1真题】托福考满分为TOEFL考生提供Official 54 Task 1 Official 54 Task 1真题、听力材料及高分范文。备考练习托福ETS写作Official 54
+   ... 习-托福考满分</title>     <meta charset="utf-8">     <meta name="keywords" content="Official 54 Task 1,ETS TPO,ETS写作Task1,托福综合写作,TOEFL,托福考满分"/>     <meta name="description" content="【ETS Official官方写作Task1真题】托福考满分为TOEFL考生提供Official 54 Task 1 Official 54 Task 1真题、听力材料及高分范文。备考练习托福ETS写作Official 54 Task 1真题，上托
+   ... ntent="Official 54 Task 1,ETS TPO,ETS写作Task1,托福综合写作,TOEFL,托福考满分"/>     <meta name="description" content="【ETS Official官方写作Task1真题】托福考满分为TOEFL考生提供Official 54 Task 1 Official 54 Task 1真题、听力材料及高分范文。备考练习托福ETS写作Official 54 Task 1真题，上托福考满分。"/>     <meta name="view_tag" content=""/>     <meta name="view_ta
+   ... escription" content="【ETS Official官方写作Task1真题】托福考满分为TOEFL考生提供Official 54 Task 1 Official 54 Task 1真题、听力材料及高分范文。备考练习托福ETS写作Official 54 Task 1真题，上托福考满分。"/>     <meta name="view_tag" content=""/>     <meta name="view_tag_name" content=""/>     <meta name="csrf-token" content="Mk7fhVrOJcSmYEk7E53NLJXEPT
+
+KW '题目': 2 hits
+   ... <!doctype html> <html> <head>     <title>【托福考满分ETS写作官方真题】Official 54 Task 1真题_Official 54 Task 1题目/听力材料/高分范文-托福ETS综合写作练习-托福考满分</title>     <meta charset="utf-8">     <meta name="keywords" content="Official 54 Task 1,ETS TPO,ETS写作Task1,托福综合写作,TOEFL,托福考满分"/>     <meta name="des
+   ...                                                                               <li class="essence-button js-essence-btn">题目讨论</li>                             <li class="essence-button js-essence-btn">名师思路</li>                         </ul>                         <!--容器-->                         <u
+
+KW 'Your': 0 hits
+
+KW 'question': 5 hits
+   ...                        </div>                         </div>                     </div>                     <div class="question-cont">                         <div class="content-question content-no">                             <span class="question-title">问题</span>                         </div> 
+   ...                      </div>                     <div class="question-cont">                         <div class="content-question content-no">                             <span class="question-title">问题</span>                         </div>                         <div class="content-subject js-trans
+   ... stion-cont">                         <div class="content-question content-no">                             <span class="question-title">问题</span>                         </div>                         <div class="content-subject js-translate-content" data-qid="75499">                             <p>
+   ... >查看笔记</div>                 </div>                 <div class="g-smart-guide js-kmf-smart-guide" data-guideid="toeflweb_question_writting_left_mid_WenZi"></div>             </div>                          <div class="kmf-maincol">                 <div class="essence-cont  g-mod-shadow">             
+   ... iv>         <div class="kmf-asidecol">             <div class="g-smart-guide js-kmf-smart-guide" data-guideid="toeflweb_question_writting_right_tupian_and_word"></div>             <div class="i-subject-item5 g-mod-shadow">                 <div class="sub-new-answers-container">                     <
+
+KW 'content-write': 0 hits
+
+KW 'write-data': 0 hits
+
+KW 'write-cont': 0 hits
+
+KW 'essay': 0 hits
+
+KW 'composition': 2 hits
+   ...                              <li class="essence-mode js-essence-mode">                                 <div class="good-composition-cont js-good-composition">                                  </div>                             </li>                                                                    
+   ...     <li class="essence-mode js-essence-mode">                                 <div class="good-composition-cont js-good-composition">                                  </div>                             </li>                                                                                          <li
+
+### item-wrap block
+  [0] len=3534
+  <div class="item-wrap js-item-wrap">
+                              <div class="item-player large-audio-container">
+                                  <div class="g-player-control video-left-content js-player-record" id="jp_container_1" data-url="https://img.kmf.com/toefl/listening/audio/c27cb8d3b9ea3f80853c63011b98477c.mp3" data-type="mp3">
+                                      <div class="control-play js-audio-control">
+                                          <a  class="toefl-spoken-icons play-left play jp-play" href="javascript:;">播放</a>
+                                          <a  class="toefl-spoken-icons pause jp-pause" href="javascript:;" style="display: none;">暂停</a>
+                                          <span class="begin-time jp-current-time"></span>
+                                          <span class="all-time jp-total-time"></span>
+                                      </div>
+                                      <div class="progress kmf-player-progress ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                                          <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;"></div><a  class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a></div>
+                                  </div>
+                                  <span class="s-examine-original js-examine-original">
+                      <span class="s-examine-original-msg show-exam js-examine-msg">查看听力原文</span>
+                      <span class="s-examine-original-msg hide-exam js-examine-msg">关闭听力原文</span>
+                      <i class="s-examine-original-icon toefl-spoken-icons"></i>
+                  </span>
+                              </div>
+                              <div class="item-article">
+                                  Now listen to part of a lecture on the topic you just read about.<br/><br/>
+  It would be great if we could stop the lake’s salt level from increasing and save its fish and bird populations, but the solutions you just read about aren’t realistic or practical.<br/><br/>
+  First—sure, taking salt out of the lake by desalination would reduce salinity, but it would present some serious problems as well. For example, as you’ve read, water pumped into desalination facilities evaporates and leaves behind solid materials that were dissolved in the water. Well, the solid materials that desalination facilities leave behind would pose a health risk. The ma
+

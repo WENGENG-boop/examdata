@@ -1,0 +1,32 @@
+A14_REHEARSAL: a14-rehearsal/1
+  sandbox: integration-staging/runtime/a14-rehearsal
+  [ok     ] code release
+            PASS every entry has a unique target — 247 targets
+            PASS no target escapes the sandbox — stray: []
+            PASS all staged bytes applied verbatim — 247 files
+            PASS every copied_snapshot is byte-faithful to its recorded base — 8 copies
+            PASS no recorded base has drifted under the active owner — recorded == observed for every base
+            PASS rollback restores the pre-apply tree byte-for-byte — residue=[] lost=[] changed=[]
+  [ok     ] component manifest
+            PASS manifest loads from the sandbox deployment root — problems: []
+            PASS swapped manifest is observed without any cached state — version after swap: 1.1.0
+            PASS restoring the bytes restores the resolved component set — manifest sha256 back to 768f6af09fd2
+  [ok     ] data revision pointer
+            PASS revision A published and retained — A=rev-a1a780f98baf
+            PASS revision B published over A — B=rev-88be4f6add77 previous=rev-a1a780f98baf
+            PASS A stays retained after B is published
+            PASS rollback points current back at A — current=rev-a1a780f98baf
+            PASS both revisions remain readable after rollback — available=['rev-88be4f6add77', 'rev-a1a780f98baf']
+            PASS rollback records B as the previous pointer
+  [not_run] database backup
+            PASS no database opened — the rehearsal holds no database handle
+  [ok     ] frontend switch
+            PASS node exits 0
+            PASS off then on restores the default — {"flag": "examdata.v2-client", "initial": true, "after_off": false, "marker_after_off": "off", "after_on": true, "marker_removed_after_on": true}
+            PASS switching writes no file — storage is in-memory; the sandbox holds only the driver script
+  [ok     ] job checkpoint
+            PASS readers never rewrite a checkpoint — 3 fixtures byte-identical
+            PASS an unrecognised checkpoint stays an explicit unknown, not an exception — format=unknown state=None
+  summary: 5 rehearsed, 1 not_run, 21 checks, 0 problems
+wrote docs/integration/execution/A14_REHEARSAL.json
+A14_REHEARSAL: PASS

@@ -1,0 +1,1024 @@
+{
+  "schema": "examdata.integration.compat_probe/1",
+  "generated_at_utc": "2026-10-06T01:03:42.870844+00:00",
+  "generated_at_local": "2026-10-06T09:03:42.870858+08:00",
+  "plan_ref": "docs/integration/MASTER_EXECUTION_PLAN_EN.md packet A12 (plan 5.5): compatibility probe",
+  "method": "offline pytest collection + targeted legacy run inside integration-staging; no original app import",
+  "sources": {
+    "registry": {
+      "path": "integration-staging/src/examdata_integration/legacy/registry.json",
+      "sha256": "f9e1870b79616bbb06baefeed810ac9272ad7d227cf161085cee34d3bc6f2f78"
+    },
+    "worksheet": {
+      "path": "docs/integration/execution/A12_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "sha256": "76ce0abc077b389aa17c7e946a101553d3ddb4a02ce74abfc59d766026b8ee34"
+    },
+    "a01_worksheet": {
+      "path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "sha256": "984d60bf5a08adab5a03e109e8dc76602ae54a3ebeadd68309eced187ca773fc"
+    },
+    "full_suite_evidence": {
+      "path": "docs/integration/execution/evidence/A12/pytest_run_stdout.txt",
+      "sha256": "22ed094396db65f85b27af7e7a29c361854868d445e070ded9c9d0b72f038df8"
+    },
+    "collect_stdout": {
+      "path": "docs/integration/execution/evidence/A12/collect_only_stdout.txt",
+      "sha256": "927285e03408330d67fe9e241dc726bcc7d53a5bbbce28e432adf2bffc323d6d"
+    },
+    "legacy_run_stdout": {
+      "path": "docs/integration/execution/evidence/A12/legacy_tests_stdout.txt",
+      "sha256": "6a9e5da3fd64dfdf3d3fc46d965b3d6fdb1dfccda2ec739fca3bf21363f709b7"
+    }
+  },
+  "collection": {
+    "command": [
+      "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-c",
+      "pytest.ini",
+      "tests",
+      "--collect-only",
+      "-q"
+    ],
+    "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging",
+    "exit_code": 0,
+    "collected_count": 856
+  },
+  "legacy_run": {
+    "exit_code": 0,
+    "passed": 145,
+    "failed": 0,
+    "files": [
+      "tests/test_legacy_adapters.py",
+      "tests/test_legacy_bridge_contracts.py",
+      "tests/test_legacy_decisions.py",
+      "tests/test_legacy_parity.py",
+      "tests/test_legacy_translate.py"
+    ]
+  },
+  "rows": [
+    {
+      "row_id": "GET__api_v1_boards",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_boards]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_boards]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_cie_index_schema",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_cie_index_schema]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_aggregate_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_aggregate_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_books_book",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_books_book]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_cam21_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_cam21_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_ielts_cam21_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_cam21_listening_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_cam21_listening_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_cam21_reading_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_cam21_reading_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_ielts_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_info",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_info]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_iprog_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_iprog_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_ielts_iprog_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_iprog_listening_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_iprog_listening_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_ito_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_ito_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_ielts_ito_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_ito_script_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_ito_script_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_lfs_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_lfs_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_ielts_lfs_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_listening_audio_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_listening_audio_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_listening_script_book",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_listening_script_book]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_listening_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_listening_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_pdf_book",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_pdf_book]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_pdf21",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_pdf21]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_reading_enriched_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_reading_enriched_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_reading_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_reading_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_v2_asset_asset_id",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_namespace",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_v2_asset_asset_id]": true,
+        "tests/test_legacy_bridge_contracts.py::test_namespace_rows_preserved": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_v2_books",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_namespace",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_v2_books]": true,
+        "tests/test_legacy_bridge_contracts.py::test_namespace_rows_preserved": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_v2_coverage",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_namespace",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_v2_coverage]": true,
+        "tests/test_legacy_bridge_contracts.py::test_namespace_rows_preserved": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_v2_info",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_namespace",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_v2_info]": true,
+        "tests/test_legacy_bridge_contracts.py::test_namespace_rows_preserved": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_v2_question_question_id",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_namespace",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_v2_question_question_id]": true,
+        "tests/test_legacy_bridge_contracts.py::test_namespace_rows_preserved": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_v2_questions_book_test",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_namespace",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_v2_questions_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_namespace_rows_preserved": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_v2_test_book_test",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_namespace",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_v2_test_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_namespace_rows_preserved": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_zhan_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_zhan_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_ielts_zhan_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_ielts_zhan_reading_book_test",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_ielts_zhan_reading_book_test]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[ielts]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_indexes_cie_sha256",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_indexes_cie_sha256]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_indexes_cie_sha256_question",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_indexes_cie_sha256_question]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_materials",
+      "status": "deferred_active_owner",
+      "mechanism": "deferred_active_owner",
+      "owner": "kimi_active",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_materials]": true,
+        "tests/test_legacy_bridge_contracts.py::test_deferred_active_owner_rows": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_kind": "exists"
+    },
+    {
+      "row_id": "GET__api_v1_materials_cie_in_paper",
+      "status": "deferred_active_owner",
+      "mechanism": "deferred_active_owner",
+      "owner": "kimi_active",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_materials_cie_in_paper]": true,
+        "tests/test_legacy_bridge_contracts.py::test_deferred_active_owner_rows": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_kind": "exists"
+    },
+    {
+      "row_id": "GET__api_v1_materials_material_id",
+      "status": "deferred_active_owner",
+      "mechanism": "deferred_active_owner",
+      "owner": "kimi_active",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_materials_material_id]": true,
+        "tests/test_legacy_bridge_contracts.py::test_deferred_active_owner_rows": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_kind": "exists"
+    },
+    {
+      "row_id": "GET__api_v1_materials_material_id_content",
+      "status": "deferred_active_owner",
+      "mechanism": "deferred_active_owner",
+      "owner": "kimi_active",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_materials_material_id_content]": true,
+        "tests/test_legacy_bridge_contracts.py::test_deferred_active_owner_rows": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_kind": "exists"
+    },
+    {
+      "row_id": "GET__api_v1_paper",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_paper]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_paper]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_paper_index",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_paper_index]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_paper_index]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_question_question_id",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_question_question_id]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_question_question_id]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_search",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_search]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_search]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_timetable",
+      "status": "deferred_active_owner",
+      "mechanism": "deferred_active_owner",
+      "owner": "kimi_active",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_timetable]": true,
+        "tests/test_legacy_bridge_contracts.py::test_deferred_active_owner_rows": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_kind": "exists"
+    },
+    {
+      "row_id": "GET__api_v1_timetable_seasons",
+      "status": "deferred_active_owner",
+      "mechanism": "deferred_active_owner",
+      "owner": "kimi_active",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_timetable_seasons]": true,
+        "tests/test_legacy_bridge_contracts.py::test_deferred_active_owner_rows": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_kind": "exists"
+    },
+    {
+      "row_id": "GET__api_v1_timetable_windows",
+      "status": "deferred_active_owner",
+      "mechanism": "deferred_active_owner",
+      "owner": "kimi_active",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_timetable_windows]": true,
+        "tests/test_legacy_bridge_contracts.py::test_deferred_active_owner_rows": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_kind": "exists"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__api_v1_toefl_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_detail",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_detail]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[toefl]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_get",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_get]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[toefl]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_info",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_info]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_jj",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_jj]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[toefl]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_questions",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_questions]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[toefl]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_search",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_search]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[toefl]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__api_v1_toefl_sets",
+      "status": "staged_pass",
+      "mechanism": "bridge_node_cli_keep_legacy_payload",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__api_v1_toefl_sets]": true,
+        "tests/test_legacy_bridge_contracts.py::test_node_bridge_envelope[toefl]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__assets_asset_id",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__assets_asset_id]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__assets_asset_id]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__assets_asset_id_provenance",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__assets_asset_id_provenance]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__assets_asset_id_provenance]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__classifications",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__classifications]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__classifications]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__explanations_review_queue",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__explanations_review_queue]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__health",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__health]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__monitor",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__monitor]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__overrides",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__overrides]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__paper_qa_query",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__paper_qa_query]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__paper_qa_resolve",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__paper_qa_resolve]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__papers",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__papers]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__papers]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__papers_paper_id_tree",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__papers_paper_id_tree]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__papers_paper_id_tree]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__provenance_coverage",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__provenance_coverage]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__provenance_coverage]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__questions",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__questions]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__questions]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__questions_question_id",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__questions_question_id]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__questions_question_id]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__questions_question_id_explanation",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__questions_question_id_explanation]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__questions_question_id_provenance",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__questions_question_id_provenance]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__questions_question_id_similar",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__questions_question_id_similar]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__review",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__review]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "POST__sample",
+      "status": "staged_pass",
+      "mechanism": "keep_legacy_only",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[POST__sample]": true,
+        "tests/test_legacy_bridge_contracts.py::test_keep_legacy_only_rows_have_no_v2_claim": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    },
+    {
+      "row_id": "GET__taxonomy",
+      "status": "staged_pass",
+      "mechanism": "add_v2_adapter_keep_legacy_defaults",
+      "owner": "integration_staging",
+      "test_ids": {
+        "tests/test_legacy_bridge_contracts.py::test_static_contract[GET__taxonomy]": true,
+        "tests/test_legacy_adapters.py::test_adapter_fixture_translation[GET__taxonomy]": true
+      },
+      "all_collected": true,
+      "evidence_path": "docs/integration/execution/evidence/A12/compat_probe.json",
+      "evidence_kind": "self (this probe)"
+    }
+  ],
+  "summary": {
+    "registry_rows": 71,
+    "rows_with_all_test_ids_collected": 71,
+    "rows_missing_test_ids": [],
+    "total_test_ids": 142,
+    "collected_total": 856,
+    "adapter_params": {
+      "registry": 21,
+      "collected": 21,
+      "only_in_registry": [],
+      "only_in_collection": []
+    },
+    "static_contract_params": {
+      "registry": 71,
+      "collected": 71,
+      "only_in_registry": [],
+      "only_in_collection": []
+    },
+    "deferred_rows": 7,
+    "legacy_run": {
+      "exit_code": 0,
+      "passed": 145,
+      "failed": 0,
+      "files": [
+        "tests/test_legacy_adapters.py",
+        "tests/test_legacy_bridge_contracts.py",
+        "tests/test_legacy_decisions.py",
+        "tests/test_legacy_parity.py",
+        "tests/test_legacy_translate.py"
+      ]
+    },
+    "full_suite": {
+      "status_line": "====================== 856 passed, 10 warnings in 34.68s ======================",
+      "passed": 856,
+      "sha256": "22ed094396db65f85b27af7e7a29c361854868d445e070ded9c9d0b72f038df8"
+    },
+    "problems": []
+  },
+  "problems": []
+}

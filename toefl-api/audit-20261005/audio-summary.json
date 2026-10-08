@@ -1,0 +1,32 @@
+[
+  {
+    "name": "listen-live",
+    "url": "https://img.kmf.com/toefl/listening/audio/d6d157bbfe08509a9dee3c4b569b3879.mp3",
+    "http": 206,
+    "content_type": "audio/mpeg",
+    "content_length": "47646",
+    "sample_bytes": 47646,
+    "sample_sha256": "138a5a82a51e96c165eacd2c61eecf59a98990f059ed8c3de82bf2d4feb57fc7",
+    "prefix_hex": "fff3c0c40000000000000000"
+  },
+  {
+    "name": "speak-live",
+    "url": "https://img.kmf.com/toefl/listening/audio/f136ebfdfbbec9920996f555fe014d8b.mp3",
+    "http": 206,
+    "content_type": "audio/mpeg",
+    "content_length": "65536",
+    "sample_bytes": 65536,
+    "sample_sha256": "49fe5e6de0d22d105694ab978240c01facf4e13741a2828574497587bd747b58",
+    "prefix_hex": "fff3c0c40000000000000000"
+  },
+  {
+    "name": "write-live",
+    "url": "https://img.kmf.com/toefl/listening/audio/c27cb8d3b9ea3f80853c63011b98477c.mp3",
+    "http": 206,
+    "content_type": "audio/mpeg",
+    "content_length": "65536",
+    "sample_bytes": 65536,
+    "sample_sha256": "7e4495c560c379e39feaf4991dcb3a1c5be6cf066d0c9b0e6bf4e990a5634003",
+    "prefix_hex": "49443302000000000f765454"
+  }
+]

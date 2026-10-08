@@ -1,0 +1,2750 @@
+{
+  "generated_at": "2026-10-05T16:36:52+0800",
+  "service_data_dir": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api",
+  "service_index_dir": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie",
+  "count": 63,
+  "in_service": 63,
+  "not_in_service": 0,
+  "comparison_counts": {
+    "identical": 62,
+    "different": 1
+  },
+  "visual_gate_passed": 19,
+  "entries": [
+    {
+      "key": "0413/2026/Jun/11",
+      "subject": "0413",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "d17f5aabe907cf4e5dad69dff7b6615bbedb3ab7cb6900808ff632c2996dfeed",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0413/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/d17f5aabe907cf4e5dad69dff7b6615bbedb3ab7cb6900808ff632c2996dfeed.json",
+      "service_index_exists": true,
+      "questions": 45,
+      "index_sha256": "8783790d7e42fe4a0df151cd7137623e648b3287b0d6b33604548a59babdf046",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 108,
+        "verified": 108,
+        "passed": 108,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 44,
+        "voided": 669,
+        "records": 108,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 14,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2024/Jun/11",
+      "subject": "0472",
+      "year": 2024,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "4eb41e978791e7a6e5f73939139194266eeb5b367ea673f4ed56d2793ef6f7ae",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2024-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4eb41e978791e7a6e5f73939139194266eeb5b367ea673f4ed56d2793ef6f7ae.json",
+      "service_index_exists": true,
+      "questions": 37,
+      "index_sha256": "e10d4ff265a629d512bfb1705e34805b75f1eca2756f920819a69bccd473b74f",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 81,
+        "verified": 81,
+        "passed": 81,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 81,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 37,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2025/Jun/11",
+      "subject": "0472",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "d153f8c3c15695bc0ed4934184c65b68cf6f7b89b6bb72ec203f8365df6136fa",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2025-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/d153f8c3c15695bc0ed4934184c65b68cf6f7b89b6bb72ec203f8365df6136fa.json",
+      "service_index_exists": true,
+      "questions": 37,
+      "index_sha256": "d5f9c0ebda7e2cbdfc07f388daabd1a79411ac0b0bee58c168c3ec15d9fa60ae",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 81,
+        "verified": 81,
+        "passed": 81,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 25,
+        "voided": 0,
+        "records": 81,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 37,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2025/Jun/12",
+      "subject": "0472",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "b9f92eca40e44117e7f67786966d13456e6dd8dff1d8a7fa4f6f8286da5fe418",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2025-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/b9f92eca40e44117e7f67786966d13456e6dd8dff1d8a7fa4f6f8286da5fe418.json",
+      "service_index_exists": true,
+      "questions": 37,
+      "index_sha256": "dd3755ab0d87c73c816fce9e08f583262fad206647af405b60b457da3c4cd04a",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 81,
+        "verified": 81,
+        "passed": 81,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 116,
+        "voided": 0,
+        "records": 81,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 37,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2025/Jun/21",
+      "subject": "0472",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "21",
+      "qp_sha256": "17b585241929b45908b5c9bb0d3b26e889292ccc65f4c315411b5f66796461ca",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2025-Jun-21/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/17b585241929b45908b5c9bb0d3b26e889292ccc65f4c315411b5f66796461ca.json",
+      "service_index_exists": true,
+      "questions": 48,
+      "index_sha256": "09a8e7293706306c284d934d428d0065f697d68e60f45be98dd1b0e64f713762",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 103,
+        "verified": 103,
+        "passed": 103,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 185,
+        "voided": 0,
+        "records": 103,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2025/Jun/22",
+      "subject": "0472",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "22",
+      "qp_sha256": "85a2b90d272060a555c88cd2ff033cbd367285cbc6d03f73d4591b141cf6531e",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2025-Jun-22/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/85a2b90d272060a555c88cd2ff033cbd367285cbc6d03f73d4591b141cf6531e.json",
+      "service_index_exists": true,
+      "questions": 48,
+      "index_sha256": "c5789fc260de55b7a2e98c0d370911f2bbdf3c815fb80408aec61174daa85f50",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 102,
+        "verified": 102,
+        "passed": 102,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 270,
+        "voided": 0,
+        "records": 102,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2025/Jun/41",
+      "subject": "0472",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "41",
+      "qp_sha256": "570664801c63788144b91f792fd9188024d1d29cdff6a602ca6d9731e2b45d81",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2025-Jun-41/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/570664801c63788144b91f792fd9188024d1d29cdff6a602ca6d9731e2b45d81.json",
+      "service_index_exists": true,
+      "questions": 5,
+      "index_sha256": "aba160178b183ae9770f981e7af96ca4205327929c23b1ee4e71f02a088263e4",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 20,
+        "verified": 20,
+        "passed": 20,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 8,
+        "voided": 0,
+        "records": 20,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2025/Jun/42",
+      "subject": "0472",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "42",
+      "qp_sha256": "6ef8efa6d6d79605de6faff52235d2962a0a303fbf3d7abf53a2f48f4fe83ddd",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2025-Jun-42/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/6ef8efa6d6d79605de6faff52235d2962a0a303fbf3d7abf53a2f48f4fe83ddd.json",
+      "service_index_exists": true,
+      "questions": 5,
+      "index_sha256": "8664df919d9620c9b26f3ea8337ec02cc73c070b625fba4ccc9c57c846081ea0",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 20,
+        "verified": 20,
+        "passed": 20,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 8,
+        "voided": 0,
+        "records": 20,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2026/Jun/11",
+      "subject": "0472",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "a71c8e2e988f184e3492f3ccb7ff06b3f5f175c6e4496b5584201f7b0c5e32b1",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a71c8e2e988f184e3492f3ccb7ff06b3f5f175c6e4496b5584201f7b0c5e32b1.json",
+      "service_index_exists": true,
+      "questions": 37,
+      "index_sha256": "b5824fc7621336fe0a2461b5f512ec08cbaba5ae3a2a5a28a2d2d03afcd3e46a",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 81,
+        "verified": 81,
+        "passed": 81,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 128,
+        "records": 81,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 37,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2026/Jun/12",
+      "subject": "0472",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "6cfeb2312dc36a6e4c828e53bff310e9be26d52af68130f1a4d51038c9193333",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2026-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/6cfeb2312dc36a6e4c828e53bff310e9be26d52af68130f1a4d51038c9193333.json",
+      "service_index_exists": true,
+      "questions": 37,
+      "index_sha256": "2e8d70a03a00af53f3a35550110e801670e5cbfa119db5b488c6f173cab9a432",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 81,
+        "verified": 81,
+        "passed": 81,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 120,
+        "voided": 0,
+        "records": 81,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 37,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2026/Jun/21",
+      "subject": "0472",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "21",
+      "qp_sha256": "dbd6c20e6deec23464eb41f147ad1726573568d04e7aef1ff002b2cbe47a5848",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2026-Jun-21/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/dbd6c20e6deec23464eb41f147ad1726573568d04e7aef1ff002b2cbe47a5848.json",
+      "service_index_exists": true,
+      "questions": 43,
+      "index_sha256": "57188f9406bd37c9fd448c33d72bb664722244c4299e3d35e8e01cc838a08bd9",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 92,
+        "verified": 92,
+        "passed": 92,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 289,
+        "voided": 0,
+        "records": 92,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2026/Jun/22",
+      "subject": "0472",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "22",
+      "qp_sha256": "05073848ed56bb5ea88ea70e7157e7bbf1114f66c5c276b4056f9db1895573b8",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2026-Jun-22/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/05073848ed56bb5ea88ea70e7157e7bbf1114f66c5c276b4056f9db1895573b8.json",
+      "service_index_exists": true,
+      "questions": 43,
+      "index_sha256": "ccfecfc85d4881d2d882246e75ecb08768d1a1040314e74e6577cd3fc6b3314e",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 92,
+        "verified": 92,
+        "passed": 92,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 200,
+        "voided": 0,
+        "records": 92,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0472/2026/Jun/41",
+      "subject": "0472",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "41",
+      "qp_sha256": "4cd9c4040e74082d5a9e027036008928ac588bc16d2ff7ee02cdae495c71600a",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2026-Jun-41/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4cd9c4040e74082d5a9e027036008928ac588bc16d2ff7ee02cdae495c71600a.json",
+      "service_index_exists": true,
+      "questions": 5,
+      "index_sha256": "8ee3309e88d28710bee030ccb7738e939d513777b71d800a666f6d496e85a618",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "different",
+      "service_reviewed": false,
+      "changed_questions": [
+        "1",
+        "2",
+        "3",
+        "3(a)",
+        "3(b)"
+      ],
+      "changed_fields": {
+        "ms": 5,
+        "notes": 5,
+        "text": 5,
+        "qp": 3
+      },
+      "verification_problems": [
+        "有 19 个区域没有核验记录：1/ms/p7、1/ms/p8、2/qp/p3、2/ms/p9、2/ms/p10、3/qp/p4…",
+        "有 2 个区域缺少完整目视核验证据：1/qp/p2、3(a)/qp/p4",
+        "有 2 个区域自述未做视觉核验：1/qp/p2、3(a)/qp/p4"
+      ],
+      "verification": {
+        "regions": 21,
+        "verified": 2,
+        "passed": 2,
+        "failed": 0,
+        "missing": 19,
+        "stale_ignored": 12,
+        "voided": 0,
+        "records": 2,
+        "self_declared_unverified": 2,
+        "visual_evidence_missing": 2,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "0472/2026/Jun/42",
+      "subject": "0472",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "42",
+      "qp_sha256": "1ada7b022f2b16e7284a35380ace14b934f37afb8f3df1b0bfaa3071c77a09b5",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0472/2026-Jun-42/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/1ada7b022f2b16e7284a35380ace14b934f37afb8f3df1b0bfaa3071c77a09b5.json",
+      "service_index_exists": true,
+      "questions": 5,
+      "index_sha256": "a988bca0c34ffe8ed24743313ffffe8291263f29297141d3fdfe45f0ed344c18",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 14 个区域缺少完整目视核验证据：1/qp/p2、1/ms/p7、1/ms/p8、1/ms/p9、2/qp/p3、2/ms/p9…",
+        "有 14 个区域自述未做视觉核验：1/qp/p2、1/ms/p7、1/ms/p8、1/ms/p9、2/qp/p3、2/ms/p9…"
+      ],
+      "verification": {
+        "regions": 14,
+        "verified": 14,
+        "passed": 14,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 14,
+        "self_declared_unverified": 14,
+        "visual_evidence_missing": 14,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "0478/2026/Jun/11",
+      "subject": "0478",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "4d2276506711b9b0391e6bddfc924ca612027d7e220c029368f3115193b08dc8",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0478/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4d2276506711b9b0391e6bddfc924ca612027d7e220c029368f3115193b08dc8.json",
+      "service_index_exists": true,
+      "questions": 45,
+      "index_sha256": "116e28b05665fcdc348321d34f5a74026b09b015f3dd194a1cf08d7bf4ea10b9",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 94 个区域缺少完整目视核验证据：1/qp/p2、1/ms/p5、1(a)/qp/p2、1(a)/ms/p5、1(b)/qp/p2、1(c)/qp/p2…",
+        "有 94 个区域自述未做视觉核验：1/qp/p2、1/ms/p5、1(a)/qp/p2、1(a)/ms/p5、1(b)/qp/p2、1(c)/qp/p2…"
+      ],
+      "verification": {
+        "regions": 94,
+        "verified": 94,
+        "passed": 94,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 94,
+        "self_declared_unverified": 94,
+        "visual_evidence_missing": 94,
+        "numbering": {
+          "top_level": 8,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "0495/2026/Jun/11",
+      "subject": "0495",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "e8796e446c5b9800bebfdab880fe4d091546cf5ff528b13a84d5dd412d6e4937",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0495/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e8796e446c5b9800bebfdab880fe4d091546cf5ff528b13a84d5dd412d6e4937.json",
+      "service_index_exists": true,
+      "questions": 25,
+      "index_sha256": "7e56051c33295238015a405b626fd05d3df2e178bb802dee910f3c8a86c462d8",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 86 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p14、1/ms/p15、1/ms/p16、1/ms/p17…",
+        "有 86 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p14、1/ms/p15、1/ms/p16、1/ms/p17…",
+        "子题号跳号/漏题：2(a) 子子题号不连续 ['ii']；3(a) 子子题号不连续 ['ii']"
+      ],
+      "verification": {
+        "regions": 86,
+        "verified": 86,
+        "passed": 86,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 208,
+        "voided": 0,
+        "records": 86,
+        "self_declared_unverified": 86,
+        "visual_evidence_missing": 86,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 2
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "0509/2026/Jun/11",
+      "subject": "0509",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "e6ec6f3ab18ae4e1714b94653f7698cd5abdcb3e39a59f46db9c9accc2bf00e9",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0509/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e6ec6f3ab18ae4e1714b94653f7698cd5abdcb3e39a59f46db9c9accc2bf00e9.json",
+      "service_index_exists": true,
+      "questions": 26,
+      "index_sha256": "c14ee3ad3ff3fd7f55f1dd6a43c3af7fc710fd7d4d7d24e9326fc001ffbc1275",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 82,
+        "verified": 82,
+        "passed": 82,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 135,
+        "voided": 0,
+        "records": 82,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "0580/2024/Jun/11",
+      "subject": "0580",
+      "year": 2024,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "7bb859681ac2ffff4190c95be71d006f79f3bfc3a4a17b630509b8fc695f29bb",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/0580/2024-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7bb859681ac2ffff4190c95be71d006f79f3bfc3a4a17b630509b8fc695f29bb.json",
+      "service_index_exists": true,
+      "questions": 42,
+      "index_sha256": "f0add7074e55162b3a843a565446fcf30c3c1b5c3c259f43e5a75a94a46f0ad9",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 76,
+        "verified": 76,
+        "passed": 76,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 76,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 25,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "8238/2024/Nov/11",
+      "subject": "8238",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "3c7c636456e4c744647eceefa662f6d2bc441c37673c3cf0e3c855c71962acfd",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2024-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/3c7c636456e4c744647eceefa662f6d2bc441c37673c3cf0e3c855c71962acfd.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "092233bde550c7f05b9a3fd6847f96ee977ef565799e5139272e76061176f8d2",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 2,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2024/Nov/12",
+      "subject": "8238",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "12",
+      "qp_sha256": "38b600f8af1f115e1d3fa27ce66c536b1a7bc00c76ada6bb40f04c46e6099779",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2024-Nov-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/38b600f8af1f115e1d3fa27ce66c536b1a7bc00c76ada6bb40f04c46e6099779.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "e634169c90479d0e96e21a46bcd060f4b27d6d7e6a972d48b6e94066057a3b10",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 2,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2024/Nov/13",
+      "subject": "8238",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "13",
+      "qp_sha256": "159f58ccb84a60c3824301a21afc4277db76d26f9ba639eceb0d9ffec491ac90",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2024-Nov-13/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/159f58ccb84a60c3824301a21afc4277db76d26f9ba639eceb0d9ffec491ac90.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "112f6892100f5f00f311ffcc954b7e2908f432e9f186f7a36282ef5d22d00306",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 2,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2024/Nov/21",
+      "subject": "8238",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "21",
+      "qp_sha256": "01f1059dc70a7b261101ed81ee4dcc755d713280807d5474887ba99b85177eef",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2024-Nov-21/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/01f1059dc70a7b261101ed81ee4dcc755d713280807d5474887ba99b85177eef.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "023c9aee4bf9f90a8e15ce4e617aa407ace9fc339b19d7e8f119f7861e3b363b",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 72 个区域缺少完整目视核验证据：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…",
+        "有 63 个区域自述未做视觉核验：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…"
+      ],
+      "verification": {
+        "regions": 72,
+        "verified": 72,
+        "passed": 72,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 7,
+        "voided": 0,
+        "records": 72,
+        "self_declared_unverified": 63,
+        "visual_evidence_missing": 72,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2024/Nov/22",
+      "subject": "8238",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "22",
+      "qp_sha256": "05c009e6686e6311bf39be5696113464a0b33ac31aa258322630158b22fc2507",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2024-Nov-22/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/05c009e6686e6311bf39be5696113464a0b33ac31aa258322630158b22fc2507.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "b3e48182422f91d23dd8250fb4a526aafcfa99db4f92643d00cdfdb6fa72b187",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 72 个区域缺少完整目视核验证据：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…",
+        "有 63 个区域自述未做视觉核验：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…"
+      ],
+      "verification": {
+        "regions": 72,
+        "verified": 72,
+        "passed": 72,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 7,
+        "voided": 0,
+        "records": 72,
+        "self_declared_unverified": 63,
+        "visual_evidence_missing": 72,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Jun/12",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "618439c698af054d78ecccbf14f051a371b0d482bbf3a6e3775258db8f7e4028",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/618439c698af054d78ecccbf14f051a371b0d482bbf3a6e3775258db8f7e4028.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "92edc8be335216a9f589728c715518ff982d6786c3aacc0147ea5959b3df5a7e",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 62 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…",
+        "有 62 个区域自述未做视觉核验：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…"
+      ],
+      "verification": {
+        "regions": 62,
+        "verified": 62,
+        "passed": 62,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 4,
+        "voided": 0,
+        "records": 62,
+        "self_declared_unverified": 62,
+        "visual_evidence_missing": 62,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Jun/22",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "22",
+      "qp_sha256": "41046f6d528297fb2e3c70e34539399ef631ad2d670d88c06a58fa7a8a3d4680",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Jun-22/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/41046f6d528297fb2e3c70e34539399ef631ad2d670d88c06a58fa7a8a3d4680.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "a05223a3b346dd95d330b127b4c02c06c3ce59cd65f7bdf22e00955567d8fa5e",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 64 个区域缺少完整目视核验证据：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…",
+        "有 64 个区域自述未做视觉核验：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…"
+      ],
+      "verification": {
+        "regions": 64,
+        "verified": 64,
+        "passed": 64,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 64,
+        "self_declared_unverified": 64,
+        "visual_evidence_missing": 64,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Jun/32",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "32",
+      "qp_sha256": "5b42caf0af12e95d0a78047506de4282fd621cd145aa67f1a699a2d25076d653",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Jun-32/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/5b42caf0af12e95d0a78047506de4282fd621cd145aa67f1a699a2d25076d653.json",
+      "service_index_exists": true,
+      "questions": 3,
+      "index_sha256": "c4c3129383d3a687e5bc44b546bb5dad319e3267204095dc9c4fbb4122735e09",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 3 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p3、3/qp/p3",
+        "有 3 个区域自述未做视觉核验：1/qp/p2、2/qp/p3、3/qp/p3"
+      ],
+      "verification": {
+        "regions": 3,
+        "verified": 3,
+        "passed": 3,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 3,
+        "self_declared_unverified": 3,
+        "visual_evidence_missing": 3,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/11",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "e5268fbc7311cb46c3464c7f35deb7998832ac8f5ef01abdd2a62f943ae566e3",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e5268fbc7311cb46c3464c7f35deb7998832ac8f5ef01abdd2a62f943ae566e3.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "9a4acc16b8deb50f821c761b4e84cba0619adde7344b4a791c8cabb18d675af1",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 65 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…",
+        "有 65 个区域自述未做视觉核验：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…"
+      ],
+      "verification": {
+        "regions": 65,
+        "verified": 65,
+        "passed": 65,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 1,
+        "voided": 0,
+        "records": 65,
+        "self_declared_unverified": 65,
+        "visual_evidence_missing": 65,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/12",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "12",
+      "qp_sha256": "2b0329ab0c7fe5eed666893c814e5732c5a01f3de1af2c833527539f32d8878f",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/2b0329ab0c7fe5eed666893c814e5732c5a01f3de1af2c833527539f32d8878f.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "fd71b54bdc8da7be5e384eeaae23106e3db86ec8e9bc2035b3f2303920fe45c9",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 65 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…",
+        "有 65 个区域自述未做视觉核验：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…"
+      ],
+      "verification": {
+        "regions": 65,
+        "verified": 65,
+        "passed": 65,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 1,
+        "voided": 0,
+        "records": 65,
+        "self_declared_unverified": 65,
+        "visual_evidence_missing": 65,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/13",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "13",
+      "qp_sha256": "0d7c6f519aaac513eece2365c058b877ab213a783e4d517458bcbb5e82e14d79",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-13/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/0d7c6f519aaac513eece2365c058b877ab213a783e4d517458bcbb5e82e14d79.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "af4f3dda8f24d7ef71b4cd14d8b7d9362a4a2b1562ad1db45b8eadcfe6402e45",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 65 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…",
+        "有 65 个区域自述未做视觉核验：1/qp/p2、2/qp/p2、3/qp/p2、4/qp/p3、5/qp/p3、6/qp/p3…"
+      ],
+      "verification": {
+        "regions": 65,
+        "verified": 65,
+        "passed": 65,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 1,
+        "voided": 0,
+        "records": 65,
+        "self_declared_unverified": 65,
+        "visual_evidence_missing": 65,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/21",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "21",
+      "qp_sha256": "43690c10efc261c0e176c2c5ae62481c4d257a44fa2827d0d8bbad93b5915e0f",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-21/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/43690c10efc261c0e176c2c5ae62481c4d257a44fa2827d0d8bbad93b5915e0f.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "b727ce0efd8977c751227b18b172afabd4b02341abbf4f50f7a1e9e1de987335",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 62 个区域缺少完整目视核验证据：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…",
+        "有 62 个区域自述未做视觉核验：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…"
+      ],
+      "verification": {
+        "regions": 62,
+        "verified": 62,
+        "passed": 62,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 62,
+        "self_declared_unverified": 62,
+        "visual_evidence_missing": 62,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/22",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "22",
+      "qp_sha256": "57cffd04b7880f462b7d29134321c365d381d7969c20c31c3b472a644d51e48d",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-22/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/57cffd04b7880f462b7d29134321c365d381d7969c20c31c3b472a644d51e48d.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "fd29d3307d3885b077419c4d611e3466c394e1619506073d13c679f2c8dcbbd3",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 62 个区域缺少完整目视核验证据：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…",
+        "有 62 个区域自述未做视觉核验：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…"
+      ],
+      "verification": {
+        "regions": 62,
+        "verified": 62,
+        "passed": 62,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 62,
+        "self_declared_unverified": 62,
+        "visual_evidence_missing": 62,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/23",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "23",
+      "qp_sha256": "8ef1c7f86f4a3c8177f6171e94931f5b5d6ed9bf50d0852c9594b9600714f18c",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-23/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/8ef1c7f86f4a3c8177f6171e94931f5b5d6ed9bf50d0852c9594b9600714f18c.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "ad64e6278ab0b69e676e6f7cee8bad7c482300a4f2a46e4bf0fb87bb5c18e4c8",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 62 个区域缺少完整目视核验证据：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…",
+        "有 62 个区域自述未做视觉核验：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…"
+      ],
+      "verification": {
+        "regions": 62,
+        "verified": 62,
+        "passed": 62,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 62,
+        "self_declared_unverified": 62,
+        "visual_evidence_missing": 62,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/31",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "31",
+      "qp_sha256": "7d5651496a1376acfc447c3290c13be8f33bbfdb821d5a6b1387cc853772e987",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-31/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7d5651496a1376acfc447c3290c13be8f33bbfdb821d5a6b1387cc853772e987.json",
+      "service_index_exists": true,
+      "questions": 3,
+      "index_sha256": "770cece4e500ad1d7609874b7ed11c26c6401de450badbe86322f6eaf5a6506f",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 3 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p3、3/qp/p3",
+        "有 3 个区域自述未做视觉核验：1/qp/p2、2/qp/p3、3/qp/p3"
+      ],
+      "verification": {
+        "regions": 3,
+        "verified": 3,
+        "passed": 3,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 1,
+        "voided": 0,
+        "records": 3,
+        "self_declared_unverified": 3,
+        "visual_evidence_missing": 3,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/32",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "32",
+      "qp_sha256": "5a6d67134ba26ad660332d380920f4de6dd2b05d100e72bd9dc87b8a27570d38",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-32/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/5a6d67134ba26ad660332d380920f4de6dd2b05d100e72bd9dc87b8a27570d38.json",
+      "service_index_exists": true,
+      "questions": 3,
+      "index_sha256": "79c9e5336e992471b80f5d17e3564cc6830b8092ce893772a39737836b6c1616",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 3 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p3、3/qp/p3",
+        "有 3 个区域自述未做视觉核验：1/qp/p2、2/qp/p3、3/qp/p3"
+      ],
+      "verification": {
+        "regions": 3,
+        "verified": 3,
+        "passed": 3,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 1,
+        "voided": 0,
+        "records": 3,
+        "self_declared_unverified": 3,
+        "visual_evidence_missing": 3,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2025/Nov/33",
+      "subject": "8238",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "33",
+      "qp_sha256": "53a428b5a52a018a7eb8b890e9db57e1ea98365a039a5ecfd45b558584b2298d",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2025-Nov-33/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/53a428b5a52a018a7eb8b890e9db57e1ea98365a039a5ecfd45b558584b2298d.json",
+      "service_index_exists": true,
+      "questions": 3,
+      "index_sha256": "42f5b0a50f07fec0c730577157f336d77e56a439bdcd78a3549b4ce3825fda32",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 3 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p3、3/qp/p3",
+        "有 3 个区域自述未做视觉核验：1/qp/p2、2/qp/p3、3/qp/p3"
+      ],
+      "verification": {
+        "regions": 3,
+        "verified": 3,
+        "passed": 3,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 1,
+        "voided": 0,
+        "records": 3,
+        "self_declared_unverified": 3,
+        "visual_evidence_missing": 3,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2026/Jun/12",
+      "subject": "8238",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "7f060b7a896701aa00810515ee76553ecff43e2dd73c376dbbb4101ba709d6b7",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2026-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7f060b7a896701aa00810515ee76553ecff43e2dd73c376dbbb4101ba709d6b7.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "ed1727da144f623ed750e4d3be3e3bf6577294a09dac145df3317881e89c29d3",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 12 个区域没有核验记录：9/qp/p5、10/qp/p5、11/qp/p5、12/qp/p5、13/qp/p5、14/qp/p5…",
+        "有 80 个区域缺少完整目视核验证据：1/qp/p2、1/ms/p2、2/qp/p2、2/ms/p2、3/qp/p2、3/ms/p2…"
+      ],
+      "verification": {
+        "regions": 92,
+        "verified": 80,
+        "passed": 80,
+        "failed": 0,
+        "missing": 12,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 80,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 80,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2026/Jun/22",
+      "subject": "8238",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "22",
+      "qp_sha256": "55e344cb6e7e286effef562ace02f1baece87ccd367ac0f1607449ec5c45d92a",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2026-Jun-22/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/55e344cb6e7e286effef562ace02f1baece87ccd367ac0f1607449ec5c45d92a.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "7954ef15f93d739e34226f447bcd6febc5538cdefa245c583e8db28d33807125",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 64 个区域缺少完整目视核验证据：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…",
+        "有 61 个区域自述未做视觉核验：1/qp/p3、2/qp/p3、3/qp/p4、4/qp/p4、5/qp/p5、6/qp/p5…"
+      ],
+      "verification": {
+        "regions": 64,
+        "verified": 64,
+        "passed": 64,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 6,
+        "voided": 0,
+        "records": 64,
+        "self_declared_unverified": 61,
+        "visual_evidence_missing": 64,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8238/2026/Jun/32",
+      "subject": "8238",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "32",
+      "qp_sha256": "819ab513d36c7bf310dba3d8c79e5e31b40d6c913efefe2f1a083244d7831f46",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8238/2026-Jun-32/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/819ab513d36c7bf310dba3d8c79e5e31b40d6c913efefe2f1a083244d7831f46.json",
+      "service_index_exists": true,
+      "questions": 3,
+      "index_sha256": "b85e9e64588daf50988ad122e349b6ea7d18496d64d6a36311d448fcd532a765",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 3 个区域缺少完整目视核验证据：1/qp/p2、2/qp/p3、3/qp/p3",
+        "有 3 个区域自述未做视觉核验：1/qp/p2、2/qp/p3、3/qp/p3"
+      ],
+      "verification": {
+        "regions": 3,
+        "verified": 3,
+        "passed": 3,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 3,
+        "self_declared_unverified": 3,
+        "visual_evidence_missing": 3,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2024/Jun/11",
+      "subject": "8386",
+      "year": 2024,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "43781604f9de8550dea0434bedbefb4588c2ff62b91e5f789356c91c078ee042",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2024-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/43781604f9de8550dea0434bedbefb4588c2ff62b91e5f789356c91c078ee042.json",
+      "service_index_exists": true,
+      "questions": 28,
+      "index_sha256": "b26fda76093caef71dcbe238dd8f116f550a8e671727ad14261115264789d2f1",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 72 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/qp/p4、1/ms/p5、1/ms/p6、1/ms/p7…",
+        "有 72 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/qp/p4、1/ms/p5、1/ms/p6、1/ms/p7…"
+      ],
+      "verification": {
+        "regions": 72,
+        "verified": 72,
+        "passed": 72,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 72,
+        "self_declared_unverified": 72,
+        "visual_evidence_missing": 72,
+        "numbering": {
+          "top_level": 4,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2024/Jun/12",
+      "subject": "8386",
+      "year": 2024,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "c7f4fa0526e01651b9256370712a5a262edb64fafa6ad94cb545e0c5fab346ef",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2024-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/c7f4fa0526e01651b9256370712a5a262edb64fafa6ad94cb545e0c5fab346ef.json",
+      "service_index_exists": true,
+      "questions": 28,
+      "index_sha256": "3f58ca9071730f8b73ea288f2abd8fc087717e1dd2829bb60e085d77cbcc91c4",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 72 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/qp/p4、1/ms/p5、1/ms/p6、1(a)/qp/p2…",
+        "有 72 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/qp/p4、1/ms/p5、1/ms/p6、1(a)/qp/p2…"
+      ],
+      "verification": {
+        "regions": 72,
+        "verified": 72,
+        "passed": 72,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 72,
+        "self_declared_unverified": 72,
+        "visual_evidence_missing": 72,
+        "numbering": {
+          "top_level": 5,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2024/Jun/13",
+      "subject": "8386",
+      "year": 2024,
+      "season": "Jun",
+      "paper": "13",
+      "qp_sha256": "46c006d968ded257d990fac2fce98ed0f120f44ec6cf1e6237f0610884f0bb47",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2024-Jun-13/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/46c006d968ded257d990fac2fce98ed0f120f44ec6cf1e6237f0610884f0bb47.json",
+      "service_index_exists": true,
+      "questions": 28,
+      "index_sha256": "9283ccead20336203005951f5c4ef65fd4f6554f3fc9bfdca4d4846d267d28dc",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 78 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/qp/p4、1/ms/p5、1/ms/p6、1(a)/qp/p2…",
+        "有 78 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/qp/p4、1/ms/p5、1/ms/p6、1(a)/qp/p2…"
+      ],
+      "verification": {
+        "regions": 78,
+        "verified": 78,
+        "passed": 78,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 78,
+        "self_declared_unverified": 78,
+        "visual_evidence_missing": 78,
+        "numbering": {
+          "top_level": 5,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2024/Nov/11",
+      "subject": "8386",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "e5a8a451b98880cca43aaa792294841a234337b205d32805c52a3437e96f425f",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2024-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/e5a8a451b98880cca43aaa792294841a234337b205d32805c52a3437e96f425f.json",
+      "service_index_exists": true,
+      "questions": 28,
+      "index_sha256": "6d253a84c73d6559368535a97d66b218ad213c53ea951dc3dbe06cb7433db524",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 63 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p5、1/ms/p6、1(a)/qp/p2、1(b)/qp/p2…",
+        "有 63 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p5、1/ms/p6、1(a)/qp/p2、1(b)/qp/p2…"
+      ],
+      "verification": {
+        "regions": 63,
+        "verified": 63,
+        "passed": 63,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 63,
+        "self_declared_unverified": 63,
+        "visual_evidence_missing": 63,
+        "numbering": {
+          "top_level": 7,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2024/Nov/12",
+      "subject": "8386",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "12",
+      "qp_sha256": "ba39d3b973303a9e5ef2fb56d6ac909e3ecfedca6369a6dc5e63a3b244434dbe",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2024-Nov-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/ba39d3b973303a9e5ef2fb56d6ac909e3ecfedca6369a6dc5e63a3b244434dbe.json",
+      "service_index_exists": true,
+      "questions": 23,
+      "index_sha256": "f56fde4037ef3a49c17e853ace2f75d8ae6d78e736a865597a9362643c663dfc",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 59 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/qp/p4、1/qp/p5、1/ms/p5、1/ms/p6…",
+        "有 59 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/qp/p4、1/qp/p5、1/ms/p5、1/ms/p6…"
+      ],
+      "verification": {
+        "regions": 59,
+        "verified": 59,
+        "passed": 59,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 59,
+        "self_declared_unverified": 59,
+        "visual_evidence_missing": 59,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2024/Nov/13",
+      "subject": "8386",
+      "year": 2024,
+      "season": "Nov",
+      "paper": "13",
+      "qp_sha256": "0589aba86cae4b13b9d186ca7c31af77712826265a8e9323380e5ffa8112990f",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2024-Nov-13/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/0589aba86cae4b13b9d186ca7c31af77712826265a8e9323380e5ffa8112990f.json",
+      "service_index_exists": true,
+      "questions": 28,
+      "index_sha256": "d2d5b274c55072d35440fe4515dc83bfc01d445ce4b98ab9c0badd84852f8775",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 63 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p5、1/ms/p6、1(a)/qp/p2、1(b)/qp/p2…",
+        "有 63 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p5、1/ms/p6、1(a)/qp/p2、1(b)/qp/p2…"
+      ],
+      "verification": {
+        "regions": 63,
+        "verified": 63,
+        "passed": 63,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 63,
+        "self_declared_unverified": 63,
+        "visual_evidence_missing": 63,
+        "numbering": {
+          "top_level": 7,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2025/Jun/11",
+      "subject": "8386",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "017aeda478549889207bca60e0dc1a77f10455a671ef8e2c3c6ccedfcfe5a3f0",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2025-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/017aeda478549889207bca60e0dc1a77f10455a671ef8e2c3c6ccedfcfe5a3f0.json",
+      "service_index_exists": true,
+      "questions": 32,
+      "index_sha256": "973c2a8f66c76b1be5afe485a3cca28418e7043884eddddab581d74d07aab395",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 77 个区域缺少完整目视核验证据：2/qp/p3、2/ms/p7、2(a)/qp/p3、2(a)/ms/p7、2(b)/qp/p3、2(b)/ms/p7…",
+        "有 77 个区域自述未做视觉核验：2/qp/p3、2/ms/p7、2(a)/qp/p3、2(a)/ms/p7、2(b)/qp/p3、2(b)/ms/p7…",
+        "顶层题号跳号/漏题：缺 1（现有 6 题，最大号 7）"
+      ],
+      "verification": {
+        "regions": 77,
+        "verified": 77,
+        "passed": 77,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 77,
+        "self_declared_unverified": 77,
+        "visual_evidence_missing": 77,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [
+            1
+          ],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2025/Jun/12",
+      "subject": "8386",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "2189b06ddb3dd710a649e481c916f14fb821478a608d05ba39e5986abe7f3b54",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2025-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/2189b06ddb3dd710a649e481c916f14fb821478a608d05ba39e5986abe7f3b54.json",
+      "service_index_exists": true,
+      "questions": 29,
+      "index_sha256": "86b9251ec99900716c5e1104247f15360d92630c6e8c21108e7fde0ac3d49b61",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/qp/p5、1/ms/p7、1/ms/p8、1/ms/p9…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/qp/p5、1/ms/p7、1/ms/p8、1/ms/p9…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 7,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2025/Jun/13",
+      "subject": "8386",
+      "year": 2025,
+      "season": "Jun",
+      "paper": "13",
+      "qp_sha256": "a9afb948791b5a2b08054ae54f0da1b5f44db42ba0e1285e09a4f8d8f130f71e",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2025-Jun-13/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a9afb948791b5a2b08054ae54f0da1b5f44db42ba0e1285e09a4f8d8f130f71e.json",
+      "service_index_exists": true,
+      "questions": 29,
+      "index_sha256": "714f9ac57234c963a96e81ce1c8110f3709c2d5927453165e431502d8d9aa053",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/qp/p5、1/ms/p7、1/ms/p8、1/ms/p9…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/qp/p5、1/ms/p7、1/ms/p8、1/ms/p9…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 7,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2025/Nov/11",
+      "subject": "8386",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "a7bb14d605175e5ad079d441964cee6a54ae7871f1f5c9fce2441be139667a7c",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2025-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a7bb14d605175e5ad079d441964cee6a54ae7871f1f5c9fce2441be139667a7c.json",
+      "service_index_exists": true,
+      "questions": 28,
+      "index_sha256": "028b176eac5972f906126579ad5486963ca35781bdf54f4e8e541600a34fbe03",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p7、1/ms/p8、1(a)/qp/p2、1(a)/ms/p7…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p7、1/ms/p8、1(a)/qp/p2、1(a)/ms/p7…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2025/Nov/12",
+      "subject": "8386",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "12",
+      "qp_sha256": "1a9273227104932c7993df9f086dbc036d3399b98dc9e12bed452b4264c071ac",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2025-Nov-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/1a9273227104932c7993df9f086dbc036d3399b98dc9e12bed452b4264c071ac.json",
+      "service_index_exists": true,
+      "questions": 32,
+      "index_sha256": "fa1c7f033fcb0f2984eea0e10cb968f8eee28c2be241cf7bae5932b9788304a4",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 69 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p7、1(a)/qp/p2、1(a)/ms/p7、1(b)/qp/p3…",
+        "有 69 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p7、1(a)/qp/p2、1(a)/ms/p7、1(b)/qp/p3…"
+      ],
+      "verification": {
+        "regions": 69,
+        "verified": 69,
+        "passed": 69,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 69,
+        "self_declared_unverified": 69,
+        "visual_evidence_missing": 69,
+        "numbering": {
+          "top_level": 7,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2025/Nov/13",
+      "subject": "8386",
+      "year": 2025,
+      "season": "Nov",
+      "paper": "13",
+      "qp_sha256": "5fabd8d50758b2434fcaa4eccff5d2fc00a460cd11004f335a8021e183fec718",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2025-Nov-13/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/5fabd8d50758b2434fcaa4eccff5d2fc00a460cd11004f335a8021e183fec718.json",
+      "service_index_exists": true,
+      "questions": 28,
+      "index_sha256": "1abbab8ddeb3c3398ca1a84aea260e21ee955ac8007c3f332065e921f407835a",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p7、1/ms/p8、1(a)/qp/p2、1(a)/ms/p7…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p7、1/ms/p8、1(a)/qp/p2、1(a)/ms/p7…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 6,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2026/Jun/11",
+      "subject": "8386",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "9d4f3d29f367047f3af4dfc9443a934cc8f3708f571b7617d81c3f82d52d3799",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/9d4f3d29f367047f3af4dfc9443a934cc8f3708f571b7617d81c3f82d52d3799.json",
+      "service_index_exists": true,
+      "questions": 32,
+      "index_sha256": "67443ead6e026ef3454f5dd72892c7bcf9c6b03bf2e01ed731382be74be8e4a5",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 74,
+        "verified": 74,
+        "passed": 74,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 101,
+        "voided": 0,
+        "records": 74,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 5,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "8386/2026/Jun/12",
+      "subject": "8386",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "a6873f59608a908c1bfc57aed55888ed37e83bc361f64cd05dc96ea0d31cc4bb",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2026-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/a6873f59608a908c1bfc57aed55888ed37e83bc361f64cd05dc96ea0d31cc4bb.json",
+      "service_index_exists": true,
+      "questions": 13,
+      "index_sha256": "a3ddeac074053a128bb948dfe111351a026268da108acc329081ce65b782a25e",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 36 个区域缺少完整目视核验证据：2/qp/p6、2/qp/p7、2/qp/p8、2/qp/p9、2/ms/p12、2/ms/p13…",
+        "有 36 个区域自述未做视觉核验：2/qp/p6、2/qp/p7、2/qp/p8、2/qp/p9、2/ms/p12、2/ms/p13…",
+        "顶层题号跳号/漏题：缺 1（现有 5 题，最大号 6）"
+      ],
+      "verification": {
+        "regions": 36,
+        "verified": 36,
+        "passed": 36,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 36,
+        "self_declared_unverified": 36,
+        "visual_evidence_missing": 36,
+        "numbering": {
+          "top_level": 5,
+          "gaps": [
+            1
+          ],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "8386/2026/Jun/13",
+      "subject": "8386",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "13",
+      "qp_sha256": "4fe4754979171e90cf573a40d3f3d822252421351df5a3d4f939f0bf6b8a4b12",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/8386/2026-Jun-13/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/4fe4754979171e90cf573a40d3f3d822252421351df5a3d4f939f0bf6b8a4b12.json",
+      "service_index_exists": true,
+      "questions": 13,
+      "index_sha256": "ff027e92fb1632232e8ef07bd7cb5b2085c06ed3d37070914514e49da29eef7d",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 36 个区域缺少完整目视核验证据：2/qp/p6、2/qp/p7、2/qp/p8、2/qp/p9、2/ms/p12、2/ms/p13…",
+        "有 36 个区域自述未做视觉核验：2/qp/p6、2/qp/p7、2/qp/p8、2/qp/p9、2/ms/p12、2/ms/p13…",
+        "顶层题号跳号/漏题：缺 1（现有 5 题，最大号 6）"
+      ],
+      "verification": {
+        "regions": 36,
+        "verified": 36,
+        "passed": 36,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 36,
+        "self_declared_unverified": 36,
+        "visual_evidence_missing": 36,
+        "numbering": {
+          "top_level": 5,
+          "gaps": [
+            1
+          ],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "9389/2021/Nov/11",
+      "subject": "9389",
+      "year": 2021,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "cce5233d424a6e2f3435c38fb85a543c631fbdbfd9574a859304a5e60a9a189a",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9389/2021-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/cce5233d424a6e2f3435c38fb85a543c631fbdbfd9574a859304a5e60a9a189a.json",
+      "service_index_exists": true,
+      "questions": 9,
+      "index_sha256": "8012517e6d6dc32ecdd2341a81caead9df3ab4f96fdd3c01c14e616754e24944",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 24 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p5、1(a)/qp/p3、1(b)/qp/p3、1(b)/ms/p5…",
+        "有 24 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p5、1(a)/qp/p3、1(b)/qp/p3、1(b)/ms/p5…"
+      ],
+      "verification": {
+        "regions": 24,
+        "verified": 24,
+        "passed": 24,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 24,
+        "self_declared_unverified": 24,
+        "visual_evidence_missing": 24,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "9396/2023/Nov/11",
+      "subject": "9396",
+      "year": 2023,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "30eaf6e225a849b0b709929a566c125b4a1a83fb13f5fa373455a3a297c19db1",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9396/2023-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/30eaf6e225a849b0b709929a566c125b4a1a83fb13f5fa373455a3a297c19db1.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "8a15fbb30d2259248c3a221450a906ddcfaf9f41a8a89b3c32c72fdfcebba2a4",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 96,
+        "verified": 96,
+        "passed": 96,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 130,
+        "voided": 0,
+        "records": 96,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "9489/2026/Jun/11",
+      "subject": "9489",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "c92c1f04b21885e80ce7d18a033a958eea146e846fd4ad32d306dc312a583996",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9489/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/c92c1f04b21885e80ce7d18a033a958eea146e846fd4ad32d306dc312a583996.json",
+      "service_index_exists": true,
+      "questions": 9,
+      "index_sha256": "2c0ff2667d53f46af437ee023d90fd2254d4637b5a207ce46f39211002cdc4a3",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 28 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p6、1/ms/p7、1(a)/qp/p3、1(a)/ms/p6…",
+        "有 28 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p6、1/ms/p7、1(a)/qp/p3、1(a)/ms/p6…"
+      ],
+      "verification": {
+        "regions": 28,
+        "verified": 28,
+        "passed": 28,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 28,
+        "self_declared_unverified": 28,
+        "visual_evidence_missing": 28,
+        "numbering": {
+          "top_level": 3,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "9608/2021/Nov/11",
+      "subject": "9608",
+      "year": 2021,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "8bbe183f58ef1b89e38b029d09c32f4ddead9971c04019e336c6610c69481860",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9608/2021-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/8bbe183f58ef1b89e38b029d09c32f4ddead9971c04019e336c6610c69481860.json",
+      "service_index_exists": true,
+      "questions": 34,
+      "index_sha256": "993fe68d0160e421b57cebff373332d2cc83f342d52279ed40fed3afb071b965",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 68 个区域缺少完整目视核验证据：1/qp/p2、1/qp/p3、1/ms/p3、1/ms/p9、1/ms/p10、1(a)/qp/p2…",
+        "有 68 个区域自述未做视觉核验：1/qp/p2、1/qp/p3、1/ms/p3、1/ms/p9、1/ms/p10、1(a)/qp/p2…"
+      ],
+      "verification": {
+        "regions": 68,
+        "verified": 68,
+        "passed": 68,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 68,
+        "self_declared_unverified": 68,
+        "visual_evidence_missing": 68,
+        "numbering": {
+          "top_level": 11,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "9618/2026/Jun/11",
+      "subject": "9618",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "78bf5259021f349a06ff95c0842c35d92b0dc24d4090f48fa876f57b08ab1f7c",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9618/2026-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/78bf5259021f349a06ff95c0842c35d92b0dc24d4090f48fa876f57b08ab1f7c.json",
+      "service_index_exists": true,
+      "questions": 42,
+      "index_sha256": "711b5599cf2361abde8430fdb7f280ed355e7ec67141d9b9b2f5054b2f18087a",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 7 个区域没有核验记录：1/qp/p3、2/qp/p5、3/qp/p7、3/qp/p8、3/qp/p9、4/qp/p11…",
+        "有 71 个区域缺少完整目视核验证据：1/qp/p2、1(a)/qp/p2、1(a)(i)/qp/p2、1(a)(i)/ms/p5、1(a)(ii)/qp/p2、1(a)(ii)/ms/p5…"
+      ],
+      "verification": {
+        "regions": 78,
+        "verified": 71,
+        "passed": 71,
+        "failed": 0,
+        "missing": 7,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 71,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 71,
+        "numbering": {
+          "top_level": 7,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "9707/2015/Nov/11",
+      "subject": "9707",
+      "year": 2015,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "9fd0596a906a4164096e7d25b64f9bff074c50834dc49288e35bc69c91d17421",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9707/2015-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/9fd0596a906a4164096e7d25b64f9bff074c50834dc49288e35bc69c91d17421.json",
+      "service_index_exists": true,
+      "questions": 17,
+      "index_sha256": "7a3e7872689613022566c4413d17e709cb4e3c534ed25fc582fa04adccec62f2",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 34 个区域缺少完整目视核验证据：1/qp/p2、1/ms/p2、1(a)/qp/p2、1(a)/ms/p2、1(b)/qp/p2、1(b)/ms/p2…"
+      ],
+      "verification": {
+        "regions": 34,
+        "verified": 34,
+        "passed": 34,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 34,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 34,
+        "numbering": {
+          "top_level": 7,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    },
+    {
+      "key": "9709/2024/Jun/11",
+      "subject": "9709",
+      "year": 2024,
+      "season": "Jun",
+      "paper": "11",
+      "qp_sha256": "7dd8ce4a25dc6acaf730b86d7346ab993b6625879622fad8ec79cea9896d52da",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9709/2024-Jun-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7dd8ce4a25dc6acaf730b86d7346ab993b6625879622fad8ec79cea9896d52da.json",
+      "service_index_exists": true,
+      "questions": 32,
+      "index_sha256": "8bfccd76d418f0648bdd1db4a1762da1e0c02adf26791fc63fb6e0d5fbf7aed4",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 74,
+        "verified": 74,
+        "passed": 74,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 68,
+        "voided": 0,
+        "records": 74,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 11,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "9713/2017/Nov/11",
+      "subject": "9713",
+      "year": 2017,
+      "season": "Nov",
+      "paper": "11",
+      "qp_sha256": "d699cd2e6cca9fe85f965e45c6cd2221938c06a1df8df9d8a4c06ffa7448f137",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9713/2017-Nov-11/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/d699cd2e6cca9fe85f965e45c6cd2221938c06a1df8df9d8a4c06ffa7448f137.json",
+      "service_index_exists": true,
+      "questions": 23,
+      "index_sha256": "1b3a5f8fc2296080be1f452b9bd75551a2aa773d03252e26ce09444f63ab370d",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 84,
+        "verified": 84,
+        "passed": 84,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 220,
+        "voided": 0,
+        "records": 84,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 11,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "9715/2023/Nov/21",
+      "subject": "9715",
+      "year": 2023,
+      "season": "Nov",
+      "paper": "21",
+      "qp_sha256": "12f0088d98e6651575b5f8a9bc34560d2b8fa9dc11289a5d93b5253bd2702826",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9715/2023-Nov-21/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/12f0088d98e6651575b5f8a9bc34560d2b8fa9dc11289a5d93b5253bd2702826.json",
+      "service_index_exists": true,
+      "questions": 25,
+      "index_sha256": "3ed434b00161961ae171680f913ccbff0f5ab1450605ce198132951f39892245",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [],
+      "verification": {
+        "regions": 60,
+        "verified": 60,
+        "passed": 60,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 82,
+        "voided": 0,
+        "records": 60,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 0,
+        "numbering": {
+          "top_level": 5,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": true
+    },
+    {
+      "key": "9868/2026/Jun/12",
+      "subject": "9868",
+      "year": 2026,
+      "season": "Jun",
+      "paper": "12",
+      "qp_sha256": "7a1cfa9542ffb3d2c55fcc5af7f6950c7b4dd886778566f36adffe0b67924d36",
+      "local_index": "C:/Users/weo/Desktop/api/cie-location-batch/indexes/9868/2026-Jun-12/cie-index.json",
+      "service_index_path": "C:/Users/weo/Desktop/api/examdata/.pytest_cache/callable-api/question_indexes/cie/7a1cfa9542ffb3d2c55fcc5af7f6950c7b4dd886778566f36adffe0b67924d36.json",
+      "service_index_exists": true,
+      "questions": 40,
+      "index_sha256": "e71259bc20efc7bbc93deb65cf2738afb824dea912918d9794f9412c4cbd1c52",
+      "documents": [
+        "qp",
+        "ms"
+      ],
+      "comparison": "identical",
+      "service_reviewed": false,
+      "changed_questions": [],
+      "changed_fields": {},
+      "verification_problems": [
+        "有 80 个区域缺少完整目视核验证据：1/qp/p2、1/ms/p2、2/qp/p2、2/ms/p2、3/qp/p2、3/ms/p2…"
+      ],
+      "verification": {
+        "regions": 80,
+        "verified": 80,
+        "passed": 80,
+        "failed": 0,
+        "missing": 0,
+        "stale_ignored": 0,
+        "voided": 0,
+        "records": 80,
+        "self_declared_unverified": 0,
+        "visual_evidence_missing": 80,
+        "numbering": {
+          "top_level": 40,
+          "gaps": [],
+          "dups": [],
+          "sub_gaps": 0
+        }
+      },
+      "visual_gate_passed": false
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "proposal_version": "b05-merge-proposal/1",
+  "packet": "B05",
+  "generated_by": "integration-staging/runtime/b05-rehearsal-2026-10-07/b05_build_proposals.py",
+  "generated_at": "2026-10-07T02:44:33+08:00",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "candidate_manifest": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/B05_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "c4341576bf1a6b5d56a01098f46a77eb4081db30225c7f5cc4176be2abe9e008",
+    "candidate_tree": {
+      "files": 190,
+      "excludes": [
+        "B05_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955"
+    },
+    "candidate_tree_digest_rule": "sha256 over 'path\\0sha256\\n' for every file under the root, sorted by path, excluding __pycache__/.pytest_cache and excluding the named manifest itself",
+    "parent_manifest": "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/B04_CANDIDATE_MANIFEST.json",
+    "parent_manifest_sha256": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "parent_manifest_sha256_at_build": "99177c1239c60278aecc39dc3bb8c54e1c03390660bf782c5ea6ff3220dd9f57",
+    "parent_tree": {
+      "files": 188,
+      "excludes": [
+        "B04_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc"
+    },
+    "parent_tree_including_manifest": {
+      "files": 189,
+      "excludes": [],
+      "sha256": "478060856a51f57df5381642532f54384dcbe0bae007aa8e11f7292b7ee88fbb"
+    },
+    "a14_merge_map": "docs/integration/execution/A14_MERGE_MAP.json",
+    "a14_merge_map_sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+    "a14_merge_map_byte_unchanged": true,
+    "source_edits_diff": "integration-staging/runtime/b05-rehearsal-2026-10-07/evidence/source_edits.diff",
+    "source_edits_diff_sha256": "ec18a0dc4090cc518f75cf59f7eb3a53bb3ff29a9f1a55ba1fe7bd33c82c1c74"
+  },
+  "digest_checks": {
+    "candidate_tree_reverified": true,
+    "parent_tree_reverified": true,
+    "b04_merge_crossref_matches": true,
+    "new_module_source_matches": true,
+    "edited_files_source_matches": true,
+    "new_files_exactly_one_vs_parent": true,
+    "only_the_two_edited_files_changed_vs_parent": true,
+    "supersession_chains_match": true,
+    "supersession_chain_detail": {
+      "dataset_chain": true,
+      "app_chain": true
+    },
+    "note": "tree digests recomputed from disk at proposal time with the recorded rule (sha256 over 'path\\0sha256\\n', sorted, __pycache__/.pytest_cache skipped, named manifest excluded); the B04 cross-reference checks this candidate's recorded parent against B04_MERGE_PROPOSAL.json's derived_from; the new-module and edited-file checks compare the candidate files against both the private tooling sources and the manifest; the file-set comparison excludes only the candidate's own manifest because the child carries a byte-identical copy of the parent's manifest; the supersession chains re-verify the A14 and R0104 records that the two rewritten staged files supersede (dataset: A14 MM-0017 -> R0104 RP-0005 -> B05; app: A14 MM-0015 -> B05)"
+  },
+  "scope_note": "B05 adds exactly one new file relative to its parent (the B04 routes candidate) - the active-owner seam src/examdata/integration/adapters/active_owner.py - and rewrites exactly two carried modules so the five feature families (materials, syllabuses, timetable seasons, events, windows) are read through that seam: src/examdata/integration/api/dataset.py and src/examdata/integration/api/app.py. Everything else in the candidate is a byte-identical carry of B04. The staged bytes of the two rewritten modules supersede the bytes recorded by R0104_MERGE_PROPOSAL.json RP-0005 (dataset.py) and A14 MM-0015 (app.py); the whole integration package is new relative to the original project, so every release-required entry is add_file semantics. The composition hook and the shared-application registration remain as proposed in B04_MERGE_PROPOSAL.json and are not re-proposed here. The product/test payload inside the candidate is the R04 payload already proposed in R0104_MERGE_PROPOSAL.json and the packaging already proposed in B02_MERGE_PROPOSAL.json; nothing is re-proposed here. Proposal only: nothing in this file has been applied to the original project. All seven gates remain closed; the original merge stays blocked until an explicit human release.",
+  "action_level_gate_model": {
+    "principle": "A gate is required only for the action that performs that effect. Private preparation never satisfies an original-action prerequisite.",
+    "private_preparation": {
+      "gates_required": [],
+      "note": "reading, staging, private copies, offline validation, synthetic fixtures: no gate required and none is opened"
+    },
+    "original_path_write": {
+      "gates_required": [
+        "original_paths_released"
+      ],
+      "note": "any write into the original project requires the human release"
+    },
+    "other_actions": {
+      "real_data_write": "real_data_write_authorized",
+      "existing_service_cutover": "existing_service_cutover_authorized",
+      "upstream_request": "upstream_requests_authorized",
+      "cie_resume": "cie_resume_authorized",
+      "remote_deployment": "remote_deployment_authorized",
+      "original_cleanup": "original_cleanup_authorized"
+    }
+  },
+  "frozen_evidence_never_touched": [
+    "docs/integration/execution/evidence/**",
+    "integration-staging/runtime/phase-b/**",
+    "integration-staging/runtime/r0104-repair-20261006/candidates/**",
+    "integration-staging/runtime/b02-rehearsal-20261006/candidates/**",
+    "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/**",
+    "integration-staging/runtime/b04-rehearsal-2026-10-07/candidates/b04-routes-v1/**",
+    "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/**"
+  ],
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "counts": {
+    "entries": 4,
+    "entries_requiring_release": 3,
+    "staging_only_entries": 1,
+    "new_files_vs_parent": 1,
+    "edited_files_rewritten": 2
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "change": "candidate_container",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1",
+      "staged_sha256_before": "fd806f4c6116c3f5507a7a7b13879ac5d59f627929c7a54c2767b7a1f85f9cbc",
+      "staged_sha256_after": "d38a124e8595b61d21e41f778ba164471ffbfebb099813b812949d8213d02955",
+      "kind": "staging_candidate_tree",
+      "proposed_target": null,
+      "proposed_target_origin": "staging-only rehearsal container: no original-project target",
+      "phase_b_action": "keep in integration-staging/ only; no original-project action proposed",
+      "reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "gates_required_for_this_action": [],
+      "release_required": false,
+      "sha_note": "the before digest covers the parent (B04) file set with B04's own manifest excluded (its digest rule); the after digest covers the candidate file set with B05's own manifest excluded; both use the same function and rule",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0002",
+      "change": "new_module_active_owner_seam",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/src/examdata/integration/adapters/active_owner.py",
+      "staged_sha256_before": null,
+      "staged_sha256_after": "0d8116f0f9622845bdbaae25f48b537fadb3a888d83741d46f2e743dee2d5399",
+      "kind": "new_file",
+      "proposed_target": "examdata/src/examdata/integration/adapters/active_owner.py",
+      "proposed_target_origin": "derived from the A14 target-layout convention (candidate src/... maps to examdata/src/...); the file is new since A14, so it has no A14 entry of its own",
+      "phase_b_action": "add_file at the proposed target (new module; no existing original file is edited by this entry)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "sha_note": "staged_sha256_after is recomputed from the candidate file and equals both the private tooling source and the manifest's recorded written_sha256",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0003",
+      "change": "rewrite_integration_dataset_for_the_seam",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/src/examdata/integration/api/dataset.py",
+      "staged_sha256_before": "c341ce3018f1b2c0944d458e40365dade153914b0cf80835a6bfce2893f6eeb3",
+      "staged_sha256_after": "a9a72a7a56f87fd7a854793ca8e191fce6b801a79be40e3971d2ed6c73358a4e",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "examdata/src/examdata/integration/api/dataset.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json entry MM-0017 via R0104_MERGE_PROPOSAL.json RP-0005; the B05 bytes supersede the R0104-repaired bytes",
+      "phase_b_action": "add_file at the proposed target with the B05 bytes (the whole integration package is new relative to the original project; there is no existing original file to edit; A14 observed the target as not existing)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "supersedes": {
+        "proposal": "R0104_MERGE_PROPOSAL.json RP-0005",
+        "superseded_staged_sha256_after": "c341ce3018f1b2c0944d458e40365dade153914b0cf80835a6bfce2893f6eeb3",
+        "chain": "A14 MM-0017 (5801f31c...) -> R0104 RP-0005 -> B05"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "sha_note": "staged_sha256_before is the R0104-repaired staged version this rewrite replaces; the chain is re-verified in digest_checks.supersession_chain_detail",
+      "status": "proposal_only_not_merged"
+    },
+    {
+      "id": "BP-0004",
+      "change": "rewrite_integration_app_for_the_seam",
+      "staged_path": "integration-staging/runtime/b05-rehearsal-2026-10-07/candidates/b05-adapters-v1/src/examdata/integration/api/app.py",
+      "staged_sha256_before": "afa2602e7cbf829688d4ba50d720a237c6d5991869b2fb963c1f2be5e547c04b",
+      "staged_sha256_after": "aa3ba9c5e7da3277dbbadbe4ba40cc7b07b961b0c2ba43da801451c7410736f0",
+      "kind": "staged_file_rewrite",
+      "proposed_target": "examdata/src/examdata/integration/api/app.py",
+      "proposed_target_origin": "A14_MERGE_MAP.json entry MM-0015; the B05 bytes supersede the A14-staged bytes",
+      "phase_b_action": "add_file at the proposed target with the B05 bytes (the whole integration package is new relative to the original project; there is no existing original file to edit; A14 observed the target as not existing)",
+      "reversal": "delete_file at the proposed target, and only if the target's current sha256 still equals staged_sha256_after",
+      "supersedes": {
+        "proposal": "A14_MERGE_MAP.json MM-0015",
+        "superseded_staged_sha256": "afa2602e7cbf829688d4ba50d720a237c6d5991869b2fb963c1f2be5e547c04b",
+        "chain": "A14 MM-0015 -> B05"
+      },
+      "gates_required_for_this_action": [
+        "original_paths_released"
+      ],
+      "release_required": true,
+      "sha_note": "staged_sha256_before is the A14-staged version this rewrite replaces; the chain is re-verified in digest_checks.supersession_chain_detail",
+      "status": "proposal_only_not_merged"
+    }
+  ],
+  "not_merged": true,
+  "requirements_for_merge": [
+    "explicit human release opening original_paths_released with an explicit scope",
+    "apply the three release-required entries: add examdata/src/examdata/integration/adapters/active_owner.py, install the B05 bytes at examdata/src/examdata/integration/api/dataset.py (superseding R0104 RP-0005) and at examdata/src/examdata/integration/api/app.py (superseding A14 MM-0015); every entry is add_file semantics because the integration package is new relative to the original project",
+    "verify the candidate tree digest (the container entry's staged_sha256_after, recomputed with the recorded rule) immediately before any original write",
+    "apply the B04-proposed composition hook and the shared-application registration of the staged v2 routes per B04_MERGE_PROPOSAL.json (not re-proposed here)",
+    "re-run the isolated staged suite against the frozen B05 candidate before any original write, and re-run the B05 route probe plus the suite against the merged tree afterwards"
+  ]
+}

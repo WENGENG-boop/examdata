@@ -1,11 +1,15 @@
 # examdata · 国际考试真题统一数据服务
 
+项目当前进度、各源数据覆盖与最新阻塞见 [项目总文档](../docs/PROJECT_STATUS.md)；全部文档入口见 [docs](../docs/README.md)（2026-10-05 更新）。
+
 把 Cambridge International 与 Pearson Edexcel 的公开试卷，变成**结构化、可检索、可溯源**的数据。
 
 从官方站点发现资源、下载原件、解析出题目树、关联评分标准、提取图形资产，
 再叠加知识点分类、难度估计、相似题识别与生成解析，最后通过 CLI 与只读 HTTP API 对外提供。
 
 > **这是一个工具，不是题库。** 本仓库不包含任何试卷原件——见下方[版权与合规](#版权与合规)。
+
+两步试卷调用流程见 [统一 API 用法](docs/UNIFIED_PAPER_API.md)：CIE 获取整卷，Edexcel 算法分题与评分条目；CIE 全学科作业使用 [完整执行提示词](docs/CIE_ALL_SUBJECTS_EXECUTION_PROMPT.md)，逐题本地裁剪核验、导入定位 JSON，验收后删除临时 PDF 与图片。雅思（剑桥雅思 1–21）经 [IELTS 网关](docs/IELTS_API.md) 挂载在 `/api/v1/ielts/…`，CIE / Edexcel / IELTS 三源可在同一服务内同时调用。
 
 ## 能力
 
@@ -19,7 +23,7 @@
 | 检索 | 试卷/题目检索、抽题、监控视图 | `query/`，CLI 与 HTTP 共用同一份返回结构 |
 | PaperQA | 按需取回整卷 PDF 或裁剪单题 PNG | `paperqa/`，不落盘 |
 
-**已接入考试局**：Cambridge International（`public`）、Pearson Edexcel（`partial_public`）。
+**已接入来源**：Cambridge International（`public`）、Pearson Edexcel（`partial_public`）、IELTS 剑桥雅思（经旁路 `ielts-api` Node 聚合器网关代理，见 [docs/IELTS_API.md](docs/IELTS_API.md)）。
 
 ## 快速开始
 
@@ -65,7 +69,7 @@ examdata paper-qa --board edexcel --subject Economics --year 2024 --season Jun \
                   --paper wec11-01 --question '12(a)' --mode qa --out tmp/ --json
 ```
 
-`examdata --help` 列出全部 32 条命令。
+`examdata --help` 列出全部 36 条命令。
 
 ### HTTP API
 
@@ -74,11 +78,11 @@ examdata serve --host 127.0.0.1 --port 8000
 # 交互式文档：http://127.0.0.1:8000/docs
 ```
 
-24 条只读路由：试卷检索 `/papers`、题目检索 `/questions`、单题完整内容
+71 条路由（除 `/sample` 为 POST 外均为 GET）：试卷检索 `/papers`、题目检索 `/questions`、单题完整内容
 `/questions/{id}`、相似题、整卷题目树、随机抽题 `/sample`、溯源、待检查队列、
 知识点体系、监控视图 `/monitor`、`/paper-qa/resolve`（只解析清单）与
 `/paper-qa/query`（取回文件，默认二进制，`format=json` 走 base64），
-以及统一网关 `/api/v1/*` 的 4 条（见下一节）。
+以及统一网关 `/api/v1/*` 的 51 条（试卷 / 资料 / 时间表等，见下一节）。
 
 ```bash
 curl 'http://127.0.0.1:8000/questions?subject=0580&leaves_only=true&limit=5'
@@ -106,6 +110,8 @@ print(result.metadata()['counts'], result.files[0].sha256[:12], result.files[0].
 | `GET /api/v1/paper` | 统一取卷：解析清单 / 整卷 PDF / 按题裁剪 PNG / 题目+答案配对 |
 | `GET /api/v1/search` | 跨考试局检索，返回 `by_board` 分组计数 |
 | `GET /api/v1/question/{id}` | 单题聚合视图，附可直接复用的 `paper_endpoint` |
+| `GET /api/v1/materials` | 考试发放资料：目录、按需取回原件（9709 MF19 公式表、insert、Edexcel 数据手册等；元素周期表印在试卷内，仅登记不可独立取回） |
+| `GET /api/v1/timetable` | 考试时间表（CIE Zone 5 + Edexcel）：结构化考试事件；CIE 25 季 / Edexcel 106 季，含取消季与不可得季证据 |
 
 `board` 可省略：四位数字科目代码（`0580`、`9709`）判为 CIE，其余（`wec11`、
 `ial18-economics`）判为 Edexcel；别名 `cie`/`cambridge`、`edexcel`/`edx`/`pearson` 等价。
@@ -129,6 +135,15 @@ nginx + HTTPS + 限流、故障排查）见 [docs/API.md](docs/API.md)；可直�
 ```bash
 python scripts/smoke_public_api.py --base-url https://<你的域名>
 ```
+
+### 考试发放资料与时间表
+
+统一网关在核心四端点之外新增两类能力（完整参数与示例见 [docs/API.md](docs/API.md) 第 3.8 / 3.9 / 3.10 节）：
+
+- `/api/v1/materials`：考试发放资料目录与按需取回（如 9709 的 MF19 公式表、Edexcel IAL 化学数据手册、CIE 各科 insert）；随卷发放但无独立公开文件的条目给出访问判定与证据。
+- `/api/v1/timetable`：考试时间表，返回结构化考试事件（日期/场次/科目/卷号/时长）。CIE Zone 5 覆盖 25 个可得考季；Edexcel 覆盖四个族谱（gcse / intgcse / ial / gce）共 106 季（含 13 份 R 卷变体），另有 6 个疫情取消季与 15 个穷尽检索不可得季的逐条证据。
+
+逐科结论与实测证据见调研报告：[`research/exam-materials-cie.md`](research/exam-materials-cie.md)、[`research/exam-materials-edexcel.md`](research/exam-materials-edexcel.md)、[`research/exam-timetable-cie-zone5.md`](research/exam-timetable-cie-zone5.md)、[`research/exam-timetable-edexcel.md`](research/exam-timetable-edexcel.md)。
 
 ### 配置
 
@@ -154,12 +169,17 @@ EXAMDATA_DATABASE_URL=sqlite:////var/lib/examdata/examdata.db
 ## 测试
 
 ```bash
-pytest                      # 364 项
+pytest                      # 全部测试
 pytest tests/conformance    # 适配器契约（参数化遍历 registry）
 ```
 
-部分解析测试依赖真实试卷样本。**本仓库不提供这些文件**，缺少时相关用例会 skip 而非失败。
-需要完整覆盖时，自行把对应 PDF 放入 `tests/fixtures/`：
+未显式设置 `EXAMDATA_DATABASE_URL` 时，测试始终使用进程专用的 SQLite 测试库；
+开发库 `.data/examdata.db` 存在时，通过在线备份 API 只读备份到该副本。
+测试不直接写开发库，进程退出后清理副本。显式设置该变量时尊重其配置，请提供测试专用数据库。
+
+没有已解析的本地数据或真实 PDF 样本时，相关集成、解析测试会跳过；
+独立单元测试（包括纯参数校验）仍运行。**本仓库不提供试卷文件**，
+需要运行对应解析用例时，自行把 PDF 放入 `tests/fixtures/`：
 
 | 文件名 | 用途 |
 |---|---|
@@ -187,8 +207,7 @@ pytest tests/conformance    # 适配器契约（参数化遍历 registry）
 
 1. **AP / SAT / IB 适配器**——前两者站点实测可达但未实现，`ibo.org` 返回 403。
 2. **Alembic 迁移**——仍是 `create_all` + `db.py` 的补列清单（过渡方案）。
-3. **全量同步**——Cambridge 已枚举 198 个 syllabus，仅同步 4 个科目；
-   Edexcel 已枚举 258 个科目页，仅试同步 1 个。
+3. **全量覆盖尚未验收**——Edexcel IAL 已有 21 科汇总、43856 题标签；CIE 已发现 13877 卷，但当前视觉门槛通过仅 19 卷，仍有停止、冲突与重验任务。具体范围及证据见 [项目总文档](../docs/PROJECT_STATUS.md)。
 4. **生成解析是规则式而非推理式**——不会真正演算数学题。
 5. **分值合计仍有偏差**——12 份文档的 `marks_total_mismatch` 未收敛。
 
@@ -197,3 +216,8 @@ pytest tests/conformance    # 适配器契约（参数化遍历 registry）
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+
+
+审查修复验收与当前限制见 `docs/REVIEW_ACCEPTANCE.md`。测试默认离线并复制开发语料，
+禁止直接将开发库指定为测试目标。重解析保护人工、审核与官方内容；无法安全匹配时回滚。
+`reset_derived.py --yes` 也不能绕过受保护内容拒绝。相似题范围重建与官方来源更新迁移仍有明确缺口。

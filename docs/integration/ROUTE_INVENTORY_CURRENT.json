@@ -1,0 +1,869 @@
+{
+  "as_of": "2026-10-05",
+  "method": "static_ast_explicit_decorators",
+  "limitations": [
+    "Not live OpenAPI; excludes framework docs routes and dynamically generated routes.",
+    "Prefixes reflect inspected router registration; regenerate after registration changes."
+  ],
+  "explicit_route_count": 71,
+  "unique_path_count": 71,
+  "duplicate_method_paths": [],
+  "groups": {
+    "examdata/src/examdata/api/app.py": 20,
+    "examdata/src/examdata/api/unified.py": 8,
+    "examdata/src/examdata/api/ielts.py": 28,
+    "examdata/src/examdata/api/toefl.py": 8,
+    "examdata/src/examdata/materials/router.py": 4,
+    "examdata/src/examdata/timetable/router.py": 3
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/v1/boards",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 228,
+      "handler": "list_boards",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/cie-index-schema",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 345,
+      "handler": "cie_index_schema",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/aggregate/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 284,
+      "handler": "ielts_aggregate",
+      "parameters": [
+        "book",
+        "test"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/books/{book}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 247,
+      "handler": "ielts_book",
+      "parameters": [
+        "book"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/cam21/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 309,
+      "handler": "ielts_cam21_coverage",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/cam21/listening/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 304,
+      "handler": "ielts_cam21_listening",
+      "parameters": [
+        "test"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/cam21/reading/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 299,
+      "handler": "ielts_cam21_reading",
+      "parameters": [
+        "test"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 289,
+      "handler": "ielts_coverage",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/info",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 178,
+      "handler": "ielts_info",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/iprog/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 371,
+      "handler": "ielts_iprog_coverage",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/iprog/listening/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 366,
+      "handler": "ielts_iprog_listening",
+      "parameters": [
+        "book",
+        "test"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/ito/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 324,
+      "handler": "ielts_ito_coverage",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/ito/script/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 319,
+      "handler": "ielts_ito_script",
+      "parameters": [
+        "book",
+        "test"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/lfs-coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 351,
+      "handler": "ielts_lfs_coverage",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/listening-audio/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 334,
+      "handler": "ielts_listening_audio",
+      "parameters": [
+        "book",
+        "test",
+        "part"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/listening-script/{book}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 329,
+      "handler": "ielts_listening_script",
+      "parameters": [
+        "book"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/listening/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 268,
+      "handler": "ielts_listening",
+      "parameters": [
+        "book",
+        "test"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/pdf/{book}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 346,
+      "handler": "ielts_pdf",
+      "parameters": [
+        "book"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/pdf21",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 356,
+      "handler": "ielts_pdf21",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/reading-enriched/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 261,
+      "handler": "ielts_reading_enriched",
+      "parameters": [
+        "book",
+        "test",
+        "passage"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/reading/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 252,
+      "handler": "ielts_reading",
+      "parameters": [
+        "book",
+        "test",
+        "passage"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/asset/{asset_id}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 464,
+      "handler": "ielts_v2_asset",
+      "parameters": [
+        "asset_id"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/books",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 398,
+      "handler": "ielts_v2_books",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 451,
+      "handler": "ielts_v2_coverage",
+      "parameters": [
+        "book",
+        "test"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/info",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 393,
+      "handler": "ielts_v2_info",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/question/{question_id}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 446,
+      "handler": "ielts_v2_question",
+      "parameters": [
+        "question_id"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/questions/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 415,
+      "handler": "ielts_v2_questions",
+      "parameters": [
+        "book",
+        "test",
+        "skill",
+        "variant",
+        "part",
+        "passage",
+        "status",
+        "alignment",
+        "type",
+        "offset",
+        "limit"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/v2/test/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 403,
+      "handler": "ielts_v2_test",
+      "parameters": [
+        "book",
+        "test",
+        "variant"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/zhan/coverage",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 383,
+      "handler": "ielts_zhan_coverage",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ielts/zhan/reading/{book}/{test}",
+      "file": "examdata/src/examdata/api/ielts.py",
+      "line": 376,
+      "handler": "ielts_zhan_reading",
+      "parameters": [
+        "book",
+        "test",
+        "passage"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/indexes/cie/{sha256}",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 351,
+      "handler": "cie_external_index",
+      "parameters": [
+        "sha256",
+        "question"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/indexes/cie/{sha256}/question",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 362,
+      "handler": "cie_indexed_question",
+      "parameters": [
+        "sha256",
+        "question",
+        "mode",
+        "format"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/materials",
+      "file": "examdata/src/examdata/materials/router.py",
+      "line": 86,
+      "handler": "list_materials",
+      "parameters": [
+        "board",
+        "subject",
+        "kind",
+        "candidate_facing"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/materials/cie/in-paper",
+      "file": "examdata/src/examdata/materials/router.py",
+      "line": 118,
+      "handler": "get_cie_in_paper",
+      "parameters": [
+        "subject",
+        "year",
+        "season",
+        "paper",
+        "role",
+        "download",
+        "format",
+        "fetcher"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/materials/{material_id}",
+      "file": "examdata/src/examdata/materials/router.py",
+      "line": 197,
+      "handler": "get_material",
+      "parameters": [
+        "material_id"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/materials/{material_id}/content",
+      "file": "examdata/src/examdata/materials/router.py",
+      "line": 209,
+      "handler": "get_material_content",
+      "parameters": [
+        "material_id",
+        "version",
+        "format",
+        "fetcher"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/paper",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 278,
+      "handler": "unified_paper",
+      "parameters": [
+        "subject",
+        "year",
+        "season",
+        "board",
+        "paper",
+        "question",
+        "mode",
+        "download",
+        "format"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/paper/index",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 331,
+      "handler": "unified_paper_index",
+      "parameters": [
+        "subject",
+        "year",
+        "season",
+        "paper",
+        "board",
+        "mode"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/question/{question_id}",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 465,
+      "handler": "unified_question",
+      "parameters": [
+        "question_id",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/search",
+      "file": "examdata/src/examdata/api/unified.py",
+      "line": 396,
+      "handler": "unified_search",
+      "parameters": [
+        "keyword",
+        "subject",
+        "board",
+        "year",
+        "session_name",
+        "paper",
+        "marks_min",
+        "marks_max",
+        "leaves_only",
+        "has_answer",
+        "limit",
+        "offset",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/timetable",
+      "file": "examdata/src/examdata/timetable/router.py",
+      "line": 126,
+      "handler": "get_timetable",
+      "parameters": [
+        "year",
+        "season",
+        "subject",
+        "date",
+        "session",
+        "level",
+        "limit",
+        "offset"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/timetable/seasons",
+      "file": "examdata/src/examdata/timetable/router.py",
+      "line": 104,
+      "handler": "list_timetable_seasons",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/timetable/windows",
+      "file": "examdata/src/examdata/timetable/router.py",
+      "line": 192,
+      "handler": "get_timetable_windows",
+      "parameters": [
+        "year",
+        "season"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/coverage",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 244,
+      "handler": "toefl_coverage",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/detail",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 314,
+      "handler": "toefl_detail",
+      "parameters": [
+        "url",
+        "refresh"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/get",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 273,
+      "handler": "toefl_get",
+      "parameters": [
+        "set_id",
+        "section",
+        "file",
+        "refresh"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/info",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 180,
+      "handler": "toefl_info",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/jj",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 347,
+      "handler": "toefl_jj",
+      "parameters": [
+        "section",
+        "batch",
+        "free",
+        "locked",
+        "list_all",
+        "page",
+        "page_size",
+        "url",
+        "refresh"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/questions",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 290,
+      "handler": "toefl_questions",
+      "parameters": [
+        "set_id",
+        "section",
+        "item",
+        "limit",
+        "refresh",
+        "url"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/search",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 330,
+      "handler": "toefl_search",
+      "parameters": [
+        "q",
+        "limit",
+        "sources"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/toefl/sets",
+      "file": "examdata/src/examdata/api/toefl.py",
+      "line": 249,
+      "handler": "toefl_sets",
+      "parameters": [
+        "tpo",
+        "era",
+        "section",
+        "tpo_min",
+        "tpo_max",
+        "page",
+        "page_size"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/assets/{asset_id}",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 551,
+      "handler": "asset_file",
+      "parameters": [
+        "asset_id",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/assets/{asset_id}/provenance",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 363,
+      "handler": "asset_provenance",
+      "parameters": [
+        "asset_id",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/classifications",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 416,
+      "handler": "classifications",
+      "parameters": [
+        "document_id",
+        "method",
+        "limit",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/explanations/review-queue",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 509,
+      "handler": "explanation_review_queue",
+      "parameters": [
+        "status",
+        "limit",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 167,
+      "handler": "health",
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/monitor",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 336,
+      "handler": "monitor",
+      "parameters": [
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/overrides",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 400,
+      "handler": "overrides",
+      "parameters": [
+        "target_type",
+        "target_id",
+        "conflicts",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/paper-qa/query",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 129,
+      "handler": "paper_qa_query",
+      "parameters": [
+        "board",
+        "subject",
+        "year",
+        "season",
+        "paper",
+        "question",
+        "mode",
+        "format"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/paper-qa/resolve",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 103,
+      "handler": "paper_qa_resolve",
+      "parameters": [
+        "board",
+        "subject",
+        "year",
+        "season",
+        "paper",
+        "question",
+        "mode"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/papers",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 179,
+      "handler": "list_papers",
+      "parameters": [
+        "board",
+        "qualification",
+        "subject",
+        "year",
+        "session_name",
+        "paper",
+        "component",
+        "variant",
+        "level",
+        "doc_type",
+        "limit",
+        "offset",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/papers/{paper_id}/tree",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 296,
+      "handler": "paper_tree",
+      "parameters": [
+        "paper_id",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/provenance/coverage",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 374,
+      "handler": "provenance_coverage",
+      "parameters": [
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/questions",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 213,
+      "handler": "list_questions",
+      "parameters": [
+        "board",
+        "subject",
+        "year",
+        "session_name",
+        "paper",
+        "level",
+        "number_path",
+        "keyword",
+        "marks_min",
+        "marks_max",
+        "leaves_only",
+        "roots_only",
+        "has_asset",
+        "has_answer",
+        "taxonomy",
+        "limit",
+        "offset",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 262,
+      "handler": "question_detail",
+      "parameters": [
+        "question_id",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}/explanation",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 453,
+      "handler": "question_explanation",
+      "parameters": [
+        "question_id",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}/provenance",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 346,
+      "handler": "question_provenance",
+      "parameters": [
+        "question_id",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/questions/{question_id}/similar",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 271,
+      "handler": "question_similar",
+      "parameters": [
+        "question_id",
+        "limit",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/review",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 386,
+      "handler": "review",
+      "parameters": [
+        "status",
+        "target_type",
+        "limit",
+        "db"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/sample",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 305,
+      "handler": "sample",
+      "parameters": [
+        "subject",
+        "year",
+        "paper",
+        "marks_min",
+        "count",
+        "marks_target",
+        "seed",
+        "db"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/taxonomy",
+      "file": "examdata/src/examdata/api/app.py",
+      "line": 286,
+      "handler": "taxonomy",
+      "parameters": [
+        "board",
+        "db"
+      ]
+    }
+  ]
+}

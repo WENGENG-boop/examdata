@@ -1,0 +1,3 @@
+== a08 fixture provenance check ==
+A08_PROVENANCE: PASS (4 entries)
+rc=0

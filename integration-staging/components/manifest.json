@@ -1,0 +1,39 @@
+{
+  "manifest_version": "examdata.component-manifest/1",
+  "generated_by": "A06 staging fixture (synthetic, authored in integration-staging)",
+  "components": [
+    {
+      "component_id": "fake_cli",
+      "name": "fake-cli",
+      "version": "1.0.0",
+      "source_revision": "synthetic-a06",
+      "code_location": "components/fake-node-cli",
+      "runtime": "node",
+      "entry_point": "fake-cli.mjs",
+      "supported_commands": [
+        "ok",
+        "echo",
+        "env",
+        "bad-json",
+        "two-values",
+        "nonzero",
+        "noisy",
+        "flood",
+        "slow",
+        "business-fail",
+        "no-stdout",
+        "crash"
+      ],
+      "input_schema": null,
+      "output_schema": null,
+      "environment_allowlist": ["FAKE_CLI_TOKEN", "EXAMDATA_FAKE_DIR"],
+      "data_roots": {
+        "fake_data": "runtime/data/fake-cli"
+      },
+      "read_write_policy": "read_only",
+      "health_probe": {
+        "command": "ok"
+      }
+    }
+  ]
+}

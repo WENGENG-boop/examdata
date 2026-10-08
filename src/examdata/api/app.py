@@ -25,7 +25,7 @@ from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 
 from ..core.config import get_settings
-from ..core.db import init_db, session_scope
+from ..core.db import ensure_initialized, session_scope
 from ..query import (
     PaperFilter,
     QuestionFilter,
@@ -44,12 +44,19 @@ from ..query import (
 )
 
 from ..paperqa import query as paperqa_query, resolve as paperqa_resolve
-from ..paperqa.api import json_payload, response_payload
-from ..paperqa.errors import PaperQAError
+from ..paperqa.api import content_disposition, json_payload, response_payload
+from ..paperqa.errors import PaperQAError, UpstreamError
+from ..materials import router as materials_router
+from ..timetable import router as timetable_router
 from fastapi.responses import Response
 
+from .ielts import router as ielts_router
 from .security import install_security
+from .toefl import router as toefl_router
 from .unified import router as unified_router
+
+
+_MALFORMED_UPSTREAM_ERRORS = (AttributeError, IndexError, KeyError, OverflowError, TypeError, ValueError)
 
 
 app = FastAPI(
@@ -61,6 +68,20 @@ app = FastAPI(
 # 统一网关（/api/v1）：board 别名归一 + 自动判定 + 跨考试局检索。
 # 既有端点行为不变，网关只是新增入口。
 app.include_router(unified_router)
+
+# IELTS 网关（/api/v1/ielts）：代理仓库旁的 Node 聚合器（ielts-api）。
+# 纯增量：既有端点与 unified 网关的行为不变。
+app.include_router(ielts_router)
+
+# TOEFL 网关（/api/v1/toefl）：代理仓库旁的 Node 聚合器（toefl-api）。
+# 纯增量：既有端点与 unified、IELTS 网关的行为不变。
+app.include_router(toefl_router)
+
+# 考试发放资料（/api/v1/materials）：清单 + CIE 卷内资料实时取回。
+# CIE Zone 5 考试时间表（/api/v1/timetable）：结构化考试事件。
+# 纯增量：既有端点行为不变，两者都只读、按需实时访问上游。
+app.include_router(materials_router)
+app.include_router(timetable_router)
 
 # 可选安全层：只有设置了 EXAMDATA_API_KEY / EXAMDATA_CORS_ORIGINS 才生效。
 # 两个都没设置时是空操作，本地开发、pytest 与既有部署的行为完全不变。
@@ -87,6 +108,9 @@ def paper_qa_resolve(
         return paperqa_resolve(board, subject, year, season, paper, question, mode).metadata()
     except PaperQAError as exc:
         raise HTTPException(status_code=exc.status_code, detail=str(exc)) from exc
+    except _MALFORMED_UPSTREAM_ERRORS as exc:
+        error = UpstreamError("Invalid upstream response")
+        raise HTTPException(status_code=error.status_code, detail=str(error)) from exc
 
 
 @app.get(
@@ -116,21 +140,25 @@ def paper_qa_query(
         if format == "json":
             return json_payload(result)
         file = response_payload(result)
+        return Response(
+            file.data,
+            media_type=file.media_type,
+            headers={
+                "Content-Disposition": content_disposition(file.name),
+                "Content-Length": str(len(file.data)),
+            },
+        )
     except PaperQAError as exc:
         raise HTTPException(status_code=exc.status_code, detail=str(exc)) from exc
-    return Response(
-        file.data,
-        media_type=file.media_type,
-        headers={
-            "Content-Disposition": f'attachment; filename="{file.name}"',
-            "Content-Length": str(len(file.data)),
-        },
-    )
+    except _MALFORMED_UPSTREAM_ERRORS as exc:
+        error = UpstreamError("Invalid upstream response")
+        raise HTTPException(status_code=error.status_code, detail=str(error)) from exc
+
 
 
 def get_session():
     """每请求一个 session。"""
-    init_db()
+    ensure_initialized()
     with session_scope() as session:
         yield session
 
@@ -142,8 +170,9 @@ def health() -> dict[str, Any]:
         with session_scope() as session:
             total = count_papers(session, PaperFilter())
         return {"status": "ok", "papers": total}
-    except Exception as exc:  # pragma: no cover - 只在数据库不可用时触发
-        raise HTTPException(status_code=503, detail=f"数据库不可用: {exc}") from exc
+    except Exception as exc:
+        # 不回显异常文本：连接串、文件路径这类内部信息不该进响应体
+        raise HTTPException(status_code=503, detail="数据库不可用") from exc
 
 
 @app.get("/papers")
@@ -431,7 +460,7 @@ def question_explanation(
     """
     from sqlalchemy import select as _select
 
-    from ..core.models import GeneratedExplanation, Question, OfficialAnswer
+    from ..core.models import GeneratedExplanation, Question, OfficialAnswer, ReviewTask
 
     if db.get(Question, question_id) is None:
         raise HTTPException(status_code=404, detail=f"题目 {question_id} 不存在")
@@ -442,6 +471,9 @@ def question_explanation(
     generated = db.scalars(
         _select(GeneratedExplanation).where(GeneratedExplanation.question_id == question_id)
     ).all()
+    stale_ids = set(db.scalars(_select(ReviewTask.target_id).where(
+        ReviewTask.target_type == "generated_explanation", ReviewTask.reason == "official_source_changed",
+        ReviewTask.status.in_(["open", "in_progress"]))))
     return {
         "question_id": question_id,
         "official": [
@@ -465,6 +497,7 @@ def question_explanation(
                 "marking_points": g.marking_points,
                 "common_errors": g.common_errors,
                 "review_status": g.review_status,
+                "requires_review": g.review_status != "approved" or g.id in stale_ids,
                 "is_official": g.is_official,
             }
             for g in generated
@@ -526,7 +559,18 @@ def asset_file(asset_id: int, db: Session = Depends(get_session)) -> FileRespons
     asset = db.get(Asset, asset_id)
     if asset is None:
         raise HTTPException(status_code=404, detail=f"资产 {asset_id} 不存在")
-    path = get_settings().artifacts_dir / asset.storage_key
-    if not path.exists():
+    from pathlib import PureWindowsPath
+
+    root = get_settings().artifacts_dir.resolve()
+    key = asset.storage_key
+    if not key or "\x00" in key or PureWindowsPath(key).drive or PureWindowsPath(key).root:
+        raise HTTPException(status_code=403, detail="资产路径无效")
+    try:
+        path = (root / key).resolve()
+    except (OSError, ValueError, RuntimeError) as exc:
+        raise HTTPException(status_code=403, detail="资产路径无效") from exc
+    if not path.is_relative_to(root) or path == root:
+        raise HTTPException(status_code=403, detail="资产路径无效")
+    if not path.is_file():
         raise HTTPException(status_code=410, detail="资产文件已丢失")
     return FileResponse(path, media_type=asset.mime or "application/octet-stream")

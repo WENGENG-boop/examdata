@@ -1,0 +1,53 @@
+{
+  "proposal_version": "b07r2-rollback-proposal/1",
+  "packet": "B07R2",
+  "run_id": "b07-reviewfix-20261007-774e4dad",
+  "generated_by": "private review-fix freeze step; values transcribed from the candidate manifest and evidence/step6_*",
+  "generated_at_utc": "2026-10-07T04:49:20+00:00",
+  "status": "proposal_only_not_executed",
+  "purpose": "reverse exactly the review-fix delta (the three rewritten files and this run's added manifest) if the review-fix is rejected; never removes later unrelated edits",
+  "target_tree": "integration-staging/runtime/b07-reviewfix-20261007-774e4dad/candidates/b07-operations-v2",
+  "preconditions_all_must_hold": {
+    "live_file_sha256_must_equal_recorded": {
+      "src/examdata/integration/operations/published.py": "7fbb4f5dd69d0b94a039e5507f820227701b3cecac8a9190b996ddb7a84468ff",
+      "src/examdata/integration/operations/jobs.py": "3b1935c2bba35af565a4307e26b2c3443268bc677fb88ed6b3aa3f565032e2eb",
+      "src/examdata/integration/operations/checkpoints.py": "2e888c6fb36f9655b37a656c8df805808a507801f1d8e31d36b666ba1dd9d279"
+    },
+    "b07r2_manifest_sha256_must_equal": "920f41c1b98199b087a4a8c7dea918c23d0f8144afdfebb87bfb2b2e9bcec9ce",
+    "on_any_mismatch": "STOP: do not revert anything; a later edit exists. Report which file diverged and leave the tree untouched."
+  },
+  "restore_content_source": {
+    "frozen_parent_candidate": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1",
+    "expected_restored_sha256": {
+      "src/examdata/integration/operations/published.py": "54522b9e669c57b9a21564a98d1075f02664611f310cc72868cab793f82a925a",
+      "src/examdata/integration/operations/jobs.py": "916ae7b195902856de2521661aaae4bf0dcd940592bf19a315536f9134427839",
+      "src/examdata/integration/operations/checkpoints.py": "1f49dde5e36ed3aaa8b82af5b83b6fd72821d67808addc34047b3b4db580805b"
+    }
+  },
+  "steps_when_authorized": [
+    "verify every precondition above one by one",
+    "write the frozen parent bytes over the three files and verify each restored sha256 equals the expected restored value",
+    "delete B07R2_CANDIDATE_MANIFEST.json only if its sha256 still equals 920f41c1b98199b087a4a8c7dea918c23d0f8144afdfebb87bfb2b2e9bcec9ce",
+    "recompute the tree digest: expect the frozen v1 tree including its own manifest, 222 files / 8dad753d0697dc708b54658aa4492e45954200c51a3cebd58c4ef3161dbf80bf",
+    "re-run the 28-test suite against the restored tree; the pre-fix split (20 failed / 8 passed, 1 warning) is the expected outcome and is on record in evidence/step2_frozen_red_run1.log",
+    "record the rollback in a new additive report; never edit this proposal or any previous record in place"
+  ],
+  "never_touch": [
+    "B07_CANDIDATE_MANIFEST.json (the parent's own manifest)",
+    "any file outside the three rewritten files and this run's B07R2 manifest",
+    "any later edit whose sha256 no longer matches the recorded candidate hashes"
+  ],
+  "required_authorizations": {
+    "note": "same gates as the merge proposal; none requested or held by this proposal",
+    "gates": [
+      "original_paths_released",
+      "real_data_write_authorized",
+      "upstream_requests_authorized",
+      "existing_service_cutover_authorized",
+      "remote_deployment_authorized",
+      "original_cleanup_authorized",
+      "cie_resume_authorized"
+    ]
+  },
+  "note": "conditional rollback only; staged as a proposal, nothing was reverted, merged or deployed"
+}

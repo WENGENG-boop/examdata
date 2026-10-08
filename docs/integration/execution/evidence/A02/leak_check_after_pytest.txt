@@ -1,0 +1,29 @@
+# A02 leak check
+generated_at_local: 2026-10-05T18:59:22+0800
+window_start_local: 2026-10-05 18:47:16
+
+## 1. __pycache__ directories created during the run window (protected roots)
+  (count: 0)
+
+## 2. __pycache__ under examdata/src (total, informational; owner is concurrently active)
+  count: 21
+
+## 3. .pytest_cache locations touched during the window
+  (count: 0)
+
+## 4. Files under integration-staging/runtime (inside allowlist)
+total 24
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:58 .
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:59 ..
+-rw-r--r-- 1 weo 197121  745 Oct  5 18:56 README.md
+-rw-r--r-- 1 weo 197121 8024 Oct  5 18:45 a01_preclose_final_checks.txt
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:58 data
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:58 home
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:50 ledger-patches
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:58 pytest-cache
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:59 pytest-temp
+drwxr-xr-x 1 weo 197121    0 Oct  5 18:59 tmp
+
+## 5. Files created anywhere under the workspace in the window, outside the two allowlist roots
+  ./examdata/examples/curl.md
+  (count outside allowlist: 1)

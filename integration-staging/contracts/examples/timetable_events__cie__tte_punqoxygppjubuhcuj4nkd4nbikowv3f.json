@@ -1,0 +1,24 @@
+{
+  "schema": "timetable-event/1",
+  "public_id": "tte_punqoxygppjubuhcuj4nkd4nbikowv3f",
+  "system": "cie",
+  "qualification": null,
+  "zone": null,
+  "course_ref": "course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg",
+  "component": "11",
+  "date": null,
+  "session": "Jun",
+  "timezone": null,
+  "duration_minutes": null,
+  "source": {
+    "source_id": "synthetic-cie",
+    "provider_id": "cie",
+    "locator": {
+      "fixture": "synthetic/cie",
+      "detail": "date_unknown_reason:The synthetic source carries no session date; the model must keep the date unknown rather than guess."
+    },
+    "content_class": "synthetic",
+    "retrieved_at": "2026-10-05T19:20:00+08:00"
+  },
+  "revision": null
+}

@@ -1,0 +1,27 @@
+HTTP/1.1 200 OK
+Content-Type: image/png
+Content-Length: 38451
+Connection: keep-alive
+Date: Sun, 04 Oct 2026 10:23:25 GMT
+Expires: Tue, 06 Oct 2026 00:45:28 GMT
+Last-Modified: Tue, 16 Jun 2026 03:14:54 GMT
+ETag: "4a5642516cf8b805178a2bfffb5bbe2a"
+Cache-Control: max-age=5151510
+Age: 121077
+Accept-Ranges: bytes
+Content-MD5: SlZCUWz4uAUXiiv/+1u+Kg==
+x-bce-content-crc32: 3257620704
+x-bce-content-crc32c: 1551856410
+x-bce-debug-id: +cplpQBqNKzbPyApwZvpI4ERpiNe5fAYNOMCDMKHgAYE9Lvb64R7juPhhbme1/vtitjE2vMugbfQ+POZmGT65w==
+x-bce-expiration-date: 2036-06-14T00:00:00Z
+x-bce-flow-control-type: -1
+x-bce-is-transition: false
+x-bce-request-id: af8c8dff-723b-412f-a961-04c81f71c20a
+x-bce-storage-class: STANDARD
+Ohc-Global-Saved-Time: Sat, 03 Oct 2026 00:45:28 GMT
+Ohc-Cache-HIT: tj6ct74 [4], xiangyix74 [1]
+Ohc-File-Size: 38451
+X-Cache-Status: HIT
+Server: BAIDU_WAF
+BDWAF-Request-ID: 9c701a94-cfcd-4e07-add0-d0e4709f8615
+

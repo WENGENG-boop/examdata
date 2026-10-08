@@ -70,6 +70,7 @@ def find_similar(
     *,
     subject_code: Optional[str] = None,
     replace: bool = False,
+    question_ids: Optional[list[int]] = None,
     min_score: float = MIN_SCORE,
     top_k: int = TOP_K,
 ) -> dict[str, int]:
@@ -80,11 +81,23 @@ def find_similar(
         _stmt(subject_code)
     ).all()
 
+    targets = None if question_ids is None else set(question_ids)
+    if targets == set():
+        return stats
+    if replace:
+        deletion = delete(QuestionSimilarity).where(QuestionSimilarity.method == METHOD)
+        scope = targets if targets is not None else ({row[0].id for row in rows} if subject_code else None)
+        if scope is not None:
+            deletion = deletion.where(QuestionSimilarity.question_a_id.in_(scope) | QuestionSimilarity.question_b_id.in_(scope))
+        session.execute(deletion)
+
     # 1) 归一化 + 建倒排索引
     docs: list[tuple[int, str, Counter]] = []
     meta: dict[int, tuple[int, str]] = {}  # qid -> (paper_id, number_path)
     inverted: dict[str, list[int]] = defaultdict(list)
-    for question, _code in rows:
+    subjects = {}
+    for question, code, board_id, qualification_id in rows:
+        subjects[question.id] = (board_id, qualification_id, code)
         norm = normalize_text(question.stem_text or "")
         meta[question.id] = (question.paper_id, question.number_path or "")
         if len(norm) < MIN_TEXT_CHARS:
@@ -141,6 +154,8 @@ def find_similar(
         if cos < min_score:
             continue
         qa, qb = docs[a][0], docs[b][0]
+        if subjects[qa] != subjects[qb]:
+            continue
         # 父子题（题干包含小问文本）在字面上天然高度重合，但它们是同一道题
         # 的不同层级，不是"相似题"。用同卷内的题号前缀关系剔除。
         if _is_ancestor_pair(meta.get(qa), meta.get(qb)):
@@ -149,17 +164,27 @@ def find_similar(
         per_question[qa].append((cos, qb))
         per_question[qb].append((cos, qa))
 
-    if replace:
-        session.execute(
-            delete(QuestionSimilarity).where(QuestionSimilarity.method == METHOD)
-        )
+    existing_pairs: set[tuple[int, int]] = set()
+    if not replace:
+        # 唯一约束是 (question_a_id, question_b_id, method)：不先查已存在的题对，
+        # 第二次运行会直接撞约束报错。重复运行必须幂等。
+        existing_pairs = {
+            (a, b)
+            for a, b in session.execute(
+                select(
+                    QuestionSimilarity.question_a_id, QuestionSimilarity.question_b_id
+                ).where(QuestionSimilarity.method == METHOD)
+            ).all()
+        }
 
     written_pairs: set[tuple[int, int]] = set()
     for qa, neighbours in per_question.items():
-        neighbours.sort(key=lambda t: -t[0])
+        neighbours.sort(key=lambda t: (-t[0], t[1]))
         for cos, qb in neighbours[:top_k]:
+            if targets is not None and qa not in targets and qb not in targets:
+                continue
             lo, hi = (qa, qb) if qa < qb else (qb, qa)
-            if (lo, hi) in written_pairs:
+            if (lo, hi) in written_pairs or (lo, hi) in existing_pairs:
                 continue
             written_pairs.add((lo, hi))
             session.add(
@@ -219,7 +244,7 @@ def _is_ancestor_pair(
 
 def _stmt(subject_code: Optional[str]):
     stmt = (
-        select(Question, Subject.code)
+        select(Question, Subject.code, Document.board_id, Document.qualification_id)
         .join(Paper, Paper.id == Question.paper_id)
         .join(Document, Document.id == Paper.document_id)
         .join(Subject, Subject.id == Document.subject_id, isouter=True)

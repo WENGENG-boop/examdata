@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-10-05T14:42:25+08:00",
+  "task": "TOEFL API repair 2026-10-05 — cleanup manifest（AGENT_FIX_PROMPT 第 6 节）",
+  "deletions": [
+    {
+      "category": "repair runtime（临时脚本、私有测试 DB、日志、中间产物）",
+      "path": "C:\\Users\\weo\\Desktop\\api\\toefl-api\\repair-20261005\\runtime",
+      "path_resolved_before_delete": "C:\\Users\\weo\\Desktop\\api\\toefl-api\\repair-20261005\\runtime",
+      "files": 48,
+      "size": "3.1M",
+      "method": "PowerShell Remove-Item -LiteralPath '...\\runtime' -Recurse -Force（删除前用 Resolve-Path 核对绝对路径）",
+      "verified_absent_after": true,
+      "notes": "删除前已将需保留的证据复制到 evidence/（http-flow-after.json、reparse-diff.json、pytest-full.log、validate-scan.json、live-samples.json、zero-request.json、redirect-validation.json、cli-matrix-after.txt、cli-info-after.json、final-smoke.json 等）；内容为本次临时 mjs/py 脚本、私有 DB（final-smoke.db*、http-flow-test.db*）、server 日志与修前探针输出"
+    },
+    {
+      "category": "终态冒烟临时目录（清理后复跑用）",
+      "path": "C:\\Users\\weo\\Desktop\\api\\toefl-api\\repair-20261005\\.terminal-smoke",
+      "path_resolved_before_delete": "C:\\Users\\weo\\Desktop\\api\\toefl-api\\repair-20261005\\.terminal-smoke",
+      "files": 5,
+      "size": "520K",
+      "method": "PowerShell Remove-Item -LiteralPath '...\\.terminal-smoke' -Recurse -Force",
+      "verified_absent_after": true,
+      "notes": "含 terminal_smoke.mjs 副本、final-smoke.db*、server-final-smoke.log、examdata-data-smoke/；冒烟结果保存于 evidence/final-smoke-post-cleanup.json 后整目录删除"
+    },
+    {
+      "category": "orphan pyc（本次修改的 toefl.py 编译缓存）",
+      "path": "C:\\Users\\weo\\Desktop\\api\\examdata\\src\\examdata\\api\\__pycache__\\toefl.cpython-314.pyc",
+      "size": 24517,
+      "instances_deleted": [
+        {"mtime": "2026-10-05 13:31:00"},
+        {"mtime": "2026-10-05 14:39:36"}
+      ],
+      "method": "PowerShell Remove-Item -LiteralPath ... -Force（两次）",
+      "verified_absent_after": true,
+      "notes": "可再生编译缓存；14:39:36 实例与终态冒烟服务器（14:39 窗口）及并发会话 examdata pytest（.pytest_cache/v/cache 更新于 14:39、examdata-tests-moll__6r 新建于 14:40）时间重叠，无法唯一归因；如并发会话继续运行可能再生，非本修复交付物"
+    }
+  ],
+  "not_deleted": [
+    {
+      "path": "examdata/.pytest_cache/（整目录）",
+      "deleted_count": 0,
+      "reason": "内含并发其他会话的产物与历史（Cambridge 历史 fixtures/artifacts 2026-09-28/29、edexcel 探测、examdata-tests-* 临时目录、v/cache 于 14:39 被并发会话更新）。本修复的 pytest 以 -p no:cacheprovider 运行，且 conftest.py 对自身 mkdtemp 目录在 atexit 自动清理，未向 .pytest_cache 写入任何文件；为避免触碰并发会话证据，整目录未动。",
+      "recent_files_observed_1440": [
+        "callable-api/examdata.db-shm (13:34)",
+        "examdata-tests-l4lz8b1o/examdata.db (14:15)",
+        "examdata-tests-l4lz8b1o/examdata.db-shm (14:15)",
+        "examdata-tests-l4lz8b1o/examdata.db-wal (14:29)",
+        "v/cache/lastfailed (14:39)",
+        "v/cache/nodeids (14:39)",
+        "examdata-tests-moll__6r/examdata.db (14:40)",
+        "examdata-tests-moll__6r/examdata.db-shm (14:40)",
+        "examdata-tests-moll__6r/examdata.db-wal (14:40)"
+      ]
+    },
+    {
+      "path": "toefl-api/.data/cache/kmf/pages/",
+      "count": 4417,
+      "reason": "业务缓存全量保留；本轮未删除任何缓存键（无经证实无效的条目需清除；测试缓存键仅存在于已删除的 runtime 私有目录）。"
+    },
+    {
+      "path": "toefl-api/audit-20261005/",
+      "files": ["audio-summary.json", "cache-summary.json", "cleanup-manifest.json", "flow-summary.json", "pytest-first-failure.log", "pytest-incomplete.log", "server.log"],
+      "reason": "独立审查证据，未覆盖未删除。"
+    },
+    {
+      "path": "其他模块既有测试与 pyc、正式工具、原始第三方源、data 索引",
+      "reason": "不在允许修改/删除范围，未动。"
+    }
+  ],
+  "remaining_checks": [
+    {"check": "kmf 缓存页数", "expected": 4417, "actual": 4417, "status": "ok"},
+    {"check": "audit-20261005 文件数", "expected": "4 JSON + 3 log", "actual": "4 JSON + 3 log", "status": "ok"},
+    {"check": "非托福控制文件哈希", "expected": "与修前一致", "actual": "0 个 [control] 差异（7 个 [allowed] 差异为本次修复文件）", "evidence": "evidence/hashes-compare-final.txt", "status": "ok"},
+    {"check": "端口 8125", "expected": "无监听", "actual": "无 LISTENING（终态冒烟后复核）", "status": "ok"},
+    {"check": "终态冒烟（清理后）", "expected": "四项 + get 补证全通过", "actual": "5/5 PASS, EXIT=0, port 8125, server pid=66336 SIGTERM 终止", "evidence": "evidence/final-smoke-post-cleanup.json", "status": "ok"},
+    {"check": "repair-20261005 目录终态", "expected": "无 runtime/.terminal-smoke", "actual": "PLAN.md、REPAIR_REPORT.md、backup/、evidence/(24)、hash_files.py、hashes-before.json、cleanup-manifest.json、evidence-summary.json", "status": "ok"}
+  ]
+}

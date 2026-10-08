@@ -1,0 +1,107 @@
+{
+  "current_cell": null,
+  "stage": "downloading",
+  "last_progress_at": "2026-10-06T21:36:50+0800",
+  "updated_at": "2026-10-06T21:38:29+0800",
+  "stop_lifted": {
+    "reason": "catalogue_incomplete",
+    "by": "classification_correction",
+    "at": "2026-10-01T11:59:54+0800",
+    "note": "仅解除分类器缺陷造成的停止；HTTP 错误停止规则未放宽"
+  },
+  "current_subject": "9990",
+  "last_subject": "9990",
+  "totals": {
+    "requests": 3807,
+    "cells_done": 3483,
+    "business_rejected": 324,
+    "inferred_cells": 12798,
+    "failed_cells": 0,
+    "unqueried_cells": 0,
+    "expected_cells": 16605,
+    "papers": 13877,
+    "complete": true
+  },
+  "scanner_pid": 44280,
+  "scanner_stdout": "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\work\\logs\\scan-2026-10-01T125832+0800.out.log",
+  "scanner_stderr": "C:\\Users\\weo\\Desktop\\api\\cie-location-batch\\work\\logs\\scan-2026-10-01T125832+0800.err.log",
+  "progress": {
+    "requests": 1187,
+    "cells_done": 3360,
+    "papers": 13612
+  },
+  "last_fetch": "8238/2024/Nov/23",
+  "last_fetch_at": "2026-10-06T21:37:17+0800",
+  "last_propose": "8238/2024/Nov/23",
+  "last_propose_at": "2026-10-06T21:38:29+0800",
+  "last_cleanup": "9715/2023/Nov/21",
+  "last_cleanup_at": "2026-10-06T21:22:37+0800",
+  "last_queue_at": "2026-10-01T16:36:58+0800",
+  "last_queue_size": 14,
+  "current_paper": "8238/2024/Nov/23",
+  "last_import": "9715/2023/Nov/21",
+  "last_import_at": "2026-10-06T21:22:03+0800",
+  "loop_stage": "stopped",
+  "loop_started_at": "2026-10-01T21:57:14+0800",
+  "loop_limit": 40,
+  "loop_done": 39,
+  "loop_attempted": 40,
+  "loop_stages": {
+    "cleaned": 19,
+    "validation_partial": 19,
+    "download_failed": 1,
+    "download_interrupted": 1
+  },
+  "stop_reason": "download_error",
+  "stop_detail": {
+    "paper": "8238/2025/Jun/32",
+    "role": "qp",
+    "error": "HTTP 502",
+    "error_class": "http_502"
+  },
+  "stopped_at": "2026-10-05T16:30:15+0800",
+  "needs_user_resume": false,
+  "resume_policy": "联网重试需用户明确允许续跑；已下载原件的本地阶段不受影响",
+  "network_resume_previous": {
+    "kind": "user_authorized_network_resume",
+    "at": "2026-10-05T12:30:03+0800",
+    "source": "用户 2026-10-05 授权按 KIMI_502_RECOVERY_PLAN 执行恢复：离线诊断发现并修复本地问题（httpx 默认 trust_env 经系统代理 127.0.0.1:7897 拦截 loopback 请求导致空正文 502；已改 tools/fetch_paper.py trust_env=False，离线回归 5/5 通过），现执行一次原卷 0472/2026/Jun/41 联网续作（不换卷、不换来源、不无限重试）；成功后继续 Phase B 43+1 卷重验与 Phase C",
+    "previous_stop": {
+      "current_paper": "0472/2026/Jun/41",
+      "stage": "stopped",
+      "stop_reason": "download_error",
+      "stopped_at": "2026-10-05T09:43:40+0800",
+      "stop_detail": {
+        "paper": "0472/2026/Jun/41",
+        "role": "qp",
+        "error": "HTTP 502",
+        "error_class": null
+      }
+    }
+  },
+  "network_resume": {
+    "kind": "user_authorized_network_resume",
+    "at": "2026-10-06T08:06:27+0800",
+    "source": "用户 2026-10-06 会话消息「允许联网授权，使用右侧浏览器。」——明确授权联网续跑；同会话浏览器实测 https://cie.fraft.cn 首页完整可达；恢复点为停机卷 8238/2025/Jun/32（2026-10-05 QP HTTP 502 停机）",
+    "previous_stop": {
+      "current_paper": "8238/2025/Jun/32",
+      "stage": "stopped",
+      "stop_reason": "download_error",
+      "stopped_at": "2026-10-05T16:30:15+0800",
+      "stop_detail": {
+        "paper": "8238/2025/Jun/32",
+        "role": "qp",
+        "error": "HTTP 502",
+        "error_class": "http_502"
+      }
+    }
+  },
+  "stop_diagnosis": {
+    "paper": "8238/2025/Jun/32",
+    "cause": "user_proxy_node_failure",
+    "node": "b.19790526.xyz / 104.223.57.12",
+    "evidence_log": "mihomo logs/service/service_latest.log 16:29:46–16:30:07（节点级）",
+    "recorded_in": "errors.jsonl:offline_diagnosis",
+    "resume_note": "节点恢复后需用户明确允许才可联网重试；本地处理不受影响"
+  }
+}

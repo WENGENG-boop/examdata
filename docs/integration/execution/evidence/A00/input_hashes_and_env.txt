@@ -1,0 +1,47 @@
+A00 evidence — input hashes, toolchain, and point-in-time original-tree observations
+Purpose: freeze the hashes of the read-only governing inputs before any Phase A write, and record
+the environment conventions used by every later command.
+
+--- command (verbatim) ---
+echo '--- input hashes (read-only plan inputs) ---'
+sha256sum docs/integration/EXECUTOR_PROMPT_EN.md docs/integration/MASTER_EXECUTION_PLAN_EN.md docs/integration/ROUTE_INVENTORY_CURRENT.json docs/PROJECT_STATUS.md
+echo '--- toolchain ---'
+python --version 2>&1
+./examdata/.venv/Scripts/python.exe --version 2>&1
+node --version 2>&1
+git --version 2>&1
+echo '--- examdata git baseline (point-in-time observation only) ---'
+GIT_OPTIONAL_LOCKS=0 git -C examdata log -1 --format='%H | %ad | %s' --date=iso
+echo -n 'tracked-modified count: '; GIT_OPTIONAL_LOCKS=0 git -C examdata status --porcelain=v1 --untracked-files=no | wc -l
+echo -n 'all-entries count: '; GIT_OPTIONAL_LOCKS=0 git -C examdata status --porcelain=v1 --untracked-files=normal | wc -l
+echo '--- workspace root git check ---'
+git rev-parse --show-toplevel 2>&1 || true
+
+--- output (verbatim) ---
+--- input hashes (read-only plan inputs) ---
+ee1ab92bc154cf63f59e588de138dce605189e6d6554c9deb29c1203c4b9953c *docs/integration/EXECUTOR_PROMPT_EN.md
+a81355545c4d4a4e6d3202767042685d1168456d9d8552d6c817602fcb19699b *docs/integration/MASTER_EXECUTION_PLAN_EN.md
+946d3e90cbccd54dc9ac9005f36f8f940b6b7d2fe1a5ae515b119d3c00e55baf *docs/integration/ROUTE_INVENTORY_CURRENT.json
+808eee86b2c1bbe1cdaefb3ea5e3801bd092b5e826c8e22f4fba13e3d063dcb9 *docs/PROJECT_STATUS.md
+--- toolchain ---
+Python 3.14.7
+Python 3.14.7
+v24.19.0
+git version 2.55.0.windows.3
+--- examdata git baseline (point-in-time observation only) ---
+8da3a0917e017a6cbf5d3e58e1fbeb9d0b0b83c8 | 2026-10-05 15:05:10 +0800 | feat: 托福 API 接入 /api/v1/toefl 与 TOEFL_API.md（含 URL 严格校验、听力表格题、era/套次身份修复）
+tracked-modified count: 48
+all-entries count: 1266
+--- workspace root git check ---
+fatal: not a git repository (or any of the parent directories): .git
+
+--- notes ---
+- The four hashes are the governing input fingerprints used by the ledger (task A00 input_hashes).
+- Both `python` and `examdata/.venv/Scripts/python.exe` report Python 3.14.7; staged commands use
+  the venv path but never install into it.
+- Environment conventions for every command: PYTHONDONTWRITEBYTECODE=1, PYTHONIOENCODING=utf-8,
+  GIT_OPTIONAL_LOCKS=0 (exported by integration-staging/tools/_env.sh).
+- The git baseline is a point-in-time observation only (plan §0.9). The owner is active, so these
+  counts may legitimately drift; they are not integrity assertions about the executor's behavior.
+  A01 will re-observe with a recorded observation time.
+- The workspace root C:/Users/weo/Desktop/api is not a git repository; only examdata/ is.

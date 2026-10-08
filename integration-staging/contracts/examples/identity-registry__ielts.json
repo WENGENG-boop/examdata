@@ -1,0 +1,446 @@
+{
+  "schema": "identity-registry/1",
+  "records": [
+    {
+      "public_id": "ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh",
+      "kind": "answer",
+      "canonical_identity": "\u001fanswer\u001esystem=IELTS\u001equestion_native_id=Q2\u001esource=SYNTHETIC-IELTS\u001enative_answer_key=primary",
+      "identity_fields": {
+        "system": "ielts",
+        "question_native_id": "Q2",
+        "source": "synthetic-ielts",
+        "native_answer_key": "primary"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "question_native_id": "Q2",
+        "native_answer_key": "primary"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke",
+      "kind": "answer",
+      "canonical_identity": "\u001fanswer\u001esystem=IELTS\u001equestion_native_id=Q5\u001esource=SYNTHETIC-IELTS\u001enative_answer_key=primary",
+      "identity_fields": {
+        "system": "ielts",
+        "question_native_id": "Q5",
+        "source": "synthetic-ielts",
+        "native_answer_key": "primary"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "question_native_id": "Q5",
+        "native_answer_key": "primary"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb",
+      "kind": "answer",
+      "canonical_identity": "\u001fanswer\u001esystem=IELTS\u001equestion_native_id=Q1\u001esource=SYNTHETIC-IELTS\u001enative_answer_key=primary",
+      "identity_fields": {
+        "system": "ielts",
+        "question_native_id": "Q1",
+        "source": "synthetic-ielts",
+        "native_answer_key": "primary"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "question_native_id": "Q1",
+        "native_answer_key": "primary"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo",
+      "kind": "answer",
+      "canonical_identity": "\u001fanswer\u001esystem=IELTS\u001equestion_native_id=Q3\u001esource=SYNTHETIC-IELTS\u001enative_answer_key=parent",
+      "identity_fields": {
+        "system": "ielts",
+        "question_native_id": "Q3",
+        "source": "synthetic-ielts",
+        "native_answer_key": "parent"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "question_native_id": "Q3",
+        "native_answer_key": "parent"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc",
+      "kind": "answer",
+      "canonical_identity": "\u001fanswer\u001esystem=IELTS\u001equestion_native_id=Q4\u001esource=SYNTHETIC-IELTS\u001enative_answer_key=primary",
+      "identity_fields": {
+        "system": "ielts",
+        "question_native_id": "Q4",
+        "source": "synthetic-ielts",
+        "native_answer_key": "primary"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "question_native_id": "Q4",
+        "native_answer_key": "primary"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m",
+      "kind": "asset",
+      "canonical_identity": "\u001fasset\u001esystem=IELTS\u001emedia_type=\u0000\u001esha256=1111111111111111111111111111111111111111111111111111111111111111\u001estorage_mode=\u0000",
+      "identity_fields": {
+        "system": "ielts",
+        "media_type": null,
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "storage_mode": null
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "role": "question_paper",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+      "kind": "container",
+      "canonical_identity": "\u001fcontainer\u001esystem=IELTS\u001ekind=BOOK\u001enative_identity={\"native_id\":\"synthetic-book-1\"}",
+      "identity_fields": {
+        "system": "ielts",
+        "kind": "book",
+        "native_identity": {
+          "native_id": "synthetic-book-1"
+        }
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "kind": "book",
+        "native_id": "synthetic-book-1"
+      },
+      "aliases": [
+        "SB1",
+        "synthetic/cambridge-1"
+      ],
+      "content_revision": "rev-synthetic-0001"
+    },
+    {
+      "public_id": "es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4",
+      "kind": "examination_system",
+      "canonical_identity": "\u001fexamination_system\u001esystem=IELTS",
+      "identity_fields": {
+        "system": "ielts"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "native_id": "ielts"
+      },
+      "aliases": [
+        "IELTS",
+        "International English Language Testing System"
+      ],
+      "content_revision": null
+    },
+    {
+      "public_id": "job_6zcvxittpvvbnvtpqttigpsmos2i5zmn",
+      "kind": "job_status",
+      "canonical_identity": "\u001fjob_status\u001escope=synthetic-ielts-book-1\u001einput_revision=rev-synthetic-0001",
+      "identity_fields": {
+        "scope": "synthetic-ielts-book-1",
+        "input_revision": "rev-synthetic-0001"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "native_id": "synthetic-job-1"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "mat_mmfjianasbw6qrncjkldxnfuavnls3ou",
+      "kind": "material",
+      "canonical_identity": "\u001fmaterial\u001esystem=IELTS\u001ekind=AUDIO\u001enative_id=synthetic-audio-1\u001eapplicability=UNKNOWN",
+      "identity_fields": {
+        "system": "ielts",
+        "kind": "audio",
+        "native_id": "synthetic-audio-1",
+        "applicability": "unknown"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "native_id": "synthetic-audio-1"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q3.ii\u001enumber_path=[\"Q3\",\"Q3.ii\"]\u001eparent_native_id=Q3",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q3.ii",
+        "number_path": [
+          "Q3",
+          "Q3.ii"
+        ],
+        "parent_native_id": "Q3"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q3.ii"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q3\u001enumber_path=[\"Q3\"]\u001eparent_native_id=Q3",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q3",
+        "number_path": [
+          "Q3"
+        ],
+        "parent_native_id": "Q3"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q3"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q3.i\u001enumber_path=[\"Q3\",\"Q3.i\"]\u001eparent_native_id=Q3",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q3.i",
+        "number_path": [
+          "Q3",
+          "Q3.i"
+        ],
+        "parent_native_id": "Q3"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q3.i"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q5\u001enumber_path=[\"Q5\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q5",
+        "number_path": [
+          "Q5"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q5"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_rtf7wrlwtotph3p45wx5wlfpfuo32iku",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q41\u001enumber_path=[\"Q41\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q41",
+        "number_path": [
+          "Q41"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q41"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q4\u001enumber_path=[\"Q4\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q4",
+        "number_path": [
+          "Q4"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q4"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_ymm437ermxommfdifgexf7eq6dm6kdxc",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q2\u001enumber_path=[\"Q2\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q2",
+        "number_path": [
+          "Q2"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q2"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf",
+      "kind": "question",
+      "canonical_identity": "\u001fquestion\u001esystem=IELTS\u001econtainer_native_identity={\"native_id\":\"synthetic-book-1\"}\u001enative_id=Q1\u001enumber_path=[\"Q1\"]\u001eparent_native_id=\u0000",
+      "identity_fields": {
+        "system": "ielts",
+        "container_native_identity": {
+          "native_id": "synthetic-book-1"
+        },
+        "native_id": "Q1",
+        "number_path": [
+          "Q1"
+        ],
+        "parent_native_id": null
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "container_native_id": "synthetic-book-1",
+        "native_id": "Q1"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "region_fn2r2ikszwe234bmma3a5zorsr7snsk3",
+      "kind": "region",
+      "canonical_identity": "\u001fregion\u001esystem=IELTS\u001edocument_role=QUESTION_PAPER\u001edocument_sha256=1111111111111111111111111111111111111111111111111111111111111111\u001epage=1\u001ebbox=[0.0,0.0,100.0,50.0]\u001ecoordinate_system=UNROTATED_PDF_POINTS_TOP_LEFT",
+      "identity_fields": {
+        "system": "ielts",
+        "document_role": "question_paper",
+        "document_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "page": 1,
+        "bbox": [
+          0.0,
+          0.0,
+          100.0,
+          50.0
+        ],
+        "coordinate_system": "unrotated_pdf_points_top_left"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "native_id": "synthetic-region-1"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "syl_6ytdfhso2hvo47geydgicjiuyilumcei",
+      "kind": "syllabus",
+      "canonical_identity": "\u001fsyllabus\u001esystem=IELTS\u001ecourse_native_code=synthetic-book-1\u001eversion=rev-synthetic-0001",
+      "identity_fields": {
+        "system": "ielts",
+        "course_native_code": "synthetic-book-1",
+        "version": "rev-synthetic-0001"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "native_id": "synthetic-book-1"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "tag_fz2cdf3lly5r3uybtl2vmbubioquwymu",
+      "kind": "tag",
+      "canonical_identity": "\u001ftag\u001escheme=SYNTHETIC-SCHEME\u001eversion=1\u001ecode=SYN-1",
+      "identity_fields": {
+        "scheme": "synthetic-scheme",
+        "version": "1",
+        "code": "SYN-1"
+      },
+      "native_locator": {
+        "provider": "ielts",
+        "native_id": "SYN-1"
+      },
+      "aliases": [],
+      "content_revision": null
+    },
+    {
+      "public_id": "ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv",
+      "kind": "timetable_window",
+      "canonical_identity": "\u001ftimetable_window\u001esystem=CIE\u001equalification=\u0000\u001ezone=\u0000\u001eoriginal_text=Synthetic window text\u001esource=SYNTHETIC-CIE",
+      "identity_fields": {
+        "system": "cie",
+        "qualification": null,
+        "zone": null,
+        "original_text": "Synthetic window text",
+        "source": "synthetic-cie"
+      },
+      "native_locator": {
+        "provider": "cie",
+        "native_id": "synthetic-window-1"
+      },
+      "aliases": [],
+      "content_revision": null
+    }
+  ],
+  "collision_events": [],
+  "alias_events": []
+}

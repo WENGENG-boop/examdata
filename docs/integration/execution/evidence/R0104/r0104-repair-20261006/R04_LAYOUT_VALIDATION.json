@@ -1,0 +1,72 @@
+{
+  "schema": "examdata.integration.r04_layout_validation/1",
+  "run_id": "r0104-repair-20261006",
+  "finding": "R04",
+  "probes": [
+    {
+      "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\r04-target-layout-v2",
+      "script": "r04_import_probe.py",
+      "exit_code": 0,
+      "counts": {
+        "walked": 62,
+        "entry_points": 9,
+        "errors": 0,
+        "outside_candidate": 0
+      },
+      "ok": true
+    },
+    {
+      "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\r04-target-layout-v2",
+      "script": "r04_resource_probe.py",
+      "exit_code": 0,
+      "counts": {
+        "entry_points_ok": 9,
+        "schema_files": 28,
+        "schema_loaded_ok": 28,
+        "node_components_admitted": 1,
+        "checks": 26,
+        "checks_failed": 0
+      },
+      "ok": true
+    },
+    {
+      "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode",
+      "script": "r04_import_probe.py",
+      "exit_code": 0,
+      "counts": {
+        "walked": 62,
+        "entry_points": 9,
+        "errors": 0,
+        "outside_candidate": 0
+      },
+      "ok": true
+    },
+    {
+      "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\r0104-repair-20261006\\candidates\\R04 目标 layout ünïcode",
+      "script": "r04_resource_probe.py",
+      "exit_code": 0,
+      "counts": {
+        "entry_points_ok": 9,
+        "schema_files": 28,
+        "schema_loaded_ok": 28,
+        "node_components_admitted": 1,
+        "checks": 26,
+        "checks_failed": 0
+      },
+      "ok": true
+    }
+  ],
+  "findings": [],
+  "not_run": [
+    {
+      "check": "real Node component execution",
+      "reason": "gate original_paths_released is closed; synthetic fixture only"
+    },
+    {
+      "check": "real original source / database validation",
+      "reason": "gate original_paths_released is closed; no original path is read"
+    }
+  ],
+  "verdict": "target_layout_valid_private_only",
+  "note": "private candidate only; not merged, not deployed; the original tree was neither imported nor written; frozen evidence under evidence/B01/** and runtime/phase-b/** was not touched"
+}

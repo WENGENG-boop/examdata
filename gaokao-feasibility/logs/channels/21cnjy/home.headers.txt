@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Set-Cookie: acw_tc=65e3059817911079943957254e3e16099d755b506019e1c01c8176c237;path=/;HttpOnly;Max-Age=3600
+Set-Cookie: cdn_sec_tc=65e3059817911079943957254e3e16099d755b506019e1c01c8176c237;path=/;HttpOnly;Max-Age=3600
+Date: Sun, 04 Oct 2026 09:59:54 GMT
+Vary: Accept-Encoding
+Set-Cookie: act_pop_cnt_201=%7B%22first%22%3A1791107994%2C%22date%22%3A%221791043200%22%2C%22c%22%3A1%2C%22t%22%3A1%2C%22pages%22%3A%7B%222026-10-04%22%3A%7B%221%22%3A1%7D%7D%7D; expires=Fri, 02-Apr-2027 09:59:54 GMT; Max-Age=15552000; path=/; domain=.21cnjy.com
+Set-Cookie: bookdate=bookdate; expires=Sun, 04-Oct-2026 16:00:00 GMT; Max-Age=21606
+Set-Cookie: client_ip_district=ed96d0e12224fd6b344ef28b076e9ff8342f9cc31465983166d87c8308c0ca68a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22client_ip_district%22%3Bi%3A1%3Ba%3A3%3A%7Bs%3A2%3A%22ip%22%3Bs%3A12%3A%22114.92.84.81%22%3Bs%3A10%3A%22provinceid%22%3Bs%3A1%3A%229%22%3Bs%3A6%3A%22cityid%22%3Bs%3A1%3A%229%22%3B%7D%7D; expires=Mon, 05-Oct-2026 09:59:54 GMT; Max-Age=86400; path=/; domain=.21cnjy.com; HttpOnly
+Set-Cookie: _csrf-frontend=f4d38c30423173218d1c79a9ecbe0b7128ac0429bc598dc35ba4ab1b16c23e0da%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22oGqs32XmoI0PmOdDr7U1zWlBz2PG00os%22%3B%7D; path=/; HttpOnly
+s: 163
+X-Request-Id: 5ba9e3a4-a1d3-4949-ba23-bd87d65133ed
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: ens-cache39.l2eo166-18[596,0], kunlun4.cn9542[600,0]
+Timing-Allow-Origin: *
+EagleId: 65e3059817911079943957254e
+

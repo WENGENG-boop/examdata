@@ -1,0 +1,1286 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "key": "book3:da273b47:70512fbe",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T20:47:32.803Z",
+      "book": "book3",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_3.pdf",
+        "sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      },
+      "pages": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        155,
+        157,
+        159
+      ],
+      "returned_pages": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        155,
+        157,
+        159
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book3/da273b47/extract-70512fbe.json",
+        "raw_sha256": "88120d4bde5e14dae8873d88f2facc9fc04af26292f98b8854f9acdd2ec659ae",
+        "raw_body": "raw/pdf-extract/88120d4bde5e14dae8873d88f2facc9fc04af26292f98b8854f9acdd2ec659ae.body"
+      },
+      "ocr": {
+        "path": "C:\\Users\\weo\\Desktop\\api\\ielts-data\\runs\\20261003T140007Z-repair\\derived\\ocr\\book3-listening-ocr.json",
+        "raw_sha256": "f9706f55751671f316c97ad341813bbb47a1d14504d2e5c366fcfa8843acf1c8",
+        "raw_body": "raw/pdf-ocr/f9706f55751671f316c97ad341813bbb47a1d14504d2e5c366fcfa8843acf1c8.body"
+      },
+      "assets": [
+        {
+          "name": "book3-p0035-fig1.png",
+          "sha256": "a4575386bcb83c9452c17ee0ee63e0d7e62155f6d701f4f922bacb0b1d40287b",
+          "stored": "assets/a4575386bcb83c9452c17ee0ee63e0d7e62155f6d701f4f922bacb0b1d40287b.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0035-fig1.png"
+        },
+        {
+          "name": "book3-p0037-fig1.png",
+          "sha256": "e2623ee34e7d0e7afbd16e74d89855ad4e13ef6a4905015159d6d170db5ff447",
+          "stored": "assets/e2623ee34e7d0e7afbd16e74d89855ad4e13ef6a4905015159d6d170db5ff447.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0037-fig1.png"
+        },
+        {
+          "name": "book3-p0039-fig1.png",
+          "sha256": "3faa2cab807b8667133c04f333312fc06423f1d1bcd1d8972d479857098d1c0d",
+          "stored": "assets/3faa2cab807b8667133c04f333312fc06423f1d1bcd1d8972d479857098d1c0d.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0039-fig1.png"
+        },
+        {
+          "name": "book3-p0040-fig1.png",
+          "sha256": "5fa93dd2559c364433404fe43aab892f08f8016fba9617a320ac157254cfadf0",
+          "stored": "assets/5fa93dd2559c364433404fe43aab892f08f8016fba9617a320ac157254cfadf0.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0040-fig1.png"
+        },
+        {
+          "name": "book3-p0040-fig2.png",
+          "sha256": "f61a21d3652bef0067388bd855476a132c03a08353c7bc71cc78104fab20b602",
+          "stored": "assets/f61a21d3652bef0067388bd855476a132c03a08353c7bc71cc78104fab20b602.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0040-fig2.png"
+        },
+        {
+          "name": "book3-p0040-fig3.png",
+          "sha256": "afcf6bce118b8a648882e172db7d2eae600e6342d1a07af184884bc0207f25d0",
+          "stored": "assets/afcf6bce118b8a648882e172db7d2eae600e6342d1a07af184884bc0207f25d0.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0040-fig3.png"
+        },
+        {
+          "name": "book3-p0041-fig1.png",
+          "sha256": "becea32f35b9b3792bfb6c023d8a53292fb0127f0d0659e0e88dc05876b5a921",
+          "stored": "assets/becea32f35b9b3792bfb6c023d8a53292fb0127f0d0659e0e88dc05876b5a921.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0041-fig1.png"
+        },
+        {
+          "name": "book3-p0041-fig2.png",
+          "sha256": "2dbc2cf628352181aba7349acc5a69e04e796a894947a7dba57b2c4203670c66",
+          "stored": "assets/2dbc2cf628352181aba7349acc5a69e04e796a894947a7dba57b2c4203670c66.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0041-fig2.png"
+        },
+        {
+          "name": "book3-p0058-fig1.png",
+          "sha256": "2948120e3cb06570129bff09cd7c5ed4c42a0bc757ef49b9adc20786c0995446",
+          "stored": "assets/2948120e3cb06570129bff09cd7c5ed4c42a0bc757ef49b9adc20786c0995446.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0058-fig1.png"
+        },
+        {
+          "name": "book3-p0060-fig1.png",
+          "sha256": "f083871afe86afbfe5a790c340367aa6e51d22fbb8abf2e2e65b5e5b19f8d3bc",
+          "stored": "assets/f083871afe86afbfe5a790c340367aa6e51d22fbb8abf2e2e65b5e5b19f8d3bc.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0060-fig1.png"
+        },
+        {
+          "name": "book3-p0061-fig1.png",
+          "sha256": "965ce0d16b108ace88d00e0ff59226c4f2d52f03eb7a2b525e2bef22aa15fd6d",
+          "stored": "assets/965ce0d16b108ace88d00e0ff59226c4f2d52f03eb7a2b525e2bef22aa15fd6d.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0061-fig1.png"
+        },
+        {
+          "name": "book3-p0062-fig1.png",
+          "sha256": "add1c2240809de0efb68411f2fd5e08e3776d7be938156b76c3be543f0707135",
+          "stored": "assets/add1c2240809de0efb68411f2fd5e08e3776d7be938156b76c3be543f0707135.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0062-fig1.png"
+        },
+        {
+          "name": "book3-p0080-fig1.png",
+          "sha256": "6661633da3a9663dd6c2d692b51f28928b964906ec6f6fb4ddbdcdf0351d5f9c",
+          "stored": "assets/6661633da3a9663dd6c2d692b51f28928b964906ec6f6fb4ddbdcdf0351d5f9c.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0080-fig1.png"
+        },
+        {
+          "name": "book3-p0080-fig2.png",
+          "sha256": "b559f3f7680dc62e88d64ec70a8565ced6e244754b99234224c74cf6232ae9f5",
+          "stored": "assets/b559f3f7680dc62e88d64ec70a8565ced6e244754b99234224c74cf6232ae9f5.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0080-fig2.png"
+        },
+        {
+          "name": "book3-p0083-fig1.png",
+          "sha256": "1703b8505747e86222e32e03e1edf6c7ec7191073f3d259c90ac30a7569d3ece",
+          "stored": "assets/1703b8505747e86222e32e03e1edf6c7ec7191073f3d259c90ac30a7569d3ece.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0083-fig1.png"
+        },
+        {
+          "name": "book3-p0084-fig1.png",
+          "sha256": "7d6960b9fb7e56ef5878dea5b7cdda05c4853475dcee05adeea1f5204d8c5289",
+          "stored": "assets/7d6960b9fb7e56ef5878dea5b7cdda05c4853475dcee05adeea1f5204d8c5289.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0084-fig1.png"
+        },
+        {
+          "name": "book3-p0086-fig1.png",
+          "sha256": "8f244234b48839052c63ee4b6a5e95ab5f88fdbe1aad9af11cc20047313f5880",
+          "stored": "assets/8f244234b48839052c63ee4b6a5e95ab5f88fdbe1aad9af11cc20047313f5880.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0086-fig1.png"
+        },
+        {
+          "name": "book3-p0086-fig2.png",
+          "sha256": "701da07747cc7cda92e78806304d406b0454c6403f7921315f8b21528ff93c15",
+          "stored": "assets/701da07747cc7cda92e78806304d406b0454c6403f7921315f8b21528ff93c15.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0086-fig2.png"
+        },
+        {
+          "name": "book3-p0087-fig1.png",
+          "sha256": "af080a9e51411a320a833715654f016a48d2f7dee97133b8c33b36da952db0b2",
+          "stored": "assets/af080a9e51411a320a833715654f016a48d2f7dee97133b8c33b36da952db0b2.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0087-fig1.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book3:da273b47:3f6dbb00",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T20:47:34.955Z",
+      "book": "book3",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_3.pdf",
+        "sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      },
+      "pages": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        153,
+        154,
+        156,
+        158,
+        160,
+        161,
+        162
+      ],
+      "returned_pages": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        153,
+        154,
+        156,
+        158,
+        160,
+        161,
+        162
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book3/da273b47/extract-3f6dbb00.json",
+        "raw_sha256": "055a11759267f328f5dd95347c75599cb148991f8560ec596844e4b5b24dba49",
+        "raw_body": "raw/pdf-extract/055a11759267f328f5dd95347c75599cb148991f8560ec596844e4b5b24dba49.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book3-p0042-fig1.png",
+          "sha256": "44e03317c599c7c2293e293d7e87cddbbd05b78f7084b5f95c64be56c9764b91",
+          "stored": "assets/44e03317c599c7c2293e293d7e87cddbbd05b78f7084b5f95c64be56c9764b91.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0042-fig1.png"
+        },
+        {
+          "name": "book3-p0042-fig2.png",
+          "sha256": "8a6af23ee8f0a9293ad624b751f740b42c02bf99f81359c56a19e1ca9988bcf3",
+          "stored": "assets/8a6af23ee8f0a9293ad624b751f740b42c02bf99f81359c56a19e1ca9988bcf3.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0042-fig2.png"
+        },
+        {
+          "name": "book3-p0044-fig1.png",
+          "sha256": "779621f9b359532352fa3c6ad8bd03a52204e6b77d96a760e360445ebd47bee6",
+          "stored": "assets/779621f9b359532352fa3c6ad8bd03a52204e6b77d96a760e360445ebd47bee6.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0044-fig1.png"
+        },
+        {
+          "name": "book3-p0045-fig1.png",
+          "sha256": "598b0cc0be5b84129f58b179ac79a858bf9e13037743d472e5fa2fd8a5aa67e2",
+          "stored": "assets/598b0cc0be5b84129f58b179ac79a858bf9e13037743d472e5fa2fd8a5aa67e2.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0045-fig1.png"
+        },
+        {
+          "name": "book3-p0046-fig1.png",
+          "sha256": "793a6a4f0e220ba9e43cd4042aab041ff3ae3c15caf15c5630387a0ba42fa66b",
+          "stored": "assets/793a6a4f0e220ba9e43cd4042aab041ff3ae3c15caf15c5630387a0ba42fa66b.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0046-fig1.png"
+        },
+        {
+          "name": "book3-p0047-fig1.png",
+          "sha256": "2512e6656c5905d1f466917bc37181cff227fb9a16834b4ee0cced97bb337e90",
+          "stored": "assets/2512e6656c5905d1f466917bc37181cff227fb9a16834b4ee0cced97bb337e90.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0047-fig1.png"
+        },
+        {
+          "name": "book3-p0048-fig1.png",
+          "sha256": "34ff4e7aed3cf15d75151c6313e1fcb10a24a03c04cc9ea731fdc46c4b2aa800",
+          "stored": "assets/34ff4e7aed3cf15d75151c6313e1fcb10a24a03c04cc9ea731fdc46c4b2aa800.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0048-fig1.png"
+        },
+        {
+          "name": "book3-p0051-fig1.png",
+          "sha256": "f6868966ce00479b80770bca41bce99e30c25eb53809e6abcae329398fec7910",
+          "stored": "assets/f6868966ce00479b80770bca41bce99e30c25eb53809e6abcae329398fec7910.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0051-fig1.png"
+        },
+        {
+          "name": "book3-p0051-fig2.png",
+          "sha256": "d92ead42bca5155249ef658529664a8b274b07a410dcd89835d4e4b43274a835",
+          "stored": "assets/d92ead42bca5155249ef658529664a8b274b07a410dcd89835d4e4b43274a835.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0051-fig2.png"
+        },
+        {
+          "name": "book3-p0055-fig1.png",
+          "sha256": "b16651e89f6206ee59be2eb216c92fe9832f208f6bf679a7424d64abfa7faf80",
+          "stored": "assets/b16651e89f6206ee59be2eb216c92fe9832f208f6bf679a7424d64abfa7faf80.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0055-fig1.png"
+        },
+        {
+          "name": "book3-p0064-fig1.png",
+          "sha256": "e4346d0841714d954fff0aa3c70df0893c2a0249f9c1728ff819223de105c495",
+          "stored": "assets/e4346d0841714d954fff0aa3c70df0893c2a0249f9c1728ff819223de105c495.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0064-fig1.png"
+        },
+        {
+          "name": "book3-p0064-fig2.png",
+          "sha256": "323a4b7a760f478507fdfb29d05816f7762880551284193a2e45e9eda3546665",
+          "stored": "assets/323a4b7a760f478507fdfb29d05816f7762880551284193a2e45e9eda3546665.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0064-fig2.png"
+        },
+        {
+          "name": "book3-p0066-fig1.png",
+          "sha256": "fa804f6b70c68cb712201f1dc3d7f599dcdeccb3eeab96efdf5b2b79566d2df8",
+          "stored": "assets/fa804f6b70c68cb712201f1dc3d7f599dcdeccb3eeab96efdf5b2b79566d2df8.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0066-fig1.png"
+        },
+        {
+          "name": "book3-p0067-fig1.png",
+          "sha256": "64ae477049b0dfd35612556de6005d0a04f050aeb2f3301dba2b0eba8cf2ac1c",
+          "stored": "assets/64ae477049b0dfd35612556de6005d0a04f050aeb2f3301dba2b0eba8cf2ac1c.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0067-fig1.png"
+        },
+        {
+          "name": "book3-p0068-fig1.png",
+          "sha256": "94f08a7758f335e7622e173b0a4b3f7b28d632b4b2e24e6b632042fd92194794",
+          "stored": "assets/94f08a7758f335e7622e173b0a4b3f7b28d632b4b2e24e6b632042fd92194794.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0068-fig1.png"
+        },
+        {
+          "name": "book3-p0069-fig1.png",
+          "sha256": "3d25bdd9865a526fb7f04f49213c0c648a3fc9857b253bac1d489db316f9c9f7",
+          "stored": "assets/3d25bdd9865a526fb7f04f49213c0c648a3fc9857b253bac1d489db316f9c9f7.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0069-fig1.png"
+        },
+        {
+          "name": "book3-p0071-fig1.png",
+          "sha256": "54bb41e0e705ca4644fb1b89a4dc3cd05c8bc9e6e55c08ed0a5f02ea752119f8",
+          "stored": "assets/54bb41e0e705ca4644fb1b89a4dc3cd05c8bc9e6e55c08ed0a5f02ea752119f8.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0071-fig1.png"
+        },
+        {
+          "name": "book3-p0073-fig1.png",
+          "sha256": "7ae0aa31ceb017028bec59cba87e335563439572d81d0ec3a201dbfc6ca20690",
+          "stored": "assets/7ae0aa31ceb017028bec59cba87e335563439572d81d0ec3a201dbfc6ca20690.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0073-fig1.png"
+        },
+        {
+          "name": "book3-p0077-fig1.png",
+          "sha256": "e5d5b3f4b73ca47bb538e367b61f3233922a835c02976e17f693c862ee1cc1f8",
+          "stored": "assets/e5d5b3f4b73ca47bb538e367b61f3233922a835c02976e17f693c862ee1cc1f8.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0077-fig1.png"
+        },
+        {
+          "name": "book3-p0088-fig1.png",
+          "sha256": "cc241d156fca537cebb97fafbfe9d39a40601c22513a60215b989ab3de69d1e7",
+          "stored": "assets/cc241d156fca537cebb97fafbfe9d39a40601c22513a60215b989ab3de69d1e7.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0088-fig1.png"
+        },
+        {
+          "name": "book3-p0092-fig1.png",
+          "sha256": "620163937aad109ed7e7f2ecf31e1af8653caaee54e617898ffc4c3a2b7f8754",
+          "stored": "assets/620163937aad109ed7e7f2ecf31e1af8653caaee54e617898ffc4c3a2b7f8754.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0092-fig1.png"
+        },
+        {
+          "name": "book3-p0092-fig2.png",
+          "sha256": "3ef6f8671942137a6e0f842a5bdbd146dd7b6048e2eb54e6d110e87d92e4204a",
+          "stored": "assets/3ef6f8671942137a6e0f842a5bdbd146dd7b6048e2eb54e6d110e87d92e4204a.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0092-fig2.png"
+        },
+        {
+          "name": "book3-p0095-fig1.png",
+          "sha256": "aaafb05aec29fbefc14cffba77a65ad48da6dab7a5a28864c34f0b9c06b78e99",
+          "stored": "assets/aaafb05aec29fbefc14cffba77a65ad48da6dab7a5a28864c34f0b9c06b78e99.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0095-fig1.png"
+        },
+        {
+          "name": "book3-p0096-fig1.png",
+          "sha256": "d83dcd0dc1b57baca710f8871e89071e5cd688ae7fa4f5b89c1b671db59ee604",
+          "stored": "assets/d83dcd0dc1b57baca710f8871e89071e5cd688ae7fa4f5b89c1b671db59ee604.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0096-fig1.png"
+        },
+        {
+          "name": "book3-p0097-fig1.png",
+          "sha256": "cf40e6ed176fd40ffebe89f82ce706361df6313aa3c5f612bbfa863cf8f401eb",
+          "stored": "assets/cf40e6ed176fd40ffebe89f82ce706361df6313aa3c5f612bbfa863cf8f401eb.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0097-fig1.png"
+        },
+        {
+          "name": "book3-p0097-fig2.png",
+          "sha256": "306262b8ca7c56c0b518a7494be45b127d7fd7512f9e250785943157ee39980e",
+          "stored": "assets/306262b8ca7c56c0b518a7494be45b127d7fd7512f9e250785943157ee39980e.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0097-fig2.png"
+        },
+        {
+          "name": "book3-p0098-fig1.png",
+          "sha256": "c6c0eaaa532776bf4955b75fdf33e66872f1fbb5a68bf147e8aecce8c5fee2a6",
+          "stored": "assets/c6c0eaaa532776bf4955b75fdf33e66872f1fbb5a68bf147e8aecce8c5fee2a6.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0098-fig1.png"
+        },
+        {
+          "name": "book3-p0098-fig2.png",
+          "sha256": "792a1b6c2ff3677abb53a790e2820ec04bb39e81dbfea03a38ae885d8015a71b",
+          "stored": "assets/792a1b6c2ff3677abb53a790e2820ec04bb39e81dbfea03a38ae885d8015a71b.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0098-fig2.png"
+        },
+        {
+          "name": "book3-p0101-fig1.png",
+          "sha256": "d872f5b3e247b4dc7c16a6ff56294b2fdec64720f44c34f5761b80be3c634eef",
+          "stored": "assets/d872f5b3e247b4dc7c16a6ff56294b2fdec64720f44c34f5761b80be3c634eef.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0101-fig1.png"
+        },
+        {
+          "name": "book3-p0105-fig1.png",
+          "sha256": "cf1436b9addd233a9cbd44a92141b902f06da247d6f9b6d8678bac309cb93bd7",
+          "stored": "assets/cf1436b9addd233a9cbd44a92141b902f06da247d6f9b6d8678bac309cb93bd7.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0105-fig1.png"
+        },
+        {
+          "name": "book3-p0106-fig1.png",
+          "sha256": "c54811320dccf316612467db38a17d87c48bf970b584dcde2172ad3dd676736d",
+          "stored": "assets/c54811320dccf316612467db38a17d87c48bf970b584dcde2172ad3dd676736d.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0106-fig1.png"
+        },
+        {
+          "name": "book3-p0107-fig1.png",
+          "sha256": "fe789d11e4ed25460345a64f8d22dfc5c1595a730899a7d7529e4bf67ed89726",
+          "stored": "assets/fe789d11e4ed25460345a64f8d22dfc5c1595a730899a7d7529e4bf67ed89726.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0107-fig1.png"
+        },
+        {
+          "name": "book3-p0108-fig1.png",
+          "sha256": "85e320918dd40ae7724471befd8644f6dcd66480ae5dcb2640d2ac00068c77c3",
+          "stored": "assets/85e320918dd40ae7724471befd8644f6dcd66480ae5dcb2640d2ac00068c77c3.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0108-fig1.png"
+        },
+        {
+          "name": "book3-p0109-fig1.png",
+          "sha256": "1814d1f5fc677e9459a4a39aa3a30d3c07f87de21cbfc1ad0c15132ea60e2b14",
+          "stored": "assets/1814d1f5fc677e9459a4a39aa3a30d3c07f87de21cbfc1ad0c15132ea60e2b14.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0109-fig1.png"
+        },
+        {
+          "name": "book3-p0110-fig1.png",
+          "sha256": "27f57aa17ba9e7376bd0e6744654b6bf376e0781869fdb9cd128246b0e12f448",
+          "stored": "assets/27f57aa17ba9e7376bd0e6744654b6bf376e0781869fdb9cd128246b0e12f448.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0110-fig1.png"
+        },
+        {
+          "name": "book3-p0112-fig1.png",
+          "sha256": "bce5ec3763916eaac33ef808da96f4537398d37df8fef482cfdaf783c0e43ba4",
+          "stored": "assets/bce5ec3763916eaac33ef808da96f4537398d37df8fef482cfdaf783c0e43ba4.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0112-fig1.png"
+        },
+        {
+          "name": "book3-p0112-fig2.png",
+          "sha256": "68873f25137c47974a4ff1acbe74ed8f4d87ec909cd5d1c4af9629da2744e7bf",
+          "stored": "assets/68873f25137c47974a4ff1acbe74ed8f4d87ec909cd5d1c4af9629da2744e7bf.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0112-fig2.png"
+        },
+        {
+          "name": "book3-p0118-fig1.png",
+          "sha256": "9398695824827114fe30f973a9602e991467d11ab33379d9294dd76223a56999",
+          "stored": "assets/9398695824827114fe30f973a9602e991467d11ab33379d9294dd76223a56999.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0118-fig1.png"
+        },
+        {
+          "name": "book3-p0118-fig2.png",
+          "sha256": "a9b17b3860696207e4ef7524a9c56112125aea03faca09e8ad0e5fde2ad6ad14",
+          "stored": "assets/a9b17b3860696207e4ef7524a9c56112125aea03faca09e8ad0e5fde2ad6ad14.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0118-fig2.png"
+        },
+        {
+          "name": "book3-p0119-fig1.png",
+          "sha256": "a43fad757fa920113f20128a35f84d459e0d3edbc694a5bb1f77e6a0df302b00",
+          "stored": "assets/a43fad757fa920113f20128a35f84d459e0d3edbc694a5bb1f77e6a0df302b00.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0119-fig1.png"
+        },
+        {
+          "name": "book3-p0119-fig2.png",
+          "sha256": "8ec67314baabfee04a9bd6c8aed6cce527c3826dc20533bddd9be04f59b04789",
+          "stored": "assets/8ec67314baabfee04a9bd6c8aed6cce527c3826dc20533bddd9be04f59b04789.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0119-fig2.png"
+        },
+        {
+          "name": "book3-p0120-fig1.png",
+          "sha256": "f4d34dea0b2825b766aa4850caa05110635d35501479e1874b41154eb386cd54",
+          "stored": "assets/f4d34dea0b2825b766aa4850caa05110635d35501479e1874b41154eb386cd54.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0120-fig1.png"
+        },
+        {
+          "name": "book3-p0121-fig1.png",
+          "sha256": "aed442ff3ffce6f043cb635a33f556eabebd9cbc7cef623afbdcd4ceb46cb7e7",
+          "stored": "assets/aed442ff3ffce6f043cb635a33f556eabebd9cbc7cef623afbdcd4ceb46cb7e7.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0121-fig1.png"
+        },
+        {
+          "name": "book3-p0124-fig1.png",
+          "sha256": "5bebd8b61c06abf1616de0a3169ebee32a34c1c8af487fdc66335d5db230176d",
+          "stored": "assets/5bebd8b61c06abf1616de0a3169ebee32a34c1c8af487fdc66335d5db230176d.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0124-fig1.png"
+        },
+        {
+          "name": "book3-p0125-fig1.png",
+          "sha256": "943aeb1987cbd339f71123fa258387775e106e1ccae664e747de4f878e25f0cb",
+          "stored": "assets/943aeb1987cbd339f71123fa258387775e106e1ccae664e747de4f878e25f0cb.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0125-fig1.png"
+        },
+        {
+          "name": "book3-p0126-fig1.png",
+          "sha256": "85e6df30b3a3b30aae9ae633760b2b053a430821135c76fb9228db862252e79e",
+          "stored": "assets/85e6df30b3a3b30aae9ae633760b2b053a430821135c76fb9228db862252e79e.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0126-fig1.png"
+        },
+        {
+          "name": "book3-p0127-fig1.png",
+          "sha256": "c7bba6413321ee48bcf196f23478eae9803b7a3e775f943f83fc7acd1dc43b4d",
+          "stored": "assets/c7bba6413321ee48bcf196f23478eae9803b7a3e775f943f83fc7acd1dc43b4d.png",
+          "derived": "derived/pdf/book3/da273b47/assets/book3-p0127-fig1.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book1:93ba03c1:7f93a8e0",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T20:47:43.559Z",
+      "book": "book1",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_1.pdf",
+        "sha256": "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      },
+      "pages": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        139,
+        140,
+        141,
+        142
+      ],
+      "returned_pages": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        139,
+        140,
+        141,
+        142
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book1/93ba03c1/extract-7f93a8e0.json",
+        "raw_sha256": "1903e4fcf9a1f9404bef01639fd6c36c048ce3caca68e0685f328b0892143eda",
+        "raw_body": "raw/pdf-extract/1903e4fcf9a1f9404bef01639fd6c36c048ce3caca68e0685f328b0892143eda.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book1-p0039-fig1.png",
+          "sha256": "bba5cb5504a4fb937a857719e125285bbd70e3840f1e455b4cbbe3869ec12bb9",
+          "stored": "assets/bba5cb5504a4fb937a857719e125285bbd70e3840f1e455b4cbbe3869ec12bb9.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0039-fig1.png"
+        },
+        {
+          "name": "book1-p0039-fig2.png",
+          "sha256": "9224039deb233332710c9777915c464216083de6ea39aec9b5b938461bd11e67",
+          "stored": "assets/9224039deb233332710c9777915c464216083de6ea39aec9b5b938461bd11e67.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0039-fig2.png"
+        },
+        {
+          "name": "book1-p0040-fig1.png",
+          "sha256": "34c277c034011a0bc501d5aeb82493cca504e8940e8471fe8768a1e429b15ad7",
+          "stored": "assets/34c277c034011a0bc501d5aeb82493cca504e8940e8471fe8768a1e429b15ad7.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0040-fig1.png"
+        },
+        {
+          "name": "book1-p0040-fig2.png",
+          "sha256": "b91e83b659cfc185475f6de1a2db4cb0d9565fc8fb023ebcb4dc6754705e248d",
+          "stored": "assets/b91e83b659cfc185475f6de1a2db4cb0d9565fc8fb023ebcb4dc6754705e248d.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0040-fig2.png"
+        },
+        {
+          "name": "book1-p0041-fig1.png",
+          "sha256": "32ab34c611cee7fa942838b850aa5935bb92c1e82544829fefc76a302fba6525",
+          "stored": "assets/32ab34c611cee7fa942838b850aa5935bb92c1e82544829fefc76a302fba6525.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0041-fig1.png"
+        },
+        {
+          "name": "book1-p0041-fig2.png",
+          "sha256": "b4e17d4d5ec985b9670dde2111399f0df374dd015140791460453fa9a7164e86",
+          "stored": "assets/b4e17d4d5ec985b9670dde2111399f0df374dd015140791460453fa9a7164e86.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0041-fig2.png"
+        },
+        {
+          "name": "book1-p0043-fig1.png",
+          "sha256": "3fb5eaa3a2ac615ad58a623b6a89089939c64a8be3fc9c3a0fb3a47a1cdf849b",
+          "stored": "assets/3fb5eaa3a2ac615ad58a623b6a89089939c64a8be3fc9c3a0fb3a47a1cdf849b.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0043-fig1.png"
+        },
+        {
+          "name": "book1-p0043-fig2.png",
+          "sha256": "edcd83be719885fb963b1644b4efe5d3da65bae638099a5f3f8a07d87887891c",
+          "stored": "assets/edcd83be719885fb963b1644b4efe5d3da65bae638099a5f3f8a07d87887891c.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0043-fig2.png"
+        },
+        {
+          "name": "book1-p0043-fig3.png",
+          "sha256": "1eda2fc77b3e0e763b28db99487db81de475266cc4a3b41f80fac3a46d198250",
+          "stored": "assets/1eda2fc77b3e0e763b28db99487db81de475266cc4a3b41f80fac3a46d198250.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0043-fig3.png"
+        },
+        {
+          "name": "book1-p0043-fig4.png",
+          "sha256": "4a7dc258c240ef3daec3a5e6bc29ec6bd3301e9cdfed5d8e50d69cf1fda7d703",
+          "stored": "assets/4a7dc258c240ef3daec3a5e6bc29ec6bd3301e9cdfed5d8e50d69cf1fda7d703.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0043-fig4.png"
+        },
+        {
+          "name": "book1-p0044-fig1.png",
+          "sha256": "9bdb12a3c3addb887a682c773c36e8d02b230b3d0f8bf707b01d2454a3102ce9",
+          "stored": "assets/9bdb12a3c3addb887a682c773c36e8d02b230b3d0f8bf707b01d2454a3102ce9.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0044-fig1.png"
+        },
+        {
+          "name": "book1-p0045-fig1.png",
+          "sha256": "3c08c77cb66aa6eb19241a2dc03be36e8a98031d89ebbc80a05049d345f1c9c5",
+          "stored": "assets/3c08c77cb66aa6eb19241a2dc03be36e8a98031d89ebbc80a05049d345f1c9c5.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0045-fig1.png"
+        },
+        {
+          "name": "book1-p0045-fig2.png",
+          "sha256": "a06c1d6ae3bc8db842c2dddefb0ee49c7bab1c2ac51b43b5247d3ac9d874c8c6",
+          "stored": "assets/a06c1d6ae3bc8db842c2dddefb0ee49c7bab1c2ac51b43b5247d3ac9d874c8c6.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0045-fig2.png"
+        },
+        {
+          "name": "book1-p0045-fig3.png",
+          "sha256": "c3701cc216af9ce98e7b193881c7b24fdf098c3d491a62947d468f43e5290e1c",
+          "stored": "assets/c3701cc216af9ce98e7b193881c7b24fdf098c3d491a62947d468f43e5290e1c.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0045-fig3.png"
+        },
+        {
+          "name": "book1-p0045-fig4.png",
+          "sha256": "f29a357f5871ff295601bd2a794572b478a584b1f5ab23016141c6198e8d30f7",
+          "stored": "assets/f29a357f5871ff295601bd2a794572b478a584b1f5ab23016141c6198e8d30f7.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0045-fig4.png"
+        },
+        {
+          "name": "book1-p0046-fig1.png",
+          "sha256": "79e84de506df05dd05415a58f369c27e7b3a9a8a01209a44495f9ccaa11de4fd",
+          "stored": "assets/79e84de506df05dd05415a58f369c27e7b3a9a8a01209a44495f9ccaa11de4fd.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0046-fig1.png"
+        },
+        {
+          "name": "book1-p0047-fig1.png",
+          "sha256": "3afb5de5cc151d3d8bfd775070f731ce05875d7b28b0bcfae3518b9723f3836c",
+          "stored": "assets/3afb5de5cc151d3d8bfd775070f731ce05875d7b28b0bcfae3518b9723f3836c.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0047-fig1.png"
+        },
+        {
+          "name": "book1-p0139-fig1.png",
+          "sha256": "578e37a769db0106004207c3c5ab2127629fab9f8f4530e24d074786311db390",
+          "stored": "assets/578e37a769db0106004207c3c5ab2127629fab9f8f4530e24d074786311db390.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0139-fig1.png"
+        },
+        {
+          "name": "book1-p0139-fig2.png",
+          "sha256": "cdaa886739ca8a10a7d75ea53b384a5c35ee577144b7b1de24d8b3f58cc71217",
+          "stored": "assets/cdaa886739ca8a10a7d75ea53b384a5c35ee577144b7b1de24d8b3f58cc71217.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0139-fig2.png"
+        },
+        {
+          "name": "book1-p0139-fig3.png",
+          "sha256": "e6e2f6144aab841958870fa58f05cd135d463214a386b23ce5b62b555dfcf178",
+          "stored": "assets/e6e2f6144aab841958870fa58f05cd135d463214a386b23ce5b62b555dfcf178.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0139-fig3.png"
+        },
+        {
+          "name": "book1-p0141-fig1.png",
+          "sha256": "d5389eb21c892c5fbef6ac1b0de1a2549c5c8a03152acc3ba8c8a1c3da6fb0d1",
+          "stored": "assets/d5389eb21c892c5fbef6ac1b0de1a2549c5c8a03152acc3ba8c8a1c3da6fb0d1.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0141-fig1.png"
+        },
+        {
+          "name": "book1-p0141-fig2.png",
+          "sha256": "90a7b08877ecf2af51d350a9a6bc3cdea196ded573ed79a4db04a9dbb4c2c0da",
+          "stored": "assets/90a7b08877ecf2af51d350a9a6bc3cdea196ded573ed79a4db04a9dbb4c2c0da.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0141-fig2.png"
+        },
+        {
+          "name": "book1-p0141-fig3.png",
+          "sha256": "78d677af72f2fc01dfb28c8055a4f69ebf120f5735b6e68e5b8a7a253b7eebbd",
+          "stored": "assets/78d677af72f2fc01dfb28c8055a4f69ebf120f5735b6e68e5b8a7a253b7eebbd.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0141-fig3.png"
+        },
+        {
+          "name": "book1-p0142-fig1.png",
+          "sha256": "60cdef60bf8caa8afd2e37ba5f710df4648737c9f4e2c8337f46ed043078cb5a",
+          "stored": "assets/60cdef60bf8caa8afd2e37ba5f710df4648737c9f4e2c8337f46ed043078cb5a.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0142-fig1.png"
+        },
+        {
+          "name": "book1-p0142-fig2.png",
+          "sha256": "24ee6ce03345a348bcf8fe8d70123a15aeba6894de00abc4e6733a04d5169d1b",
+          "stored": "assets/24ee6ce03345a348bcf8fe8d70123a15aeba6894de00abc4e6733a04d5169d1b.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0142-fig2.png"
+        },
+        {
+          "name": "book1-p0142-fig3.png",
+          "sha256": "ca2b67a467d5494301019bdea943350d29bf7f659deae77c93cc23310f932191",
+          "stored": "assets/ca2b67a467d5494301019bdea943350d29bf7f659deae77c93cc23310f932191.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0142-fig3.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book10:3f1c5328:94764532",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T20:47:45.668Z",
+      "book": "book10",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_10.pdf",
+        "sha256": "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      },
+      "pages": [
+        15,
+        16,
+        17,
+        18,
+        144,
+        145
+      ],
+      "returned_pages": [
+        15,
+        16,
+        17,
+        18,
+        144,
+        145
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book10/3f1c5328/extract-94764532.json",
+        "raw_sha256": "78e730826a7cb5585a7708225bc8012a3c1359fe2b8e2c908d201d64d265651f",
+        "raw_body": "raw/pdf-extract/78e730826a7cb5585a7708225bc8012a3c1359fe2b8e2c908d201d64d265651f.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book10-p0015-fig1.png",
+          "sha256": "a3f24fdb7f9ce061cc7437dfc526125db5daf120b86da97906ec73411d6ae2c1",
+          "stored": "assets/a3f24fdb7f9ce061cc7437dfc526125db5daf120b86da97906ec73411d6ae2c1.png",
+          "derived": "derived/pdf/book10/3f1c5328/assets/book10-p0015-fig1.png"
+        },
+        {
+          "name": "book10-p0016-fig1.png",
+          "sha256": "3976705f99a37baf1d0c09c9a6d89f1ee8ed1fb019004dc248a4977bad7e9e1d",
+          "stored": "assets/3976705f99a37baf1d0c09c9a6d89f1ee8ed1fb019004dc248a4977bad7e9e1d.png",
+          "derived": "derived/pdf/book10/3f1c5328/assets/book10-p0016-fig1.png"
+        },
+        {
+          "name": "book10-p0017-fig1.png",
+          "sha256": "ed7acba293c4f71d3cb85761edb522cb1723b604f1b8cabbf1230944483e08b9",
+          "stored": "assets/ed7acba293c4f71d3cb85761edb522cb1723b604f1b8cabbf1230944483e08b9.png",
+          "derived": "derived/pdf/book10/3f1c5328/assets/book10-p0017-fig1.png"
+        },
+        {
+          "name": "book10-p0018-fig1.png",
+          "sha256": "f55f1992330feaa369b23c6425dc380161bd8c0922019c80cf67745c3c021a3a",
+          "stored": "assets/f55f1992330feaa369b23c6425dc380161bd8c0922019c80cf67745c3c021a3a.png",
+          "derived": "derived/pdf/book10/3f1c5328/assets/book10-p0018-fig1.png"
+        },
+        {
+          "name": "book10-p0144-fig1.png",
+          "sha256": "3bbf7461bb15eefbd394f32391ac5dcd1c04bb5435ccea3805e7056a74adc5c5",
+          "stored": "assets/3bbf7461bb15eefbd394f32391ac5dcd1c04bb5435ccea3805e7056a74adc5c5.png",
+          "derived": "derived/pdf/book10/3f1c5328/assets/book10-p0144-fig1.png"
+        },
+        {
+          "name": "book10-p0145-fig1.png",
+          "sha256": "0a5ad2e1144bb3feeae4180e395860929f459cb35a86aeb4c553c59c36b3e0dd",
+          "stored": "assets/0a5ad2e1144bb3feeae4180e395860929f459cb35a86aeb4c553c59c36b3e0dd.png",
+          "derived": "derived/pdf/book10/3f1c5328/assets/book10-p0145-fig1.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book1:93ba03c1:1698df5a",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T21:03:45.505Z",
+      "book": "book1",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_1.pdf",
+        "sha256": "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      },
+      "pages": [
+        25,
+        53,
+        56,
+        84,
+        85,
+        136,
+        143,
+        148
+      ],
+      "returned_pages": [
+        25,
+        53,
+        56,
+        84,
+        85,
+        136,
+        143,
+        148
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book1/93ba03c1/extract-1698df5a.json",
+        "raw_sha256": "3f34fd210a8caeb5451e8847da02b00acf88980850e69540696621398dcbe900",
+        "raw_body": "raw/pdf-extract/3f34fd210a8caeb5451e8847da02b00acf88980850e69540696621398dcbe900.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book1-p0025-fig1.png",
+          "sha256": "0f0d3d8091e2d0f604160ef08e5a9d82a1b1c6afe9501e6a52b562c34ce8cb44",
+          "stored": "assets/0f0d3d8091e2d0f604160ef08e5a9d82a1b1c6afe9501e6a52b562c34ce8cb44.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0025-fig1.png"
+        },
+        {
+          "name": "book1-p0053-fig1.png",
+          "sha256": "b931db1407f727749dfffad8324b4c1e49145786734a78ce1fa072270aed7dca",
+          "stored": "assets/b931db1407f727749dfffad8324b4c1e49145786734a78ce1fa072270aed7dca.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0053-fig1.png"
+        },
+        {
+          "name": "book1-p0053-fig2.png",
+          "sha256": "b2f88bfc68883384d323b9abf2dd87b393fa63ffa58319c62de6891c561fcdde",
+          "stored": "assets/b2f88bfc68883384d323b9abf2dd87b393fa63ffa58319c62de6891c561fcdde.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0053-fig2.png"
+        },
+        {
+          "name": "book1-p0056-fig1.png",
+          "sha256": "9580be7d5a3e375fa54367c9262bed3f79e96d2be7ac9a0d9bfb9394f0b3f279",
+          "stored": "assets/9580be7d5a3e375fa54367c9262bed3f79e96d2be7ac9a0d9bfb9394f0b3f279.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0056-fig1.png"
+        },
+        {
+          "name": "book1-p0056-fig2.png",
+          "sha256": "4dbdf3e2dd1d21695f4c71f2cc01ebc07bd68969586c2f49a05f4dddaeeb6651",
+          "stored": "assets/4dbdf3e2dd1d21695f4c71f2cc01ebc07bd68969586c2f49a05f4dddaeeb6651.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0056-fig2.png"
+        },
+        {
+          "name": "book1-p0084-fig1.png",
+          "sha256": "e615ae559b9a72db12b29ceb8dc2b2d4d7022072333eb262a8b5212e5f6eba1c",
+          "stored": "assets/e615ae559b9a72db12b29ceb8dc2b2d4d7022072333eb262a8b5212e5f6eba1c.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0084-fig1.png"
+        },
+        {
+          "name": "book1-p0084-fig2.png",
+          "sha256": "36f36ea735437a900934ad75094e994b76b4cd6e61362e76a6a53411f9144f34",
+          "stored": "assets/36f36ea735437a900934ad75094e994b76b4cd6e61362e76a6a53411f9144f34.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0084-fig2.png"
+        },
+        {
+          "name": "book1-p0084-fig3.png",
+          "sha256": "2814197606521e98fb951f9c36e02884a2c6b3483bbc2f7cf5359befa2f952a8",
+          "stored": "assets/2814197606521e98fb951f9c36e02884a2c6b3483bbc2f7cf5359befa2f952a8.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0084-fig3.png"
+        },
+        {
+          "name": "book1-p0085-fig1.png",
+          "sha256": "1a31167ca06104178db8c12bf5c3b3841529a9db61f2907c7d545f1426584734",
+          "stored": "assets/1a31167ca06104178db8c12bf5c3b3841529a9db61f2907c7d545f1426584734.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0085-fig1.png"
+        },
+        {
+          "name": "book1-p0085-fig2.png",
+          "sha256": "1c902fc9d63e6abe8a7b19d3f7808127f42d3ccd054931e00b06485d90729f6b",
+          "stored": "assets/1c902fc9d63e6abe8a7b19d3f7808127f42d3ccd054931e00b06485d90729f6b.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0085-fig2.png"
+        },
+        {
+          "name": "book1-p0085-fig3.png",
+          "sha256": "ddebbd8a61a57934fffd01672a62d8e7817c1d8760fcb0337a0a854d551e79c0",
+          "stored": "assets/ddebbd8a61a57934fffd01672a62d8e7817c1d8760fcb0337a0a854d551e79c0.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0085-fig3.png"
+        },
+        {
+          "name": "book1-p0143-fig1.png",
+          "sha256": "cf57bb7164f3cc9f04f4a47eb3c41204fa574b3843e062c388ed5fc2a00558e6",
+          "stored": "assets/cf57bb7164f3cc9f04f4a47eb3c41204fa574b3843e062c388ed5fc2a00558e6.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0143-fig1.png"
+        },
+        {
+          "name": "book1-p0143-fig2.png",
+          "sha256": "0ed5fa2affdfd3f5f2a3afba28be99a01ac4f86a6cca2ff75841f4d3ddc22d75",
+          "stored": "assets/0ed5fa2affdfd3f5f2a3afba28be99a01ac4f86a6cca2ff75841f4d3ddc22d75.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0143-fig2.png"
+        },
+        {
+          "name": "book1-p0143-fig3.png",
+          "sha256": "ab494feb39782419efc6cb272bd40b380c5c8da5b2db196846c7abdbe0930e01",
+          "stored": "assets/ab494feb39782419efc6cb272bd40b380c5c8da5b2db196846c7abdbe0930e01.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0143-fig3.png"
+        },
+        {
+          "name": "book1-p0148-fig1.png",
+          "sha256": "fea9fcb4f40ed2f8f32191f84bcc484317d74cde3d0b364eba27959d71b9de18",
+          "stored": "assets/fea9fcb4f40ed2f8f32191f84bcc484317d74cde3d0b364eba27959d71b9de18.png",
+          "derived": "derived/pdf/book1/93ba03c1/assets/book1-p0148-fig1.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book8:5d813013:a325a50a",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T21:06:11.095Z",
+      "book": "book8",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_8.pdf",
+        "sha256": "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      },
+      "pages": [
+        66,
+        67,
+        68
+      ],
+      "returned_pages": [
+        66,
+        67,
+        68
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book8/5d813013/extract-a325a50a.json",
+        "raw_sha256": "9afd8e9b99b0886a0580fbb7743b9590c065ca64c3eba46c972c1e2548e93d6e",
+        "raw_body": "raw/pdf-extract/9afd8e9b99b0886a0580fbb7743b9590c065ca64c3eba46c972c1e2548e93d6e.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book8-p0066-fig1.png",
+          "sha256": "09757019728a7041737e96a0114dbbd57f9c177333fd044b37aa56e448981d9f",
+          "stored": "assets/09757019728a7041737e96a0114dbbd57f9c177333fd044b37aa56e448981d9f.png",
+          "derived": "derived/pdf/book8/5d813013/assets/book8-p0066-fig1.png"
+        },
+        {
+          "name": "book8-p0067-fig1.png",
+          "sha256": "03e29d83b4e8d2936fc484e4253214d601ba144c6bf1a7384e68795f8533d9ac",
+          "stored": "assets/03e29d83b4e8d2936fc484e4253214d601ba144c6bf1a7384e68795f8533d9ac.png",
+          "derived": "derived/pdf/book8/5d813013/assets/book8-p0067-fig1.png"
+        },
+        {
+          "name": "book8-p0068-fig1.png",
+          "sha256": "c96053fb75311dc2098f0d108a5782a804da30b3cccd0e04ba39b010621d4a61",
+          "stored": "assets/c96053fb75311dc2098f0d108a5782a804da30b3cccd0e04ba39b010621d4a61.png",
+          "derived": "derived/pdf/book8/5d813013/assets/book8-p0068-fig1.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book11:c9672f9f:3e022438",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T21:06:14.247Z",
+      "book": "book11",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_11.pdf",
+        "sha256": "c9672f9f8dc9fbd4ca7f965a50a3a599bf86a144efbe5e777010b5958baaf9db"
+      },
+      "pages": [
+        38,
+        41,
+        60,
+        61
+      ],
+      "returned_pages": [
+        38,
+        41,
+        60,
+        61
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book11/c9672f9f/extract-3e022438.json",
+        "raw_sha256": "10f08ebce9fb467b0c6798c2fedc344cf53701dcb691830d7a005c002943b973",
+        "raw_body": "raw/pdf-extract/10f08ebce9fb467b0c6798c2fedc344cf53701dcb691830d7a005c002943b973.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book11-p0038-fig1.png",
+          "sha256": "9ea4244cd00ac0c606e7249e26e64bff3111fe0f0c617d43d34921dbec356d22",
+          "stored": "assets/9ea4244cd00ac0c606e7249e26e64bff3111fe0f0c617d43d34921dbec356d22.png",
+          "derived": "derived/pdf/book11/c9672f9f/assets/book11-p0038-fig1.png"
+        },
+        {
+          "name": "book11-p0041-fig1.png",
+          "sha256": "64ddb5faa709819e6c4a1fe567b605da113555d94701cb8eadf60bc5473c4d73",
+          "stored": "assets/64ddb5faa709819e6c4a1fe567b605da113555d94701cb8eadf60bc5473c4d73.png",
+          "derived": "derived/pdf/book11/c9672f9f/assets/book11-p0041-fig1.png"
+        },
+        {
+          "name": "book11-p0060-fig1.png",
+          "sha256": "473260180fc5ca6d5c270d1e90cbd4925a550ebfd222191f1bb4500b20c701fa",
+          "stored": "assets/473260180fc5ca6d5c270d1e90cbd4925a550ebfd222191f1bb4500b20c701fa.png",
+          "derived": "derived/pdf/book11/c9672f9f/assets/book11-p0060-fig1.png"
+        },
+        {
+          "name": "book11-p0061-fig1.png",
+          "sha256": "9d3d1b9cd14d71bc8b487b00793af666c22b168639dd98fd6c0fdbad3d81de91",
+          "stored": "assets/9d3d1b9cd14d71bc8b487b00793af666c22b168639dd98fd6c0fdbad3d81de91.png",
+          "derived": "derived/pdf/book11/c9672f9f/assets/book11-p0061-fig1.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book12:f7913009:49b47d01",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T21:06:17.686Z",
+      "book": "book12",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_12.pdf",
+        "sha256": "f791300937f11d8380eba7b7997db1da751d66802a96aed996db704947e52407"
+      },
+      "pages": [
+        56,
+        57
+      ],
+      "returned_pages": [
+        56,
+        57
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book12/f7913009/extract-49b47d01.json",
+        "raw_sha256": "bd86f1bcee6d8dc0028c13bbaefb32a9583ce4db22dc756297945e080fddab77",
+        "raw_body": "raw/pdf-extract/bd86f1bcee6d8dc0028c13bbaefb32a9583ce4db22dc756297945e080fddab77.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book12-p0056-fig1.png",
+          "sha256": "87e2d6eb7bfa40c636e0a5c7ec8df5508afc4c26bab4eaddd24479282a7071f1",
+          "stored": "assets/87e2d6eb7bfa40c636e0a5c7ec8df5508afc4c26bab4eaddd24479282a7071f1.png",
+          "derived": "derived/pdf/book12/f7913009/assets/book12-p0056-fig1.png"
+        },
+        {
+          "name": "book12-p0057-fig1.png",
+          "sha256": "b098b064c38379c4262e47f9d8ebdcc34c1cb596e8d88928f76f15a3e71b6506",
+          "stored": "assets/b098b064c38379c4262e47f9d8ebdcc34c1cb596e8d88928f76f15a3e71b6506.png",
+          "derived": "derived/pdf/book12/f7913009/assets/book12-p0057-fig1.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    },
+    {
+      "key": "book17:90ae888c:2858dcd1",
+      "kind": "pdf-import",
+      "imported_at": "2026-10-03T21:06:21.124Z",
+      "book": "book17",
+      "pdf": {
+        "path": "C:/Users/weo/Desktop/api/tmp_audit_ielts/downloads/book_17.pdf",
+        "sha256": "90ae888c4cd495761fe5639418ca894e63c9e7066382ed9ffad6bd74a409726a"
+      },
+      "pages": [
+        53
+      ],
+      "returned_pages": [
+        53
+      ],
+      "missing_pages": [],
+      "tool": "pdf_extract",
+      "tool_version": 1,
+      "extract": {
+        "derived": "derived/pdf/book17/90ae888c/extract-2858dcd1.json",
+        "raw_sha256": "199de15e604b687d639eecca32df5169de0916185ab7588651818c49abc23e1f",
+        "raw_body": "raw/pdf-extract/199de15e604b687d639eecca32df5169de0916185ab7588651818c49abc23e1f.body"
+      },
+      "ocr": null,
+      "assets": [
+        {
+          "name": "book17-p0053-fig1.png",
+          "sha256": "fb67fd576eecdb4a3675d8ec7c5306d25abd95f11de2341e44b4fa1039cf2a2c",
+          "stored": "assets/fb67fd576eecdb4a3675d8ec7c5306d25abd95f11de2341e44b4fa1039cf2a2c.png",
+          "derived": "derived/pdf/book17/90ae888c/assets/book17-p0053-fig1.png"
+        },
+        {
+          "name": "book17-p0053-fig2.png",
+          "sha256": "90e3d50c9e1ff39199d9b3ff93a9714c57cda37600bb3ad68251f59b6dea9dc6",
+          "stored": "assets/90e3d50c9e1ff39199d9b3ff93a9714c57cda37600bb3ad68251f59b6dea9dc6.png",
+          "derived": "derived/pdf/book17/90ae888c/assets/book17-p0053-fig2.png"
+        }
+      ],
+      "missing_assets": [],
+      "pdf_stored": null
+    }
+  ]
+}

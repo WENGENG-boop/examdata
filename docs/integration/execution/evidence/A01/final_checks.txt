@@ -1,0 +1,128 @@
+=== A01 final checks (runner: integration-staging/tools/a01_final_checks.py) ===
+generated_at_local: 2026-10-05T18:51:29+08:00
+generated_at_utc:   2026-10-05T10:51:29+00:00
+cwd: C:\Users\weo\Desktop\api
+
+--- 1. artifact inventory (files under the two Phase A roots, excluding this transcript) ---
+integration-staging/README.md
+integration-staging/runtime/a01_preclose_final_checks.txt
+integration-staging/runtime/ledger-patches/A01_close.json
+integration-staging/tools/_env.sh
+integration-staging/tools/a00_final_checks.sh
+integration-staging/tools/a01_final_checks.py
+integration-staging/tools/a01_inventory_routes.py
+integration-staging/tools/a01_static_inventory.py
+integration-staging/tools/a01_worksheet_build.py
+integration-staging/tools/ledger_update.py
+docs/integration/execution/A00_INITIAL_REPORT.md
+docs/integration/execution/A01_CLI_INVENTORY.md
+docs/integration/execution/A01_COMPONENT_INVENTORY.md
+docs/integration/execution/A01_CONFIGURATION_MATRIX.md
+docs/integration/execution/A01_DATA_ROOT_INVENTORY.md
+docs/integration/execution/A01_REPORT.md
+docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json
+docs/integration/execution/evidence/A00/agents_md_scan.txt
+docs/integration/execution/evidence/A00/checks_after_root_creation.txt
+docs/integration/execution/evidence/A00/final_checks.txt
+docs/integration/execution/evidence/A00/input_hashes_and_env.txt
+docs/integration/execution/evidence/A00/owner_observation.txt
+docs/integration/execution/evidence/A00/pre_creation_absence.txt
+docs/integration/execution/evidence/A01/route_inventory_reextract.json
+docs/integration/execution/evidence/A01/route_inventory_reextract_stdout.txt
+docs/integration/execution/evidence/A01/route_tool_diff.txt
+docs/integration/execution/evidence/A01/source_hashes_and_observation.txt
+docs/integration/execution/evidence/A01/statics_extract.json
+docs/integration/execution/evidence/A01/statics_extract_stdout.txt
+docs/integration/execution/evidence/A01/statics_extract_stdout_FAILED_gbk_decode.txt
+docs/integration/execution/evidence/A01/worksheet_build_stdout.txt
+docs/integration/execution/execution-ledger.json
+docs/integration/execution/ownership.json
+
+--- 2. worksheet validation ---
+row_count=71 summary.row_count=71
+baseline=71 coverage=71/71 new=0 removed=0
+status_counts={"deferred_active_owner": 7, "not_started": 64}
+provider_counts={"cie": 15, "ielts": 28, "materials": 4, "mixed": 5, "platform": 8, "timetable": 3, "toefl": 8}
+problems=[]
+
+--- 3. baseline vs re-extraction route-set equality ---
+baseline_routes=71 reextract_routes=71 missing=[] extra=[]
+groups_equal=True
+
+--- 4. statics self-recorded tool hashes vs on-disk ---
+integration-staging/tools/a01_static_inventory.py: recorded=8af1c7e366ec7483c6655a34694e71a90b445a8841e2b15bd8404708663e38e9 on_disk=8af1c7e366ec7483c6655a34694e71a90b445a8841e2b15bd8404708663e38e9 match=True
+integration-staging/tools/a01_inventory_routes.py: recorded=d6cdc8859a0051469093308aa68fb4380b71b6c2b8993b67454fb0cc867d86be on_disk=d6cdc8859a0051469093308aa68fb4380b71b6c2b8993b67454fb0cc867d86be match=True
+
+--- 5. ledger validation ---
+schema=examdata.integration.ledger/1 mode=PHASE_A_ISOLATED_ONLY
+task_count=27 unique=27
+missing=[] unexpected=[]
+status_counts={"not_started": 25, "staged_pass": 2}
+A00_status=staged_pass A01_status=staged_pass
+gate_count=7 open_gates=[]
+deferred_work_ids=['DEF-01', 'DEF-02', 'DEF-03', 'DEF-04', 'DEF-05', 'DEF-06']
+
+--- 6. artifact existence ---
+missing=[]
+
+--- 7. artifact sha256 manifest (excluding this transcript) ---
+38269ce9af64a79038db2cdc236b767b27048730a94b31b898945a114f11850f *integration-staging/README.md
+cbfeb424ee85478b63adf715387b5fb0c76b2e0ebee952123d5029795ea26986 *integration-staging/runtime/a01_preclose_final_checks.txt
+df40c2e718920c814fe509706371975885d04605fcd8989fcde7eb5d22e9265f *integration-staging/runtime/ledger-patches/A01_close.json
+11ab5e453bbe939cc9782d3eba3971f03ebdac704ac77ec5f9b35dbbc25226fa *integration-staging/tools/_env.sh
+3b933fca915345b76a944c2ef36b502f6ce15685dfd54945a8c2fea88c5f3735 *integration-staging/tools/a00_final_checks.sh
+6c06a436f6243af57d6ccf046b71132ae1e687dbf37d0ea85accf60093a2e054 *integration-staging/tools/a01_final_checks.py
+d6cdc8859a0051469093308aa68fb4380b71b6c2b8993b67454fb0cc867d86be *integration-staging/tools/a01_inventory_routes.py
+8af1c7e366ec7483c6655a34694e71a90b445a8841e2b15bd8404708663e38e9 *integration-staging/tools/a01_static_inventory.py
+e4cf64c56305530f34e3a76321c3f201fdb01af9cc989c6111f74485bffecdac *integration-staging/tools/a01_worksheet_build.py
+36a7a48d0bf2b0a59a149b6a14a9d5c361d3afd2c823d177538ea61cec70edb5 *integration-staging/tools/ledger_update.py
+4d228fce64e2ee8dacff0ee79e2e0f3a39b7380163bc503304e9f7a1ed41b838 *docs/integration/execution/A00_INITIAL_REPORT.md
+61221e1a815ddf3ef8f016ebdd91bc61ff6a3d9b9696ad82e2beba65c7a56515 *docs/integration/execution/A01_CLI_INVENTORY.md
+b8b605246d6173dfa1f9487715fb3aa6f67df97553e6756e1ebec17f8362f57f *docs/integration/execution/A01_COMPONENT_INVENTORY.md
+b3c06dd2cfbd5398acbfdccabe78e2d9b90b334e763a989c4ea519c1fa6b0598 *docs/integration/execution/A01_CONFIGURATION_MATRIX.md
+8db521873487a655c71d96b00085ac082d2fb02efb8f3712badf52798180a257 *docs/integration/execution/A01_DATA_ROOT_INVENTORY.md
+eebb23b18837421283858dc3795749fa929710cf82a632b806bbdcdc6b65f981 *docs/integration/execution/A01_REPORT.md
+984d60bf5a08adab5a03e109e8dc76602ae54a3ebeadd68309eced187ca773fc *docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json
+9d23ab7a8954ee28411f91ecf363e278801b62434c8d823b6ed45d10bf79bdc6 *docs/integration/execution/evidence/A00/agents_md_scan.txt
+092fed01b48bb5fdc6edc77f20345c292068c8a9a0c456124156b3544e8d9030 *docs/integration/execution/evidence/A00/checks_after_root_creation.txt
+674f62ccc08c88c782e77a9390cfe31b98a7593899738494a17d294a35c0546c *docs/integration/execution/evidence/A00/final_checks.txt
+02b16f5ae81be5239942ff2451cdec1f7c8250f7ac695f40a475ed04f5286f83 *docs/integration/execution/evidence/A00/input_hashes_and_env.txt
+0e0aae46c2e9a5e76d0c3dd2868bdfe3a41dc1e65e0c72fd66d671722a035c8e *docs/integration/execution/evidence/A00/owner_observation.txt
+72d2e3b040945aced9724a3befe370ac9f5da2aca8e1583f257e20427c8a541b *docs/integration/execution/evidence/A00/pre_creation_absence.txt
+458a1c0344f5f8becd9c2256aadf5cbde89bee94f7485923ec10f7bc9f295cfd *docs/integration/execution/evidence/A01/route_inventory_reextract.json
+509e44bd96d42dcd2eda406ec537569157c558ce73ad143bb19e9ecaf55da544 *docs/integration/execution/evidence/A01/route_inventory_reextract_stdout.txt
+1be7ac94fd3c478fa21b2d453148b8767d5fb60966f58581118abf1359e4006a *docs/integration/execution/evidence/A01/route_tool_diff.txt
+891bbdaaab77049957203905f05195074633c1f57832f9e439a76100f717bb6e *docs/integration/execution/evidence/A01/source_hashes_and_observation.txt
+a28e947d1aacecf5db849232626b9ae593a5dc3a8e812fa144bd2c5087041e9f *docs/integration/execution/evidence/A01/statics_extract.json
+30108f01c3a6bfd428be142a54c542bc4bcfb91231f8db1d87a7da24a2e22ddd *docs/integration/execution/evidence/A01/statics_extract_stdout.txt
+2acd661a09906141fee47e4d41d1887e73bb219435ab2c3f91fbde4cba6be80e *docs/integration/execution/evidence/A01/statics_extract_stdout_FAILED_gbk_decode.txt
+719a1f4148d08c2272a76fba2027aac66724178640b69356243b39ff61c406e0 *docs/integration/execution/evidence/A01/worksheet_build_stdout.txt
+31875e6ad80be2a100cac6154879ec6419db5cc7535d10775d2bfeb6c4673f69 *docs/integration/execution/execution-ledger.json
+bf11e22fe72df5d3d0573df8c3728dfc54963131b1a0e8d44a1b336dda356b24 *docs/integration/execution/ownership.json
+
+--- 8. verdict ---
+worksheet.row_count_71: PASS
+worksheet.baseline_71_71: PASS
+worksheet.statuses_allowed: PASS
+worksheet.no_merged_pass: PASS
+worksheet.deferred_7: PASS
+worksheet.problems_empty: PASS
+worksheet.rows_complete: PASS
+worksheet.providers_known: PASS
+routes.sets_equal: PASS
+routes.groups_equal: PASS
+routes.no_duplicates: PASS
+statics.self_hash[a01_static_inventory.py]: PASS
+statics.self_hash[a01_inventory_routes.py]: PASS
+ledger.count_unique: PASS
+ledger.schema_mode: PASS
+ledger.a00_a01_staged: PASS
+ledger.no_merged_pass: PASS
+ledger.gates_closed: PASS
+ledger.a01_write_roots: PASS
+ledger.a01_evidence_recorded: PASS
+ledger.deferred_work_present: PASS
+ownership.write_roots_2: PASS
+artifacts.all_present: PASS
+A01_FINAL_CHECKS_JSON: PASS
+FINAL_CHECKS: PASS

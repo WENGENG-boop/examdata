@@ -1,0 +1,685 @@
+{
+  "ledger_version": "b07-private-progress-ledger/1",
+  "generated_by": "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_build_report.py",
+  "generated_at": "2026-10-07T07:40:51+08:00",
+  "kind": "private_progress_ledger",
+  "note": "Private progress record for the B07 rehearsal. This is NOT the live execution ledger and does not replace it.",
+  "packet": "B07",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "live_execution_ledger": {
+    "path": "docs/integration/execution/execution-ledger.json",
+    "sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "expected_frozen_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "byte_unchanged": true,
+    "gates_open": [],
+    "all_gates_closed": true,
+    "written_by_this_rehearsal": false
+  },
+  "status": "b07_private_rehearsal_complete_pending_human_release",
+  "not_claimed": [
+    "merged_pass",
+    "deployment",
+    "full B00/B01 completion"
+  ],
+  "changed_counts": {
+    "new_staging_scripts": 6,
+    "new_candidate_module_source_files": 2,
+    "new_operations_files_added_by_b07": 12,
+    "edited_candidate_module_source_files": 2,
+    "candidates": 1,
+    "candidate_files_copied_from_parent": 209,
+    "candidate_files_carried_verbatim": 207,
+    "candidate_tree_files": 221,
+    "candidate_files_on_disk": 222,
+    "parent_tree_files": 208,
+    "original_project_files_written": 0,
+    "frozen_evidence_files_rewritten": 0
+  },
+  "count_explanations": {
+    "new_staging_scripts": "6 new B07 scripts: b07_build_candidate.py, b07_route_probe.py, b07_smoke_import.py, b07_validate.py, b07_build_proposals.py, b07_build_report.py (plus the rewritten module sources and fixtures authored under tools/, which count as candidate inputs, not as scripts)",
+    "new_candidate_module_source_files": "2 = the new operations package modules against the parent: jobs.py (916ae7b1…) and published.py (54522b9e…), authored under tools/ and written byte-identical into src/examdata/integration/operations/ (source_sha256 == written_sha256 in the manifest)",
+    "new_operations_files_added_by_b07": "12 = 2 new module sources (operations/jobs.py, operations/published.py) + 10 labelled synthetic operations fixture files under fixtures/synthetic/operations/operations-root/ (PROVENANCE.json, README.md, expected-manifest.json and seven batch checkpoint files: run-ok, run-ok-stale, run-partial, unsupported, cie-batch-8888, cie-batch-8888-stale, cie-location-batch); the fixtures are explicitly labelled synthetic control data, never real records",
+    "edited_candidate_module_source_files": "2 rewritten module sources under tools/: app.py (0edb0911… → 81f9c3c9…) and dataset.py (d0edabc7… → c0d0d06c…), each byte-identical to the candidate's copy; evidence/source_edits.diff records both rewrites plus the two new modules and the ten fixtures against the B06 bytes (14 sections)",
+    "candidates": "1 new private candidate: b07-operations-v1, a child of the B06 frontend candidate",
+    "candidate_files_copied_from_parent": "209 = the B06 on-disk non-cache files (208 digest files + B06_CANDIDATE_MANIFEST.json) carried byte-for-byte; 207 of them stay verbatim and 2 are rewritten by B07",
+    "candidate_files_carried_verbatim": "207 = 209 copied minus the 2 rewritten modules; the recorded carried-verbatim tree digest is fc59639b…",
+    "candidate_tree_files": "221 digest files = 207 carried verbatim + 2 rewritten + 12 new (2 modules + 10 fixtures); B07's digest rule excludes its own manifest and skips __pycache__/.pytest_cache",
+    "candidate_files_on_disk": "222 = 221 digest files + B07_CANDIDATE_MANIFEST.json; the rehearsal ran with PYTHONDONTWRITEBYTECODE=1 so the candidate carries no __pycache__ files and on-disk equals digest + manifest exactly",
+    "parent_tree_files": "208 = B06's digest count, which excluded B06's own manifest (B06 on-disk non-cache was 209); the two numbers describe different file sets by rule",
+    "original_project_files_written": "0: nothing was written outside integration-staging/ and docs/integration/execution/",
+    "frozen_evidence_files_rewritten": "0 existing frozen files rewritten: evidence/A00–B06/**, evidence/R0104/** and the B02–B06 runtime trees were read-only; B07's own evidence under evidence/B07/b07-rehearsal-2026-10-07/ was created new and nothing there was overwritten; the failed probe capture is a new file kept at evidence/probe_run1.json and the clean rerun wrote evidence/probe_run2.json, not over it"
+  },
+  "hashes": {
+    "candidate_manifest": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/B07_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "3e7d2a7721b04a1663400ca335ae213c75e7696dbb60c656b938f2c32d061784",
+    "candidate_tree_sha256": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179",
+    "carried_verbatim_tree_sha256": "fc59639b098a623cddc1957db03baa4a2b4f48968b9027a4109e159e6f831dd4",
+    "parent_manifest_sha256": "9af2e849573033aceb9e4b5f0acbea1d62b91565d8b87526b99e0a3db75b82cb",
+    "parent_tree_sha256": "ffe774db608ff9d86246458a38265f9baa760b40880e48197e84d887f85d53f4",
+    "validation_sha256": "595042836590ceefa85b898ddc904f67977d3185f30c5e65914099f13f1050ca",
+    "probe_capture_sha256": "49e325cf2d33d13675c2754f573a3a89285c1abd0e29344aca82ff8fd114543b",
+    "probe_failed_capture_sha256": "0dc10212178f9d55dabf46c64fa0e60a04dacbb1784c82418678083aa3bbbdca",
+    "smoke_record_sha256": "7d8cb7550ef30a28f00e70d0875b5ea90077a3cc7b13d9ed8f9037356e528f12",
+    "merge_proposal_sha256": "15e662a6787366233a7315aa3bb9e055098415ca63efe121740f37ecc83fbc91",
+    "rollback_proposal_sha256": "a19bef0f080bb002af44edbd7555e1793d4cb23a4863ae36a234f169726d290d",
+    "suite_transcript_sha256": "1b638aff57af2969f7fb6b6f09ed8b44bb0bcf09747d7cfbb25f7fb9a03bfca3",
+    "source_edits_diff_sha256": "56001677ea6e22cc32cbcb257e4fefe3ba05523f430f81d24acb278a6021a166",
+    "build_record_sha256": "fd10a6d537c5cd6d2af504a3c28ba46f4066cc13f5d1ffdd8dfca9bb63d88e01"
+  },
+  "test_counts": {
+    "b07_route_probe": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b07-rehearsal-2026-10-07/b07_validate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "runs": 3,
+      "checks_per_run": 174,
+      "checks_total": 522,
+      "checks_failed": 0,
+      "new_suite": true,
+      "explanation": "New B07 route probe (the B06 probe extended for the operations view): 174 checks per run = the 138-check B06 face (A 12, B 14, C 19, D 10, E 7, F 7, G 9, H 24, S 10, N 26) plus 36 new B07 checks - the three new A root-configuration checks and the J operations section (33 checks: 28 positive + 5 negative controls); 30 negative and 111 positive controls in total (the negative list extends B06's 25 with the five J negatives; the positive list is B06's 83 with the two ledger-stability checks renamed from _b05_ to _b06_ plus the 28 J checks). Executed from 3 different working directories (174 x 3 = 522 check executions), 0 failed; the J section drives the synthetic operations fixture root through the candidate's operations view. The archived capture is evidence/probe_run2.json (the clean rerun); the first capture attempt exited 1 and is kept, not overwritten, at evidence/probe_run1.json - see process_observations."
+    },
+    "isolated_staged_suite": {
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "passed": 887,
+      "failed": 0,
+      "summary": "887 passed, 1 warning in 43.72s",
+      "collected": 887,
+      "baseline_passed": 887,
+      "explanation": "Count is unchanged from the R04/B02/B03/B04/B05/B06 baseline (887 passed). B07 adds no test file to the staged suite; its operations checks live in the probe's J section and the smoke tool, so a changed suite count would itself have been the finding. The suite ran exactly once, after every product-code change had stabilised (the published.py fix and rebuild preceded it; the only later code change was a probe-internal attribute name the staged suite does not collect); the transcript's last line records `suite_exit=0`."
+    },
+    "candidate_build": {
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_build_candidate.py 1> evidence/build_run.json 2> evidence/build_run.err; echo EXIT=$?",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "checks_total": 21,
+      "checks_passed": 21,
+      "stderr_bytes": 0,
+      "new_suite": true,
+      "explanation": "21 build-time checks on the candidate itself (parent carried byte-identically, exactly the two intended rewrites and twelve intended additions, the ten fixture files byte-equal to the run's tools/operations-root, provenance hashes consistent, the two new modules compile, the digest is parent + new files and excludes the manifest, and the digest stays reproducible after the manifest write); all new. Build record: all_ok=True, digest_reproducible_after_manifest_write=True, stderr empty. The build ran twice: the first pass (tree 7a1985b7…) was superseded by the published.py over-redaction fix and rebuilt to 5df25984…; this record is the second pass - see process_observations."
+    },
+    "cross_stack": {
+      "command": "part of the B07 probe (H section) via tools/b07_cross_stack.mjs",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "checks_total": 18,
+      "checks_failed": 0,
+      "new_suite": true,
+      "explanation": "The probe's H section starts an ephemeral uvicorn upstream and the staged frontend server on 127.0.0.1 (ephemeral loopback ports) and drives the candidate frontend's Node client/bridge through it: the cross-stack driver's 18 checks all pass, the served content is byte-equal across the proxy, the direct API and the disk fixture (content triple), the banner was seen and both processes are stopped again (teardown verified: {\"returncode_present\": true, \"upstream_stopped\": true})."
+    },
+    "smoke_import": {
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_smoke_import.py 1> evidence/smoke_import.json 2> evidence/smoke_import.err; echo EXIT=$?",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "observations": 7,
+      "coverage_rows": 7,
+      "current_rows": 5,
+      "superseded_rows": 2,
+      "job_rows": 7,
+      "published_rows": 4,
+      "structural_ok": true,
+      "new_suite": true,
+      "explanation": "The smoke tool drives the candidate's operations view in-process over the synthetic fixture root: 7 checkpoint observations (5 current + 2 superseded), 7 coverage rows, 7 job rows and 4 published rows; the root is configured with 7 scanned files and no problems; structural_ok=True. It ran twice: the first pass exposed the published.py over-redaction and the fix and rebuild were followed by the clean second pass recorded here (stderr empty)."
+    }
+  },
+  "probe_verdict": "b07_rehearsal_valid_private_only",
+  "probe_findings": [],
+  "discovery_identical_across_cwds": true,
+  "stability_identical_across_cwds": true,
+  "seam_identical_across_cwds": true,
+  "operations_identical_across_cwds": true,
+  "frontend_identical_across_cwds": true,
+  "cross_stack_identical_across_cwds": true,
+  "discovery_projection_identical_across_cwds": true,
+  "b07_vs_b06_ledger_consistent": true,
+  "candidate_tree_digest_reproducible": true,
+  "probe_stability": {
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+    "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+    "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+    "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+    "v2_operation_ids": {
+      "GET /api/v2/info": "info_api_v2_info_get",
+      "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+      "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+      "GET /api/v2/courses": "courses_api_v2_courses_get",
+      "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+      "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+      "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+      "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+      "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+      "GET /api/v2/containers": "containers_api_v2_containers_get",
+      "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+      "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+      "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+      "GET /api/v2/resources": "resources_api_v2_resources_get",
+      "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+      "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+      "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+      "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+      "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+      "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+      "GET /api/v2/questions": "questions_api_v2_questions_get",
+      "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+      "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+      "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+      "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+      "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+      "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+      "GET /api/v2/tags": "tags_api_v2_tags_get",
+      "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+      "GET /api/v2/materials": "materials_api_v2_materials_get",
+      "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+      "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+      "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+      "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+      "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+      "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+      "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+      "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+      "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+    },
+    "path_delta": 34
+  },
+  "probe_b07_vs_b06_stability": {
+    "ledger_path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\B06_PROGRESS_LEDGER.json",
+    "ledger_sha256": "b96d16c9911b59dfa9489bc023a1512af142f6c9d61c1fecd2f45302b93f27db",
+    "digest_mismatches": {},
+    "ids_match": true,
+    "ledger_ids": 39,
+    "probe_ids": 39,
+    "ledger_path_delta": 34,
+    "probe_path_delta": 34
+  },
+  "seam": {
+    "fixture_counts": {
+      "syllabuses": 2,
+      "materials": 2,
+      "timetable_seasons": 2,
+      "timetable_events": 2,
+      "timetable_windows": 2
+    },
+    "deferred": {
+      "families_equal": true,
+      "tags": [],
+      "jobs": [
+        "job_synthetic_coverage"
+      ],
+      "reason_len": 145
+    },
+    "route_statuses": {
+      "syllabuses": 200,
+      "materials": 200,
+      "timetables": 200,
+      "events": 200,
+      "windows": 200
+    },
+    "route_counts": {
+      "syllabuses": 2,
+      "materials": 2,
+      "events": 2,
+      "windows": 2,
+      "seasons": 2
+    },
+    "private_injection": {
+      "syllabus_ids": [
+        "syl_probe_private"
+      ],
+      "material_ids": [
+        "mat_probe_private"
+      ],
+      "detail_statuses": [
+        404,
+        200,
+        404,
+        200
+      ]
+    },
+    "default_syllabus_ids": [
+      "syl_synthetic_cie_0580",
+      "syl_synthetic_ielts_book"
+    ]
+  },
+  "frontend_node_test": {
+    "tests": 41,
+    "pass": 41,
+    "fail": 0,
+    "exit": 0
+  },
+  "import_status_checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b07-rehearsal-2026-10-07\\\\candidates\\\\b07-operations-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\r…"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b07-rehearsal-2026-10-07\\\\candidates\\\\b07-operations-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\candidates\\b07-operations-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\candidates\\b07-operations-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    {
+      "name": "A_operations_root_is_candidate_fixture",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\candidates\\b07-operations-v1\\fixtures\\synthetic\\operations\\operations-root"
+    },
+    {
+      "name": "A_api_key_is_labelled_synthetic_control",
+      "ok": true,
+      "detail": "fixture-labelled synthetic control value"
+    },
+    {
+      "name": "A_operations_root_env_name_pinned",
+      "ok": true,
+      "detail": "EXAMDATA_OPERATIONS_ROOT"
+    }
+  ],
+  "negative_checks": [
+    "N1_raw_include_serves_v2_unshaped_errors",
+    "N1_raw_include_binary_row_keeps_application_json",
+    "N2_unscoped_install_changes_exactly_three_probes",
+    "N2_unscoped_legacy_500_becomes_json_envelope",
+    "N2_unscoped_legacy_422_becomes_400_envelope",
+    "N2_unscoped_legacy_404_becomes_envelope",
+    "N2_post_build_handler_install_is_invisible",
+    "N3_mount_documents_no_v2_paths",
+    "N3_mount_direct_info_is_wrong_route_envelope",
+    "N3_mount_requires_doubled_prefix",
+    "N4_double_attach_refused",
+    "N4_double_attach_leaves_host_unchanged",
+    "N5_late_attach_refused",
+    "N5_late_attach_no_v2_paths",
+    "N6_non_fastapi_host_refused",
+    "N7_refuses_missing_evidence_marker",
+    "N7_refuses_missing_status_marker",
+    "N7_refuses_non_synthetic_source_evidence",
+    "N7_refuses_live_access_material",
+    "N7_refuses_unavailable_season_without_reason",
+    "N7_refuses_date_without_raw_text",
+    "N7_refuses_unknown_boundary_with_parsed_value",
+    "N7_refuses_undeclared_missing_boundary",
+    "N7_refuses_non_list_family_rows",
+    "N7_dataset_refuses_unvalidated_source",
+    "J_operations_disabled_when_unconfigured",
+    "J_route_leaves_carry_no_raw_paths_or_secrets",
+    "J_disabled_app_has_no_operations_key",
+    "J_missing_root_is_reported_not_raised",
+    "J_operations_modules_expose_no_write_surface"
+  ],
+  "positive_checks": [
+    "S_fixture_source_valid_counts",
+    "S_default_dataset_uses_fixture_source",
+    "S_rows_copy_isolated",
+    "S_deferred_fixtures_through_seam",
+    "S_route_rows_carry_markers",
+    "S_cie_event_null_fields_preserved",
+    "S_seasons_unavailable_with_reason",
+    "S_windows_unknown_boundaries_declared",
+    "S_private_source_served_by_routes",
+    "S_fixture_path_still_serves_after_injection",
+    "B_ordering_get_first_match_own_route",
+    "B_ordering_head_first_match_own_route",
+    "B_no_param_static_shadowing",
+    "B_no_pattern_intersections",
+    "C_route_table_prefix_kept",
+    "C_route_table_single_wrapper_appended",
+    "C_legacy_inventory_byte_identical",
+    "C_legacy_extras_byte_identical",
+    "C_legacy_boom_bytes_pinned",
+    "C_binary_fixture_ids_pinned",
+    "C_binary_content_200",
+    "C_binary_range_206",
+    "C_binary_conditional_304",
+    "C_binary_head_200",
+    "C_material_content_200_pinned",
+    "C_v2_typed_400_invalid_request",
+    "C_v2_stack_boom_500_internal_error",
+    "C_v2_jobs_404_not_found",
+    "C_v2_unknown_404_route_not_found",
+    "C_v2_post_info_405_method_not_allowed",
+    "C_v2_info_200_envelope",
+    "C_v2_controls_differ_from_baseline",
+    "D_path_delta_is_exactly_registry",
+    "D_pre_paths_operations_unchanged",
+    "D_operation_ids_unique",
+    "D_v2_operation_ids_match_standalone",
+    "D_binary_rows_documented",
+    "D_nonbinary_200_schema_is_envelope",
+    "D_openapi_route_serves_same_document",
+    "D_second_instance_document_digest_equal",
+    "D_stability_digests_match_b06_ledger",
+    "D_stability_ids_and_delta_match_b06_ledger",
+    "F_frontend_tree_is_seventeen_files",
+    "F_staged_frontend_bytes_match_workspace_source",
+    "F_new_frontend_files_match_run_sources",
+    "F_provenance_records_match_candidate_and_source",
+    "F_node_available",
+    "F_node_check_parses_new_frontend_js",
+    "F_node_test_suite_41_passed",
+    "G_rows_six_sorted_with_discovery_blocks",
+    "G_empty_query_returns_all_six",
+    "G_system_filter_rows",
+    "G_unknown_filter_422_unsupported_filter",
+    "G_query_matrix_all_21_cases",
+    "G_boundary_mar_leaves_mark_scheme_alone",
+    "G_boundary_202_is_not_2024",
+    "G_boundary_paper_suffix_01_matches",
+    "G_detail_routes_carry_discovery_key",
+    "H_upstream_uvicorn_started",
+    "H_frontend_server_ephemeral_banner",
+    "H_frontend_serves_index",
+    "H_node_static_index_bytes_equal",
+    "H_node_static_root_alias_serves_index",
+    "H_node_static_missing_404",
+    "H_node_method_405_allow_get",
+    "H_node_catalog_json_bytes_equal",
+    "H_node_syllabi_json_bytes_equal",
+    "H_node_client_cie_single_season",
+    "H_node_client_cie_fanout",
+    "H_node_client_edexcel_single_june",
+    "H_node_client_edexcel_fanout_cross_season_duplicates",
+    "H_node_bridge_cie_single_rows",
+    "H_node_bridge_cie_fanout_empty_seasons_ok",
+    "H_node_bridge_edexcel_fanout_deduped",
+    "H_node_bridge_guard_400",
+    "H_node_content_bytes_via_proxy",
+    "H_node_v2_info_via_proxy",
+    "H_node_gateway_denied_404",
+    "H_node_gateway_allowed_forwarded_to_upstream",
+    "H_cross_stack_all_18_pass",
+    "H_content_triple_proxy_direct_disk",
+    "H_rehearsal_processes_stopped",
+    "N1_legacy_probes_unchanged",
+    "J_operations_enabled_from_environment",
+    "J_jobs_by_id_serves_current_only",
+    "J_stages_reflect_the_checkpoints",
+    "J_superseded_only_in_superseded_lists",
+    "J_no_job_conflicts",
+    "J_view_scanned_once_and_clean",
+    "J_route_9191_stays_stopped_and_flags_resume",
+    "J_route_9191_error_is_fixture_redacted",
+    "J_route_9191_has_no_superseded_or_conflicts",
+    "J_operations_warning_appended_on_route",
+    "J_route_9191_envelope_completeness",
+    "J_route_leaves_expose_the_placeholders",
+    "J_route_8888_current_running_old_stopped_only_superseded",
+    "J_deferred_job_fixture_still_served",
+    "J_coverage_route_items_gaps_identical_with_and_without_operations",
+    "J_route_coverage_warning_appended",
+    "J_route_root_block_disclosed",
+    "J_checkpoints_seven_rows_five_current_two_superseded",
+    "J_checkpoint_payload_hashes_recompute_7_of_7",
+    "J_checkpoint_payload_hashes_pin_three",
+    "J_unsupported_checkpoint_recorded_unknown",
+    "J_checkpoints_conflicts_empty",
+    "J_jobs_briefs_show_stopped_and_superseded_states",
+    "J_published_four_rows_and_schema_absent",
+    "J_published_rows_pass_the_coverage_contract",
+    "J_published_statuses_pinned",
+    "J_computed_at_is_utc_second_precision",
+    "J_candidate_tree_unchanged_by_the_view"
+  ],
+  "artifacts": {
+    "candidate_manifest": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/B07_CANDIDATE_MANIFEST.json",
+    "merge_proposal": "docs/integration/execution/B07_MERGE_PROPOSAL.json",
+    "rollback_proposal": "docs/integration/execution/B07_ROLLBACK_PROPOSAL.json",
+    "layout_validation": "docs/integration/execution/evidence/B07/b07-rehearsal-2026-10-07/B07_LAYOUT_VALIDATION.json",
+    "probe_capture": "integration-staging/runtime/b07-rehearsal-2026-10-07/evidence/probe_run2.json",
+    "probe_failed_capture": "integration-staging/runtime/b07-rehearsal-2026-10-07/evidence/probe_run1.json",
+    "smoke_record": "integration-staging/runtime/b07-rehearsal-2026-10-07/evidence/smoke_import.json",
+    "suite_transcript": "integration-staging/runtime/b07-rehearsal-2026-10-07/evidence/isolated_staged_suite.txt",
+    "source_edits_diff": "integration-staging/runtime/b07-rehearsal-2026-10-07/evidence/source_edits.diff",
+    "scripts": [
+      "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_build_candidate.py",
+      "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_route_probe.py",
+      "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_smoke_import.py",
+      "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_validate.py",
+      "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_build_proposals.py",
+      "integration-staging/runtime/b07-rehearsal-2026-10-07/b07_build_report.py"
+    ]
+  },
+  "proposal_counts": {
+    "merge_entries": 15,
+    "merge_entries_requiring_release": 14,
+    "merge_staging_only_entries": 1,
+    "merge_new_files_vs_parent": 12,
+    "merge_edited_files_rewritten": 2,
+    "rollback_entries": 15,
+    "rollback_staging_reversible_by_tree_delete": 1,
+    "rollback_staging_removed_with_the_tree": 14,
+    "rollback_staging_restore_parent_bytes": 2,
+    "rollback_reversible_by_target_delete": 14,
+    "rollback_reversible_by_restore_base": 0,
+    "rollback_reconciliation_cases": 0,
+    "rollback_no_original_action": 1
+  },
+  "commands": [
+    {
+      "step": "build candidate, first pass",
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_build_candidate.py 1> evidence/build_run.json 2> evidence/build_run.err; echo EXIT=$?",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "note": "first pass; its candidate tree digest was 7a1985b7… but the pass was superseded by the rebuild that followed the published.py over-redaction fix; the recorded build_run.json is the second pass"
+    },
+    {
+      "step": "smoke import, first pass",
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_smoke_import.py 1> evidence/smoke_import.json 2> evidence/smoke_import.err; echo EXIT=$?",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "note": "first pass; it exposed the over-redacted public projection of the new operations view (the internal schema tag and a slash-bearing denominator label were rendered as redacted path strings), which was fixed with two edits inside tools/published.py and rebuilt"
+    },
+    {
+      "step": "build candidate, second pass (the recorded build)",
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_build_candidate.py 1> evidence/build_run.json 2> evidence/build_run.err; echo EXIT=$?",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "note": "recorded pass after the fix; candidate tree digest 5df25984…; evidence/build_run.json is this pass (all_ok=True, checks 21/21, digest reproducible after the manifest write, stderr empty)"
+    },
+    {
+      "step": "smoke import, second pass (the recorded smoke)",
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_smoke_import.py 1> evidence/smoke_import.json 2> evidence/smoke_import.err; echo EXIT=$?",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "note": "clean pass; the public projection no longer carries the internal schema tag and denominator labels use '#' separators; evidence/smoke_import.json is this pass (structural_ok=True, stderr empty)"
+    },
+    {
+      "step": "route probe, first capture attempt (kept)",
+      "command": "B07_CANDIDATE_ROOT=\"$PWD/candidates/b07-operations-v1\" B07_WORKSPACE_ROOT=\"C:/Users/weo/Desktop/api\" B07_TMP_DIR=\"$PWD/evidence/tmp\" EXAMDATA_INTEGRATION_ROOT=\"$PWD/candidates/b07-operations-v1\" EXAMDATA_OPERATIONS_ROOT=\"$PWD/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root\" EXAMDATA_API_KEY=REDACTED_LOCAL_CREDENTIAL PYTHONDONTWRITEBYTECODE=1 PYTHONIOENCODING=utf-8 \"C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe\" b07_route_probe.py 1> evidence/probe_run1.json 2> evidence/probe_run1.err; echo \"probe_exit=$?\"",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 1,
+      "note": "failed exactly one check, J_section_completed, on a probe-internal attribute name ('JobView' object has no attribute 'public_id'); 145 checks were recorded (85 positive / 26 negative) before the J section aborted; this failed capture is kept at evidence/probe_run1.json and was NOT overwritten by the clean rerun"
+    },
+    {
+      "step": "route probe, clean rerun (the archived capture)",
+      "command": "B07_CANDIDATE_ROOT=\"$PWD/candidates/b07-operations-v1\" B07_WORKSPACE_ROOT=\"C:/Users/weo/Desktop/api\" B07_TMP_DIR=\"$PWD/evidence/tmp\" EXAMDATA_INTEGRATION_ROOT=\"$PWD/candidates/b07-operations-v1\" EXAMDATA_OPERATIONS_ROOT=\"$PWD/candidates/b07-operations-v1/fixtures/synthetic/operations/operations-root\" EXAMDATA_API_KEY=REDACTED_LOCAL_CREDENTIAL PYTHONDONTWRITEBYTECODE=1 PYTHONIOENCODING=utf-8 \"C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe\" b07_route_probe.py 1> evidence/probe_run2.json 2> evidence/probe_run2.err; echo \"probe_exit=$?\"",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "note": "174/174 checks clean with 30 negatives / 111 positives; a one-line fix inside the probe and a scratch preflight in evidence/tmp (removed at cleanup) preceded this rerun; this rerun is evidence/probe_run2.json; stderr holds only the Starlette deprecation warning"
+    },
+    {
+      "step": "validate (probe from 3 cwds)",
+      "command": "rm -rf integration-staging/runtime/b07-rehearsal-2026-10-07/__pycache__ && cd integration-staging/runtime/b07-rehearsal-2026-10-07 && PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_validate.py; echo \"VALIDATE_EXIT=$?\"",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "note": "the validator itself writes the frozen evidence under docs/integration/execution/evidence/B07/b07-rehearsal-2026-10-07/(B07_LAYOUT_VALIDATION.json, b07_validation_run.txt, probe_cwd1..3.json); all three runs 174/174 from the workspace root, an arbitrary directory name and a path with spaces and non-ASCII characters"
+    },
+    {
+      "step": "isolated staged suite",
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q (background task; its output log was copied to integration-staging/runtime/b07-rehearsal-2026-10-07/evidence/isolated_staged_suite.txt and suite_exit=0 appended)",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "note": "887 passed, 1 warning in 43.72s; the transcript's last line records suite_exit=0; ran exactly once, after every product-code change had stabilised"
+    },
+    {
+      "step": "merge + rollback proposals",
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_build_proposals.py; echo \"EXIT=$?\"",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "note": "clean on the first run (no failed-run history in this packet); all 11 digest checks true; 15 entries, 14 requiring the human release, 1 staging-only"
+    },
+    {
+      "step": "review report + progress ledger",
+      "command": "PYTHONIOENCODING=utf-8 PYTHONDONTWRITEBYTECODE=1 C:/Users/weo/Desktop/api/examdata/.venv/Scripts/python.exe b07_build_report.py; echo \"EXIT=$?\"",
+      "cwd": "C:/Users/weo/Desktop/api/integration-staging/runtime/b07-rehearsal-2026-10-07",
+      "exit_code": 0,
+      "note": "writes B07_PROGRESS_LEDGER.json, B07_PROGRESS_LEDGER.md and B07_REHEARSAL_REPORT.md into docs/integration/execution/; frozen evidence is read, never rewritten"
+    }
+  ],
+  "frozen_evidence_written": false,
+  "not_run": [
+    {
+      "check": "real merge into the original project",
+      "reason": "gate original_paths_released is closed; the plan entry remains a proposal (deferred_pending_release) and the original tree was never read or written"
+    },
+    {
+      "check": "real active-owner integration (materials, syllabuses and timetables served by the original owner modules)",
+      "reason": "no owner release exists for the active-owner families; the seam serves only clearly labelled synthetic fixtures and the real integration stays deferred_active_owner"
+    },
+    {
+      "check": "real baseline verification against the actual legacy application",
+      "reason": "gate original_paths_released is closed; the legacy side was simulated from the frozen A12 route-compatibility worksheet, not from the original app"
+    },
+    {
+      "check": "real Node component execution (fake-cli.mjs run via the Node runtime)",
+      "reason": "gate original_paths_released is closed; only synthetic discovery and importability of the component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "cutover of the existing service",
+      "reason": "gate existing_service_cutover_authorized is closed"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "cleanup of the original project",
+      "reason": "gate original_cleanup_authorized is closed"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no real credential is used, read, fabricated or staged; the only credential-shaped value anywhere is the fixture-labelled synthetic control string the operations fixtures carry, and the routing controls are synthetic request parameters with no secret values"
+    },
+    {
+      "check": "real frontend cutover (the staged page and server on the live service)",
+      "reason": "gate existing_service_cutover_authorized is closed; the staged frontend ran only on an ephemeral 127.0.0.1 port against the private read API"
+    },
+    {
+      "check": "real source-provider fetching from the frontend process",
+      "reason": "gate upstream_requests_authorized is closed; the candidate frontend carries no source-discovery logic and only proxies the private read API"
+    },
+    {
+      "check": "real job-service interaction (resume / cancel / enqueue against a live queue)",
+      "reason": "no job-service release exists and none is needed: the operations view is read-only by construction, and a stopped job is only observed as stopped; it is never resumed, restarted or written back"
+    },
+    {
+      "check": "writes of any kind to an operations root (checkpoint repair, resume flags, published manifests)",
+      "reason": "gate original_paths_released is closed; the only operations root touched was the candidate's own synthetic fixture directory, read once and never modified"
+    }
+  ],
+  "remaining_blockers": [
+    {
+      "blocker": "original-project merge of the B07 entries",
+      "reason": "gate original_paths_released is closed; an explicit human release with an explicit scope is required. The merge proposal has 14 release-required entries of 15: the two rewritten modules (app.py, dataset.py; add_file semantics because the whole integration package is new relative to the original project) and the twelve new files (operations/jobs.py, operations/published.py and the ten labelled synthetic operations fixtures); the candidate tree digest must be re-verified immediately before any original write."
+    },
+    {
+      "blocker": "release decision spans both proposals",
+      "reason": "the B06 merge proposal's 18 release-required entries and B07's 14 should be decided together or stay deferred; the B07 proposal re-verifies the cross-reference against the B06 proposal (b06_merge_crossref_matches, supersession_chains_match) rather than re-proposing B06's entries"
+    },
+    {
+      "blocker": "real Node component execution (ielts-api / toefl-api)",
+      "reason": "gate original_paths_released is closed; the cross-stack rehearsal ran only against the private candidate and its staged frontend, on ephemeral loopback ports"
+    },
+    {
+      "blocker": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; schema and data roots are deliberately unchanged by B07"
+    },
+    {
+      "blocker": "real operations enablement and source fetching/recovery",
+      "reason": "gates existing_service_cutover_authorized, upstream_requests_authorized and cie_resume_authorized are closed; the only operations root is the labelled synthetic fixture, and the stopped cie 9191 batch stays stopped - nothing is resumed, fetched or written back"
+    },
+    {
+      "blocker": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; the candidate is private-only"
+    }
+  ],
+  "process_observations": [
+    {
+      "observation": "The first build and smoke passes exposed an over-redaction defect in the new operations view's public projection: published.py rendered the internal `coverage/1` schema tag and a slash-bearing denominator label (`manifest:expected-manifest.json/cie-questions:expected=7`) as redacted path strings (`coverage<path>`, `manifest:expected-manifest.json<path>`) because the production redactor treats slash-bearing label text as filesystem locations.",
+      "handling": "Fixed with two edits inside tools/published.py: the internal schema tag is no longer emitted on public rows, and denominator labels use `#` separators so they cannot be mistaken for paths. The candidate was rebuilt (tree digest 7a1985b7… → 5df25984…; file counts unchanged at 221/222) and the clean second smoke pass confirmed it (schema tag absent, denominator `manifest:expected-manifest.json#cie-questions:expected=7`). Both edits are recorded in evidence/source_edits.diff; the pre-fix bytes are not archived separately - their rendering survives in this session's event log only."
+    },
+    {
+      "observation": "The probe's first capture attempt exited 1 with exactly one failing check, J_section_completed: a probe-internal attribute name (the J wrapper read `job.public_id` where the view exposes `job.id`), i.e. AttributeError: 'JobView' object has no attribute 'public_id'. 145 checks were recorded (85 positive / 26 negative) before the J section aborted.",
+      "handling": "One line inside the probe was fixed (public_id -> id), and a scratch preflight (evidence/tmp/j2_check.py, removed at cleanup) confirmed the J data (5 stage rows, 4 published rows without the schema tag, the 9191 completeness envelope, the warning) before the clean rerun. The rerun passed 174/174. Unlike the B06 rehearsal, the failed capture was NOT overwritten: it is kept at evidence/probe_run1.json, the clean capture at evidence/probe_run2.json; only the clean run is archived as the frozen cwd captures by the validator."
+    },
+    {
+      "observation": "The B07 probe reports 174 checks where the B06 probe reported 138, and its positive and negative control lists both extend B06's.",
+      "handling": "Explained: 138 + 36 = 174 - the three new A root-configuration checks (operations root is the candidate's fixture, the API key is a labelled synthetic control, the env name is pinned) and the 33 new J checks (28 positive + 5 negative); the positive list is B06's with the two ledger-stability checks renamed from _b05_ to _b06_ plus the 28 J positives (83 + 28 = 111), and the negative list is B06's 25 plus the 5 J negatives (30). The report script asserts all of these relations against the frozen B06 probe before writing anything."
+    },
+    {
+      "observation": "Unlike B06, the proposals generator exited 0 on its first run (no failed-run history in this packet); the build and smoke tools ran twice only because of the published.py over-redaction fix.",
+      "handling": "Both build passes exited 0 with 21/21 checks and identical file counts (221 digest / 222 on-disk); only the recorded tree digest differs because published.py's bytes changed between them. The recorded artifacts are the second passes; the first pass is named in the command table and here."
+    }
+  ]
+}

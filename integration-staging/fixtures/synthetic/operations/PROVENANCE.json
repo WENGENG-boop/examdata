@@ -1,0 +1,79 @@
+{
+  "schema": "fixture-provenance/1",
+  "scope": "A13 operations checkpoint synthetic fixtures",
+  "note": "Hand-authored synthetic fixtures shaped like the two native checkpoint formats (CIE batch runner, ielts-run-checkpoint/1). No upstream content, no real batch/run state, no credentials.",
+  "created_by": "Phase A executor (packet A13)",
+  "created_at_local": "2026-10-06T10:10:00+08:00",
+  "entries": [
+    {
+      "path": "integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-running.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "cie",
+      "created_by": "Phase A executor (packet A13)",
+      "created_at_local": "2026-10-06T10:10:00+08:00",
+      "sha256": "569e684df62f142ae2980ec22801f58aa1ce6d469e5926f58380875d47c3a8bd",
+      "bytes": 1485,
+      "note": "Prove that missing native stop fields stay None and a running batch derives in_progress without inventing a stop."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-stopped.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "cie",
+      "created_by": "Phase A executor (packet A13)",
+      "created_at_local": "2026-10-06T10:10:00+08:00",
+      "sha256": "341a9d43eeaa19e786b2291e19716510c3b16c84d265c00545d02cfbf6dddc16",
+      "bytes": 1649,
+      "note": "Drive the read-only CIE batch checkpoint adapter and coverage view without reading the protected batch state."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok-stale.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "ielts",
+      "created_by": "Phase A executor (packet A13)",
+      "created_at_local": "2026-10-06T10:10:00+08:00",
+      "sha256": "3fd24d8b6a9ca5c90dbb0d0e451b1e291e8167b1e321d7ddf8c683c74e9e5515",
+      "bytes": 889,
+      "note": "Prove that a stale summary is kept as a superseded row and can never override the newer snapshot."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "ielts",
+      "created_by": "Phase A executor (packet A13)",
+      "created_at_local": "2026-10-06T10:10:00+08:00",
+      "sha256": "0364323fea0d9f37c643bf758dfc0b05b2c2cf8204df84d59e50044aad5bcf12",
+      "bytes": 852,
+      "note": "Drive the read-only IELTS run checkpoint adapter and a healthy coverage row."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-partial.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": "ielts",
+      "created_by": "Phase A executor (packet A13)",
+      "created_at_local": "2026-10-06T10:10:00+08:00",
+      "sha256": "8e8fd6406be38831be9e7436b68e16f29fdc3074412238147351028c4733cbee",
+      "bytes": 1070,
+      "note": "Prove that partial failure never zeroes counters or hides a blocked source in the coverage view."
+    },
+    {
+      "path": "integration-staging/fixtures/synthetic/operations/unsupported-checkpoint.json",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "provider": null,
+      "created_by": "Phase A executor (packet A13)",
+      "created_at_local": "2026-10-06T10:10:00+08:00",
+      "sha256": "b7f2f031a2594ee29c3b89d7753d056f48b5665a0ebe303ea0a4e86f99bba414",
+      "bytes": 658,
+      "note": "Prove that an unrecognised checkpoint becomes an unknown row with explicit problems instead of an exception or a guess."
+    }
+  ],
+  "summary": {
+    "entries": 6,
+    "synthetic": 6
+  }
+}

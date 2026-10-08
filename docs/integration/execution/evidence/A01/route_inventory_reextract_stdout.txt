@@ -1,0 +1,19 @@
+{
+  "as_of": "2026-10-05",
+  "method": "static_ast_explicit_decorators",
+  "limitations": [
+    "Not live OpenAPI; excludes framework docs routes and dynamically generated routes.",
+    "Prefixes reflect inspected router registration; regenerate after registration changes."
+  ],
+  "explicit_route_count": 71,
+  "unique_path_count": 71,
+  "duplicate_method_paths": [],
+  "groups": {
+    "examdata/src/examdata/api/app.py": 20,
+    "examdata/src/examdata/api/unified.py": 8,
+    "examdata/src/examdata/api/ielts.py": 28,
+    "examdata/src/examdata/api/toefl.py": 8,
+    "examdata/src/examdata/materials/router.py": 4,
+    "examdata/src/examdata/timetable/router.py": 3
+  }
+}

@@ -1,0 +1,1701 @@
+===== cwd=C:\Users\weo\Desktop\api =====
+$ cd C:\Users\weo\Desktop\api && C:\Users\weo\Desktop\api\examdata\.venv\Scripts\python.exe C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\b03_integration_probe.py
+env PYTHONPATH=<unset> EXAMDATA_INTEGRATION_STAGING_ROOT=<unset> EXAMDATA_INTEGRATION_ROOT=C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\candidates\b03-contracts-catalog-v1
+[exit 0]
+--- stdout ---
+{
+  "schema": "examdata.integration.b03_integration_probe/1",
+  "run_id": "b03-rehearsal-2026-10-07",
+  "packet": "B03",
+  "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+  "environment": {
+    "cwd": "C:\\Users\\weo\\Desktop\\api",
+    "python": "3.14.7",
+    "executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+    "pythonpath": null,
+    "staging_override": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+    "dont_write_bytecode": true
+  },
+  "candidate_manifest": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\B03_CANDIDATE_MANIFEST.json",
+    "sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "recorded_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "recomputed_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "digest_matches": true,
+    "counts": {
+      "files_copied_from_parent": 186,
+      "new_files_added_by_b03": 0,
+      "digest_files": 186,
+      "candidate_files_on_disk_after_manifest": 187
+    }
+  },
+  "module_origins": {
+    "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\dataset.py",
+    "examdata.integration.api.view": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\view.py",
+    "examdata.integration.api.envelope": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\envelope.py",
+    "examdata.integration.catalog.builder": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\builder.py",
+    "examdata.integration.catalog.model": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\model.py",
+    "examdata.integration.catalog.store": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\store.py",
+    "examdata.integration.catalog.revision": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\revision.py",
+    "examdata.integration.providers.registry": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\registry.py",
+    "examdata.integration.providers.fixtures": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\fixtures.py",
+    "examdata.integration.providers.capabilities": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\capabilities.py",
+    "examdata.integration.contracts.quality": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\contracts\\quality.py",
+    "examdata.integration.contracts.ids": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\contracts\\ids.py",
+    "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\legacy\\bridge.py",
+    "examdata.integration.runtime": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\__init__.py",
+    "examdata.integration.runtime.paths": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\paths.py",
+    "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+  },
+  "discovery": {
+    "from_candidate_cwd": {
+      "ids": [
+        "fake_cli"
+      ],
+      "problems": [],
+      "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs",
+      "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+      "cwd": "C:\\Users\\weo\\Desktop\\api"
+    }
+  },
+  "catalog": {
+    "revision": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "counts": {
+      "total": 25,
+      "per_kind": {
+        "asset": 6,
+        "container": 3,
+        "course": 3,
+        "question": 13
+      },
+      "per_system": {
+        "cie": {
+          "asset": 3,
+          "container": 1,
+          "course": 1,
+          "question": 5
+        },
+        "edexcel": {
+          "asset": 2,
+          "container": 1,
+          "course": 1
+        },
+        "ielts": {
+          "asset": 1,
+          "container": 1,
+          "course": 1,
+          "question": 8
+        }
+      },
+      "expected": {
+        "cie": {
+          "course": 1,
+          "container": 1,
+          "question": 5,
+          "asset": 3
+        },
+        "edexcel": {
+          "course": 1,
+          "container": 1,
+          "asset": 2
+        },
+        "ielts": {
+          "course": 1,
+          "container": 1,
+          "question": 8,
+          "asset": 1
+        }
+      }
+    },
+    "roundtrips": {
+      "cie_course": "9999",
+      "cie_container": {
+        "subject": "9999",
+        "year": 2024,
+        "season": "Jun",
+        "paper": "11",
+        "date": null
+      },
+      "cie_question": "3",
+      "ielts_question": "Q3.ii",
+      "edexcel_container": {
+        "qualification_level": "IAL",
+        "unit_code": "WMA11",
+        "paper_code": "01"
+      },
+      "ielts_container": {
+        "book": "synthetic-book-1",
+        "revision": "rev-synthetic-0001"
+      },
+      "asset_hashes": {
+        "cie": "4444444444444444444444444444444444444444444444444444444444444444",
+        "edexcel": "5555555555555555555555555555555555555555555555555555555555555555",
+        "ielts": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  },
+  "publication": {
+    "scratch": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp\\publication",
+    "revision_a": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "revision_b": "rev-a1a780f98baf525add56093097839fbc",
+    "final_current": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "retained": [
+      "rev-a1a780f98baf525add56093097839fbc",
+      "rev-bb3a81094e0d2cb8f5173708f56b3722"
+    ]
+  },
+  "provenance": {
+    "loaded_revision": "rev-a1a780f98baf525add56093097839fbc",
+    "entries": 5
+  },
+  "registry_checks": {
+    "negative_probed": 13
+  },
+  "build_checks": {
+    "duplicate": {
+      "ok": false,
+      "codes": [
+        "duplicate_native_id"
+      ]
+    },
+    "removal": {
+      "ok": false,
+      "codes": [
+        "unexplained_removal"
+      ]
+    },
+    "quality_upgrade": {
+      "ok": false,
+      "codes": [
+        "unexplained_quality_upgrade"
+      ]
+    },
+    "incomplete": {
+      "ok": false,
+      "codes": [
+        "unresolved_identity"
+      ]
+    },
+    "base_total": 5
+  },
+  "checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    {
+      "name": "B_fixture_provider_order",
+      "ok": true,
+      "detail": "['cie_index_fixture', 'edexcel_index_fixture', 'ielts_questions_fixture']"
+    },
+    {
+      "name": "B_revision_reproducible",
+      "ok": true,
+      "detail": "revision=rev-bb3a81094e0d2cb8f5173708f56b3722 reproducible=True"
+    },
+    {
+      "name": "B_snapshot_builds",
+      "ok": true,
+      "detail": "25 entries"
+    },
+    {
+      "name": "B_counts_match_independent_derivation",
+      "ok": true,
+      "detail": "expected={'cie': {'course': 1, 'container': 1, 'question': 5, 'asset': 3}, 'edexcel': {'course': 1, 'container': 1, 'asset': 2}, 'ielts': {'course': 1, 'container': 1, 'question': 8, 'asset': 1}} actual={'cie': {'asset': 3, 'container': 1, 'course': 1, 'question': 5}, 'edexcel': {'asset': 2, 'container': 1, 'course': 1}, 'ielts': {'asset': 1, 'container': 1, 'course': 1, 'question': 8}} total=25"
+    },
+    {
+      "name": "B_reference_integrity",
+      "ok": true,
+      "detail": "dangling=none cie_refs=5 ielts_refs=8 edexcel_refs=0 (absent key means none)"
+    },
+    {
+      "name": "B_alias_lookup_via_view",
+      "ok": true,
+      "detail": "all aliases resolve"
+    },
+    {
+      "name": "C_course_roundtrip_cie",
+      "ok": true,
+      "detail": "native_code=9999 items=1"
+    },
+    {
+      "name": "C_container_roundtrip_cie",
+      "ok": true,
+      "detail": "native_identity={'subject': '9999', 'year': 2024, 'season': 'Jun', 'paper': '11', 'date': None}"
+    },
+    {
+      "name": "C_question_roundtrip_cie",
+      "ok": true,
+      "detail": "number_path=['3']"
+    },
+    {
+      "name": "C_question_roundtrip_ielts",
+      "ok": true,
+      "detail": "number_path=['Q3', 'Q3.ii']"
+    },
+    {
+      "name": "C_container_roundtrip_edexcel",
+      "ok": true,
+      "detail": "native_identity={'qualification_level': 'IAL', 'unit_code': 'WMA11', 'paper_code': '01'}"
+    },
+    {
+      "name": "C_container_roundtrip_ielts",
+      "ok": true,
+      "detail": "native_identity={'book': 'synthetic-book-1', 'revision': 'rev-synthetic-0001'}"
+    },
+    {
+      "name": "C_assets_roundtrip",
+      "ok": true,
+      "detail": "cie/edexcel/ielts asset locators round-trip"
+    },
+    {
+      "name": "D_publish_a_then_b_cas",
+      "ok": true,
+      "detail": "a=rev-bb3a81094e0d2cb8f5173708f56b3722 b=rev-a1a780f98baf525add56093097839fbc"
+    },
+    {
+      "name": "D_stale_publish_rejected_pointer_unchanged",
+      "ok": true,
+      "detail": "StalePublisherError=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_rollback_restores_previous",
+      "ok": true,
+      "detail": "current=rev-bb3a81094e0d2cb8f5173708f56b3722 expected=rev-bb3a81094e0d2cb8f5173708f56b3722"
+    },
+    {
+      "name": "D_publish_none_rejected",
+      "ok": true,
+      "detail": "PublicationRejected=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_tampered_snapshot_rejected_pointer_unchanged",
+      "ok": true,
+      "detail": "PublicationRejected=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_cursor_roundtrip",
+      "ok": true,
+      "detail": "cursor round-trips deterministically"
+    },
+    {
+      "name": "D_cursor_tampered_invalid",
+      "ok": true,
+      "detail": "InvalidCursorError=True"
+    },
+    {
+      "name": "D_cursor_stale_revision_rejected",
+      "ok": true,
+      "detail": "StaleCursorError=True"
+    },
+    {
+      "name": "E_decisions_and_provenance_roundtrip",
+      "ok": true,
+      "detail": "entries=5 explanations_ok=True entries_equal=True"
+    },
+    {
+      "name": "E_provenance_fields_preserved",
+      "ok": true,
+      "detail": "fields=('quality_summary', 'evidence_labels', 'lineage', 'content_class', 'content_revision', 'aliases')"
+    },
+    {
+      "name": "E_unknown_token_roundtrip",
+      "ok": true,
+      "detail": "token_in_raw=True sentinel_restored=True"
+    },
+    {
+      "name": "E_systems_deferred_honesty",
+      "ok": true,
+      "detail": "systems report availability honestly"
+    },
+    {
+      "name": "E_deferred_fixtures_labelled",
+      "ok": true,
+      "detail": "11 labelled fixture item(s); offenders=[]"
+    },
+    {
+      "name": "F_edexcel_questions_unsupported",
+      "ok": true,
+      "detail": "result=unsupported view={'status': 422, 'code': 'unsupported_capability'}"
+    },
+    {
+      "name": "F_cie_courses_filter_rejected",
+      "ok": true,
+      "detail": "result=filter_rejected view={'status': 422, 'code': 'unsupported_filter'}"
+    },
+    {
+      "name": "F_unknown_alias_refused",
+      "ok": true,
+      "detail": "UnknownAliasError=True"
+    },
+    {
+      "name": "F_alias_rebind_refused",
+      "ok": true,
+      "detail": "AliasRoutingError=True"
+    },
+    {
+      "name": "F_unknown_provider_failed",
+      "ok": true,
+      "detail": "result={'provider_id': 'ghost_provider', 'capability': 'courses', 'status': 'failed', 'count': 0, 'ok': False, 'error_code': 'unknown_provider', 'retryable': False, 'filter_key': None, 'detail': \"provider 'ghost_provider' is not registered\", 'gaps': [], 'warnings': []}"
+    },
+    {
+      "name": "F_unavailable_provider_reported",
+      "ok": true,
+      "detail": "result=unavailable view={'status': 503, 'code': 'provider_unavailable'}"
+    },
+    {
+      "name": "F_view_unknown_system_503",
+      "ok": true,
+      "detail": "view={'status': 503, 'code': 'provider_unavailable'}"
+    },
+    {
+      "name": "F_failing_provider_sanitized",
+      "ok": true,
+      "detail": "detail=RuntimeError: synthetic provider failure with <path>"
+    },
+    {
+      "name": "F_null_provider_empty_success",
+      "ok": true,
+      "detail": "status=ok count=[]"
+    },
+    {
+      "name": "G_duplicate_native_id_raises",
+      "ok": true,
+      "detail": "raised=True problems=[{'code': 'duplicate_native_id', 'scope': 'catalog', 'detail': 'native identity registered twice with different content', 'ref': 'course_m6qirzwjbad3fkacfzbd7yc4ho5cbvcf'}]"
+    },
+    {
+      "name": "G_duplicate_native_id_build_fails",
+      "ok": true,
+      "detail": "ok=False codes=['duplicate_native_id']"
+    },
+    {
+      "name": "G_unexplained_removal_rejected",
+      "ok": true,
+      "detail": "codes=['unexplained_removal'] removed=['course_nej62lrxwjzupifi3uaouzjgtaj6c3ba']"
+    },
+    {
+      "name": "G_explained_removal_accepted",
+      "ok": true,
+      "detail": "ok=True codes=[]"
+    },
+    {
+      "name": "G_unexplained_quality_upgrade_rejected",
+      "ok": true,
+      "detail": "codes=['unexplained_quality_upgrade']"
+    },
+    {
+      "name": "G_incomplete_reference_rejected",
+      "ok": true,
+      "detail": "codes=['unresolved_identity'] scopes=['course_ref']"
+    },
+    {
+      "name": "G_base_fixture_build_ok",
+      "ok": true,
+      "detail": "ok=True counts={'total': 5, 'asset': 1, 'container': 1, 'course': 1, 'question': 1, 'region': 1}"
+    },
+    {
+      "name": "G_base_aliases_resolve",
+      "ok": true,
+      "detail": "course=course_gidiqdy5tbthbk3t4gkyz7axrv6pxpx4 container=container_kbqickua3fhxuvdxblkqeyfgrfqneika question=q_ne4ferpcp4bm3gi5jh7y54y6wx5a53ow locator={'kind': 'course', 'native_code': '0580', 'qualification': 'igcse'}"
+    },
+    {
+      "name": "H_candidate_bytes_unchanged",
+      "ok": true,
+      "detail": "identical"
+    },
+    {
+      "name": "H_fixture_and_contract_digests_unchanged",
+      "ok": true,
+      "detail": "fixtures=76ef844ccfa0 contracts=9421088a68a2"
+    },
+    {
+      "name": "H_no_embedded_data_payloads",
+      "ok": true,
+      "detail": "no data: URIs in fixtures"
+    }
+  ],
+  "counts": {
+    "checks": 58,
+    "checks_failed": 0,
+    "negative_checks": 18,
+    "positive_checks": 21
+  },
+  "negative_checks": [
+    "D_stale_publish_rejected_pointer_unchanged",
+    "D_publish_none_rejected",
+    "D_tampered_snapshot_rejected_pointer_unchanged",
+    "D_cursor_tampered_invalid",
+    "D_cursor_stale_revision_rejected",
+    "F_edexcel_questions_unsupported",
+    "F_cie_courses_filter_rejected",
+    "F_unknown_alias_refused",
+    "F_alias_rebind_refused",
+    "F_unknown_provider_failed",
+    "F_unavailable_provider_reported",
+    "F_view_unknown_system_503",
+    "F_failing_provider_sanitized",
+    "G_duplicate_native_id_raises",
+    "G_duplicate_native_id_build_fails",
+    "G_unexplained_removal_rejected",
+    "G_unexplained_quality_upgrade_rejected",
+    "G_incomplete_reference_rejected"
+  ],
+  "positive_checks": [
+    "B_revision_reproducible",
+    "B_snapshot_builds",
+    "B_counts_match_independent_derivation",
+    "B_reference_integrity",
+    "C_course_roundtrip_cie",
+    "C_container_roundtrip_cie",
+    "C_question_roundtrip_cie",
+    "C_question_roundtrip_ielts",
+    "C_container_roundtrip_edexcel",
+    "C_container_roundtrip_ielts",
+    "C_assets_roundtrip",
+    "D_publish_a_then_b_cas",
+    "D_rollback_restores_previous",
+    "D_cursor_roundtrip",
+    "E_decisions_and_provenance_roundtrip",
+    "E_provenance_fields_preserved",
+    "E_unknown_token_roundtrip",
+    "F_null_provider_empty_success",
+    "G_explained_removal_accepted",
+    "G_base_fixture_build_ok",
+    "G_base_aliases_resolve"
+  ],
+  "failed": [],
+  "ok": true,
+  "not_run": [
+    {
+      "check": "real Node component execution (fake-cli.mjs run via Node runtime)",
+      "reason": "gate original_paths_released is closed; only discovery and importability of the synthetic component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used; nothing was read, fabricated or staged; the private fixture allowlists a synthetic token name but never a value"
+    }
+  ],
+  "note": "private rehearsal only; not merged, not deployed; the original tree was never read, imported or written; frozen evidence was not touched; scratch space was confined to the run directory's evidence/tmp"
+}
+--- stderr ---
+
+
+===== cwd=C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\evidence\tmp =====
+$ cd C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\evidence\tmp && C:\Users\weo\Desktop\api\examdata\.venv\Scripts\python.exe C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\b03_integration_probe.py
+env PYTHONPATH=<unset> EXAMDATA_INTEGRATION_STAGING_ROOT=<unset> EXAMDATA_INTEGRATION_ROOT=C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\candidates\b03-contracts-catalog-v1
+[exit 0]
+--- stdout ---
+{
+  "schema": "examdata.integration.b03_integration_probe/1",
+  "run_id": "b03-rehearsal-2026-10-07",
+  "packet": "B03",
+  "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+  "environment": {
+    "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp",
+    "python": "3.14.7",
+    "executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+    "pythonpath": null,
+    "staging_override": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+    "dont_write_bytecode": true
+  },
+  "candidate_manifest": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\B03_CANDIDATE_MANIFEST.json",
+    "sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "recorded_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "recomputed_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "digest_matches": true,
+    "counts": {
+      "files_copied_from_parent": 186,
+      "new_files_added_by_b03": 0,
+      "digest_files": 186,
+      "candidate_files_on_disk_after_manifest": 187
+    }
+  },
+  "module_origins": {
+    "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\dataset.py",
+    "examdata.integration.api.view": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\view.py",
+    "examdata.integration.api.envelope": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\envelope.py",
+    "examdata.integration.catalog.builder": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\builder.py",
+    "examdata.integration.catalog.model": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\model.py",
+    "examdata.integration.catalog.store": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\store.py",
+    "examdata.integration.catalog.revision": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\revision.py",
+    "examdata.integration.providers.registry": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\registry.py",
+    "examdata.integration.providers.fixtures": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\fixtures.py",
+    "examdata.integration.providers.capabilities": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\capabilities.py",
+    "examdata.integration.contracts.quality": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\contracts\\quality.py",
+    "examdata.integration.contracts.ids": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\contracts\\ids.py",
+    "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\legacy\\bridge.py",
+    "examdata.integration.runtime": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\__init__.py",
+    "examdata.integration.runtime.paths": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\paths.py",
+    "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+  },
+  "discovery": {
+    "from_candidate_cwd": {
+      "ids": [
+        "fake_cli"
+      ],
+      "problems": [],
+      "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs",
+      "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp"
+    }
+  },
+  "catalog": {
+    "revision": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "counts": {
+      "total": 25,
+      "per_kind": {
+        "asset": 6,
+        "container": 3,
+        "course": 3,
+        "question": 13
+      },
+      "per_system": {
+        "cie": {
+          "asset": 3,
+          "container": 1,
+          "course": 1,
+          "question": 5
+        },
+        "edexcel": {
+          "asset": 2,
+          "container": 1,
+          "course": 1
+        },
+        "ielts": {
+          "asset": 1,
+          "container": 1,
+          "course": 1,
+          "question": 8
+        }
+      },
+      "expected": {
+        "cie": {
+          "course": 1,
+          "container": 1,
+          "question": 5,
+          "asset": 3
+        },
+        "edexcel": {
+          "course": 1,
+          "container": 1,
+          "asset": 2
+        },
+        "ielts": {
+          "course": 1,
+          "container": 1,
+          "question": 8,
+          "asset": 1
+        }
+      }
+    },
+    "roundtrips": {
+      "cie_course": "9999",
+      "cie_container": {
+        "subject": "9999",
+        "year": 2024,
+        "season": "Jun",
+        "paper": "11",
+        "date": null
+      },
+      "cie_question": "3",
+      "ielts_question": "Q3.ii",
+      "edexcel_container": {
+        "qualification_level": "IAL",
+        "unit_code": "WMA11",
+        "paper_code": "01"
+      },
+      "ielts_container": {
+        "book": "synthetic-book-1",
+        "revision": "rev-synthetic-0001"
+      },
+      "asset_hashes": {
+        "cie": "4444444444444444444444444444444444444444444444444444444444444444",
+        "edexcel": "5555555555555555555555555555555555555555555555555555555555555555",
+        "ielts": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  },
+  "publication": {
+    "scratch": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp\\publication",
+    "revision_a": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "revision_b": "rev-a1a780f98baf525add56093097839fbc",
+    "final_current": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "retained": [
+      "rev-a1a780f98baf525add56093097839fbc",
+      "rev-bb3a81094e0d2cb8f5173708f56b3722"
+    ]
+  },
+  "provenance": {
+    "loaded_revision": "rev-a1a780f98baf525add56093097839fbc",
+    "entries": 5
+  },
+  "registry_checks": {
+    "negative_probed": 13
+  },
+  "build_checks": {
+    "duplicate": {
+      "ok": false,
+      "codes": [
+        "duplicate_native_id"
+      ]
+    },
+    "removal": {
+      "ok": false,
+      "codes": [
+        "unexplained_removal"
+      ]
+    },
+    "quality_upgrade": {
+      "ok": false,
+      "codes": [
+        "unexplained_quality_upgrade"
+      ]
+    },
+    "incomplete": {
+      "ok": false,
+      "codes": [
+        "unresolved_identity"
+      ]
+    },
+    "base_total": 5
+  },
+  "checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    {
+      "name": "B_fixture_provider_order",
+      "ok": true,
+      "detail": "['cie_index_fixture', 'edexcel_index_fixture', 'ielts_questions_fixture']"
+    },
+    {
+      "name": "B_revision_reproducible",
+      "ok": true,
+      "detail": "revision=rev-bb3a81094e0d2cb8f5173708f56b3722 reproducible=True"
+    },
+    {
+      "name": "B_snapshot_builds",
+      "ok": true,
+      "detail": "25 entries"
+    },
+    {
+      "name": "B_counts_match_independent_derivation",
+      "ok": true,
+      "detail": "expected={'cie': {'course': 1, 'container': 1, 'question': 5, 'asset': 3}, 'edexcel': {'course': 1, 'container': 1, 'asset': 2}, 'ielts': {'course': 1, 'container': 1, 'question': 8, 'asset': 1}} actual={'cie': {'asset': 3, 'container': 1, 'course': 1, 'question': 5}, 'edexcel': {'asset': 2, 'container': 1, 'course': 1}, 'ielts': {'asset': 1, 'container': 1, 'course': 1, 'question': 8}} total=25"
+    },
+    {
+      "name": "B_reference_integrity",
+      "ok": true,
+      "detail": "dangling=none cie_refs=5 ielts_refs=8 edexcel_refs=0 (absent key means none)"
+    },
+    {
+      "name": "B_alias_lookup_via_view",
+      "ok": true,
+      "detail": "all aliases resolve"
+    },
+    {
+      "name": "C_course_roundtrip_cie",
+      "ok": true,
+      "detail": "native_code=9999 items=1"
+    },
+    {
+      "name": "C_container_roundtrip_cie",
+      "ok": true,
+      "detail": "native_identity={'subject': '9999', 'year': 2024, 'season': 'Jun', 'paper': '11', 'date': None}"
+    },
+    {
+      "name": "C_question_roundtrip_cie",
+      "ok": true,
+      "detail": "number_path=['3']"
+    },
+    {
+      "name": "C_question_roundtrip_ielts",
+      "ok": true,
+      "detail": "number_path=['Q3', 'Q3.ii']"
+    },
+    {
+      "name": "C_container_roundtrip_edexcel",
+      "ok": true,
+      "detail": "native_identity={'qualification_level': 'IAL', 'unit_code': 'WMA11', 'paper_code': '01'}"
+    },
+    {
+      "name": "C_container_roundtrip_ielts",
+      "ok": true,
+      "detail": "native_identity={'book': 'synthetic-book-1', 'revision': 'rev-synthetic-0001'}"
+    },
+    {
+      "name": "C_assets_roundtrip",
+      "ok": true,
+      "detail": "cie/edexcel/ielts asset locators round-trip"
+    },
+    {
+      "name": "D_publish_a_then_b_cas",
+      "ok": true,
+      "detail": "a=rev-bb3a81094e0d2cb8f5173708f56b3722 b=rev-a1a780f98baf525add56093097839fbc"
+    },
+    {
+      "name": "D_stale_publish_rejected_pointer_unchanged",
+      "ok": true,
+      "detail": "StalePublisherError=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_rollback_restores_previous",
+      "ok": true,
+      "detail": "current=rev-bb3a81094e0d2cb8f5173708f56b3722 expected=rev-bb3a81094e0d2cb8f5173708f56b3722"
+    },
+    {
+      "name": "D_publish_none_rejected",
+      "ok": true,
+      "detail": "PublicationRejected=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_tampered_snapshot_rejected_pointer_unchanged",
+      "ok": true,
+      "detail": "PublicationRejected=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_cursor_roundtrip",
+      "ok": true,
+      "detail": "cursor round-trips deterministically"
+    },
+    {
+      "name": "D_cursor_tampered_invalid",
+      "ok": true,
+      "detail": "InvalidCursorError=True"
+    },
+    {
+      "name": "D_cursor_stale_revision_rejected",
+      "ok": true,
+      "detail": "StaleCursorError=True"
+    },
+    {
+      "name": "E_decisions_and_provenance_roundtrip",
+      "ok": true,
+      "detail": "entries=5 explanations_ok=True entries_equal=True"
+    },
+    {
+      "name": "E_provenance_fields_preserved",
+      "ok": true,
+      "detail": "fields=('quality_summary', 'evidence_labels', 'lineage', 'content_class', 'content_revision', 'aliases')"
+    },
+    {
+      "name": "E_unknown_token_roundtrip",
+      "ok": true,
+      "detail": "token_in_raw=True sentinel_restored=True"
+    },
+    {
+      "name": "E_systems_deferred_honesty",
+      "ok": true,
+      "detail": "systems report availability honestly"
+    },
+    {
+      "name": "E_deferred_fixtures_labelled",
+      "ok": true,
+      "detail": "11 labelled fixture item(s); offenders=[]"
+    },
+    {
+      "name": "F_edexcel_questions_unsupported",
+      "ok": true,
+      "detail": "result=unsupported view={'status': 422, 'code': 'unsupported_capability'}"
+    },
+    {
+      "name": "F_cie_courses_filter_rejected",
+      "ok": true,
+      "detail": "result=filter_rejected view={'status': 422, 'code': 'unsupported_filter'}"
+    },
+    {
+      "name": "F_unknown_alias_refused",
+      "ok": true,
+      "detail": "UnknownAliasError=True"
+    },
+    {
+      "name": "F_alias_rebind_refused",
+      "ok": true,
+      "detail": "AliasRoutingError=True"
+    },
+    {
+      "name": "F_unknown_provider_failed",
+      "ok": true,
+      "detail": "result={'provider_id': 'ghost_provider', 'capability': 'courses', 'status': 'failed', 'count': 0, 'ok': False, 'error_code': 'unknown_provider', 'retryable': False, 'filter_key': None, 'detail': \"provider 'ghost_provider' is not registered\", 'gaps': [], 'warnings': []}"
+    },
+    {
+      "name": "F_unavailable_provider_reported",
+      "ok": true,
+      "detail": "result=unavailable view={'status': 503, 'code': 'provider_unavailable'}"
+    },
+    {
+      "name": "F_view_unknown_system_503",
+      "ok": true,
+      "detail": "view={'status': 503, 'code': 'provider_unavailable'}"
+    },
+    {
+      "name": "F_failing_provider_sanitized",
+      "ok": true,
+      "detail": "detail=RuntimeError: synthetic provider failure with <path>"
+    },
+    {
+      "name": "F_null_provider_empty_success",
+      "ok": true,
+      "detail": "status=ok count=[]"
+    },
+    {
+      "name": "G_duplicate_native_id_raises",
+      "ok": true,
+      "detail": "raised=True problems=[{'code': 'duplicate_native_id', 'scope': 'catalog', 'detail': 'native identity registered twice with different content', 'ref': 'course_m6qirzwjbad3fkacfzbd7yc4ho5cbvcf'}]"
+    },
+    {
+      "name": "G_duplicate_native_id_build_fails",
+      "ok": true,
+      "detail": "ok=False codes=['duplicate_native_id']"
+    },
+    {
+      "name": "G_unexplained_removal_rejected",
+      "ok": true,
+      "detail": "codes=['unexplained_removal'] removed=['course_nej62lrxwjzupifi3uaouzjgtaj6c3ba']"
+    },
+    {
+      "name": "G_explained_removal_accepted",
+      "ok": true,
+      "detail": "ok=True codes=[]"
+    },
+    {
+      "name": "G_unexplained_quality_upgrade_rejected",
+      "ok": true,
+      "detail": "codes=['unexplained_quality_upgrade']"
+    },
+    {
+      "name": "G_incomplete_reference_rejected",
+      "ok": true,
+      "detail": "codes=['unresolved_identity'] scopes=['course_ref']"
+    },
+    {
+      "name": "G_base_fixture_build_ok",
+      "ok": true,
+      "detail": "ok=True counts={'total': 5, 'asset': 1, 'container': 1, 'course': 1, 'question': 1, 'region': 1}"
+    },
+    {
+      "name": "G_base_aliases_resolve",
+      "ok": true,
+      "detail": "course=course_gidiqdy5tbthbk3t4gkyz7axrv6pxpx4 container=container_kbqickua3fhxuvdxblkqeyfgrfqneika question=q_ne4ferpcp4bm3gi5jh7y54y6wx5a53ow locator={'kind': 'course', 'native_code': '0580', 'qualification': 'igcse'}"
+    },
+    {
+      "name": "H_candidate_bytes_unchanged",
+      "ok": true,
+      "detail": "identical"
+    },
+    {
+      "name": "H_fixture_and_contract_digests_unchanged",
+      "ok": true,
+      "detail": "fixtures=76ef844ccfa0 contracts=9421088a68a2"
+    },
+    {
+      "name": "H_no_embedded_data_payloads",
+      "ok": true,
+      "detail": "no data: URIs in fixtures"
+    }
+  ],
+  "counts": {
+    "checks": 58,
+    "checks_failed": 0,
+    "negative_checks": 18,
+    "positive_checks": 21
+  },
+  "negative_checks": [
+    "D_stale_publish_rejected_pointer_unchanged",
+    "D_publish_none_rejected",
+    "D_tampered_snapshot_rejected_pointer_unchanged",
+    "D_cursor_tampered_invalid",
+    "D_cursor_stale_revision_rejected",
+    "F_edexcel_questions_unsupported",
+    "F_cie_courses_filter_rejected",
+    "F_unknown_alias_refused",
+    "F_alias_rebind_refused",
+    "F_unknown_provider_failed",
+    "F_unavailable_provider_reported",
+    "F_view_unknown_system_503",
+    "F_failing_provider_sanitized",
+    "G_duplicate_native_id_raises",
+    "G_duplicate_native_id_build_fails",
+    "G_unexplained_removal_rejected",
+    "G_unexplained_quality_upgrade_rejected",
+    "G_incomplete_reference_rejected"
+  ],
+  "positive_checks": [
+    "B_revision_reproducible",
+    "B_snapshot_builds",
+    "B_counts_match_independent_derivation",
+    "B_reference_integrity",
+    "C_course_roundtrip_cie",
+    "C_container_roundtrip_cie",
+    "C_question_roundtrip_cie",
+    "C_question_roundtrip_ielts",
+    "C_container_roundtrip_edexcel",
+    "C_container_roundtrip_ielts",
+    "C_assets_roundtrip",
+    "D_publish_a_then_b_cas",
+    "D_rollback_restores_previous",
+    "D_cursor_roundtrip",
+    "E_decisions_and_provenance_roundtrip",
+    "E_provenance_fields_preserved",
+    "E_unknown_token_roundtrip",
+    "F_null_provider_empty_success",
+    "G_explained_removal_accepted",
+    "G_base_fixture_build_ok",
+    "G_base_aliases_resolve"
+  ],
+  "failed": [],
+  "ok": true,
+  "not_run": [
+    {
+      "check": "real Node component execution (fake-cli.mjs run via Node runtime)",
+      "reason": "gate original_paths_released is closed; only discovery and importability of the synthetic component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used; nothing was read, fabricated or staged; the private fixture allowlists a synthetic token name but never a value"
+    }
+  ],
+  "note": "private rehearsal only; not merged, not deployed; the original tree was never read, imported or written; frozen evidence was not touched; scratch space was confined to the run directory's evidence/tmp"
+}
+--- stderr ---
+
+
+===== cwd=C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\evidence\tmp\cwd with spaces ünïcode =====
+$ cd C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\evidence\tmp\cwd with spaces ünïcode && C:\Users\weo\Desktop\api\examdata\.venv\Scripts\python.exe C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\b03_integration_probe.py
+env PYTHONPATH=<unset> EXAMDATA_INTEGRATION_STAGING_ROOT=<unset> EXAMDATA_INTEGRATION_ROOT=C:\Users\weo\Desktop\api\integration-staging\runtime\b03-rehearsal-2026-10-07\candidates\b03-contracts-catalog-v1
+[exit 0]
+--- stdout ---
+{
+  "schema": "examdata.integration.b03_integration_probe/1",
+  "run_id": "b03-rehearsal-2026-10-07",
+  "packet": "B03",
+  "candidate_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+  "environment": {
+    "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces \u00fcn\u00efcode",
+    "python": "3.14.7",
+    "executable": "C:\\Users\\weo\\Desktop\\api\\examdata\\.venv\\Scripts\\python.exe",
+    "pythonpath": null,
+    "staging_override": null,
+    "root_env": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+    "dont_write_bytecode": true
+  },
+  "candidate_manifest": {
+    "path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\B03_CANDIDATE_MANIFEST.json",
+    "sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "recorded_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "recomputed_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "digest_matches": true,
+    "counts": {
+      "files_copied_from_parent": 186,
+      "new_files_added_by_b03": 0,
+      "digest_files": 186,
+      "candidate_files_on_disk_after_manifest": 187
+    }
+  },
+  "module_origins": {
+    "examdata.integration.api.dataset": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\dataset.py",
+    "examdata.integration.api.view": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\view.py",
+    "examdata.integration.api.envelope": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\api\\envelope.py",
+    "examdata.integration.catalog.builder": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\builder.py",
+    "examdata.integration.catalog.model": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\model.py",
+    "examdata.integration.catalog.store": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\store.py",
+    "examdata.integration.catalog.revision": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\catalog\\revision.py",
+    "examdata.integration.providers.registry": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\registry.py",
+    "examdata.integration.providers.fixtures": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\fixtures.py",
+    "examdata.integration.providers.capabilities": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\providers\\capabilities.py",
+    "examdata.integration.contracts.quality": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\contracts\\quality.py",
+    "examdata.integration.contracts.ids": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\contracts\\ids.py",
+    "examdata.integration.legacy.bridge": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\legacy\\bridge.py",
+    "examdata.integration.runtime": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\__init__.py",
+    "examdata.integration.runtime.paths": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\paths.py",
+    "examdata.integration.runtime.manifest": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\runtime\\manifest.py"
+  },
+  "discovery": {
+    "from_candidate_cwd": {
+      "ids": [
+        "fake_cli"
+      ],
+      "problems": [],
+      "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs",
+      "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces \u00fcn\u00efcode"
+    }
+  },
+  "catalog": {
+    "revision": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "counts": {
+      "total": 25,
+      "per_kind": {
+        "asset": 6,
+        "container": 3,
+        "course": 3,
+        "question": 13
+      },
+      "per_system": {
+        "cie": {
+          "asset": 3,
+          "container": 1,
+          "course": 1,
+          "question": 5
+        },
+        "edexcel": {
+          "asset": 2,
+          "container": 1,
+          "course": 1
+        },
+        "ielts": {
+          "asset": 1,
+          "container": 1,
+          "course": 1,
+          "question": 8
+        }
+      },
+      "expected": {
+        "cie": {
+          "course": 1,
+          "container": 1,
+          "question": 5,
+          "asset": 3
+        },
+        "edexcel": {
+          "course": 1,
+          "container": 1,
+          "asset": 2
+        },
+        "ielts": {
+          "course": 1,
+          "container": 1,
+          "question": 8,
+          "asset": 1
+        }
+      }
+    },
+    "roundtrips": {
+      "cie_course": "9999",
+      "cie_container": {
+        "subject": "9999",
+        "year": 2024,
+        "season": "Jun",
+        "paper": "11",
+        "date": null
+      },
+      "cie_question": "3",
+      "ielts_question": "Q3.ii",
+      "edexcel_container": {
+        "qualification_level": "IAL",
+        "unit_code": "WMA11",
+        "paper_code": "01"
+      },
+      "ielts_container": {
+        "book": "synthetic-book-1",
+        "revision": "rev-synthetic-0001"
+      },
+      "asset_hashes": {
+        "cie": "4444444444444444444444444444444444444444444444444444444444444444",
+        "edexcel": "5555555555555555555555555555555555555555555555555555555555555555",
+        "ielts": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  },
+  "publication": {
+    "scratch": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp\\publication",
+    "revision_a": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "revision_b": "rev-a1a780f98baf525add56093097839fbc",
+    "final_current": "rev-bb3a81094e0d2cb8f5173708f56b3722",
+    "retained": [
+      "rev-a1a780f98baf525add56093097839fbc",
+      "rev-bb3a81094e0d2cb8f5173708f56b3722"
+    ]
+  },
+  "provenance": {
+    "loaded_revision": "rev-a1a780f98baf525add56093097839fbc",
+    "entries": 5
+  },
+  "registry_checks": {
+    "negative_probed": 13
+  },
+  "build_checks": {
+    "duplicate": {
+      "ok": false,
+      "codes": [
+        "duplicate_native_id"
+      ]
+    },
+    "removal": {
+      "ok": false,
+      "codes": [
+        "unexplained_removal"
+      ]
+    },
+    "quality_upgrade": {
+      "ok": false,
+      "codes": [
+        "unexplained_quality_upgrade"
+      ]
+    },
+    "incomplete": {
+      "ok": false,
+      "codes": [
+        "unresolved_identity"
+      ]
+    },
+    "base_total": 5
+  },
+  "checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    },
+    {
+      "name": "B_fixture_provider_order",
+      "ok": true,
+      "detail": "['cie_index_fixture', 'edexcel_index_fixture', 'ielts_questions_fixture']"
+    },
+    {
+      "name": "B_revision_reproducible",
+      "ok": true,
+      "detail": "revision=rev-bb3a81094e0d2cb8f5173708f56b3722 reproducible=True"
+    },
+    {
+      "name": "B_snapshot_builds",
+      "ok": true,
+      "detail": "25 entries"
+    },
+    {
+      "name": "B_counts_match_independent_derivation",
+      "ok": true,
+      "detail": "expected={'cie': {'course': 1, 'container': 1, 'question': 5, 'asset': 3}, 'edexcel': {'course': 1, 'container': 1, 'asset': 2}, 'ielts': {'course': 1, 'container': 1, 'question': 8, 'asset': 1}} actual={'cie': {'asset': 3, 'container': 1, 'course': 1, 'question': 5}, 'edexcel': {'asset': 2, 'container': 1, 'course': 1}, 'ielts': {'asset': 1, 'container': 1, 'course': 1, 'question': 8}} total=25"
+    },
+    {
+      "name": "B_reference_integrity",
+      "ok": true,
+      "detail": "dangling=none cie_refs=5 ielts_refs=8 edexcel_refs=0 (absent key means none)"
+    },
+    {
+      "name": "B_alias_lookup_via_view",
+      "ok": true,
+      "detail": "all aliases resolve"
+    },
+    {
+      "name": "C_course_roundtrip_cie",
+      "ok": true,
+      "detail": "native_code=9999 items=1"
+    },
+    {
+      "name": "C_container_roundtrip_cie",
+      "ok": true,
+      "detail": "native_identity={'subject': '9999', 'year': 2024, 'season': 'Jun', 'paper': '11', 'date': None}"
+    },
+    {
+      "name": "C_question_roundtrip_cie",
+      "ok": true,
+      "detail": "number_path=['3']"
+    },
+    {
+      "name": "C_question_roundtrip_ielts",
+      "ok": true,
+      "detail": "number_path=['Q3', 'Q3.ii']"
+    },
+    {
+      "name": "C_container_roundtrip_edexcel",
+      "ok": true,
+      "detail": "native_identity={'qualification_level': 'IAL', 'unit_code': 'WMA11', 'paper_code': '01'}"
+    },
+    {
+      "name": "C_container_roundtrip_ielts",
+      "ok": true,
+      "detail": "native_identity={'book': 'synthetic-book-1', 'revision': 'rev-synthetic-0001'}"
+    },
+    {
+      "name": "C_assets_roundtrip",
+      "ok": true,
+      "detail": "cie/edexcel/ielts asset locators round-trip"
+    },
+    {
+      "name": "D_publish_a_then_b_cas",
+      "ok": true,
+      "detail": "a=rev-bb3a81094e0d2cb8f5173708f56b3722 b=rev-a1a780f98baf525add56093097839fbc"
+    },
+    {
+      "name": "D_stale_publish_rejected_pointer_unchanged",
+      "ok": true,
+      "detail": "StalePublisherError=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_rollback_restores_previous",
+      "ok": true,
+      "detail": "current=rev-bb3a81094e0d2cb8f5173708f56b3722 expected=rev-bb3a81094e0d2cb8f5173708f56b3722"
+    },
+    {
+      "name": "D_publish_none_rejected",
+      "ok": true,
+      "detail": "PublicationRejected=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_tampered_snapshot_rejected_pointer_unchanged",
+      "ok": true,
+      "detail": "PublicationRejected=True pointer_bytes_unchanged=True"
+    },
+    {
+      "name": "D_cursor_roundtrip",
+      "ok": true,
+      "detail": "cursor round-trips deterministically"
+    },
+    {
+      "name": "D_cursor_tampered_invalid",
+      "ok": true,
+      "detail": "InvalidCursorError=True"
+    },
+    {
+      "name": "D_cursor_stale_revision_rejected",
+      "ok": true,
+      "detail": "StaleCursorError=True"
+    },
+    {
+      "name": "E_decisions_and_provenance_roundtrip",
+      "ok": true,
+      "detail": "entries=5 explanations_ok=True entries_equal=True"
+    },
+    {
+      "name": "E_provenance_fields_preserved",
+      "ok": true,
+      "detail": "fields=('quality_summary', 'evidence_labels', 'lineage', 'content_class', 'content_revision', 'aliases')"
+    },
+    {
+      "name": "E_unknown_token_roundtrip",
+      "ok": true,
+      "detail": "token_in_raw=True sentinel_restored=True"
+    },
+    {
+      "name": "E_systems_deferred_honesty",
+      "ok": true,
+      "detail": "systems report availability honestly"
+    },
+    {
+      "name": "E_deferred_fixtures_labelled",
+      "ok": true,
+      "detail": "11 labelled fixture item(s); offenders=[]"
+    },
+    {
+      "name": "F_edexcel_questions_unsupported",
+      "ok": true,
+      "detail": "result=unsupported view={'status': 422, 'code': 'unsupported_capability'}"
+    },
+    {
+      "name": "F_cie_courses_filter_rejected",
+      "ok": true,
+      "detail": "result=filter_rejected view={'status': 422, 'code': 'unsupported_filter'}"
+    },
+    {
+      "name": "F_unknown_alias_refused",
+      "ok": true,
+      "detail": "UnknownAliasError=True"
+    },
+    {
+      "name": "F_alias_rebind_refused",
+      "ok": true,
+      "detail": "AliasRoutingError=True"
+    },
+    {
+      "name": "F_unknown_provider_failed",
+      "ok": true,
+      "detail": "result={'provider_id': 'ghost_provider', 'capability': 'courses', 'status': 'failed', 'count': 0, 'ok': False, 'error_code': 'unknown_provider', 'retryable': False, 'filter_key': None, 'detail': \"provider 'ghost_provider' is not registered\", 'gaps': [], 'warnings': []}"
+    },
+    {
+      "name": "F_unavailable_provider_reported",
+      "ok": true,
+      "detail": "result=unavailable view={'status': 503, 'code': 'provider_unavailable'}"
+    },
+    {
+      "name": "F_view_unknown_system_503",
+      "ok": true,
+      "detail": "view={'status': 503, 'code': 'provider_unavailable'}"
+    },
+    {
+      "name": "F_failing_provider_sanitized",
+      "ok": true,
+      "detail": "detail=RuntimeError: synthetic provider failure with <path>"
+    },
+    {
+      "name": "F_null_provider_empty_success",
+      "ok": true,
+      "detail": "status=ok count=[]"
+    },
+    {
+      "name": "G_duplicate_native_id_raises",
+      "ok": true,
+      "detail": "raised=True problems=[{'code': 'duplicate_native_id', 'scope': 'catalog', 'detail': 'native identity registered twice with different content', 'ref': 'course_m6qirzwjbad3fkacfzbd7yc4ho5cbvcf'}]"
+    },
+    {
+      "name": "G_duplicate_native_id_build_fails",
+      "ok": true,
+      "detail": "ok=False codes=['duplicate_native_id']"
+    },
+    {
+      "name": "G_unexplained_removal_rejected",
+      "ok": true,
+      "detail": "codes=['unexplained_removal'] removed=['course_nej62lrxwjzupifi3uaouzjgtaj6c3ba']"
+    },
+    {
+      "name": "G_explained_removal_accepted",
+      "ok": true,
+      "detail": "ok=True codes=[]"
+    },
+    {
+      "name": "G_unexplained_quality_upgrade_rejected",
+      "ok": true,
+      "detail": "codes=['unexplained_quality_upgrade']"
+    },
+    {
+      "name": "G_incomplete_reference_rejected",
+      "ok": true,
+      "detail": "codes=['unresolved_identity'] scopes=['course_ref']"
+    },
+    {
+      "name": "G_base_fixture_build_ok",
+      "ok": true,
+      "detail": "ok=True counts={'total': 5, 'asset': 1, 'container': 1, 'course': 1, 'question': 1, 'region': 1}"
+    },
+    {
+      "name": "G_base_aliases_resolve",
+      "ok": true,
+      "detail": "course=course_gidiqdy5tbthbk3t4gkyz7axrv6pxpx4 container=container_kbqickua3fhxuvdxblkqeyfgrfqneika question=q_ne4ferpcp4bm3gi5jh7y54y6wx5a53ow locator={'kind': 'course', 'native_code': '0580', 'qualification': 'igcse'}"
+    },
+    {
+      "name": "H_candidate_bytes_unchanged",
+      "ok": true,
+      "detail": "identical"
+    },
+    {
+      "name": "H_fixture_and_contract_digests_unchanged",
+      "ok": true,
+      "detail": "fixtures=76ef844ccfa0 contracts=9421088a68a2"
+    },
+    {
+      "name": "H_no_embedded_data_payloads",
+      "ok": true,
+      "detail": "no data: URIs in fixtures"
+    }
+  ],
+  "counts": {
+    "checks": 58,
+    "checks_failed": 0,
+    "negative_checks": 18,
+    "positive_checks": 21
+  },
+  "negative_checks": [
+    "D_stale_publish_rejected_pointer_unchanged",
+    "D_publish_none_rejected",
+    "D_tampered_snapshot_rejected_pointer_unchanged",
+    "D_cursor_tampered_invalid",
+    "D_cursor_stale_revision_rejected",
+    "F_edexcel_questions_unsupported",
+    "F_cie_courses_filter_rejected",
+    "F_unknown_alias_refused",
+    "F_alias_rebind_refused",
+    "F_unknown_provider_failed",
+    "F_unavailable_provider_reported",
+    "F_view_unknown_system_503",
+    "F_failing_provider_sanitized",
+    "G_duplicate_native_id_raises",
+    "G_duplicate_native_id_build_fails",
+    "G_unexplained_removal_rejected",
+    "G_unexplained_quality_upgrade_rejected",
+    "G_incomplete_reference_rejected"
+  ],
+  "positive_checks": [
+    "B_revision_reproducible",
+    "B_snapshot_builds",
+    "B_counts_match_independent_derivation",
+    "B_reference_integrity",
+    "C_course_roundtrip_cie",
+    "C_container_roundtrip_cie",
+    "C_question_roundtrip_cie",
+    "C_question_roundtrip_ielts",
+    "C_container_roundtrip_edexcel",
+    "C_container_roundtrip_ielts",
+    "C_assets_roundtrip",
+    "D_publish_a_then_b_cas",
+    "D_rollback_restores_previous",
+    "D_cursor_roundtrip",
+    "E_decisions_and_provenance_roundtrip",
+    "E_provenance_fields_preserved",
+    "E_unknown_token_roundtrip",
+    "F_null_provider_empty_success",
+    "G_explained_removal_accepted",
+    "G_base_fixture_build_ok",
+    "G_base_aliases_resolve"
+  ],
+  "failed": [],
+  "ok": true,
+  "not_run": [
+    {
+      "check": "real Node component execution (fake-cli.mjs run via Node runtime)",
+      "reason": "gate original_paths_released is closed; only discovery and importability of the synthetic component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used; nothing was read, fabricated or staged; the private fixture allowlists a synthetic token name but never a value"
+    }
+  ],
+  "note": "private rehearsal only; not merged, not deployed; the original tree was never read, imported or written; frozen evidence was not touched; scratch space was confined to the run directory's evidence/tmp"
+}
+--- stderr ---
+
+

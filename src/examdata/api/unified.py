@@ -29,12 +29,14 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import Response
 from sqlalchemy.orm import Session
 
-from ..core.db import init_db, session_scope
+from ..core.db import ensure_initialized, session_scope
+from ..core.config import get_settings
 from ..core.models import Board, Document, ExamSeries, Subject
 from ..paperqa import query as paperqa_query
 from ..paperqa import resolve as paperqa_resolve
-from ..paperqa.api import json_payload, response_payload
-from ..paperqa.errors import PaperQAError
+from ..paperqa.api import content_disposition, json_payload, response_payload
+from ..paperqa.api import index_paper
+from ..paperqa.errors import PaperQAError, UpstreamError
 from ..paperqa.models import CIE_SEASONS, EDEXCEL_SEASONS
 from ..paperqa.sources.cie_fraft import ORIGIN as CIE_ORIGIN
 from ..paperqa.sources.pearson import ORIGIN as PEARSON_ORIGIN
@@ -104,7 +106,7 @@ BOARD_META: dict[str, dict[str, Any]] = {
         "subject_hint": "Pearson 规格代码或科目名（非四位数字），如 ial18-accounting / accounting",
         "subject_pattern": r"^(?!\d{4}$).+$",
         "seasons": ["January", "June", "October", "November"],
-        "modes": ["paper", "question", "qa"],
+        "modes": ["qp", "ms", "both", "paper", "question", "qa"],
         "question_crop": True,
         "default_mode": "paper",
     },
@@ -182,6 +184,7 @@ def _paper_endpoint(
     if not (board and subject_code and year and season):
         return None
     params = {
+        "board": board,
         "subject": subject_code,
         "year": str(year),
         "season": season,
@@ -198,7 +201,7 @@ def get_session():
     与 `api.app.get_session` 同语义。这里自带一份是因为 `api.app` 需要
     import 本模块来挂路由，反向 import 会成环。
     """
-    init_db()
+    ensure_initialized()
     with session_scope() as session:
         yield session
 
@@ -279,7 +282,7 @@ def unified_paper(
     board: Optional[str] = Query(None, description="考试局别名，如 cie / cambridge / pearson；不传则自动判定"),
     paper: Optional[str] = Query(None, description="Paper 代码，如 11 / wec11-01"),
     question: Optional[str] = Query(None, description="题号，如 2(a)；仅 Edexcel 的 question/qa 模式支持"),
-    mode: Optional[str] = Query(None, description="qp/ms/both（CIE）或 paper/question/qa（Edexcel）"),
+    mode: Optional[str] = Query(None, description="两家统一 qp/ms/both；Edexcel 另兼容 paper/question/qa"),
     download: bool = Query(True, description="true 取回文件字节；false 只解析清单"),
     format: Optional[str] = Query(
         None, description="binary（默认，原始字节/ZIP）或 json（base64 + 元数据）"
@@ -303,21 +306,76 @@ def unified_paper(
         file = response_payload(
             paperqa_query(canonical, subject, year, season, paper, question, mode)
         )
+        return Response(
+            file.data,
+            media_type=file.media_type,
+            headers={
+                "Content-Disposition": content_disposition(file.name),
+                "Content-Length": str(len(file.data)),
+            },
+        )
     except PaperQAError as exc:
         raise HTTPException(status_code=exc.status_code, detail=str(exc)) from exc
-    return Response(
-        file.data,
-        media_type=file.media_type,
-        headers={
-            "Content-Disposition": f'attachment; filename="{file.name}"',
-            "Content-Length": str(len(file.data)),
-        },
-    )
+    except (AttributeError, IndexError, KeyError, OverflowError, TypeError, ValueError) as exc:
+        error = UpstreamError("Invalid upstream response")
+        raise HTTPException(status_code=error.status_code, detail=str(error)) from exc
+
 
 
 # --------------------------------------------------------------------------
 # 跨考试局检索
 # --------------------------------------------------------------------------
+
+
+@router.get("/paper/index", summary="Edexcel 整卷题目和评分标准定位索引")
+def unified_paper_index(
+    subject: str, year: int, season: str, paper: str,
+    board: str = "edexcel", mode: str = "both",
+):
+    canonical = normalize_board(board)
+    if canonical != "edexcel":
+        raise HTTPException(422, "CIE uses whole PDFs and an externally imported AI index")
+    try:
+        return index_paper(subject, year, season, paper, mode)
+    except PaperQAError as exc:
+        raise HTTPException(exc.status_code, str(exc)) from exc
+
+
+@router.get("/cie-index-schema", summary="外部 CIE AI 索引 JSON Schema")
+def cie_index_schema():
+    from ..paperqa.external_index import ExternalIndex
+    return ExternalIndex.model_json_schema()
+
+
+@router.get("/indexes/cie/{sha256}", summary="查询已导入的 CIE AI 题目定位")
+def cie_external_index(sha256: str, question: Optional[str] = None):
+    from ..paperqa.external_index import read_index
+    try:
+        return read_index(get_settings().data_dir, sha256, question)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, "Index or question not found") from exc
+    except (ValueError, OSError) as exc:
+        raise HTTPException(422, "Invalid index or PDF sha256") from exc
+
+
+@router.get("/indexes/cie/{sha256}/question", summary="按已存 PDF 定位临时裁剪 CIE 题目或评分条目")
+def cie_indexed_question(sha256: str, question: str, mode: str = "qp", format: str = "binary"):
+    from ..paperqa.external_index import fetch_question
+    if format not in {"binary", "json"}:
+        raise HTTPException(422, "format must be binary or json")
+    try:
+        result, source = fetch_question(get_settings().data_dir, sha256, question, mode)
+        if format == "json":
+            return {**json_payload(result), **source}
+        file = response_payload(result)
+        return Response(file.data, media_type=file.media_type,
+                        headers={"Content-Disposition": content_disposition(file.name)})
+    except FileNotFoundError as exc:
+        raise HTTPException(404, "Index or question not found") from exc
+    except PaperQAError as exc:
+        raise HTTPException(exc.status_code, str(exc)) from exc
+    except (ValueError, OSError) as exc:
+        raise HTTPException(422, "Invalid index") from exc
 
 
 @router.get(
@@ -398,7 +456,7 @@ def unified_search(
         "`source.board_canonical` 是统一层规范名（`cie` / `edexcel`）；"
         "`source.session` 已把数据库里不规范的考季写法归一成 paperqa 认的考季名，"
         "并保留原始值在 `session_raw`。`source.paper_endpoint` 是可直接调用的"
-        "相对 URL（形如 `/api/v1/paper?subject=0580&year=2024&season=Jun&paper=11&mode=qp`），"
+        "相对 URL（形如 `/api/v1/paper?board=cie&subject=0580&year=2024&season=Jun&paper=11&mode=qp`），"
         "原样请求它就能取到该卷 PDF；只有当这道题缺少年份/考季/科目等定位信息时"
         "（例如无考季的样卷）才为 null，绝不拼一个取不回来的 URL。\n\n"
         "题目不存在 → 404。"

@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Content-Type: application/javascript
+Content-Length: 3646
+Connection: keep-alive
+Cache-Control: max-age=86400
+Last-Modified: Wed, 04 Mar 2026 03:39:42 GMT
+Accept-Ranges: bytes
+ETag: "e45f968988abdc1:0"
+Access-Control-Allow-Origin: *
+Date: Sun, 04 Oct 2026 10:21:47 GMT
+Server: BAIDU_WAF
+BDWAF-Request-ID: b507ba80-2fcf-49e6-8d11-00a1e7c49576
+

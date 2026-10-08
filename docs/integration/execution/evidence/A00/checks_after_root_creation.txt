@@ -1,0 +1,55 @@
+=== A00 checks after root creation (post-creation inspection) ===
+generated_at_local: 2026-10-05T18:16:10+08:00
+generated_at_utc:   2026-10-05T10:16:13+00:00
+cwd: /c/Users/weo/Desktop/api
+
+--- 1. allowed write roots and current subdirectories (ls -ld) ---
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:11 docs/integration/execution
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:04 docs/integration/execution/evidence
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:16 docs/integration/execution/evidence/A00
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:08 integration-staging
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:08 integration-staging/tools
+
+--- 2. ownership.json JSON validation (venv python) ---
+json_load: ok
+schema: examdata.integration.ownership/1
+mode: PHASE_A_ISOLATED_ONLY
+allowed_write_roots_count: 2
+  root: C:/Users/weo/Desktop/api/integration-staging
+        existed_before_creation: False
+  root: C:/Users/weo/Desktop/api/docs/integration/execution
+        existed_before_creation: False
+governing_documents_count: 4
+gate_names_count: 7
+ownership_json_validate_exit=0
+
+--- 3. evidence directory listing (while this file is being written) ---
+total 20
+-rw-r--r-- 1 weo 197121 2809 Oct  5 18:08 agents_md_scan.txt
+-rw-r--r-- 1 weo 197121 1124 Oct  5 18:16 checks_after_root_creation.txt
+-rw-r--r-- 1 weo 197121 2852 Oct  5 18:08 input_hashes_and_env.txt
+-rw-r--r-- 1 weo 197121 2908 Oct  5 18:08 owner_observation.txt
+-rw-r--r-- 1 weo 197121 2193 Oct  5 18:08 pre_creation_absence.txt
+
+--- 4. reviewer CLI availability probe (informational; review module deferred during Phase A) ---
+codex: /c/Users/weo/.local/bin/codex
+claude: /c/Users/weo/.local/bin/claude
+grok: not found
+cursor-agent: not found
+kander: /c/Users/weo/.local/bin/kander
+
+=== Annex A: verbatim root-creation record (extracted from session event log) ===
+source: agents/main/wire.jsonl lines 152-153 (tool.call -> tool.result); extraction re-run 2026-10-05T18:16:33+08:00
+----- wire line 152: Bash tool call (command) -----
+date --iso-8601=seconds; date -u --iso-8601=seconds
+mkdir -p integration-staging/tools docs/integration/execution/evidence/A00
+echo "mkdir_exit=$?"
+ls -ld integration-staging docs/integration/execution integration-staging/tools docs/integration/execution/evidence/A00
+----- wire line 153: Bash tool result (output) -----
+2026-10-05T18:04:38+08:00
+2026-10-05T10:04:42+00:00
+mkdir_exit=0
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:04 docs/integration/execution
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:04 docs/integration/execution/evidence/A00
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:04 integration-staging
+drwxr-xr-x 1 weo 197121 0 Oct  5 18:04 integration-staging/tools

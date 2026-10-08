@@ -1,0 +1,101 @@
+{
+  "schema": "examdata.integration.ownership/1",
+  "mode": "PHASE_A_ISOLATED_ONLY",
+  "executor": "Phase A integration executor (Kimi Code goal mode)",
+  "created": {
+    "roots_created_local": "2026-10-05T18:04:38+08:00",
+    "roots_created_utc": "2026-10-05T10:04:42+00:00",
+    "record_written_local": "2026-10-05T18:09:01+08:00",
+    "record_written_utc": "2026-10-05T10:09:06+00:00"
+  },
+  "governing_documents": [
+    {
+      "path": "docs/integration/EXECUTOR_PROMPT_EN.md",
+      "sha256": "ee1ab92bc154cf63f59e588de138dce605189e6d6554c9deb29c1203c4b9953c",
+      "role": "executor prompt - assigned scope and isolation rules"
+    },
+    {
+      "path": "docs/integration/MASTER_EXECUTION_PLAN_EN.md",
+      "sha256": "a81355545c4d4a4e6d3202767042685d1168456d9d8552d6c817602fcb19699b",
+      "role": "governing master plan - supersedes any other proposal, simplified pilot, or different architecture"
+    },
+    {
+      "path": "docs/integration/ROUTE_INVENTORY_CURRENT.json",
+      "sha256": "946d3e90cbccd54dc9ac9005f36f8f940b6b7d2fe1a5ae515b119d3c00e55baf",
+      "role": "route baseline snapshot (71-route baseline reference)"
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "sha256": "808eee86b2c1bbe1cdaefb3ea5e3801bd092b5e826c8e22f4fba13e3d063dcb9",
+      "role": "saved project status context"
+    }
+  ],
+  "hash_evidence": "docs/integration/execution/evidence/A00/input_hashes_and_env.txt",
+  "allowed_write_roots": [
+    {
+      "path": "C:/Users/weo/Desktop/api/integration-staging",
+      "role": "staged implementation tree (contracts, registry, runner, catalog, isolated v2 API, fixtures, tests)",
+      "existed_before_creation": false,
+      "ownership_check": "verified absent immediately before creation; nothing reused, overwritten, or erased",
+      "inspection_evidence": "docs/integration/execution/evidence/A00/pre_creation_absence.txt",
+      "created_local": "2026-10-05T18:04:38+08:00"
+    },
+    {
+      "path": "C:/Users/weo/Desktop/api/docs/integration/execution",
+      "role": "execution ledger, ownership record, evidence, and reports tree",
+      "existed_before_creation": false,
+      "ownership_check": "verified absent immediately before creation; nothing reused, overwritten, or erased",
+      "inspection_evidence": "docs/integration/execution/evidence/A00/pre_creation_absence.txt",
+      "created_local": "2026-10-05T18:04:38+08:00"
+    }
+  ],
+  "read_only_scope": "Every other path under C:/Users/weo/Desktop/api and all paths outside the two allowed write roots, including the protected paths of plan section 0.5: examdata/**, frontend/**, ielts-api/**, ielts-data/**, toefl-api/**, cie-location-batch/**, cie-index-batch-2026-10-01/**, cie-question-crops/**, gaokao-feasibility/**, tmp_edexcel_tt_probe/**, tmp_materials_probe/**, .data/**, docs/ielts/**, docs/toefl/**, SESSION_CONTINUATION_PLAN.md, the governing documents themselves, and the user's global rule trees.",
+  "active_owner": {
+    "framework": "Kimi Code",
+    "status": "ACTIVE - original project is being modified by the owner process",
+    "sessions_root": "C:/Users/weo/.kimi-code/sessions/wd_api_8f9bde7994a5/",
+    "newest_session_observed": "session_278e5996-bc2d-4809-ad6c-2a9d3061648a",
+    "newest_session_mtime": "2026-10-05 17:58",
+    "plan_session": "session_de1b801c-5d3c-454f-bc4f-dc6382e0afca",
+    "plan_session_wire_size_bytes": 52885432,
+    "plan_session_wire_mtime": "2026-10-05 18:01",
+    "active_probe_directory": "tmp_edexcel_tt_probe/ (owner writes observed 2026-10-05 17:48-17:56)",
+    "observed_local": "2026-10-05T18:00:44+08:00",
+    "evidence": "docs/integration/execution/evidence/A00/owner_observation.txt",
+    "release_rule": "Phase B gate original_paths_released opens only on explicit human instruction after the owner's work is finished. Kimi inactivity or a 'done' message does not release any path; staged work must not be promoted because the owner went quiet."
+  },
+  "prohibited_operations": [
+    "Do not edit, format, rename, move, delete, restore, reset, stash, stage, commit, or overwrite original project files.",
+    "Do not kill, pause, restart, signal, reconfigure, or attach a debugger to Kimi or existing services.",
+    "Do not send instructions to the active Kimi session.",
+    "Do not change port 8000, port 5188, shared environment files, user-level environment variables, proxy settings, installed packages, or the existing virtual environment.",
+    "Do not run pytest from the original repository (its conftest.py creates a directory under the original .pytest_cache even before ordinary tests execute).",
+    "Do not import the original application to inspect routes; configuration and imports can create directories or initialize data.",
+    "Do not call existing service routes that can fetch upstream data, write caches, or launch subprocesses.",
+    "Do not execute build-syllabi.mjs, refresh tools, batch crawlers, or source verification commands against the live workspace.",
+    "Do not copy a live SQLite database by copying only its .db file; do not access a live database during Phase A - use synthetic fixtures or already exported immutable evidence.",
+    "Do not run git clean, git reset --hard, broad recursive deletion, a blanket formatter, a dependency upgrade, or a lock-file regeneration in the original project.",
+    "Do not interpret the plan as authorization to resume the stopped CIE batch.",
+    "Do not automatically promote staging changes after tests pass."
+  ],
+  "gates_record": {
+    "location": "docs/integration/execution/execution-ledger.json (field: gates)",
+    "source": "MASTER_EXECUTION_PLAN_EN.md section 0.8",
+    "rule": "All seven gates start false. Only explicit human instructions open a gate, and each opened gate must record the human instruction text, timestamp, scope, and constraints. original_paths_released alone opens none of the others.",
+    "gate_names": [
+      "original_paths_released",
+      "real_data_write_authorized",
+      "existing_service_cutover_authorized",
+      "upstream_requests_authorized",
+      "cie_resume_authorized",
+      "remote_deployment_authorized",
+      "original_cleanup_authorized"
+    ]
+  },
+  "concurrent_change_rule": "Owner changes are expected; never restore an earlier hash to make a protection check pass, and record unexpected original-file changes as concurrent observations (plan section 0.9).",
+  "verification_evidence": [
+    "docs/integration/execution/evidence/A00/checks_after_root_creation.txt",
+    "docs/integration/execution/evidence/A00/final_checks.txt"
+  ],
+  "framework_note": "No project-level AGENTS.md/CLAUDE.md exists anywhere scanned (evidence: agents_md_scan.txt). User-global Kander rules apply; module dispositions are recorded in A00_INITIAL_REPORT.md section 8."
+}

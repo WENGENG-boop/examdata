@@ -1,3 +1,13 @@
+<!--
+  浏览器端最小示例：用原生 fetch 调统一网关 GET /api/v1/search。
+
+  使用前提：本页与 API 不同源，浏览器会先做跨域校验，因此服务进程必须带
+  EXAMDATA_CORS_ORIGINS 启动，否则页面只会提示“调用失败：Failed to fetch”：
+
+      EXAMDATA_CORS_ORIGINS='*' examdata serve --port 8000
+
+  用白名单时要把本页所在来源写进去，详见页面底部“为什么需要服务端开 CORS”。
+-->
 <!doctype html>
 <html lang="zh-CN">
   <head>
@@ -190,6 +200,30 @@ EXAMDATA_CORS_ORIGINS='http://127.0.0.1:5500' examdata serve --port 8000</code><
         statusEl.className = isError ? "error" : "";
       }
 
+      // 请求失败时把上一次的结果清掉：旧表格留在页面上会被误读成本次查询的结果。
+      function clearResults() {
+        summaryEl.textContent = "";
+        tbody.replaceChildren();
+        table.hidden = true;
+      }
+
+      // FastAPI 的参数校验错误 detail 是数组（每项含 loc / msg），直接拼进字符串会变成
+      // "[object Object]"；这里压成一行可读文本。
+      function describeDetail(detail) {
+        if (typeof detail === "string") return detail;
+        if (Array.isArray(detail)) {
+          return detail
+            .map((item) =>
+              item && typeof item === "object"
+                ? `${(item.loc || []).join(".") || "参数"}: ${item.msg || JSON.stringify(item)}`
+                : String(item),
+            )
+            .join("; ");
+        }
+        if (detail && typeof detail === "object") return JSON.stringify(detail);
+        return String(detail);
+      }
+
       function cell(row, text) {
         const td = document.createElement("td");
         td.textContent = text === null || text === undefined || text === "" ? "-" : String(text);
@@ -224,6 +258,10 @@ EXAMDATA_CORS_ORIGINS='http://127.0.0.1:5500' examdata serve --port 8000</code><
         event.preventDefault();
         const baseUrl = document.getElementById("base-url").value.replace(/\/+$/, "");
         const apiKey = document.getElementById("api-key").value.trim();
+        if (!baseUrl) {
+          setStatus("请先填写服务地址，例如 http://127.0.0.1:8000", true);
+          return;
+        }
         const params = new URLSearchParams();
         const add = (key, value) => {
           if (value) params.set(key, value);
@@ -237,13 +275,14 @@ EXAMDATA_CORS_ORIGINS='http://127.0.0.1:5500' examdata serve --port 8000</code><
         const headers = { Accept: "application/json" };
         if (apiKey) headers["X-API-Key"] = apiKey;
 
+        clearResults();
         setStatus(`请求 ${url} …`);
         try {
           const response = await fetch(url, { headers });
           const payload = await response.json().catch(() => null);
           if (!response.ok) {
             const detail = payload && payload.detail ? payload.detail : `HTTP ${response.status}`;
-            setStatus(`请求失败：${detail}`, true);
+            setStatus(`请求失败：${describeDetail(detail)}`, true);
             return;
           }
           render(payload);
@@ -257,6 +296,12 @@ EXAMDATA_CORS_ORIGINS='http://127.0.0.1:5500' examdata serve --port 8000</code><
             true,
           );
         }
+      });
+
+      // 服务地址是 type="url"，浏览器会先做原生校验；校验不通过时 submit 事件根本不会触发，
+      // 页面看起来"点了没反应"。这里把原因写进状态栏。
+      document.getElementById("base-url").addEventListener("invalid", () => {
+        setStatus("服务地址必须是完整 URL，例如 http://127.0.0.1:8000", true);
       });
     </script>
   </body>

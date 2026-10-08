@@ -428,6 +428,7 @@ def build_question_tree(
                 last_node.text_parts.append(text)
                 last_node.page_to = block.page
                 last_node.bbox_to = {"page": block.page, "bbox": list(block.bbox)}
+                page_assigned.add(block.page)
                 # 分值常单独占一行（"\n[2]"），与题号不在同一个文本块里。
                 # 这类行没有题号，必须在这里把分值补挂到当前题目上，
                 # 否则整份卷子的分值合计会系统性偏低。
@@ -445,13 +446,10 @@ def build_question_tree(
             label = match.label
             kind = match.kind
 
-            # (i)/(v)/(x) 既是字母表的第 9/22/24 个字母，也是罗马数字 1/5/10。
-            # Cambridge 数学卷的小问只到 (a)..(d) 左右，子小问才用罗马数字，
-            # 因此默认按罗马数字（depth 2）解析；只有当前一个同级标签正好是
-            # 紧邻的前一个字母 (h)/(u)/(w) 时，才判定为字母小问。
-            if is_ambiguous_sub_label(label):
+            if is_ambiguous_sub_label(label) and match.depth == 1:
                 prev = _last_sibling_label(stack, depth)
-                if prev is not None and _is_preceding_letter(prev, label):
+                has_inline_child = pos + 1 < len(chain) and chain[pos + 1].depth > match.depth
+                if has_inline_child or (prev is not None and _is_preceding_letter(prev, label)):
                     kind = "sub"
                     depth = min(1, max_depth)
                 else:
@@ -504,11 +502,9 @@ def build_question_tree(
                     node.marks = m
                     break
 
-    # 父题的页码范围必须覆盖其所有子题（题目跨页时父题页尾要跟到最后一页）
     _propagate_page_ranges(tree)
-
-    # 图形资产归属到题目
     tree.asset_stats = attach_assets(tree, doc)
+    page_assigned.update(asset.page for node in tree.walk() for asset in node.assets)
 
     _validate(tree, doc, page_assigned, expected_total_marks)
     return tree
@@ -610,23 +606,82 @@ def _validate(
             }
         )
 
-    leaf_marks = 0
-    has_marks = False
+    counts: dict[str, int] = {}
     for node in tree.walk():
-        if not node.children and node.marks is not None:
-            leaf_marks += node.marks
-            has_marks = True
-    if has_marks:
-        tree.total_marks = leaf_marks
-        if expected_total_marks is not None and leaf_marks != expected_total_marks:
+        counts[node.number_path] = counts.get(node.number_path, 0) + 1
+    duplicates = {path: count for path, count in counts.items() if count > 1}
+    if duplicates:
+        findings.append(
+            {
+                "rule": "duplicate_number_paths",
+                "severity": "error",
+                "message": f"重复题号路径: {sorted(duplicates)[:20]}",
+                "evidence": {"counts": duplicates},
+            }
+        )
+
+    def subtotal(node: QuestionNode) -> Optional[int]:
+        if not node.children:
+            return node.marks
+        child_totals = [subtotal(child) for child in node.children]
+        if node.marks is not None:
+            descendants = [child for child in node.walk() if child is not node]
+            if not any(child.marks is not None for child in descendants):
+                return node.marks
+            if all(value is not None for value in child_totals):
+                child_sum = sum(child_totals)
+                if child_sum == node.marks:
+                    return node.marks
+            findings.append(
+                {
+                    "rule": "parent_child_marks_ambiguous",
+                    "severity": "warning",
+                    "message": f"{node.number_path} 父子分值无法确定是否包含关系",
+                    "evidence": {
+                        "number_path": node.number_path,
+                        "parent_marks": node.marks,
+                        "child_totals": {
+                            child.number_path: value
+                            for child, value in zip(node.children, child_totals)
+                        },
+                    },
+                }
+            )
+            return None
+        if all(value is not None for value in child_totals):
+            return sum(child_totals)
+        return None
+
+    root_totals = [subtotal(root) for root in tree.roots]
+    tree.total_marks = (
+        sum(root_totals)
+        if root_totals and all(value is not None for value in root_totals) and not duplicates
+        else None
+    )
+    if tree.total_marks is not None:
+        if expected_total_marks is not None and tree.total_marks != expected_total_marks:
             findings.append(
                 {
                     "rule": "marks_total_mismatch",
                     "severity": "error",
-                    "message": f"分值合计 {leaf_marks} != 试卷总分 {expected_total_marks}",
-                    "evidence": {"computed": leaf_marks, "expected": expected_total_marks},
+                    "message": f"分值合计 {tree.total_marks} != 试卷总分 {expected_total_marks}",
+                    "evidence": {"computed": tree.total_marks, "expected": expected_total_marks},
                 }
             )
+    elif any(node.marks is not None for node in tree.walk()):
+        findings.append(
+            {
+                "rule": "marks_incomplete",
+                "severity": "warning",
+                "message": "部分题目分值缺失或存在歧义，不能确定试卷总分",
+                "evidence": {
+                    "root_totals": {
+                        root.number_path: value for root, value in zip(tree.roots, root_totals)
+                    },
+                    "expected": expected_total_marks,
+                },
+            }
+        )
     else:
         findings.append(
             {"rule": "no_marks_found", "severity": "warning", "message": "未抽取到任何分值"}
@@ -675,29 +730,44 @@ def attach_assets(tree: QuestionTree, doc: PdfDocument) -> dict[str, Any]:
     orphan_pages: set[int] = set()
     nodes = [n for n in tree.walk()]
     front_matter = set(tree.front_matter_pages or [])
+    existing = {
+        (asset.page, asset.bbox, asset.width, asset.height, asset.data)
+        for node in nodes
+        for asset in node.assets
+    }
+    existing_front = {
+        (asset.page, asset.bbox, asset.width, asset.height, asset.data)
+        for asset in tree.front_assets
+    }
+    tree.findings[:] = [f for f in tree.findings if f.get("rule") != "orphan_assets"]
 
     for page in doc.pages:
         if page.number in front_matter:
             for img in page.images:
-                tree.front_assets.append(_asset_ref(img))
+                key = (img.page, img.bbox, img.width, img.height, img.data)
+                if key not in existing_front:
+                    tree.front_assets.append(_asset_ref(img))
+                    existing_front.add(key)
                 front += 1
             continue
 
-        page_nodes = [
-            n
-            for n in nodes
-            if n.page_from is not None
-            and n.page_from <= page.number <= (n.page_to or n.page_from)
-        ]
         for img in page.images:
-            ref = _asset_ref(img)
-            owner = _owner_for(page_nodes, page.number, img.bbox[1]) if page_nodes else None
+            key = (img.page, img.bbox, img.width, img.height, img.data)
+            owner = _owner_for(nodes, page.number, img.bbox[1])
             if owner is None:
                 orphan_pages.add(page.number)
                 continue
-            owner.assets.append(ref)
+            if key not in existing:
+                owner.assets.append(_asset_ref(img))
+                existing.add(key)
+            owner.page_to = max(owner.page_to or owner.page_from or page.number, page.number)
+            if owner.bbox_to is None or (
+                owner.bbox_to.get("page", 0), owner.bbox_to.get("bbox", [0, 0, 0, 0])[3]
+            ) < (page.number, img.bbox[3]):
+                owner.bbox_to = {"page": page.number, "bbox": list(img.bbox)}
             assigned += 1
 
+    _propagate_page_ranges(tree)
     total_images = sum(len(p.images) for p in doc.pages)
     stats = {
         "images_total": total_images,
@@ -735,19 +805,24 @@ def _asset_ref(img) -> AssetRef:
 
 
 def _owner_for(nodes: list[QuestionNode], page: int, y: float) -> Optional[QuestionNode]:
-    """选择覆盖该纵坐标且最贴近图片上方的题目节点。"""
-    if not nodes:
+    """选择图片之前最后打开的题目；无新题号的续页沿用该节点。"""
+    candidates = [
+        node for node in nodes
+        if node.page_from is not None
+        and (
+            node.page_from < page
+            or (node.page_from == page
+                and (node.bbox_from or {}).get("bbox", [0, 0, 0, 0])[1] <= y + 1)
+        )
+    ]
+    if not candidates:
         return None
-    started = [n for n in nodes if (n.bbox_from or {}).get("page") == page]
-    if started:
-        started.sort(key=lambda n: (n.bbox_from or {}).get("bbox", [0, 0, 0, 0])[1])
-        chosen = None
-        for n in started:
-            y0 = (n.bbox_from or {}).get("bbox", [0, 0, 0, 0])[1]
-            if y0 <= y + 1:
-                chosen = n
-        if chosen is not None:
-            return chosen
-        return started[0]
-    candidates = sorted(nodes, key=lambda n: -n.depth)
-    return candidates[0] if candidates else None
+    return max(
+        candidates,
+        key=lambda node: (
+            node.page_from or 0,
+            (node.bbox_from or {}).get("bbox", [0, 0, 0, 0])[1],
+            node.order,
+            node.depth,
+        ),
+    )

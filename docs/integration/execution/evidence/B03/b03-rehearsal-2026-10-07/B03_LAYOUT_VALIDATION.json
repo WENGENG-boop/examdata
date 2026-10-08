@@ -1,0 +1,91 @@
+{
+  "schema": "examdata.integration.b03_rehearsal_validation/1",
+  "run_id": "b03-rehearsal-2026-10-07",
+  "packet": "B03",
+  "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1",
+  "probe": "b03_integration_probe.py",
+  "runs": [
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api",
+      "exit_code": 0,
+      "checks": 58,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp",
+      "exit_code": 0,
+      "checks": 58,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces ünïcode",
+      "exit_code": 0,
+      "checks": 58,
+      "checks_failed": 0,
+      "ok": true
+    }
+  ],
+  "discovery_identical_across_cwds": true,
+  "discovery": {
+    "ids": [
+      "fake_cli"
+    ],
+    "problems": [],
+    "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs",
+    "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1"
+  },
+  "in_process_cwds": [
+    "C:\\Users\\weo\\Desktop\\api",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces ünïcode"
+  ],
+  "candidate_tree_digest_reproducible": {
+    "files_match": true,
+    "sha256_match": true,
+    "files_on_disk": 187,
+    "on_disk_matches_recorded_plus_manifest": true,
+    "recorded": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "recomputed": {
+      "files": 186,
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    },
+    "candidate_manifest_sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf"
+  },
+  "findings": [],
+  "not_run": [
+    {
+      "check": "real Node component execution",
+      "reason": "gate original_paths_released is closed; only synthetic fake-node-cli discovery is rehearsed, never executed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read, imported or written"
+    },
+    {
+      "check": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched; schema and data roots unchanged"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used; nothing was read, fabricated or staged"
+    }
+  ],
+  "verdict": "b03_rehearsal_valid_private_only",
+  "note": "private candidate only; not merged, not deployed; the original tree was neither read, imported nor written; frozen evidence under evidence/B01/**, evidence/B02/**, evidence/R0104/** and runtime/b02-rehearsal-20261006/**, runtime/r0104-repair-20261006/** was not touched"
+}

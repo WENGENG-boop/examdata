@@ -47,6 +47,23 @@ _PATTERNS: dict[str, list[tuple[re.Pattern[str], float]]] = {
         (re.compile(r"you must answer on the question paper", re.I), 0.75),
         (re.compile(r"time allowed", re.I), 0.45),
         (re.compile(r"\[\s*\d+\s*\]", re.I), 0.20),
+        # Edexcel 封面措辞（新旧两代封面 + 教师/考生版说明）。全库实测
+        # 只命中 question_paper，mark scheme 一份未命中。
+        (re.compile(r"before entering your candidate information", re.I), 0.85),
+        (re.compile(r"write your name here", re.I), 0.55),
+        (re.compile(r"you do not need any other materials", re.I), 0.45),
+        (re.compile(r"instructions to (?:the )?(?:teacher/examiner|candidate)\b", re.I), 0.40),
+        (re.compile(r"paper reference", re.I), 0.35),
+        # 听力文字稿：类型词表里没有 transcript，官方页面把它们归在
+        # question paper 下（全库 10 份皆然）。此模式同时压过文字稿里
+        # "(M1)" 说话人标记对 mark_scheme 的假阳性。
+        (re.compile(r"transcript of (?:the )?listening test", re.I), 0.65),
+        # 部分文字稿封面只写 "Transcript"（如 WSP04 2020），单独给一个
+        # 弱权重，避免被 "(M1)" 假阳性压过去。全库实测只命中文字稿。
+        (re.compile(r"\btranscript\b", re.I), 0.50),
+        # 封面 "Total Marks" 框；用于压过少数 QP 里 "Insert"/"clean copy"
+        # 对 source_material 的误命中（全库实测 1564 行皆 question_paper）。
+        (re.compile(r"\btotal marks\b", re.I), 0.30),
     ],
     "specimen_paper": [
         (re.compile(r"specimen", re.I), 0.50),
@@ -127,7 +144,8 @@ class ContentEvidence:
 def classify_content(path: Path | str) -> ContentEvidence:
     """读 PDF 前几页文本，给出内容级类型判定。"""
     try:
-        doc = load_pdf(Path(path))
+        # 分类只看前 SCAN_PAGES 页；解析整本 PDF 在大库下代价显著且无收益。
+        doc = load_pdf(Path(path), max_pages=SCAN_PAGES)
     except Exception as exc:  # 损坏文件 / 加密文件
         return ContentEvidence(doc_type=None, confidence=0.0, error=f"{type(exc).__name__}: {exc}")
 
@@ -141,13 +159,22 @@ def classify_content(path: Path | str) -> ContentEvidence:
                 break
     text = "\n".join(text_parts)[:MAX_CHARS]
 
+    # 文本层不可用（纯扫描件、字体编码损坏）时如实报错，与"读得出但判不出"
+    # 区分开：前者再补规则也读不出来，后者说明规则还需要补。
+    normalized = re.sub(r"\s+", " ", text)
+    ctrl_ratio = len(re.findall(r"[\x00-\x08\x0b-\x1f\x7f]", text)) / max(1, len(text))
+    if len(re.findall(r"[A-Za-z]{3,}", normalized)) < 5 or ctrl_ratio > 0.10:
+        error = "no_text_layer" if not normalized.strip() else "text_layer_unreadable"
+        return ContentEvidence(doc_type=None, confidence=0.0, pages_scanned=pages, error=error)
+
     scores: dict[str, float] = {}
     matched: dict[str, list[str]] = {}
     for doc_type, patterns in _PATTERNS.items():
         total = 0.0
         hits: list[str] = []
         for pat, weight in patterns:
-            m = pat.search(text)
+            # 空白归一化后匹配："Mark\nScheme" 这类跨行排版不归一化会漏掉。
+            m = pat.search(normalized)
             if m:
                 total += weight
                 hits.append(m.group(0)[:40])

@@ -1,0 +1,44 @@
+{
+  "schema": "examdata.integration.b01_layout_validation/1",
+  "run_id": "b00b01-20261006T132400",
+  "private_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private",
+  "probe_exit_code": 0,
+  "probe_counts": {
+    "imported": 49,
+    "errors": 3,
+    "outside_private": 0
+  },
+  "examdata_within_private": true,
+  "schema_files": 28,
+  "schema_loaded_ok": 28,
+  "findings": [
+    {
+      "id": "F03-GUARD-DEP",
+      "severity": "high",
+      "summary": "product modules import the staging harness guard (`..testing.guards`), whose root heuristic requires the tree be named 'integration-staging'; at the target layout it raises and the import fails",
+      "modules": [
+        "examdata.integration.legacy",
+        "examdata.integration.runtime",
+        "examdata.integration"
+      ],
+      "detail": {
+        "examdata.integration.legacy": "RuntimeError: staged package is not inside an 'integration-staging' tree (C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private\\src); set EXAMDATA_INTEGRATION_STAGING_ROOT to override",
+        "examdata.integration.runtime": "RuntimeError: staged package is not inside an 'integration-staging' tree (C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private\\src); set EXAMDATA_INTEGRATION_STAGING_ROOT to override",
+        "examdata.integration": "RuntimeError: staged package is not inside an 'integration-staging' tree (C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private\\src); set EXAMDATA_INTEGRATION_STAGING_ROOT to override"
+      },
+      "fix": "in the target layout the path-root computation must move out of the test-only guard into a product-safe module; the guard keeps the isolation rule but is not imported by product code"
+    },
+    {
+      "id": "F03-IMPORT-ERRORS",
+      "severity": "high",
+      "summary": "3 module(s) failed to import in the target layout",
+      "errors": {
+        "examdata.integration.legacy": "RuntimeError: staged package is not inside an 'integration-staging' tree (C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private\\src); set EXAMDATA_INTEGRATION_STAGING_ROOT to override",
+        "examdata.integration.runtime": "RuntimeError: staged package is not inside an 'integration-staging' tree (C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private\\src); set EXAMDATA_INTEGRATION_STAGING_ROOT to override",
+        "examdata.integration": "RuntimeError: staged package is not inside an 'integration-staging' tree (C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\phase-b\\b00b01-20261006T132400\\private\\src); set EXAMDATA_INTEGRATION_STAGING_ROOT to override"
+      }
+    }
+  ],
+  "verdict": "layout_not_yet_valid",
+  "note": "private candidate only; not merged, not deployed; the original tree was neither imported nor written"
+}

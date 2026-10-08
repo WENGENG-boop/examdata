@@ -1,0 +1,88 @@
+........................................................................ [ 22%]
+........................................................................ [ 44%]
+........................................................................ [ 66%]
+........................................................................ [ 88%]
+......................................                                   [100%]
+============================== warnings summary ===============================
+tests/test_runner_classification.py::test_output_overflow
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-11 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+tests/test_runner_classification.py::test_timeout
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-15 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+tests/test_runner_classification.py::test_cancellation
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-19 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+tests/test_runner_classification.py::test_process_cleanup_evidence
+  C:\Users\weo\Desktop\api\examdata\.venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-23 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+      self._context.run(self.run)
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\weo\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 1614, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+    File "<frozen codecs>", line 325, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 0: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+326 passed, 4 warnings in 20.91s

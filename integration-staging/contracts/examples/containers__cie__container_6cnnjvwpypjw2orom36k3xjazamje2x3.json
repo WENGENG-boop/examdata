@@ -1,0 +1,29 @@
+{
+  "schema": "container/1",
+  "public_id": "container_6cnnjvwpypjw2orom36k3xjazamje2x3",
+  "kind": "paper",
+  "native_identity": {
+    "subject": "9999",
+    "year": 2024,
+    "season": "Jun",
+    "paper": "11"
+  },
+  "sections": [],
+  "resources": [],
+  "question_refs": [
+    "q_2tc2e4uhkufazt3aszordnnbilofoy6s",
+    "q_nxjtvu4225v43syunzyhurjzvxl7szhk",
+    "q_w4ecszmbbqa54chk22paau3sluucc22z"
+  ],
+  "revision": null,
+  "coverage": "unknown",
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/cie"
+    ],
+    "parent_refs": [],
+    "note": "paper identity kept verbatim; the source date is unknown"
+  }
+}

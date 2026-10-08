@@ -1,0 +1,138 @@
+===== listen-11dwej.html exists=True size=60179
+### table.content-logic (pattern='<table[^>]*content-logic[\\s\\S]{0,5000}?</table>')
+  [0] len=2117
+  <table class="content-logic">
+      <tbody>
+              <tr class="top-title">
+              <td></td>
+                              <td>Yes</td>
+                              <td>No</td>
+                      </tr>
+                              <tr class="main-list">
+                  <td class="main-list-left">An animal attacks the ground instead of its enemy.</td>
+                                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                                  </tr>
+                      <tr class="main-list">
+                  <td class="main-list-left">An animal falls asleep in the middle of a mating ritual.</td>
+                                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                                  </tr>
+                      <tr class="main-list">
+                  <td class="main-list-left">An animal eats some food when confronted by it enemy.</td>
+                                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                                  </tr>
+                      <tr class="main-list">
+                  <td class="main-list-left">An animal takes a drink of water after grooming itself.</td>
+                                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                                  </tr>
+                  </tbody>
+  </table>
+  ... (more matches omitted)
+
+### true-answer spans (pattern='<span class="true-answer[^"]*"[^>]*>[\\s\\S]{0,400}?</span>')
+  [0] len=130
+  <span class="true-answer answer-hide">
+                              正确答案:
+          B A A B&nbsp;
+                              </span>
+
+### question-cont header (pattern='<div class="question-cont[^"]*"[^>]*>[\\s\\S]{0,2500}')
+  [0] len=2561
+  <div class="question-cont js-translate-new" data-qid="64670">
+                      <!--题干--><!--前置音频-->
+                      
+                  <!--题目标题-->
+                      <div class="question-title">
+                      Indicate whether each of the activities below describes a displacement activity.
+                      <!--音频播放按钮-->
+                                                      <div class="question-topic-audio g-player-control video-left-content js-player-record" id="jp_container_hot_6449" data-type="mp3" data-url="https://img.kmf.com/toefl/listening/TPO/TPO-04-L1-Q2.mp3">
+                                                                          <div class="question-audio-cont control-play js-audio-control">
+                                              <a  class="question-title-audio i-listen-icons play-left play jp-play" href="javascript:;" title="播放"></a>
+                                              <a  class="question-title-audio i-listen-icons pause jp-pause" href="javascript:;" style="display: none;" title="暂停"></a>
+                                          </div>
+                                      </div>
+                                      <!--后置音频-->
+                                      
+                              </div>
+                              
+                              <div class="answer-tips">Click in the correct box for each phrase</div>
+  <table class="content-logic">
+      <tbody>
+              <tr class="top-title">
+              <td></td>
+                              <td>Yes</td>
+                              <td>No</td>
+                      </tr>
+                              <tr class="main-list">
+                  <td class="main-list-left">An animal attacks the ground instead of its enemy.</td>
+                                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                                  </tr>
+                      <tr class="main-list">
+                  <td class="main-list-left">An animal falls asleep in the middle of a mating ritual.</td>
+                                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                                              <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+                             
+  ... (more matches omitted)
+
+### questions-list options (pattern='<li class="questions-list">[\\s\\S]{0,300}?</li>')
+  (no match)
+
+### data-type occurrences (pattern='data-type="[^"]*"')
+  [0] len=13
+  data-type="1"
+  [1] len=13
+  data-type="2"
+  [2] len=13
+  data-type="1"
+  [3] len=13
+  data-type="2"
+  [4] len=15
+  data-type="mp3"
+  [5] len=13
+  data-type="6"
+  [6] len=15
+  data-type="mp3"
+  [7] len=13
+  data-type="0"
+  [8] len=13
+  data-type="1"
+  [9] len=13
+  data-type="0"
+  [10] len=13
+  data-type="1"
+  [11] len=13
+  data-type="0"
+  [12] len=13
+  data-type="1"
+
+### table row/col markers (pattern='<t[dh][^>]*>[\\s\\S]{0,200}?</t[dh]>')
+  [0] len=9
+  <td></td>
+  [1] len=12
+  <td>Yes</td>
+  [2] len=11
+  <td>No</td>
+  [3] len=82
+  <td class="main-list-left">An animal attacks the ground instead of its enemy.</td>
+  [4] len=81
+  <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+  [5] len=81
+  <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+  [6] len=88
+  <td class="main-list-left">An animal falls asleep in the middle of a mating ritual.</td>
+  [7] len=81
+  <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+  [8] len=81
+  <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+  [9] len=85
+  <td class="main-list-left">An animal eats some food when confronted by it enemy.</td>
+  [10] len=81
+  <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+  [11] len=81
+  <td class="normal main-list-right"><span class="g-formbg g-checkbox"></span></td>
+  ... (more matches omitted)
+

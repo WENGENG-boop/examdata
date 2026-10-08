@@ -1,0 +1,3 @@
+distinct suffixes: 2
+    37600  '/1'  e.g. /detail/read/0176mj.html/1
+    26106  ''  e.g. /detail/listen/014igj.html

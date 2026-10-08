@@ -1,0 +1,1797 @@
+{
+  "schema": "ielts.refresh-ledger/1",
+  "scope": "general-reading+writing+speaking",
+  "tasks": {
+    "cambridge:1:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 1,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      ],
+      "checked_at": "2026-10-04T17:20:10.498Z"
+    },
+    "cambridge:1:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 1,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      ],
+      "checked_at": "2026-10-04T17:20:10.498Z"
+    },
+    "cambridge:1:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 1,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      ],
+      "checked_at": "2026-10-04T17:20:10.499Z"
+    },
+    "cambridge:1:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 1,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      ],
+      "checked_at": "2026-10-04T17:20:10.499Z"
+    },
+    "cambridge:1:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 1,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      ],
+      "checked_at": "2026-10-04T17:20:10.499Z"
+    },
+    "cambridge:1:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 1,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+      ],
+      "checked_at": "2026-10-04T17:20:10.499Z"
+    },
+    "cambridge:2:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:2:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:2:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:2:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:2:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:2:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:2:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:2:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 2,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c4cda460f7db248583e91509813829a5944e6a459cdf3b11501968216dfda32d"
+      ],
+      "checked_at": "2026-10-04T17:20:10.505Z"
+    },
+    "cambridge:3:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:3:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:3:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:3:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:3:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:3:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:3:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:3:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 3,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+      ],
+      "checked_at": "2026-10-04T17:20:10.524Z"
+    },
+    "cambridge:4:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:4:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:4:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:4:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:4:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:4:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:4:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:4:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 4,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b254324578e8f7a5187810aa36f5e1bf3049537b49bd7cc2c34fc2c963185bed"
+      ],
+      "checked_at": "2026-10-04T17:20:10.695Z"
+    },
+    "cambridge:5:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:5:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:5:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:5:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:5:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:5:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:5:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:5:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 5,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "852607dd3c8aa7e0d7cd6d66cae312337696997635902629fcadbf65c12eef5a"
+      ],
+      "checked_at": "2026-10-04T17:20:10.851Z"
+    },
+    "cambridge:6:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:6:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:6:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:6:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:6:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:6:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:6:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:6:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 6,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "67748f68b0ab33d90b1c2f5864dc4aa8eada76949830422a3d230090522d9573"
+      ],
+      "checked_at": "2026-10-04T17:20:11.009Z"
+    },
+    "cambridge:7:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:7:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:7:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:7:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:7:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:7:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:7:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:7:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 7,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "a219bf469ba75c39938a2a9d8bfd4bf15caf206e8c249d70d188ff4e36ad3b00"
+      ],
+      "checked_at": "2026-10-04T17:20:11.162Z"
+    },
+    "cambridge:8:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:8:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:8:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:8:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:8:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:8:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:8:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:8:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 8,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "5d8130130febf26f1a61bf2161c8066556256e7b1b00c36e76e4409bc43a0b17"
+      ],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:9:general:reading:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 9,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:9:general:writing:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 9,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.198Z"
+    },
+    "cambridge:9:general:speaking:1": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 9,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b25f954dd25e058dfc05913c8f3b9ffead6581aa23bb10f8f2e98e6314f7af24"
+      ],
+      "checked_at": "2026-10-04T17:20:11.249Z"
+    },
+    "cambridge:9:general:speaking:2": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 9,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b25f954dd25e058dfc05913c8f3b9ffead6581aa23bb10f8f2e98e6314f7af24"
+      ],
+      "checked_at": "2026-10-04T17:20:11.249Z"
+    },
+    "cambridge:9:general:speaking:3": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 9,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b25f954dd25e058dfc05913c8f3b9ffead6581aa23bb10f8f2e98e6314f7af24"
+      ],
+      "checked_at": "2026-10-04T17:20:11.249Z"
+    },
+    "cambridge:9:general:speaking:4": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 9,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "b25f954dd25e058dfc05913c8f3b9ffead6581aa23bb10f8f2e98e6314f7af24"
+      ],
+      "checked_at": "2026-10-04T17:20:11.249Z"
+    },
+    "cambridge:10:general:reading:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:10:general:reading:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "reading",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:10:general:writing:gta": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gta",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:10:general:writing:gtb": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "writing",
+      "test": "gtb",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:10:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:10:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:10:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:10:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 10,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+      ],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:11:general:reading:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 11,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:11:general:writing:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 11,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.427Z"
+    },
+    "cambridge:11:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 11,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c9672f9f8dc9fbd4ca7f965a50a3a599bf86a144efbe5e777010b5958baaf9db"
+      ],
+      "checked_at": "2026-10-04T17:20:11.476Z"
+    },
+    "cambridge:11:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 11,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c9672f9f8dc9fbd4ca7f965a50a3a599bf86a144efbe5e777010b5958baaf9db"
+      ],
+      "checked_at": "2026-10-04T17:20:11.476Z"
+    },
+    "cambridge:11:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 11,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c9672f9f8dc9fbd4ca7f965a50a3a599bf86a144efbe5e777010b5958baaf9db"
+      ],
+      "checked_at": "2026-10-04T17:20:11.476Z"
+    },
+    "cambridge:11:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 11,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c9672f9f8dc9fbd4ca7f965a50a3a599bf86a144efbe5e777010b5958baaf9db"
+      ],
+      "checked_at": "2026-10-04T17:20:11.476Z"
+    },
+    "cambridge:12:general:reading:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 12,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.476Z"
+    },
+    "cambridge:12:general:writing:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 12,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.476Z"
+    },
+    "cambridge:12:general:speaking:5": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 12,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "5",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f791300937f11d8380eba7b7997db1da751d66802a96aed996db704947e52407"
+      ],
+      "checked_at": "2026-10-04T17:20:11.592Z"
+    },
+    "cambridge:12:general:speaking:6": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 12,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "6",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f791300937f11d8380eba7b7997db1da751d66802a96aed996db704947e52407"
+      ],
+      "checked_at": "2026-10-04T17:20:11.592Z"
+    },
+    "cambridge:12:general:speaking:7": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 12,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "7",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f791300937f11d8380eba7b7997db1da751d66802a96aed996db704947e52407"
+      ],
+      "checked_at": "2026-10-04T17:20:11.592Z"
+    },
+    "cambridge:12:general:speaking:8": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 12,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "8",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f791300937f11d8380eba7b7997db1da751d66802a96aed996db704947e52407"
+      ],
+      "checked_at": "2026-10-04T17:20:11.592Z"
+    },
+    "cambridge:13:general:reading:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 13,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.592Z"
+    },
+    "cambridge:13:general:writing:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 13,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.592Z"
+    },
+    "cambridge:13:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 13,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f6bbbbf97633bc8dfd71f11b68b8fff4da607cbe2408cfebdbe54cf05c6b18cf"
+      ],
+      "checked_at": "2026-10-04T17:20:11.606Z"
+    },
+    "cambridge:13:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 13,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f6bbbbf97633bc8dfd71f11b68b8fff4da607cbe2408cfebdbe54cf05c6b18cf"
+      ],
+      "checked_at": "2026-10-04T17:20:11.606Z"
+    },
+    "cambridge:13:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 13,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f6bbbbf97633bc8dfd71f11b68b8fff4da607cbe2408cfebdbe54cf05c6b18cf"
+      ],
+      "checked_at": "2026-10-04T17:20:11.606Z"
+    },
+    "cambridge:13:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 13,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "f6bbbbf97633bc8dfd71f11b68b8fff4da607cbe2408cfebdbe54cf05c6b18cf"
+      ],
+      "checked_at": "2026-10-04T17:20:11.606Z"
+    },
+    "cambridge:14:general:reading:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 14,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.606Z"
+    },
+    "cambridge:14:general:writing:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 14,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.606Z"
+    },
+    "cambridge:14:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 14,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "d163b41dd4284aaed910c920af9e83afc7d90887db4f8f27993f99f0c0a115aa"
+      ],
+      "checked_at": "2026-10-04T17:20:11.865Z"
+    },
+    "cambridge:14:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 14,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "d163b41dd4284aaed910c920af9e83afc7d90887db4f8f27993f99f0c0a115aa"
+      ],
+      "checked_at": "2026-10-04T17:20:11.865Z"
+    },
+    "cambridge:14:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 14,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "d163b41dd4284aaed910c920af9e83afc7d90887db4f8f27993f99f0c0a115aa"
+      ],
+      "checked_at": "2026-10-04T17:20:11.865Z"
+    },
+    "cambridge:14:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 14,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "d163b41dd4284aaed910c920af9e83afc7d90887db4f8f27993f99f0c0a115aa"
+      ],
+      "checked_at": "2026-10-04T17:20:11.865Z"
+    },
+    "cambridge:15:general:reading:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 15,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.865Z"
+    },
+    "cambridge:15:general:writing:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 15,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.865Z"
+    },
+    "cambridge:15:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 15,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c86d084b20be89232eebd6fd6eb533b32ba4f24a9cbe14952b85665c3a3ca141"
+      ],
+      "checked_at": "2026-10-04T17:20:11.989Z"
+    },
+    "cambridge:15:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 15,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c86d084b20be89232eebd6fd6eb533b32ba4f24a9cbe14952b85665c3a3ca141"
+      ],
+      "checked_at": "2026-10-04T17:20:11.989Z"
+    },
+    "cambridge:15:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 15,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c86d084b20be89232eebd6fd6eb533b32ba4f24a9cbe14952b85665c3a3ca141"
+      ],
+      "checked_at": "2026-10-04T17:20:11.989Z"
+    },
+    "cambridge:15:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 15,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "c86d084b20be89232eebd6fd6eb533b32ba4f24a9cbe14952b85665c3a3ca141"
+      ],
+      "checked_at": "2026-10-04T17:20:11.989Z"
+    },
+    "cambridge:16:general:reading:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 16,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.989Z"
+    },
+    "cambridge:16:general:writing:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 16,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:11.989Z"
+    },
+    "cambridge:16:general:speaking:1": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 16,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "11675fa3dcb124e93afbf44371c174f676a78a260b01ebc190aae5f5fed3912e"
+      ],
+      "checked_at": "2026-10-04T17:20:12.075Z"
+    },
+    "cambridge:16:general:speaking:2": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 16,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "11675fa3dcb124e93afbf44371c174f676a78a260b01ebc190aae5f5fed3912e"
+      ],
+      "checked_at": "2026-10-04T17:20:12.075Z"
+    },
+    "cambridge:16:general:speaking:3": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 16,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "11675fa3dcb124e93afbf44371c174f676a78a260b01ebc190aae5f5fed3912e"
+      ],
+      "checked_at": "2026-10-04T17:20:12.075Z"
+    },
+    "cambridge:16:general:speaking:4": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 16,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "11675fa3dcb124e93afbf44371c174f676a78a260b01ebc190aae5f5fed3912e"
+      ],
+      "checked_at": "2026-10-04T17:20:12.075Z"
+    },
+    "cambridge:17:general:reading:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 17,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.075Z"
+    },
+    "cambridge:17:general:writing:gt-status": {
+      "status": "skipped_verified",
+      "kind": "gt_placeholder",
+      "book": 17,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.075Z"
+    },
+    "cambridge:17:general:speaking:1": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 17,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "90ae888c4cd495761fe5639418ca894e63c9e7066382ed9ffad6bd74a409726a"
+      ],
+      "checked_at": "2026-10-04T17:20:12.091Z"
+    },
+    "cambridge:17:general:speaking:2": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 17,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "90ae888c4cd495761fe5639418ca894e63c9e7066382ed9ffad6bd74a409726a"
+      ],
+      "checked_at": "2026-10-04T17:20:12.091Z"
+    },
+    "cambridge:17:general:speaking:3": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 17,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "90ae888c4cd495761fe5639418ca894e63c9e7066382ed9ffad6bd74a409726a"
+      ],
+      "checked_at": "2026-10-04T17:20:12.091Z"
+    },
+    "cambridge:17:general:speaking:4": {
+      "status": "skipped_verified",
+      "kind": "pdf",
+      "book": 17,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "90ae888c4cd495761fe5639418ca894e63c9e7066382ed9ffad6bd74a409726a"
+      ],
+      "checked_at": "2026-10-04T17:20:12.091Z"
+    },
+    "cambridge:18:general:reading:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 18,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.091Z"
+    },
+    "cambridge:18:general:writing:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 18,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.091Z"
+    },
+    "cambridge:18:general:speaking:1": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 18,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "69aae9f240f1e3de4c72f1f4c4421bf892d09a455c1946ad41752fdab998e663"
+      ],
+      "checked_at": "2026-10-04T17:20:12.232Z"
+    },
+    "cambridge:18:general:speaking:2": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 18,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "69aae9f240f1e3de4c72f1f4c4421bf892d09a455c1946ad41752fdab998e663"
+      ],
+      "checked_at": "2026-10-04T17:20:12.232Z"
+    },
+    "cambridge:18:general:speaking:3": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 18,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "69aae9f240f1e3de4c72f1f4c4421bf892d09a455c1946ad41752fdab998e663"
+      ],
+      "checked_at": "2026-10-04T17:20:12.232Z"
+    },
+    "cambridge:18:general:speaking:4": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 18,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "69aae9f240f1e3de4c72f1f4c4421bf892d09a455c1946ad41752fdab998e663"
+      ],
+      "checked_at": "2026-10-04T17:20:12.232Z"
+    },
+    "cambridge:19:general:reading:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 19,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.232Z"
+    },
+    "cambridge:19:general:writing:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 19,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.232Z"
+    },
+    "cambridge:19:general:speaking:1": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 19,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "e9bab34e9fafdc012c7407c43931e806144354b92b2ba59619ee59dbe6a7bf78"
+      ],
+      "checked_at": "2026-10-04T17:20:12.707Z"
+    },
+    "cambridge:19:general:speaking:2": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 19,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "e9bab34e9fafdc012c7407c43931e806144354b92b2ba59619ee59dbe6a7bf78"
+      ],
+      "checked_at": "2026-10-04T17:20:12.707Z"
+    },
+    "cambridge:19:general:speaking:3": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 19,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "e9bab34e9fafdc012c7407c43931e806144354b92b2ba59619ee59dbe6a7bf78"
+      ],
+      "checked_at": "2026-10-04T17:20:12.707Z"
+    },
+    "cambridge:19:general:speaking:4": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 19,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "e9bab34e9fafdc012c7407c43931e806144354b92b2ba59619ee59dbe6a7bf78"
+      ],
+      "checked_at": "2026-10-04T17:20:12.707Z"
+    },
+    "cambridge:20:general:reading:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 20,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.707Z"
+    },
+    "cambridge:20:general:writing:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 20,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.707Z"
+    },
+    "cambridge:20:general:speaking:1": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 20,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "71e6a364ec47479dbb8352cc039f83ed20bfe2e4055100759894da2de779a829"
+      ],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:20:general:speaking:2": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 20,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "71e6a364ec47479dbb8352cc039f83ed20bfe2e4055100759894da2de779a829"
+      ],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:20:general:speaking:3": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 20,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "71e6a364ec47479dbb8352cc039f83ed20bfe2e4055100759894da2de779a829"
+      ],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:20:general:speaking:4": {
+      "status": "pdf_no_text_layer",
+      "kind": "pdf",
+      "book": 20,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [
+        "71e6a364ec47479dbb8352cc039f83ed20bfe2e4055100759894da2de779a829"
+      ],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:21:general:reading:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 21,
+      "variant": "general",
+      "skill": "reading",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:21:general:writing:gt-status": {
+      "status": "unverified",
+      "kind": "gt_placeholder",
+      "book": 21,
+      "variant": "general",
+      "skill": "writing",
+      "test": null,
+      "source_kind": "gt_placeholder",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:21:general:speaking:1": {
+      "status": "pdf_missing",
+      "kind": "pdf",
+      "book": 21,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "1",
+      "source_kind": "pdf",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:21:general:speaking:2": {
+      "status": "pdf_missing",
+      "kind": "pdf",
+      "book": 21,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "2",
+      "source_kind": "pdf",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:21:general:speaking:3": {
+      "status": "pdf_missing",
+      "kind": "pdf",
+      "book": 21,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "3",
+      "source_kind": "pdf",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    },
+    "cambridge:21:general:speaking:4": {
+      "status": "pdf_missing",
+      "kind": "pdf",
+      "book": 21,
+      "variant": "general",
+      "skill": "speaking",
+      "test": "4",
+      "source_kind": "pdf",
+      "evidence_sha256s": [],
+      "checked_at": "2026-10-04T17:20:12.725Z"
+    }
+  },
+  "updated_at": "2026-10-04T17:20:12.725Z"
+}

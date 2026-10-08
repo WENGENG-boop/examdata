@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit" />
+<title>微信注册无忧考网</title>
+<link rel="stylesheet" href="//static.wykw.com/css/style.wx.css">
+<script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='//js.wykw.com/js_new/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+</script>
+<script src="//static.wykw.com/js/jquery.qrcode.min.js"></script>
+<script src="//static.wykw.com/js/wxlogin/wxlogin_pc.js?v=2021120801"></script>
+<script src="//static.wykw.com/js/wxlogin/callback.js"></script>
+</head>
+<body>
+<div id="app" class="login-wrap">
+	<!--微信注册-->
+	<form onsubmit="return false" class="login-showSignup">
+		<div class="header-wrap">
+			<div class="title wechat">
+				<span style="line-height:30px;">微信扫一扫</span>
+			</div>
+			<div class="rightpng">
+				<a href="/wap/user/reg.html" class="toaccount" title="切换其他方式注册"></a>
+			</div>
+		</div>
+		<div class="content-wrap">
+			<div class="box">
+				<div class="wrp_code" id="login_container">
+				</div>
+				<div class="info">
+					<div class="status status_browser js_status" id="wx_default_tip">
+						<p>
+						</p>
+						<p>
+						</p>
+					</div>
+					<div class="status status_succ js_status" style="display:none" id="wx_after_scan">
+						<i class="status_icon icon38_msg succ"></i>
+						<div class="status_txt">
+							<h4><font color="#ff7d18" style="FONT-SIZE: 18px;">微信扫码成功！</font></h4>
+							<p></p>
+						</div>
+					</div>
+					<div class="status status_succ js_status" style="display:none" id="wx_after_scan_setmobile">
+						<i class="status_icon icon38_msg succ"></i>
+						<div class="status_txt">
+							<h4><font color="#ff7d18" style="FONT-SIZE: 16px;">扫码成功 请绑定手机号</font></h4>
+							<p></p>
+						</div>
+					</div>					
+					
+					<div class="status status_fail js_status" style="display:none" id="wx_after_cancel">
+						<i class="status_icon icon38_msg warn"></i>
+						<div class="status_txt">
+							<h4>您已取消此次登录</h4>
+							<p></p>
+						</div>
+					</div>				
+				</div>
+				<div class="scanbg">
+					<i></i>
+					<div class="scantext">
+					<div>微信扫一扫注册登录</div>
+					<div>超过800万会员使用！</div>
+					</div>
+				</div>					
+			</div>
+		</div>
+	</form>
+</div>
+
+<!--message-->
+<link rel="stylesheet" href="//static.wykw.com/css/notice.css">
+<script src="//static.wykw.com/layui/layui.js"></script>
+<script src="//static.wykw.com/js/time.js"></script>
+<script src="//i.51test.net/json/vip/user/"></script>
+<script src="//user.51test.net/vip/js/message_reg.js"></script>	
+
+<!--tongji-->
+<script src="//static.wykw.com/js/tongji.js"></script>
+</body>
+</html>

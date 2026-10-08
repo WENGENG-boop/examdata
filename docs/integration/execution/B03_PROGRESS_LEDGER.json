@@ -1,0 +1,310 @@
+{
+  "ledger_version": "b03-private-progress-ledger/1",
+  "generated_by": "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_report.py",
+  "generated_at": "2026-10-07T00:38:28+08:00",
+  "kind": "private_progress_ledger",
+  "note": "Private progress record for the B03 rehearsal. This is NOT the live execution ledger and does not replace it.",
+  "packet": "B03",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "live_execution_ledger": {
+    "path": "docs/integration/execution/execution-ledger.json",
+    "sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "expected_frozen_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "byte_unchanged": true,
+    "gates_open": [],
+    "all_gates_closed": true,
+    "written_by_this_rehearsal": false
+  },
+  "status": "b03_private_rehearsal_complete_pending_human_release",
+  "not_claimed": [
+    "merged_pass",
+    "deployment",
+    "full B00/B01 completion"
+  ],
+  "changed_counts": {
+    "new_staging_scripts": 5,
+    "candidates": 1,
+    "candidate_files_copied_from_parent": 186,
+    "new_files_added_by_b03": 0,
+    "candidate_tree_files": 186,
+    "candidate_files_on_disk": 187,
+    "parent_tree_files": 185,
+    "original_project_files_written": 0,
+    "frozen_evidence_files_rewritten": 0
+  },
+  "count_explanations": {
+    "new_staging_scripts": "5 new B03 scripts: b03_build_candidate.py, b03_integration_probe.py, b03_validate.py, b03_build_proposals.py, b03_build_report.py",
+    "candidates": "1 new private candidate: b03-contracts-catalog-v1",
+    "candidate_files_copied_from_parent": "byte-identical copy of the B02 candidate (185 digest files + B02_CANDIDATE_MANIFEST.json)",
+    "new_files_added_by_b03": "0: B03 is a zero-delta carry; no file was created or modified relative to the parent",
+    "candidate_tree_files": "186 digest files = 185 parent-digest files + the carried B02 manifest; the only count that moved relative to the parent's digest view, because B02's digest rule excluded its own manifest while in B03 that manifest is an ordinary carried file",
+    "candidate_files_on_disk": "187 = 186 digest files + B03_CANDIDATE_MANIFEST.json",
+    "parent_tree_files": "185 = B02's on-disk 186 minus B02's own manifest, which B02's digest rule excluded",
+    "original_project_files_written": "0: nothing was written outside integration-staging/ and docs/integration/execution/",
+    "frozen_evidence_files_rewritten": "0: evidence/B01/**, evidence/B02/**, evidence/R0104/** and runtime/phase-b/** were read-only or untouched"
+  },
+  "hashes": {
+    "candidate_manifest": "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/B03_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "candidate_tree_sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5",
+    "parent_manifest_sha256": "59dfc8c79b59d86ae67313cdb96048d5bb73e365405070de3e9b2a872264648d",
+    "parent_tree_sha256": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf",
+    "validation_sha256": "92eb822002e1e76722196fc455eec1796b925b06b45387d4122e3e05fc640fd2",
+    "merge_proposal_sha256": "ebcfd419ec95995f0ddc43e20639254be702b35cb0480ce8730d34bc1937a541",
+    "rollback_proposal_sha256": "7943f74be6daab9b46486b51ff0e590a199768fc759873fa04bbba4beabdbd9f",
+    "suite_transcript_sha256": "8f67fa749d59d2c13e3b6aaccf246b1ed996c082c250095c12da55f7d0003361"
+  },
+  "test_counts": {
+    "b03_integration_probe": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b03-rehearsal-2026-10-07/b03_validate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "runs": 3,
+      "checks_per_run": 58,
+      "checks_total": 174,
+      "checks_failed": 0,
+      "new_suite": true,
+      "explanation": "New B03 probe written for this rehearsal: 58 checks covering candidate import and root configuration (section A), catalog build and reference integrity (B), native lookup round trips (C), revision publication, rollback and cursors (D), decisions/provenance and deferred honesty (E), provider registry and view error behaviour (F), base fixture/registry guards (G) and byte stability (H); executed from 3 different working directories (58 x 3 = 174 check executions). There is no earlier count to compare against."
+    },
+    "isolated_staged_suite": {
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "passed": 887,
+      "failed": 0,
+      "summary": "887 passed, 1 warning in 41.70s",
+      "collected": 887,
+      "baseline_passed": 887,
+      "explanation": "Count is unchanged from the R04/B02 baseline (887 passed). The B03 rehearsal adds no test files to the staged suite, so a changed count would itself have been the finding."
+    },
+    "candidate_build": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_candidate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "checks_total": 8,
+      "checks_passed": 8,
+      "new_suite": true,
+      "explanation": "8 build-time checks on the candidate itself (byte-identical vs parent, expected files present, digests reproducible); all new."
+    }
+  },
+  "probe_verdict": "b03_rehearsal_valid_private_only",
+  "probe_findings": [],
+  "discovery_identical_across_cwds": true,
+  "candidate_tree_digest_reproducible": true,
+  "import_status_checks": [
+    {
+      "name": "A_env_root_is_candidate",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_ROOT='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1' candidate=C:\\Users\\weo\\Desktop\\api\\integration-st…"
+    },
+    {
+      "name": "A_no_staging_override",
+      "ok": true,
+      "detail": "EXAMDATA_INTEGRATION_STAGING_ROOT must not be staged"
+    },
+    {
+      "name": "A_no_pythonpath",
+      "ok": true,
+      "detail": "PYTHONPATH=None"
+    },
+    {
+      "name": "A_candidate_src_first_on_path",
+      "ok": true,
+      "detail": "sys.path[0]='C:\\\\Users\\\\weo\\\\Desktop\\\\api\\\\integration-staging\\\\runtime\\\\b03-rehearsal-2026-10-07\\\\candidates\\\\b03-contracts-catalog-v1\\\\src'"
+    },
+    {
+      "name": "A_module_origins_within_candidate",
+      "ok": true,
+      "detail": "all candidate"
+    },
+    {
+      "name": "A_no_original_tree_module_loaded",
+      "ok": true,
+      "detail": "no module from the original tree"
+    },
+    {
+      "name": "A_product_no_testing_guard_imports",
+      "ok": true,
+      "detail": "no product import of testing guards"
+    },
+    {
+      "name": "A_schema_files_parse",
+      "ok": true,
+      "detail": "28 schema file(s); malformed: none"
+    },
+    {
+      "name": "A_quality_dimensions_match_code",
+      "ok": true,
+      "detail": "all dimensions agree"
+    },
+    {
+      "name": "A_identity_kinds_match_code",
+      "ok": true,
+      "detail": "14 kind(s); unrecognised: none"
+    },
+    {
+      "name": "A_node_discovery_candidate_root",
+      "ok": true,
+      "detail": "ids=['fake_cli'] problems=[] entry=C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\components\\fake-node-cli\\fake-cli.mjs"
+    },
+    {
+      "name": "A_legacy_bridge_entry_imports_within_candidate",
+      "ok": true,
+      "detail": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b03-rehearsal-2026-10-07\\candidates\\b03-contracts-catalog-v1\\src\\examdata\\integration\\legacy\\bridge.py"
+    }
+  ],
+  "negative_checks": [
+    "D_stale_publish_rejected_pointer_unchanged",
+    "D_publish_none_rejected",
+    "D_tampered_snapshot_rejected_pointer_unchanged",
+    "D_cursor_tampered_invalid",
+    "D_cursor_stale_revision_rejected",
+    "F_edexcel_questions_unsupported",
+    "F_cie_courses_filter_rejected",
+    "F_unknown_alias_refused",
+    "F_alias_rebind_refused",
+    "F_unknown_provider_failed",
+    "F_unavailable_provider_reported",
+    "F_view_unknown_system_503",
+    "F_failing_provider_sanitized",
+    "G_duplicate_native_id_raises",
+    "G_duplicate_native_id_build_fails",
+    "G_unexplained_removal_rejected",
+    "G_unexplained_quality_upgrade_rejected",
+    "G_incomplete_reference_rejected"
+  ],
+  "positive_checks": [
+    "B_revision_reproducible",
+    "B_snapshot_builds",
+    "B_counts_match_independent_derivation",
+    "B_reference_integrity",
+    "C_course_roundtrip_cie",
+    "C_container_roundtrip_cie",
+    "C_question_roundtrip_cie",
+    "C_question_roundtrip_ielts",
+    "C_container_roundtrip_edexcel",
+    "C_container_roundtrip_ielts",
+    "C_assets_roundtrip",
+    "D_publish_a_then_b_cas",
+    "D_rollback_restores_previous",
+    "D_cursor_roundtrip",
+    "E_decisions_and_provenance_roundtrip",
+    "E_provenance_fields_preserved",
+    "E_unknown_token_roundtrip",
+    "F_null_provider_empty_success",
+    "G_explained_removal_accepted",
+    "G_base_fixture_build_ok",
+    "G_base_aliases_resolve"
+  ],
+  "artifacts": {
+    "candidate_manifest": "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/B03_CANDIDATE_MANIFEST.json",
+    "merge_proposal": "docs/integration/execution/B03_MERGE_PROPOSAL.json",
+    "rollback_proposal": "docs/integration/execution/B03_ROLLBACK_PROPOSAL.json",
+    "layout_validation": "docs/integration/execution/evidence/B03/b03-rehearsal-2026-10-07/B03_LAYOUT_VALIDATION.json",
+    "suite_transcript": "integration-staging/runtime/b03-rehearsal-2026-10-07/evidence/isolated_staged_suite.txt",
+    "scripts": [
+      "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_candidate.py",
+      "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_integration_probe.py",
+      "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_validate.py",
+      "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_proposals.py",
+      "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_report.py"
+    ]
+  },
+  "proposal_counts": {
+    "merge_entries": 1,
+    "merge_entries_requiring_release": 0,
+    "merge_staging_only_entries": 1,
+    "rollback_entries": 1
+  },
+  "commands": [
+    {
+      "step": "build candidate",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_candidate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "validate (probe from 3 cwds)",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b03-rehearsal-2026-10-07/b03_validate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "isolated staged suite",
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "merge + rollback proposals",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_proposals.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "review report + progress ledger",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_report.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    }
+  ],
+  "frozen_evidence_written": false,
+  "not_run": [
+    {
+      "check": "real Node component execution",
+      "reason": "gate original_paths_released is closed; only synthetic fake-node-cli discovery is rehearsed, never executed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read, imported or written"
+    },
+    {
+      "check": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched; schema and data roots unchanged"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no credential is used; nothing was read, fabricated or staged"
+    }
+  ],
+  "remaining_blockers": [
+    {
+      "blocker": "original-project merge of the B03 payload",
+      "reason": "gate original_paths_released is closed; an explicit human release with an explicit scope is required. B03 adds zero new files, so a release would apply the R0104 and B02 proposals."
+    },
+    {
+      "blocker": "real Node component execution (ielts-api / toefl-api)",
+      "reason": "the original components are not released; only the synthetic fake-node-cli fixture is discovered and it is never executed"
+    },
+    {
+      "blocker": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; schema and data roots are deliberately unchanged by B03"
+    },
+    {
+      "blocker": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; the candidate is private-only"
+    }
+  ],
+  "process_observations": [
+    {
+      "observation": "The B03 probe's first manual run failed B_reference_integrity: the check demanded an explicit empty question_refs list on edexcel containers, but the product only materialises that key for containers that had questions placed into them -- absence means none, and the view reads it with a get-default-empty.",
+      "handling": "The check now treats an absent question_refs key as 'none' (with a comment), the probe was rerun clean (58/58), and both the failing and clean scratch captures remain in the run directory's evidence/ directory."
+    },
+    {
+      "observation": "The probe and validator not_run reasons originally named three gates that do not exist in the canonical seven-gate model (live_services_released, deployment_released, credentials_released).",
+      "handling": "Corrected to the canonical names upstream_requests_authorized and remote_deployment_authorized, and the credential case rephrased as 'no credential gate exists and none is needed: no credential is used'. The validation was rerun once afterwards with all 58 checks and every count unchanged; only the B03 run's own evidence (not yet consumed by any proposal or report) was regenerated -- no historical evidence was overwritten."
+    },
+    {
+      "observation": "The parent tree digest covers 185 files while the B03 candidate tree digest covers 186; the two numbers describe different file sets by rule, which a reader could mistake for an unexplained file count change.",
+      "handling": "Explained everywhere the numbers appear: B02's digest rule excluded B02's own manifest; in B03 that manifest is an ordinary carried file, so 186 = 185 + the carried manifest, and the on-disk count is 187 = 186 + the B03 manifest."
+    }
+  ]
+}

@@ -51,6 +51,17 @@ API_KEY_HEADER = "X-API-Key"
 EXEMPT_PATHS = frozenset({"/health", "/docs", "/redoc", "/openapi.json"})
 
 
+def _application_path(request: Request) -> str:
+    """按 ASGI 路由语义去除完整的代理/挂载前缀，兼容已剥离的 path。"""
+    path = request.scope.get("path", "")
+    root_path = request.scope.get("root_path", "")
+    if root_path and path.startswith(root_path):
+        suffix = path[len(root_path):]
+        if not suffix or suffix.startswith("/"):
+            return suffix or "/"
+    return path
+
+
 class _ApiKeyMiddleware(BaseHTTPMiddleware):
     """固定 API Key 校验。
 
@@ -65,7 +76,7 @@ class _ApiKeyMiddleware(BaseHTTPMiddleware):
         self._expected = api_key.encode("utf-8")
 
     async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
-        if request.url.path in EXEMPT_PATHS:
+        if _application_path(request) in EXEMPT_PATHS:
             return await call_next(request)
         provided = request.headers.get(API_KEY_HEADER, "").encode("utf-8")
         # 用 compare_digest 而不是 ==：逐字节等时比较，避免通过响应时间

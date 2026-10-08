@@ -1,0 +1,613 @@
+{
+  "schema": "examdata.integration.b07_rehearsal_validation/1",
+  "run_id": "b07-rehearsal-2026-10-07",
+  "packet": "B07",
+  "candidate": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\candidates\\b07-operations-v1",
+  "probe": "b07_route_probe.py",
+  "runs": [
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api",
+      "exit_code": 0,
+      "checks": 174,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\evidence\\tmp",
+      "exit_code": 0,
+      "checks": 174,
+      "checks_failed": 0,
+      "ok": true
+    },
+    {
+      "cwd": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces ünïcode",
+      "exit_code": 0,
+      "checks": 174,
+      "checks_failed": 0,
+      "ok": true
+    }
+  ],
+  "discovery_identical_across_cwds": true,
+  "discovery": {
+    "ids": [
+      "fake_cli"
+    ],
+    "problems": [],
+    "entry_path": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\candidates\\b07-operations-v1\\components\\fake-node-cli\\fake-cli.mjs",
+    "deployment_root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\candidates\\b07-operations-v1"
+  },
+  "stability_identical_across_cwds": true,
+  "stability": {
+    "combined_openapi_digest": "96afb249bffe0b5e379715defa20aafbd12bcc4afe4553c972ef83e7fc7ca9c4",
+    "v2_standalone_digest": "0e735afc29a9f0dd9c18a1e56fb0d13fd742c7c249f09019ae9616dd4c2a393d",
+    "legacy_ops_digest": "f61f9f10b0afd6d82ed466c8992c109338606b5a925c9a3fb5c299656f4902fa",
+    "composed_route_table_digest": "8ed3192cffcacf43898efe878e65bf8927726b419b96fa2e9d8dec97007ae303",
+    "v2_operation_ids": {
+      "GET /api/v2/info": "info_api_v2_info_get",
+      "GET /api/v2/exam-systems": "exam_systems_api_v2_exam_systems_get",
+      "GET /api/v2/providers": "provider_list_api_v2_providers_get",
+      "GET /api/v2/courses": "courses_api_v2_courses_get",
+      "GET /api/v2/courses/{id}": "course_detail_api_v2_courses__id__get",
+      "GET /api/v2/syllabuses": "syllabuses_api_v2_syllabuses_get",
+      "GET /api/v2/syllabuses/{id}": "syllabus_detail_api_v2_syllabuses__id__get",
+      "GET /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_get",
+      "HEAD /api/v2/syllabuses/{id}/content": "syllabus_content_api_v2_syllabuses__id__content_head",
+      "GET /api/v2/containers": "containers_api_v2_containers_get",
+      "GET /api/v2/containers/{id}": "container_detail_api_v2_containers__id__get",
+      "GET /api/v2/containers/{id}/resources": "container_resources_api_v2_containers__id__resources_get",
+      "GET /api/v2/containers/{id}/questions": "container_questions_api_v2_containers__id__questions_get",
+      "GET /api/v2/resources": "resources_api_v2_resources_get",
+      "GET /api/v2/resources/{id}": "resource_detail_api_v2_resources__id__get",
+      "GET /api/v2/assets/{id}": "asset_detail_api_v2_assets__id__get",
+      "GET /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_get",
+      "HEAD /api/v2/resources/{id}/content": "resource_content_api_v2_resources__id__content_head",
+      "GET /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_get",
+      "HEAD /api/v2/assets/{id}/content": "asset_content_api_v2_assets__id__content_head",
+      "GET /api/v2/questions": "questions_api_v2_questions_get",
+      "GET /api/v2/questions/{id}": "question_detail_api_v2_questions__id__get",
+      "GET /api/v2/questions/{id}/answers": "question_answers_api_v2_questions__id__answers_get",
+      "GET /api/v2/questions/{id}/regions": "question_regions_api_v2_questions__id__regions_get",
+      "GET /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_get",
+      "HEAD /api/v2/questions/{id}/crop": "question_crop_api_v2_questions__id__crop_head",
+      "GET /api/v2/questions/{id}/audio": "question_audio_api_v2_questions__id__audio_get",
+      "GET /api/v2/tags": "tags_api_v2_tags_get",
+      "GET /api/v2/tags/{id}/questions": "tag_questions_api_v2_tags__id__questions_get",
+      "GET /api/v2/materials": "materials_api_v2_materials_get",
+      "GET /api/v2/materials/{id}": "material_detail_api_v2_materials__id__get",
+      "GET /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_get",
+      "HEAD /api/v2/materials/{id}/content": "material_content_api_v2_materials__id__content_head",
+      "GET /api/v2/timetables": "timetables_api_v2_timetables_get",
+      "GET /api/v2/timetables/events": "timetable_events_api_v2_timetables_events_get",
+      "GET /api/v2/timetables/windows": "timetable_windows_api_v2_timetables_windows_get",
+      "GET /api/v2/coverage": "coverage_api_v2_coverage_get",
+      "GET /api/v2/gaps": "gaps_api_v2_gaps_get",
+      "GET /api/v2/jobs/{id}": "job_detail_api_v2_jobs__id__get"
+    },
+    "path_delta": 34
+  },
+  "seam_identical_across_cwds": true,
+  "seam": {
+    "fixture_counts": {
+      "syllabuses": 2,
+      "materials": 2,
+      "timetable_seasons": 2,
+      "timetable_events": 2,
+      "timetable_windows": 2
+    },
+    "deferred": {
+      "families_equal": true,
+      "tags": [],
+      "jobs": [
+        "job_synthetic_coverage"
+      ],
+      "reason_len": 145
+    },
+    "route_statuses": {
+      "syllabuses": 200,
+      "materials": 200,
+      "timetables": 200,
+      "events": 200,
+      "windows": 200
+    },
+    "route_counts": {
+      "syllabuses": 2,
+      "materials": 2,
+      "events": 2,
+      "windows": 2,
+      "seasons": 2
+    },
+    "private_injection": {
+      "syllabus_ids": [
+        "syl_probe_private"
+      ],
+      "material_ids": [
+        "mat_probe_private"
+      ],
+      "detail_statuses": [
+        404,
+        200,
+        404,
+        200
+      ]
+    },
+    "default_syllabus_ids": [
+      "syl_synthetic_cie_0580",
+      "syl_synthetic_ielts_book"
+    ]
+  },
+  "operations_identical_across_cwds": true,
+  "operations": {
+    "root": "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\candidates\\b07-operations-v1\\fixtures\\synthetic\\operations\\operations-root",
+    "scanned_files": 7,
+    "root_block": {
+      "kind": "configured",
+      "configured": true,
+      "scanned_files": 7,
+      "truncated": false,
+      "skipped": [],
+      "problems": []
+    },
+    "checkpoint_rows": 7,
+    "freshness_counts": {
+      "current": 5,
+      "superseded": 2
+    },
+    "jobs_by_id": [
+      "job:cie:cie-batch:8888",
+      "job:cie:cie-batch:9191",
+      "job:ielts:synthetic-run-ok",
+      "job:ielts:synthetic-run-partial",
+      "job:unknown:unknown:unsupported:checkpoint.json"
+    ],
+    "stages": {
+      "job:cie:cie-batch:8888": "running",
+      "job:cie:cie-batch:9191": "stopped_requires_resume",
+      "job:ielts:synthetic-run-ok": "succeeded",
+      "job:ielts:synthetic-run-partial": "partial",
+      "job:unknown:unknown:unsupported:checkpoint.json": "unknown"
+    },
+    "briefs": 7,
+    "published": [
+      {
+        "public_id": "coverage:published:cie-questions",
+        "derived_status": "partial",
+        "percentage": 71.43
+      },
+      {
+        "public_id": "coverage:published:ielts-questions",
+        "derived_status": "complete",
+        "percentage": 100.0
+      },
+      {
+        "public_id": "coverage:published:edexcel-assets",
+        "derived_status": "partial",
+        "percentage": 50.0
+      },
+      {
+        "public_id": "coverage:published:toefl-courses",
+        "derived_status": "unknown",
+        "percentage": null
+      }
+    ],
+    "route_9191_error": "cannot download <path> for subject 9191: HTTP 403 (key <secret>)",
+    "sanitized_leaf_count": 18,
+    "warnings": [
+      "operations view: checkpoints are read-only observations from the configured operations root; no job service is staged and nothing is resumed or written"
+    ],
+    "tree_unchanged": true
+  },
+  "frontend_identical_across_cwds": true,
+  "frontend": {
+    "files": {
+      "PROVENANCE.json": "bc7d167bc1419a0a17ae28796579ef7a25df548a5fad8f4dbcef570d2987fde1",
+      "README.md": "53764be9870a086be874eee775baacd5ca9eafdcf06cefb1cbeb3ceb3ce27c8a",
+      "app.js": "66f698449334b91529dbd5c86e6350af3977ee9c6d5812985761f8c176c07db8",
+      "client.mjs": "57c55e43da46832fc967e4fc09add0cd418bcf59419596f9fd29bab0ac38802f",
+      "fixture-server.mjs": "424b404d25b461fd54d88d664ff882d494ac168f90943ca80a4f2742836b960b",
+      "fixtures/PROVENANCE.json": "2a42aa1f095e1f25479229596cf2891c3c6e9ff05d2c48b8f124531d9a1e07bf",
+      "fixtures/catalog.json": "6344f4f2ef6433bc319741deaefd6ae96366b6214ac4df6af055dce85150ed29",
+      "fixtures/resources.json": "12277f5ff5ef69bd1f513e31b1e29b5e0f50e55d596289db72862776a68b97aa",
+      "fixtures/syllabi.json": "080d0de3838acd197b01813d71e927fdc9fb9477bf3216b354a7c90a3bb58913",
+      "index.html": "c2bf9f4e32ad667bc89ce901f619a0f0643ff778d33ab383b6e11013b6e1e6c6",
+      "search.mjs": "6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db",
+      "server.mjs": "3b34f04c91921c212ddcaf99cbc355fbe4f5670594f8f810ed39566c806d90d8",
+      "styles.css": "0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5",
+      "tests/client.test.mjs": "6c23e46e86af23f903b73ba273e66b0d2a64fa5f12dc0e9fa658031f394c3294",
+      "tests/flow.test.mjs": "c10ad67c8aca97bf15d1f62c85b6e400c740276805ebe7dcf14f767caa4bbffb",
+      "tests/search.test.mjs": "7fd00040fe00a4c0b2b764416ca1148a33619ed1a3dc48793142316bfb0d77ee",
+      "tests/server.test.mjs": "75e3c7a145eccf7b09febe319a8e0d8c197acb58bd0ce9da2efa5256d2dd1b32"
+    },
+    "provenance": {
+      "root_records": 10,
+      "fixture_records": 3,
+      "problems": []
+    },
+    "node_version": "v24.19.0",
+    "node_check_exits": {
+      "server.mjs": 0,
+      "tests/server.test.mjs": 0
+    },
+    "node_test": {
+      "exit": 0,
+      "counts": {
+        "tests": 41,
+        "pass": 41,
+        "fail": 0
+      }
+    }
+  },
+  "discovery_projection_identical_across_cwds": true,
+  "discovery_projection": {
+    "empty_status": 200,
+    "empty_ids": [
+      "asset_4fgmj24f44aqv3dnnwfrae3g4s5nmfdb",
+      "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+      "asset_bpdesyagunzooa3vdff53jvkk4pzilbt",
+      "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n",
+      "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+      "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn"
+    ],
+    "rows": [
+      {
+        "public_id": "asset_4fgmj24f44aqv3dnnwfrae3g4s5nmfdb",
+        "system": "cie",
+        "media_type": null,
+        "byte_size": null,
+        "content_available": true,
+        "has_discovery_key": true,
+        "discovery": null
+      },
+      {
+        "public_id": "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+        "system": "edexcel",
+        "media_type": "application/pdf",
+        "byte_size": null,
+        "content_available": true,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "edexcel",
+          "subject": "wma11",
+          "subject_title": null,
+          "year": "2024",
+          "season": null,
+          "paper": "wma11-01",
+          "document_type": "mark_scheme"
+        }
+      },
+      {
+        "public_id": "asset_bpdesyagunzooa3vdff53jvkk4pzilbt",
+        "system": "ielts",
+        "media_type": null,
+        "byte_size": null,
+        "content_available": true,
+        "has_discovery_key": true,
+        "discovery": null
+      },
+      {
+        "public_id": "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n",
+        "system": "edexcel",
+        "media_type": "application/pdf",
+        "byte_size": null,
+        "content_available": true,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "edexcel",
+          "subject": "wma11",
+          "subject_title": null,
+          "year": "2024",
+          "season": null,
+          "paper": "wma11-01",
+          "document_type": "question_paper"
+        }
+      },
+      {
+        "public_id": "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+        "system": "cie",
+        "media_type": "application/pdf",
+        "byte_size": null,
+        "content_available": true,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "cie",
+          "subject": "9999",
+          "subject_title": "synthetic-subject",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11",
+          "document_type": "mark_scheme"
+        }
+      },
+      {
+        "public_id": "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn",
+        "system": "cie",
+        "media_type": "application/pdf",
+        "byte_size": null,
+        "content_available": true,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "cie",
+          "subject": "9999",
+          "subject_title": "synthetic-subject",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11",
+          "document_type": "question_paper"
+        }
+      }
+    ],
+    "system_filters": {
+      "cie": [
+        "asset_4fgmj24f44aqv3dnnwfrae3g4s5nmfdb",
+        "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+        "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn"
+      ],
+      "edexcel": [
+        "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+        "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n"
+      ],
+      "ielts": [
+        "asset_bpdesyagunzooa3vdff53jvkk4pzilbt"
+      ]
+    },
+    "unknown_filter": {
+      "status": 422,
+      "code": "unsupported_filter",
+      "schema_version": "examdata.v2/1",
+      "allowed": [
+        "media_type",
+        "query",
+        "system"
+      ]
+    },
+    "matrix": {
+      "9999 2024 Jun|": [
+        "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+        "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn"
+      ],
+      "9999 2024 June|": [
+        "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+        "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn"
+      ],
+      "9999 2024 Jun|cie": [
+        "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+        "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn"
+      ],
+      "9999 2024 Nov|": [],
+      "9999 2024 Mar|": [],
+      "9999 2024 mar|": [],
+      "9999 2024 March|": [],
+      "wma11 2024 June|": [
+        "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+        "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n"
+      ],
+      "wma11 2024 October|": [
+        "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+        "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n"
+      ],
+      "wma11 2024 January|": [],
+      "wma11 2024 November|": [],
+      "wma11 2024|": [
+        "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+        "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n"
+      ],
+      "wma11 2024 01|": [
+        "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+        "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n"
+      ],
+      "2024|": [
+        "asset_6xyrzhw4g5dy56xaxmhzk52da6zem5vu",
+        "asset_jkw4xdasfrjtknr6ewnvus2rflr2r56n",
+        "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+        "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn"
+      ],
+      "Jun|": [
+        "asset_nz3uic3wquirttazjeo4fnsi3g7esn3k",
+        "asset_umsge7vuubq3ncsz3zfe7b3golwybrmn"
+      ],
+      "9999 2024 Jun|edexcel": [],
+      "9999 2024 01|": [],
+      "9999 202|": [],
+      "qp|": [],
+      "ms|": [],
+      "q|": []
+    },
+    "matrix_mismatches": {},
+    "details": {
+      "umsge": {
+        "status": 200,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "cie",
+          "subject": "9999",
+          "subject_title": "synthetic-subject",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11",
+          "document_type": "question_paper"
+        }
+      },
+      "ielts": {
+        "status": 200,
+        "has_discovery_key": true,
+        "discovery": null
+      },
+      "graph": {
+        "status": 200,
+        "has_discovery_key": true,
+        "discovery": null
+      },
+      "edx_ms": {
+        "status": 200,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "edexcel",
+          "subject": "wma11",
+          "subject_title": null,
+          "year": "2024",
+          "season": null,
+          "paper": "wma11-01",
+          "document_type": "mark_scheme"
+        }
+      },
+      "edx_qp": {
+        "status": 200,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "edexcel",
+          "subject": "wma11",
+          "subject_title": null,
+          "year": "2024",
+          "season": null,
+          "paper": "wma11-01",
+          "document_type": "question_paper"
+        }
+      },
+      "cie_ms": {
+        "status": 200,
+        "has_discovery_key": true,
+        "discovery": {
+          "board": "cie",
+          "subject": "9999",
+          "subject_title": "synthetic-subject",
+          "year": 2024,
+          "season": "Jun",
+          "paper": "11",
+          "document_type": "mark_scheme"
+        }
+      }
+    }
+  },
+  "cross_stack_identical_across_cwds": true,
+  "cross_stack": {
+    "cross": {
+      "exit": 0,
+      "ok": true,
+      "counts": {
+        "checks": 18,
+        "failed": 0
+      },
+      "failed": []
+    },
+    "content_triple": {
+      "proxy": {
+        "sha256": "6596e686e26208b7",
+        "bytes": 817
+      },
+      "direct": {
+        "sha256": "6596e686e26208b7",
+        "bytes": 817
+      },
+      "disk": {
+        "sha256": "6596e686e26208b7"
+      },
+      "expected": {
+        "sha256": "6596e686e26208b7",
+        "bytes": 817
+      }
+    },
+    "banner_seen": true,
+    "teardown": {
+      "returncode_present": true,
+      "upstream_stopped": true
+    }
+  },
+  "b07_vs_b06_ledger_consistent": true,
+  "b07_vs_b06_stability": {
+    "ledger_path": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\B06_PROGRESS_LEDGER.json",
+    "ledger_sha256": "b96d16c9911b59dfa9489bc023a1512af142f6c9d61c1fecd2f45302b93f27db",
+    "digest_mismatches": {},
+    "ids_match": true,
+    "ledger_ids": 39,
+    "probe_ids": 39,
+    "ledger_path_delta": 34,
+    "probe_path_delta": 34
+  },
+  "in_process_cwds": [
+    "C:\\Users\\weo\\Desktop\\api",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\evidence\\tmp",
+    "C:\\Users\\weo\\Desktop\\api\\integration-staging\\runtime\\b07-rehearsal-2026-10-07\\evidence\\tmp\\cwd with spaces ünïcode"
+  ],
+  "candidate_tree_digest_reproducible": {
+    "files_match": true,
+    "sha256_match": true,
+    "files_on_disk": 222,
+    "on_disk_matches_recorded_plus_manifest": true,
+    "recorded": {
+      "files": 221,
+      "excludes": [
+        "B07_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179"
+    },
+    "recomputed": {
+      "files": 221,
+      "sha256": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179"
+    },
+    "candidate_manifest_sha256": "3e7d2a7721b04a1663400ca335ae213c75e7696dbb60c656b938f2c32d061784"
+  },
+  "findings": [],
+  "not_run": [
+    {
+      "check": "real merge into the original project",
+      "reason": "gate original_paths_released is closed; the plan entry remains a proposal (deferred_pending_release) and the original tree was never read or written"
+    },
+    {
+      "check": "real active-owner integration (materials, syllabuses and timetables served by the original owner modules)",
+      "reason": "no owner release exists for the active-owner families; the seam serves only clearly labelled synthetic fixtures and the real integration stays deferred_active_owner"
+    },
+    {
+      "check": "real baseline verification against the actual legacy application",
+      "reason": "gate original_paths_released is closed; the legacy side was simulated from the frozen A12 route-compatibility worksheet, not from the original app"
+    },
+    {
+      "check": "real Node component execution (fake-cli.mjs run via the Node runtime)",
+      "reason": "gate original_paths_released is closed; only synthetic discovery and importability of the component are rehearsed"
+    },
+    {
+      "check": "real Node/source validation against the original project",
+      "reason": "gate original_paths_released is closed; the original tree was never read"
+    },
+    {
+      "check": "real database schema / data migration",
+      "reason": "gate real_data_write_authorized is closed; no database is staged or touched"
+    },
+    {
+      "check": "live service / upstream provider calls",
+      "reason": "gate upstream_requests_authorized is closed; only synthetic fixture providers ran"
+    },
+    {
+      "check": "cutover of the existing service",
+      "reason": "gate existing_service_cutover_authorized is closed"
+    },
+    {
+      "check": "deployment to any target",
+      "reason": "gate remote_deployment_authorized is closed; this candidate is private-only"
+    },
+    {
+      "check": "cleanup of the original project",
+      "reason": "gate original_cleanup_authorized is closed"
+    },
+    {
+      "check": "credential usage of any kind",
+      "reason": "no credential gate exists in the seven-gate model and none is needed: no real credential is used, read, fabricated or staged; the only credential-shaped value anywhere is the fixture-labelled synthetic control string the operations fixtures carry, and the routing controls are synthetic request parameters with no secret values"
+    },
+    {
+      "check": "real frontend cutover (the staged page and server on the live service)",
+      "reason": "gate existing_service_cutover_authorized is closed; the staged frontend ran only on an ephemeral 127.0.0.1 port against the private read API"
+    },
+    {
+      "check": "real source-provider fetching from the frontend process",
+      "reason": "gate upstream_requests_authorized is closed; the candidate frontend carries no source-discovery logic and only proxies the private read API"
+    },
+    {
+      "check": "real job-service interaction (resume / cancel / enqueue against a live queue)",
+      "reason": "no job-service release exists and none is needed: the operations view is read-only by construction, and a stopped job is only observed as stopped; it is never resumed, restarted or written back"
+    },
+    {
+      "check": "writes of any kind to an operations root (checkpoint repair, resume flags, published manifests)",
+      "reason": "gate original_paths_released is closed; the only operations root touched was the candidate's own synthetic fixture directory, read once and never modified"
+    }
+  ],
+  "verdict": "b07_rehearsal_valid_private_only",
+  "note": "private candidate only; not merged, not deployed; the original tree was neither read, imported nor written; the active-owner seam, the operations view and the staged frontend were rehearsed against labelled synthetic fixtures only; frozen evidence under evidence/B00/** ... evidence/B06/**, evidence/R0104/** and the phase-b, b02, b03, b04, b05 and b06 runtime directories was not touched"
+}

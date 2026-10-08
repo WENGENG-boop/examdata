@@ -1,0 +1,13 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture shaped like some other tool's checkpoint file that neither native adapter recognises. Invented values only; used to prove unknown formats are carried typed, never dropped or guessed.",
+    "created_by": "Phase A executor (packet A13)",
+    "created_at_local": "2026-10-06T10:10:00+08:00",
+    "provider": null,
+    "purpose": "Prove that an unrecognised checkpoint becomes an unknown row with explicit problems instead of an exception or a guess."
+  },
+  "schema_version": "synthetic-other-checkpoint/9",
+  "cursor": 7,
+  "updated_at": "2026-10-03T00:00:00Z"
+}

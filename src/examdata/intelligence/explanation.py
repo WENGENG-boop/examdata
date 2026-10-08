@@ -21,6 +21,7 @@
 
 from __future__ import annotations
 
+import json
 from typing import Any, Optional
 
 from sqlalchemy import select
@@ -32,6 +33,7 @@ from ..core.models import (
     OfficialAnswer,
     Question,
     QuestionTaxonomy,
+    ReviewTask,
     TaxonomyNode,
 )
 
@@ -161,10 +163,18 @@ def generate_for_question(
     )
 
     if replace:
+        reviewed = select(ReviewTask.id).where(
+            ReviewTask.target_type == "generated_explanation",
+            ReviewTask.target_id == GeneratedExplanation.id,
+            ReviewTask.reason == "explanation_review",
+            ReviewTask.status == "done",
+        ).exists()
         for old in session.scalars(
             select(GeneratedExplanation).where(
                 GeneratedExplanation.question_id == question_id,
                 GeneratedExplanation.provider == PROVIDER,
+                GeneratedExplanation.review_status == "pending",
+                ~reviewed,
             )
         ).all():
             session.delete(old)
@@ -175,16 +185,16 @@ def generate_for_question(
             GeneratedExplanation.question_id == question_id,
             GeneratedExplanation.provider == PROVIDER,
             GeneratedExplanation.prompt_version == PROMPT_VERSION,
-        )
+        ).order_by(GeneratedExplanation.id)
     )
-    if existing is not None and not replace:
+    if existing is not None:
         return existing
 
     final_answer = (official.content if official else None) or (
         entry.answer_text if entry else None
     )
 
-    explanation = existing or GeneratedExplanation(
+    explanation = GeneratedExplanation(
         question_id=question_id,
         provider=PROVIDER,
         model=MODEL,
@@ -199,8 +209,7 @@ def generate_for_question(
     explanation.review_status = "pending"
     explanation.is_official = False
 
-    if existing is None:
-        session.add(explanation)
+    session.add(explanation)
     session.flush()
     return explanation
 
@@ -245,16 +254,16 @@ def generate_all(
             stats["skipped_no_official"] += 1
             continue
 
-        before = session.scalar(
-            select(GeneratedExplanation.id).where(
+        before = list(session.scalars(
+            select(GeneratedExplanation).where(
                 GeneratedExplanation.question_id == qid,
                 GeneratedExplanation.provider == PROVIDER,
             )
-        )
+        ).all())
         result = generate_for_question(session, qid, replace=replace)
         if result is None:
             stats["skipped_no_official"] += 1
-        elif before is not None and not replace:
+        elif any(result is old for old in before):
             stats["skipped_existing"] += 1
         else:
             stats["generated"] += 1
@@ -264,19 +273,34 @@ def generate_all(
 def review_explanation(
     session: Session, explanation_id: int, *, status: str, author: str
 ) -> dict[str, Any]:
-    """人工审核生成的解析。approved 之后上层才应把它当作可信学习材料。
-
-    审核意见记进 question.attrs 之外的独立位置：GeneratedExplanation 没有 attrs 列，
-    所以这里用 model 字段旁边的方式——把审核信息写进 steps 之外不合适，
-    改为在返回值和日志中体现。审计主要靠 review_status 的变更本身。
-    """
+    """人工审核生成的解析，审核人和每次状态变更持久化为已完成的 ReviewTask。"""
     if status not in ("approved", "rejected", "pending"):
         raise ValueError("status 只能是 approved / rejected / pending")
+    if not isinstance(author, str) or not author.strip():
+        raise ValueError("author 不能为空")
+    author = author.strip()
     obj = session.get(GeneratedExplanation, explanation_id)
     if obj is None:
         raise ValueError(f"解析 {explanation_id} 不存在")
+    if status in ("approved", "rejected"):
+        for stale in session.scalars(select(ReviewTask).where(
+            ReviewTask.target_type == "generated_explanation", ReviewTask.target_id == explanation_id,
+            ReviewTask.reason == "official_source_changed", ReviewTask.status.in_(["open", "in_progress"])
+        )):
+            stale.status = "done"
+            stale.assignee = author
+            stale.resolution = json.dumps({"review_status": status, "reviewed_against_current_source": True})
+    previous_status = obj.review_status
     obj.review_status = status
     # 生成内容永远不是官方内容，审核也不改变这一点
     obj.is_official = False
+    session.add(ReviewTask(
+        target_type="generated_explanation",
+        target_id=obj.id,
+        reason="explanation_review",
+        status="done",
+        assignee=author,
+        resolution=json.dumps({"previous_status": previous_status, "review_status": status}),
+    ))
     session.flush()
     return {"id": obj.id, "review_status": obj.review_status, "reviewed_by": author}

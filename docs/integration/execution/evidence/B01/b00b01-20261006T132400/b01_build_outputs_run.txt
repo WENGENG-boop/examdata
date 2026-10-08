@@ -1,0 +1,9 @@
+# B01 suggested-outputs build
+cwd: C:/Users/weo/Desktop/api
+command: PYTHONDONTWRITEBYTECODE=1 ./examdata/.venv/Scripts/python.exe integration-staging/runtime/phase-b/b00b01-20261006T132400/b01_build_outputs.py
+--- stdout+stderr ---
+docs/integration/execution/B01_MERGE_MAP.md  71650 bytes
+docs/integration/execution/B01_RECONCILIATION_DIFF.md  3525 bytes
+docs/integration/execution/B01_TEST_REPORT.md  2677 bytes
+docs/integration/execution/B01_ROLLBACK_PLAN.json  158660 bytes
+exit_code: 0

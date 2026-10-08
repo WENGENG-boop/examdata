@@ -1,0 +1,130 @@
+{
+  "script": "zero_request_test.mjs",
+  "when": "2026-10-05T05:53:24.546Z",
+  "total": 24,
+  "pass": 24,
+  "fail": 0,
+  "localhostHits": 0,
+  "results": [
+    {
+      "name": "parse: userinfo 拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: 子域伪装拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: 非 HTTPS 拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: 非标准端口拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: IP 主机拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: fragment 注入拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: query 注入拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: 多余后缀拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: 路径不完整拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: localhost 主机拒绝",
+      "pass": true,
+      "detail": "valid=false pathname=-"
+    },
+    {
+      "name": "parse: 合法带 /1 数字后缀",
+      "pass": true,
+      "detail": "valid=true pathname=/detail/read/82df4j.html/1"
+    },
+    {
+      "name": "parse: 合法无后缀",
+      "pass": true,
+      "detail": "valid=true pathname=/detail/speak/f1m9gj.html"
+    },
+    {
+      "name": "parse: 合法 listen",
+      "pass": true,
+      "detail": "valid=true pathname=/detail/listen/11mc6j.html"
+    },
+    {
+      "name": "cli detail localhost URL 拒绝且无 set",
+      "pass": true,
+      "detail": "ok=false hasSet=false"
+    },
+    {
+      "name": "cli localhost+真实hash 不读缓存",
+      "pass": true,
+      "detail": "ok=false hasSet=false"
+    },
+    {
+      "name": "cli 恶意主机+真实hash 不读缓存",
+      "pass": true,
+      "detail": "ok=false err=--url 需为 kmf 详情页（https://toefl.kmf.com/detail/{read|listen|s"
+    },
+    {
+      "name": "cli jj 恶意主机拒绝",
+      "pass": true,
+      "detail": "ok=false err=--url 需为 kmf 详情页（https://toefl.kmf.com/detail/{read|listen|s"
+    },
+    {
+      "name": "cli questions 恶意主机拒绝",
+      "pass": true,
+      "detail": "ok=false"
+    },
+    {
+      "name": "cli questions localhost URL 拒绝",
+      "pass": true,
+      "detail": "ok=false"
+    },
+    {
+      "name": "fetchPage 恶意主机+真实hash: ok:false 且 body 未读",
+      "pass": true,
+      "detail": "ok=false body=undefined"
+    },
+    {
+      "name": "fetchPage localhost: ok:false 且 0 网络请求",
+      "pass": true,
+      "detail": "ok=false hitsDelta=0"
+    },
+    {
+      "name": "合法 speak cache-hit 正常",
+      "pass": true,
+      "detail": "ok=true qlen=125"
+    },
+    {
+      "name": "合法 read cache-hit 正常",
+      "pass": true,
+      "detail": "ok=true cached=true bytes=45987"
+    },
+    {
+      "name": "受控 localhost 服务器请求数=0",
+      "pass": true,
+      "detail": "hits=0 log=[]"
+    }
+  ]
+}

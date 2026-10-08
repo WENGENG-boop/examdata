@@ -1,0 +1,120 @@
+=== A11 binary content probe ===
+
+-- route registration --
+[ok] routes.five_binary_rows :: ['syllabuses.content', 'resources.content', 'questions.crop', 'assets.content', 'materials.content']
+[ok] routes.runtime_equals_spec :: 34 vs 34
+[ok] routes.runtime_equals_advertised :: 34 vs 34
+[ok] routes.implemented_count :: 34
+[ok] routes.deferred_count
+[ok] routes.head_pairs_are_the_binary_rows
+[ok] routes.openapi_agreement :: []
+[ok] routes.syllabuses.content.get_registered :: /api/v2/syllabuses/{id}/content
+[ok] routes.resources.content.get_registered :: /api/v2/resources/{id}/content
+[ok] routes.questions.crop.get_registered :: /api/v2/questions/{id}/crop
+[ok] routes.assets.content.get_registered :: /api/v2/assets/{id}/content
+[ok] routes.materials.content.get_registered :: /api/v2/materials/{id}/content
+
+-- openapi document --
+[ok] openapi.binary_rows_document_statuses
+[ok] openapi.binary_rows_document_media
+[ok] openapi.binary_rows_have_no_json_success_body
+[ok] openapi.binary_rows_failures_are_envelopes
+[ok] openapi.spec_head_pairs_match_runtime
+[ok] openapi.non_binary_rows_keep_json
+
+-- store integrity --
+[ok] store.loads_without_problems :: []
+[ok] store.ok
+[ok] store.eleven_samples :: 11
+[ok] store.documents_match_disk
+[ok] store.syllabuses_match_disk
+[ok] store.materials_match_disk
+[ok] store.crops_match_disk
+[ok] store.real_hashes_are_not_placeholders
+[ok] store.declared_identities_are_placeholders :: ['0000000000000000000000000000000000000000000000000000000000000000', '2222222222222222222222222222222222222222222222222222222222222222', '3333333333333333333333333333333333333333333333333333333333333333', '4444444444444444444444444444444444444444444444444444444444444444', '5555555555555555555555555555555555555555555555555555555555555555', '6666666666666666666666666666666666666666666666666666666666666666']
+[ok] store.declared_documents_frozen
+[ok] store.crop_pages_frozen
+[ok] store.generator_hash_matches_manifest
+
+-- provenance --
+[ok] provenance.twelve_entries
+[ok] provenance.covers_every_fixture_file
+[ok] provenance.hashes_match_disk
+[ok] provenance.all_labelled_synthetic
+
+-- asset transport --
+[ok] asset.has_verified_sample
+[ok] asset.get_200
+[ok] asset.body_is_verified_bytes
+[ok] asset.served_hash_verifies
+[ok] asset.content_type
+[ok] asset.accept_ranges
+[ok] asset.etag_is_strong_sha
+[ok] asset.x_content_sha256_is_real
+[ok] asset.evidence_header
+[ok] asset.dataset_revision_header
+[ok] asset.request_id_echoed
+[ok] asset.content_disposition
+[ok] asset.content_length
+[ok] asset.head_matches_get
+[ok] asset.resources_alias
+
+-- byte ranges --
+[ok] range.206_first_ten
+[ok] range.suffix
+[ok] range.parts_join
+[ok] range.416
+[ok] range.416_content_range_header
+[ok] range.416_envelope_valid
+[ok] range.bare_zero_416
+[ok] range.inverted_ignored_200
+
+-- conditional requests --
+[ok] conditional.304_three_forms :: 3
+[ok] conditional.other_etag_200
+
+-- failure modes --
+[ok] errors.post_405
+[ok] errors.query_422
+[ok] errors.unknown_asset_404
+
+-- syllabus and material content --
+[ok] syllabus.200_pdf
+[ok] syllabus.content_disposition
+[ok] syllabus.no_sample_404
+[ok] syllabus.unknown_404
+[ok] material.200_pdf
+[ok] material.no_sample_404
+
+-- question crops --
+[ok] crop.has_verified_sample
+[ok] crop.200_png
+[ok] crop.served_hash_verifies
+[ok] crop.provenance_headers
+[ok] crop.content_disposition
+[ok] crop.range_206
+[ok] crop.missing_sample_404
+[ok] crop.regionless_422
+[ok] crop.unknown_question_404
+
+-- response budgets --
+[ok] budget.asset_413
+[ok] budget.413_details
+[ok] budget.413_envelope_valid
+[ok] budget.crop_413
+
+-- evidence conflicts --
+[ok] conflict.hash_conflict.store_ok :: []
+[ok] conflict.hash_conflict.409
+[ok] conflict.region_conflict.store_ok :: []
+[ok] conflict.region_conflict.409
+
+-- fixture generator --check --
+[ok] generator.check_rc0 :: BINARY_FIXTURES: PASS (13 files match a fresh render)
+
+[ok] generator.check_pass_line
+
+-- containment --
+[ok] containment.no_temp_leftovers :: []
+
+A11_PROBE: PASS (0 failing)

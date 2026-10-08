@@ -1,0 +1,59 @@
+=== question-cont block ===
+<div class="question-cont">
+                        <div class="content-question content-no">
+                            <span class="question-title">问题</span>
+                        </div>
+                        <div class="content-subject js-translate-content" data-qid="75499">
+                            <p>Summarize the points made in the lecture, being sure to explain how they cast doubt on the specific solutions proposed in the reading passage.</p>
+                        </div>
+                    </div>
+                                            <div class="do-exam-buttons js-exam-btns">
+                                            <a  href="/writing/pre?id=c1m97j" class="do-exam-links">练习本题</a>
+                    
+                    <div class="note-btn save js-note-btn  js-kmf-login " >写笔记</div>
+                    <div class="note-btn edit js-check-note">查看笔记</div>
+                </div>
+                <div class="g-smart-guide js-kmf-smart-guide" data-guideid="toeflweb_question_writting_left_mid_WenZi"></div>
+            </div>
+            
+            <div class="kmf-maincol">
+                <div class="essence-cont  g-mod-shadow">
+                    <h3 class="essence-title">精华内容</h3>
+                    <div class="essence-box">
+                        <!--按钮-->
+                        <ul class="essence-buttons js-essence-btns">
+                            <li class="essence-button js-essence-btn  active  ">答题思路</li>
+                                                        <li class="essence-button js-essence-btn">高分作文</li>
+                                                        
+                            <li class="essence-button js-essence-btn">题目讨论</li>
+                            <li class="essence-button js-essence-btn">名师思路</li>
+                        </ul>
+                        <!--容器-->
+                        <ul class="essence-modes js-essence-modes">
+                            <li class="essence-mode js-essence-mode js-answer-idea  active  ">
+                                <div class="answer-ideas js-idea-cont">
+                                </div>
+                                
+                                    
+                                    
+                                
+                            </li>
+                                                        <li class="essence-mode js-essence-mode">
+                                <div class="good-composition-cont js-good-composition">
+
+                                </div>
+                            </li>
+                                                            
+                            <li class="essence-mode js-essence-mode">
+                                <div class="i-entitled-discuss g-mod-shadow" >
+                                    <div class="entitled-discuss-wrap" id="common-discuss-area">
+                                        <!--讨论模块加载区域-->
+                                    </div>
+                                
+
+write pages: 133
+  write-017ckj.html 27488
+  write-017dgj.html 33635
+  write-01efyj.html 33612
+  write-01f5yj.html 36402
+  write-01f5zj.html 27593

@@ -1,0 +1,61 @@
+PASS  info 六分区 + 改版参考 + exam_date=null  ok=true eras=[tpo-01-10,tpo-11-20,tpo-21-30,tpo-31-40,tpo-41-50,tpo-51-54] six=true ref=true exam_date=undefined
+PASS  sets --era=tpo-51-54  ok=true n=4
+PASS  sets --tpo=54  ok=true
+PASS  sets --tpo-min=51 --tpo-max=54  ok=true
+PASS  get --set=tpo-30  ok=true set=tpo-30
+PASS  get --set=tpo-54  ok=true set=tpo-54
+PASS  questions --set=tpo-30 --section=read --limit=1  ok=true qs=1
+PASS  questions --set=tpo-54 --section=listen --limit=1  ok=true qs=1
+PASS  coverage  ok=true
+PASS  search --q=photosynthesis --limit=2  ok=true hits=?
+PASS  jj 汇总(免费)  ok=true n=5
+PASS  sets --era=pre-2023-07 拒绝  ok=false err=未知 era：pre-2023-07（可用：tpo-01-10、tpo-11-20、tpo-21-30、tpo-31-4
+PASS  sets --era=post-2023-07 拒绝  ok=false err=未知 era：post-2023-07（可用：tpo-01-10、tpo-11-20、tpo-21-30、tpo-31-
+PASS  sets --era=bogus 拒绝  ok=false
+PASS  sets --tpo=garbage54 拒绝  ok=false err=--tpo 需为完整十进制整数（例：--tpo=54）
+PASS  sets --tpo=54.5 拒绝  ok=false
+PASS  sets --tpo=54junk 拒绝  ok=false
+PASS  sets --tpo=-3 拒绝  ok=false
+PASS  sets --tpo=0 拒绝  ok=false
+PASS  sets --tpo-min=5.5 拒绝  ok=false
+PASS  get --set=garbage54 拒绝  ok=false err=set 需为 tpo-N（N 为正整数，例：--set=tpo-30）
+PASS  get --set=tpo-540 业务失败  ok=false err=未收录 TPO 540：该套在所有源中都没有条目（可用 sets 查看可用套次）
+PASS  get --set=tpo-54junk 拒绝  ok=false
+PASS  get --set=54.5 拒绝  ok=false
+PASS  get --set=tpo--5 拒绝  ok=false
+PASS  get --set=tpo-0 拒绝  ok=false
+PASS  get --set=tpo-54 仍成功(对照)  ok=true
+PASS  questions --set=garbage54 拒绝  ok=false
+PASS  questions --set=tpo-30 --section=bogus 拒绝  ok=false
+PASS  detail URL 拒绝: http 协议  ok=false
+PASS  jj URL 拒绝: http 协议  ok=false
+PASS  questions URL 拒绝: http 协议  ok=false
+PASS  detail URL 拒绝: 子域伪装  ok=false
+PASS  jj URL 拒绝: 子域伪装  ok=false
+PASS  questions URL 拒绝: 子域伪装  ok=false
+PASS  detail URL 拒绝: userinfo  ok=false
+PASS  jj URL 拒绝: userinfo  ok=false
+PASS  questions URL 拒绝: userinfo  ok=false
+PASS  detail URL 拒绝: 非标准端口  ok=false
+PASS  jj URL 拒绝: 非标准端口  ok=false
+PASS  questions URL 拒绝: 非标准端口  ok=false
+PASS  detail URL 拒绝: IP 主机  ok=false
+PASS  jj URL 拒绝: IP 主机  ok=false
+PASS  questions URL 拒绝: IP 主机  ok=false
+PASS  detail URL 拒绝: fragment 注入  ok=false
+PASS  jj URL 拒绝: fragment 注入  ok=false
+PASS  questions URL 拒绝: fragment 注入  ok=false
+PASS  detail URL 拒绝: query 注入  ok=false
+PASS  jj URL 拒绝: query 注入  ok=false
+PASS  questions URL 拒绝: query 注入  ok=false
+PASS  detail URL 拒绝: 路径不完整  ok=false
+PASS  jj URL 拒绝: 路径不完整  ok=false
+PASS  questions URL 拒绝: 路径不完整  ok=false
+PASS  detail URL 拒绝: 多余后缀  ok=false
+PASS  jj URL 拒绝: 多余后缀  ok=false
+PASS  questions URL 拒绝: 多余后缀  ok=false
+PASS  detail URL 拒绝: 其它域名  ok=false
+PASS  jj URL 拒绝: 其它域名  ok=false
+PASS  questions URL 拒绝: 其它域名  ok=false
+
+总计: 59  pass=59 fail=0

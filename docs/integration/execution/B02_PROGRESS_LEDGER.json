@@ -1,0 +1,216 @@
+{
+  "ledger_version": "b02-private-progress-ledger/1",
+  "generated_by": "integration-staging/runtime/b02-rehearsal-20261006/b02_build_report.py",
+  "generated_at": "2026-10-06T23:54:49+08:00",
+  "kind": "private_progress_ledger",
+  "note": "Private progress record for the B02 rehearsal. This is NOT the live execution ledger and does not replace it.",
+  "packet": "B02",
+  "mode": "PHASE_B_PRIVATE_REHEARSAL_ONLY",
+  "live_execution_ledger": {
+    "path": "docs/integration/execution/execution-ledger.json",
+    "sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "expected_frozen_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "byte_unchanged": true,
+    "gates_open": [],
+    "all_gates_closed": true,
+    "written_by_this_rehearsal": false
+  },
+  "status": "b02_private_rehearsal_complete_pending_human_release",
+  "not_claimed": [
+    "merged_pass",
+    "deployment",
+    "full B00/B01 completion"
+  ],
+  "changed_counts": {
+    "new_staging_scripts": 5,
+    "candidates": 1,
+    "candidate_files_copied_from_parent": 182,
+    "config_files_packaged": 3,
+    "candidate_tree_files": 185,
+    "candidate_files_on_disk": 186,
+    "parent_tree_files": 182,
+    "original_project_files_written": 0,
+    "frozen_evidence_files_rewritten": 0
+  },
+  "hashes": {
+    "candidate_manifest": "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1/B02_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "59dfc8c79b59d86ae67313cdb96048d5bb73e365405070de3e9b2a872264648d",
+    "candidate_tree_sha256": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf",
+    "parent_manifest_sha256": "923e7a298179ef22c6cb715deb701d9ec79b2fa2b1159136af1802c24c988c6a",
+    "parent_tree_sha256": "c84973e0072fdc9b35f14d8ad1f5a3746f3f8793c340aefc304eb18c51e16098",
+    "source_hashes": {
+      "runtime/settings.py": "320f9e39fe65c6a3049b7cba73afc3a5b249eeab13ebbd292d0e11508f9322b5",
+      "runtime/runner.py": "75001ddba5a65bd471143f9c74a2378db7c8aa5d59cd678b0b4690ebaea91bab",
+      "runtime/manifest.py": "7ff0e084db5de5897870cce3bd3b90fd91376c4f3f917c856700764842cbebc3",
+      "runtime/paths.py": "d0207fc79d66114c114a6bc65cca0ce123111cdfed0378ccbc7ca8494d60d0fb"
+    },
+    "validation_sha256": "2403392315bec4d7047312dfd448865595c81a486efaabc8d888a6a0d354f5c4",
+    "merge_proposal_sha256": "40b6d79fd4f03dda413631bf2eca070e8562a6ade5afb8f311ddc58106c6ecf3",
+    "rollback_proposal_sha256": "dd2ed603dfb77c8760379d9fe9f6050065639e002d2a31077e34addb7df3686e",
+    "suite_transcript_sha256": "964c7f11f71c80d125bb1fb1d1165112ca0a6437d962400687a2c7a7079c1593"
+  },
+  "test_counts": {
+    "b02_runtime_probe": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b02-rehearsal-20261006/b02_validate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "runs": 3,
+      "checks_per_run": 32,
+      "checks_total": 96,
+      "checks_failed": 0,
+      "new_suite": true,
+      "explanation": "New B02 probe written for this rehearsal: 32 checks covering startup behaviour, old-alias preservation and cwd-independent component discovery, executed from 3 different working directories (32 x 3 = 96 check executions). There is no earlier count to compare against."
+    },
+    "isolated_staged_suite": {
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "passed": 887,
+      "failed": 0,
+      "summary": "887 passed, 1 warning in 42.91s",
+      "collected": 887,
+      "baseline_passed": 887,
+      "explanation": "Count is unchanged from the R04 baseline (887 passed). The B02 rehearsal adds no test files to the staged suite, so a changed count would itself have been the finding."
+    },
+    "candidate_build": {
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b02-rehearsal-20261006/b02_build_candidate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0,
+      "checks_total": 13,
+      "checks_passed": 13,
+      "new_suite": true,
+      "explanation": "11 build-time checks on the candidate itself; all new."
+    }
+  },
+  "probe_verdict": "b02_rehearsal_valid_private_only",
+  "probe_findings": [],
+  "discovery_identical_across_cwds": true,
+  "candidate_tree_digest_reproducible": true,
+  "negative_checks": [
+    "startup.import_creates_nothing",
+    "startup.resolve_config_does_not_mutate_environ",
+    "startup.resolve_creates_no_directory",
+    "startup.ensure_directories_refuses_outside_root",
+    "startup.secret_not_rendered",
+    "startup.no_staging_override",
+    "alias.conflicting_values_still_rejected",
+    "packaging.discovery_independent_of_cwd"
+  ],
+  "positive_checks": [
+    "startup.root_env_is_candidate",
+    "origin.runtime_within_candidate",
+    "origin.paths_within_candidate",
+    "precedence.order_unchanged",
+    "alias.ielts_legacy_resolves",
+    "alias.ielts_origin_is_legacy_name",
+    "alias.toefl_legacy_resolves",
+    "alias.deprecation_warned",
+    "alias.canonical_name_needs_no_warning",
+    "alias.same_value_only_warns",
+    "alias.env_template_still_documents_aliases",
+    "packaging.component_manifest_packaged",
+    "packaging.exactly_fake_cli",
+    "packaging.no_problems",
+    "packaging.entry_point_inside_candidate",
+    "packaging.discovery_recorded_two_cwds",
+    "entry.examdata.integration.runtime",
+    "entry.examdata.integration.runtime.settings",
+    "entry.examdata.integration.runtime.runner",
+    "entry.examdata.integration.runtime.manifest",
+    "entry.examdata.integration.runtime.paths",
+    "entry.examdata.integration.runtime.doctor",
+    "entry.examdata.integration.legacy",
+    "entry.examdata.integration.legacy.bridge"
+  ],
+  "artifacts": {
+    "candidate_manifest": "integration-staging/runtime/b02-rehearsal-20261006/candidates/b02-shared-config-v1/B02_CANDIDATE_MANIFEST.json",
+    "merge_proposal": "docs/integration/execution/B02_MERGE_PROPOSAL.json",
+    "rollback_proposal": "docs/integration/execution/B02_ROLLBACK_PROPOSAL.json",
+    "layout_validation": "docs/integration/execution/evidence/B02/b02-rehearsal-20261006/B02_LAYOUT_VALIDATION.json",
+    "suite_transcript": "integration-staging/runtime/b02-rehearsal-20261006/evidence/isolated_staged_suite.txt",
+    "scripts": [
+      "integration-staging/runtime/b02-rehearsal-20261006/b02_build_candidate.py",
+      "integration-staging/runtime/b02-rehearsal-20261006/b02_runtime_probe.py",
+      "integration-staging/runtime/b02-rehearsal-20261006/b02_validate.py",
+      "integration-staging/runtime/b02-rehearsal-20261006/b02_build_proposals.py",
+      "integration-staging/runtime/b02-rehearsal-20261006/b02_build_report.py"
+    ]
+  },
+  "proposal_counts": {
+    "merge_entries": 4,
+    "merge_entries_requiring_release": 2,
+    "merge_staging_only_entries": 2,
+    "rollback_entries": 4
+  },
+  "commands": [
+    {
+      "step": "build candidate",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b02-rehearsal-20261006/b02_build_candidate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "validate (probe from 3 cwds)",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b02-rehearsal-20261006/b02_validate.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "isolated staged suite",
+      "command": "bash integration-staging/tools/run_staged_tests.sh -q",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "merge + rollback proposals",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b02-rehearsal-20261006/b02_build_proposals.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    },
+    {
+      "step": "review report + progress ledger",
+      "command": "./examdata/.venv/Scripts/python.exe integration-staging/runtime/b02-rehearsal-20261006/b02_build_report.py",
+      "cwd": "C:/Users/weo/Desktop/api",
+      "exit_code": 0
+    }
+  ],
+  "frozen_evidence_written": false,
+  "not_run": [
+    {
+      "check": "real legacy Node gateway execution (ielts-api / toefl-api)",
+      "reason": "gate original_paths_released is closed"
+    },
+    {
+      "check": "real Node component execution",
+      "reason": "gate original_paths_released is closed; synthetic fixture only"
+    },
+    {
+      "check": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; schema and data roots unchanged"
+    }
+  ],
+  "remaining_blockers": [
+    {
+      "blocker": "original-project merge of the B02 payload",
+      "reason": "gate original_paths_released is closed; an explicit human release with an explicit scope is required"
+    },
+    {
+      "blocker": "real Node component execution (ielts-api / toefl-api)",
+      "reason": "the original components are not released; only the synthetic fake-node-cli fixture is discovered and it is never executed"
+    },
+    {
+      "blocker": "real database schema / data-root migration",
+      "reason": "gate real_data_write_authorized is closed; schema and data roots are deliberately unchanged by B02"
+    }
+  ],
+  "process_observations": [
+    {
+      "observation": "The B02 probe's internal alt-cwd collided with the outer cwd on its first run from evidence/tmp, so discovery was compared against itself.",
+      "handling": "The probe now picks a distinct alt-cwd and falls back to the candidate root if that name already exists; the run was repeated and the collision check is recorded in the evidence."
+    },
+    {
+      "observation": "The first build recorded the candidate tree digest before the candidate manifest was written, so the digest could not be reproduced from the tree on disk and the rollback guard would never have matched.",
+      "handling": "The digest now excludes the manifest itself, the exclusion is recorded in the manifest and in both proposals, the builder re-checks reproducibility after writing the manifest, and the validator reproduces the digest independently. The count moved from 185-on-disk-at-hash-time to a stated 185 in the digest / 186 on disk."
+    }
+  ]
+}

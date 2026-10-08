@@ -1,0 +1,192 @@
+=== A02 final checks (runner: integration-staging/tools/a02_final_checks.py) ===
+generated_at_local: 2026-10-05T19:08:54+08:00
+generated_at_utc:   2026-10-05T11:08:54+00:00
+cwd: C:\Users\weo\Desktop\api
+
+--- 1. artifact existence ---
+missing=[]
+
+--- 2. guard-file hashes vs ledger A02.input_hashes ---
+integration-staging/src/examdata_integration/testing/guards.py: recorded=3b0a4a0e36236ccaf01704365e4f706e623c66987843472a9bb70ca9c3cc75dd on_disk=3b0a4a0e36236ccaf01704365e4f706e623c66987843472a9bb70ca9c3cc75dd match=True
+integration-staging/src/examdata_integration/testing/node_guard.py: recorded=d1a7c4d30e98033e9177177544a6e213f89cce10dc957c5dab3d19f34026b6c1 on_disk=d1a7c4d30e98033e9177177544a6e213f89cce10dc957c5dab3d19f34026b6c1 match=True
+integration-staging/tests/conftest.py: recorded=d15742bd18103ef2627407c831452c8cdf432c057ee98f60b19cb8931a8f4193 on_disk=d15742bd18103ef2627407c831452c8cdf432c057ee98f60b19cb8931a8f4193 match=True
+integration-staging/pytest.ini: recorded=b8d9a1505d818bca719331650c1f0643ea7ffa2d373e465df3dda48585ef9acc on_disk=b8d9a1505d818bca719331650c1f0643ea7ffa2d373e465df3dda48585ef9acc match=True
+
+--- 3. module resolution (shared venv editable install) ---
+find_spec('examdata').origin = C:\Users\weo\Desktop\api\examdata\src\examdata\__init__.py
+editable install points at the original tree: True
+guards.__file__ = C:\Users\weo\Desktop\api\integration-staging\src\examdata_integration\testing\guards.py
+guards.STAGING_ROOT = C:\Users\weo\Desktop\api\integration-staging
+guards.ORIGINAL_APP_CODE = C:\Users\weo\Desktop\api\examdata\src
+
+--- 4. guards exercised in-process ---
+import examdata -> ForbiddenImportError: import of original application module 'examdata' is forbidden in staged tests; staged code must import examdata_integrat
+path_guard detail=[]
+
+--- 5. Node import guard (escaping import rejected) ---
+probe specifier (must escape staging): ../../../examdata/src/examdata/__init__.js
+escape probe: rejected: relative import '../../../examdata/src/examdata/__init__.js' in a02_final_checks_escape_probe.js points into original ap
+
+--- 6. pytest run and leak check transcripts ---
+transcript: '18 passed'=True 'failed' present=False
+A02 exit_codes=[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, None] nonzero=[1, 1] failures=2
+leak: zero-count lines=2 (expected 2: new __pycache__, touched .pytest_cache)
+leak: out-of-allowlist files other than attributed owner activity=[]
+
+--- 7. ledger validation ---
+schema=examdata.integration.ledger/1 mode=PHASE_A_ISOLATED_ONLY
+task_count=27 unique=27
+status_counts={"not_started": 24, "staged_pass": 3}
+A02_status=staged_pass
+gate_count=7 open_gates=[]
+
+--- 8. staging config pins private caches and state ---
+pytest.ini keys ok=True; conftest pins ok=True
+
+--- 9. artifact inventory + sha256 manifest (excluding this transcript) ---
+integration-staging/fixtures/README.md
+integration-staging/pytest.ini
+integration-staging/README.md
+integration-staging/runtime/a01_preclose_final_checks.txt
+integration-staging/runtime/ledger-patches/A01_close.json
+integration-staging/runtime/ledger-patches/A02_close.json
+integration-staging/runtime/pytest-cache/v/cache/lastfailed
+integration-staging/runtime/pytest-cache/v/cache/nodeids
+integration-staging/runtime/pytest-temp/test_absolute_import_into_orig0/abs.mjs
+integration-staging/runtime/pytest-temp/test_fixture_test_runs_and_wri0/probe.txt
+integration-staging/runtime/pytest-temp/test_relative_import_escaping_0/escape.mjs
+integration-staging/runtime/pytest-temp/test_relative_import_inside_st0/main.mjs
+integration-staging/runtime/pytest-temp/test_relative_import_inside_st0/ok.mjs
+integration-staging/runtime/README.md
+integration-staging/src/examdata_integration/__init__.py
+integration-staging/src/examdata_integration/testing/__init__.py
+integration-staging/src/examdata_integration/testing/guards.py
+integration-staging/src/examdata_integration/testing/node_guard.py
+integration-staging/tests/conftest.py
+integration-staging/tests/test_harness_isolation.py
+integration-staging/tests/test_node_import_guard.py
+integration-staging/tools/_env.sh
+integration-staging/tools/a00_final_checks.sh
+integration-staging/tools/a01_final_checks.py
+integration-staging/tools/a01_inventory_routes.py
+integration-staging/tools/a01_static_inventory.py
+integration-staging/tools/a01_worksheet_build.py
+integration-staging/tools/a02_final_checks.py
+integration-staging/tools/inspect_module_resolution.py
+integration-staging/tools/ledger_update.py
+integration-staging/tools/run_staged_tests.sh
+docs/integration/execution/A00_INITIAL_REPORT.md
+docs/integration/execution/A01_CLI_INVENTORY.md
+docs/integration/execution/A01_COMPONENT_INVENTORY.md
+docs/integration/execution/A01_CONFIGURATION_MATRIX.md
+docs/integration/execution/A01_DATA_ROOT_INVENTORY.md
+docs/integration/execution/A01_REPORT.md
+docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json
+docs/integration/execution/A02_REPORT.md
+docs/integration/execution/evidence/A00/agents_md_scan.txt
+docs/integration/execution/evidence/A00/checks_after_root_creation.txt
+docs/integration/execution/evidence/A00/final_checks.txt
+docs/integration/execution/evidence/A00/input_hashes_and_env.txt
+docs/integration/execution/evidence/A00/owner_observation.txt
+docs/integration/execution/evidence/A00/pre_creation_absence.txt
+docs/integration/execution/evidence/A01/final_checks.txt
+docs/integration/execution/evidence/A01/route_inventory_reextract.json
+docs/integration/execution/evidence/A01/route_inventory_reextract_stdout.txt
+docs/integration/execution/evidence/A01/route_tool_diff.txt
+docs/integration/execution/evidence/A01/source_hashes_and_observation.txt
+docs/integration/execution/evidence/A01/statics_extract.json
+docs/integration/execution/evidence/A01/statics_extract_stdout.txt
+docs/integration/execution/evidence/A01/statics_extract_stdout_FAILED_gbk_decode.txt
+docs/integration/execution/evidence/A01/worksheet_build_stdout.txt
+docs/integration/execution/evidence/A02/leak_check_after_pytest.txt
+docs/integration/execution/evidence/A02/module_resolution_before_imports.txt
+docs/integration/execution/evidence/A02/pytest_run_stdout.txt
+docs/integration/execution/execution-ledger.json
+docs/integration/execution/ownership.json
+
+--- manifest ---
+76cb2da8b05a8988a23d7eb3707730841bd63ee2aefd9cec973b4b256968847d *integration-staging/fixtures/README.md
+b8d9a1505d818bca719331650c1f0643ea7ffa2d373e465df3dda48585ef9acc *integration-staging/pytest.ini
+38269ce9af64a79038db2cdc236b767b27048730a94b31b898945a114f11850f *integration-staging/README.md
+cbfeb424ee85478b63adf715387b5fb0c76b2e0ebee952123d5029795ea26986 *integration-staging/runtime/a01_preclose_final_checks.txt
+df40c2e718920c814fe509706371975885d04605fcd8989fcde7eb5d22e9265f *integration-staging/runtime/ledger-patches/A01_close.json
+469f11208d87741cf005956c8bdf47f16efb279ab2cc7cf864724f110c4ff898 *integration-staging/runtime/ledger-patches/A02_close.json
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a *integration-staging/runtime/pytest-cache/v/cache/lastfailed
+1ec4d6b232c39ef1e107a8dff28a10cd2ba367eb9c3c07d1ce84e4a7be01c319 *integration-staging/runtime/pytest-cache/v/cache/nodeids
+18c40f10c38233d007b43e321b03e1b217571563d4a779c24e4b6f4a3e365bc2 *integration-staging/runtime/pytest-temp/test_absolute_import_into_orig0/abs.mjs
+2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df *integration-staging/runtime/pytest-temp/test_fixture_test_runs_and_wri0/probe.txt
+7b7f0fcb3f03ba816405e4722adb26a8082543fd06500070bb47069c6d5324a9 *integration-staging/runtime/pytest-temp/test_relative_import_escaping_0/escape.mjs
+9c3df03295c6befffea900215efb8ce3a388e6a0bcc9327b44f00b558641133e *integration-staging/runtime/pytest-temp/test_relative_import_inside_st0/main.mjs
+5e91046565de92b5a3b7f14473546704683d97827cae4d50ee02cf5335d4c183 *integration-staging/runtime/pytest-temp/test_relative_import_inside_st0/ok.mjs
+43c3b13b0fa1f7116eb0264baa0f8113637ee323610951dd6f42ef239bce4663 *integration-staging/runtime/README.md
+1bdb940d37ea92b895e61fc8575d131c62878b0a5042dce4ae0a70e587ea565c *integration-staging/src/examdata_integration/__init__.py
+4fa134108a8dd98ec1448837e080309eb720bbb4e8f819bfc3c8ec7b3ee3aec4 *integration-staging/src/examdata_integration/testing/__init__.py
+3b0a4a0e36236ccaf01704365e4f706e623c66987843472a9bb70ca9c3cc75dd *integration-staging/src/examdata_integration/testing/guards.py
+d1a7c4d30e98033e9177177544a6e213f89cce10dc957c5dab3d19f34026b6c1 *integration-staging/src/examdata_integration/testing/node_guard.py
+d15742bd18103ef2627407c831452c8cdf432c057ee98f60b19cb8931a8f4193 *integration-staging/tests/conftest.py
+28daeeb1fa62923359ca82c408014b03bce052f28d01cdf140e129a5edb42222 *integration-staging/tests/test_harness_isolation.py
+8a2cbec5b2422e0604a3055761aa68d40eca284b2834c4e74fec9511cb8bdc3f *integration-staging/tests/test_node_import_guard.py
+11ab5e453bbe939cc9782d3eba3971f03ebdac704ac77ec5f9b35dbbc25226fa *integration-staging/tools/_env.sh
+3b933fca915345b76a944c2ef36b502f6ce15685dfd54945a8c2fea88c5f3735 *integration-staging/tools/a00_final_checks.sh
+6c06a436f6243af57d6ccf046b71132ae1e687dbf37d0ea85accf60093a2e054 *integration-staging/tools/a01_final_checks.py
+d6cdc8859a0051469093308aa68fb4380b71b6c2b8993b67454fb0cc867d86be *integration-staging/tools/a01_inventory_routes.py
+8af1c7e366ec7483c6655a34694e71a90b445a8841e2b15bd8404708663e38e9 *integration-staging/tools/a01_static_inventory.py
+e4cf64c56305530f34e3a76321c3f201fdb01af9cc989c6111f74485bffecdac *integration-staging/tools/a01_worksheet_build.py
+07a3fc5c6899c2929d51a8afabc50131d61f248dd2afb3f77312bf1121130b87 *integration-staging/tools/a02_final_checks.py
+bdf28b4e6b748077548fbed84bbe6d39146009074afce7a9b232e19285f0c1c6 *integration-staging/tools/inspect_module_resolution.py
+36a7a48d0bf2b0a59a149b6a14a9d5c361d3afd2c823d177538ea61cec70edb5 *integration-staging/tools/ledger_update.py
+1800df1e4e10a10286a3fe910c3856ba5f2eae294818a99e4811ad544e1a5242 *integration-staging/tools/run_staged_tests.sh
+4d228fce64e2ee8dacff0ee79e2e0f3a39b7380163bc503304e9f7a1ed41b838 *docs/integration/execution/A00_INITIAL_REPORT.md
+61221e1a815ddf3ef8f016ebdd91bc61ff6a3d9b9696ad82e2beba65c7a56515 *docs/integration/execution/A01_CLI_INVENTORY.md
+b8b605246d6173dfa1f9487715fb3aa6f67df97553e6756e1ebec17f8362f57f *docs/integration/execution/A01_COMPONENT_INVENTORY.md
+b3c06dd2cfbd5398acbfdccabe78e2d9b90b334e763a989c4ea519c1fa6b0598 *docs/integration/execution/A01_CONFIGURATION_MATRIX.md
+8db521873487a655c71d96b00085ac082d2fb02efb8f3712badf52798180a257 *docs/integration/execution/A01_DATA_ROOT_INVENTORY.md
+eebb23b18837421283858dc3795749fa929710cf82a632b806bbdcdc6b65f981 *docs/integration/execution/A01_REPORT.md
+984d60bf5a08adab5a03e109e8dc76602ae54a3ebeadd68309eced187ca773fc *docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json
+a58587e4b1a4a75193e1bccc12e79a786dd25bd2b649123e24013ec46ffa1ee4 *docs/integration/execution/A02_REPORT.md
+9d23ab7a8954ee28411f91ecf363e278801b62434c8d823b6ed45d10bf79bdc6 *docs/integration/execution/evidence/A00/agents_md_scan.txt
+092fed01b48bb5fdc6edc77f20345c292068c8a9a0c456124156b3544e8d9030 *docs/integration/execution/evidence/A00/checks_after_root_creation.txt
+674f62ccc08c88c782e77a9390cfe31b98a7593899738494a17d294a35c0546c *docs/integration/execution/evidence/A00/final_checks.txt
+02b16f5ae81be5239942ff2451cdec1f7c8250f7ac695f40a475ed04f5286f83 *docs/integration/execution/evidence/A00/input_hashes_and_env.txt
+0e0aae46c2e9a5e76d0c3dd2868bdfe3a41dc1e65e0c72fd66d671722a035c8e *docs/integration/execution/evidence/A00/owner_observation.txt
+72d2e3b040945aced9724a3befe370ac9f5da2aca8e1583f257e20427c8a541b *docs/integration/execution/evidence/A00/pre_creation_absence.txt
+f8a570c88f46903d83815e9f38122181bbe026fa3f32653966d90596b318f2f2 *docs/integration/execution/evidence/A01/final_checks.txt
+458a1c0344f5f8becd9c2256aadf5cbde89bee94f7485923ec10f7bc9f295cfd *docs/integration/execution/evidence/A01/route_inventory_reextract.json
+509e44bd96d42dcd2eda406ec537569157c558ce73ad143bb19e9ecaf55da544 *docs/integration/execution/evidence/A01/route_inventory_reextract_stdout.txt
+1be7ac94fd3c478fa21b2d453148b8767d5fb60966f58581118abf1359e4006a *docs/integration/execution/evidence/A01/route_tool_diff.txt
+891bbdaaab77049957203905f05195074633c1f57832f9e439a76100f717bb6e *docs/integration/execution/evidence/A01/source_hashes_and_observation.txt
+a28e947d1aacecf5db849232626b9ae593a5dc3a8e812fa144bd2c5087041e9f *docs/integration/execution/evidence/A01/statics_extract.json
+30108f01c3a6bfd428be142a54c542bc4bcfb91231f8db1d87a7da24a2e22ddd *docs/integration/execution/evidence/A01/statics_extract_stdout.txt
+2acd661a09906141fee47e4d41d1887e73bb219435ab2c3f91fbde4cba6be80e *docs/integration/execution/evidence/A01/statics_extract_stdout_FAILED_gbk_decode.txt
+719a1f4148d08c2272a76fba2027aac66724178640b69356243b39ff61c406e0 *docs/integration/execution/evidence/A01/worksheet_build_stdout.txt
+abb6f9f55112e392fd59580d91912222d3882525e40b91a72bbc22aee65d8ad9 *docs/integration/execution/evidence/A02/leak_check_after_pytest.txt
+c86bbcb49dbad61f59ffa267f4f35a4bf76931a86a965b4d7ceb1410671853c8 *docs/integration/execution/evidence/A02/module_resolution_before_imports.txt
+943ef88783b9fc0f7355d8bec7c762220fefd7c00a2c67c0a6a9a7cfa8ebb27f *docs/integration/execution/evidence/A02/pytest_run_stdout.txt
+30c0758bdf3a2889ab1a41b36a6a9182ba73d1c633ee994022b681d1664f50c0 *docs/integration/execution/execution-ledger.json
+bf11e22fe72df5d3d0573df8c3728dfc54963131b1a0e8d44a1b336dda356b24 *docs/integration/execution/ownership.json
+
+--- 10. verdict ---
+artifacts.all_present: PASS
+guards.hashes_recorded_and_match: PASS
+module_resolution.hazard_confirmed: PASS
+module_resolution.staged_package_under_staging: PASS
+import_guard.blocks_original_module: PASS
+import_guard.blocks_find_spec: PASS
+import_guard.audit_detects_violation: PASS
+path_guard.rejects_original_and_outside_allows_staging: PASS
+network_guard.blocks_non_loopback_sockets_dns_transport: PASS
+node_guard.rejects_escaping_import: PASS
+pytest.transcript_18_passed: PASS
+pytest.ledger_exit_codes_consistent: PASS
+leak_check.no_unattributed_writes_outside_allowlist: PASS
+leak_check.protected_roots_clean: PASS
+ledger.count_unique_27: PASS
+ledger.schema_mode: PASS
+ledger.a02_staged_pass: PASS
+ledger.no_merged_pass: PASS
+ledger.gates_closed: PASS
+ledger.a02_write_roots: PASS
+ledger.a02_record_fields: PASS
+staging_config.private_paths_pinned: PASS
+A02_FINAL_CHECKS_JSON: PASS
+FINAL_CHECKS: PASS

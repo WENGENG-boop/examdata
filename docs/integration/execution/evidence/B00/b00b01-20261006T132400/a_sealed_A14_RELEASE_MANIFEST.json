@@ -1,0 +1,200 @@
+{
+  "manifest_version": "release-manifest-proposal/1",
+  "generated_by": "integration-staging/tools/a14_build_artifacts.py",
+  "generated_at": "2026-10-06T11:43:31+08:00",
+  "status": "proposed_staged_not_merged_not_deployed",
+  "release_id": "examdata-integration-phasea-proposal",
+  "bundle_note": "Proposal for the release bundle in plan 10.4. Everything listed is staged; the bundle has not been built, installed, merged or deployed, and remote deployment remains not_run.",
+  "python": {
+    "distribution": "examdata",
+    "version": "0.1.0 (existing); B02 decides whether the integration ships in the same distribution",
+    "staged_package": "examdata/src/examdata/integration",
+    "packaging_proposal": "[tool.setuptools.packages.find] where=[\"src\"] already covers the new examdata.integration.* subpackage; no new runtime dependency is introduced by the staged modules (stdlib plus the existing fastapi/starlette stack). If any module later ships data inside the package, add package-data entries then.",
+    "wheel": {
+      "built": false,
+      "blocked_by": "setuptools/wheel/build are absent from the shared venv and plan 14 forbids installing into it; an isolated build would need a network fetch of the build backend, which is prohibited in Phase A",
+      "b09_command": "examdata/.venv/Scripts/python.exe -m pip wheel --no-index --no-deps --wheel-dir <release-dir> examdata  # run only in an authorized environment that has a build backend, then clean-install test per plan 10.4"
+    },
+    "modules": {
+      "count": 62,
+      "tree_sha256": "2c3cfda25d96746346605e651d68e31c24308bb3520687cfe9b379ddecf5a574"
+    }
+  },
+  "node_components": [
+    {
+      "component_id": "ielts_api",
+      "path": "ielts-api",
+      "entry_point": "ielts-cli.mjs",
+      "runtime": "node",
+      "packaging": "B02 records the final baseline and packages the component",
+      "entry_point_sha256": "bf0a952fdc3cabbf1e3b13f86819ad4fb41955e5723451a0c410986097af5ecf",
+      "observed_at": "2026-10-06T11:43:31+08:00",
+      "hash_note": "point-in-time observation; the final baseline hash is recorded at packaging time (B02/B09)",
+      "executed_in_phase_a": false
+    },
+    {
+      "component_id": "toefl_api",
+      "path": "toefl-api",
+      "entry_point": "toefl-cli.mjs",
+      "runtime": "node",
+      "packaging": "B02 records the final baseline and packages the component",
+      "entry_point_sha256": "9320401491bf64a38cf1bb98ced0e50e4daa7802a519117b6da5ccb6739328ca",
+      "observed_at": "2026-10-06T11:43:31+08:00",
+      "hash_note": "point-in-time observation; the final baseline hash is recorded at packaging time (B02/B09)",
+      "executed_in_phase_a": false
+    }
+  ],
+  "component_manifest": {
+    "format": "examdata.component-manifest/1",
+    "authored_in": "B02",
+    "note": "the staged components/manifest.json is a synthetic fixture for the runner tests and is not shipped; the real manifest is authored from the final baseline in B02"
+  },
+  "frontend": {
+    "count": 13,
+    "tree_sha256": "d08235ceb4a28bc6638ee40bce1480b99576cad86aeb05035f98eb24941e83f3",
+    "merge_requirement": "B06 reconciliation; tests/ and fixtures/ must stay out of the served surface"
+  },
+  "contracts_schemas": {
+    "count": 74,
+    "tree_sha256": "8f72fd5787f56faa7320fe1a7fa9b2170523ad59881c79021c6f36d382db2f82",
+    "proposed_location": "examdata/contracts/ (repo level; copied into the release bundle)"
+  },
+  "tests": {
+    "count": 43,
+    "tree_sha256": "9f7b422cb4c2bf87eea5559bdd053a75cdfdec068e17535d598f908abe6ff755",
+    "note": "shipped for the merged test suite; path constants are rebased in B01"
+  },
+  "fixtures": {
+    "count": 49,
+    "tree_sha256": "1e42ef75219acc48960fe9a9f66f0383199282803ca57fb679758ed4ac4533a4",
+    "note": "private test data; synthetic and copied-snapshot labels are preserved"
+  },
+  "dependency_versions": {
+    "source": "read-only importlib.metadata query against the shared venv",
+    "declared_in": "examdata/pyproject.toml (existing requires)",
+    "observed": {
+      "httpx": "0.28.1",
+      "beautifulsoup4": "4.15.0",
+      "lxml": "6.1.3",
+      "sqlalchemy": "2.1.1",
+      "pydantic": "2.13.5",
+      "pydantic-settings": "2.15.0",
+      "pymupdf": "1.28.2",
+      "typer": "0.27.2",
+      "rich": "15.0.0",
+      "fastapi": "0.141.1",
+      "uvicorn": "0.54.0",
+      "pytest": "9.1.1"
+    }
+  },
+  "configuration_example": {
+    "staged": [
+      "integration-staging/config/staging-config.example.json",
+      "integration-staging/config/staging.env.example"
+    ],
+    "proposed_targets": [
+      "examdata/config.example.json",
+      "examdata/.env.example"
+    ],
+    "contains_secrets": false
+  },
+  "migration_tools": [
+    {
+      "tool": "examdata_integration.catalog.builder",
+      "role": "build a catalog revision from staged/approved sources"
+    },
+    {
+      "tool": "examdata_integration.catalog.revision.RevisionPublisher",
+      "role": "publish/rollback the revision pointer atomically"
+    },
+    {
+      "tool": "integration-staging/tools/a14_rehearsal.py",
+      "role": "apply/rollback rehearsal on private fixtures"
+    }
+  ],
+  "smoke_checks": [
+    {
+      "name": "offline doctor",
+      "staged_command": "examdata/.venv/Scripts/python.exe -c \"import sys; sys.path.insert(0,'integration-staging/src'); from examdata_integration.runtime import doctor; print(doctor.report())\"",
+      "proves": "configuration resolves and components are discoverable without touching a source",
+      "proven_in": "integration-staging/tests/test_config_manifest.py, test_config_resolution.py"
+    },
+    {
+      "name": "v2 app factory",
+      "staged_command": "examdata/.venv/Scripts/python.exe integration-staging/tools/a10_probe_api.py",
+      "proves": "OpenAPI and runtime responses agree; envelope and error map hold",
+      "proven_in": "docs/integration/execution/evidence/A10/api_stdout.txt"
+    },
+    {
+      "name": "Node runner",
+      "staged_command": "examdata/.venv/Scripts/python.exe integration-staging/tools/a06_probe_runner.py",
+      "proves": "controlled runner: allowlist, budgets, classification, no orphan process",
+      "proven_in": "docs/integration/execution/evidence/A06/"
+    },
+    {
+      "name": "catalog build, publish, rollback",
+      "staged_command": "examdata/.venv/Scripts/python.exe integration-staging/tools/a14_rehearsal.py",
+      "proves": "revision pointer publication and rollback on private fixtures",
+      "proven_in": "docs/integration/execution/evidence/A14/rehearsal_stdout.txt"
+    },
+    {
+      "name": "frontend fixture flows",
+      "staged_command": "node --test integration-staging/frontend/tests/*.test.mjs",
+      "proves": "staged client and fixture server flows over 127.0.0.1 only",
+      "proven_in": "docs/integration/execution/evidence/A13/node_tests_stdout.txt"
+    }
+  ],
+  "rollback_instructions": {
+    "document": "integration-staging/docs/release-and-rollback.md",
+    "units": [
+      {
+        "unit": "code release",
+        "reversal": "per-file: restore the recorded base bytes for every modified entry, delete every added entry (A14_MERGE_MAP.json reversal column)",
+        "rehearsed": "A14 file rehearsal"
+      },
+      {
+        "unit": "component manifest",
+        "reversal": "restore the previous manifest file; component discovery is re-read from disk, no cached state",
+        "rehearsed": "A14 manifest rehearsal"
+      },
+      {
+        "unit": "data revision pointer",
+        "reversal": "RevisionPublisher.rollback() points current back at the retained previous revision; both revisions stay readable",
+        "rehearsed": "A14 pointer rehearsal"
+      },
+      {
+        "unit": "database backup",
+        "reversal": "restore the recorded backup, then reconcile writes made after it (never restore over new writes without freezing them)",
+        "rehearsed": "not_run — no live database is touched in Phase A; B08"
+      },
+      {
+        "unit": "frontend switch",
+        "reversal": "set examdata.v2-client=off (reversible marker) or remove it to switch back on; no file change needed",
+        "rehearsed": "A14 frontend switch rehearsal"
+      },
+      {
+        "unit": "job checkpoint",
+        "reversal": "nothing to reverse: the operations readers are read-only and never rewrite a checkpoint",
+        "rehearsed": "A14 checkpoint rehearsal"
+      }
+    ]
+  },
+  "exclusions": [
+    "live databases and business data (examdata .db files, ielts-data corpus, CIE batch state)",
+    "credentials, API keys, tokens and any secret",
+    "Kimi-owned active modules (materials, timetable) and Kimi's in-flight shared-file edits",
+    "the synthetic fixture component (components/fake-node-cli) and its manifest",
+    "Phase A tooling, private runtime state and staging provenance manifests"
+  ],
+  "gates": {
+    "remote_deployment_authorized": false,
+    "original_paths_released": false,
+    "database_migration_authorized": false,
+    "cie_resume_authorized": false
+  },
+  "not_run": [
+    "wheel build and clean-directory installation test (B09)",
+    "real-data migration and restore (B08)",
+    "deployment to any target (no authorization)"
+  ]
+}

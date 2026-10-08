@@ -1,0 +1,96 @@
+{
+  "schema": "question/1",
+  "public_id": "q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5",
+  "native_id": "Q4",
+  "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "number_path": [
+    "Q4"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "table_choice",
+  "stem": "Synthetic table question 4.",
+  "payload": {
+    "columns": [
+      "Synthetic column A",
+      "Synthetic column B",
+      "Synthetic column C"
+    ],
+    "rows": [
+      [
+        "synthetic cell 1",
+        "synthetic cell 2",
+        "synthetic cell 3"
+      ],
+      [
+        "synthetic cell 4",
+        "synthetic cell 5",
+        "synthetic cell 6"
+      ]
+    ],
+    "answer_cells": [
+      {
+        "row": 2,
+        "column": 3,
+        "value": null
+      }
+    ]
+  },
+  "marks": null,
+  "required_assets": [],
+  "answers": [
+    {
+      "public_id": "ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc",
+      "question_ref": null,
+      "original_value": "row-2-col-3",
+      "normalized_value": null,
+      "alternatives": [],
+      "ordering_rule": null,
+      "matching_method": "exact",
+      "verification": "unverified",
+      "source": {
+        "source_id": "synthetic-ielts",
+        "provider_id": "ielts",
+        "locator": {
+          "fixture": "synthetic/ielts",
+          "detail": "answer:primary"
+        },
+        "content_class": "synthetic",
+        "retrieved_at": "2026-10-05T19:20:00+08:00"
+      },
+      "conflicts": [],
+      "manual_decision": null,
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/ielts",
+          "native-answer-key:primary"
+        ],
+        "parent_refs": [],
+        "note": null
+      }
+    }
+  ],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "present",
+    "answer_verification": "unverified",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-kind:table_choice"
+    ],
+    "parent_refs": [],
+    "note": null
+  },
+  "children": []
+}

@@ -1,0 +1,562 @@
+{
+  "schema": "quality-transitions/1",
+  "x-generated-by": "a04_generate_schemas.py sha256:3693f206a4d6ce07b324aa737996f27e4b0ad6b21e79ecba754b580bb785cb4b",
+  "dimensions": {
+    "content": [
+      "complete",
+      "partial",
+      "missing",
+      "unknown"
+    ],
+    "answer_presence": [
+      "present",
+      "missing",
+      "unknown"
+    ],
+    "answer_verification": [
+      "source_verified",
+      "manual_adjudicated",
+      "conflicting",
+      "unverified",
+      "unknown"
+    ],
+    "assets": [
+      "embedded",
+      "external_only",
+      "missing",
+      "unknown",
+      "not_applicable"
+    ],
+    "audio_integrity": [
+      "hash_verified",
+      "hash_mismatch",
+      "unverified",
+      "unknown",
+      "not_applicable"
+    ],
+    "audio_alignment": [
+      "verified",
+      "unverified",
+      "unknown",
+      "not_applicable"
+    ],
+    "region_verification": [
+      "verified",
+      "unverified",
+      "unknown",
+      "not_applicable"
+    ]
+  },
+  "authoritative_evidence": [
+    "copied_snapshot",
+    "deployed_target_validation",
+    "full_source_validation",
+    "isolated_real_data"
+  ],
+  "forbidden_basis": {
+    "http_status_only": "a source page returning 200 proves neither content validity nor completeness",
+    "two_unofficial_sources_agree": "agreement between two unofficial sources is not official verification",
+    "filename_similarity": "a similar filename is not evidence of identity or correctness",
+    "title_similarity": "title/semantic similarity is never an identity or verification rule (plan 4.2 rule 10)",
+    "row_number": "a database row number is not a cross-system identity (plan 4.2 rule 2)",
+    "hash_implies_alignment": "a hash proves integrity, not audio-to-question association",
+    "fixture_implies_real": "synthetic or fixture content never becomes verified real content"
+  },
+  "transitions": [
+    {
+      "dimension": "content",
+      "from": "unknown",
+      "to": "missing",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": "the record is known to lack the required content"
+    },
+    {
+      "dimension": "content",
+      "from": "unknown",
+      "to": "partial",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": "some required content is present and some is known to be absent"
+    },
+    {
+      "dimension": "content",
+      "from": "unknown",
+      "to": "complete",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "synthetic_fixture"
+      ],
+      "requires": "denominator_known",
+      "note": "completeness needs an explicit denominator; without one only partial is reachable"
+    },
+    {
+      "dimension": "content",
+      "from": "missing",
+      "to": "partial",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "content",
+      "from": "partial",
+      "to": "complete",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "synthetic_fixture"
+      ],
+      "requires": "denominator_known",
+      "note": ""
+    },
+    {
+      "dimension": "content",
+      "from": "complete",
+      "to": "partial",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": "demotion is always allowed when new gaps are found"
+    },
+    {
+      "dimension": "content",
+      "from": "partial",
+      "to": "missing",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "answer_presence",
+      "from": "unknown",
+      "to": "present",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "answer_value_present",
+      "note": ""
+    },
+    {
+      "dimension": "answer_presence",
+      "from": "unknown",
+      "to": "missing",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "missing_slot_marked",
+      "note": "a missing slot is only 'missing' when the source marks it as such"
+    },
+    {
+      "dimension": "answer_presence",
+      "from": "present",
+      "to": "missing",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "missing_slot_marked",
+      "note": ""
+    },
+    {
+      "dimension": "answer_presence",
+      "from": "missing",
+      "to": "present",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "answer_value_present",
+      "note": ""
+    },
+    {
+      "dimension": "answer_verification",
+      "from": "unknown",
+      "to": "unverified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "answer_verification",
+      "from": "unverified",
+      "to": "source_verified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": null,
+      "note": "synthetic fixtures can never reach source_verified"
+    },
+    {
+      "dimension": "answer_verification",
+      "from": "unverified",
+      "to": "conflicting",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "conflict_candidates_present",
+      "note": ""
+    },
+    {
+      "dimension": "answer_verification",
+      "from": "conflicting",
+      "to": "manual_adjudicated",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "manual_decision_present",
+      "note": ""
+    },
+    {
+      "dimension": "answer_verification",
+      "from": "source_verified",
+      "to": "conflicting",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "conflict_candidates_present",
+      "note": ""
+    },
+    {
+      "dimension": "answer_verification",
+      "from": "manual_adjudicated",
+      "to": "source_verified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": null,
+      "note": "a later authoritative source may supersede a manual decision; the decision is kept"
+    },
+    {
+      "dimension": "assets",
+      "from": "unknown",
+      "to": "external_only",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "assets",
+      "from": "unknown",
+      "to": "missing",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "required_asset_missing",
+      "note": ""
+    },
+    {
+      "dimension": "assets",
+      "from": "unknown",
+      "to": "embedded",
+      "evidence": [
+        "copied_snapshot",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "asset_hash_present",
+      "note": ""
+    },
+    {
+      "dimension": "assets",
+      "from": "external_only",
+      "to": "embedded",
+      "evidence": [
+        "copied_snapshot",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "asset_hash_present",
+      "note": ""
+    },
+    {
+      "dimension": "assets",
+      "from": "embedded",
+      "to": "missing",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "required_asset_missing",
+      "note": ""
+    },
+    {
+      "dimension": "assets",
+      "from": "unknown",
+      "to": "not_applicable",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "no_required_assets",
+      "note": ""
+    },
+    {
+      "dimension": "audio_integrity",
+      "from": "unknown",
+      "to": "unverified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "audio_integrity",
+      "from": "unverified",
+      "to": "hash_verified",
+      "evidence": [
+        "copied_snapshot",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "asset_hash_present",
+      "note": ""
+    },
+    {
+      "dimension": "audio_integrity",
+      "from": "hash_verified",
+      "to": "hash_mismatch",
+      "evidence": [
+        "copied_snapshot",
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "hash_mismatch_observed",
+      "note": ""
+    },
+    {
+      "dimension": "audio_integrity",
+      "from": "unknown",
+      "to": "not_applicable",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "no_required_assets",
+      "note": ""
+    },
+    {
+      "dimension": "audio_alignment",
+      "from": "unknown",
+      "to": "unverified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": "alignment starts unverified; a hash check must never promote it"
+    },
+    {
+      "dimension": "audio_alignment",
+      "from": "unverified",
+      "to": "verified",
+      "evidence": [
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "alignment_evidence_present",
+      "note": "requires explicit alignment evidence, not merely a matching hash"
+    },
+    {
+      "dimension": "audio_alignment",
+      "from": "verified",
+      "to": "unverified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "audio_alignment",
+      "from": "unknown",
+      "to": "not_applicable",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "no_required_assets",
+      "note": ""
+    },
+    {
+      "dimension": "region_verification",
+      "from": "unknown",
+      "to": "unverified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "region_verification",
+      "from": "unverified",
+      "to": "verified",
+      "evidence": [
+        "full_source_validation",
+        "isolated_real_data"
+      ],
+      "requires": "region_evidence_present",
+      "note": ""
+    },
+    {
+      "dimension": "region_verification",
+      "from": "verified",
+      "to": "unverified",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": null,
+      "note": ""
+    },
+    {
+      "dimension": "region_verification",
+      "from": "unknown",
+      "to": "not_applicable",
+      "evidence": [
+        "copied_snapshot",
+        "deployed_target_validation",
+        "full_source_validation",
+        "isolated_real_data",
+        "static_inspection",
+        "synthetic_fixture"
+      ],
+      "requires": "no_regions",
+      "note": ""
+    }
+  ]
+}

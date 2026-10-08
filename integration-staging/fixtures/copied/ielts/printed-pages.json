@@ -1,0 +1,3327 @@
+{
+ "status": "ok",
+ "generated_at_utc": "2026-10-03T15:50:53.447Z",
+ "pairs": 664,
+ "results": {
+  "1:18": {
+   "first": 12,
+   "last": null,
+   "chosen": 12
+  },
+  "1:20": {
+   "first": 14,
+   "last": null,
+   "chosen": 14
+  },
+  "1:22": {
+   "first": 16,
+   "last": null,
+   "chosen": 16
+  },
+  "1:24": {
+   "first": 18,
+   "last": null,
+   "chosen": 18
+  },
+  "1:26": {
+   "first": 20,
+   "last": null,
+   "chosen": 20
+  },
+  "1:30": {
+   "first": 24,
+   "last": null,
+   "chosen": 24
+  },
+  "1:34": {
+   "first": 28,
+   "last": null,
+   "chosen": 28
+  },
+  "1:37": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "1:38": {
+   "first": 32,
+   "last": null,
+   "chosen": 32
+  },
+  "1:39": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "1:40": {
+   "first": 34,
+   "last": null,
+   "chosen": 34
+  },
+  "1:41": {
+   "first": 35,
+   "last": null,
+   "chosen": 35
+  },
+  "1:42": {
+   "first": 36,
+   "last": null,
+   "chosen": 36
+  },
+  "1:44": {
+   "first": 38,
+   "last": null,
+   "chosen": 38
+  },
+  "1:46": {
+   "first": 40,
+   "last": null,
+   "chosen": 40
+  },
+  "1:50": {
+   "first": 44,
+   "last": null,
+   "chosen": 44
+  },
+  "1:54": {
+   "first": 48,
+   "last": null,
+   "chosen": 48
+  },
+  "1:57": {
+   "first": 51,
+   "last": null,
+   "chosen": 51
+  },
+  "1:58": {
+   "first": 52,
+   "last": null,
+   "chosen": 52
+  },
+  "1:59": {
+   "first": 53,
+   "last": null,
+   "chosen": 53
+  },
+  "1:60": {
+   "first": 54,
+   "last": null,
+   "chosen": 54
+  },
+  "1:62": {
+   "first": 56,
+   "last": null,
+   "chosen": 56
+  },
+  "1:63": {
+   "first": 57,
+   "last": null,
+   "chosen": 57
+  },
+  "1:64": {
+   "first": 58,
+   "last": null,
+   "chosen": 58
+  },
+  "1:66": {
+   "first": 60,
+   "last": null,
+   "chosen": 60
+  },
+  "1:70": {
+   "first": 64,
+   "last": null,
+   "chosen": 64
+  },
+  "1:74": {
+   "first": 68,
+   "last": null,
+   "chosen": 68
+  },
+  "1:78": {
+   "first": 72,
+   "last": null,
+   "chosen": 72
+  },
+  "1:79": {
+   "first": 73,
+   "last": null,
+   "chosen": 73
+  },
+  "1:80": {
+   "first": 74,
+   "last": null,
+   "chosen": 74
+  },
+  "1:81": {
+   "first": 75,
+   "last": null,
+   "chosen": 75
+  },
+  "1:83": {
+   "first": 77,
+   "last": null,
+   "chosen": 77
+  },
+  "1:84": {
+   "first": 78,
+   "last": null,
+   "chosen": 78
+  },
+  "1:85": {
+   "first": 79,
+   "last": null,
+   "chosen": 79
+  },
+  "1:86": {
+   "first": 80,
+   "last": null,
+   "chosen": 80
+  },
+  "1:90": {
+   "first": 84,
+   "last": null,
+   "chosen": 84
+  },
+  "1:93": {
+   "first": 87,
+   "last": null,
+   "chosen": 87
+  },
+  "1:97": {
+   "first": 91,
+   "last": null,
+   "chosen": 91
+  },
+  "1:98": {
+   "first": 92,
+   "last": null,
+   "chosen": 92
+  },
+  "1:99": {
+   "first": 93,
+   "last": null,
+   "chosen": 93
+  },
+  "1:100": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "1:104": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "1:108": {
+   "first": 102,
+   "last": null,
+   "chosen": 102
+  },
+  "1:111": {
+   "first": 105,
+   "last": null,
+   "chosen": 105
+  },
+  "1:112": {
+   "first": 106,
+   "last": null,
+   "chosen": 106
+  },
+  "2:2": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:3": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:4": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:5": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:6": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:8": {
+   "first": null,
+   "last": 18,
+   "chosen": 18
+  },
+  "2:10": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:12": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "2:13": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:14": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:15": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:16": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:17": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:19": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:21": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:23": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:24": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:25": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:26": {
+   "first": null,
+   "last": 20,
+   "chosen": 20
+  },
+  "2:27": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:28": {
+   "first": 4,
+   "last": null,
+   "chosen": 4
+  },
+  "2:29": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:31": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:32": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "2:34": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:35": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:36": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:37": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:38": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:39": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:41": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:43": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:45": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:46": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:47": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:49": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:51": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:53": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:54": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:56": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:58": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "2:60": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "3:12": {
+   "first": 8,
+   "last": null,
+   "chosen": 8
+  },
+  "3:13": {
+   "first": 9,
+   "last": null,
+   "chosen": 9
+  },
+  "3:15": {
+   "first": 11,
+   "last": null,
+   "chosen": 11
+  },
+  "3:16": {
+   "first": 12,
+   "last": null,
+   "chosen": 12
+  },
+  "3:18": {
+   "first": 14,
+   "last": null,
+   "chosen": 14
+  },
+  "3:23": {
+   "first": 19,
+   "last": null,
+   "chosen": 19
+  },
+  "3:27": {
+   "first": 23,
+   "last": null,
+   "chosen": 23
+  },
+  "3:31": {
+   "first": 27,
+   "last": null,
+   "chosen": 27
+  },
+  "3:32": {
+   "first": 28,
+   "last": null,
+   "chosen": 28
+  },
+  "3:33": {
+   "first": 29,
+   "last": null,
+   "chosen": 29
+  },
+  "3:34": {
+   "first": 30,
+   "last": null,
+   "chosen": 30
+  },
+  "3:36": {
+   "first": 32,
+   "last": null,
+   "chosen": 32
+  },
+  "3:38": {
+   "first": 34,
+   "last": null,
+   "chosen": 34
+  },
+  "3:40": {
+   "first": 36,
+   "last": null,
+   "chosen": 36
+  },
+  "3:42": {
+   "first": 38,
+   "last": null,
+   "chosen": 38
+  },
+  "3:46": {
+   "first": 42,
+   "last": null,
+   "chosen": 42
+  },
+  "3:51": {
+   "first": 47,
+   "last": null,
+   "chosen": 47
+  },
+  "3:55": {
+   "first": 51,
+   "last": null,
+   "chosen": 51
+  },
+  "3:56": {
+   "first": 52,
+   "last": null,
+   "chosen": 52
+  },
+  "3:57": {
+   "first": 53,
+   "last": null,
+   "chosen": 53
+  },
+  "3:58": {
+   "first": 54,
+   "last": null,
+   "chosen": 54
+  },
+  "3:59": {
+   "first": 55,
+   "last": null,
+   "chosen": 55
+  },
+  "3:61": {
+   "first": 57,
+   "last": null,
+   "chosen": 57
+  },
+  "3:62": {
+   "first": 58,
+   "last": null,
+   "chosen": 58
+  },
+  "3:64": {
+   "first": 60,
+   "last": null,
+   "chosen": 60
+  },
+  "3:68": {
+   "first": 64,
+   "last": null,
+   "chosen": 64
+  },
+  "3:73": {
+   "first": 69,
+   "last": null,
+   "chosen": 69
+  },
+  "3:77": {
+   "first": 73,
+   "last": null,
+   "chosen": 73
+  },
+  "3:78": {
+   "first": 74,
+   "last": null,
+   "chosen": 74
+  },
+  "3:79": {
+   "first": 75,
+   "last": null,
+   "chosen": 75
+  },
+  "3:80": {
+   "first": 76,
+   "last": null,
+   "chosen": 76
+  },
+  "3:82": {
+   "first": 78,
+   "last": null,
+   "chosen": 78
+  },
+  "3:83": {
+   "first": 79,
+   "last": null,
+   "chosen": 79
+  },
+  "3:85": {
+   "first": 81,
+   "last": null,
+   "chosen": 81
+  },
+  "3:88": {
+   "first": 84,
+   "last": null,
+   "chosen": 84
+  },
+  "3:92": {
+   "first": 88,
+   "last": null,
+   "chosen": 88
+  },
+  "3:96": {
+   "first": 92,
+   "last": null,
+   "chosen": 92
+  },
+  "3:101": {
+   "first": 97,
+   "last": null,
+   "chosen": 97
+  },
+  "3:102": {
+   "first": 98,
+   "last": null,
+   "chosen": 98
+  },
+  "3:103": {
+   "first": 99,
+   "last": null,
+   "chosen": 99
+  },
+  "3:104": {
+   "first": 100,
+   "last": null,
+   "chosen": 100
+  },
+  "3:107": {
+   "first": 103,
+   "last": null,
+   "chosen": 103
+  },
+  "3:111": {
+   "first": 107,
+   "last": null,
+   "chosen": 107
+  },
+  "3:116": {
+   "first": 112,
+   "last": null,
+   "chosen": 112
+  },
+  "3:117": {
+   "first": 113,
+   "last": null,
+   "chosen": 113
+  },
+  "3:118": {
+   "first": 114,
+   "last": null,
+   "chosen": 114
+  },
+  "3:122": {
+   "first": 118,
+   "last": null,
+   "chosen": 118
+  },
+  "3:126": {
+   "first": 122,
+   "last": null,
+   "chosen": 122
+  },
+  "3:129": {
+   "first": 125,
+   "last": null,
+   "chosen": 125
+  },
+  "3:130": {
+   "first": 126,
+   "last": null,
+   "chosen": 126
+  },
+  "4:11": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:13": {
+   "first": null,
+   "last": 12,
+   "chosen": 12
+  },
+  "4:15": {
+   "first": null,
+   "last": 14,
+   "chosen": 14
+  },
+  "4:18": {
+   "first": null,
+   "last": 17,
+   "chosen": 17
+  },
+  "4:19": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:24": {
+   "first": null,
+   "last": 23,
+   "chosen": 23
+  },
+  "4:28": {
+   "first": null,
+   "last": 27,
+   "chosen": 27
+  },
+  "4:32": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "4:33": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "4:34": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "4:35": {
+   "first": null,
+   "last": 34,
+   "chosen": 34
+  },
+  "4:37": {
+   "first": null,
+   "last": 36,
+   "chosen": 36
+  },
+  "4:39": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:41": {
+   "first": null,
+   "last": 40,
+   "chosen": 40
+  },
+  "4:43": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:47": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:51": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:55": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "4:56": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "4:57": {
+   "first": null,
+   "last": 56,
+   "chosen": 56
+  },
+  "4:58": {
+   "first": null,
+   "last": 57,
+   "chosen": 57
+  },
+  "4:60": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "4:62": {
+   "first": null,
+   "last": 61,
+   "chosen": 61
+  },
+  "4:64": {
+   "first": null,
+   "last": 63,
+   "chosen": 63
+  },
+  "4:66": {
+   "first": null,
+   "last": 65,
+   "chosen": 65
+  },
+  "4:71": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:75": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:79": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:80": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "4:81": {
+   "first": null,
+   "last": 80,
+   "chosen": 80
+  },
+  "4:82": {
+   "first": null,
+   "last": 81,
+   "chosen": 81
+  },
+  "4:83": {
+   "first": null,
+   "last": 82,
+   "chosen": 82
+  },
+  "4:85": {
+   "first": null,
+   "last": 84,
+   "chosen": 84
+  },
+  "4:87": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:89": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:93": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:97": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:101": {
+   "first": null,
+   "last": 15,
+   "chosen": 15
+  },
+  "4:102": {
+   "first": null,
+   "last": 101,
+   "chosen": 101
+  },
+  "4:103": {
+   "first": null,
+   "last": 102,
+   "chosen": 102
+  },
+  "4:104": {
+   "first": null,
+   "last": 103,
+   "chosen": 103
+  },
+  "4:108": {
+   "first": null,
+   "last": 107,
+   "chosen": 107
+  },
+  "4:112": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:116": {
+   "first": null,
+   "last": 115,
+   "chosen": 115
+  },
+  "4:117": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "4:122": {
+   "first": null,
+   "last": 121,
+   "chosen": 121
+  },
+  "4:126": {
+   "first": null,
+   "last": 125,
+   "chosen": 125
+  },
+  "4:130": {
+   "first": null,
+   "last": 129,
+   "chosen": 129
+  },
+  "5:11": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:13": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:14": {
+   "first": null,
+   "last": 13,
+   "chosen": 13
+  },
+  "5:16": {
+   "first": null,
+   "last": 15,
+   "chosen": 15
+  },
+  "5:17": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:21": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:25": {
+   "first": null,
+   "last": 24,
+   "chosen": 24
+  },
+  "5:30": {
+   "first": null,
+   "last": 29,
+   "chosen": 29
+  },
+  "5:31": {
+   "first": null,
+   "last": 30,
+   "chosen": 30
+  },
+  "5:32": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "5:33": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "5:34": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "5:36": {
+   "first": null,
+   "last": 35,
+   "chosen": 35
+  },
+  "5:37": {
+   "first": null,
+   "last": 36,
+   "chosen": 36
+  },
+  "5:39": {
+   "first": null,
+   "last": 38,
+   "chosen": 38
+  },
+  "5:44": {
+   "first": null,
+   "last": 43,
+   "chosen": 43
+  },
+  "5:49": {
+   "first": null,
+   "last": 48,
+   "chosen": 48
+  },
+  "5:53": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:54": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "5:55": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "5:56": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "5:58": {
+   "first": null,
+   "last": 57,
+   "chosen": 57
+  },
+  "5:60": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "5:61": {
+   "first": null,
+   "last": 60,
+   "chosen": 60
+  },
+  "5:63": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:67": {
+   "first": null,
+   "last": 66,
+   "chosen": 66
+  },
+  "5:72": {
+   "first": null,
+   "last": 71,
+   "chosen": 71
+  },
+  "5:76": {
+   "first": null,
+   "last": 75,
+   "chosen": 75
+  },
+  "5:77": {
+   "first": null,
+   "last": 76,
+   "chosen": 76
+  },
+  "5:78": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "5:79": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:80": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "5:82": {
+   "first": null,
+   "last": 81,
+   "chosen": 81
+  },
+  "5:84": {
+   "first": null,
+   "last": 83,
+   "chosen": 83
+  },
+  "5:86": {
+   "first": null,
+   "last": 85,
+   "chosen": 85
+  },
+  "5:90": {
+   "first": null,
+   "last": 89,
+   "chosen": 89
+  },
+  "5:95": {
+   "first": null,
+   "last": 94,
+   "chosen": 94
+  },
+  "5:99": {
+   "first": null,
+   "last": 98,
+   "chosen": 98
+  },
+  "5:100": {
+   "first": null,
+   "last": 99,
+   "chosen": 99
+  },
+  "5:101": {
+   "first": null,
+   "last": 100,
+   "chosen": 100
+  },
+  "5:102": {
+   "first": null,
+   "last": 101,
+   "chosen": 101
+  },
+  "5:106": {
+   "first": null,
+   "last": 105,
+   "chosen": 105
+  },
+  "5:110": {
+   "first": null,
+   "last": 109,
+   "chosen": 109
+  },
+  "5:114": {
+   "first": null,
+   "last": 113,
+   "chosen": 113
+  },
+  "5:115": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:120": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "5:124": {
+   "first": null,
+   "last": 123,
+   "chosen": 123
+  },
+  "5:128": {
+   "first": null,
+   "last": 127,
+   "chosen": 127
+  },
+  "6:11": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:13": {
+   "first": null,
+   "last": 12,
+   "chosen": 12
+  },
+  "6:15": {
+   "first": null,
+   "last": 14,
+   "chosen": 14
+  },
+  "6:17": {
+   "first": null,
+   "last": 16,
+   "chosen": 16
+  },
+  "6:19": {
+   "first": null,
+   "last": 18,
+   "chosen": 18
+  },
+  "6:23": {
+   "first": null,
+   "last": 22,
+   "chosen": 22
+  },
+  "6:27": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:31": {
+   "first": null,
+   "last": 30,
+   "chosen": 30
+  },
+  "6:32": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "6:33": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "6:34": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "6:36": {
+   "first": null,
+   "last": 35,
+   "chosen": 35
+  },
+  "6:38": {
+   "first": null,
+   "last": 37,
+   "chosen": 37
+  },
+  "6:39": {
+   "first": null,
+   "last": 38,
+   "chosen": 38
+  },
+  "6:41": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:45": {
+   "first": null,
+   "last": 44,
+   "chosen": 44
+  },
+  "6:49": {
+   "first": null,
+   "last": 48,
+   "chosen": 48
+  },
+  "6:53": {
+   "first": null,
+   "last": 52,
+   "chosen": 52
+  },
+  "6:54": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "6:55": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "6:56": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "6:58": {
+   "first": null,
+   "last": 57,
+   "chosen": 57
+  },
+  "6:60": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "6:62": {
+   "first": null,
+   "last": 61,
+   "chosen": 61
+  },
+  "6:64": {
+   "first": null,
+   "last": 63,
+   "chosen": 63
+  },
+  "6:68": {
+   "first": null,
+   "last": 67,
+   "chosen": 67
+  },
+  "6:72": {
+   "first": null,
+   "last": 71,
+   "chosen": 71
+  },
+  "6:76": {
+   "first": null,
+   "last": 75,
+   "chosen": 75
+  },
+  "6:77": {
+   "first": null,
+   "last": 76,
+   "chosen": 76
+  },
+  "6:78": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "6:79": {
+   "first": null,
+   "last": 78,
+   "chosen": 78
+  },
+  "6:80": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "6:82": {
+   "first": null,
+   "last": 81,
+   "chosen": 81
+  },
+  "6:84": {
+   "first": null,
+   "last": 83,
+   "chosen": 83
+  },
+  "6:86": {
+   "first": null,
+   "last": 85,
+   "chosen": 85
+  },
+  "6:90": {
+   "first": null,
+   "last": 89,
+   "chosen": 89
+  },
+  "6:94": {
+   "first": null,
+   "last": 93,
+   "chosen": 93
+  },
+  "6:99": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:100": {
+   "first": null,
+   "last": 99,
+   "chosen": 99
+  },
+  "6:101": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:102": {
+   "first": null,
+   "last": 101,
+   "chosen": 101
+  },
+  "6:106": {
+   "first": null,
+   "last": 105,
+   "chosen": 105
+  },
+  "6:110": {
+   "first": null,
+   "last": 109,
+   "chosen": 109
+  },
+  "6:114": {
+   "first": null,
+   "last": 113,
+   "chosen": 113
+  },
+  "6:115": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:119": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:123": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "6:127": {
+   "first": null,
+   "last": 126,
+   "chosen": 126
+  },
+  "7:15": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:17": {
+   "first": null,
+   "last": 12,
+   "chosen": 12
+  },
+  "7:19": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:21": {
+   "first": null,
+   "last": 16,
+   "chosen": 16
+  },
+  "7:23": {
+   "first": null,
+   "last": 18,
+   "chosen": 18
+  },
+  "7:27": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:31": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:35": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:36": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "7:37": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "7:38": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "7:39": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:41": {
+   "first": null,
+   "last": 36,
+   "chosen": 36
+  },
+  "7:43": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:45": {
+   "first": null,
+   "last": 40,
+   "chosen": 40
+  },
+  "7:49": {
+   "first": null,
+   "last": 44,
+   "chosen": 44
+  },
+  "7:53": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:58": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "7:59": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "7:60": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "7:61": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:63": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:65": {
+   "first": null,
+   "last": 60,
+   "chosen": 60
+  },
+  "7:68": {
+   "first": null,
+   "last": 63,
+   "chosen": 63
+  },
+  "7:70": {
+   "first": null,
+   "last": 65,
+   "chosen": 65
+  },
+  "7:74": {
+   "first": null,
+   "last": 69,
+   "chosen": 69
+  },
+  "7:79": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:83": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:84": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "7:85": {
+   "first": null,
+   "last": 80,
+   "chosen": 80
+  },
+  "7:86": {
+   "first": null,
+   "last": 81,
+   "chosen": 81
+  },
+  "7:88": {
+   "first": null,
+   "last": 83,
+   "chosen": 83
+  },
+  "7:90": {
+   "first": null,
+   "last": 85,
+   "chosen": 85
+  },
+  "7:92": {
+   "first": null,
+   "last": 87,
+   "chosen": 87
+  },
+  "7:94": {
+   "first": null,
+   "last": 89,
+   "chosen": 89
+  },
+  "7:97": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:101": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "7:106": {
+   "first": null,
+   "last": 101,
+   "chosen": 101
+  },
+  "7:107": {
+   "first": null,
+   "last": 102,
+   "chosen": 102
+  },
+  "7:108": {
+   "first": null,
+   "last": 103,
+   "chosen": 103
+  },
+  "7:109": {
+   "first": null,
+   "last": 104,
+   "chosen": 104
+  },
+  "7:113": {
+   "first": null,
+   "last": 108,
+   "chosen": 108
+  },
+  "7:117": {
+   "first": null,
+   "last": 112,
+   "chosen": 112
+  },
+  "7:121": {
+   "first": null,
+   "last": 116,
+   "chosen": 116
+  },
+  "7:122": {
+   "first": null,
+   "last": 117,
+   "chosen": 117
+  },
+  "7:126": {
+   "first": null,
+   "last": 121,
+   "chosen": 121
+  },
+  "7:130": {
+   "first": null,
+   "last": 125,
+   "chosen": 125
+  },
+  "7:133": {
+   "first": null,
+   "last": 128,
+   "chosen": 128
+  },
+  "8:9": {
+   "first": null,
+   "last": 10,
+   "chosen": 10
+  },
+  "8:11": {
+   "first": null,
+   "last": 12,
+   "chosen": 12
+  },
+  "8:13": {
+   "first": null,
+   "last": 14,
+   "chosen": 14
+  },
+  "8:15": {
+   "first": null,
+   "last": 16,
+   "chosen": 16
+  },
+  "8:17": {
+   "first": null,
+   "last": 18,
+   "chosen": 18
+  },
+  "8:21": {
+   "first": null,
+   "last": 22,
+   "chosen": 22
+  },
+  "8:25": {
+   "first": null,
+   "last": 26,
+   "chosen": 26
+  },
+  "8:29": {
+   "first": null,
+   "last": 30,
+   "chosen": 30
+  },
+  "8:30": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "8:31": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "8:32": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "8:34": {
+   "first": null,
+   "last": 35,
+   "chosen": 35
+  },
+  "8:36": {
+   "first": null,
+   "last": 37,
+   "chosen": 37
+  },
+  "8:38": {
+   "first": null,
+   "last": 39,
+   "chosen": 39
+  },
+  "8:40": {
+   "first": null,
+   "last": 41,
+   "chosen": 41
+  },
+  "8:44": {
+   "first": null,
+   "last": 45,
+   "chosen": 45
+  },
+  "8:48": {
+   "first": null,
+   "last": 49,
+   "chosen": 49
+  },
+  "8:52": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "8:53": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "8:54": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "8:55": {
+   "first": null,
+   "last": 56,
+   "chosen": 56
+  },
+  "8:58": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "8:60": {
+   "first": null,
+   "last": 61,
+   "chosen": 61
+  },
+  "8:62": {
+   "first": null,
+   "last": 63,
+   "chosen": 63
+  },
+  "8:64": {
+   "first": null,
+   "last": 65,
+   "chosen": 65
+  },
+  "8:69": {
+   "first": null,
+   "last": 70,
+   "chosen": 70
+  },
+  "8:73": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "8:77": {
+   "first": null,
+   "last": 78,
+   "chosen": 78
+  },
+  "8:78": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "8:79": {
+   "first": null,
+   "last": 80,
+   "chosen": 80
+  },
+  "8:80": {
+   "first": null,
+   "last": 81,
+   "chosen": 81
+  },
+  "8:81": {
+   "first": null,
+   "last": 82,
+   "chosen": 82
+  },
+  "8:83": {
+   "first": null,
+   "last": 84,
+   "chosen": 84
+  },
+  "8:85": {
+   "first": null,
+   "last": 86,
+   "chosen": 86
+  },
+  "8:87": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "8:92": {
+   "first": null,
+   "last": 93,
+   "chosen": 93
+  },
+  "8:96": {
+   "first": null,
+   "last": 97,
+   "chosen": 97
+  },
+  "8:100": {
+   "first": null,
+   "last": 101,
+   "chosen": 101
+  },
+  "8:101": {
+   "first": null,
+   "last": 102,
+   "chosen": 102
+  },
+  "8:102": {
+   "first": null,
+   "last": 103,
+   "chosen": 103
+  },
+  "8:103": {
+   "first": null,
+   "last": 104,
+   "chosen": 104
+  },
+  "8:107": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "8:111": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "8:115": {
+   "first": null,
+   "last": 116,
+   "chosen": 116
+  },
+  "8:116": {
+   "first": null,
+   "last": 117,
+   "chosen": 117
+  },
+  "8:120": {
+   "first": null,
+   "last": 121,
+   "chosen": 121
+  },
+  "8:124": {
+   "first": null,
+   "last": 125,
+   "chosen": 125
+  },
+  "8:128": {
+   "first": null,
+   "last": 129,
+   "chosen": 129
+  },
+  "10:3": {
+   "first": null,
+   "last": 10,
+   "chosen": 10
+  },
+  "10:5": {
+   "first": null,
+   "last": 12,
+   "chosen": 12
+  },
+  "10:7": {
+   "first": null,
+   "last": 14,
+   "chosen": 14
+  },
+  "10:9": {
+   "first": null,
+   "last": 16,
+   "chosen": 16
+  },
+  "10:10": {
+   "first": null,
+   "last": 17,
+   "chosen": 17
+  },
+  "10:14": {
+   "first": null,
+   "last": 21,
+   "chosen": 21
+  },
+  "10:18": {
+   "first": null,
+   "last": 25,
+   "chosen": 25
+  },
+  "10:23": {
+   "first": null,
+   "last": 30,
+   "chosen": 30
+  },
+  "10:24": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "10:25": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "10:26": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "10:28": {
+   "first": null,
+   "last": 35,
+   "chosen": 35
+  },
+  "10:30": {
+   "first": null,
+   "last": 37,
+   "chosen": 37
+  },
+  "10:32": {
+   "first": null,
+   "last": 39,
+   "chosen": 39
+  },
+  "10:34": {
+   "first": null,
+   "last": 41,
+   "chosen": 41
+  },
+  "10:38": {
+   "first": null,
+   "last": 45,
+   "chosen": 45
+  },
+  "10:42": {
+   "first": null,
+   "last": 49,
+   "chosen": 49
+  },
+  "10:47": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "10:48": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "10:49": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "10:50": {
+   "first": null,
+   "last": 57,
+   "chosen": 57
+  },
+  "10:51": {
+   "first": null,
+   "last": 58,
+   "chosen": 58
+  },
+  "10:53": {
+   "first": null,
+   "last": 60,
+   "chosen": 60
+  },
+  "10:55": {
+   "first": null,
+   "last": 62,
+   "chosen": 62
+  },
+  "10:57": {
+   "first": null,
+   "last": 64,
+   "chosen": 64
+  },
+  "10:61": {
+   "first": null,
+   "last": 68,
+   "chosen": 68
+  },
+  "10:65": {
+   "first": null,
+   "last": 72,
+   "chosen": 72
+  },
+  "10:70": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "10:71": {
+   "first": null,
+   "last": 78,
+   "chosen": 78
+  },
+  "10:72": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "10:73": {
+   "first": null,
+   "last": 80,
+   "chosen": 80
+  },
+  "10:75": {
+   "first": null,
+   "last": 82,
+   "chosen": 82
+  },
+  "10:77": {
+   "first": null,
+   "last": 84,
+   "chosen": 84
+  },
+  "10:79": {
+   "first": null,
+   "last": 86,
+   "chosen": 86
+  },
+  "10:81": {
+   "first": null,
+   "last": 88,
+   "chosen": 88
+  },
+  "10:85": {
+   "first": null,
+   "last": 92,
+   "chosen": 92
+  },
+  "10:90": {
+   "first": null,
+   "last": 97,
+   "chosen": 97
+  },
+  "10:94": {
+   "first": null,
+   "last": 101,
+   "chosen": 101
+  },
+  "10:95": {
+   "first": null,
+   "last": 102,
+   "chosen": 102
+  },
+  "10:96": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "10:97": {
+   "first": null,
+   "last": 104,
+   "chosen": 104
+  },
+  "10:101": {
+   "first": null,
+   "last": 108,
+   "chosen": 108
+  },
+  "10:105": {
+   "first": null,
+   "last": 112,
+   "chosen": 112
+  },
+  "10:109": {
+   "first": null,
+   "last": 116,
+   "chosen": 116
+  },
+  "10:110": {
+   "first": null,
+   "last": 117,
+   "chosen": 117
+  },
+  "10:114": {
+   "first": null,
+   "last": 121,
+   "chosen": 121
+  },
+  "10:118": {
+   "first": null,
+   "last": 125,
+   "chosen": 125
+  },
+  "10:122": {
+   "first": null,
+   "last": 129,
+   "chosen": 129
+  },
+  "11:3": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:5": {
+   "first": null,
+   "last": 12,
+   "chosen": 12
+  },
+  "11:7": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:9": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:11": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:14": {
+   "first": null,
+   "last": 21,
+   "chosen": 21
+  },
+  "11:18": {
+   "first": null,
+   "last": 25,
+   "chosen": 25
+  },
+  "11:23": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:24": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "11:25": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "11:26": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "11:28": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:30": {
+   "first": null,
+   "last": 37,
+   "chosen": 37
+  },
+  "11:32": {
+   "first": null,
+   "last": 39,
+   "chosen": 39
+  },
+  "11:34": {
+   "first": null,
+   "last": 41,
+   "chosen": 41
+  },
+  "11:38": {
+   "first": null,
+   "last": 45,
+   "chosen": 45
+  },
+  "11:42": {
+   "first": null,
+   "last": 49,
+   "chosen": 49
+  },
+  "11:47": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:48": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "11:49": {
+   "first": null,
+   "last": 56,
+   "chosen": 56
+  },
+  "11:50": {
+   "first": null,
+   "last": 57,
+   "chosen": 57
+  },
+  "11:52": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "11:54": {
+   "first": null,
+   "last": 61,
+   "chosen": 61
+  },
+  "11:56": {
+   "first": null,
+   "last": 63,
+   "chosen": 63
+  },
+  "11:58": {
+   "first": null,
+   "last": 65,
+   "chosen": 65
+  },
+  "11:62": {
+   "first": null,
+   "last": 69,
+   "chosen": 69
+  },
+  "11:66": {
+   "first": null,
+   "last": 73,
+   "chosen": 73
+  },
+  "11:70": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "11:71": {
+   "first": null,
+   "last": 78,
+   "chosen": 78
+  },
+  "11:72": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "11:73": {
+   "first": null,
+   "last": 80,
+   "chosen": 80
+  },
+  "11:75": {
+   "first": null,
+   "last": 82,
+   "chosen": 82
+  },
+  "11:77": {
+   "first": null,
+   "last": 84,
+   "chosen": 84
+  },
+  "11:79": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:80": {
+   "first": null,
+   "last": 87,
+   "chosen": 87
+  },
+  "11:84": {
+   "first": null,
+   "last": 91,
+   "chosen": 91
+  },
+  "11:89": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "11:93": {
+   "first": null,
+   "last": 100,
+   "chosen": 100
+  },
+  "11:94": {
+   "first": null,
+   "last": 101,
+   "chosen": 101
+  },
+  "11:95": {
+   "first": null,
+   "last": 102,
+   "chosen": 102
+  },
+  "12:11": {
+   "first": null,
+   "last": 10,
+   "chosen": 10
+  },
+  "12:13": {
+   "first": null,
+   "last": 12,
+   "chosen": 12
+  },
+  "12:15": {
+   "first": null,
+   "last": 14,
+   "chosen": 14
+  },
+  "12:16": {
+   "first": null,
+   "last": 15,
+   "chosen": 15
+  },
+  "12:17": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:21": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:24": {
+   "first": null,
+   "last": 23,
+   "chosen": 23
+  },
+  "12:28": {
+   "first": null,
+   "last": 27,
+   "chosen": 27
+  },
+  "12:29": {
+   "first": null,
+   "last": 28,
+   "chosen": 28
+  },
+  "12:30": {
+   "first": null,
+   "last": 29,
+   "chosen": 29
+  },
+  "12:31": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:32": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "12:34": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "12:36": {
+   "first": null,
+   "last": 35,
+   "chosen": 35
+  },
+  "12:37": {
+   "first": null,
+   "last": 36,
+   "chosen": 36
+  },
+  "12:43": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:47": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:51": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:52": {
+   "first": null,
+   "last": 51,
+   "chosen": 51
+  },
+  "12:53": {
+   "first": null,
+   "last": 52,
+   "chosen": 52
+  },
+  "12:54": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "12:55": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:57": {
+   "first": null,
+   "last": 56,
+   "chosen": 56
+  },
+  "12:59": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:60": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "12:64": {
+   "first": null,
+   "last": 63,
+   "chosen": 63
+  },
+  "12:67": {
+   "first": null,
+   "last": 66,
+   "chosen": 66
+  },
+  "12:72": {
+   "first": null,
+   "last": 71,
+   "chosen": 71
+  },
+  "12:73": {
+   "first": null,
+   "last": 72,
+   "chosen": 72
+  },
+  "12:74": {
+   "first": null,
+   "last": 73,
+   "chosen": 73
+  },
+  "12:75": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:76": {
+   "first": null,
+   "last": 75,
+   "chosen": 75
+  },
+  "12:78": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "12:80": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "12:81": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:84": {
+   "first": null,
+   "last": 83,
+   "chosen": 83
+  },
+  "12:89": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:93": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "12:94": {
+   "first": null,
+   "last": 93,
+   "chosen": 93
+  },
+  "12:95": {
+   "first": null,
+   "last": 94,
+   "chosen": 94
+  },
+  "13:11": {
+   "first": null,
+   "last": 10,
+   "chosen": 10
+  },
+  "13:12": {
+   "first": null,
+   "last": 11,
+   "chosen": 11
+  },
+  "13:14": {
+   "first": null,
+   "last": 13,
+   "chosen": 13
+  },
+  "13:16": {
+   "first": null,
+   "last": 15,
+   "chosen": 15
+  },
+  "13:17": {
+   "first": null,
+   "last": 16,
+   "chosen": 16
+  },
+  "13:21": {
+   "first": null,
+   "last": 20,
+   "chosen": 20
+  },
+  "13:25": {
+   "first": null,
+   "last": 24,
+   "chosen": 24
+  },
+  "13:30": {
+   "first": null,
+   "last": 29,
+   "chosen": 29
+  },
+  "13:31": {
+   "first": null,
+   "last": 30,
+   "chosen": 30
+  },
+  "13:32": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "13:34": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "13:36": {
+   "first": null,
+   "last": 35,
+   "chosen": 35
+  },
+  "13:38": {
+   "first": null,
+   "last": 37,
+   "chosen": 37
+  },
+  "13:39": {
+   "first": null,
+   "last": 38,
+   "chosen": 38
+  },
+  "13:43": {
+   "first": null,
+   "last": 42,
+   "chosen": 42
+  },
+  "13:47": {
+   "first": null,
+   "last": 46,
+   "chosen": 46
+  },
+  "13:52": {
+   "first": null,
+   "last": 51,
+   "chosen": 51
+  },
+  "13:53": {
+   "first": null,
+   "last": 52,
+   "chosen": 52
+  },
+  "13:54": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "13:55": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "13:56": {
+   "first": null,
+   "last": 55,
+   "chosen": 55
+  },
+  "13:58": {
+   "first": null,
+   "last": 57,
+   "chosen": 57
+  },
+  "13:60": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "13:61": {
+   "first": null,
+   "last": 60,
+   "chosen": 60
+  },
+  "13:65": {
+   "first": null,
+   "last": 64,
+   "chosen": 64
+  },
+  "13:69": {
+   "first": null,
+   "last": 68,
+   "chosen": 68
+  },
+  "13:74": {
+   "first": null,
+   "last": 73,
+   "chosen": 73
+  },
+  "13:75": {
+   "first": null,
+   "last": 74,
+   "chosen": 74
+  },
+  "13:76": {
+   "first": null,
+   "last": 75,
+   "chosen": 75
+  },
+  "13:77": {
+   "first": null,
+   "last": 76,
+   "chosen": 76
+  },
+  "13:78": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "13:80": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "13:82": {
+   "first": null,
+   "last": 81,
+   "chosen": 81
+  },
+  "13:83": {
+   "first": null,
+   "last": 82,
+   "chosen": 82
+  },
+  "13:86": {
+   "first": null,
+   "last": 85,
+   "chosen": 85
+  },
+  "13:90": {
+   "first": null,
+   "last": 89,
+   "chosen": 89
+  },
+  "13:95": {
+   "first": null,
+   "last": 94,
+   "chosen": 94
+  },
+  "13:96": {
+   "first": null,
+   "last": 95,
+   "chosen": 95
+  },
+  "13:97": {
+   "first": null,
+   "last": 96,
+   "chosen": 96
+  },
+  "14:11": {
+   "first": null,
+   "last": 10,
+   "chosen": 10
+  },
+  "14:12": {
+   "first": null,
+   "last": 11,
+   "chosen": 11
+  },
+  "14:14": {
+   "first": null,
+   "last": 13,
+   "chosen": 13
+  },
+  "14:16": {
+   "first": null,
+   "last": 15,
+   "chosen": 15
+  },
+  "14:17": {
+   "first": null,
+   "last": 16,
+   "chosen": 16
+  },
+  "14:21": {
+   "first": null,
+   "last": 20,
+   "chosen": 20
+  },
+  "14:26": {
+   "first": null,
+   "last": 25,
+   "chosen": 25
+  },
+  "14:30": {
+   "first": null,
+   "last": 29,
+   "chosen": 29
+  },
+  "14:31": {
+   "first": null,
+   "last": 30,
+   "chosen": 30
+  },
+  "14:32": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "14:33": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "14:34": {
+   "first": null,
+   "last": 33,
+   "chosen": 33
+  },
+  "14:36": {
+   "first": null,
+   "last": 35,
+   "chosen": 35
+  },
+  "14:38": {
+   "first": null,
+   "last": 37,
+   "chosen": 37
+  },
+  "14:39": {
+   "first": null,
+   "last": 38,
+   "chosen": 38
+  },
+  "14:43": {
+   "first": null,
+   "last": 42,
+   "chosen": 42
+  },
+  "14:47": {
+   "first": null,
+   "last": 46,
+   "chosen": 46
+  },
+  "14:51": {
+   "first": null,
+   "last": 50,
+   "chosen": 50
+  },
+  "14:52": {
+   "first": null,
+   "last": 51,
+   "chosen": 51
+  },
+  "14:53": {
+   "first": null,
+   "last": 52,
+   "chosen": 52
+  },
+  "14:54": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "14:55": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "14:57": {
+   "first": null,
+   "last": 56,
+   "chosen": 56
+  },
+  "14:59": {
+   "first": null,
+   "last": 58,
+   "chosen": 58
+  },
+  "14:60": {
+   "first": null,
+   "last": 59,
+   "chosen": 59
+  },
+  "14:64": {
+   "first": null,
+   "last": 63,
+   "chosen": 63
+  },
+  "14:68": {
+   "first": null,
+   "last": 67,
+   "chosen": 67
+  },
+  "14:73": {
+   "first": null,
+   "last": 72,
+   "chosen": 72
+  },
+  "14:74": {
+   "first": null,
+   "last": 73,
+   "chosen": 73
+  },
+  "14:75": {
+   "first": null,
+   "last": 74,
+   "chosen": 74
+  },
+  "14:76": {
+   "first": null,
+   "last": 75,
+   "chosen": 75
+  },
+  "14:78": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "14:80": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "14:82": {
+   "first": null,
+   "last": 81,
+   "chosen": 81
+  },
+  "14:83": {
+   "first": null,
+   "last": 82,
+   "chosen": 82
+  },
+  "14:87": {
+   "first": null,
+   "last": 86,
+   "chosen": 86
+  },
+  "14:91": {
+   "first": null,
+   "last": 90,
+   "chosen": 90
+  },
+  "14:95": {
+   "first": null,
+   "last": 94,
+   "chosen": 94
+  },
+  "14:96": {
+   "first": null,
+   "last": 95,
+   "chosen": 95
+  },
+  "14:97": {
+   "first": null,
+   "last": 96,
+   "chosen": 96
+  },
+  "15:11": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:12": {
+   "first": null,
+   "last": 11,
+   "chosen": 11
+  },
+  "15:14": {
+   "first": null,
+   "last": 13,
+   "chosen": 13
+  },
+  "15:16": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:17": {
+   "first": null,
+   "last": 16,
+   "chosen": 16
+  },
+  "15:21": {
+   "first": null,
+   "last": 20,
+   "chosen": 20
+  },
+  "15:25": {
+   "first": null,
+   "last": 24,
+   "chosen": 24
+  },
+  "15:29": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:30": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:31": {
+   "first": null,
+   "last": 30,
+   "chosen": 30
+  },
+  "15:32": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "15:33": {
+   "first": null,
+   "last": 32,
+   "chosen": 32
+  },
+  "15:35": {
+   "first": null,
+   "last": 34,
+   "chosen": 34
+  },
+  "15:37": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:38": {
+   "first": null,
+   "last": 37,
+   "chosen": 37
+  },
+  "15:41": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:45": {
+   "first": null,
+   "last": 44,
+   "chosen": 44
+  },
+  "15:50": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:51": {
+   "first": null,
+   "last": 50,
+   "chosen": 50
+  },
+  "15:52": {
+   "first": null,
+   "last": 51,
+   "chosen": 51
+  },
+  "15:53": {
+   "first": null,
+   "last": 52,
+   "chosen": 52
+  },
+  "15:55": {
+   "first": null,
+   "last": 54,
+   "chosen": 54
+  },
+  "15:57": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:58": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:59": {
+   "first": null,
+   "last": 58,
+   "chosen": 58
+  },
+  "15:63": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:67": {
+   "first": null,
+   "last": 66,
+   "chosen": 66
+  },
+  "15:72": {
+   "first": null,
+   "last": 71,
+   "chosen": 71
+  },
+  "15:73": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:74": {
+   "first": null,
+   "last": 73,
+   "chosen": 73
+  },
+  "15:75": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "15:76": {
+   "first": null,
+   "last": 75,
+   "chosen": 75
+  },
+  "15:78": {
+   "first": null,
+   "last": 77,
+   "chosen": 77
+  },
+  "15:80": {
+   "first": null,
+   "last": 79,
+   "chosen": 79
+  },
+  "15:81": {
+   "first": null,
+   "last": 80,
+   "chosen": 80
+  },
+  "15:85": {
+   "first": null,
+   "last": 84,
+   "chosen": 84
+  },
+  "15:89": {
+   "first": null,
+   "last": 88,
+   "chosen": 88
+  },
+  "15:94": {
+   "first": null,
+   "last": 93,
+   "chosen": 93
+  },
+  "15:95": {
+   "first": null,
+   "last": 94,
+   "chosen": 94
+  },
+  "15:96": {
+   "first": null,
+   "last": 95,
+   "chosen": 95
+  },
+  "17:10": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "17:11": {
+   "first": 11,
+   "last": null,
+   "chosen": 11
+  },
+  "17:13": {
+   "first": 13,
+   "last": null,
+   "chosen": 13
+  },
+  "17:15": {
+   "first": null,
+   "last": 15,
+   "chosen": 15
+  },
+  "17:16": {
+   "first": 16,
+   "last": null,
+   "chosen": 16
+  },
+  "17:20": {
+   "first": 20,
+   "last": null,
+   "chosen": 20
+  },
+  "17:24": {
+   "first": 24,
+   "last": null,
+   "chosen": 24
+  },
+  "17:28": {
+   "first": null,
+   "last": 28,
+   "chosen": 28
+  },
+  "17:29": {
+   "first": null,
+   "last": 29,
+   "chosen": 29
+  },
+  "17:30": {
+   "first": 30,
+   "last": null,
+   "chosen": 30
+  },
+  "17:31": {
+   "first": null,
+   "last": 31,
+   "chosen": 31
+  },
+  "17:32": {
+   "first": 32,
+   "last": null,
+   "chosen": 32
+  },
+  "17:34": {
+   "first": 34,
+   "last": null,
+   "chosen": 34
+  },
+  "17:36": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "17:37": {
+   "first": 37,
+   "last": null,
+   "chosen": 37
+  },
+  "17:41": {
+   "first": 41,
+   "last": null,
+   "chosen": 41
+  },
+  "17:45": {
+   "first": 45,
+   "last": null,
+   "chosen": 45
+  },
+  "17:50": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "17:51": {
+   "first": null,
+   "last": 51,
+   "chosen": 51
+  },
+  "17:52": {
+   "first": 52,
+   "last": null,
+   "chosen": 52
+  },
+  "17:53": {
+   "first": null,
+   "last": 53,
+   "chosen": 53
+  },
+  "17:54": {
+   "first": 54,
+   "last": null,
+   "chosen": 54
+  },
+  "17:56": {
+   "first": 56,
+   "last": null,
+   "chosen": 56
+  },
+  "17:58": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "17:59": {
+   "first": 59,
+   "last": null,
+   "chosen": 59
+  },
+  "17:63": {
+   "first": 63,
+   "last": null,
+   "chosen": 63
+  },
+  "17:67": {
+   "first": 67,
+   "last": null,
+   "chosen": 67
+  },
+  "17:72": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "17:73": {
+   "first": null,
+   "last": 73,
+   "chosen": 73
+  },
+  "17:74": {
+   "first": 74,
+   "last": null,
+   "chosen": 74
+  },
+  "17:75": {
+   "first": null,
+   "last": 75,
+   "chosen": 75
+  },
+  "17:76": {
+   "first": 76,
+   "last": null,
+   "chosen": 76
+  },
+  "17:78": {
+   "first": 78,
+   "last": null,
+   "chosen": 78
+  },
+  "17:80": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "17:81": {
+   "first": 81,
+   "last": null,
+   "chosen": 81
+  },
+  "17:85": {
+   "first": 85,
+   "last": null,
+   "chosen": 85
+  },
+  "17:89": {
+   "first": 89,
+   "last": null,
+   "chosen": 89
+  },
+  "17:93": {
+   "first": null,
+   "last": null,
+   "chosen": null
+  },
+  "17:94": {
+   "first": null,
+   "last": 94,
+   "chosen": 94
+  },
+  "17:95": {
+   "first": 95,
+   "last": null,
+   "chosen": 95
+  }
+ }
+}

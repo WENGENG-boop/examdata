@@ -80,14 +80,17 @@ def _compile(nodes: Iterable[dict[str, Any]], parent_code: Optional[str] = None)
 _COMPILED: dict[str, list[_Compiled]] = {code: _compile(nodes) for code, nodes in SEEDS.items()}
 
 
-def sync_taxonomy(session: Session) -> dict[str, int]:
+def sync_taxonomy(session: Session, *, subject_codes: Optional[Iterable[str]] = None) -> dict[str, int]:
     """把种子知识点写库。幂等：按 (board_id, code) 更新而不是重复插入。"""
     board = session.scalar(select(Board).where(Board.key == "cambridge"))
     if board is None:
         return {"nodes": 0, "subjects": 0}
 
     stats = {"nodes": 0, "subjects": 0}
+    allowed_codes = None if subject_codes is None else set(subject_codes)
     for subject_code, nodes in SEEDS.items():
+        if allowed_codes is not None and subject_code not in allowed_codes:
+            continue
         # Subject 通过 qualification 归属考试局，没有直接的 board_id
         subject = session.scalar(
             select(Subject)
@@ -148,6 +151,8 @@ def _upsert(
             )
         )
         return 1
+    if existing.source not in {"seed", "auto"}:
+        return 0
     existing.name = name
     existing.node_type = node_type
     existing.parent_id = parent_id
@@ -231,6 +236,7 @@ def assign_taxonomy(
     rows = session.execute(_question_subject_stmt(subject_code, limit)).all()
     for question, subj_code in rows:
         stats["scanned"] += 1
+        manual_node_ids: set[int] = set()
         if replace:
             for old in session.scalars(
                 select(QuestionTaxonomy).where(
@@ -242,6 +248,15 @@ def assign_taxonomy(
             # 必须先 flush：删除只在会话里排队，紧接着的 INSERT 会在同一个
             # 事务里与尚未落地的旧行撞上 (question_id, node_id) 唯一约束。
             session.flush()
+            # 唯一约束不含 source：manual 行不能删，自动结果必须避开这些节点。
+            manual_node_ids = set(
+                session.scalars(
+                    select(QuestionTaxonomy.node_id).where(
+                        QuestionTaxonomy.question_id == question.id,
+                        QuestionTaxonomy.source == "manual",
+                    )
+                ).all()
+            )
         else:
             manual = session.scalar(
                 select(QuestionTaxonomy.id).where(
@@ -276,7 +291,7 @@ def assign_taxonomy(
                 if parent is not None:
                     targets.append(parent)
             for t in targets:
-                if t.id in seen:
+                if t.id in seen or t.id in manual_node_ids:
                     continue
                 seen.add(t.id)
                 session.add(

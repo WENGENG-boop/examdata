@@ -1,0 +1,134 @@
+{
+  "proposal_version": "b07r2-merge-proposal/1",
+  "packet": "B07R2",
+  "run_id": "b07-reviewfix-20261007-774e4dad",
+  "generated_by": "private review-fix freeze step; values transcribed from evidence/step6_* and the tools/b07r2_provenance_recheck.py output",
+  "generated_at_utc": "2026-10-07T04:49:20+00:00",
+  "mode": "PRIVATE_REVIEW_FIX_ONLY",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "boundary": "produced inside integration-staging/** from the frozen, digest-verified B07 v1 candidate; the original project was never read, imported, modified or executed; all seven gates remain closed; a stopped or completed session does not release its paths",
+  "derived_from": {
+    "candidate_manifest": "integration-staging/runtime/b07-reviewfix-20261007-774e4dad/candidates/b07-operations-v2/B07R2_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "920f41c1b98199b087a4a8c7dea918c23d0f8144afdfebb87bfb2b2e9bcec9ce",
+    "candidate_tree": {
+      "files": 222,
+      "excludes": ["B07R2_CANDIDATE_MANIFEST.json"],
+      "sha256": "8171cf1c67c7891fc4c3354a482fb65600886aa0b5b88f9a1a546333c738fa48"
+    },
+    "candidate_tree_digest_rule": "sha256 over 'path\\0sha256\\n' for every file under the root, sorted by path, excluding __pycache__/.pytest_cache and excluding the named manifest itself",
+    "parent_manifest": "integration-staging/runtime/b07-rehearsal-2026-10-07/candidates/b07-operations-v1/B07_CANDIDATE_MANIFEST.json",
+    "parent_manifest_sha256": "3e7d2a7721b04a1663400ca335ae213c75e7696dbb60c656b938f2c32d061784",
+    "parent_tree": {
+      "files": 221,
+      "excludes": ["B07_CANDIDATE_MANIFEST.json"],
+      "sha256": "5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179"
+    },
+    "parent_tree_including_manifest": {
+      "files": 222,
+      "excludes": [],
+      "sha256": "8dad753d0697dc708b54658aa4492e45954200c51a3cebd58c4ef3161dbf80bf"
+    },
+    "carried_verbatim_tree": {
+      "files": 218,
+      "excludes": [
+        "B07R2_CANDIDATE_MANIFEST.json",
+        "B07_CANDIDATE_MANIFEST.json",
+        "src/examdata/integration/operations/published.py",
+        "src/examdata/integration/operations/jobs.py",
+        "src/examdata/integration/operations/checkpoints.py"
+      ],
+      "sha256": "8d1ab7071a505ae3511651639d1ca8273ef34a844583ffd9391d4323ae6da14a"
+    },
+    "independent_review": {
+      "path": "docs/integration/execution/B07_INDEPENDENT_REVIEW_2026-10-07.md",
+      "sha256": "8673d30e25a1dcd36900aded4b60540c7ccbc2be0ee5354e5f2b29c6c9753498"
+    },
+    "review_results": {
+      "path": "integration-staging/runtime/b07-independent-review-20261007-hf7_6xwr/results.json",
+      "sha256": "34eaa3ad79c65f6e6d0dad26b8beb14bbc85827b3337ff7e30fdf7aadad3ea9c"
+    },
+    "execution_ledger": {
+      "path": "docs/integration/execution/execution-ledger.json",
+      "sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba"
+    }
+  },
+  "changes": [
+    {
+      "path": "src/examdata/integration/operations/published.py",
+      "findings": ["F1", "F2"],
+      "parent_sha256": "54522b9e669c57b9a21564a98d1075f02664611f310cc72868cab793f82a925a",
+      "sha256": "7fbb4f5dd69d0b94a039e5507f820227701b3cecac8a9190b996ddb7a84468ff"
+    },
+    {
+      "path": "src/examdata/integration/operations/jobs.py",
+      "findings": ["F3", "F4"],
+      "parent_sha256": "916ae7b195902856de2521661aaae4bf0dcd940592bf19a315536f9134427839",
+      "sha256": "3b1935c2bba35af565a4307e26b2c3443268bc677fb88ed6b3aa3f565032e2eb"
+    },
+    {
+      "path": "src/examdata/integration/operations/checkpoints.py",
+      "findings": ["F3"],
+      "parent_sha256": "1f49dde5e36ed3aaa8b82af5b83b6fd72821d67808addc34047b3b4db580805b",
+      "sha256": "2e888c6fb36f9655b37a656c8df805808a507801f1d8e31d36b666ba1dd9d279"
+    },
+    {
+      "path": "B07R2_CANDIDATE_MANIFEST.json",
+      "findings": [],
+      "parent_sha256": null,
+      "sha256": "920f41c1b98199b087a4a8c7dea918c23d0f8144afdfebb87bfb2b2e9bcec9ce",
+      "added": true
+    }
+  ],
+  "prior_evidence": {
+    "red_on_frozen_v1": "evidence/step2_frozen_red_run1.log (20 failed, 8 passed, 1 warning)",
+    "green_on_candidate_v2": "evidence/step6_candidate_regression_run1.log (28 passed, 1 warning)",
+    "diff_artifacts": {
+      "patch": "reports/B07R2_DIFF_FROM_V1.patch",
+      "patch_sha256": "cd97823c5ee8c669076499090f5cfd8935e2c3d1dbc272cabe14e235c865319d",
+      "stat": "reports/B07R2_DIFF_FROM_V1.stat.txt",
+      "stat_sha256": "bdfd231d7aa1470b4f61ae32344c0dcb680a3161ba606094db316bba3a4f2875",
+      "matrix": "reports/B07R2_FINDINGS_TO_TESTS_MATRIX.md"
+    }
+  },
+  "preconditions_before_any_merge": [
+    "recompute candidate tree digest spontaneously: expect 222 files / 8171cf1c67c7891fc4c3354a482fb65600886aa0b5b88f9a1a546333c738fa48 (excluding B07R2_CANDIDATE_MANIFEST.json); abort on mismatch",
+    "candidate manifest sha256 must equal 920f41c1b98199b087a4a8c7dea918c23d0f8144afdfebb87bfb2b2e9bcec9ce; abort on mismatch",
+    "frozen parent tree must still equal 221 files / 5df259843b26792910de697b2c646fc413c5b936edf3d95d04baf7afa482c179 and parent manifest 3e7d2a7721b04a1663400ca335ae213c75e7696dbb60c656b938f2c32d061784; abort on mismatch",
+    "execution-ledger.json sha256 must still equal 6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba; abort on mismatch",
+    "the release authority must have opened the required gates (see required_authorizations); this run holds none of them"
+  ],
+  "proposed_steps": [
+    "copy the three files from <candidate>/src/examdata/integration/operations/ over the target and verify each written sha256 equals the change table",
+    "place B07R2_CANDIDATE_MANIFEST.json beside the target's B07_CANDIDATE_MANIFEST.json without altering the latter",
+    "recompute the target tree digest and compare against 8171cf1c67c7891fc4c3354a482fb65600886aa0b5b88f9a1a546333c738fa48 and the carried-verbatim digest 8d1ab7071a505ae3511651639d1ca8273ef34a844583ffd9391d4323ae6da14a",
+    "run the 28-test candidate regression suite against the merged tree (expect 28 passed)",
+    "run the frozen route probe; J_published_statuses_pinned is expected red and may be re-pinned only through an explicitly authorized review change, never silently",
+    "re-run the validator across at least three working directories and record results with fresh evidence paths"
+  ],
+  "postconditions": {
+    "target_tree_digest": "8171cf1c67c7891fc4c3354a482fb65600886aa0b5b88f9a1a546333c738fa48",
+    "carried_verbatim_digest": "8d1ab7071a505ae3511651639d1ca8273ef34a844583ffd9391d4323ae6da14a",
+    "candidate_regression": "28 passed",
+    "probe_expectation": "173/174 ok; J_published_statuses_pinned red by design until the pin is re-reviewed",
+    "no_other_file_changed": true
+  },
+  "required_authorizations": {
+    "note": "none of these is requested or held by this proposal; they are listed so the release authority can decide",
+    "gates": [
+      "original_paths_released",
+      "real_data_write_authorized",
+      "upstream_requests_authorized",
+      "existing_service_cutover_authorized",
+      "remote_deployment_authorized",
+      "original_cleanup_authorized",
+      "cie_resume_authorized"
+    ]
+  },
+  "rollback": {
+    "proposal": "reports/B07R2_ROLLBACK_PROPOSAL.json",
+    "condition": "only on matching candidate hashes; never removes later unrelated edits"
+  },
+  "evidence_index": "reports/B07R2_EVIDENCE_INDEX.json",
+  "final_report": "docs/integration/execution/B07R2_FINAL_REPORT.md",
+  "note": "additive proposal only; previous B07 proposals, reports and completion records (including the earlier review-fix run B07R) are unchanged; nothing was merged or deployed"
+}

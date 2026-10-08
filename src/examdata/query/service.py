@@ -10,13 +10,16 @@
 from __future__ import annotations
 
 import random
+import re
 from dataclasses import dataclass, field
-from typing import Any, Optional
+from typing import Any, Mapping, Optional, Sequence
 
 from sqlalchemy import Select, func, select
 from sqlalchemy.orm import Session
 
+from ..core.config import get_settings
 from ..core.models import (
+    Artifact,
     Asset,
     Board,
     Difficulty,
@@ -39,6 +42,15 @@ from ..core.models import (
     TaxonomyNode,
     ValidationFinding,
 )
+
+
+def _check_page(*, limit: int, offset: int) -> None:
+    """分页参数校验：非法值直接报错，而不是交给数据库（负 limit 在 SQLite 等于不限制）。"""
+    if limit < 1:
+        raise ValueError(f"limit 必须大于等于 1（当前为 {limit}）")
+    if offset < 0:
+        raise ValueError(f"offset 不能为负数（当前为 {offset}）")
+
 
 # --------------------------------------------------------------------------
 # 试卷检索
@@ -63,7 +75,7 @@ class PaperFilter:
     offset: int = 0
 
 
-def _paper_stmt(f: PaperFilter) -> Select:
+def _paper_stmt(f: PaperFilter, *, paginate: bool = True) -> Select:
     stmt = (
         select(Paper, Document, Subject, Board, ExamSeries)
         .join(Document, Document.id == Paper.document_id)
@@ -93,15 +105,15 @@ def _paper_stmt(f: PaperFilter) -> Select:
         stmt = stmt.where(Document.level == f.level)
     if f.doc_type:
         stmt = stmt.where(Document.doc_type == f.doc_type)
-    return (
-        stmt.order_by(Document.year.desc(), Document.paper_code)
-        .limit(f.limit)
-        .offset(f.offset)
-    )
+    stmt = stmt.order_by(Document.year.desc(), Document.paper_code, Paper.id)
+    if not paginate:
+        return stmt
+    return stmt.limit(f.limit).offset(f.offset)
 
 
 def search_papers(session: Session, f: PaperFilter) -> list[dict[str, Any]]:
     """按考试信息检索试卷。"""
+    _check_page(limit=f.limit, offset=f.offset)
     out: list[dict[str, Any]] = []
     for paper, doc, subject, board, series in session.execute(_paper_stmt(f)).all():
         out.append(
@@ -132,10 +144,7 @@ def search_papers(session: Session, f: PaperFilter) -> list[dict[str, Any]]:
 
 def count_papers(session: Session, f: PaperFilter) -> int:
     """满足条件的试卷总数（分页用）。"""
-    import dataclasses
-
-    counting = dataclasses.replace(f, limit=100000, offset=0)
-    inner = _paper_stmt(counting).subquery()
+    inner = _paper_stmt(f, paginate=False).subquery()
     return session.scalar(select(func.count()).select_from(inner)) or 0
 
 
@@ -173,7 +182,7 @@ class QuestionFilter:
     offset: int = 0
 
 
-def _question_stmt(f: QuestionFilter) -> Select:
+def _question_stmt(f: QuestionFilter, *, paginate: bool = True) -> Select:
     stmt = (
         select(Question, Paper, Document, Board, Subject)
         .join(Paper, Paper.id == Question.paper_id)
@@ -209,23 +218,41 @@ def _question_stmt(f: QuestionFilter) -> Select:
     if f.marks_max is not None:
         stmt = stmt.where(Question.marks <= f.marks_max)
     if f.keyword:
-        stmt = stmt.where(Question.stem_text.ilike(f"%{f.keyword}%"))
-    if f.taxonomy_code:
-        stmt = (
-            stmt.join(QuestionTaxonomy, QuestionTaxonomy.question_id == Question.id)
-            .join(TaxonomyNode, TaxonomyNode.id == QuestionTaxonomy.node_id)
-            .where(TaxonomyNode.code == f.taxonomy_code)
+        escaped = (
+            f.keyword.replace("\\", "\\\\")
+            .replace("%", r"\%")
+            .replace("_", r"\_")
         )
+        stmt = stmt.where(Question.stem_text.ilike(f"%{escaped}%", escape="\\"))
+    if f.taxonomy_code or f.taxonomy_source:
+        taxonomy = select(QuestionTaxonomy.id).where(
+            QuestionTaxonomy.question_id == Question.id
+        )
+        if f.taxonomy_code:
+            taxonomy = taxonomy.join(
+                TaxonomyNode, TaxonomyNode.id == QuestionTaxonomy.node_id
+            ).where(TaxonomyNode.code == f.taxonomy_code)
+            # 标签 code 只在 board 内唯一：给定 board 时必须把标签一起限定到
+            # 该 board，否则别的 board 上的同名 code 会把题目带进来。
+            # board_id 为空的旧节点保持原有行为，不因这次收窄而丢结果。
+            if f.board:
+                taxonomy = taxonomy.where(
+                    (TaxonomyNode.board_id == Board.id)
+                    | TaxonomyNode.board_id.is_(None)
+                )
         if f.taxonomy_source:
-            stmt = stmt.where(QuestionTaxonomy.source == f.taxonomy_source)
-    if f.difficulty_min is not None or f.difficulty_max is not None:
-        stmt = stmt.join(Difficulty, Difficulty.question_id == Question.id)
+            taxonomy = taxonomy.where(QuestionTaxonomy.source == f.taxonomy_source)
+        stmt = stmt.where(taxonomy.exists())
+    if (f.difficulty_min is not None or f.difficulty_max is not None
+            or f.difficulty_source):
+        difficulty = select(Difficulty.id).where(Difficulty.question_id == Question.id)
         if f.difficulty_min is not None:
-            stmt = stmt.where(Difficulty.value >= f.difficulty_min)
+            difficulty = difficulty.where(Difficulty.value >= f.difficulty_min)
         if f.difficulty_max is not None:
-            stmt = stmt.where(Difficulty.value <= f.difficulty_max)
+            difficulty = difficulty.where(Difficulty.value <= f.difficulty_max)
         if f.difficulty_source:
-            stmt = stmt.where(Difficulty.source == f.difficulty_source)
+            difficulty = difficulty.where(Difficulty.source == f.difficulty_source)
+        stmt = stmt.where(difficulty.exists())
     if f.has_asset is True:
         stmt = stmt.where(Question.id.in_(select(QuestionAsset.question_id).distinct()))
     elif f.has_asset is False:
@@ -236,14 +263,25 @@ def _question_stmt(f: QuestionFilter) -> Select:
         stmt = stmt.where(
             Question.id.not_in(select(OfficialAnswer.question_id).distinct())
         )
-    return stmt.order_by(
-        Document.year.desc(), Document.paper_code, Question.display_order
+    stmt = stmt.order_by(
+        Document.year.desc(),
+        Document.paper_code,
+        Question.paper_id,
+        Question.display_order,
+        Question.id,
     )
+    if not paginate:
+        return stmt
+    return stmt.limit(f.limit).offset(f.offset)
 
 
 def search_questions(session: Session, f: QuestionFilter) -> list[dict[str, Any]]:
     """题目级检索。"""
-    stmt = _question_stmt(f).limit(f.limit).offset(f.offset)
+    _check_page(limit=f.limit, offset=f.offset)
+    return _question_rows(session, _question_stmt(f))
+
+
+def _question_rows(session: Session, stmt: Select) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for q, paper, doc, board, subject in session.execute(stmt).all():
         out.append(
@@ -267,10 +305,7 @@ def search_questions(session: Session, f: QuestionFilter) -> list[dict[str, Any]
 
 
 def count_questions(session: Session, f: QuestionFilter) -> int:
-    import dataclasses
-
-    counting = dataclasses.replace(f, limit=100000, offset=0)
-    inner = _question_stmt(counting).subquery()
+    inner = _question_stmt(f, paginate=False).subquery()
     return session.scalar(select(func.count()).select_from(inner)) or 0
 
 
@@ -378,6 +413,8 @@ def get_question_bundle(session: Session, question_id: int) -> Optional[dict[str
             "stem_text": q.stem_text,
             "parse_confidence": q.parse_confidence,
             "has_override": q.has_override,
+            # 评分标准裁剪区（page/bbox/sha256），没有就是空列表，不改既有键。
+            "ms_regions": list((q.attrs or {}).get("ms_regions") or []),
         },
         "paper": {
             "paper_id": paper.id if paper else None,
@@ -478,6 +515,590 @@ def taxonomy_tree(session: Session, *, board: Optional[str] = None) -> list[dict
     return roots
 
 
+# --------------------------------------------------------------------------
+# 标签（spec 知识点）-> 题目
+# --------------------------------------------------------------------------
+
+
+def _stem_excerpt(text: Optional[str], *, limit: int = 200) -> str:
+    """题干摘要：压平空白并截断，列表页不携带整段正文。"""
+    return " ".join((text or "").split())[:limit]
+
+
+# --------------------------------------------------------------------------
+# 答案解析：评分标准条目 -> 题目
+# --------------------------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class AnswerEntry:
+    """答案解析用到的最小条目视图（id / 题号路径 / 答案文本）。
+
+    `official_answer` 行同样用它承载：`id` 是 official_answer.id，
+    `number_path` 填题目的题号路径。
+    """
+
+    id: int
+    number_path: str
+    answer_text: Optional[str]
+
+
+# 全小写罗马数字字符表；用于同一父题下 (i)(ii)(iii) 这类子标签的数值排序。
+_ROMAN_VALUES = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+
+
+def _entry_text(entry: AnswerEntry) -> Optional[str]:
+    """条目的可用答案文本；空白一律视为缺失。"""
+    text = (entry.answer_text or "").strip()
+    return text or None
+
+
+def _usable_entries(entries: Sequence[AnswerEntry]) -> list[AnswerEntry]:
+    """按 id 去重、按 id 排序后留下有文本的条目。"""
+    unique: dict[int, AnswerEntry] = {}
+    for entry in entries:
+        if _entry_text(entry) is not None:
+            unique.setdefault(entry.id, entry)
+    return [unique[entry_id] for entry_id in sorted(unique)]
+
+
+def _strip_last_group(path: str) -> Optional[str]:
+    """去掉末尾一个括号组：`1(a)(i)` -> `1(a)`；已是顶层题号时返回 None。"""
+    match = re.search(r"\([^()]*\)$", path)
+    if match is None:
+        return None
+    return path[: match.start()] or None
+
+
+def _is_strict_descendant(path: str, ancestor: str) -> bool:
+    """path 是否严格位于 ancestor 之下。
+
+    题号语法是「主号 + 若干括号组」，因此只看前缀不够（`10(a)` 不是 `1` 的子题），
+    剩余部分必须以 `(` 开头且括号组非空。
+    """
+    if not path.startswith(ancestor):
+        return False
+    rest = path[len(ancestor) :]
+    return rest.startswith("(") and len(rest) > 2
+
+
+def _roman_value(token: str) -> Optional[int]:
+    """全小写罗马数字的数值；含非罗马字符时返回 None。"""
+    if not token or any(ch not in _ROMAN_VALUES for ch in token):
+        return None
+    total = 0
+    previous = 0
+    for ch in reversed(token):
+        value = _ROMAN_VALUES[ch]
+        if value < previous:
+            total -= value
+        else:
+            total += value
+            previous = value
+    return total
+
+
+def _ordered_labels(labels: list[str]) -> list[str]:
+    """同一父题下子标签的排序。
+
+    整组都是罗马数字（(i)(ii)(iii)）时按数值，整组都是单字母（(a)(b)(c)）时按字母；
+    其余（数字或混合）按「数字优先、再按文本」兜底。
+    """
+    tokens = [label[1:-1] if label.startswith("(") and label.endswith(")") else label for label in labels]
+    if tokens and all(_roman_value(token) is not None for token in tokens):
+        return sorted(labels, key=lambda label: _roman_value(label[1:-1]) or 0)
+    if tokens and all(len(token) == 1 and token.isascii() and token.isalpha() for token in tokens):
+        return sorted(labels)
+
+    def fallback(label: str) -> tuple[int, int, str]:
+        token = label[1:-1] if label.startswith("(") and label.endswith(")") else label
+        if token.isdigit():
+            return (0, int(token), token)
+        return (1, 0, token)
+
+    return sorted(labels, key=fallback)
+
+
+def _ancestor_paths(number_path: str) -> list[str]:
+    """严格祖先路径，由近到远：`1(a)(i)` -> [`1(a)`, `1`]。"""
+    ancestors: list[str] = []
+    current = _strip_last_group(number_path)
+    while current:
+        ancestors.append(current)
+        current = _strip_last_group(current)
+    return ancestors
+
+
+def _descendant_blocks(root: str, entries: Sequence[AnswerEntry]) -> list[str]:
+    """把 root 之下的条目按题号树序（父先于子）聚合成文本块。
+
+    块内保留子题标签（相对 root 的括号组），例如 `(a) 5`、`(a)(i) 3`。
+    """
+    nodes: dict[str, list[AnswerEntry]] = {}
+    for entry in entries:
+        nodes.setdefault(entry.number_path, []).append(entry)
+    # 中间层可能没有条目（如 root=1 时只有 1(a)(i)），因此要沿父链补齐节点。
+    children: dict[str, set[str]] = {}
+    for path in nodes:
+        current = path
+        parent = _strip_last_group(current)
+        while parent is not None and (parent == root or _is_strict_descendant(parent, root)):
+            children.setdefault(parent, set()).add(current)
+            current = parent
+            parent = _strip_last_group(current)
+
+    blocks: list[str] = []
+
+    def walk(parent: str) -> None:
+        kids = children.get(parent)
+        if not kids:
+            return
+        labels = _ordered_labels(sorted({kid[len(parent) :] for kid in kids}))
+        for label in labels:
+            child = parent + label
+            # 展示用标签相对 root，保留层级：root=1 时子题显示 (b)(i) 而不是 (i)
+            display = child[len(root) :]
+            for entry in sorted(nodes.get(child, ()), key=lambda item: item.id):
+                text = _entry_text(entry)
+                if text is not None:
+                    blocks.append(f"{display} {text}")
+            walk(child)
+
+    walk(root)
+    return blocks
+
+
+def resolve_answer(
+    number_path: str,
+    *,
+    exact_entries: Sequence[AnswerEntry] = (),
+    entries_by_path: Mapping[str, Sequence[AnswerEntry]] = {},
+    official_entries: Sequence[AnswerEntry] = (),
+) -> Optional[dict[str, Any]]:
+    """把一道题解析到答案，优先级 exact -> ancestor -> descendants。
+
+    - exact：题目自己的 official_answer，question_id 直连的 MS 条目，或同路径条目；
+    - ancestor：`entries_by_path` 里最近的严格祖先路径（逐级去掉末尾括号组）；
+    - descendants：`entries_by_path` 里严格位于该题之下的条目，按题号树序聚合。
+
+    `entries_by_path` 只放「匹配到该题所在 QP 文档的 MS」的条目；条目文本为空白视为
+    缺失，继续往下一级兜底。都没有则返回 None。
+    """
+    official = _usable_entries(official_entries)
+    if official:
+        return {
+            "source": "exact",
+            "text": "\n\n".join(_entry_text(entry) or "" for entry in official),
+            "number_path": number_path,
+            "entry_ids": [entry.id for entry in official],
+        }
+    exact = _usable_entries([*exact_entries, *entries_by_path.get(number_path, ())])
+    if exact:
+        return {
+            "source": "exact",
+            "text": "\n\n".join(_entry_text(entry) or "" for entry in exact),
+            "number_path": number_path,
+            "entry_ids": [entry.id for entry in exact],
+        }
+    for ancestor in _ancestor_paths(number_path):
+        matched = _usable_entries(entries_by_path.get(ancestor, ()))
+        if matched:
+            return {
+                "source": "ancestor",
+                "text": "\n\n".join(_entry_text(entry) or "" for entry in matched),
+                "number_path": ancestor,
+                "entry_ids": [entry.id for entry in matched],
+            }
+    descendants = _usable_entries(
+        [
+            entry
+            for path, path_entries in entries_by_path.items()
+            if _is_strict_descendant(path, number_path)
+            for entry in path_entries
+        ]
+    )
+    blocks = _descendant_blocks(number_path, descendants)
+    if blocks:
+        return {
+            "source": "descendants",
+            "text": "\n\n".join(blocks),
+            "number_path": number_path,
+            "entry_ids": [entry.id for entry in descendants],
+        }
+    return None
+
+
+def _page_answers(session: Session, rows: Sequence[Any]) -> list[Optional[dict[str, Any]]]:
+    """按页批量解析答案：先一次性读入该页 QP 文档匹配到的全部 MS 条目，再逐题在内存里解析。
+
+    条目按 QP 文档分组：同一页可能混有多份试卷，只有匹配到该题所在 QP 文档的
+    MS 条目才参与解析，避免同题号条目跨卷串入。
+    """
+    question_ids = [question.id for _link, question, _paper, _doc, _subject, _series, _node in rows]
+    document_ids = sorted({document.id for _link, _q, _paper, document, _s, _se, _n in rows})
+    entries_by_doc: dict[int, dict[str, list[AnswerEntry]]] = {}
+    if document_ids:
+        for doc_id, entry_id, path, text in session.execute(
+            select(
+                MarkScheme.matched_paper_document_id,
+                MarkSchemeEntry.id,
+                MarkSchemeEntry.number_path,
+                MarkSchemeEntry.answer_text,
+            )
+            .join(MarkSchemeEntry, MarkSchemeEntry.mark_scheme_id == MarkScheme.id)
+            .where(MarkScheme.matched_paper_document_id.in_(document_ids))
+            .order_by(MarkSchemeEntry.id)
+        ):
+            if path:
+                entries_by_doc.setdefault(doc_id, {}).setdefault(path, []).append(
+                    AnswerEntry(entry_id, path, text)
+                )
+    exact_by_question: dict[int, list[AnswerEntry]] = {}
+    official_by_question: dict[int, list[AnswerEntry]] = {}
+    if question_ids:
+        for entry_id, question_id, path, text in session.execute(
+            select(
+                MarkSchemeEntry.id,
+                MarkSchemeEntry.question_id,
+                MarkSchemeEntry.number_path,
+                MarkSchemeEntry.answer_text,
+            )
+            .where(MarkSchemeEntry.question_id.in_(question_ids))
+            .order_by(MarkSchemeEntry.id)
+        ):
+            exact_by_question.setdefault(question_id, []).append(
+                AnswerEntry(entry_id, path or "", text)
+            )
+        for answer_id, question_id, content in session.execute(
+            select(OfficialAnswer.id, OfficialAnswer.question_id, OfficialAnswer.content)
+            .where(OfficialAnswer.question_id.in_(question_ids))
+            .order_by(OfficialAnswer.id)
+        ):
+            official_by_question.setdefault(question_id, []).append(
+                AnswerEntry(answer_id, "", content)
+            )
+    return [
+        resolve_answer(
+            question.number_path,
+            exact_entries=exact_by_question.get(question.id, ()),
+            entries_by_path=entries_by_doc.get(document.id, {}),
+            official_entries=official_by_question.get(question.id, ()),
+        )
+        for _link, question, _paper, document, _subject, _series, _node in rows
+    ]
+
+
+def tagged_questions(
+    session: Session,
+    *,
+    board: str,
+    taxonomy_code: str,
+    subject_code: Optional[str] = None,
+    year_from: Optional[int] = None,
+    year_to: Optional[int] = None,
+    session_name: Optional[str] = None,
+    paper_code: Optional[str] = None,
+    min_confidence: Optional[float] = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> dict[str, Any]:
+    """某个 spec 标签下的全部题目（题号、分值、来源试卷）。
+
+    标签是 `taxonomy_node.code`，只在 board 内唯一，因此必须按
+    (board, code) 定位节点；再沿 question_taxonomy -> question -> paper ->
+    document 取回题目与来源试卷。`total` 是过滤后的总数，不受分页影响。
+
+    每题的 `answer` 字段由 `resolve_answer` 按 exact / ancestor / descendants
+    解析评分标准得到，解析所需的 MS 条目按页批量载入。
+    """
+    _check_page(limit=limit, offset=offset)
+    stmt = (
+        select(
+            QuestionTaxonomy,
+            Question,
+            Paper,
+            Document,
+            Subject,
+            ExamSeries,
+            TaxonomyNode,
+        )
+        .join(TaxonomyNode, TaxonomyNode.id == QuestionTaxonomy.node_id)
+        .join(Question, Question.id == QuestionTaxonomy.question_id)
+        .join(Paper, Paper.id == Question.paper_id)
+        .join(Document, Document.id == Paper.document_id)
+        .outerjoin(Subject, Subject.id == Document.subject_id)
+        .outerjoin(ExamSeries, ExamSeries.id == Document.series_id)
+        .join(Board, Board.id == TaxonomyNode.board_id)
+        .where(Board.key == board, TaxonomyNode.code == taxonomy_code)
+    )
+    if subject_code:
+        stmt = stmt.where(Subject.code == subject_code)
+    if year_from is not None:
+        stmt = stmt.where(Document.year >= year_from)
+    if year_to is not None:
+        stmt = stmt.where(Document.year <= year_to)
+    if session_name:
+        stmt = stmt.where(ExamSeries.session == session_name)
+    if paper_code:
+        stmt = stmt.where(Document.paper_code == paper_code)
+    if min_confidence is not None:
+        stmt = stmt.where(QuestionTaxonomy.confidence >= min_confidence)
+
+    total = session.scalar(select(func.count()).select_from(stmt.subquery())) or 0
+    rows = session.execute(
+        stmt.order_by(
+            Document.year.desc(),
+            Document.paper_code,
+            Question.paper_id,
+            Question.display_order,
+            Question.id,
+        )
+        .limit(limit)
+        .offset(offset)
+    ).all()
+    answers = _page_answers(session, rows)
+    items = [
+        {
+            "question_id": question.id,
+            "number_path": question.number_path,
+            "marks": question.marks,
+            "subject_code": subject.code if subject else None,
+            "year": document.year,
+            "session": series.session if series else None,
+            "paper_code": document.paper_code,
+            "taxonomy_code": node.code,
+            "taxonomy_name": node.name,
+            "confidence": link.confidence,
+            "source": link.source,
+            "assigned_by": link.assigned_by,
+            "stem_excerpt": _stem_excerpt(question.stem_text),
+            "answer": answer,
+        }
+        for (link, question, _paper, document, subject, series, node), answer in zip(rows, answers)
+    ]
+    return {"total": total, "items": items}
+
+
+def _node_subject(node: TaxonomyNode, by_id: dict[int, TaxonomyNode]) -> Optional[str]:
+    """节点所属科目：自身 attrs 优先，缺省沿 parent 链继承。
+
+    spec 装载器写 `attrs["subject"]`，Cambridge 种子写
+    `attrs["subject_code"]`，两种键都认，取第一个非空值。
+    """
+    seen: set[int] = set()
+    current: Optional[TaxonomyNode] = node
+    while current is not None and current.id not in seen:
+        seen.add(current.id)
+        attrs = current.attrs or {}
+        value = attrs.get("subject") or attrs.get("subject_code")
+        if value:
+            return value
+        current = by_id.get(current.parent_id) if current.parent_id else None
+    return None
+
+
+def _natural_key(code: str) -> tuple[Any, ...]:
+    """code 的自然排序键：`1.2` 排在 `1.10` 前，且对任意字符串稳定。"""
+    parts: list[tuple[int, Any]] = []
+    for part in re.split(r"(\d+)", code):
+        if not part:
+            continue
+        parts.append((0, int(part)) if part.isdigit() else (1, part))
+    return tuple(parts)
+
+
+def tag_overview(
+    session: Session,
+    *,
+    board: str,
+    subject_code: Optional[str] = None,
+    include_zero: bool = True,
+) -> list[dict[str, Any]]:
+    """某个考试局的 spec 标签树（unit -> topic -> subtopic -> point）。
+
+    每个节点带两个题数：
+
+    - `direct_questions`：直接挂在该标签上的题数；
+    - `subtree_questions`：该标签及其全部后代的题数（"这个标签下可选题数"）。
+
+    计数在 Python 侧沿 parent 链聚合，排序用 code 自然序，结果确定可复现。
+    `include_zero=False` 时剪掉整棵子树都没有题目的标签。
+    """
+    board_id = session.scalar(select(Board.id).where(Board.key == board))
+    if board_id is None:
+        return []
+    nodes = list(
+        session.scalars(
+            select(TaxonomyNode).where(TaxonomyNode.board_id == board_id)
+        ).all()
+    )
+    by_id = {node.id: node for node in nodes}
+    if subject_code:
+        kept = {n.id for n in nodes if _node_subject(n, by_id) == subject_code}
+        nodes = [n for n in nodes if n.id in kept]
+    else:
+        kept = set(by_id)
+    direct = dict(
+        session.execute(
+            select(
+                QuestionTaxonomy.node_id,
+                func.count(func.distinct(QuestionTaxonomy.question_id)),
+            )
+            .join(TaxonomyNode, TaxonomyNode.id == QuestionTaxonomy.node_id)
+            .where(TaxonomyNode.board_id == board_id)
+            .group_by(QuestionTaxonomy.node_id)
+        ).all()
+    )
+
+    children: dict[Optional[int], list[TaxonomyNode]] = {}
+    for node in nodes:
+        parent_id = node.parent_id if node.parent_id in kept else None
+        children.setdefault(parent_id, []).append(node)
+
+    def build(node: TaxonomyNode) -> dict[str, Any]:
+        branch = [
+            build(child)
+            for child in sorted(
+                children.get(node.id, []), key=lambda n: _natural_key(n.code)
+            )
+        ]
+        own = direct.get(node.id, 0)
+        return {
+            "id": node.id,
+            "code": node.code,
+            "name": node.name,
+            "node_type": node.node_type,
+            "direct_questions": own,
+            "subtree_questions": own + sum(
+                child["subtree_questions"] for child in branch
+            ),
+            "children": branch,
+        }
+
+    def prune(node: dict[str, Any]) -> dict[str, Any]:
+        node["children"] = [
+            prune(child)
+            for child in node["children"]
+            if child["subtree_questions"] > 0
+        ]
+        return node
+
+    roots = [
+        build(root)
+        for root in sorted(children.get(None, []), key=lambda n: _natural_key(n.code))
+    ]
+    if include_zero:
+        return roots
+    return [prune(root) for root in roots if root["subtree_questions"] > 0]
+
+
+def _current_revision_pdf(session: Session, document: Document) -> bytes:
+    """文档当前发布版本的原始 PDF 字节。"""
+    if document.current_revision_id is None:
+        raise ValueError(f"文档 {document.id} 没有当前版本（current revision），无法裁剪")
+    revision = session.get(DocumentRevision, document.current_revision_id)
+    if revision is None or revision.document_id != document.id:
+        raise ValueError(f"文档 {document.id} 的当前版本记录缺失或不一致，无法裁剪")
+    artifact = session.get(Artifact, revision.artifact_id)
+    if artifact is None:
+        raise ValueError(f"文档 {document.id} 的当前版本没有内容对象，无法裁剪")
+    path = get_settings().artifacts_dir / artifact.storage_key
+    if not path.is_file():
+        raise ValueError(f"内容对象文件缺失：{path}")
+    return path.read_bytes()
+
+
+def _ms_crops(session: Session, question: Question) -> list[dict[str, Any]]:
+    """按 `question.attrs["ms_regions"]` 存的 sha256/page/bbox 渲染评分标准区。"""
+    regions = list((question.attrs or {}).get("ms_regions") or [])
+    if not regions:
+        raise ValueError(f"题目 {question.id} 没有 ms_regions（评分标准裁剪区），无法裁剪")
+    import pymupdf
+
+    data_cache: dict[str, bytes] = {}
+    crops: list[dict[str, Any]] = []
+    for index, region in enumerate(regions, 1):
+        sha256 = region.get("sha256")
+        if not sha256:
+            raise ValueError(f"题目 {question.id} 的 ms_regions 第 {index} 项缺少 sha256")
+        if sha256 not in data_cache:
+            artifact = session.scalar(select(Artifact).where(Artifact.sha256 == sha256))
+            if artifact is None:
+                raise ValueError(
+                    f"题目 {question.id} 的 ms_regions 指向的内容对象不存在"
+                    f"（sha256={str(sha256)[:12]}）"
+                )
+            path = get_settings().artifacts_dir / artifact.storage_key
+            if not path.is_file():
+                raise ValueError(f"内容对象文件缺失：{path}")
+            data_cache[sha256] = path.read_bytes()
+        page_no = region.get("page")
+        bbox = region.get("bbox")
+        if isinstance(page_no, float) and page_no.is_integer():
+            page_no = int(page_no)
+        if (
+            not isinstance(page_no, int)
+            or not isinstance(bbox, (list, tuple))
+            or len(bbox) != 4
+        ):
+            raise ValueError(
+                f"题目 {question.id} 的 ms_regions 第 {index} 项 page/bbox 不完整"
+            )
+        with pymupdf.open(stream=data_cache[sha256], filetype="pdf") as pdf:
+            if not 1 <= page_no <= len(pdf):
+                raise ValueError(
+                    f"题目 {question.id} 的 ms_regions 第 {index} 项页码 {page_no} "
+                    f"超出文档范围（共 {len(pdf)} 页）"
+                )
+            page = pdf[page_no - 1]
+            # 存储坐标是未旋转的 PDF 用户空间；渲染要用页面的旋转后坐标。
+            clip = pymupdf.Rect(bbox) * page.rotation_matrix
+            pixmap = page.get_pixmap(
+                matrix=pymupdf.Matrix(1.5, 1.5), clip=clip, alpha=False
+            )
+            png = pixmap.tobytes("png")
+            del pixmap
+        crops.append({"page": page_no, "bbox": tuple(float(v) for v in bbox), "png": png})
+    return crops
+
+
+def question_crops(
+    session: Session, question_id: int, *, role: str = "qp"
+) -> list[dict[str, Any]]:
+    """把一道题在原始 PDF 上的裁剪区渲染成 PNG（页从 1 开始，bbox 为 PDF 用户空间）。
+
+    - role="qp"：读文档当前版本的原始 PDF，用左栏编号算法重新定位后裁剪；
+    - role="ms"：按 `question.attrs["ms_regions"]` 存好的 sha256/page/bbox
+      直接渲染——评分标准版式与题目不同，存储区是唯一可信来源。
+
+    缺题、缺版本、缺内容对象或定位失败都抛 `ValueError`，不返回空列表。
+    """
+    if role not in {"qp", "ms"}:
+        raise ValueError(f"role 只能是 'qp' 或 'ms'（当前为 {role!r}）")
+    question = session.get(Question, question_id)
+    if question is None:
+        raise ValueError(f"题目 {question_id} 不存在")
+    if role == "ms":
+        return _ms_crops(session, question)
+
+    paper = session.get(Paper, question.paper_id)
+    document = session.get(Document, paper.document_id) if paper else None
+    if document is None:
+        raise ValueError(f"题目 {question_id} 没有对应的试卷文档，无法裁剪")
+    data = _current_revision_pdf(session, document)
+
+    from ..paperqa.errors import LocationError
+    from ..paperqa.locator import crop_question
+
+    try:
+        crops = crop_question(data, question.number_path, "qp")
+    except LocationError as exc:
+        raise ValueError(
+            f"题目 {question_id}（{question.number_path}）在 PDF 中定位失败：{exc}"
+        ) from exc
+    return [{"page": crop.page, "bbox": crop.bbox, "png": crop.png} for crop in crops]
+
+
 def get_paper_tree(session: Session, paper_id: int) -> Optional[dict[str, Any]]:
     """整张试卷的题目树（含层级、分值、资产数量）。"""
     paper = session.get(Paper, paper_id)
@@ -567,10 +1188,8 @@ def sample_questions(
     - count：抽固定题数；
     - marks_target：累加分值直到达到或超过目标分，返回实际总分。
     """
-    import dataclasses
-
-    wide = dataclasses.replace(f, limit=5000, offset=0)
-    pool = [q for q in search_questions(session, wide) if q["marks"]]
+    pool = [q for q in _question_rows(session, _question_stmt(f, paginate=False))
+            if q["marks"]]
     if not pool:
         return PaperComposition(requested_marks=marks_target)
 

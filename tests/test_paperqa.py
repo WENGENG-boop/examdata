@@ -15,7 +15,8 @@ from examdata.paperqa import query, resolve
 from examdata.paperqa.api import response_payload
 from examdata.paperqa.errors import AccessDenied, InvalidRequest, LocationError, NotFound, UpstreamError
 from examdata.paperqa.locator import locate
-from examdata.paperqa.models import Request
+from examdata.paperqa.models import Document, Request
+from examdata.paperqa.sources.base import download_pdf
 from examdata.paperqa.sources.pearson import public_url
 from examdata.adapters.edexcel.servlet import build_fq, fetch_records
 
@@ -90,7 +91,7 @@ def test_invalid_cie(changes):
         query(**args, fetcher=FakeFetcher())
 
 
-@pytest.mark.parametrize('mode,question,paper', [('question', None, 'wec11'), ('qa', '1', None), ('paper', '1', 'wec11'), ('both', None, None)])
+@pytest.mark.parametrize('mode,question,paper', [('question', None, 'wec11'), ('qa', '1', None), ('paper', '1', 'wec11'), ('both', '1', None)])
 def test_invalid_edexcel(mode, question, paper):
     with pytest.raises(InvalidRequest):
         query('edexcel', 'Economics', 2024, 'Jun', paper, question, mode, fetcher=FakeFetcher())
@@ -250,6 +251,228 @@ def test_fetcher_post_form_redirect_and_robots():
         assert len(requests) == before
 
 
+class TrackingStream(httpx.SyncByteStream):
+    def __init__(self, chunks):
+        self.chunks = chunks
+        self.read_chunks = 0
+        self.closed = False
+
+    def __iter__(self):
+        for chunk in self.chunks:
+            self.read_chunks += 1
+            yield chunk
+
+    def close(self):
+        self.closed = True
+
+
+@pytest.fixture
+def mock_fetcher():
+    settings = Settings(
+        min_host_interval_seconds=0, host_interval_jitter_seconds=0,
+        max_retries=2, retry_backoff_seconds=0, respect_robots=False,
+    )
+    owned = []
+
+    def create(handler):
+        fetcher = Fetcher(settings)
+        fetcher._client.close()
+        fetcher._client = httpx.Client(transport=httpx.MockTransport(handler), follow_redirects=True)
+        owned.append(fetcher)
+        return fetcher
+
+    yield create
+    for fetcher in owned:
+        fetcher.close()
+
+
+@pytest.mark.parametrize('binary', [True, False])
+def test_fetcher_declared_size_rejected_before_read(monkeypatch, mock_fetcher, binary):
+    module = importlib.import_module('examdata.core.fetch')
+    monkeypatch.setattr(module, 'MAX_RESPONSE_BYTES', 8)
+    stream = TrackingStream([b'not consumed'])
+    calls = []
+
+    def handler(request):
+        calls.append(request)
+        return httpx.Response(200, headers={'Content-Length': '9'}, stream=stream)
+
+    result = mock_fetcher(handler).get('https://test.test/large', expect_binary=binary)
+    assert result.status == 200 and not result.ok and result.error
+    assert result.content is None and result.text is None
+    assert result.content_length == 9
+    assert stream.closed and stream.read_chunks == 0
+    assert len(calls) == 1
+
+
+@pytest.mark.parametrize('length', [None, '1', 'invalid', '-1'])
+@pytest.mark.parametrize('binary', [True, False])
+def test_fetcher_actual_size_stops_stream(monkeypatch, mock_fetcher, length, binary):
+    module = importlib.import_module('examdata.core.fetch')
+    monkeypatch.setattr(module, 'MAX_RESPONSE_BYTES', 8)
+    stream = TrackingStream([b'1234', b'56789', b'must not be read'])
+    headers = {} if length is None else {'Content-Length': length}
+    calls = []
+
+    def handler(request):
+        calls.append(request)
+        return httpx.Response(200, headers=headers, stream=stream)
+
+    result = mock_fetcher(handler).get('https://test.test/large', expect_binary=binary)
+    assert result.status == 200 and not result.ok and result.error
+    assert not result.robots_blocked
+    assert result.content is None and result.text is None
+    assert stream.closed and stream.read_chunks == 2
+    assert len(calls) == 1
+
+
+@pytest.mark.parametrize('headers', [{}, {'Content-Length': '8'}])
+@pytest.mark.parametrize('binary', [True, False])
+def test_fetcher_exact_limit_and_text_decoding(monkeypatch, mock_fetcher, headers, binary):
+    module = importlib.import_module('examdata.core.fetch')
+    monkeypatch.setattr(module, 'MAX_RESPONSE_BYTES', 8)
+    stream = TrackingStream([b'caf\xe9', b'1234'])
+    fetcher = mock_fetcher(lambda request: httpx.Response(
+        200, headers={**headers, 'Content-Type': 'text/plain; charset=iso-8859-1'}, stream=stream,
+    ))
+    result = fetcher.get('https://test.test/exact', expect_binary=binary)
+    assert result.ok and result.content == b'caf\xe91234'
+    assert result.text == (None if binary else 'café1234')
+    assert stream.closed and stream.read_chunks == 2
+
+
+def test_fetcher_limits_decoded_compressed_body(monkeypatch, mock_fetcher):
+    import gzip
+    module = importlib.import_module('examdata.core.fetch')
+    monkeypatch.setattr(module, 'MAX_RESPONSE_BYTES', 64)
+    compressed = gzip.compress(b'x' * 1000)
+    assert len(compressed) < 64
+    stream = TrackingStream([compressed])
+    fetcher = mock_fetcher(lambda request: httpx.Response(
+        200, headers={'Content-Encoding': 'gzip', 'Content-Length': str(len(compressed))}, stream=stream,
+    ))
+    result = fetcher.get('https://test.test/compressed')
+    assert not result.ok and result.error
+    assert result.content is None and result.text is None and stream.closed
+
+
+def test_fetcher_small_compressed_text(monkeypatch, mock_fetcher):
+    import gzip
+    module = importlib.import_module('examdata.core.fetch')
+    monkeypatch.setattr(module, 'MAX_RESPONSE_BYTES', 64)
+    stream = TrackingStream([gzip.compress('café'.encode())])
+    fetcher = mock_fetcher(lambda request: httpx.Response(
+        200, headers={'Content-Encoding': 'gzip', 'Content-Type': 'text/plain; charset=utf-8'}, stream=stream,
+    ))
+    result = fetcher.get('https://test.test/compressed')
+    assert result.ok and result.content == 'café'.encode() and result.text == 'café'
+    assert stream.closed
+
+
+def test_fetcher_redirect_body_is_not_buffered(monkeypatch, mock_fetcher):
+    module = importlib.import_module('examdata.core.fetch')
+    monkeypatch.setattr(module, 'MAX_RESPONSE_BYTES', 8)
+    redirect = TrackingStream([b'huge redirect body'])
+    final = TrackingStream([b'123456789', b'not consumed'])
+    paths = []
+
+    def handler(request):
+        paths.append(request.url.path)
+        if request.url.path == '/redirect':
+            return httpx.Response(302, headers={'Location': '/target'}, stream=redirect)
+        return httpx.Response(200, stream=final)
+
+    result = mock_fetcher(handler).get('https://test.test/redirect')
+    assert result.url == 'https://test.test/target' and not result.ok
+    assert paths == ['/redirect', '/target']
+    assert redirect.closed and redirect.read_chunks == 0
+    assert final.closed and final.read_chunks == 1
+
+
+def test_fetcher_redirect_preserves_post_conversion_and_cookies(mock_fetcher):
+    redirect = TrackingStream([b'not consumed'])
+    requests = []
+
+    def handler(request):
+        requests.append(request)
+        if request.url.path == '/form':
+            return httpx.Response(302, headers={
+                'Location': '/target', 'Set-Cookie': 'session=public; Path=/',
+            }, stream=redirect)
+        return httpx.Response(200, text='ok')
+
+    result = mock_fetcher(handler).post_form('https://test.test/form', {'subject': '9709'})
+    assert result.ok and result.text == 'ok'
+    assert [request.method for request in requests] == ['POST', 'GET']
+    assert requests[-1].headers['cookie'] == 'session=public'
+    assert redirect.closed and redirect.read_chunks == 0
+
+
+@pytest.mark.parametrize('status,expected_calls', [(304, 1), (503, 2)])
+def test_fetcher_does_not_read_not_modified_or_retry_bodies(mock_fetcher, status, expected_calls):
+    streams = []
+    requests = []
+
+    def handler(request):
+        requests.append(request)
+        stream = TrackingStream([b'not consumed'])
+        streams.append(stream)
+        return httpx.Response(status, headers={'ETag': 'revision'}, stream=stream)
+
+    result = mock_fetcher(handler).get('https://test.test/retry', etag='revision')
+    assert len(requests) == expected_calls
+    assert all(request.headers['If-None-Match'] == 'revision' for request in requests)
+    assert all(stream.closed and stream.read_chunks == 0 for stream in streams)
+    assert result.content is None and result.text is None
+    assert result.not_modified == (status == 304)
+    assert result.status == (304 if status == 304 else 0)
+
+
+@pytest.mark.parametrize('overflow', ['actual', 'declared'])
+@pytest.mark.parametrize('board,subject,year,season,paper', [
+    ('cie', '9709', 2026, 'Mar', '12'),
+    ('edexcel', 'Economics', 2024, 'Jun', 'wec11-01'),
+])
+def test_custom_fetcher_cannot_bypass_pdf_limit(monkeypatch, overflow, board, subject, year, season, paper):
+    base = importlib.import_module('examdata.paperqa.sources.base')
+    data = pdf_bytes()
+    monkeypatch.setattr(base, 'MAX_RESPONSE_BYTES', len(data))
+
+    class Oversized(FakeFetcher):
+        def get(self, url, **kwargs):
+            result = super().get(url, **kwargs)
+            if overflow == 'actual':
+                result.content += b'x'
+            else:
+                result.headers['Content-Length'] = str(len(data) + 1)
+            return result
+
+    with pytest.raises(UpstreamError, match='size limit') as raised:
+        query(board, subject, year, season, paper, fetcher=Oversized(data))
+    assert raised.value.status_code == 502
+
+
+@pytest.mark.parametrize('status', [302, 401, 403])
+def test_oversized_access_denial_keeps_mapping(monkeypatch, status):
+    base = importlib.import_module('examdata.paperqa.sources.base')
+    monkeypatch.setattr(base, 'MAX_RESPONSE_BYTES', 1)
+    with pytest.raises(AccessDenied) as raised:
+        query('cie', '9709', 2026, 'Mar', '12', fetcher=FakeFetcher(b'%PDF-large', status))
+    assert raised.value.status_code == 403
+
+
+def test_pdf_download_stream_limit_maps_to_upstream(monkeypatch, mock_fetcher):
+    module = importlib.import_module('examdata.core.fetch')
+    monkeypatch.setattr(module, 'MAX_RESPONSE_BYTES', 8)
+    stream = TrackingStream([b'%PDF-', b'large body', b'not consumed'])
+    fetcher = mock_fetcher(lambda request: httpx.Response(200, stream=stream))
+    document = Document('paper.pdf', 'https://test.test/paper.pdf', 'qp', '12')
+    with pytest.raises(UpstreamError) as raised:
+        download_pdf(fetcher, document)
+    assert raised.value.status_code == 502
+    assert stream.closed and stream.read_chunks == 2
+
+
 def test_context_booklet_does_not_include_other_questions():
     from examdata.paperqa.locator import crop_question
     with pymupdf.open() as pdf:
@@ -308,3 +531,49 @@ def test_owned_fetcher_does_not_initialize_storage(monkeypatch, tmp_path):
     monkeypatch.setattr(Settings, 'ensure_dirs', forbidden)
     query('cie', '9709', 2026, 'Mar')
     assert not list(tmp_path.iterdir())
+
+
+
+def test_cross_host_redirect_strips_authorization_and_skips_body(mock_fetcher):
+    seen=[]
+    redirect=TrackingStream([b"never read"])
+    def handler(request):
+        seen.append((request.url.host,request.headers.get("authorization")))
+        if request.url.host == "first.test":
+            return httpx.Response(302,headers={"Location":"https://second.test/final"},stream=redirect)
+        return httpx.Response(200,content=b"ok")
+    fetcher=mock_fetcher(handler)
+    fetcher._client.headers["Authorization"]="Bearer synthetic"
+    result=fetcher.get("https://first.test/start")
+    assert result.ok and result.content==b"ok"
+    assert seen==[("first.test","Bearer synthetic"),("second.test",None)]
+    assert redirect.closed and redirect.read_chunks==0
+
+
+def test_redirect_exhaustion_is_terminal_and_closes_every_response(mock_fetcher):
+    streams=[]
+    def handler(request):
+        stream=TrackingStream([b"never read"]);streams.append(stream)
+        return httpx.Response(302,headers={"Location":"/again"},stream=stream)
+    fetcher=mock_fetcher(handler);fetcher._client.max_redirects=2
+    result=fetcher.get("https://test.test/again")
+    assert result.status==0 and "TooManyRedirects" in result.error
+    assert len(streams)==3
+    assert all(stream.closed and stream.read_chunks==0 for stream in streams)
+
+
+def test_redirect_rechecks_destination_robots_before_resource_request():
+    calls=[]
+    def handler(request):
+        calls.append((request.url.host,request.url.path))
+        if request.url.path=="/robots.txt":
+            policy="User-agent: *\nDisallow: /" if request.url.host=="second.test" else "User-agent: *\nAllow: /"
+            return httpx.Response(200,text=policy)
+        if request.url.host=="first.test":
+            return httpx.Response(302,headers={"Location":"https://second.test/private"})
+        raise AssertionError("Disallowed redirect resource requested")
+    with Fetcher(Settings(respect_robots=True,min_host_interval_seconds=0,host_interval_jitter_seconds=0,max_retries=2)) as fetcher:
+        fetcher._client.close();fetcher._client=httpx.Client(transport=httpx.MockTransport(handler),follow_redirects=True)
+        result=fetcher.get("https://first.test/start")
+    assert result.robots_blocked
+    assert calls==[("first.test","/robots.txt"),("first.test","/start"),("second.test","/robots.txt")]

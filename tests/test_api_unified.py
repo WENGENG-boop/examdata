@@ -97,7 +97,7 @@ def test_boards_lists_both_boards_with_full_capabilities(client):
     assert cie["upstream"] == "cie.fraft.cn"
 
     assert edexcel["seasons"] == ["January", "June", "October", "November"]
-    assert edexcel["modes"] == ["paper", "question", "qa"]
+    assert edexcel["modes"] == ["qp", "ms", "both", "paper", "question", "qa"]
     assert edexcel["question_crop"] is True
     assert edexcel["default_mode"] == "paper"
     assert edexcel["upstream"] == "qualifications.pearson.com"

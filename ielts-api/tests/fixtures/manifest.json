@@ -1,0 +1,97 @@
+{
+  "schema": "ielts.fixtures-manifest/1",
+  "generated_at": "2026-10-05",
+  "note": "S15 fixture registry. Every fixture used by the ielts-api test battery is listed with its purpose, the independent origin of its expected values, sha256, byte size and read entry point. Hashes are computed from the files as committed in this repository; a mismatch means the fixture was edited without updating this manifest.",
+  "fixtures": [
+    {
+      "id": "alignment-gold",
+      "path": "tests/fixtures/alignment-gold.json",
+      "sha256": "0de84f8dbd357d50054a20fcf0feb2af7b85defe78ad4ac41bd84d28f4215e9d",
+      "bytes": 466885,
+      "schema": "ielts.alignment-gold/1",
+      "purpose": "Gold-standard per-question listening audio alignment records (Part, question number, timestamp intervals, evidence class) used to regression-test the audio matcher end to end.",
+      "expected_source": "Independently authored alignment gold for Cambridge 10 Test 1 listening; timestamps were derived from the published audio track and hand-verified against the question paper, not from the matcher's own output.",
+      "read_entry": "tests/ielts-audio-matcher.test.mjs (reads via process.cwd()/tests/fixtures/alignment-gold.json, so tests must run with cwd=ielts-api)",
+      "used_by": ["tests/ielts-audio-matcher.test.mjs"]
+    },
+    {
+      "id": "book1-t2-q40-41-diagram",
+      "path": "tests/fixtures/pdf-expected/book1-t2-q40-41-diagram.json",
+      "sha256": "62ac84726a7ca1bd3ad49287b46e04d0bc5e343e0be56794b12b1732abded33e",
+      "bytes": 1483,
+      "schema": "ielts.pdf-expected/1",
+      "purpose": "Expectations for Cambridge 1 Test 2 listening Q40/41 diagram page (physical page 45): the page carrying the Q40/41 boxes, the Example line and the diagram figures. Guards the 41-question case.",
+      "expected_source": "Hand-written from the Cambridge 1 PDF (book_1.pdf sha256 93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527) during S06; cross-checked against the printed page image.",
+      "read_entry": "tests/ielts-pdf-extract.test.mjs (loadFixtures from tests/fixtures/pdf-expected/)",
+      "used_by": ["tests/ielts-pdf-extract.test.mjs"],
+      "data_dependencies": [
+        {
+          "path": "ielts-data/pdf/book_1.pdf",
+          "sha256": "93ba03c19ef5ab281e7282a60a6da5224e5b77cbe2bd66c75e81c180a784e527"
+        }
+      ]
+    },
+    {
+      "id": "book10-t1-answer-keys",
+      "path": "tests/fixtures/pdf-expected/book10-t1-answer-keys.json",
+      "sha256": "82ab07002c2bd22b945b3bf8119d2095398396cbb24d8695831317a33919ae8d",
+      "bytes": 2474,
+      "schema": "ielts.pdf-expected/1",
+      "purpose": "Expectations for Cambridge 10 Test 1 answer key pages (listening key page 144, Academic Reading key page 145), including the garbled right-column block Q20-26 and the Q34=F value that was empty in the broken pipeline.",
+      "expected_source": "Hand-written from the Cambridge 10 PDF answer key pages during S06/S07; the Q20-26 block resolved by ink row-band analysis of the page image, and Q34 confirmed from the printed key.",
+      "read_entry": "tests/ielts-pdf-extract.test.mjs (loadFixtures from tests/fixtures/pdf-expected/)",
+      "used_by": ["tests/ielts-pdf-extract.test.mjs"],
+      "data_dependencies": [
+        {
+          "path": "ielts-data/pdf/book_10.pdf",
+          "sha256": "3f1c532893532971b2a1fd1a47425c1895908d3a593f95a9699e4c80ca129c82"
+        }
+      ]
+    },
+    {
+      "id": "book3-answer-keys-t2-t4",
+      "path": "tests/fixtures/pdf-expected/book3-answer-keys-t2-t4.json",
+      "sha256": "e575c126be663d86c435ef2e9f9ae62e4176a8836f3ca011c1e7ce11e2dc646c",
+      "bytes": 3038,
+      "schema": "ielts.pdf-expected/1",
+      "purpose": "Expectations for Cambridge 3 listening answer key pages (Test 2 page 155, Test 3 page 157): alternative forms, EITHER ORDER / IN ANY ORDER groups, MUST STATE ALL THREE constraints and letter answers. Feeds S07 answer matching as source_verified candidates.",
+      "expected_source": "Hand-written from the Cambridge 3 PDF answer key pages (book_3.pdf sha256 da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a0...) during S06; key pages cross-checked against the book's own printed keys.",
+      "read_entry": "tests/ielts-pdf-extract.test.mjs (loadFixtures from tests/fixtures/pdf-expected/)",
+      "used_by": ["tests/ielts-pdf-extract.test.mjs"],
+      "data_dependencies": [
+        {
+          "path": "ielts-data/pdf/book_3.pdf",
+          "sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+        }
+      ]
+    },
+    {
+      "id": "book3-t2-t4-listening-ocr-pages",
+      "path": "tests/fixtures/pdf-expected/book3-t2-t4-listening-ocr-pages.json",
+      "sha256": "32554f90160a75c693a2ed76b61f7ba6d510b7d2440808944c1262b0881059da",
+      "bytes": 2503,
+      "schema": "ielts.pdf-expected/1",
+      "purpose": "Expectations for Cambridge 3 Tests 2-4 listening pages that exist only as images (map/label/notes), pages 35/37/41: text-layer expectations plus OCR-merge expectations.",
+      "expected_source": "OCR content cross-checked against the book's own answer key pages (155/157/159) and the printed page images during S06.",
+      "read_entry": "tests/ielts-pdf-extract.test.mjs (loadFixtures from tests/fixtures/pdf-expected/)",
+      "used_by": ["tests/ielts-pdf-extract.test.mjs"],
+      "data_dependencies": [
+        {
+          "path": "ielts-data/pdf/book_3.pdf",
+          "sha256": "da273b47cbfa1fe324b2f289374bcfdbc7276a763e216be4f86ae6a070f06845"
+        }
+      ]
+    },
+    {
+      "id": "stub-fetch",
+      "path": "tests/stub-fetch.cjs",
+      "sha256": "ceb682619622e70ea4aaf2a5fa4e116630eaed90096da8afbd216708399b730a",
+      "bytes": 1486,
+      "schema": "node-cjs",
+      "purpose": "Network stub preloaded with NODE_OPTIONS=--require. STUB_FETCH_MODE=throw makes every outbound fetch fail (offline test); STUB_FETCH_MODE=serve serves canned responses. Writes a log (STUB_FETCH_LOG) with {count, urls, code} so tests can assert zero network traffic.",
+      "expected_source": "Authored during S13 as test infrastructure; no external data.",
+      "read_entry": "tests/contract.test.mjs and any test spawning a child with NODE_OPTIONS=--require tests/stub-fetch.cjs",
+      "used_by": ["tests/contract.test.mjs", "tests/ielts-e2e.test.mjs (S15, offline cases)"]
+    }
+  ]
+}

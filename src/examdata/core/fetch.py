@@ -1,7 +1,8 @@
 """统一抓取器。
 
 所有适配器共用，负责：
-- robots.txt 强制（命中 Disallow 直接拒绝，不发出请求）
+- robots.txt 强制（命中 Disallow 直接拒绝，不发出请求；结果以
+  FetchResult.robots_blocked 标记，调用方不得把它当成采集故障）
 - 每主机限速 + 抖动
 - ETag / If-Modified-Since 条件请求（无变化时零下载）
 - 超时、重试、指数退避
@@ -16,9 +17,11 @@ from __future__ import annotations
 import random
 import threading
 import time
+import zlib
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Iterator, Optional
 from urllib.parse import urlparse
 
 import httpx
@@ -26,9 +29,15 @@ import httpx
 from .config import Settings, get_settings
 from .robots import RobotsPolicy, origin_of, parse_robots, robots_url_for
 
+MAX_RESPONSE_BYTES = 64 * 1024 * 1024
+
 
 class RobotsDisallowed(RuntimeError):
     """目标 URL 被 robots.txt 禁止。绝不重试。"""
+
+
+class _ResponseTooLarge(ValueError):
+    pass
 
 
 @dataclass
@@ -40,6 +49,8 @@ class FetchResult:
     text: Optional[str] = None
     not_modified: bool = False
     error: Optional[str] = None
+    # robots 拒绝：status=0 且 error 有值，但它不是采集故障，调用方必须区分
+    robots_blocked: bool = False
 
     @property
     def ok(self) -> bool:
@@ -56,6 +67,17 @@ class FetchResult:
     @property
     def content_type(self) -> Optional[str]:
         return self.headers.get("content-type")
+
+    @property
+    def content_length(self) -> int | None:
+        value = next((v for k, v in self.headers.items() if k.lower() == "content-length"), None)
+        if value is None:
+            return None
+        try:
+            length = int(value)
+        except (TypeError, ValueError):
+            return None
+        return length if length >= 0 else None
 
 
 class _HostRateLimiter:
@@ -90,6 +112,7 @@ class Fetcher:
                 "User-Agent": self.settings.user_agent,
                 "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8",
                 "Accept-Language": "en-GB,en;q=0.9",
+                "Accept-Encoding": "gzip, deflate",
             },
         )
         self._limiter = _HostRateLimiter(
@@ -110,13 +133,17 @@ class Fetcher:
         robots_url = robots_url_for(url)
         policy: RobotsPolicy
         try:
-            resp = self._client.get(robots_url, timeout=15.0)
-            if resp.status_code == 200:
-                policy = parse_robots(urlparse(url).netloc, robots_url, resp.text)
-            else:
-                policy = RobotsPolicy(
-                    host=urlparse(url).netloc, robots_url=robots_url, fetched=False
-                )
+            with self._stream_response("GET", robots_url, timeout=15.0) as resp:
+                if resp.status_code == 200:
+                    body = self._read_body(resp)
+                    policy = parse_robots(urlparse(url).netloc, robots_url, body.decode("utf-8", errors="replace"))
+                else:
+                    policy = RobotsPolicy(
+                        host=urlparse(url).netloc, robots_url=robots_url, fetched=False
+                    )
+        except _ResponseTooLarge:
+            # An oversized policy cannot establish permission to fetch the resource.
+            policy = parse_robots(urlparse(url).netloc, robots_url, "User-agent: *\nDisallow: /\n")
         except Exception:
             policy = RobotsPolicy(host=urlparse(url).netloc, robots_url=robots_url, fetched=False)
 
@@ -188,6 +215,73 @@ class Fetcher:
     def get_text(self, url: str, **kwargs) -> FetchResult:
         return self.get(url, expect_binary=False, **kwargs)
 
+    @contextmanager
+    def _stream_response(
+        self, method: str, url: str, *, follow_redirects: bool | None = None, check_redirect_policy: bool = False, **kwargs
+    ) -> Iterator[httpx.Response]:
+        request = self._client.build_request(method, url, **kwargs)
+        follow = self._client.follow_redirects if follow_redirects is None else follow_redirects
+        redirects = 0
+        while True:
+            response = self._client.send(request, stream=True, follow_redirects=False)
+            try:
+                if not follow or response.next_request is None:
+                    yield response
+                    return
+                if redirects >= self._client.max_redirects:
+                    raise httpx.TooManyRedirects("Exceeded maximum allowed redirects.", request=request)
+                request = response.next_request
+                if check_redirect_policy:
+                    self.assert_allowed(str(request.url))
+                    self._limiter.wait(urlparse(str(request.url)).netloc)
+                redirects += 1
+            finally:
+                response.close()
+
+    def _read_body(self, response: httpx.Response) -> bytes:
+        buffered = response.is_stream_consumed
+        encodings = [] if buffered else response.headers.get_list("content-encoding", split_commas=True)
+        for encoding in encodings:
+            if encoding.strip().lower() not in {"identity", "gzip", "deflate"}:
+                raise httpx.DecodingError("Unsupported response content encoding")
+        body = bytearray()
+        chunks = (response.content,) if buffered else response.iter_raw()
+        for chunk in chunks:
+            if len(chunk) > MAX_RESPONSE_BYTES - len(body):
+                raise _ResponseTooLarge
+            body.extend(chunk)
+        content = bytes(body)
+        for encoding in reversed(encodings):
+            encoding = encoding.strip().lower()
+            if encoding == "identity":
+                continue
+            pending = content
+            body = bytearray()
+            while pending:
+                window = zlib.MAX_WBITS | 16 if encoding == "gzip" else zlib.MAX_WBITS
+                decoder = zlib.decompressobj(window)
+                remaining = MAX_RESPONSE_BYTES - len(body)
+                try:
+                    decoded = decoder.decompress(pending, remaining + 1)
+                except zlib.error as exc:
+                    if encoding != "deflate":
+                        raise httpx.DecodingError("Invalid compressed response body") from exc
+                    decoder = zlib.decompressobj(-zlib.MAX_WBITS)
+                    try:
+                        decoded = decoder.decompress(pending, remaining + 1)
+                    except zlib.error as raw_exc:
+                        raise httpx.DecodingError("Invalid compressed response body") from raw_exc
+                if len(decoded) > remaining:
+                    raise _ResponseTooLarge
+                if not decoder.eof:
+                    raise httpx.DecodingError("Incomplete compressed response body")
+                body.extend(decoded)
+                pending = decoder.unused_data
+                if pending and encoding != "gzip":
+                    raise httpx.DecodingError("Unexpected data after compressed response body")
+            content = bytes(body)
+        return content
+
     def _request(
         self,
         method: str,
@@ -198,17 +292,17 @@ class Fetcher:
         expect_binary: bool = False,
         follow_redirects: bool | None = None,
     ) -> FetchResult:
-        """get()/post_form() 的共同实现：robots -> 限速 -> 重试 -> 结果归一化。"""
+        """get()/post_form() 的共同实现：robots -> 限速 -> 重试 -> 有界正文。"""
         try:
             self.assert_allowed(url)
         except RobotsDisallowed as exc:
-            return FetchResult(url=url, status=0, error=str(exc))
+            # 不抛异常：调用方拿到的仍是 FetchResult，靠 robots_blocked 区分
+            # "遵守站点规则"与"采集失败"（status=0 两者长得一样）。
+            return FetchResult(url=url, status=0, error=str(exc), robots_blocked=True)
 
         send: dict[str, Any] = {"headers": dict(headers or {})}
         if data is not None:
             send["data"] = data
-        if follow_redirects is not None:
-            send["follow_redirects"] = follow_redirects
 
         host = urlparse(url).netloc
         last_error: str | None = None
@@ -216,37 +310,37 @@ class Fetcher:
         for attempt in range(self.settings.max_retries):
             self._limiter.wait(host)
             try:
-                resp = self._client.request(method, url, **send)
+                with self._stream_response(method, url, follow_redirects=follow_redirects, check_redirect_policy=True, **send) as resp:
+                    result = FetchResult(
+                        url=str(resp.url), status=resp.status_code,
+                        headers={k.lower(): v for k, v in resp.headers.items()},
+                    )
+                    if resp.status_code == 304:
+                        result.not_modified = True
+                        return result
+                    if resp.status_code >= 500:
+                        last_error = f"HTTP {resp.status_code}"
+                    else:
+                        if result.content_length is not None and result.content_length > MAX_RESPONSE_BYTES:
+                            result.error = f"Response exceeds {MAX_RESPONSE_BYTES} byte limit"
+                            return result
+                        try:
+                            result.content = self._read_body(resp)
+                        except _ResponseTooLarge:
+                            result.error = f"Response exceeds {MAX_RESPONSE_BYTES} byte limit"
+                            return result
+                        if not expect_binary:
+                            decoded = httpx.Response(200, content=result.content)
+                            decoded.encoding = resp.encoding
+                            result.text = decoded.text
+                        return result
+            except RobotsDisallowed as exc:
+                return FetchResult(url=url, status=0, error=str(exc), robots_blocked=True)
+            except httpx.TooManyRedirects as exc:
+                return FetchResult(url=url, status=0, error=f"TooManyRedirects: {exc}")
             except Exception as exc:  # 网络层错误 -> 退避重试
                 last_error = f"{type(exc).__name__}: {exc}"
-                time.sleep(self.settings.retry_backoff_seconds * (2**attempt))
-                continue
-
-            if resp.status_code == 304:
-                return FetchResult(
-                    url=str(resp.url),
-                    status=304,
-                    headers={k.lower(): v for k, v in resp.headers.items()},
-                    not_modified=True,
-                )
-
-            if resp.status_code >= 500:
-                last_error = f"HTTP {resp.status_code}"
-                time.sleep(self.settings.retry_backoff_seconds * (2**attempt))
-                continue
-
-            hdrs = {k.lower(): v for k, v in resp.headers.items()}
-            if expect_binary:
-                return FetchResult(
-                    url=str(resp.url), status=resp.status_code, headers=hdrs, content=resp.content
-                )
-            return FetchResult(
-                url=str(resp.url),
-                status=resp.status_code,
-                headers=hdrs,
-                content=resp.content,
-                text=resp.text,
-            )
+            time.sleep(self.settings.retry_backoff_seconds * (2**attempt))
 
         return FetchResult(url=url, status=0, error=last_error or "unknown error")
 

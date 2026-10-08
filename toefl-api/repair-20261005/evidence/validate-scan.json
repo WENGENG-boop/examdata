@@ -1,0 +1,42 @@
+{
+ "cache_pages": {
+  "dir": "C:\\Users\\weo\\Desktop\\api\\toefl-api\\.data\\cache\\kmf\\pages",
+  "total": 4417,
+  "by_section": {
+   "listen": {
+    "total": 2133,
+    "ok": 2133,
+    "fail": 0
+   },
+   "read": {
+    "total": 1880,
+    "ok": 1880,
+    "fail": 0
+   },
+   "speak": {
+    "total": 271,
+    "ok": 271,
+    "fail": 0
+   },
+   "write": {
+    "total": 133,
+    "ok": 133,
+    "fail": 0
+   }
+  },
+  "failures": []
+ },
+ "index_urls": {
+  "kmf": {
+   "total": 758,
+   "ok": 758,
+   "fail": []
+  },
+  "jj": {
+   "total": 325,
+   "ok": 213,
+   "fail": []
+  },
+  "jj_locked_null_count": 112
+ }
+}

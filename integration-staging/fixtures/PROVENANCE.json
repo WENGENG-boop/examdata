@@ -1,0 +1,266 @@
+{
+  "schema": "examdata.integration.fixture-provenance/1",
+  "generated_at_local": "2026-10-05T19:16:40+08:00",
+  "generated_at_utc": "2026-10-05T11:16:40+00:00",
+  "generator": "integration-staging/tools/a03_capture_fixtures.py",
+  "generator_sha256": "2636b1e4dfe6242dd6449739e41725b34a2b2a9fdc3142c6bcc0645ec254c3ea",
+  "staging_root": "C:/Users/weo/Desktop/api/integration-staging",
+  "workspace_root": "C:/Users/weo/Desktop/api",
+  "policy": {
+    "max_bytes": 409600,
+    "deny_dir_parts": [
+      ".data",
+      ".git",
+      ".pytest_cache",
+      ".venv",
+      "__pycache__",
+      "audio",
+      "downloads",
+      "node_modules",
+      "pdf",
+      "raw",
+      "site-packages",
+      "venv"
+    ],
+    "deny_suffixes": [
+      ".db",
+      ".sqlite",
+      ".sqlite3",
+      ".duckdb",
+      ".parquet",
+      ".pdf",
+      ".mp3",
+      ".m4a",
+      ".wav",
+      ".pem",
+      ".key",
+      ".p12",
+      ".pfx",
+      ".zip",
+      ".tar",
+      ".gz",
+      ".7z"
+    ],
+    "deny_path_prefixes": [
+      "examdata/src",
+      "examdata/docs",
+      "docs/integration/execution",
+      "ielts-data/normalized",
+      "ielts-data/derived",
+      "ielts-data/indexes/rev-",
+      "ielts-data/manifests/rev-",
+      "cie-location-batch/work"
+    ],
+    "rules": [
+      "no credentials, databases, caches, virtualenvs, build output or archives",
+      "no examination material and no active-owner (materials/timetable) code or data",
+      "sources must be inside the workspace and outside the staging tree",
+      "a source whose hash changes across the copy is marked deferred_unstable and removed"
+    ]
+  },
+  "summary": {
+    "entries": 9,
+    "by_kind": {
+      "copied_snapshot": 6,
+      "synthetic": 3
+    },
+    "copied": 6,
+    "copied_bytes": 137668,
+    "synthetic": 3,
+    "deferred": 0,
+    "skipped": 0
+  },
+  "entries": [
+    {
+      "fixture_id": "ielts-indexes-current",
+      "kind": "copied_snapshot",
+      "label": "copied_snapshot",
+      "source_path": "ielts-data/indexes/current",
+      "destination_path": "integration-staging/fixtures/copied/ielts/indexes-current.json",
+      "scope": "IELTS published dataset revision pointer (dataset_revision, published_at, artifact)",
+      "source_sha256_before": "b786b370117affa1a18c26f300c770f93690d438550bace4676965d149db77f7",
+      "source_sha256_after": "b786b370117affa1a18c26f300c770f93690d438550bace4676965d149db77f7",
+      "source_bytes": 156,
+      "source_mtime_local": "2026-10-05T01:20:36+08:00",
+      "destination_sha256": "b786b370117affa1a18c26f300c770f93690d438550bace4676965d149db77f7",
+      "destination_bytes": 156,
+      "content_matches": true,
+      "stable": true,
+      "copied_at_local": "2026-10-05T19:16:40+08:00",
+      "access_notes_from_source": {},
+      "status": "copied"
+    },
+    {
+      "fixture_id": "ielts-manifests-current",
+      "kind": "copied_snapshot",
+      "label": "copied_snapshot",
+      "source_path": "ielts-data/manifests/current",
+      "destination_path": "integration-staging/fixtures/copied/ielts/manifests-current.json",
+      "scope": "IELTS published manifest revision pointer (dataset_revision, published_at, artifact)",
+      "source_sha256_before": "c1f3d59caa348ccf2280a9e1ef7897d8dcf0034b7686f733f16d11bd5d9e685c",
+      "source_sha256_after": "c1f3d59caa348ccf2280a9e1ef7897d8dcf0034b7686f733f16d11bd5d9e685c",
+      "source_bytes": 157,
+      "source_mtime_local": "2026-10-05T01:20:36+08:00",
+      "destination_sha256": "c1f3d59caa348ccf2280a9e1ef7897d8dcf0034b7686f733f16d11bd5d9e685c",
+      "destination_bytes": 157,
+      "content_matches": true,
+      "stable": true,
+      "copied_at_local": "2026-10-05T19:16:40+08:00",
+      "access_notes_from_source": {},
+      "status": "copied"
+    },
+    {
+      "fixture_id": "ielts-pdf-provenance",
+      "kind": "copied_snapshot",
+      "label": "copied_snapshot",
+      "source_path": "ielts-data/manifests/pdf-provenance.json",
+      "destination_path": "integration-staging/fixtures/copied/ielts/pdf-provenance.json",
+      "scope": "IELTS PDF import provenance manifest: per-book pdf path, sha256 and page numbers (metadata only, no page content)",
+      "source_sha256_before": "0725aa6213084e6fee1411451c66943f2e89225ebec935aa4f7a7342ca7aca2a",
+      "source_sha256_after": "0725aa6213084e6fee1411451c66943f2e89225ebec935aa4f7a7342ca7aca2a",
+      "source_bytes": 52580,
+      "source_mtime_local": "2026-10-04T05:06:21+08:00",
+      "destination_sha256": "0725aa6213084e6fee1411451c66943f2e89225ebec935aa4f7a7342ca7aca2a",
+      "destination_bytes": 52580,
+      "content_matches": true,
+      "stable": true,
+      "copied_at_local": "2026-10-05T19:16:40+08:00",
+      "access_notes_from_source": {},
+      "status": "copied"
+    },
+    {
+      "fixture_id": "ielts-printed-pages",
+      "kind": "copied_snapshot",
+      "label": "copied_snapshot",
+      "source_path": "ielts-api/data/printed-pages.json",
+      "destination_path": "integration-staging/fixtures/copied/ielts/printed-pages.json",
+      "scope": "IELTS printed-page resolution results (numeric pair -> page map), generated metadata",
+      "source_sha256_before": "ab876413450ca749355e1b4489843c1acef235fd6059cea48dc76b52e8856432",
+      "source_sha256_after": "ab876413450ca749355e1b4489843c1acef235fd6059cea48dc76b52e8856432",
+      "source_bytes": 44949,
+      "source_mtime_local": "2026-10-03T23:50:53+08:00",
+      "destination_sha256": "ab876413450ca749355e1b4489843c1acef235fd6059cea48dc76b52e8856432",
+      "destination_bytes": 44949,
+      "content_matches": true,
+      "stable": true,
+      "copied_at_local": "2026-10-05T19:16:40+08:00",
+      "access_notes_from_source": {
+        "generated_at_utc": "2026-10-03T15:50:53.447Z"
+      },
+      "status": "copied"
+    },
+    {
+      "fixture_id": "edexcel-subjects-source",
+      "kind": "copied_snapshot",
+      "label": "copied_snapshot",
+      "source_path": "frontend/edexcel-subjects-source.json",
+      "destination_path": "integration-staging/fixtures/copied/edexcel/subjects-source.json",
+      "scope": "Edexcel subject catalogue metadata: title, url, Pearson category labels (no specification content)",
+      "source_sha256_before": "b293e88820c43f0af404f36571dd83a040c12881312e528764919f7aa015a9bc",
+      "source_sha256_after": "b293e88820c43f0af404f36571dd83a040c12881312e528764919f7aa015a9bc",
+      "source_bytes": 22614,
+      "source_mtime_local": "2026-10-02T18:10:33+08:00",
+      "destination_sha256": "b293e88820c43f0af404f36571dd83a040c12881312e528764919f7aa015a9bc",
+      "destination_bytes": 22614,
+      "content_matches": true,
+      "stable": true,
+      "copied_at_local": "2026-10-05T19:16:40+08:00",
+      "access_notes_from_source": {},
+      "status": "copied"
+    },
+    {
+      "fixture_id": "toefl-ddy-index",
+      "kind": "copied_snapshot",
+      "label": "copied_snapshot",
+      "source_path": "toefl-api/data/ddy-index.json",
+      "destination_path": "integration-staging/fixtures/copied/toefl/ddy-index.json",
+      "scope": "TOEFL TPO index metadata: id, title, upstream file, link, paragraph/char counts (no passage text)",
+      "source_sha256_before": "50dc50a58bb6536507bf1f508b1d959945e949d82a8aa0fe56149b11a8c37500",
+      "source_sha256_after": "50dc50a58bb6536507bf1f508b1d959945e949d82a8aa0fe56149b11a8c37500",
+      "source_bytes": 17212,
+      "source_mtime_local": "2026-10-05T00:02:35+08:00",
+      "destination_sha256": "50dc50a58bb6536507bf1f508b1d959945e949d82a8aa0fe56149b11a8c37500",
+      "destination_bytes": 17212,
+      "content_matches": true,
+      "stable": true,
+      "copied_at_local": "2026-10-05T19:16:40+08:00",
+      "access_notes_from_source": {
+        "source": "ddy-ddy/TOEFL-TPO (GitHub)",
+        "checked_at": "2026-10-04"
+      },
+      "status": "copied"
+    },
+    {
+      "fixture_id": "ielts-questions-synthetic",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "source_path": null,
+      "destination_path": "integration-staging/fixtures/synthetic/ielts/questions-synthetic.json",
+      "scope": "Hand-authored IELTS-shaped question set for identity tests: native ids, aliases, grouped alternatives, parent answers, the missing Q41 slot",
+      "access_notes_from_source": {},
+      "destination_sha256": "7f11b2256f3757ace21efb44d23705dcaa00bd01f0383b2ae44a9b6fc10ae6b9",
+      "destination_bytes": 4542,
+      "stable": true,
+      "content_matches": null,
+      "synthetic_marker_present": true,
+      "status": "present"
+    },
+    {
+      "fixture_id": "cie-index-synthetic",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "source_path": null,
+      "destination_path": "integration-staging/fixtures/synthetic/cie/cie-index-synthetic.json",
+      "scope": "Hand-authored CIE-shaped paper index for identity tests: question hierarchy, table structure, unknown date, answer conflict, required image, lineage",
+      "access_notes_from_source": {},
+      "destination_sha256": "6f4d0d4a15972fa7aa70feb6c6bba57f5750f5afdd554dbde867422dbf250512",
+      "destination_bytes": 3044,
+      "stable": true,
+      "content_matches": null,
+      "synthetic_marker_present": true,
+      "status": "present"
+    },
+    {
+      "fixture_id": "edexcel-index-synthetic",
+      "kind": "synthetic",
+      "label": "synthetic_fixture",
+      "source_path": null,
+      "destination_path": "integration-staging/fixtures/synthetic/edexcel/index-synthetic.json",
+      "scope": "Hand-authored Edexcel-shaped paper index for identity tests: unit/paper codes, session labels, qualification levels",
+      "access_notes_from_source": {},
+      "destination_sha256": "047ab7efb5f8e6b06f2ec71eecdd1ac2240324fa3dc0c699e34be4f64e4fd1a3",
+      "destination_bytes": 1712,
+      "stable": true,
+      "content_matches": null,
+      "synthetic_marker_present": true,
+      "status": "present"
+    }
+  ],
+  "deferred_sources": [
+    {
+      "source": "cie-index-batch-2026-10-01/9709/2024-Jun-11/cie-index.json",
+      "reason": "Contains verbatim examination question text extracted from a CIE paper: examination material, and the CIE batch is stopped and off-limits. The CIE adapter will be tested against a schema-shaped synthetic fixture instead.",
+      "status": "deferred_examination_material"
+    },
+    {
+      "source": "ielts-data/indexes/rev-8b21015ab64bb73c/questions.json",
+      "reason": "15 MB derived question index: exceeds the small-representative-artifact cap and is derived from examination material.",
+      "status": "deferred_too_large"
+    },
+    {
+      "source": "toefl-api/data/jj-index.json",
+      "reason": "Modified during the same day as this packet (2026-10-05 09:47 local): treated as potentially active, so it is not copied.",
+      "status": "deferred_maybe_active"
+    },
+    {
+      "source": "frontend/catalog.json",
+      "reason": "577 KB build artifact of the frontend pipeline (regenerable, above the size cap).",
+      "status": "deferred_build_artifact"
+    },
+    {
+      "source": "ielts-data/normalized/normalized-v1/rev-8b21015ab64bb73c/cambridge-1-1.json",
+      "reason": "~175 KB normalized test content derived from examination material; representative synthetic fixtures are used instead.",
+      "status": "deferred_derived_exam_content"
+    }
+  ]
+}

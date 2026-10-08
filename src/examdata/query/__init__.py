@@ -1,6 +1,7 @@
 """检索与抽题服务。"""
 
 from .service import (
+    AnswerEntry,
     PaperComposition,
     PaperFilter,
     QuestionFilter,
@@ -9,16 +10,21 @@ from .service import (
     count_questions,
     get_paper_tree,
     get_question_bundle,
+    question_crops,
+    resolve_answer,
     review_queue,
     sample_questions,
     search_papers,
     search_questions,
     similar_questions,
     sync_status,
+    tag_overview,
+    tagged_questions,
     taxonomy_tree,
 )
 
 __all__ = [
+    "AnswerEntry",
     "PaperComposition",
     "PaperFilter",
     "QuestionFilter",
@@ -27,11 +33,15 @@ __all__ = [
     "count_questions",
     "get_paper_tree",
     "get_question_bundle",
+    "question_crops",
+    "resolve_answer",
     "review_queue",
     "sample_questions",
     "search_papers",
     "search_questions",
     "similar_questions",
     "sync_status",
+    "tag_overview",
+    "tagged_questions",
     "taxonomy_tree",
 ]

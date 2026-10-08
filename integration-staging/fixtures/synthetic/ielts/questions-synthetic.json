@@ -1,0 +1,120 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture for Phase A identity/contract tests. Contains no upstream data, no real examination content and no real document hashes.",
+    "created_by": "Phase A executor (packet A03)",
+    "created_at_local": "2026-10-05T19:20:00+08:00",
+    "provider": "ielts",
+    "purpose": "Exercise native identity, aliases, grouped alternatives, parent answers, table structure, the missing answer slot and provenance lineage."
+  },
+  "dataset_revision": "rev-synthetic-0001",
+  "book": {
+    "native_id": "synthetic-book-1",
+    "alias_ids": ["SB1", "synthetic/cambridge-1"],
+    "title": "Synthetic IELTS practice book"
+  },
+  "questions": [
+    {
+      "native_id": "Q1",
+      "parent_native_id": null,
+      "kind": "fill_blank",
+      "prompt": "Synthetic prompt for question 1.",
+      "answer": "synthetic-answer-1",
+      "alternative_answers": [],
+      "answer_slot": 1,
+      "missing_answer": false,
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-1" }
+    },
+    {
+      "native_id": "Q2",
+      "parent_native_id": null,
+      "kind": "grouped_alternatives",
+      "prompt": "Synthetic grouped question 2 with alternatives A-D.",
+      "answer": "B",
+      "alternative_answers": ["A", "C", "D"],
+      "answer_slot": 2,
+      "missing_answer": false,
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-1" }
+    },
+    {
+      "native_id": "Q3",
+      "parent_native_id": "Q3",
+      "kind": "parent_answer",
+      "prompt": "Synthetic parent question 3 whose answer covers sub-parts (i)-(ii).",
+      "answer": "synthetic-parent-answer",
+      "alternative_answers": [],
+      "answer_slot": 3,
+      "missing_answer": false,
+      "children": [
+        { "native_id": "Q3.i", "parent_native_id": "Q3", "prompt": "Synthetic sub-part (i)." },
+        { "native_id": "Q3.ii", "parent_native_id": "Q3", "prompt": "Synthetic sub-part (ii)." }
+      ],
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-1" }
+    },
+    {
+      "native_id": "Q4",
+      "parent_native_id": null,
+      "kind": "table_choice",
+      "prompt": "Synthetic table question 4.",
+      "answer": "row-2-col-3",
+      "alternative_answers": [],
+      "answer_slot": 4,
+      "missing_answer": false,
+      "table": {
+        "columns": ["Synthetic column A", "Synthetic column B", "Synthetic column C"],
+        "rows": [
+          ["synthetic cell 1", "synthetic cell 2", "synthetic cell 3"],
+          ["synthetic cell 4", "synthetic cell 5", "synthetic cell 6"]
+        ],
+        "answer_cell": { "row": 2, "column": 3 }
+      },
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-1" }
+    },
+    {
+      "native_id": "Q41",
+      "parent_native_id": null,
+      "kind": "missing_answer_slot",
+      "prompt": null,
+      "answer": null,
+      "alternative_answers": [],
+      "answer_slot": 41,
+      "missing_answer": true,
+      "missing_reason": "The source data has no answer slot 41 for this book; the slot is preserved as missing and must never be fabricated.",
+      "required_images": [],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-1" }
+    },
+    {
+      "native_id": "Q5",
+      "parent_native_id": null,
+      "kind": "answer_conflict",
+      "prompt": "Synthetic question 5 with two disagreeing sources.",
+      "answer": "synthetic-answer-5a",
+      "alternative_answers": ["synthetic-answer-5b"],
+      "answer_slot": 5,
+      "missing_answer": false,
+      "answer_conflicts": [
+        { "value": "synthetic-answer-5a", "source": "synthetic-source-a", "decision": null },
+        { "value": "synthetic-answer-5b", "source": "synthetic-source-b", "decision": null }
+      ],
+      "manual_decision": null,
+      "required_images": [{ "role": "diagram", "sha256": "0000000000000000000000000000000000000000000000000000000000000000" }],
+      "lineage": { "source": "synthetic", "parent_document": "synthetic-book-1" }
+    }
+  ],
+  "answer_slots": {
+    "present": [1, 2, 3, 4, 5],
+    "missing": [41],
+    "note": "Slot 41 is intentionally absent; the identity model must preserve the gap."
+  },
+  "documents": [
+    {
+      "role": "question_paper",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "note": "placeholder hash for a synthetic document"
+    }
+  ]
+}

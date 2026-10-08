@@ -1,0 +1,16 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": "Synthetic Phase A frontend catalog for the staged fixture server. Values are fictional; no real provider data.",
+  "items": [
+    {"board": "cie", "code": "9709", "title": "Mathematics 9709", "qualification": "A Level", "year": "2026", "season": "Jun", "paper": "21", "type": "question_paper", "url": "https://example.invalid/cie/9709/2026/jun/9709_s26_qp_21.pdf"},
+    {"board": "cie", "code": "9709", "title": "Mathematics 9709", "qualification": "A Level", "year": "2026", "season": "Jun", "paper": "21", "type": "mark_scheme", "url": "https://example.invalid/cie/9709/2026/jun/9709_s26_ms_21.pdf"},
+    {"board": "cie", "code": "9709", "title": "Mathematics 9709", "qualification": "A Level", "year": "2026", "season": "Jun", "paper": null, "type": "examiner_report", "url": "https://example.invalid/cie/9709/2026/jun/9709_s26_er.pdf"},
+    {"board": "cie", "code": "9702", "title": "Physics 9702", "qualification": "A Level", "year": "2026", "season": "Jun", "paper": "21", "type": "question_paper", "url": "https://example.invalid/cie/9702/2026/jun/9702_s26_qp_21.pdf"},
+    {"board": "cie", "code": "0580", "title": "Mathematics 0580", "qualification": "IGCSE", "year": "2026", "season": "Jun", "paper": "21", "type": "question_paper", "url": "https://example.invalid/cie/0580/2026/jun/0580_s26_qp_21.pdf"},
+    {"board": "edexcel", "code": "wec11", "title": "Economics (2018)", "qualification": "International A Level", "year": "2026", "season": "June", "paper": "wec11-01", "type": "question_paper", "url": "https://example.invalid/edexcel/2026/june/wec11-01-qp.pdf"}
+  ],
+  "edexcelSubjects": [
+    {"code": "wec11", "title": "Economics (2018)", "qualification": "International A Level"},
+    {"code": "wma11", "title": "Mathematics (2018)", "qualification": "International A Level"}
+  ]
+}

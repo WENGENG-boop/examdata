@@ -1,0 +1,881 @@
+{
+  "subjects": {
+    "0580": {
+      "name": "mathematics",
+      "level": "igcse",
+      "samples": [
+        {
+          "file": "0580_s18_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s18_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_s23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0580_w23_qp_41.pdf",
+          "expect": {}
+        }
+      ],
+      "known_failures": []
+    },
+    "9709": {
+      "name": "mathematics",
+      "level": "as-and-a-level",
+      "samples": [
+        {
+          "file": "9709_s18_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_ms_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_ms_71.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_qp_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s18_qp_71.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_ms_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_s23_qp_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_ms_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9709_w23_qp_61.pdf",
+          "expect": {}
+        }
+      ],
+      "known_failures": []
+    },
+    "0625": {
+      "name": "physics",
+      "level": "igcse",
+      "samples": [
+        {
+          "file": "0625_s18_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_ms_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s18_qp_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_ms_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_s23_qp_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_ms_61.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0625_w23_qp_61.pdf",
+          "expect": {}
+        }
+      ],
+      "known_failures": [
+        {
+          "file": "0625_w23_ms_31.pdf",
+          "check": "header",
+          "reason": "两个独立缺陷：(1) 封面 '0625/31' 行的斜杠被字体子集编码破坏，syllabus/component 读不到（session='October/November 2023' 与 total_mark=80 均已正确读出，并非整个封面不可读）；(2) 分值列未解析，ms_sum=0/80——表头 Question/Marks/Answer 印在三行、Marks 列随页漂移，与 0625_s23_ms_31（16/80，WARN）同源",
+          "plan": "后续：(1) 解析 PDF 字体 Differences/ToUnicode 表还原字形映射；(2) 重设计分值单元格右界（取下一个表头词的列号，并要求单元格内除分值记号外无其他词），见 docs/DESIGN.md §4.3 缺口一/缺口二"
+        },
+        {
+          "file": "0625_w23_qp_11.pdf",
+          "check": "header",
+          "reason": "cover text is font-subset encoded (pdftotext yields shifted glyph codes such as '&DPEULGJH' for 'Cambridge'); header unreadable without CMap/Differences handling",
+          "plan": "后续：解析 PDF 字体 Differences/ToUnicode 表还原字形映射（属几何/字体层任务，本机无 mutool，未纳入本轮）"
+        },
+        {
+          "file": "0625_w23_qp_21.pdf",
+          "check": "header",
+          "reason": "cover text is font-subset encoded (pdftotext yields shifted glyph codes such as '&DPEULGJH' for 'Cambridge'); header unreadable without CMap/Differences handling",
+          "plan": "后续：解析 PDF 字体 Differences/ToUnicode 表还原字形映射（属几何/字体层任务，本机无 mutool，未纳入本轮）"
+        }
+      ]
+    },
+    "9702": {
+      "name": "physics",
+      "level": "as-and-a-level",
+      "samples": [
+        {
+          "file": "9702_s18_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s18_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_s23_qp_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_ms_51.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9702_w23_qp_51.pdf",
+          "expect": {}
+        }
+      ],
+      "known_failures": [
+        {
+          "file": "9702_s23_qp_11.pdf",
+          "check": "header",
+          "reason": "cover text is font-subset encoded (pdftotext yields shifted glyph codes such as '&DPEULGJH' for 'Cambridge'); header unreadable without CMap/Differences handling",
+          "plan": "后续：解析 PDF 字体 Differences/ToUnicode 表还原字形映射（属几何/字体层任务，本机无 mutool，未纳入本轮）"
+        }
+      ]
+    },
+    "0455": {
+      "name": "economics",
+      "level": "igcse",
+      "samples": [
+        {
+          "file": "0455_s18_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s18_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s18_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s18_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s18_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s18_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_s23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_w23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_w23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_w23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_w23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "0455_w23_qp_21.pdf",
+          "expect": {}
+        }
+      ],
+      "known_failures": []
+    },
+    "9708": {
+      "name": "economics",
+      "level": "as-and-a-level",
+      "samples": [
+        {
+          "file": "9708_s18_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s18_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_s23_qp_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_er.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_gt.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_ms_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_ms_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_ms_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_ms_41.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_qp_11.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_qp_21.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_qp_31.pdf",
+          "expect": {}
+        },
+        {
+          "file": "9708_w23_qp_41.pdf",
+          "expect": {}
+        }
+      ],
+      "known_failures": [
+        {
+          "file": "9708_w23_qp_11.pdf",
+          "check": "header",
+          "reason": "cover text is font-subset encoded (pdftotext yields shifted glyph codes such as '&DPEULGJH' for 'Cambridge'); header unreadable without CMap/Differences handling",
+          "plan": "后续：解析 PDF 字体 Differences/ToUnicode 表还原字形映射（属几何/字体层任务，本机无 mutool，未纳入本轮）"
+        },
+        {
+          "file": "9708_w23_qp_31.pdf",
+          "check": "header",
+          "reason": "cover text is font-subset encoded (pdftotext yields shifted glyph codes such as '&DPEULGJH' for 'Cambridge'); header unreadable without CMap/Differences handling",
+          "plan": "后续：解析 PDF 字体 Differences/ToUnicode 表还原字形映射（属几何/字体层任务，本机无 mutool，未纳入本轮）"
+        }
+      ]
+    }
+  }
+}

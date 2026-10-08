@@ -1,0 +1,93 @@
+A01 SOURCE HASHES AND OBSERVATION RECORD
+========================================
+Assembled: 2026-10-05 18:37 +08:00 (Git Bash, workspace C:/Users/weo/Desktop/api)
+Observation window for packaged extracts: 2026-10-05 18:29:40 - 18:35 +08:00
+(read-only inspection; no original file was executed or modified)
+
+1. ROUTE SET RESULT (re-extraction vs baseline)
+------------------------------------------------
+re-extraction tool : integration-staging/tools/a01_inventory_routes.py
+                     (staged copy of docs/integration/tools/inventory_routes.py;
+                     diff recorded in evidence/A01/route_tool_diff.txt, 3 documented changes)
+re-extraction run  : 2026-10-05 18:33 +08:00, exit 0
+                     -> evidence/A01/route_inventory_reextract.json + _stdout.txt
+baseline           : docs/integration/ROUTE_INVENTORY_CURRENT.json
+worksheet build    : 2026-10-05 18:35 +08:00, exit 0, WORKSHEET_BUILD: PASS
+                     -> execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json
+result             : route set UNCHANGED - 71 baseline routes, 71 re-extracted,
+                     71/71 covered in worksheet, 0 added, 0 removed,
+                     groups 20/8/28/8/4/3, no duplicate routes.
+note               : examdata/src/examdata/timetable/router.py was modified by the
+                     active owner (Kimi Code) at 2026-10-05 18:10:36 +0800; the
+                     18:33 re-extraction ran after that edit and the extracted route
+                     set still matches the 71-route baseline exactly.
+                     Materials/timetable rows are recorded only as
+                     deferred_active_owner; no materials/timetable code was executed
+                     or copied in A01.
+
+2. ROUTE-BEARING SOURCE FILE HASHES (sha256) AND MTIMES
+--------------------------------------------------------
+(as recorded in evidence/A01/statics_extract.json source_and_tool_hashes,
+ observed 2026-10-05 18:29 - 18:34 +08:00)
+
+sha256 753749fac1361481034e0920c0543e3e621c0d638c21558c73852fd3237fef5d
+  examdata/src/examdata/api/app.py
+  mtime=2026-10-05 00:36:05.319688900 +0800  size=22552
+sha256 9568b295d15e837e69a879cfc7dabf53f16a42d61a7a9c2859ec386fdacbe4c1
+  examdata/src/examdata/api/unified.py
+  mtime=2026-10-01 09:25:11.713155800 +0800  size=22189
+sha256 9d79ee009086f72e0fc2c2a94ad679c359d42d0f1e970b15a75915cce03511d3
+  examdata/src/examdata/api/ielts.py
+  mtime=2026-10-05 03:26:06.699528600 +0800  size=22083
+sha256 051449da09363e1c2d392c5a57f809b9d3a30cd2feabcdca4dffaacf73d17934
+  examdata/src/examdata/api/toefl.py
+  mtime=2026-10-05 13:12:21.142462800 +0800  size=18367
+sha256 492dc6217ea9578495f6b7cba0d6d901932222891736cbbadc28dde6e52edc40
+  examdata/src/examdata/materials/router.py
+  mtime=2026-10-05 00:34:26.044556200 +0800  size=10125
+sha256 ce9b3cbf91e26aa38a3dcd92192c57fc0922f1d77d904006a55421774e9b2332
+  examdata/src/examdata/timetable/router.py
+  mtime=2026-10-05 18:10:36.938644700 +0800  size=16321
+
+3. TOOL HASHES (sha256), RE-VERIFIED ON DISK 2026-10-05 18:37 +0800
+-------------------------------------------------------------------
+36a7a48d0bf2b0a59a149b6a14a9d5c361d3afd2c823d177538ea61cec70edb5
+  integration-staging/tools/ledger_update.py
+d6cdc8859a0051469093308aa68fb4380b71b6c2b8993b67454fb0cc867d86be
+  integration-staging/tools/a01_inventory_routes.py
+8af1c7e366ec7483c6655a34694e71a90b445a8841e2b15bd8404708663e38e9
+  integration-staging/tools/a01_static_inventory.py
+e4cf64c56305530f34e3a76321c3f201fdb01af9cc989c6111f74485bffecdac
+  integration-staging/tools/a01_worksheet_build.py
+5ad62a0db00b65d6212fb32843f903438b77ddc9abd4f8a0aaa6af7b58d7bea7
+  docs/integration/tools/inventory_routes.py (original, read-only)
+consistency check: statics_extract.json self-records a01_static_inventory.py as
+8af1c7e3... and a01_inventory_routes.py as d6cdc885... - both MATCH the on-disk
+hashes above (re-checked after the GBK-decode fix re-run; no edits since).
+
+4. BASELINE AND LEDGER HASHES
+-----------------------------
+946d3e90cbccd54dc9ac9005f36f8f940b6b7d2fe1a5ae515b119d3c00e55baf
+  docs/integration/ROUTE_INVENTORY_CURRENT.json (71-route baseline)
+9ab29a6c35f9fcbe7e90a45f90a8c87f2eb78ef7014b9c105526369923c8b300
+  docs/integration/execution/execution-ledger.json
+  PRE-UPDATE state at 2026-10-05 18:37 (byte-compact form, 35527 bytes).
+  NOTE: the first ledger_update.py run for A01 rewrites the ledger in canonical
+  form (indent=2, ensure_ascii=False, trailing newline); the post-update hash is
+  appended below. The A00-era hash recorded in A00 evidence remains a
+  point-in-time record only.
+
+5. GIT SNAPSHOT (examdata, read-only inspection 2026-10-05 18:29 +08:00)
+-------------------------------------------------------------------------
+HEAD: 8da3a0917e017a6cbf5d3e58e1fbeb9d0b0b83c8
+status entries (porcelain, incl. owner working-tree edits): 1269
+(recorded in statics_extract.json git_snapshot; no git-mutating command was run)
+
+6. STATEMENTS
+--------------
+- Re-extraction found exactly the 71 baseline routes; worksheet covers 71/71.
+- No original application, test-suite, database, or service was started or run in A01.
+- All A01 writes stayed within integration-staging/ and docs/integration/execution/.
+
+=== POST-UPDATE LEDGER HASH (appended after ledger_update.py --task A01 --status in_progress) ===
+d6a62c32c989f0ada31fd5fba2a1e74b3b38f363c7d674880639b9f1337cfc63  docs/integration/execution/execution-ledger.json (canonical form, post ledger_update.py --task A01 --status in_progress, 2026-10-05T18:38:05+08:00)

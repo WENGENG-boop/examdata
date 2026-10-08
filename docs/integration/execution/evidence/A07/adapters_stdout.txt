@@ -1,0 +1,54 @@
+=== A07 adapter probe ===
+fixtures: C:\Users\weo\Desktop\api\integration-staging\fixtures\synthetic\adapters
+
+-- CIE read adapter --
+[ok] cie.system
+[ok] cie.counts :: counts={'courses': 1, 'containers': 1, 'questions': 4, 'answers': 7, 'regions': 6, 'assets': 2}
+[ok] cie.course_identity
+[ok] cie.container_native_date_kept_unknown
+[ok] cie.container_resources_roles
+[ok] cie.problems_exact :: got=['hash_conflict', 'missing_ms', 'unknown_date', 'unknown_rotation']
+[ok] cie.gaps_mapped :: gaps=['missing_document_hash', 'unknown_date', 'unverified_content', 'unverified_content']
+[ok] cie.q1_descendants_derived
+[ok] cie.q1a_own_exact
+[ok] cie.q3a_inherited_ancestor
+[ok] cie.all_answers_unverified
+[ok] cie.no_missing_answer_in_this_fixture
+[ok] cie.q2_two_regions
+[ok] cie.q2_page3_transform
+[ok] cie.q2_page9_unknown_rotation_none_transform
+[ok] cie.q1_page2_transform
+[ok] cie.q4_hash_conflict_preserved
+[ok] cie.regions_all_unverified
+
+-- Edexcel read adapter --
+[ok] edexcel.system
+[ok] edexcel.counts :: counts={'courses': 1, 'containers': 3, 'questions': 0, 'answers': 0, 'regions': 1, 'assets': 4}
+[ok] edexcel.course_aliases
+[ok] edexcel.missing_ms_two_units :: codes=['hash_conflict', 'missing_ms', 'missing_ms', 'unknown_date', 'unknown_date', 'unknown_date', 'unknown_date']
+[ok] edexcel.unknown_dates_four_sessions
+[ok] edexcel.hash_conflict_one
+[ok] edexcel.region_hash_conflict_preserved
+[ok] edexcel.container_unit_codes
+
+-- edge cases (in-memory / scratch) --
+[ok] edge.missing_index
+[ok] edge.missing_index_gap
+[ok] edge.invalid_json
+[ok] edge.non_object_json
+[ok] edge.wrong_fixture_kind
+[ok] edge.unsupported_schema_version
+[ok] edge.unresolved_answer_mode
+[ok] edge.missing_answer_reported
+[ok] edge.none_mode_keeps_own_only
+[ok] edge.missing_bbox
+[ok] edge.undeclared_page_silent
+[ok] edge.declared_missing_page_unknown_rotation
+[ok] edge.document_conflict_detected
+[ok] edge.document_missing_ms
+
+-- provenance --
+[ok] prov.synthetic.cie-index-adapters
+[ok] prov.synthetic.edexcel-index-adapters
+
+A07_PROBE: PASS (0 failing)

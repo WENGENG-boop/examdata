@@ -1,0 +1,9 @@
+{
+  "ledger": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\execution-ledger.json",
+  "task_id": "B00",
+  "status": "partial",
+  "gates_open": [],
+  "history_events": 3,
+  "updated_at": "2026-10-06T21:01:41+08:00",
+  "sha256": "83d5574cae5944a6ec64c0f259e929c5d2ab94f2c21de89051905eeed20ba496"
+}

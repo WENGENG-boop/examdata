@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: volc-dcdn
+Content-Type: text/html; charset=utf-8
+Content-Length: 96324
+Connection: keep-alive
+Strict-Transport-Security: max-age=604800
+Date: Sun, 04 Oct 2026 10:29:03 GMT
+Vary: Accept-Encoding
+Cache-Control: private
+Set-Cookie: jyean=KW89Ulqot6arDxf0seSXItrYKwtVcCN7Wj0SUFeyCuvhYGzpHcwgWooukNbvucnyKFQ37ocj60w-2S4srvZtSrBIPH_d1IKf_3AxBDBSy6aGbfXJ051C4m5z6PGFnQ5Y0; domain=jyeoo.com; expires=Sat, 12-Dec-2026 21:09:03 GMT; path=/; HttpOnly
+via: n114-080-250-179.bdcdn-shct05.ToB
+x-request-ip: 114.92.84.81
+x-tt-trace-tag: id=5
+x-dsa-trace-id: 1791109743d34466a2869c18e5211b6427ea442f4d
+X-Dsa-Origin-Status: 200
+server-timing: cdn-cache;desc=MISS, origin;dur=122, edge;dur=0
+

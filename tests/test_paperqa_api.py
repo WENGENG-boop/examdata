@@ -6,7 +6,9 @@
    `sha256`，以及每题裁剪的来源信息（1 起页码 + PDF bbox）。
 2. HTTP 两个路由——二进制响应的 `Content-Disposition` / `Content-Length`、
    `format=json` 的 base64 载荷，以及错误体保持 `{"detail": ...}`。
-3. CLI `--json` 与 HTTP JSON 共用同一套 schema。
+3. `content_disposition()` 的头部消毒——引号/换行/非 ASCII 不能进入裸
+   `filename`，非 ASCII 原名改由 RFC 5987 的 `filename*` 携带。
+4. CLI `--json` 与 HTTP JSON 共用同一套 schema。
 
 `FakeFetcher` 与 `tests/test_paperqa.py` 的写法一致（假 PDF + 假 servlet
 响应），这里刻意自带一份，避免测试模块之间互相 import。
@@ -18,7 +20,9 @@ import base64
 import hashlib
 import importlib
 import json
+import re
 from io import BytesIO
+from urllib.parse import unquote
 from zipfile import ZipFile
 
 import pymupdf
@@ -26,7 +30,8 @@ from fastapi.testclient import TestClient
 from typer.testing import CliRunner
 
 from examdata.core.fetch import FetchResult
-from examdata.paperqa import query, resolve
+from examdata.paperqa import OutputFile, Result, query, resolve
+from examdata.paperqa.api import content_disposition
 from examdata.paperqa.models import SCHEMA_VERSION
 
 CIE_ARGS = dict(board='cie', subject='9709', year=2026, season='Mar', paper='12')
@@ -121,6 +126,61 @@ def test_question_crops_carry_page_and_bbox():
     assert record['sha256'] == hashlib.sha256(result.files[0].data).hexdigest()
 
 
+def _header_filename(header):
+    """取回 `filename="..."` 里的回退名；头部结构被引号破坏时直接失败。"""
+    match = re.fullmatch(r'attachment; filename="([^"]*)"(?:; filename\*=UTF-8\'\'.*)?', header)
+    assert match is not None, header
+    return match.group(1)
+
+
+def _header_filename_star(header):
+    """取回 RFC 5987 的百分号编码原名；缺 `filename*` 时直接失败。"""
+    prefix = "filename*=UTF-8''"
+    assert prefix in header, header
+    return unquote(header.split(prefix, 1)[1])
+
+
+def test_content_disposition_ascii_name_is_quoted_without_filename_star():
+    header = content_disposition('9709_m26_qp_12.pdf')
+    assert header == 'attachment; filename="9709_m26_qp_12.pdf"'
+    # 回退名就是原名时不再附 filename*，免得客户端看到两个名字
+    assert 'filename*' not in header
+
+
+def test_content_disposition_non_ascii_name_is_latin1_safe_and_percent_encoded():
+    name = '2026年3月-9709_qp_12.pdf'
+    header = content_disposition(name)
+    # Starlette 以 latin-1 编码响应头，非 ASCII 字符留在头部就会 500
+    assert header.encode('latin-1')
+    fallback = _header_filename(header)
+    assert fallback == '2026_3_-9709_qp_12.pdf'
+    assert fallback.isascii()
+    assert _header_filename_star(header) == name
+    assert '%E5%B9%B4' in header  # 原名按 UTF-8 逐字节百分号编码
+
+
+def test_content_disposition_never_leaks_quotes_or_control_chars_into_filename():
+    for name in ['a"b.pdf', 'a\\b.pdf', 'a\r\nb.pdf', 'a"\r\nb\\c.pdf']:
+        header = content_disposition(name)
+        fallback = _header_filename(header)
+        # 裸引号会提前闭合 filename 值，换行/回车直接就是头部注入
+        assert '"' not in fallback and '\\' not in fallback
+        assert all(char.isascii() and char.isprintable() for char in fallback)
+        assert '\r' not in header and '\n' not in header
+        assert header.count('"') == 2
+        assert _header_filename_star(header) == name
+
+
+def test_content_disposition_blank_name_falls_back_to_download():
+    for name in ['', '   ']:
+        header = content_disposition(name)
+        assert header.startswith('attachment; filename="download"')
+        assert _header_filename(header) == 'download'
+        assert header.encode('latin-1')
+    # 全是非法字符不算空：消毒后得到下划线，非空且安全，因此不走 download 回退
+    assert _header_filename(content_disposition('"\\')) == '__'
+
+
 def test_http_binary_headers_for_single_and_zip(monkeypatch, tmp_path):
     module = _patched_app(monkeypatch, tmp_path)
     with TestClient(module.app) as client:
@@ -140,6 +200,21 @@ def test_http_binary_headers_for_single_and_zip(monkeypatch, tmp_path):
         with ZipFile(BytesIO(bundle.content)) as archive:
             assert len(archive.namelist()) == 2
     assert not list(tmp_path.iterdir())
+
+
+def test_http_binary_serves_non_ascii_filename_without_header_error(monkeypatch, tmp_path):
+    module = _patched_app(monkeypatch, tmp_path)
+    downloaded = query(**CIE_ARGS, fetcher=FakeFetcher())
+    name = '2026年3月-9709_qp_12.pdf'
+    monkeypatch.setattr(module, 'paperqa_query', lambda *a: Result(
+        downloaded.request, downloaded.documents,
+        [OutputFile(name, downloaded.files[0].data, 'application/pdf', 'qp')],
+    ))
+    with TestClient(module.app) as client:
+        response = client.get('/paper-qa/query', params=CIE_ARGS)
+    assert response.status_code == 200
+    assert response.content.startswith(b'%PDF-')
+    assert _header_filename_star(response.headers['content-disposition']) == name
 
 
 def test_http_json_format_is_base64_plus_full_metadata(monkeypatch, tmp_path):

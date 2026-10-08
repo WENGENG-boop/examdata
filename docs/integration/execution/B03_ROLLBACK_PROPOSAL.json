@@ -1,0 +1,78 @@
+{
+  "proposal_version": "b03-rollback-proposal/1",
+  "packet": "B03",
+  "generated_by": "integration-staging/runtime/b03-rehearsal-2026-10-07/b03_build_proposals.py",
+  "generated_at": "2026-10-07T00:35:39+08:00",
+  "status": "proposal_only_nothing_merged_not_deployed",
+  "derived_from": {
+    "merge_proposal_entries": 1,
+    "candidate_manifest": "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1/B03_CANDIDATE_MANIFEST.json",
+    "candidate_manifest_sha256": "9cf639e53fa4a49022ce73d0acb35a9ec6f54e234a5786adaa8fb6029e3898cf",
+    "candidate_tree": {
+      "files": 186,
+      "excludes": [
+        "B03_CANDIDATE_MANIFEST.json"
+      ],
+      "sha256": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5"
+    }
+  },
+  "semantics": {
+    "staging_level": {
+      "staging_candidate_tree": "delete the candidate tree only if its current tree digest still equals sha256_at_proposal, recomputed with the rule recorded in derived_from.candidate_tree_digest_rule (the candidate's own manifest is excluded, since a file cannot hash itself)"
+    },
+    "original_level": {
+      "merged_add_file": "B03 proposes no original-facing entries; if the earlier R0104/B02 proposals are released, reverse per those files"
+    },
+    "never": [
+      "never touch docs/integration/execution/evidence/**",
+      "never touch integration-staging/runtime/phase-b/** sealed transcripts",
+      "never touch the frozen R04 candidate under r0104-repair-20261006/candidates/**",
+      "never touch the frozen B02 candidate under b02-rehearsal-20261006/candidates/**",
+      "never restore the live execution ledger from a private copy"
+    ]
+  },
+  "guards": [
+    "verify the resolved absolute path and its sha256 (or tree digest) before any delete",
+    "no delete ever targets a protected original in Phase B private rehearsal",
+    "planned original edits are reversible only after the human release",
+    "all seven gates remain closed during rollback"
+  ],
+  "counts": {
+    "entries": 1,
+    "staging_level": {
+      "reversible_by_tree_delete": 1,
+      "reversible_by_file_delete": 0
+    },
+    "original_level": {
+      "reversible_by_delete": 0,
+      "no_original_action": 1
+    }
+  },
+  "gate_state_at_generation": {
+    "ledger_path": "docs/integration/execution/execution-ledger.json",
+    "ledger_sha256": "6d4449d3997b437fd3ea3a1fe7925fc78a7c0adbe0a5d3b793d6a8063101b4ba",
+    "gates": {
+      "original_paths_released": false,
+      "real_data_write_authorized": false,
+      "existing_service_cutover_authorized": false,
+      "upstream_requests_authorized": false,
+      "cie_resume_authorized": false,
+      "remote_deployment_authorized": false,
+      "original_cleanup_authorized": false
+    },
+    "all_closed": true
+  },
+  "entries": [
+    {
+      "id": "BP-0001",
+      "staged_path": "integration-staging/runtime/b03-rehearsal-2026-10-07/candidates/b03-contracts-catalog-v1",
+      "proposed_target": null,
+      "kind": "staging_candidate_tree",
+      "sha256_at_proposal": "bb745436318676eb0ed6f0f85d22eac55b369b45f7c555b9e0d1b437f6c4d0d5",
+      "sha256_to_restore": "463628cff11ef88ef9f42898cf31647483edcafb369bcc4c4b96dec2b7cb22cf",
+      "staging_level_reversal": "delete the candidate tree, and only if its current tree digest still equals staged_sha256_after",
+      "original_level_reversal": "not applicable: no original-project target proposed",
+      "status": "proposal_only_not_merged"
+    }
+  ]
+}

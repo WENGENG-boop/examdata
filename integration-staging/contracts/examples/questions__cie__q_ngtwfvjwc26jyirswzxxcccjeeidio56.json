@@ -1,0 +1,39 @@
+{
+  "schema": "question/1",
+  "public_id": "q_ngtwfvjwc26jyirswzxxcccjeeidio56",
+  "native_id": "1(b)",
+  "container_ref": "container_6cnnjvwpypjw2orom36k3xjazamje2x3",
+  "number_path": [
+    "1",
+    "1(b)"
+  ],
+  "parent_ref": "q_2tc2e4uhkufazt3aszordnnbilofoy6s",
+  "group_ref": null,
+  "question_type": "unknown",
+  "stem": "Synthetic part (b).",
+  "payload": null,
+  "marks": 3,
+  "required_assets": [],
+  "answers": [],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "unknown",
+    "answer_verification": "unknown",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/cie",
+      "native-kind:part"
+    ],
+    "parent_refs": [],
+    "note": "sub-part type and answer are not declared by the source"
+  },
+  "children": []
+}

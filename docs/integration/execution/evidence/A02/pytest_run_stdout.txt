@@ -1,0 +1,12 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+cachedir: runtime\pytest-cache
+rootdir: C:\Users\weo\Desktop\api\integration-staging
+configfile: pytest.ini
+plugins: anyio-4.15.1
+collected 18 items
+
+tests\test_harness_isolation.py .............                            [ 72%]
+tests\test_node_import_guard.py .....                                    [100%]
+
+============================= 18 passed in 5.84s ==============================

@@ -1,0 +1,28 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": {
+    "note": "Hand-authored synthetic fixture: an older snapshot of the same synthetic IELTS run as ielts-run-checkpoint-ok.json (same run_id, earlier updated_at, fewer requests). Invented values only.",
+    "created_by": "Phase A executor (packet A13)",
+    "created_at_local": "2026-10-06T10:10:00+08:00",
+    "provider": "ielts",
+    "purpose": "Prove that a stale summary is kept as a superseded row and can never override the newer snapshot."
+  },
+  "schema_version": "ielts-run-checkpoint/1",
+  "run_id": "synthetic-run-ok",
+  "updated_at": "2026-10-04T18:02:00.000Z",
+  "fetcher": {
+    "counters": {
+      "requests": 2,
+      "bytes": 22,
+      "errors": 0
+    },
+    "sources": {
+      "synthetic-source-a": {
+        "requests": 2,
+        "bytes": 22,
+        "consecutive_5xx": 0,
+        "blocked": null
+      }
+    }
+  }
+}

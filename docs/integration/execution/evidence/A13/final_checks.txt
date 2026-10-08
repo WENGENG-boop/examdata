@@ -1,0 +1,942 @@
+=== A13 final checks (frontend proposal copy + operations checkpoint readers: integration-staging/tools/a13_final_checks.py) ===
+generated_at_local: 2026-10-06T10:55:38+08:00
+generated_at_utc:   2026-10-06T02:55:38+00:00
+cwd: C:\Users\weo\Desktop\api
+
+--- 1. artifact existence ---
+required=42 missing=[]
+
+--- 2. fresh provenance re-verification (both tools with --check) ---
+operations rc=0 line=A13_PROVENANCE: PASS (6 entries)
+frontend rc=0 line=A13_FRONTEND_PROVENANCE: PASS (6 copied, 4 new, 3 fixtures)
+
+--- 3. manifest facts: operations fixtures + frontend provenance ---
+operations schema=fixture-provenance/1 entries=6 summary={"entries": 6, "synthetic": 6}
+operations manifest problems=[]
+frontend provenance_version=frontend-provenance/1 files=10 kinds={"copied_snapshot": 2, "modified_copy": 4, "new_file": 4}
+frontend manifest problems=[]
+fixtures kind=synthetic files=3 problems=[]
+
+--- 4. operations package / A13 tests / A13 tools containment scan ---
+scanned product=6 tools=4 frontend_files=15 offenders=[]
+
+--- 5. fresh liveness: collect-only + targeted A13 run ---
+collect rc=0 summary_count=887 node_ids=887
+targeted rc=0 tail=31 passed in 8.02s
+
+--- 6. fresh node liveness: staged frontend suite (27 tests) ---
+node rc=0 tests=27 pass=27 fail=0
+
+--- 7. ledger state ---
+A13 exit_codes n=56 nonzero=[1] failures=5 masked=3 rc1=2 row_rc1=1 dev_rc1=1 commands=56
+task_count=27 unique=27 statuses={"not_started": 13, "staged_pass": 14}
+A13_status=staged_pass gates=7 open=[]
+
+--- 8. close patch consistency (changed files, inputs, exit codes) ---
+changed_files=41 final_checks_registered=True outside_roots=[] post_close_listed=[]
+input_hashes=76 recompute_problems=[] active_owner_observations=['cie-location-batch/checkpoint.json: recorded=9c4509442d45 current=9c4509442d45 drift=False', 'ielts-data/runs/pte-20261004/checkpoint.json: recorded=536c8d756f7b current=536c8d756f7b drift=False', 'ielts-data/test-s03/runs/run-ok/checkpoint.json: recorded=28a0c3a53958 current=28a0c3a53958 drift=False']
+
+--- 9. containment of the A13 write set ---
+ledger_changed_files_outside_roots=[]
+pycache_leaks=[]
+
+--- 10. artifact inventory + sha256 manifest (excluding this transcript) ---
+integration-staging/components/fake-node-cli/fake-cli.mjs
+integration-staging/components/manifest.json
+integration-staging/components/README.md
+integration-staging/config/README.md
+integration-staging/config/staging-config.example.json
+integration-staging/config/staging.env.example
+integration-staging/contracts/examples/answers__cie__ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx.json
+integration-staging/contracts/examples/answers__cie__ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl.json
+integration-staging/contracts/examples/answers__ielts__ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh.json
+integration-staging/contracts/examples/answers__ielts__ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke.json
+integration-staging/contracts/examples/answers__ielts__ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb.json
+integration-staging/contracts/examples/answers__ielts__ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo.json
+integration-staging/contracts/examples/answers__ielts__ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc.json
+integration-staging/contracts/examples/assets__cie__asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl.json
+integration-staging/contracts/examples/assets__cie__asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd.json
+integration-staging/contracts/examples/assets__ielts__asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m.json
+integration-staging/contracts/examples/containers__cie__container_6cnnjvwpypjw2orom36k3xjazamje2x3.json
+integration-staging/contracts/examples/containers__edexcel__container_3bbmo2jmeebj3htxofgvkubtrcj23pct.json
+integration-staging/contracts/examples/containers__ielts__container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq.json
+integration-staging/contracts/examples/courses__cie__course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg.json
+integration-staging/contracts/examples/courses__edexcel__course_vfthis5jlxjijxarwasb7bbyghnx7fqt.json
+integration-staging/contracts/examples/coverage__cie__cov_synthetic_cie.json
+integration-staging/contracts/examples/coverage__ielts__cov_synthetic_ielts.json
+integration-staging/contracts/examples/examination_systems__synthetic__es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4.json
+integration-staging/contracts/examples/identity-registry__cie.json
+integration-staging/contracts/examples/identity-registry__edexcel.json
+integration-staging/contracts/examples/identity-registry__ielts.json
+integration-staging/contracts/examples/INDEX.json
+integration-staging/contracts/examples/jobs__synthetic__job_6zcvxittpvvbnvtpqttigpsmos2i5zmn.json
+integration-staging/contracts/examples/materials__synthetic__mat_mmfjianasbw6qrncjkldxnfuavnls3ou.json
+integration-staging/contracts/examples/questions__cie__q_2tc2e4uhkufazt3aszordnnbilofoy6s.json
+integration-staging/contracts/examples/questions__cie__q_cb5bnkkjhe4ct7mrvespujhxowo2r3up.json
+integration-staging/contracts/examples/questions__cie__q_ngtwfvjwc26jyirswzxxcccjeeidio56.json
+integration-staging/contracts/examples/questions__cie__q_nxjtvu4225v43syunzyhurjzvxl7szhk.json
+integration-staging/contracts/examples/questions__cie__q_w4ecszmbbqa54chk22paau3sluucc22z.json
+integration-staging/contracts/examples/questions__ielts__q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd.json
+integration-staging/contracts/examples/questions__ielts__q_egcwv27xjaq2elinkwd63fu6zvvq45ck.json
+integration-staging/contracts/examples/questions__ielts__q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k.json
+integration-staging/contracts/examples/questions__ielts__q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.json
+integration-staging/contracts/examples/questions__ielts__q_rtf7wrlwtotph3p45wx5wlfpfuo32iku.json
+integration-staging/contracts/examples/questions__ielts__q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.json
+integration-staging/contracts/examples/questions__ielts__q_ymm437ermxommfdifgexf7eq6dm6kdxc.json
+integration-staging/contracts/examples/questions__ielts__q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.json
+integration-staging/contracts/examples/regions__synthetic__region_fn2r2ikszwe234bmma3a5zorsr7snsk3.json
+integration-staging/contracts/examples/syllabi__synthetic__syl_6ytdfhso2hvo47geydgicjiuyilumcei.json
+integration-staging/contracts/examples/tags__synthetic__tag_fz2cdf3lly5r3uybtl2vmbubioquwymu.json
+integration-staging/contracts/examples/timetable_events__cie__tte_punqoxygppjubuhcuj4nkd4nbikowv3f.json
+integration-staging/contracts/examples/timetable_events__edexcel__tte_5kfllz2yp7iibointgdo56rmvnm7zgjc.json
+integration-staging/contracts/examples/timetable_events__edexcel__tte_hdxrn6xaev6ihma5sgilzhroxl5olams.json
+integration-staging/contracts/examples/timetable_windows__synthetic__ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv.json
+integration-staging/contracts/identity-keys.json
+integration-staging/contracts/quality-transitions.json
+integration-staging/contracts/schema/answer-conflict.schema.json
+integration-staging/contracts/schema/answer.schema.json
+integration-staging/contracts/schema/asset.schema.json
+integration-staging/contracts/schema/container.schema.json
+integration-staging/contracts/schema/course.schema.json
+integration-staging/contracts/schema/coverage.schema.json
+integration-staging/contracts/schema/examination-system.schema.json
+integration-staging/contracts/schema/gap.schema.json
+integration-staging/contracts/schema/job-status.schema.json
+integration-staging/contracts/schema/lineage.schema.json
+integration-staging/contracts/schema/manual-decision.schema.json
+integration-staging/contracts/schema/material.schema.json
+integration-staging/contracts/schema/option.schema.json
+integration-staging/contracts/schema/payload-labels.schema.json
+integration-staging/contracts/schema/payload-matching.schema.json
+integration-staging/contracts/schema/payload-options.schema.json
+integration-staging/contracts/schema/payload-table.schema.json
+integration-staging/contracts/schema/payload-text.schema.json
+integration-staging/contracts/schema/payload-unknown.schema.json
+integration-staging/contracts/schema/quality.schema.json
+integration-staging/contracts/schema/question.schema.json
+integration-staging/contracts/schema/region.schema.json
+integration-staging/contracts/schema/source-ref.schema.json
+integration-staging/contracts/schema/syllabus.schema.json
+integration-staging/contracts/schema/table-cell.schema.json
+integration-staging/contracts/schema/tag.schema.json
+integration-staging/contracts/schema/timetable-event.schema.json
+integration-staging/contracts/schema/timetable-window.schema.json
+integration-staging/fixtures/copied/edexcel/subjects-source.json
+integration-staging/fixtures/copied/ielts/indexes-current.json
+integration-staging/fixtures/copied/ielts/manifests-current.json
+integration-staging/fixtures/copied/ielts/pdf-provenance.json
+integration-staging/fixtures/copied/ielts/printed-pages.json
+integration-staging/fixtures/copied/toefl/ddy-index.json
+integration-staging/fixtures/PROVENANCE.json
+integration-staging/fixtures/PROVENANCE.md
+integration-staging/fixtures/README.md
+integration-staging/fixtures/synthetic/adapters/cie-index-adapters.json
+integration-staging/fixtures/synthetic/adapters/edexcel-index-adapters.json
+integration-staging/fixtures/synthetic/adapters/PROVENANCE.json
+integration-staging/fixtures/synthetic/adapters/README.md
+integration-staging/fixtures/synthetic/binary/cie-diagram.png
+integration-staging/fixtures/synthetic/binary/cie-ms.pdf
+integration-staging/fixtures/synthetic/binary/cie-qp.pdf
+integration-staging/fixtures/synthetic/binary/crop-cie-1-page2.png
+integration-staging/fixtures/synthetic/binary/crop-cie-2-page3.png
+integration-staging/fixtures/synthetic/binary/crop-cie-3-page4.png
+integration-staging/fixtures/synthetic/binary/edexcel-ms.pdf
+integration-staging/fixtures/synthetic/binary/edexcel-qp.pdf
+integration-staging/fixtures/synthetic/binary/ielts-diagram.png
+integration-staging/fixtures/synthetic/binary/manifest.json
+integration-staging/fixtures/synthetic/binary/material-synthetic-cie-ins.pdf
+integration-staging/fixtures/synthetic/binary/PROVENANCE.json
+integration-staging/fixtures/synthetic/binary/syllabus-synthetic-cie-0580.pdf
+integration-staging/fixtures/synthetic/catalog/catalog-base-synthetic.json
+integration-staging/fixtures/synthetic/catalog/catalog-duplicate-native-id-synthetic.json
+integration-staging/fixtures/synthetic/catalog/catalog-incomplete-reference-synthetic.json
+integration-staging/fixtures/synthetic/catalog/catalog-quality-upgrade-unexplained-synthetic.json
+integration-staging/fixtures/synthetic/catalog/catalog-removal-unexplained-synthetic.json
+integration-staging/fixtures/synthetic/catalog/PROVENANCE.json
+integration-staging/fixtures/synthetic/cie/cie-index-synthetic.json
+integration-staging/fixtures/synthetic/edexcel/index-synthetic.json
+integration-staging/fixtures/synthetic/ielts/questions-synthetic.json
+integration-staging/fixtures/synthetic/ielts-toefl/ielts-audio-synthetic.json
+integration-staging/fixtures/synthetic/ielts-toefl/ielts-questions-a08-synthetic.json
+integration-staging/fixtures/synthetic/ielts-toefl/PROVENANCE.json
+integration-staging/fixtures/synthetic/ielts-toefl/README.md
+integration-staging/fixtures/synthetic/ielts-toefl/toefl-bad-cache-synthetic.json
+integration-staging/fixtures/synthetic/ielts-toefl/toefl-questions-synthetic.json
+integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-running.json
+integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-stopped.json
+integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok-stale.json
+integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok.json
+integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-partial.json
+integration-staging/fixtures/synthetic/operations/PROVENANCE.json
+integration-staging/fixtures/synthetic/operations/README.md
+integration-staging/fixtures/synthetic/operations/unsupported-checkpoint.json
+integration-staging/frontend/app.js
+integration-staging/frontend/client.mjs
+integration-staging/frontend/fixture-server.mjs
+integration-staging/frontend/fixtures/catalog.json
+integration-staging/frontend/fixtures/PROVENANCE.json
+integration-staging/frontend/fixtures/resources.json
+integration-staging/frontend/fixtures/syllabi.json
+integration-staging/frontend/index.html
+integration-staging/frontend/PROVENANCE.json
+integration-staging/frontend/README.md
+integration-staging/frontend/search.mjs
+integration-staging/frontend/styles.css
+integration-staging/frontend/tests/client.test.mjs
+integration-staging/frontend/tests/flow.test.mjs
+integration-staging/frontend/tests/search.test.mjs
+integration-staging/pytest.ini
+integration-staging/README.md
+integration-staging/runtime/a01_preclose_final_checks.txt
+integration-staging/runtime/a12_fc_run1.txt
+integration-staging/runtime/a12_fc_run2.txt
+integration-staging/runtime/a13_final_run1.txt
+integration-staging/runtime/a13_node_tests.txt
+integration-staging/runtime/a13_pytest.txt
+integration-staging/runtime/ledger-patches/A01_close.json
+integration-staging/runtime/ledger-patches/A02_close.json
+integration-staging/runtime/ledger-patches/A03_close.json
+integration-staging/runtime/ledger-patches/A04_close.json
+integration-staging/runtime/ledger-patches/A05_close.json
+integration-staging/runtime/ledger-patches/A06_close.json
+integration-staging/runtime/ledger-patches/A07_close.json
+integration-staging/runtime/ledger-patches/A08_close.json
+integration-staging/runtime/ledger-patches/A09_close.json
+integration-staging/runtime/ledger-patches/A10_close.json
+integration-staging/runtime/ledger-patches/A11_close.json
+integration-staging/runtime/ledger-patches/A12_close.json
+integration-staging/runtime/ledger-patches/A13_close.json
+integration-staging/runtime/pytest-cache/v/cache/lastfailed
+integration-staging/runtime/pytest-cache/v/cache/nodeids
+integration-staging/runtime/pytest-temp/test_iter_checkpoint_paths_sel0/a/other.json
+integration-staging/runtime/pytest-temp/test_iter_checkpoint_paths_sel0/a/resume-checkpoint.json
+integration-staging/runtime/pytest-temp/test_iter_checkpoint_paths_sel0/b/checkpoint.json
+integration-staging/runtime/README.md
+integration-staging/runtime/tmp/_probe_fw.py
+integration-staging/runtime/tmp/a07-invalid.json
+integration-staging/runtime/tmp/a07-undecodable.json
+integration-staging/runtime/tmp/a11_fc2_stdout.txt
+integration-staging/runtime/tmp/missing-manifest.json
+integration-staging/runtime/tmp/probe space dir/fake node cli/fake-cli.mjs
+integration-staging/runtime/tmp/probe-missing/manifest.json
+integration-staging/runtime/tmp/probe-space-manifest/manifest.json
+integration-staging/runtime/tmp/space dir a06/fake node cli/fake-cli.mjs
+integration-staging/runtime/tmp/space-manifest.json
+integration-staging/src/examdata_integration/__init__.py
+integration-staging/src/examdata_integration/adapters/__init__.py
+integration-staging/src/examdata_integration/adapters/answers.py
+integration-staging/src/examdata_integration/adapters/bundle.py
+integration-staging/src/examdata_integration/adapters/cie.py
+integration-staging/src/examdata_integration/adapters/documents.py
+integration-staging/src/examdata_integration/adapters/edexcel.py
+integration-staging/src/examdata_integration/adapters/ielts.py
+integration-staging/src/examdata_integration/adapters/problems.py
+integration-staging/src/examdata_integration/adapters/reader.py
+integration-staging/src/examdata_integration/adapters/regions.py
+integration-staging/src/examdata_integration/adapters/source_reader.py
+integration-staging/src/examdata_integration/adapters/toefl.py
+integration-staging/src/examdata_integration/api/__init__.py
+integration-staging/src/examdata_integration/api/app.py
+integration-staging/src/examdata_integration/api/binary.py
+integration-staging/src/examdata_integration/api/dataset.py
+integration-staging/src/examdata_integration/api/envelope.py
+integration-staging/src/examdata_integration/api/links.py
+integration-staging/src/examdata_integration/api/openapi.py
+integration-staging/src/examdata_integration/api/pagination.py
+integration-staging/src/examdata_integration/api/view.py
+integration-staging/src/examdata_integration/catalog/__init__.py
+integration-staging/src/examdata_integration/catalog/builder.py
+integration-staging/src/examdata_integration/catalog/model.py
+integration-staging/src/examdata_integration/catalog/revision.py
+integration-staging/src/examdata_integration/catalog/store.py
+integration-staging/src/examdata_integration/contracts/__init__.py
+integration-staging/src/examdata_integration/contracts/base.py
+integration-staging/src/examdata_integration/contracts/canonical.py
+integration-staging/src/examdata_integration/contracts/completeness.py
+integration-staging/src/examdata_integration/contracts/enums.py
+integration-staging/src/examdata_integration/contracts/ids.py
+integration-staging/src/examdata_integration/contracts/jsonschema_lite.py
+integration-staging/src/examdata_integration/contracts/models.py
+integration-staging/src/examdata_integration/contracts/quality.py
+integration-staging/src/examdata_integration/legacy/__init__.py
+integration-staging/src/examdata_integration/legacy/bridge.py
+integration-staging/src/examdata_integration/legacy/decisions.py
+integration-staging/src/examdata_integration/legacy/parity.py
+integration-staging/src/examdata_integration/legacy/registry.json
+integration-staging/src/examdata_integration/legacy/translate.py
+integration-staging/src/examdata_integration/operations/__init__.py
+integration-staging/src/examdata_integration/operations/checkpoints.py
+integration-staging/src/examdata_integration/operations/coverage.py
+integration-staging/src/examdata_integration/providers/__init__.py
+integration-staging/src/examdata_integration/providers/capabilities.py
+integration-staging/src/examdata_integration/providers/fixtures.py
+integration-staging/src/examdata_integration/providers/protocol.py
+integration-staging/src/examdata_integration/providers/registry.py
+integration-staging/src/examdata_integration/providers/results.py
+integration-staging/src/examdata_integration/runtime/__init__.py
+integration-staging/src/examdata_integration/runtime/classification.py
+integration-staging/src/examdata_integration/runtime/doctor.py
+integration-staging/src/examdata_integration/runtime/manifest.py
+integration-staging/src/examdata_integration/runtime/redact.py
+integration-staging/src/examdata_integration/runtime/runner.py
+integration-staging/src/examdata_integration/runtime/settings.py
+integration-staging/src/examdata_integration/testing/__init__.py
+integration-staging/src/examdata_integration/testing/guards.py
+integration-staging/src/examdata_integration/testing/node_guard.py
+integration-staging/src/examdata_integration/testing/runtime_support.py
+integration-staging/tests/conftest.py
+integration-staging/tests/test_adapters_answers.py
+integration-staging/tests/test_adapters_cie.py
+integration-staging/tests/test_adapters_documents.py
+integration-staging/tests/test_adapters_edexcel.py
+integration-staging/tests/test_adapters_ielts.py
+integration-staging/tests/test_adapters_provenance.py
+integration-staging/tests/test_adapters_reader.py
+integration-staging/tests/test_adapters_regions.py
+integration-staging/tests/test_adapters_source_reader.py
+integration-staging/tests/test_adapters_toefl.py
+integration-staging/tests/test_api_binary_fixtures.py
+integration-staging/tests/test_api_binary_store.py
+integration-staging/tests/test_api_binary_transport.py
+integration-staging/tests/test_api_dataset.py
+integration-staging/tests/test_api_envelope.py
+integration-staging/tests/test_api_links_openapi.py
+integration-staging/tests/test_api_pagination.py
+integration-staging/tests/test_api_routes.py
+integration-staging/tests/test_catalog_builder.py
+integration-staging/tests/test_catalog_revision.py
+integration-staging/tests/test_catalog_store.py
+integration-staging/tests/test_config_manifest.py
+integration-staging/tests/test_config_resolution.py
+integration-staging/tests/test_contracts_completeness.py
+integration-staging/tests/test_contracts_identity.py
+integration-staging/tests/test_contracts_quality.py
+integration-staging/tests/test_contracts_schemas.py
+integration-staging/tests/test_fixture_provenance.py
+integration-staging/tests/test_frontend_staged_copy.py
+integration-staging/tests/test_harness_isolation.py
+integration-staging/tests/test_legacy_adapters.py
+integration-staging/tests/test_legacy_bridge_contracts.py
+integration-staging/tests/test_legacy_decisions.py
+integration-staging/tests/test_legacy_parity.py
+integration-staging/tests/test_legacy_translate.py
+integration-staging/tests/test_node_import_guard.py
+integration-staging/tests/test_operations_checkpoints.py
+integration-staging/tests/test_operations_coverage.py
+integration-staging/tests/test_providers_fixtures.py
+integration-staging/tests/test_providers_registry.py
+integration-staging/tests/test_runner_classification.py
+integration-staging/tests/test_runner_limits.py
+integration-staging/tools/__pycache__/a12_build_registry.cpython-314.pyc
+integration-staging/tools/_env.sh
+integration-staging/tools/a00_final_checks.sh
+integration-staging/tools/a01_final_checks.py
+integration-staging/tools/a01_inventory_routes.py
+integration-staging/tools/a01_static_inventory.py
+integration-staging/tools/a01_worksheet_build.py
+integration-staging/tools/a02_final_checks.py
+integration-staging/tools/a03_attribution.py
+integration-staging/tools/a03_capture_fixtures.py
+integration-staging/tools/a03_final_checks.py
+integration-staging/tools/a04_close_patch.py
+integration-staging/tools/a04_final_checks.py
+integration-staging/tools/a04_generate_schemas.py
+integration-staging/tools/a04_roundtrip_fixtures.py
+integration-staging/tools/a05_close_patch.py
+integration-staging/tools/a05_final_checks.py
+integration-staging/tools/a05_probe_dispatch.py
+integration-staging/tools/a06_close_patch.py
+integration-staging/tools/a06_final_checks.py
+integration-staging/tools/a06_probe_runner.py
+integration-staging/tools/a07_capture_adapter_fixtures.py
+integration-staging/tools/a07_close_patch.py
+integration-staging/tools/a07_final_checks.py
+integration-staging/tools/a07_probe_adapters.py
+integration-staging/tools/a08_capture_fixtures.py
+integration-staging/tools/a08_close_patch.py
+integration-staging/tools/a08_final_checks.py
+integration-staging/tools/a08_probe_adapters.py
+integration-staging/tools/a09_capture_fixtures.py
+integration-staging/tools/a09_close_patch.py
+integration-staging/tools/a09_final_checks.py
+integration-staging/tools/a09_probe_catalog.py
+integration-staging/tools/a10_close_patch.py
+integration-staging/tools/a10_final_checks.py
+integration-staging/tools/a10_probe_api.py
+integration-staging/tools/a11_close_patch.py
+integration-staging/tools/a11_final_checks.py
+integration-staging/tools/a11_probe_binary.py
+integration-staging/tools/a12_build_registry.py
+integration-staging/tools/a12_build_worksheet.py
+integration-staging/tools/a12_close_patch.py
+integration-staging/tools/a12_extract_legacy_shapes.py
+integration-staging/tools/a12_final_checks.py
+integration-staging/tools/a12_probe_compat.py
+integration-staging/tools/a13_capture_fixtures.py
+integration-staging/tools/a13_close_patch.py
+integration-staging/tools/a13_final_checks.py
+integration-staging/tools/a13_frontend_provenance.py
+integration-staging/tools/build_binary_fixtures.py
+integration-staging/tools/inspect_module_resolution.py
+integration-staging/tools/ledger_update.py
+integration-staging/tools/run_staged_tests.sh
+docs/integration/execution/A00_INITIAL_REPORT.md
+docs/integration/execution/A01_CLI_INVENTORY.md
+docs/integration/execution/A01_COMPONENT_INVENTORY.md
+docs/integration/execution/A01_CONFIGURATION_MATRIX.md
+docs/integration/execution/A01_DATA_ROOT_INVENTORY.md
+docs/integration/execution/A01_REPORT.md
+docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json
+docs/integration/execution/A02_REPORT.md
+docs/integration/execution/A03_REPORT.md
+docs/integration/execution/A04_IDENTITY_DECISION.md
+docs/integration/execution/A04_REPORT.md
+docs/integration/execution/A05_REPORT.md
+docs/integration/execution/A06_REPORT.md
+docs/integration/execution/A07_REPORT.md
+docs/integration/execution/A08_REPORT.md
+docs/integration/execution/A09_REPORT.md
+docs/integration/execution/A09_STORE_DECISION.md
+docs/integration/execution/A10_REPORT.md
+docs/integration/execution/A11_REPORT.md
+docs/integration/execution/A12_REPORT.md
+docs/integration/execution/A12_ROUTE_COMPATIBILITY_WORKSHEET.json
+docs/integration/execution/A13_REPORT.md
+docs/integration/execution/evidence/A00/agents_md_scan.txt
+docs/integration/execution/evidence/A00/checks_after_root_creation.txt
+docs/integration/execution/evidence/A00/final_checks.txt
+docs/integration/execution/evidence/A00/input_hashes_and_env.txt
+docs/integration/execution/evidence/A00/owner_observation.txt
+docs/integration/execution/evidence/A00/pre_creation_absence.txt
+docs/integration/execution/evidence/A01/final_checks.txt
+docs/integration/execution/evidence/A01/route_inventory_reextract.json
+docs/integration/execution/evidence/A01/route_inventory_reextract_stdout.txt
+docs/integration/execution/evidence/A01/route_tool_diff.txt
+docs/integration/execution/evidence/A01/source_hashes_and_observation.txt
+docs/integration/execution/evidence/A01/statics_extract.json
+docs/integration/execution/evidence/A01/statics_extract_stdout.txt
+docs/integration/execution/evidence/A01/statics_extract_stdout_FAILED_gbk_decode.txt
+docs/integration/execution/evidence/A01/worksheet_build_stdout.txt
+docs/integration/execution/evidence/A02/final_checks.txt
+docs/integration/execution/evidence/A02/leak_check_after_pytest.txt
+docs/integration/execution/evidence/A02/module_resolution_before_imports.txt
+docs/integration/execution/evidence/A02/pytest_run_stdout.txt
+docs/integration/execution/evidence/A03/attribution_generator_stdout.txt
+docs/integration/execution/evidence/A03/final_checks.txt
+docs/integration/execution/evidence/A03/fixture_capture_stdout.txt
+docs/integration/execution/evidence/A03/fixture_hash_crosscheck.txt
+docs/integration/execution/evidence/A03/leak_check_after_capture.txt
+docs/integration/execution/evidence/A03/owner_activity_attribution.txt
+docs/integration/execution/evidence/A03/pytest_run_stdout.txt
+docs/integration/execution/evidence/A04/final_checks.txt
+docs/integration/execution/evidence/A04/pytest_run_stdout.txt
+docs/integration/execution/evidence/A04/roundtrip_stdout.txt
+docs/integration/execution/evidence/A05/dispatch_stdout.txt
+docs/integration/execution/evidence/A05/final_checks.txt
+docs/integration/execution/evidence/A05/pytest_run_stdout.txt
+docs/integration/execution/evidence/A06/final_checks.txt
+docs/integration/execution/evidence/A06/pytest_run_stdout.txt
+docs/integration/execution/evidence/A06/runner_stdout.txt
+docs/integration/execution/evidence/A07/adapters_stdout.txt
+docs/integration/execution/evidence/A07/final_checks.txt
+docs/integration/execution/evidence/A07/pytest_run_stdout.txt
+docs/integration/execution/evidence/A08/adapters_stdout.txt
+docs/integration/execution/evidence/A08/final_checks.txt
+docs/integration/execution/evidence/A08/provenance_check.txt
+docs/integration/execution/evidence/A08/pytest_run_stdout.txt
+docs/integration/execution/evidence/A09/catalog_stdout.txt
+docs/integration/execution/evidence/A09/final_checks.txt
+docs/integration/execution/evidence/A09/provenance_check.txt
+docs/integration/execution/evidence/A09/pytest_run_stdout.txt
+docs/integration/execution/evidence/A10/api_stdout.txt
+docs/integration/execution/evidence/A10/final_checks.txt
+docs/integration/execution/evidence/A10/pytest_run_stdout.txt
+docs/integration/execution/evidence/A11/a10_probe_rerun.txt
+docs/integration/execution/evidence/A11/binary_stdout.txt
+docs/integration/execution/evidence/A11/final_checks.txt
+docs/integration/execution/evidence/A11/pytest_run_stdout.txt
+docs/integration/execution/evidence/A12/collect_only_stdout.txt
+docs/integration/execution/evidence/A12/compat_probe.json
+docs/integration/execution/evidence/A12/final_checks.txt
+docs/integration/execution/evidence/A12/legacy_rerun.txt
+docs/integration/execution/evidence/A12/legacy_shape_extract.json
+docs/integration/execution/evidence/A12/legacy_tests_stdout.txt
+docs/integration/execution/evidence/A12/pytest_run_stdout.txt
+docs/integration/execution/evidence/A13/frontend_provenance_stdout.txt
+docs/integration/execution/evidence/A13/frontend_rerun.txt
+docs/integration/execution/evidence/A13/node_tests_stdout.txt
+docs/integration/execution/evidence/A13/operations_provenance_stdout.txt
+docs/integration/execution/evidence/A13/pytest_run_stdout.txt
+docs/integration/execution/evidence/A13/python_rerun.txt
+docs/integration/execution/execution-ledger.json
+docs/integration/execution/ownership.json
+
+--- manifest ---
+bc5f9cd02bc1ae10213b667f3729883ada6ae88cb8ab77bbde681e11c42667b1 *integration-staging/components/fake-node-cli/fake-cli.mjs
+768f6af09fd2cb709c397f5b8a0fc3a4a72b1a261b7f7c13a7305712a2b65f96 *integration-staging/components/manifest.json
+2641f9832b16eb307f3c30e1ec50b7a6d61afe40e7dc10ced15ee929da64f11a *integration-staging/components/README.md
+2beeb31ed2520b60031a4a28e702a471149450e9e73a73bc7752927a7a5912e6 *integration-staging/config/README.md
+0c67866416644bcd1e2ed374573144c447718140e628d3e8df0988b5f5d715bf *integration-staging/config/staging-config.example.json
+d16bdbfb14f6a129919bbfdb0bb242b87c5c3fce6c49d0030227b69137a6612c *integration-staging/config/staging.env.example
+5de7384437c77fe46f31c66c3280f13de378dd996d6007de492d273e6f73419d *integration-staging/contracts/examples/answers__cie__ans_72ccqqvhg5nrr7guisdmxgqnhupsnlpx.json
+39963bab33214509b29e344c441dab3ef171c2ffb5cbc345603a8755879643f9 *integration-staging/contracts/examples/answers__cie__ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl.json
+16731fafb4ba52b61c197b4aa61d61941989b82a54df1cb5d0ffc667fcbb8e92 *integration-staging/contracts/examples/answers__ielts__ans_hhkuiea6jo5wh7wgv7dnm6sehkfj26xh.json
+5855f1ff408c929abd302493465d687a451369c378f670ecf91887d5699c0a18 *integration-staging/contracts/examples/answers__ielts__ans_rcimn5qhnqwi6szz5iiivxmrc6d6tbke.json
+a1190c00547b0dd42eba5a0bf91331d7d18eadcb71e68cfabca9440fabc1ac51 *integration-staging/contracts/examples/answers__ielts__ans_vn5kcb4yyscfh4535ju2nooinqzn3ynb.json
+145594b7c04305f140bb7e0393c143b23a5d9a38990ee7109f9d6e361cce8bea *integration-staging/contracts/examples/answers__ielts__ans_zi2f545psrcgmxbjwcwd5jmhqjexqlfo.json
+9bb3899dca966c23f9f6b192a71a6345381e9b2ed57eafaa355eab31d84f824c *integration-staging/contracts/examples/answers__ielts__ans_zpoupdffgdwaq6rho46xi36cj2bzqlvc.json
+83d7f4428d3dd1892fa61fd810922b5eff213fcf24870a2c373b9d8d44c7f425 *integration-staging/contracts/examples/assets__cie__asset_e5biyakxxkv5bvh64kasz5dyl5kolrkl.json
+9fcd3157f6a4e56753aaa31e1caec5bdff941b60a396256d17f1a866e0509e8a *integration-staging/contracts/examples/assets__cie__asset_gxwjjdcnhc5m4mcvcqhx4fmrd3ktefwd.json
+dcd903cbfd24aab5015c93e239bf2563090801bf87cb04193b339fc835e167bf *integration-staging/contracts/examples/assets__ielts__asset_hvzh75bs2y6opts3xkwy5rv45pmxog3m.json
+8765688328ccbda5e1bd4023e38626ea86e5bb8f26955df3e490efeefbb6d029 *integration-staging/contracts/examples/containers__cie__container_6cnnjvwpypjw2orom36k3xjazamje2x3.json
+8654d00952e4d262ce6fb2c3b4300b7f0a09035daa0dfaae305ad87c9b9b4bd4 *integration-staging/contracts/examples/containers__edexcel__container_3bbmo2jmeebj3htxofgvkubtrcj23pct.json
+6fdd7ed31067ffcf511d43b8854c49d7567973f6bc7a00353ea5aaba8b862a28 *integration-staging/contracts/examples/containers__ielts__container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq.json
+b6f8100bea69e509f0d54052973716b27735d156de1ef6f1f427627e8925eb9d *integration-staging/contracts/examples/courses__cie__course_ukyoxjr7v3wfqva5qgctydf75d6xeqfg.json
+3c5811d451a0a820f98a10f829377d9f24f7c370971b30e8ed951f2efe3fdec2 *integration-staging/contracts/examples/courses__edexcel__course_vfthis5jlxjijxarwasb7bbyghnx7fqt.json
+ef61cf3f563ca729548ad4cb25d0b9e68a263bcf4864cae6d57bbfc34b4a3940 *integration-staging/contracts/examples/coverage__cie__cov_synthetic_cie.json
+7efb5e3588f39e929770fbb1eee32a328a646bfe243b656b6d66d56be645b2ac *integration-staging/contracts/examples/coverage__ielts__cov_synthetic_ielts.json
+61712d5a6ac2a9703851c3d2616955150f15575c6e1af113fbf211db439b0510 *integration-staging/contracts/examples/examination_systems__synthetic__es_xdxhmo4qetoi52ht5f6qkevfi56ob3h4.json
+31ae154e7f54f178a7eb93679b3d9845ea46ebf7358c42230de67acd6c8d1196 *integration-staging/contracts/examples/identity-registry__cie.json
+996be9b8a4d0aadec3bea20bc88821b956de1120cc4f1929a50fe8aa8f84c5c9 *integration-staging/contracts/examples/identity-registry__edexcel.json
+a530a6500fdbe5a9e69e58c91749ea44b863337425ed8dee628fcccdabec4828 *integration-staging/contracts/examples/identity-registry__ielts.json
+701da1411d420d77c482ef23e23018c5b492020ef90f0b4f3b78ccc5cda49713 *integration-staging/contracts/examples/INDEX.json
+183246f02abb16e6f5cf8452726041ed1079ebde52b9a3673b1db9f4790a41aa *integration-staging/contracts/examples/jobs__synthetic__job_6zcvxittpvvbnvtpqttigpsmos2i5zmn.json
+8162635cf3336530eb027ab12f62952817a081161623b3c689111fd716ff9ea7 *integration-staging/contracts/examples/materials__synthetic__mat_mmfjianasbw6qrncjkldxnfuavnls3ou.json
+a5f4d2685fd4cbb170e6c09c30dd35d97a46c30e61559c47fda665d08eaa65fc *integration-staging/contracts/examples/questions__cie__q_2tc2e4uhkufazt3aszordnnbilofoy6s.json
+7cb1612447df2f226c7368a04e8298686db716a3df641de2499712c1b233c412 *integration-staging/contracts/examples/questions__cie__q_cb5bnkkjhe4ct7mrvespujhxowo2r3up.json
+e2b235b53f8db96ccd04baf5fe9ed77f27603e756aabc14c08fc7adbe34ad23c *integration-staging/contracts/examples/questions__cie__q_ngtwfvjwc26jyirswzxxcccjeeidio56.json
+4f5e408713fd695cc5c42870c26370386457d11a4ebe8f4b2a07008cbee71bfb *integration-staging/contracts/examples/questions__cie__q_nxjtvu4225v43syunzyhurjzvxl7szhk.json
+ba35977a0ecb940c8649ad9b5486fbad154ea39c601748eab239766d76a99268 *integration-staging/contracts/examples/questions__cie__q_w4ecszmbbqa54chk22paau3sluucc22z.json
+59633e8096eaf21404a444ff4a52516240625a245a6d84104f77ede1792271df *integration-staging/contracts/examples/questions__ielts__q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd.json
+170195309ae9aea6e566ba4a6ad1d1046ee39f3439bfe0c300ccf4c1cc5bd6d5 *integration-staging/contracts/examples/questions__ielts__q_egcwv27xjaq2elinkwd63fu6zvvq45ck.json
+5ea826294e0f488e5455d72c85e0d40d238db3a2462f3cd51788a979186f4dd0 *integration-staging/contracts/examples/questions__ielts__q_lkzo7pnl2zjiboucetyjy5ddgdxxcx3k.json
+339e7c6869e1a46367fae561c7ddc2724b8b5632f165ad6723dfba968801999a *integration-staging/contracts/examples/questions__ielts__q_pjo55lma3or42y2ncw2sa7kwqzkc4lwy.json
+bb4547bed2883916e4b575421c16d8a4619319e21010bcad884131b48b691999 *integration-staging/contracts/examples/questions__ielts__q_rtf7wrlwtotph3p45wx5wlfpfuo32iku.json
+b5ccbb3b7b3edbdc5831aab6611cd39b174848f8b7873ea8bd0854ee32e740b9 *integration-staging/contracts/examples/questions__ielts__q_vv7cxbrhbxxdpmtnlkcwzhyjs4dbeiq5.json
+1a0dcc7aa2bbae31b4639e9e11cf423e9ce7ceaa91e8b16cef075c7025534faf *integration-staging/contracts/examples/questions__ielts__q_ymm437ermxommfdifgexf7eq6dm6kdxc.json
+08ca96c6d79c9de4e65a5707fab9d9d5a8fbf52002e87034f5dd6816ee6e806b *integration-staging/contracts/examples/questions__ielts__q_zlx6ycscjqsk3e4gs5sq3ruxfzvuqtvf.json
+a32ad3d8842dbed8f9b54ad3935e732c078d8dbd37ce380b75e3a0f34231695c *integration-staging/contracts/examples/regions__synthetic__region_fn2r2ikszwe234bmma3a5zorsr7snsk3.json
+64f953241e3f51842058fe997a507201ffc7eb9aa14cbe2678667e82bd6a7028 *integration-staging/contracts/examples/syllabi__synthetic__syl_6ytdfhso2hvo47geydgicjiuyilumcei.json
+f591a669c7cbe51d18d0f552dd49783feb58d39a6734a469f59c85e5f8762e5c *integration-staging/contracts/examples/tags__synthetic__tag_fz2cdf3lly5r3uybtl2vmbubioquwymu.json
+bdc8b4a5538f531993e2c39521c56af26cf5b40648e23b5929d3e02044b1c034 *integration-staging/contracts/examples/timetable_events__cie__tte_punqoxygppjubuhcuj4nkd4nbikowv3f.json
+10c38fb67af6819d093eca736dc2f1e98404727442644a5cbbb092a09f1d080b *integration-staging/contracts/examples/timetable_events__edexcel__tte_5kfllz2yp7iibointgdo56rmvnm7zgjc.json
+cbfed9fbfc06c76db16a9c862de2dc457b602b4cf520616aba9911ec98735b06 *integration-staging/contracts/examples/timetable_events__edexcel__tte_hdxrn6xaev6ihma5sgilzhroxl5olams.json
+9b20722978dfcbf38939030db20696cbccbac22d2f789dd6c2488ac505bac981 *integration-staging/contracts/examples/timetable_windows__synthetic__ttw_m6m5zleg2srdbeqt32mlqs7yrhmacczv.json
+7d52444c6801b035f48b713885f7754f411aa5cfb8c2b56d92bf1c737f0bb3df *integration-staging/contracts/identity-keys.json
+f570b76f615424f593db625e7203d8a737c5d62294881a41e0978520e4351204 *integration-staging/contracts/quality-transitions.json
+f60af62efd1580ce179b26636b70881cc471a5365dbc9e54b1762853fb2bbb6f *integration-staging/contracts/schema/answer-conflict.schema.json
+8bb77a49a74af984020cc44cdf68b446b0573b5b2a5f727c7d9ba7a1c63dde6c *integration-staging/contracts/schema/answer.schema.json
+c788ce9e059f69d38509cff76748ec2d897c4b6b6d41500a75c2f06062450574 *integration-staging/contracts/schema/asset.schema.json
+29217a15dfb9b01a5a2a0f0a83a59ae5436b0f835f2dec14f51effd24d2c14d5 *integration-staging/contracts/schema/container.schema.json
+79813eef417497b5203121b8dfc4ccd96562d43d7c8e8a71bc59e54aa673d228 *integration-staging/contracts/schema/course.schema.json
+dbf36cf34118e590f10577308f0f115e0db2e71a52feb74e6740170d435ffda9 *integration-staging/contracts/schema/coverage.schema.json
+913f473c180118b9dcfa37181b77ee4841e25c687f8ff3352d3d6847a3b9b069 *integration-staging/contracts/schema/examination-system.schema.json
+d1bf5ebe21281602b236704f37ac617e765e78cb5e54c8718af85bcd63d77f56 *integration-staging/contracts/schema/gap.schema.json
+7bde25e811d353dd0ecfaae361ed984a2f5474350dd642b58c4d8d174d052e64 *integration-staging/contracts/schema/job-status.schema.json
+af343835a2d152f2f2d8f1d76fb3779d1cad4ce065404c00116b3bd9537fade1 *integration-staging/contracts/schema/lineage.schema.json
+b9c4bad8ddc5e032951e133a1cc51d341226e21f6eb2cbfa0a55d5fb3347b044 *integration-staging/contracts/schema/manual-decision.schema.json
+24779ff02006139adf1f1eafdd07b150f6f65bc69c57c9649c3c33ec319685fb *integration-staging/contracts/schema/material.schema.json
+e78f8ff73b0ee7c0290faeca56d9fcbb8c5f3cb88e6d057e57a8602cc66dd6ab *integration-staging/contracts/schema/option.schema.json
+b22a489b8e94498c0c9e0d9ba5c90c7e231dfaf03fdc17e6d531932ea42840bc *integration-staging/contracts/schema/payload-labels.schema.json
+0859eaa67340796838afb6a0fcffcd8ed714f6ac7584c69247e09cbbe62f3943 *integration-staging/contracts/schema/payload-matching.schema.json
+a83e658411cf76e333612b5812368a13e8031c271b825135df04a7b695fd2017 *integration-staging/contracts/schema/payload-options.schema.json
+83b0238af34a4b69cf56f9583abb9819fe1e352509c937370ad0468fff09d825 *integration-staging/contracts/schema/payload-table.schema.json
+0abe4ac342c5a2f4c72f3bc15dbc73e68ecdb3368895d747d23751864073c13b *integration-staging/contracts/schema/payload-text.schema.json
+c6b98535700951daf2cf9236d508fd0005b19fc5dab33dc72d37692a1896c145 *integration-staging/contracts/schema/payload-unknown.schema.json
+3be2c080e5ebb3c22ef2796572d8f250187e0e675348f4afe1edf0c9e5a15d1d *integration-staging/contracts/schema/quality.schema.json
+5dbddbcf5cc453a80c5c29f4b8cf345d77178a606283376cab0379ae1b758e40 *integration-staging/contracts/schema/question.schema.json
+2e61d4a4b1928d1e9861080c8c5ab7aa6bfddd84fec5ad1e687020f8e68bd62d *integration-staging/contracts/schema/region.schema.json
+feb19fe8a95ad19919f2bc57de36799cfddf072b325749d87e2c84febcc79adc *integration-staging/contracts/schema/source-ref.schema.json
+68a6c2a4484374d5fe0002008b9bef1cece8031d468ed18cc000cdddba016210 *integration-staging/contracts/schema/syllabus.schema.json
+9b125f4488beab959bc4ae8e969b3a8399856e1f48f74891cac363d921606514 *integration-staging/contracts/schema/table-cell.schema.json
+9f2ae7bf76a64efa1d0598b1c1db44548836c3e389908b079fbd13e79b89b2dc *integration-staging/contracts/schema/tag.schema.json
+398b4506fb2e5375e071bf3990d05971cd71bc9fb1f2e96eb23c2217c0451513 *integration-staging/contracts/schema/timetable-event.schema.json
+0f22760f8d1c0380fe222d4ba41ced5811290ff08401c8c060825b1061985073 *integration-staging/contracts/schema/timetable-window.schema.json
+b293e88820c43f0af404f36571dd83a040c12881312e528764919f7aa015a9bc *integration-staging/fixtures/copied/edexcel/subjects-source.json
+b786b370117affa1a18c26f300c770f93690d438550bace4676965d149db77f7 *integration-staging/fixtures/copied/ielts/indexes-current.json
+c1f3d59caa348ccf2280a9e1ef7897d8dcf0034b7686f733f16d11bd5d9e685c *integration-staging/fixtures/copied/ielts/manifests-current.json
+0725aa6213084e6fee1411451c66943f2e89225ebec935aa4f7a7342ca7aca2a *integration-staging/fixtures/copied/ielts/pdf-provenance.json
+ab876413450ca749355e1b4489843c1acef235fd6059cea48dc76b52e8856432 *integration-staging/fixtures/copied/ielts/printed-pages.json
+50dc50a58bb6536507bf1f508b1d959945e949d82a8aa0fe56149b11a8c37500 *integration-staging/fixtures/copied/toefl/ddy-index.json
+8e75a390f47d1e821a860e027805551c0ab17dd7f70802d7baa5a2417df867dd *integration-staging/fixtures/PROVENANCE.json
+3d8e8b7080be6da39a02e11842828af9fa459b50ab82f4f8a57232de6b1af5dc *integration-staging/fixtures/PROVENANCE.md
+92a53e788bcc4ee573218feeb2f19c90b4a5183d0fa2bffcf34fc97a8f65074c *integration-staging/fixtures/README.md
+e4b73d1573dc198c495265d04216fcf22319f3034277859c400171f43f861785 *integration-staging/fixtures/synthetic/adapters/cie-index-adapters.json
+c7b917432968b35122323401a6f93a722d059fabce559d1da1bc7fe5e1a65367 *integration-staging/fixtures/synthetic/adapters/edexcel-index-adapters.json
+6a5e619a1c46694cab6b01e2b91645779cb426b6f21d9576fd7240a698eb76bb *integration-staging/fixtures/synthetic/adapters/PROVENANCE.json
+bdb017eb4ffbd7bdf8f9d27f8510b4cf7ca4b44fb2b5968fd39b2d45e05ee9df *integration-staging/fixtures/synthetic/adapters/README.md
+0f65db46db49639505d17df5f9bad982dbcd4263ca6d96a8255b79b2f0036ca0 *integration-staging/fixtures/synthetic/binary/cie-diagram.png
+37b26bec054e2f4ef071f00d19ed0a2dd982c0f665f4ab74c597c9d784c08630 *integration-staging/fixtures/synthetic/binary/cie-ms.pdf
+6596e686e26208b79bef32ecb04561d8813da7b15419ceeb32728dd0c0420790 *integration-staging/fixtures/synthetic/binary/cie-qp.pdf
+b52c1698d4245b33201e250d1a47ce456961f665086fdf4c0a196c76a93bbf87 *integration-staging/fixtures/synthetic/binary/crop-cie-1-page2.png
+0a0c6cad9c5ab5a3572cd5fcc8c46f2799d42c9110c5c3805632efaaab4ff711 *integration-staging/fixtures/synthetic/binary/crop-cie-2-page3.png
+eea2cac490b42d5cc34a2ff51a068b3adf08ea388064dbf6fb55205ac271a3cb *integration-staging/fixtures/synthetic/binary/crop-cie-3-page4.png
+21e9e5f2d202fbb9bd077ee0c191e097f6abedec0f61004b36c2aef9d44a84e0 *integration-staging/fixtures/synthetic/binary/edexcel-ms.pdf
+8b40c343cf294d0e40e53bd1d086837d0f268eb8a95f4ece05ebc24ebed8130e *integration-staging/fixtures/synthetic/binary/edexcel-qp.pdf
+581ce430b2d8e28cd8be0dfe942c6e73a23072c12b2ec71368b8282ca7b6940f *integration-staging/fixtures/synthetic/binary/ielts-diagram.png
+c9b6eace1a868d15c022dec1082f87ad0ecfeb15659bd624dd46f8ea6053576f *integration-staging/fixtures/synthetic/binary/manifest.json
+f5980cef27dfdb25e35a194b748da3ae274622de6dea1c97e72c410545760fef *integration-staging/fixtures/synthetic/binary/material-synthetic-cie-ins.pdf
+1ac638740506eaa1f1b4fb19e0dc0981df900f1a0b00dd64b60cd4650b9e9d42 *integration-staging/fixtures/synthetic/binary/PROVENANCE.json
+8440c06c6815e3028af1332449598d241329e3305133f57019f290cf277dd9da *integration-staging/fixtures/synthetic/binary/syllabus-synthetic-cie-0580.pdf
+2ced97a6aba36b46b94a8b270d96d2293a03093f5470a5e7799577ce26ec6341 *integration-staging/fixtures/synthetic/catalog/catalog-base-synthetic.json
+30e972c258a4bbdf8305ef0598c5069196e62ba90585ab54a14f3850f38691fe *integration-staging/fixtures/synthetic/catalog/catalog-duplicate-native-id-synthetic.json
+14175ad8c38450133f2b13682fc33bda37d82dcf4e3d8f3bedc8b47c3418e16c *integration-staging/fixtures/synthetic/catalog/catalog-incomplete-reference-synthetic.json
+3367628803788d7614d98182717dc96eaa1f63ea9c131351db67c2d8a8beab07 *integration-staging/fixtures/synthetic/catalog/catalog-quality-upgrade-unexplained-synthetic.json
+9cb8b0a1a44a04533956e51b5743daaac7cb230d3a616e51ab073823cd1e5dbb *integration-staging/fixtures/synthetic/catalog/catalog-removal-unexplained-synthetic.json
+c5d5136410d70eef69a40e8d990fd7c970334b7424043360e8c62eb278d1531b *integration-staging/fixtures/synthetic/catalog/PROVENANCE.json
+6f4d0d4a15972fa7aa70feb6c6bba57f5750f5afdd554dbde867422dbf250512 *integration-staging/fixtures/synthetic/cie/cie-index-synthetic.json
+047ab7efb5f8e6b06f2ec71eecdd1ac2240324fa3dc0c699e34be4f64e4fd1a3 *integration-staging/fixtures/synthetic/edexcel/index-synthetic.json
+7f11b2256f3757ace21efb44d23705dcaa00bd01f0383b2ae44a9b6fc10ae6b9 *integration-staging/fixtures/synthetic/ielts/questions-synthetic.json
+37cfdb49d30584a48f1f0afc9ac493fe3511cb4af90c47eb768111a147161b39 *integration-staging/fixtures/synthetic/ielts-toefl/ielts-audio-synthetic.json
+9daf7fe33ee72f47289d7169bdc2d1a6a5f3c567476aeec302e1698378d85ec6 *integration-staging/fixtures/synthetic/ielts-toefl/ielts-questions-a08-synthetic.json
+fd6507bfe322159162880bdcd09e48cfbe892363b9375f1ee59fb02a415a0603 *integration-staging/fixtures/synthetic/ielts-toefl/PROVENANCE.json
+cf2be3d8811002bd809c7e6a3867eb8fc1a2770245ed325364205354a7787e70 *integration-staging/fixtures/synthetic/ielts-toefl/README.md
+4669b5adef6c9acae2e18a8dc916af306d3b92afc9614a93222c13f3afb48c1d *integration-staging/fixtures/synthetic/ielts-toefl/toefl-bad-cache-synthetic.json
+cbe0a88a14b9c5e86cdddadd635765b87f4ad794d4d5b0b3ca1ac58c48f58594 *integration-staging/fixtures/synthetic/ielts-toefl/toefl-questions-synthetic.json
+569e684df62f142ae2980ec22801f58aa1ce6d469e5926f58380875d47c3a8bd *integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-running.json
+341a9d43eeaa19e786b2291e19716510c3b16c84d265c00545d02cfbf6dddc16 *integration-staging/fixtures/synthetic/operations/cie-batch-checkpoint-stopped.json
+3fd24d8b6a9ca5c90dbb0d0e451b1e291e8167b1e321d7ddf8c683c74e9e5515 *integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok-stale.json
+0364323fea0d9f37c643bf758dfc0b05b2c2cf8204df84d59e50044aad5bcf12 *integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-ok.json
+8e8fd6406be38831be9e7436b68e16f29fdc3074412238147351028c4733cbee *integration-staging/fixtures/synthetic/operations/ielts-run-checkpoint-partial.json
+5ba4a5a8c5888080b92d57bac9981dbff6173cd1b27b2411034822d914dbef0c *integration-staging/fixtures/synthetic/operations/PROVENANCE.json
+04194078a00d26a91fcfcf02621d1433cf301cac53e942b0a6052d169636b31f *integration-staging/fixtures/synthetic/operations/README.md
+b7f2f031a2594ee29c3b89d7753d056f48b5665a0ebe303ea0a4e86f99bba414 *integration-staging/fixtures/synthetic/operations/unsupported-checkpoint.json
+66f698449334b91529dbd5c86e6350af3977ee9c6d5812985761f8c176c07db8 *integration-staging/frontend/app.js
+57c55e43da46832fc967e4fc09add0cd418bcf59419596f9fd29bab0ac38802f *integration-staging/frontend/client.mjs
+424b404d25b461fd54d88d664ff882d494ac168f90943ca80a4f2742836b960b *integration-staging/frontend/fixture-server.mjs
+6344f4f2ef6433bc319741deaefd6ae96366b6214ac4df6af055dce85150ed29 *integration-staging/frontend/fixtures/catalog.json
+2a42aa1f095e1f25479229596cf2891c3c6e9ff05d2c48b8f124531d9a1e07bf *integration-staging/frontend/fixtures/PROVENANCE.json
+12277f5ff5ef69bd1f513e31b1e29b5e0f50e55d596289db72862776a68b97aa *integration-staging/frontend/fixtures/resources.json
+080d0de3838acd197b01813d71e927fdc9fb9477bf3216b354a7c90a3bb58913 *integration-staging/frontend/fixtures/syllabi.json
+c2bf9f4e32ad667bc89ce901f619a0f0643ff778d33ab383b6e11013b6e1e6c6 *integration-staging/frontend/index.html
+bc7d167bc1419a0a17ae28796579ef7a25df548a5fad8f4dbcef570d2987fde1 *integration-staging/frontend/PROVENANCE.json
+53764be9870a086be874eee775baacd5ca9eafdcf06cefb1cbeb3ceb3ce27c8a *integration-staging/frontend/README.md
+6d45a67f794d34c40891c51ddfa8b8011987c0b02de4bfb46fabb6eec0d730db *integration-staging/frontend/search.mjs
+0d33007e8bea4fb5732e64bf659c2f56ed98c4df8ea6d018431b85796a3ef3a5 *integration-staging/frontend/styles.css
+6c23e46e86af23f903b73ba273e66b0d2a64fa5f12dc0e9fa658031f394c3294 *integration-staging/frontend/tests/client.test.mjs
+c10ad67c8aca97bf15d1f62c85b6e400c740276805ebe7dcf14f767caa4bbffb *integration-staging/frontend/tests/flow.test.mjs
+7fd00040fe00a4c0b2b764416ca1148a33619ed1a3dc48793142316bfb0d77ee *integration-staging/frontend/tests/search.test.mjs
+b8d9a1505d818bca719331650c1f0643ea7ffa2d373e465df3dda48585ef9acc *integration-staging/pytest.ini
+38269ce9af64a79038db2cdc236b767b27048730a94b31b898945a114f11850f *integration-staging/README.md
+cbfeb424ee85478b63adf715387b5fb0c76b2e0ebee952123d5029795ea26986 *integration-staging/runtime/a01_preclose_final_checks.txt
+58f5bec17906aa1042d9375cc34e31f7b2a26ccabbff2d2fc5ed0923bc4051a8 *integration-staging/runtime/a12_fc_run1.txt
+71557b397f747ff13d6b9ab95b55c26a936adade126be66e7714f09bafc2008f *integration-staging/runtime/a12_fc_run2.txt
+e6f86a0a87d5212f11a800f7d5c5eb296b2ce518978fa7cc71d1c579a4a2e9ac *integration-staging/runtime/a13_final_run1.txt
+9f5bce40ae1fc0cf075882530bd546e11d729f47785c25d6b9b8fab7cf9f31b7 *integration-staging/runtime/a13_node_tests.txt
+2e2c37d1e5740909ab417577a048548ccc54c17b5ce418e412e897ae490d9dcf *integration-staging/runtime/a13_pytest.txt
+df40c2e718920c814fe509706371975885d04605fcd8989fcde7eb5d22e9265f *integration-staging/runtime/ledger-patches/A01_close.json
+469f11208d87741cf005956c8bdf47f16efb279ab2cc7cf864724f110c4ff898 *integration-staging/runtime/ledger-patches/A02_close.json
+db5c6c1bfcda7c02eb23e6bbad279bbd773d82c32a0fdb4e6a19f9ae44fd7aa0 *integration-staging/runtime/ledger-patches/A03_close.json
+98bdb57781e98a063a651a0a8b1196164fcbdbf06fa2ee8bac78f0a57e2d3feb *integration-staging/runtime/ledger-patches/A04_close.json
+28bb0978e53240884f90a3825daceb263716d2e450ed28e66f5b1ef26016e708 *integration-staging/runtime/ledger-patches/A05_close.json
+3fb3885b25680f3809073c4da3912d9d4ab88d394d8140bfaabd88456afbec9a *integration-staging/runtime/ledger-patches/A06_close.json
+e33bd8eb0bb177074b0c3ff1792445462d18aaea91d330e912c37123438627c0 *integration-staging/runtime/ledger-patches/A07_close.json
+e4bc32993f41a14c19681c9c1511fc96287aae5a4332496df1fd29ffd51f3a0c *integration-staging/runtime/ledger-patches/A08_close.json
+d8a3909f6b0f31228ba568b6d88bd91630c3421ff351344eb24617b0c38d051c *integration-staging/runtime/ledger-patches/A09_close.json
+95a6c9a4d5656124af4d8cb1bb2e241370eb4a6520af95d11a67c3c2891fe2f5 *integration-staging/runtime/ledger-patches/A10_close.json
+f1fadf96a3c8cd3a597ebaaea97b2b476d033d078a56fb094f40722a66f2b66a *integration-staging/runtime/ledger-patches/A11_close.json
+d30542827bd1ea216bf304abc1500ed044d12b79294d65fd44f34ea0a1a9d4c7 *integration-staging/runtime/ledger-patches/A12_close.json
+0f9ead597e499d18df7656a5dcb0e4d4e9f8414eea41765210893016795cd4b9 *integration-staging/runtime/ledger-patches/A13_close.json
+c3458e353e80aea938d09160e1c039ddfac92d9c4184eb0a826cd3af9777c6b1 *integration-staging/runtime/pytest-cache/v/cache/lastfailed
+84c74cca12ff5a0bf6aa09f350fb8449b80c9c18c1a2d1d5cd9f836eb290f2f5 *integration-staging/runtime/pytest-cache/v/cache/nodeids
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a *integration-staging/runtime/pytest-temp/test_iter_checkpoint_paths_sel0/a/other.json
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a *integration-staging/runtime/pytest-temp/test_iter_checkpoint_paths_sel0/a/resume-checkpoint.json
+44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a *integration-staging/runtime/pytest-temp/test_iter_checkpoint_paths_sel0/b/checkpoint.json
+43c3b13b0fa1f7116eb0264baa0f8113637ee323610951dd6f42ef239bce4663 *integration-staging/runtime/README.md
+74d972f546f86f52722fd0bff3c32bfa62623ac8915a8cd1d50eaa8167eff152 *integration-staging/runtime/tmp/_probe_fw.py
+92072df399cb74703f8e86f450d552bc0bb01eeeb98a90985a1b7772c8fd0016 *integration-staging/runtime/tmp/a07-invalid.json
+ffe5471397f25e8fa04595e2a7f53b5f7c0a874975270937f6edf5a2203bd56a *integration-staging/runtime/tmp/a07-undecodable.json
+d5e5a827cd862c6ebb199ace3efba3bf604c7f5a5a3fb3ce0c5e911d442db7f1 *integration-staging/runtime/tmp/a11_fc2_stdout.txt
+4b9e23c359047e0d646639cedd53f81ed723894a0dadf6b0d28b9946d4212924 *integration-staging/runtime/tmp/missing-manifest.json
+bc5f9cd02bc1ae10213b667f3729883ada6ae88cb8ab77bbde681e11c42667b1 *integration-staging/runtime/tmp/probe space dir/fake node cli/fake-cli.mjs
+75c2c20704acf29e6c3b7b46dd97677102a2e49e0bcfdb45a7f33e191a27e907 *integration-staging/runtime/tmp/probe-missing/manifest.json
+2abb19ca54083e537396870bc91929c680b5b64c760b197c41ffdc04e463c7af *integration-staging/runtime/tmp/probe-space-manifest/manifest.json
+bc5f9cd02bc1ae10213b667f3729883ada6ae88cb8ab77bbde681e11c42667b1 *integration-staging/runtime/tmp/space dir a06/fake node cli/fake-cli.mjs
+31043229fddf4a0354c1376da1f8e7c852f8a51b39987a884c6b5ed094880493 *integration-staging/runtime/tmp/space-manifest.json
+1bdb940d37ea92b895e61fc8575d131c62878b0a5042dce4ae0a70e587ea565c *integration-staging/src/examdata_integration/__init__.py
+e4fd17a5cf1e54723474d60345b0a8ed14ac373ce58692ccbd11942ed364bf8a *integration-staging/src/examdata_integration/adapters/__init__.py
+e1e0ddeafd574c48d6401a24aea31b2e445be0cd2198ad12c3fcaccc2b2dcf67 *integration-staging/src/examdata_integration/adapters/answers.py
+b297a81b92f48fdce59de895351c418441b60da30fd2f60f96e2297ad1d8897c *integration-staging/src/examdata_integration/adapters/bundle.py
+a6b421b87d4c96d24a205eb0a0fa9101c130f3853a87a8ca9d024f0f39e49758 *integration-staging/src/examdata_integration/adapters/cie.py
+e32513aa57e37646c8e2be831ef1597aac1021b9816b940bb4b6c2571e1a40eb *integration-staging/src/examdata_integration/adapters/documents.py
+b090d4bb1fb90327936c0157e53f18309186991ec7886aee80fce333cecd8f9a *integration-staging/src/examdata_integration/adapters/edexcel.py
+e17a91b5d39afb31a98310840f0b27d5d7cb621c38b6bd3c2b79e7e0d6c8ff05 *integration-staging/src/examdata_integration/adapters/ielts.py
+35ae4107c422a4565bf9212cf1d1e129e213afe83267f6a6b75073f0763d9f41 *integration-staging/src/examdata_integration/adapters/problems.py
+9fda8dcf98cf4f09d6cca778e2131b89310828d3ddd9c5596c8e69d7957bd296 *integration-staging/src/examdata_integration/adapters/reader.py
+d0d046d66a2812ef71c69862024002b0049c570d9705924142f447127aff8fa6 *integration-staging/src/examdata_integration/adapters/regions.py
+42505ce1eb4a41f871db9f953b063568675591957d782776e7b344fb33466656 *integration-staging/src/examdata_integration/adapters/source_reader.py
+e6dfdaaf3d043bb39e489663d375cee0c1ad34d2f944dfd72c8c2d4d640a42ce *integration-staging/src/examdata_integration/adapters/toefl.py
+cacd0c3e7a16520b7ce20ea76f77a060fb7498ba5f2512b1be0cfd266e274a14 *integration-staging/src/examdata_integration/api/__init__.py
+3750f0f8e2d68ac6778fabda6484c620d166421751120c7bf6880d442c8cb826 *integration-staging/src/examdata_integration/api/app.py
+482616943acd060c57232530a990d769c1c1c9f1fac0d2966b61033e53b02701 *integration-staging/src/examdata_integration/api/binary.py
+5801f31c5c1748dc5c386af8bf6064fdaadd62b0d6055f99f0fe17dba1b500d4 *integration-staging/src/examdata_integration/api/dataset.py
+4987f3bce8877dbbe00589913e31811fb26d27db355270c390fbd1cfc5d9f063 *integration-staging/src/examdata_integration/api/envelope.py
+f30af3f18c3c117edcf1e595178b712441effc14068643b6a75b0d4e9bcceb9d *integration-staging/src/examdata_integration/api/links.py
+5e346d2eda0020bb33a0a42a7d897dddfacae37750262bb9418e74d64842e30a *integration-staging/src/examdata_integration/api/openapi.py
+f069b3a0e04b2edfbfd5a3c2a9da3ee888bca3a398040134c84656275e7149ac *integration-staging/src/examdata_integration/api/pagination.py
+441c1da3977201942baf5eae3b99448cc8a65ad37e3ef44957a5db809ccf3986 *integration-staging/src/examdata_integration/api/view.py
+c494a22e0adf69ff83987becd685990785d8a0a07d006341d1587b83bcb134db *integration-staging/src/examdata_integration/catalog/__init__.py
+e611e1d739496d6afbfd5298d0090c9e8a3d0f8e2c11ed2bf2aeb405c22573ec *integration-staging/src/examdata_integration/catalog/builder.py
+86feda03abda8e46f21d4a8fd0226d6d1fd615cdc6197b179dd67df62a2d7e78 *integration-staging/src/examdata_integration/catalog/model.py
+37e8b53c3d2876ef321ba7fcc76291c11fe713822bc7815952104a81bf9d4d4d *integration-staging/src/examdata_integration/catalog/revision.py
+5c2bf5142cbf6f44df8524d8ca05d4b393822fc7e39b6a8b612024919d8b5ead *integration-staging/src/examdata_integration/catalog/store.py
+6e4cf0bb4339a3ef2ce3186e08e5419d06cd68729ad2ce5330c6cb7b85184bb7 *integration-staging/src/examdata_integration/contracts/__init__.py
+ad698af90e393225edb535b16feab37c30abd831806656b896c8f6ec5b5482a7 *integration-staging/src/examdata_integration/contracts/base.py
+6ee49d8fe3f9cb4f031d90edb273b5bf2c6a879e0c4f5c9540bfa4f09b8aeede *integration-staging/src/examdata_integration/contracts/canonical.py
+95f2b9032e3d17fa4fca9274047e002bf2124ecbfc6b71a8415df67a146877c7 *integration-staging/src/examdata_integration/contracts/completeness.py
+800bb6b5ebe189c4aca5262816978d4769d3242604958d58820438eeabf5999e *integration-staging/src/examdata_integration/contracts/enums.py
+8553d705259a9aca36387f9f6f39ddd487d81b3bfc6cb1a1eeaabfa4e4c21bd0 *integration-staging/src/examdata_integration/contracts/ids.py
+c05e7d2684faa8fe1b7e3f594ff44083db943f350dcad6fd7e2c873f490a78f7 *integration-staging/src/examdata_integration/contracts/jsonschema_lite.py
+b3836f8b0315886427b22349f8cf5a0b5e515335a190f6663c595f051b3b85ea *integration-staging/src/examdata_integration/contracts/models.py
+4498e2599f774a324bdb4af9c6e448885242771939f21a29b80bff6bbacabf33 *integration-staging/src/examdata_integration/contracts/quality.py
+9032ce541993944d731dd4ec71f6adb948c3471adad2d04914528581cc187828 *integration-staging/src/examdata_integration/legacy/__init__.py
+028c5b98c71ded46b0838c8ac4e8439e3d7e700f7450a2cf39a87793e44b9d24 *integration-staging/src/examdata_integration/legacy/bridge.py
+f8720683b07ec017cc5441af8d9ab793bc206562e34a4a34533fc00ed910424d *integration-staging/src/examdata_integration/legacy/decisions.py
+60f4e1a5bc18d0532942ff4c158861cddbc7b445b1faed3989e3bbe8b256db8f *integration-staging/src/examdata_integration/legacy/parity.py
+f9e1870b79616bbb06baefeed810ac9272ad7d227cf161085cee34d3bc6f2f78 *integration-staging/src/examdata_integration/legacy/registry.json
+322d6101e10bb66515edc7d616fb3444a9a4d6b7c17bf0fe7e4d747f020e021e *integration-staging/src/examdata_integration/legacy/translate.py
+e33e022b1c640412f6453ffe38ab68c25711385f8fd8c4edf307bdd41899728c *integration-staging/src/examdata_integration/operations/__init__.py
+1f49dde5e36ed3aaa8b82af5b83b6fd72821d67808addc34047b3b4db580805b *integration-staging/src/examdata_integration/operations/checkpoints.py
+53e35cde7e96ea6bfe84e979de52c95fc5102a1fc1fd857c62f829080682b9e9 *integration-staging/src/examdata_integration/operations/coverage.py
+2f2e0c2be77d03abe9e3e94b4f0a4a72c4c69d878b9859ee414b9d9306de6d7e *integration-staging/src/examdata_integration/providers/__init__.py
+587c1efffd2219bd9f42ed778c530bb1adf73a3e978a62445bbfd2fa32e8c7a7 *integration-staging/src/examdata_integration/providers/capabilities.py
+37ee8f53e48b286294b4e36e8a6889a1132b2fa2225e6e7a6b1fe9268658f8a1 *integration-staging/src/examdata_integration/providers/fixtures.py
+0c296216eda53f980901d545bdf4d9dc77ea7b4b47487e3db420a1311567bc23 *integration-staging/src/examdata_integration/providers/protocol.py
+539cd0caaa296db100286b17950c451021833107064cac2a24d9c0c486755b33 *integration-staging/src/examdata_integration/providers/registry.py
+534cec403c7667a5d60e39d8c7aaec9858521e575056c25219d0b55074c2d434 *integration-staging/src/examdata_integration/providers/results.py
+8e999047c922ae9b7dc5adbeced7f29294aa84429b3dbeb8592f9d541b8eb1f8 *integration-staging/src/examdata_integration/runtime/__init__.py
+de5d92b927578d35bad97faf38c5c7323e247ae55b7bdc5ff35b8551f0d52198 *integration-staging/src/examdata_integration/runtime/classification.py
+8d3f4bc812a8ce7a8502b1091ac801f086b7d9fe8694e90842ac781237f9edae *integration-staging/src/examdata_integration/runtime/doctor.py
+8a56f668cc723ac60979248a070ae07e15e5d766cf534c1a16838c0ae9affeec *integration-staging/src/examdata_integration/runtime/manifest.py
+c81dea27a5ff8042e37db1e893d8990fcc962e5f9bbeef6b0fe2b93290132647 *integration-staging/src/examdata_integration/runtime/redact.py
+5d45f6de87fba3292eba426cc1e38b4a74562231f1f7c193b930303dbf09df13 *integration-staging/src/examdata_integration/runtime/runner.py
+94e825030d135013ba41e5a528074b141720656bc6f4f67cacd05fc1d3bd83e6 *integration-staging/src/examdata_integration/runtime/settings.py
+4fa134108a8dd98ec1448837e080309eb720bbb4e8f819bfc3c8ec7b3ee3aec4 *integration-staging/src/examdata_integration/testing/__init__.py
+3b0a4a0e36236ccaf01704365e4f706e623c66987843472a9bb70ca9c3cc75dd *integration-staging/src/examdata_integration/testing/guards.py
+d1a7c4d30e98033e9177177544a6e213f89cce10dc957c5dab3d19f34026b6c1 *integration-staging/src/examdata_integration/testing/node_guard.py
+12fb79a319e4bd4cd3f6fcde66efcdddb2c10d47a2104baf2cc5ee9d5a43d7c2 *integration-staging/src/examdata_integration/testing/runtime_support.py
+d15742bd18103ef2627407c831452c8cdf432c057ee98f60b19cb8931a8f4193 *integration-staging/tests/conftest.py
+f8a0b8a46d6deb7f262db5838e6406dbe07a4c4f6d9484e9b19f65fb9f6092df *integration-staging/tests/test_adapters_answers.py
+b0779d8b11c737a2caa45279fd84b01c9824d6eb72e0c557e9aab28b547fe5ed *integration-staging/tests/test_adapters_cie.py
+0bb874039a0e1fc7ebb4ed3da2f4ba65c62a06649310201e9d9930eb746a5311 *integration-staging/tests/test_adapters_documents.py
+747ac73548e86a5c92949c43186f8712d676189f454390f2c65d81fb64b297ba *integration-staging/tests/test_adapters_edexcel.py
+a87c79df7239059d284969708f8a5c5f463191bb7cc11e307e337999a4b27a9e *integration-staging/tests/test_adapters_ielts.py
+7d296ce8d65b2cca6ceef2a73eb016cf2e5301b07d0d69cccb5e44645a5e1268 *integration-staging/tests/test_adapters_provenance.py
+20fa56ad949c7fcf31c598d6cb0c841d792b16780d4748633189018a01583019 *integration-staging/tests/test_adapters_reader.py
+41cf7c62f45217f43066f17b6c66d6662c3c57050a4f9083a3d4cc1bd77b5a43 *integration-staging/tests/test_adapters_regions.py
+8a43db80fe3c79a1476ce996c49fde55fa3d0c42f98d8aa76940bc4b2d4964af *integration-staging/tests/test_adapters_source_reader.py
+3aacf202e776a640b0db5fdd6c90812c63a22b5bad08300cf282771d561feb94 *integration-staging/tests/test_adapters_toefl.py
+cb3da0471050647c1555d0b85b0c03cf1130a9e5254bea9790efa7c6564e1ca7 *integration-staging/tests/test_api_binary_fixtures.py
+819e1527568461198ab87f0070c46650c82e1ec64edf255d877edfe485a47a95 *integration-staging/tests/test_api_binary_store.py
+a1228b440b07d82b2b09795579455799900bc6050f860e3087fc037a83919474 *integration-staging/tests/test_api_binary_transport.py
+e13dd99156e169a395502e1c54183f4ef2ec12171ef2462bf4897eed0a5c06e1 *integration-staging/tests/test_api_dataset.py
+dfec18d88fbbce7db01b7fc35ae505fd49474856a24a4af6729809e64f99afbd *integration-staging/tests/test_api_envelope.py
+7f934d90864e047098a0f989a5603be00fb6599292a8bad4d576d438b3dc8d22 *integration-staging/tests/test_api_links_openapi.py
+df102df8b3a7c05fc8478f2999596257bf8ef9b7086f202685f688e04bd96460 *integration-staging/tests/test_api_pagination.py
+02179a4bb0bdc47c4aea8ecdadb78660c22571279d034f9b4c01d50026e6edf0 *integration-staging/tests/test_api_routes.py
+52abb54f2ce81c9d39e2eed90f12f7563738b0d1102e6265ef79d18efa72fe9c *integration-staging/tests/test_catalog_builder.py
+836849e6c0815c9441916b530d77a110fe3736628143e86f6e1310cf89e7fca8 *integration-staging/tests/test_catalog_revision.py
+9a3548ebee881bb27d071a6a1840d29242c205dd8a987ea808b141cf786b0734 *integration-staging/tests/test_catalog_store.py
+050b4a4349a3122849460f358ea20bac6085305debdb810de0fb2eb06e45289c *integration-staging/tests/test_config_manifest.py
+18cd2340adf02dc9cb81a5f821f380376357f18b7423371605e115f19c2bf33e *integration-staging/tests/test_config_resolution.py
+00856dd13103768237a6ed16f941357cb178b8b555f38ca0e91dd01a605b6116 *integration-staging/tests/test_contracts_completeness.py
+4e731991955cc22e72dc4d547f8b36f908e00f6e9022c3859aa10d5bd544980e *integration-staging/tests/test_contracts_identity.py
+9216bd88b317ad50b49abc929fdd87135dc4d43be9a53eb8e2b08124c6735c6d *integration-staging/tests/test_contracts_quality.py
+ee53c1d498f330f98234a5c75b6a727450a0954ceac4e73c5fef684406a3c4c6 *integration-staging/tests/test_contracts_schemas.py
+eec48f48484005694750f8d98496d78446ae4aa4cbd94e26d443895627097d48 *integration-staging/tests/test_fixture_provenance.py
+9972229e9ecdafd13440d894a534f0bf04b14f1063d6b5e3bbd16b0b812312ac *integration-staging/tests/test_frontend_staged_copy.py
+28daeeb1fa62923359ca82c408014b03bce052f28d01cdf140e129a5edb42222 *integration-staging/tests/test_harness_isolation.py
+6a2d23fbfcd1fb4c482efd18d94026b78ebf0ebf632031c9f37be7f59eca5ed8 *integration-staging/tests/test_legacy_adapters.py
+359db9b7f50f5c74b32fde71687475916a1a2fb5119b341e8bb2a4b860ae1269 *integration-staging/tests/test_legacy_bridge_contracts.py
+9664efd2956951fedd12ff85db1305c853680e23813b7bbf0860961637c2a8ee *integration-staging/tests/test_legacy_decisions.py
+75f814373b0f003e7ba4d7a4080e18c3b0a75314d35c74e7d6bc9cef43cf71ee *integration-staging/tests/test_legacy_parity.py
+f4e6562eaf44385d9267eae802adeb69a9ee5bfde44db02c4fa8a5738e0b98de *integration-staging/tests/test_legacy_translate.py
+8a2cbec5b2422e0604a3055761aa68d40eca284b2834c4e74fec9511cb8bdc3f *integration-staging/tests/test_node_import_guard.py
+e6d093e142cd4d86bf529e90c5bd50431901166b0ceb5e828d9bd92419bde15d *integration-staging/tests/test_operations_checkpoints.py
+1e4ac3735745f89050844d14495ed86537903dc64558636d90ad8e840a32907c *integration-staging/tests/test_operations_coverage.py
+dd760bca78d7671f809e864f363cb421fff080d2933f22f24865fda9110303d9 *integration-staging/tests/test_providers_fixtures.py
+1daf428f301b46129308f4f10ec7bfda8ea58b54bc43d2b69c93f30de215e7c0 *integration-staging/tests/test_providers_registry.py
+1f1fbddf17b1ea231421adee2d0b6217ab28f4728642f3e3449c02e4742fdd53 *integration-staging/tests/test_runner_classification.py
+ad539494fdfa13cbe4bbff0ef2d4f45ea60923736535d14a5f43df2cf628b42e *integration-staging/tests/test_runner_limits.py
+bb65627b7dabac52aea1a55e0fc735c0016b61fc85ecea3f9babdee9b2316f09 *integration-staging/tools/__pycache__/a12_build_registry.cpython-314.pyc
+11ab5e453bbe939cc9782d3eba3971f03ebdac704ac77ec5f9b35dbbc25226fa *integration-staging/tools/_env.sh
+3b933fca915345b76a944c2ef36b502f6ce15685dfd54945a8c2fea88c5f3735 *integration-staging/tools/a00_final_checks.sh
+6c06a436f6243af57d6ccf046b71132ae1e687dbf37d0ea85accf60093a2e054 *integration-staging/tools/a01_final_checks.py
+d6cdc8859a0051469093308aa68fb4380b71b6c2b8993b67454fb0cc867d86be *integration-staging/tools/a01_inventory_routes.py
+8af1c7e366ec7483c6655a34694e71a90b445a8841e2b15bd8404708663e38e9 *integration-staging/tools/a01_static_inventory.py
+e4cf64c56305530f34e3a76321c3f201fdb01af9cc989c6111f74485bffecdac *integration-staging/tools/a01_worksheet_build.py
+07a3fc5c6899c2929d51a8afabc50131d61f248dd2afb3f77312bf1121130b87 *integration-staging/tools/a02_final_checks.py
+77bdb8d7c408be5cf727b6480fb86169fc57a53c89d9a0e1630c0a3f6a2958af *integration-staging/tools/a03_attribution.py
+2636b1e4dfe6242dd6449739e41725b34a2b2a9fdc3142c6bcc0645ec254c3ea *integration-staging/tools/a03_capture_fixtures.py
+3f79ae3da1f77cab408e266a48ca2527bf490661246fcaa65038d842933074c9 *integration-staging/tools/a03_final_checks.py
+708857d995765c805e05a446230425fdf4c2f7ca10d847647d626c44013a7a38 *integration-staging/tools/a04_close_patch.py
+c000de41080c5b438efca29a3da87a55bb53197372416c29ed2c91e7795540a4 *integration-staging/tools/a04_final_checks.py
+3693f206a4d6ce07b324aa737996f27e4b0ad6b21e79ecba754b580bb785cb4b *integration-staging/tools/a04_generate_schemas.py
+034b09a90e7b2178a02d1b33e1e579eebfd3e1007d8ad0787d1a77f86ee92eee *integration-staging/tools/a04_roundtrip_fixtures.py
+f4f4fc77d4606627b8c487514398aeef922b50de925d8426b77d89de30d3e6e6 *integration-staging/tools/a05_close_patch.py
+fab7446d0e578f7243b9c9525afda6ce7cbb20751257d43e625e98e435274a13 *integration-staging/tools/a05_final_checks.py
+6c06037a8fe0c631f96cf1177ae746de0dcfd8be1188a014756acb4c2565b2d8 *integration-staging/tools/a05_probe_dispatch.py
+71f5e5bc03983d1db1b9107454b981ade64211013a4e0a65b2af83730dedad56 *integration-staging/tools/a06_close_patch.py
+312ff7c3d0043df0a1abce0338732f5300fce9ffe677a907d51e91b0f55111b5 *integration-staging/tools/a06_final_checks.py
+6718f73158051cdd8c14a28c0e336888576f000238079f33455a5b80435db06d *integration-staging/tools/a06_probe_runner.py
+1a2f6f28a008c57379fd86dd8646d89044b6ea246978721556c2c9768eafcadf *integration-staging/tools/a07_capture_adapter_fixtures.py
+19c289b10fdf987fb3d9b0f4cb9ad140466542ea5f4ec5212602ddeb5d9f5894 *integration-staging/tools/a07_close_patch.py
+c7db1a9fbfe2477be1badf13f3e6fbc6725c43224b38b8f1539d26f6fa9abc0b *integration-staging/tools/a07_final_checks.py
+8b323f18724944edf3adacf9dcdd6a823dd4dccaa6b9f1e553c696c0de881fae *integration-staging/tools/a07_probe_adapters.py
+7f82e3158a5050e90714fefae8bdff152349aa51797c3c043273fdf95865272d *integration-staging/tools/a08_capture_fixtures.py
+68eff80deef6113977d5e1c16f5241a7f705f5567fa737aab8b72e9b9ca21afe *integration-staging/tools/a08_close_patch.py
+944a612346c51c21b3c4a23eb440ccec922fa0ef6002fb0421464e4934e5bf2c *integration-staging/tools/a08_final_checks.py
+5a35dbb2464a9c28a7bbd729d182bce8da998616a9109c077c67b33068888b92 *integration-staging/tools/a08_probe_adapters.py
+eba5f04f7c9f7e65b924d32c9ba353e40aaccf7b27078cfe7071b960e78eb719 *integration-staging/tools/a09_capture_fixtures.py
+32dad2e057ee1e7e7dab46202bbca9ae499be289f93436646da7f4ebe78833a0 *integration-staging/tools/a09_close_patch.py
+f0b916ffd2141e422327e91f91fd156718556cdef679632cc10b2f7854b34a1e *integration-staging/tools/a09_final_checks.py
+492ac3c0e4d657d323fe576921c28a8b680fb557b146301c886136c9579a250a *integration-staging/tools/a09_probe_catalog.py
+7f2911e9f176fe6a79ad8f0c33206b0a4932eefcef8fe2d48c2a6d00d0caefa3 *integration-staging/tools/a10_close_patch.py
+2bdfaac29651e78453227e6869fed6a66042652035f4cac06fa44befb9662b87 *integration-staging/tools/a10_final_checks.py
+04af1dca481c58a7a40f84aee536951885ec54d00a670a30251df8aef831851d *integration-staging/tools/a10_probe_api.py
+68fe1904a9e35ef3273f8541b9230be065d9400c51826eddb725c804f65e56b2 *integration-staging/tools/a11_close_patch.py
+605936a37c7dab24928ed92f1919d235ff448bdee8a961452d1b0b8cbfd15d31 *integration-staging/tools/a11_final_checks.py
+817c79ea38f772320b75a654386093559cb85413fdf6043d19259c9a45c5dfb6 *integration-staging/tools/a11_probe_binary.py
+9bdbb0a22c6392b766760820d46b302a877628dcb69cf83e494f2f5fdc8b730d *integration-staging/tools/a12_build_registry.py
+aa90485cc1d25a24adf67a10f07ea83d383e9ef8a211fdc02aac5c0d350ccb8f *integration-staging/tools/a12_build_worksheet.py
+18f8099c3fc514f56a20554c56177957582956db5700d74c81515078cc9ff540 *integration-staging/tools/a12_close_patch.py
+062e03942b9c9642ffa00fe2216833a3de769b49afc3667203bdf988e59ef0e6 *integration-staging/tools/a12_extract_legacy_shapes.py
+75e3c16c0f051e9ef7d64f72c83a844d5f09016195ded525b2ba31b2b562bf4c *integration-staging/tools/a12_final_checks.py
+181ba5e0ba3353f6d96a0a0b0435ca9b8bc7d63a03a7290eef8e3e116ca7812b *integration-staging/tools/a12_probe_compat.py
+d296c50d4322ea66a11e0310818757869cd8e185419659dfd343e53e7e6ad31b *integration-staging/tools/a13_capture_fixtures.py
+819b4444480fb6169ca16dc260118186b746b3348ba1d1da117c24bbdab20e8d *integration-staging/tools/a13_close_patch.py
+8b329273ad0a4e5dd36d06ed261758064bb505f58f757796f9cb89c85bb07fae *integration-staging/tools/a13_final_checks.py
+d46b7bb6f4ec99a4c281d6539e92cb9b4c49c09f63a19605ccb5effedd94a3cf *integration-staging/tools/a13_frontend_provenance.py
+14883708b8679e8c582fc60a8b5af653492d7eece86eccba4c86d2ec1fbb95e1 *integration-staging/tools/build_binary_fixtures.py
+bdf28b4e6b748077548fbed84bbe6d39146009074afce7a9b232e19285f0c1c6 *integration-staging/tools/inspect_module_resolution.py
+36a7a48d0bf2b0a59a149b6a14a9d5c361d3afd2c823d177538ea61cec70edb5 *integration-staging/tools/ledger_update.py
+1800df1e4e10a10286a3fe910c3856ba5f2eae294818a99e4811ad544e1a5242 *integration-staging/tools/run_staged_tests.sh
+4d228fce64e2ee8dacff0ee79e2e0f3a39b7380163bc503304e9f7a1ed41b838 *docs/integration/execution/A00_INITIAL_REPORT.md
+61221e1a815ddf3ef8f016ebdd91bc61ff6a3d9b9696ad82e2beba65c7a56515 *docs/integration/execution/A01_CLI_INVENTORY.md
+b8b605246d6173dfa1f9487715fb3aa6f67df97553e6756e1ebec17f8362f57f *docs/integration/execution/A01_COMPONENT_INVENTORY.md
+b3c06dd2cfbd5398acbfdccabe78e2d9b90b334e763a989c4ea519c1fa6b0598 *docs/integration/execution/A01_CONFIGURATION_MATRIX.md
+8db521873487a655c71d96b00085ac082d2fb02efb8f3712badf52798180a257 *docs/integration/execution/A01_DATA_ROOT_INVENTORY.md
+eebb23b18837421283858dc3795749fa929710cf82a632b806bbdcdc6b65f981 *docs/integration/execution/A01_REPORT.md
+984d60bf5a08adab5a03e109e8dc76602ae54a3ebeadd68309eced187ca773fc *docs/integration/execution/A01_ROUTE_COMPATIBILITY_WORKSHEET.json
+a58587e4b1a4a75193e1bccc12e79a786dd25bd2b649123e24013ec46ffa1ee4 *docs/integration/execution/A02_REPORT.md
+8c7d1abe156c0735c482f3272f34bab3bebf3c7bfc8152567393dc6218e348b9 *docs/integration/execution/A03_REPORT.md
+2efcbe4c4522fc8a56341afed0b58085f4843d827bac9949cc9cf23ade279d3a *docs/integration/execution/A04_IDENTITY_DECISION.md
+b3339eee1c6c8c27f74016343d01de8f2d1f0d8c913bd55c5ae812486e8e3aa1 *docs/integration/execution/A04_REPORT.md
+bcd26836acea20f541e3c2105e18d4d410e2340450407ca99bdbda2daf3ee502 *docs/integration/execution/A05_REPORT.md
+b3d82ee35829eeca2f68a40f67ec78adf854bc1c16f63959b87ec6f519284574 *docs/integration/execution/A06_REPORT.md
+3fb5ef391cdef42a81902df597823a07806a4ee0e86e5adcb975712438638acf *docs/integration/execution/A07_REPORT.md
+5c045e5d9c51a37806c949a11626435a4c8038223033afb4a3467297afa2446d *docs/integration/execution/A08_REPORT.md
+d683e2a361588170da123f47d81162884af59642522e4b811f2e3c4c3c487331 *docs/integration/execution/A09_REPORT.md
+a6151e78a90d082647fbc2d7c580876585dad19ab7049f6d39461e331fc30fb3 *docs/integration/execution/A09_STORE_DECISION.md
+f092abf004fc6983d9db95d70a16c8a4eb08491c5ac49dfdaae55b22d5de2b19 *docs/integration/execution/A10_REPORT.md
+b69fbcf6069f55e0394e1e7fb2c80d7420db917dfdd1c7c795b203e2f71cf763 *docs/integration/execution/A11_REPORT.md
+48fa9b4d863d1f89d0d7511ac78d825b825b0770dee29f48ce8ebfea2a61fc04 *docs/integration/execution/A12_REPORT.md
+76ce0abc077b389aa17c7e946a101553d3ddb4a02ce74abfc59d766026b8ee34 *docs/integration/execution/A12_ROUTE_COMPATIBILITY_WORKSHEET.json
+23350b159958344d59e665cb828fe37621b6e8e9103732becd5d97bcbdb9bb8a *docs/integration/execution/A13_REPORT.md
+9d23ab7a8954ee28411f91ecf363e278801b62434c8d823b6ed45d10bf79bdc6 *docs/integration/execution/evidence/A00/agents_md_scan.txt
+092fed01b48bb5fdc6edc77f20345c292068c8a9a0c456124156b3544e8d9030 *docs/integration/execution/evidence/A00/checks_after_root_creation.txt
+674f62ccc08c88c782e77a9390cfe31b98a7593899738494a17d294a35c0546c *docs/integration/execution/evidence/A00/final_checks.txt
+02b16f5ae81be5239942ff2451cdec1f7c8250f7ac695f40a475ed04f5286f83 *docs/integration/execution/evidence/A00/input_hashes_and_env.txt
+0e0aae46c2e9a5e76d0c3dd2868bdfe3a41dc1e65e0c72fd66d671722a035c8e *docs/integration/execution/evidence/A00/owner_observation.txt
+72d2e3b040945aced9724a3befe370ac9f5da2aca8e1583f257e20427c8a541b *docs/integration/execution/evidence/A00/pre_creation_absence.txt
+f8a570c88f46903d83815e9f38122181bbe026fa3f32653966d90596b318f2f2 *docs/integration/execution/evidence/A01/final_checks.txt
+458a1c0344f5f8becd9c2256aadf5cbde89bee94f7485923ec10f7bc9f295cfd *docs/integration/execution/evidence/A01/route_inventory_reextract.json
+509e44bd96d42dcd2eda406ec537569157c558ce73ad143bb19e9ecaf55da544 *docs/integration/execution/evidence/A01/route_inventory_reextract_stdout.txt
+1be7ac94fd3c478fa21b2d453148b8767d5fb60966f58581118abf1359e4006a *docs/integration/execution/evidence/A01/route_tool_diff.txt
+891bbdaaab77049957203905f05195074633c1f57832f9e439a76100f717bb6e *docs/integration/execution/evidence/A01/source_hashes_and_observation.txt
+a28e947d1aacecf5db849232626b9ae593a5dc3a8e812fa144bd2c5087041e9f *docs/integration/execution/evidence/A01/statics_extract.json
+30108f01c3a6bfd428be142a54c542bc4bcfb91231f8db1d87a7da24a2e22ddd *docs/integration/execution/evidence/A01/statics_extract_stdout.txt
+2acd661a09906141fee47e4d41d1887e73bb219435ab2c3f91fbde4cba6be80e *docs/integration/execution/evidence/A01/statics_extract_stdout_FAILED_gbk_decode.txt
+719a1f4148d08c2272a76fba2027aac66724178640b69356243b39ff61c406e0 *docs/integration/execution/evidence/A01/worksheet_build_stdout.txt
+5b58446d4f97b118d53a876fdc8ca0a451b61ae40e50f1fbc4d85937cea01d92 *docs/integration/execution/evidence/A02/final_checks.txt
+abb6f9f55112e392fd59580d91912222d3882525e40b91a72bbc22aee65d8ad9 *docs/integration/execution/evidence/A02/leak_check_after_pytest.txt
+c86bbcb49dbad61f59ffa267f4f35a4bf76931a86a965b4d7ceb1410671853c8 *docs/integration/execution/evidence/A02/module_resolution_before_imports.txt
+943ef88783b9fc0f7355d8bec7c762220fefd7c00a2c67c0a6a9a7cfa8ebb27f *docs/integration/execution/evidence/A02/pytest_run_stdout.txt
+203022f603d2688e02b5d929bd095d2f7971d9630a7d45798763d54435782440 *docs/integration/execution/evidence/A03/attribution_generator_stdout.txt
+65281cf32e234e147960a301211a7d353c8a4e769f43c6e03fde0abdfd8cf3cb *docs/integration/execution/evidence/A03/final_checks.txt
+034dd0f727650ee6393c6897d7e3df97b595461a749a8af50ca6ebef98b84a39 *docs/integration/execution/evidence/A03/fixture_capture_stdout.txt
+1e66a58f3676bb22435a170ea0e0011576587c902b0895a1f599885978b60c17 *docs/integration/execution/evidence/A03/fixture_hash_crosscheck.txt
+ad4d79ef5224bdcf0d7f6d3206e8b9dec192850bda7b69be65508c1876d6955f *docs/integration/execution/evidence/A03/leak_check_after_capture.txt
+9844b36d3103a30d33dd02c9f02c1ae400292260f79773886ae9339c625e4160 *docs/integration/execution/evidence/A03/owner_activity_attribution.txt
+ddd40ea091da277d85aa6688675cc82813233deeba93712d8c96e4855a800423 *docs/integration/execution/evidence/A03/pytest_run_stdout.txt
+ef788294de98ea7f601471afad16fc057c6cb1df7b4f8ae5994841864497b2ac *docs/integration/execution/evidence/A04/final_checks.txt
+f8194064a12cccab203481ffb4ce7ee15197459b497700145931926f5618c988 *docs/integration/execution/evidence/A04/pytest_run_stdout.txt
+5716457ed782090d2e3127fd4c596d7e1f9aab064601ddea9e718efed72bd5e1 *docs/integration/execution/evidence/A04/roundtrip_stdout.txt
+928baa39a953f5cddb0eb9ef467e282810bd28c273132e03ebc6f38db268f702 *docs/integration/execution/evidence/A05/dispatch_stdout.txt
+63f91674da5c2c017aa7d03e4d28b466affc6e12a2b3819fd7196dd6dbd7b693 *docs/integration/execution/evidence/A05/final_checks.txt
+ede1370d842b0e7c1568ce2925f45b8721b77b61ba6fe68e2555f5f05982f9ae *docs/integration/execution/evidence/A05/pytest_run_stdout.txt
+716474fdd195efe2f5a6c588e108ce2dcf8ec4c91294106dd23a2b372e009e8e *docs/integration/execution/evidence/A06/final_checks.txt
+564619e435e88cc34e5b72da846636cd214003c2686fdffc4ee124681d92052d *docs/integration/execution/evidence/A06/pytest_run_stdout.txt
+42eeedda4d46785c0ec04f3ab9f4bb755a60aa02ad74db832a4bda137e3b3cc6 *docs/integration/execution/evidence/A06/runner_stdout.txt
+aa8c2c18a2aacc26bf7f99618af94ab5c68a27bae38aa4fb2bd0c52966e362ff *docs/integration/execution/evidence/A07/adapters_stdout.txt
+2feaae034164a8b083fdd36f63d1a6ff87236ac65d0efea420fc1c7fd78e2b99 *docs/integration/execution/evidence/A07/final_checks.txt
+6c6cb3790da0a113ae9b2b21a1998745eb5fe25e492a95a5737c191285c206e8 *docs/integration/execution/evidence/A07/pytest_run_stdout.txt
+d6887d398d9765e7cebf74f0b6a8ad0cd86897f7a37c5399366adf52e22c036c *docs/integration/execution/evidence/A08/adapters_stdout.txt
+7f5b47962010c9758e6431e9279048bc55edfd87fa25e9015f0b8371e5080e9c *docs/integration/execution/evidence/A08/final_checks.txt
+bb344108d2d97cde4ad3ca5b849f07ce9fdc8b148ed42e73761e536f6a2cfe74 *docs/integration/execution/evidence/A08/provenance_check.txt
+1582358e5c2e647a08b5f9531d8d424daaa18f12d7e1f580e57be669707b3cad *docs/integration/execution/evidence/A08/pytest_run_stdout.txt
+d950b50217ae856c237ec211cdd15425faaec8833cf30b84862af42c56c92f36 *docs/integration/execution/evidence/A09/catalog_stdout.txt
+25053d39e51c75fc2a2ab90f6c04b76dd06bd60bd14790ff768e7b00460e5a63 *docs/integration/execution/evidence/A09/final_checks.txt
+1f1ac8a1e8ceb75a150fee9e360fd53929e376545b7bb39fbc3bb0369e8382c6 *docs/integration/execution/evidence/A09/provenance_check.txt
+adafd6b489239f8cb528928e1dcc86639ffac470e486eb5a3574b669d9aa9c76 *docs/integration/execution/evidence/A09/pytest_run_stdout.txt
+d2b9516baeeaac9f7e382b6e5789f2cd6237ed9c1ef9a0af8fac3cc96c6e32ff *docs/integration/execution/evidence/A10/api_stdout.txt
+f8813939f2a86ecd46bc42ac47e0ffc335ff6abc489d8c76d88ff1b82c2a2bdc *docs/integration/execution/evidence/A10/final_checks.txt
+2cb29ee8b413af773d6dd7401190a517ffb7ccf9cae2e75cd332d4c2f837e1f9 *docs/integration/execution/evidence/A10/pytest_run_stdout.txt
+75c55a9eb58124ea9ccd73d2e5b7120f65ff4c2204604ab1be51c34f2273698e *docs/integration/execution/evidence/A11/a10_probe_rerun.txt
+d4474f9b737ebbf438c3a3da918595230803625473ab6ebd57934cd197abb73f *docs/integration/execution/evidence/A11/binary_stdout.txt
+a37e0a13f1c62531e12cbee802e7cd244c198da35a5b23319e23e8dfdc1a7f65 *docs/integration/execution/evidence/A11/final_checks.txt
+227456901e9a254c44e9f031c7fe40cdc72043cd3ed05accd7fcfc7ee491e7c6 *docs/integration/execution/evidence/A11/pytest_run_stdout.txt
+927285e03408330d67fe9e241dc726bcc7d53a5bbbce28e432adf2bffc323d6d *docs/integration/execution/evidence/A12/collect_only_stdout.txt
+adcf644b81936ac75d6fd2afcafe7bec3f715f5e2cfec860ad7ef4e9b214c6ca *docs/integration/execution/evidence/A12/compat_probe.json
+6b1c8211dae159672258746c721a072f0cad41512efd2f31dd0b9d7d94c1366a *docs/integration/execution/evidence/A12/final_checks.txt
+999a6b6b16205927d7fb68bb9879e8fe863dc38cad5d06a69c9a1a54df65c360 *docs/integration/execution/evidence/A12/legacy_rerun.txt
+7e0d4d46683d94ab897c79ce56cbdfff71712384889c08e6b97923dd2e7d00f9 *docs/integration/execution/evidence/A12/legacy_shape_extract.json
+6a9e5da3fd64dfdf3d3fc46d965b3d6fdb1dfccda2ec739fca3bf21363f709b7 *docs/integration/execution/evidence/A12/legacy_tests_stdout.txt
+22ed094396db65f85b27af7e7a29c361854868d445e070ded9c9d0b72f038df8 *docs/integration/execution/evidence/A12/pytest_run_stdout.txt
+e46a35007ce66a17d24adc6e639a6c78fb6972b4b934af9ad1a53981786761ea *docs/integration/execution/evidence/A13/frontend_provenance_stdout.txt
+ef4677aad6f877b0dbac49c538f3d82facf399bc52e6f028447b728a726eb759 *docs/integration/execution/evidence/A13/frontend_rerun.txt
+9f5bce40ae1fc0cf075882530bd546e11d729f47785c25d6b9b8fab7cf9f31b7 *docs/integration/execution/evidence/A13/node_tests_stdout.txt
+ab5b4988b500fabacd2ac4954b370f6e14e5667d10e0cec58725523cf34e3c66 *docs/integration/execution/evidence/A13/operations_provenance_stdout.txt
+2e2c37d1e5740909ab417577a048548ccc54c17b5ce418e412e897ae490d9dcf *docs/integration/execution/evidence/A13/pytest_run_stdout.txt
+0c027705de55dd853a3e6a4b2b16e56977bdb5e1b8c7a8e1cf01ff86cc8294ae *docs/integration/execution/evidence/A13/python_rerun.txt
+9b1eee1d50defc0403a5700235233101a1f8c6d786eef6961ee0ac65bc6b6592 *docs/integration/execution/execution-ledger.json
+bf11e22fe72df5d3d0573df8c3728dfc54963131b1a0e8d44a1b336dda356b24 *docs/integration/execution/ownership.json
+
+--- 11. verdict ---
+artifacts.all_present: PASS
+provenance.operations_recheck: PASS
+provenance.frontend_recheck: PASS
+ops_manifest.schema_and_scope: PASS
+ops_manifest.entries_reconcile: PASS
+ops_manifest.all_synthetic: PASS
+frontend_manifest.header: PASS
+frontend_manifest.kind_counts: PASS
+frontend_manifest.entries_reconcile: PASS
+fixture_manifest.reconcile: PASS
+import.no_original_app_reference: PASS
+import.scan_coverage: PASS
+liveness.collect_887: PASS
+liveness.targeted_31_passed: PASS
+node.run_27_pass: PASS
+ledger.exit_codes_consistent: PASS
+ledger.failure_bookkeeping: PASS
+ledger.count_unique_27: PASS
+ledger.a13_staged_pass: PASS
+ledger.no_merged_pass: PASS
+ledger.gates_closed: PASS
+ledger.a13_write_roots: PASS
+ledger.a13_dependencies: PASS
+ledger.a13_record_fields: PASS
+close_patch.changed_files_inside_roots: PASS
+close_patch.post_close_not_listed: PASS
+close_patch.deliverables_listed: PASS
+close_patch.final_checks_registered: PASS
+close_patch.input_hashes_recompute: PASS
+close_patch.native_inputs_registered: PASS
+close_patch.input_hash_count: PASS
+close_patch.exit_codes_match_ledger: PASS
+close_patch.meta: PASS
+containment.changed_files_inside_roots: PASS
+containment.no_bytecode_under_staging: PASS
+A13_FINAL_CHECKS_JSON: PASS
+FINAL_CHECKS: PASS

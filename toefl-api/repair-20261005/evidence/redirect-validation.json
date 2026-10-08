@@ -1,0 +1,59 @@
+{
+  "script": "redirect_test.mjs",
+  "when": "2026-10-05T05:52:37.118Z",
+  "total": 10,
+  "pass": 10,
+  "fail": 0,
+  "results": [
+    {
+      "name": "A 5跳后成功",
+      "pass": true,
+      "detail": "ok=true status=200 calls=6"
+    },
+    {
+      "name": "B 6跳拒绝(上限5)",
+      "pass": true,
+      "detail": "err=重定向超过 5 跳 calls=6"
+    },
+    {
+      "name": "C 跨主机拒绝且未 fetch 恶意主机",
+      "pass": true,
+      "detail": "err=重定向目标被拒绝（仅允许跳转到 https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.ht calls=1"
+    },
+    {
+      "name": "D 降级 http 拒绝",
+      "pass": true,
+      "detail": "err=重定向目标被拒绝（仅允许跳转到 https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.ht"
+    },
+    {
+      "name": "E 相对 Location 接受",
+      "pass": true,
+      "detail": "ok=true calls=2"
+    },
+    {
+      "name": "F 缺 Location 报错",
+      "pass": true,
+      "detail": "err=重定向缺少 Location（HTTP 302）"
+    },
+    {
+      "name": "G 非详情路径拒绝",
+      "pass": true,
+      "detail": "err=重定向目标被拒绝（仅允许跳转到 https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.ht"
+    },
+    {
+      "name": "H userinfo 目标拒绝",
+      "pass": true,
+      "detail": "err=重定向目标被拒绝（仅允许跳转到 https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.ht"
+    },
+    {
+      "name": "I query 注入目标拒绝",
+      "pass": true,
+      "detail": "err=重定向目标被拒绝（仅允许跳转到 https://toefl.kmf.com/detail/{read|listen|speak|write}/{hash}.ht"
+    },
+    {
+      "name": "J fetchPage 跨主机重定向 ok:false 且不写缓存",
+      "pass": true,
+      "detail": "ok=false err=请求失败：重定向目标被拒绝（仅允许跳转到 https://toefl.kmf.com/detail/{read|list calls=1 wrote=false"
+    }
+  ]
+}

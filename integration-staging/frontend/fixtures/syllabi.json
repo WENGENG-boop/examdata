@@ -1,0 +1,11 @@
+{
+  "fixture_kind": "synthetic",
+  "_provenance": "Synthetic Phase A syllabi strip for the staged fixture server. Values are fictional; no real provider data.",
+  "cie": {
+    "9709": {"title": "Mathematics 9709", "page": "https://example.invalid/cie/9709", "syllabuses": [{"title": "Syllabus 9709 (2026)", "url": "https://example.invalid/cie/9709/syllabus-2026.pdf"}]},
+    "9702": {"title": "Physics 9702", "page": "https://example.invalid/cie/9702", "syllabuses": [{"title": "Syllabus 9702 (2026)", "url": "https://example.invalid/cie/9702/syllabus-2026.pdf"}]}
+  },
+  "edexcel": {
+    "wec11": {"title": "Economics (2018)", "page": "https://example.invalid/edexcel/wec11", "syllabuses": [{"title": "Specification Economics (2018)", "url": "https://example.invalid/edexcel/wec11/specification.pdf"}]}
+  }
+}

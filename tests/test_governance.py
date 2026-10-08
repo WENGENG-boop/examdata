@@ -174,6 +174,38 @@ def test_revert_restores_source_value(clean_overrides):
         assert list_overrides(s, only_active=True) == []
 
 
+def test_revert_restores_null_baseline(clean_overrides):
+    """基线本身是 NULL 时，撤销必须把字段还原成 NULL。
+
+    旧实现用 `if ov.source_value is not None` 判断是否还原，NULL 基线会被
+    当成"没有基线"跳过，字段就一直留着已被撤销的人工值。
+    """
+    with session_scope() as s:
+        qid = s.scalar(
+            select(Question.id)
+            .where(Question.marks.is_(None))
+            .order_by(Question.id)
+            .limit(1)
+        )
+        if qid is None:
+            pytest.skip("没有 marks 为空的题目")
+        set_override(s, target_type="question", target_id=qid,
+                     field_path="marks", value=7, author="a")
+        assert s.get(Question, qid).marks == 7
+        ov = s.scalar(select(FieldOverride).where(FieldOverride.target_id == qid))
+        assert ov.source_value is None, "基线必须是字段当时的 NULL"
+
+    with session_scope() as s:
+        result = revert_override(s, target_type="question", target_id=qid,
+                                 field_path="marks", author="b")
+        assert result["restored"] is None
+        assert s.get(Question, qid).marks is None, "NULL 基线必须被还原"
+
+    with session_scope() as s:
+        active = list_overrides(s, target_type="question", target_id=qid, only_active=True)
+        assert active == []
+
+
 def test_revert_unknown_override_raises(clean_overrides):
     with session_scope() as s:
         with pytest.raises(OverrideError):
@@ -491,6 +523,145 @@ def test_provenance_covers_every_question():
     # 去重主体数不能超过总数（否则说明按边数算了）
     for c in cov.values():
         assert c["linked"] <= c["total"]
+
+
+def _board_edge_counts(session) -> dict[str, int]:
+    """按主体归属统计各考试局名下的溯源边数。
+
+    资产可能被多个考试局共用，归属口径与 rebuild 的删除逻辑一致：
+    看边上的 attrs.question_id 落在哪个考试局。
+    """
+    from examdata.core.models import (
+        Board,
+        Document,
+        MarkScheme,
+        MarkSchemeEntry,
+        OfficialAnswer,
+        ProvenanceEdge,
+    )
+
+    key_by_id = dict(session.execute(select(Board.id, Board.key)).all())
+    question_board = dict(
+        session.execute(
+            select(Question.id, Document.board_id)
+            .join(Paper, Paper.id == Question.paper_id)
+            .join(Document, Document.id == Paper.document_id)
+        ).all()
+    )
+    entry_board = dict(
+        session.execute(
+            select(MarkSchemeEntry.id, Document.board_id)
+            .join(MarkScheme, MarkScheme.id == MarkSchemeEntry.mark_scheme_id)
+            .join(Document, Document.id == MarkScheme.document_id)
+        ).all()
+    )
+    answer_board = dict(
+        session.execute(
+            select(OfficialAnswer.id, Document.board_id)
+            .join(Question, Question.id == OfficialAnswer.question_id)
+            .join(Paper, Paper.id == Question.paper_id)
+            .join(Document, Document.id == Paper.document_id)
+        ).all()
+    )
+    paper_board = dict(
+        session.execute(
+            select(Paper.id, Document.board_id).join(
+                Document, Document.id == Paper.document_id
+            )
+        ).all()
+    )
+    owners = {
+        "question": question_board,
+        "mark_scheme_entry": entry_board,
+        "official_answer": answer_board,
+        "paper": paper_board,
+    }
+    counts: dict[str, int] = {}
+    for subject_type, owner in owners.items():
+        for (subject_id,) in session.execute(
+            select(ProvenanceEdge.subject_id).where(
+                ProvenanceEdge.subject_type == subject_type
+            )
+        ).all():
+            key = key_by_id.get(owner.get(subject_id))
+            if key is not None:
+                counts[key] = counts.get(key, 0) + 1
+    for (attrs,) in session.execute(
+        select(ProvenanceEdge.attrs).where(ProvenanceEdge.subject_type == "asset")
+    ).all():
+        key = key_by_id.get(question_board.get((attrs or {}).get("question_id")))
+        if key is not None:
+            counts[key] = counts.get(key, 0) + 1
+    return counts
+
+
+def test_provenance_rebuild_board_scope_keeps_other_boards():
+    """按 board 重建只重投影该考试局，其它考试局的边必须原样保留。
+
+    旧实现忽略 board 参数，等价于全量重建：重建任何一个考试局都会把整张表
+    删空重写。这里用"其它考试局的边数不变"和"返回的统计不超过该考试局自己
+    的主体数"两条锁定过滤行为。
+    """
+    from sqlalchemy import func
+
+    from examdata.core.models import Board, Document
+
+    with session_scope() as s:
+        rebuild(s)  # 先做一次全量重建，避免依赖用例执行顺序
+        qid = _some_question(s)
+        target = s.scalar(
+            select(Board.key)
+            .join(Document, Document.board_id == Board.id)
+            .join(Paper, Paper.document_id == Document.id)
+            .join(Question, Question.paper_id == Paper.id)
+            .where(Question.id == qid)
+        )
+        board_keys = list(s.scalars(select(Board.key).order_by(Board.id)).all())
+        others = [k for k in board_keys if k != target]
+        if not others:
+            pytest.skip("库里只有一个考试局，无法验证其它考试局不受影响")
+        before = _board_edge_counts(s)
+    assert before.get(target, 0) > 0, "目标考试局必须已有溯源边"
+
+    with session_scope() as s:
+        stats = rebuild(s, board=target)
+
+    with session_scope() as s:
+        after = _board_edge_counts(s)
+        rows = trace(s, "question", qid)
+        cov = coverage(s)
+
+    target_edges = after.get(target, 0)
+    assert target_edges == before[target], "目标考试局的边重建后必须还在"
+    assert sum(stats.values()) == target_edges, "重建该考试局必须把它的边完整投影回来"
+    for key in others:
+        assert after.get(key, 0) == before.get(key, 0), f"{key} 的边被按 board 重建误删"
+    assert rows and rows[0]["source_url"], "按 board 重建后该考试局的边仍必须可追溯"
+    assert cov["question"]["ratio"] == 1.0
+
+    # 反向：重建别的考试局不能删改目标考试局的边，返回的统计也不能超过
+    # 该考试局自己的主体数（旧实现返回的是全库统计）
+    other = others[0]
+    with session_scope() as s:
+        other_questions = (
+            s.scalar(
+                select(func.count(Question.id))
+                .join(Paper, Paper.id == Question.paper_id)
+                .join(Document, Document.id == Paper.document_id)
+                .join(Board, Board.id == Document.board_id)
+                .where(Board.key == other)
+            )
+            or 0
+        )
+    with session_scope() as s:
+        other_stats = rebuild(s, board=other)
+    with session_scope() as s:
+        assert _board_edge_counts(s).get(target, 0) == target_edges, (
+            f"重建 {other} 时动了 {target} 的边"
+        )
+    assert other_stats["questions"] <= other_questions, (
+        f"重建 {other} 时重投影了别家的题目：{other_stats['questions']} > {other_questions}"
+    )
 
 
 def test_provenance_trace_has_official_url():

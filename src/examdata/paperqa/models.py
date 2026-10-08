@@ -52,7 +52,7 @@ EDEXCEL_SEASONS: dict[str, str] = {
     "november": "November",
 }
 CIE_MODES = {"qp", "ms", "both"}
-EDEXCEL_MODES = {"paper", "question", "qa"}
+EDEXCEL_MODES = {"qp", "ms", "both", "paper", "question", "qa"}
 
 ROMAN = ("i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x")
 
@@ -134,6 +134,9 @@ class Request:
         elif mode in {"question", "qa"}:
             if question is None or paper is None:
                 raise InvalidRequest("question and paper are required for question/qa mode")
+        elif mode in {"qp", "ms", "both"} and question is not None:
+            if paper is None:
+                raise InvalidRequest("paper is required for question selection")
         elif question is not None:
             raise InvalidRequest("paper mode does not accept question")
 
@@ -178,11 +181,15 @@ class OutputFile:
             object.__setattr__(self, "sha256", hashlib.sha256(self.data).hexdigest())
 
 
+from .budget import RequestBudget
+
+
 @dataclass
 class Result:
     request: Request
     documents: list[Document]
     files: list[OutputFile] = field(default_factory=list)
+    budget: RequestBudget | None = field(default=None, repr=False)
 
     def metadata(self, *, inline_data: bool = False):
         """可 JSON 序列化的清单——CLI 与 HTTP JSON 共用的同一套 schema。
@@ -192,6 +199,11 @@ class Result:
         无论是否内联，`data_base64` 键始终存在（未内联时为 null），
         这样两种出口的字段集合完全一致。
         """
+        from .budget import RequestBudget
+        budget = self.budget or RequestBudget()
+        budget.check_files(len(self.files))
+        if inline_data:
+            budget.charge(sum(4 * ((len(f.data) + 2) // 3) for f in self.files), "base64 serialization")
         files = []
         for f in self.files:
             files.append(

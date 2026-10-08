@@ -21,25 +21,29 @@
 
 from __future__ import annotations
 
-import json
 import re
-from typing import Any, Iterable, Iterator, Optional
-from urllib.parse import quote
+from typing import Any, Iterator, Optional
+from urllib.parse import urlsplit
+
+import httpx
 
 from ...core.fetch import Fetcher
 from ..base import BoardAdapter, DiscoveredResource, SyllabusRef
 from ..registry import register
-from .classify import extract_metadata, is_gated
+from .classify import extract_metadata
 from .servlet import (
     ALGOLIA_SERVLET,
     HITS_CAP,
     MAX_SHARD_DEPTH,
     ORIGIN,
+    ServletError,
     ShardExhausted,
     facet_values,
     fetch_records,
+    fetch_records_for_fq,
     iter_records,
     shard_records,
+    validate_record,
 )
 
 # 重新导出，保持既有调用点与测试的导入路径不变。
@@ -101,6 +105,9 @@ class EdexcelAdapter(BoardAdapter):
     homepage = ORIGIN
     accessibility = "partial_public"
 
+    def __init__(self, fetcher: Fetcher) -> None:
+        super().__init__(fetcher)
+
     # -- 入口 ------------------------------------------------------------
 
     def index_sources(self) -> list[tuple[str, str]]:
@@ -125,18 +132,10 @@ class EdexcelAdapter(BoardAdapter):
             'type:"cq:Page" AND category:"Pearson-UK:Qualification-Family/%s"'
             % fam["facet_family"]
         )
-        res = self.fetcher.get_text(
-            f"{ORIGIN}{ALGOLIA_SERVLET}?fq={quote(fq)}&hitsPerPage={CQ_PAGE_PAGE_SIZE}"
-        )
-        if not res.ok or not res.text:
-            # 单个家族失败不影响其他家族
-            return []
         try:
-            data = json.loads(res.text)
-        except json.JSONDecodeError:
-            return []
-
-        records = ((data or {}).get("searchResults") or {}).get("algoliaRecords") or []
+            records = fetch_records_for_fq(self.fetcher, fq, CQ_PAGE_PAGE_SIZE)
+        except (ServletError, ShardExhausted) as exc:
+            raise type(exc)(f"{fam['qualification_key']}: {exc}") from exc
         prefix = f"/en/qualifications/{fam['url_family']}/"
         out: dict[str, SyllabusRef] = {}
         for rec in records:
@@ -177,12 +176,17 @@ class EdexcelAdapter(BoardAdapter):
 
     def subject_facet_tags(self, syllabus: SyllabusRef) -> Optional[list[str]]:
         url = syllabus.attrs.get("subject_page_url") or syllabus.source_url
-        res = self.fetcher.get_text(url)
-        if not res.ok or not res.text:
-            return None
+        try:
+            res = self.fetcher.get_text(url)
+        except (httpx.HTTPError, OSError) as exc:
+            raise ServletError(f"{syllabus.slug}: Pearson subject page request failed") from exc
+        if not res.ok or res.status == 206 or not isinstance(res.text, str) or not res.text:
+            raise ServletError(
+                f"{syllabus.slug}: Pearson subject page unavailable (HTTP {res.status})"
+            )
         m = RE_NG_INIT_FACETS.search(res.text)
         if not m:
-            return None
+            raise ServletError(f"{syllabus.slug}: Pearson subject page has no facet metadata")
         return [t.strip() for t in m.group(2).split(",") if t.strip()]
 
     @staticmethod
@@ -212,6 +216,8 @@ class EdexcelAdapter(BoardAdapter):
         if not tags:
             return
         selected = self.select_facet_tags(tags)
+        if not selected:
+            raise ServletError(f"{syllabus.slug}: Pearson subject page has no usable facet metadata")
         page_url = syllabus.attrs.get("subject_page_url") or syllabus.source_url
 
         for rec in self._query_all(selected, label=syllabus.slug):
@@ -234,15 +240,40 @@ class EdexcelAdapter(BoardAdapter):
     def _facet_values(records: list[dict[str, Any]]) -> dict[str, list[str]]:
         return facet_values(records)
 
+    @staticmethod
+    def _resource_url(raw: str) -> Optional[str]:
+        """servlet 的 url 是外部输入：只接受站内相对路径或本站 https 地址。
+
+        绝对地址必须过 scheme + 主机白名单——否则被污染的 servlet 数据
+        会把任意外部 URL 写进资源清单，下载环节就成了 SSRF 通道。
+        """
+        if any(ch in raw for ch in "\\\r\n\t"):
+            return None
+        if raw.startswith("//"):
+            return None
+        if raw.startswith("/"):
+            return ORIGIN + raw
+        try:
+            parts = urlsplit(raw)
+        except ValueError:
+            return None
+        host = parts.netloc.lower()
+        if parts.scheme == "https" and host == "qualifications.pearson.com":
+            return raw
+        return None
+
     # -- 分类与元数据 ----------------------------------------------------
 
     def build_resource(
         self, rec: dict[str, Any], syllabus: SyllabusRef, page_url: str
     ) -> Optional[DiscoveredResource]:
-        raw_url = (rec.get("url") or "").strip()
+        validate_record(rec)
+        raw_url = rec["url"].strip()
         if not raw_url:
             return None
-        url = raw_url if raw_url.startswith("http") else ORIGIN + raw_url
+        url = self._resource_url(raw_url)
+        if url is None:
+            return None
 
         meta = extract_metadata(rec.get("category") or [], url)
         meta["subject_code"] = syllabus.code

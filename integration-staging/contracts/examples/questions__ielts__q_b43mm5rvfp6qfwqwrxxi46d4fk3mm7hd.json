@@ -1,0 +1,39 @@
+{
+  "schema": "question/1",
+  "public_id": "q_b43mm5rvfp6qfwqwrxxi46d4fk3mm7hd",
+  "native_id": "Q3.ii",
+  "container_ref": "container_qrbvatrkkwbf3xgdurbm4d2otobg5zcq",
+  "number_path": [
+    "Q3",
+    "Q3.ii"
+  ],
+  "parent_ref": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+  "group_ref": "q_egcwv27xjaq2elinkwd63fu6zvvq45ck",
+  "question_type": "unknown",
+  "stem": "Synthetic sub-part (ii).",
+  "payload": null,
+  "marks": null,
+  "required_assets": [],
+  "answers": [],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "unknown",
+    "answer_verification": "unknown",
+    "assets": "unknown",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/ielts",
+      "native-kind:parent_answer_child"
+    ],
+    "parent_refs": [],
+    "note": "sub-part type is not declared by the source; kept as unknown"
+  },
+  "children": []
+}

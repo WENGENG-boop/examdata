@@ -1,0 +1,94 @@
+{
+  "schema": "question/1",
+  "public_id": "q_w4ecszmbbqa54chk22paau3sluucc22z",
+  "native_id": "3",
+  "container_ref": "container_6cnnjvwpypjw2orom36k3xjazamje2x3",
+  "number_path": [
+    "3"
+  ],
+  "parent_ref": null,
+  "group_ref": null,
+  "question_type": "short_answer",
+  "stem": "Synthetic question 3 whose marking source disagrees with the synthetic question paper.",
+  "payload": {
+    "stem": "Synthetic question 3 whose marking source disagrees with the synthetic question paper.",
+    "word_limit": null
+  },
+  "marks": 3,
+  "required_assets": [
+    {
+      "role": "graph",
+      "sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "asset_ref": null,
+      "required": true
+    }
+  ],
+  "answers": [
+    {
+      "public_id": "ans_wiiw7mnvhotjje3lg3ndu4nr6zt4pzbl",
+      "question_ref": null,
+      "original_value": "synthetic-mark-scheme-answer",
+      "normalized_value": null,
+      "alternatives": [],
+      "ordering_rule": null,
+      "matching_method": "alternative",
+      "verification": "conflicting",
+      "source": {
+        "source_id": "synthetic-cie",
+        "provider_id": "cie",
+        "locator": {
+          "fixture": "synthetic/cie",
+          "detail": "answer:primary"
+        },
+        "content_class": "synthetic",
+        "retrieved_at": "2026-10-05T19:20:00+08:00"
+      },
+      "conflicts": [
+        {
+          "value": "synthetic-mark-scheme-answer",
+          "source": "synthetic-ms",
+          "evidence": null,
+          "decision": null
+        },
+        {
+          "value": "synthetic-alternate-answer",
+          "source": "synthetic-examiner-report",
+          "evidence": null,
+          "decision": null
+        }
+      ],
+      "manual_decision": null,
+      "content_class": "synthetic",
+      "lineage": {
+        "operation": "map_native_fixture",
+        "source_refs": [
+          "synthetic/cie",
+          "native-answer-key:primary"
+        ],
+        "parent_refs": [],
+        "note": null
+      }
+    }
+  ],
+  "quality": {
+    "content": "partial",
+    "answer_presence": "present",
+    "answer_verification": "conflicting",
+    "assets": "external_only",
+    "audio_integrity": "unknown",
+    "audio_alignment": "unknown",
+    "region_verification": "unknown",
+    "gaps": []
+  },
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/cie",
+      "native-document-role:qp"
+    ],
+    "parent_refs": [],
+    "note": "native page 4"
+  },
+  "children": []
+}

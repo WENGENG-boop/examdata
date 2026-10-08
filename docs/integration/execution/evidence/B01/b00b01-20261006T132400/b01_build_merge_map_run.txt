@@ -1,0 +1,13 @@
+{
+  "out": "C:\\Users\\weo\\Desktop\\api\\docs\\integration\\execution\\evidence\\B01\\b00b01-20261006T132400\\B01_MERGE_MAP.json",
+  "checks": {
+    "a14_byte_unchanged": true,
+    "entries_all_dispositioned": true,
+    "entries_count_247": true,
+    "not_merged_count_92": true,
+    "cli_target_corrected": true,
+    "cli_target_real": true,
+    "no_entry_promoted_to_pass": true
+  },
+  "all_ok": true
+}

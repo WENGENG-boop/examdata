@@ -1,0 +1,221 @@
+{
+  "report_version": "a14-rehearsal/1",
+  "generated_by": "integration-staging/tools/a14_rehearsal.py",
+  "generated_at": "2026-10-06T03:37:07+00:00",
+  "status": "staged_rehearsal_only_not_merged_not_deployed",
+  "sandbox_root": "integration-staging/runtime/a14-rehearsal",
+  "units": [
+    {
+      "unit": "code release",
+      "rehearsed": true,
+      "method": "apply every A14_MERGE_MAP.json entry into the sandbox, verify the staged hash, then execute the recorded reversal per entry",
+      "checks": [
+        {
+          "name": "every entry has a unique target",
+          "ok": true,
+          "detail": "247 targets"
+        },
+        {
+          "name": "no target escapes the sandbox",
+          "ok": true,
+          "detail": "stray: []"
+        },
+        {
+          "name": "all staged bytes applied verbatim",
+          "ok": true,
+          "detail": "247 files"
+        },
+        {
+          "name": "every copied_snapshot is byte-faithful to its recorded base",
+          "ok": true,
+          "detail": "8 copies"
+        },
+        {
+          "name": "no recorded base has drifted under the active owner",
+          "ok": true,
+          "detail": "recorded == observed for every base"
+        },
+        {
+          "name": "rollback restores the pre-apply tree byte-for-byte",
+          "ok": true,
+          "detail": "residue=[] lost=[] changed=[]"
+        }
+      ],
+      "counts": {
+        "entries": 247,
+        "seeded_from_base": 6,
+        "new_files": 235,
+        "files_before": 6,
+        "files_after_apply": 247,
+        "files_after_rollback": 6
+      },
+      "sandbox": "integration-staging/runtime/a14-rehearsal/release"
+    },
+    {
+      "unit": "component manifest",
+      "rehearsed": true,
+      "method": "load the manifest set from a sandbox deployment root, swap in a variant, re-read, then restore the original bytes and re-read",
+      "checks": [
+        {
+          "name": "manifest loads from the sandbox deployment root",
+          "ok": true,
+          "detail": "problems: []"
+        },
+        {
+          "name": "swapped manifest is observed without any cached state",
+          "ok": true,
+          "detail": "version after swap: 1.1.0"
+        },
+        {
+          "name": "restoring the bytes restores the resolved component set",
+          "ok": true,
+          "detail": "manifest sha256 back to 768f6af09fd2"
+        }
+      ],
+      "components": [
+        "fake_cli"
+      ],
+      "manifest_sha256": "768f6af09fd2cb709c397f5b8a0fc3a4a72b1a261b7f7c13a7305712a2b65f96",
+      "variant_sha256": "213bec9123b9ac1f797101aa4bd64c14a83b2d1d576d7e9f362a29ee802c138f",
+      "sandbox": "integration-staging/runtime/a14-rehearsal/manifest"
+    },
+    {
+      "unit": "data revision pointer",
+      "rehearsed": true,
+      "method": "publish revision A, publish revision B, call rollback(), then confirm the pointer resolves to A while B stays readable",
+      "checks": [
+        {
+          "name": "revision A published and retained",
+          "ok": true,
+          "detail": "A=rev-a1a780f98baf"
+        },
+        {
+          "name": "revision B published over A",
+          "ok": true,
+          "detail": "B=rev-88be4f6add77 previous=rev-a1a780f98baf"
+        },
+        {
+          "name": "A stays retained after B is published",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "rollback points current back at A",
+          "ok": true,
+          "detail": "current=rev-a1a780f98baf"
+        },
+        {
+          "name": "both revisions remain readable after rollback",
+          "ok": true,
+          "detail": "available=['rev-88be4f6add77', 'rev-a1a780f98baf']"
+        },
+        {
+          "name": "rollback records B as the previous pointer",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "revisions": {
+        "a": "rev-a1a780f98baf525add56093097839fbc",
+        "b": "rev-88be4f6add77ccf46d7fe253276d6cd1"
+      },
+      "sandbox": "integration-staging/runtime/a14-rehearsal/catalog"
+    },
+    {
+      "unit": "database backup",
+      "rehearsed": false,
+      "not_run": true,
+      "reason": "no live database is touched in Phase A (plan 16.6 / B08); the reversal is documented but cannot be exercised without protected resources",
+      "reversal_documented": "restore the recorded backup, then reconcile writes made after it; never restore over new writes without freezing them",
+      "checks": [
+        {
+          "name": "no database opened",
+          "ok": true,
+          "detail": "the rehearsal holds no database handle"
+        }
+      ]
+    },
+    {
+      "unit": "frontend switch",
+      "rehearsed": true,
+      "method": "drive the staged client's flag helpers with an in-memory storage; no file, no server and no network is touched",
+      "checks": [
+        {
+          "name": "node exits 0",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "off then on restores the default",
+          "ok": true,
+          "detail": "{\"flag\": \"examdata.v2-client\", \"initial\": true, \"after_off\": false, \"marker_after_off\": \"off\", \"after_on\": true, \"marker_removed_after_on\": true}"
+        },
+        {
+          "name": "switching writes no file",
+          "ok": true,
+          "detail": "storage is in-memory; the sandbox holds only the driver script"
+        }
+      ],
+      "observed": {
+        "flag": "examdata.v2-client",
+        "initial": true,
+        "after_off": false,
+        "marker_after_off": "off",
+        "after_on": true,
+        "marker_removed_after_on": true
+      },
+      "sandbox": "integration-staging/runtime/a14-rehearsal/frontend-switch"
+    },
+    {
+      "unit": "job checkpoint",
+      "rehearsed": true,
+      "method": "read three private checkpoint fixtures through the staged readers and compare the file hashes before and after",
+      "checks": [
+        {
+          "name": "readers never rewrite a checkpoint",
+          "ok": true,
+          "detail": "3 fixtures byte-identical"
+        },
+        {
+          "name": "an unrecognised checkpoint stays an explicit unknown, not an exception",
+          "ok": true,
+          "detail": "format=unknown state=None"
+        }
+      ],
+      "rows": [
+        {
+          "fixture": "cie-batch-checkpoint-running.json",
+          "sha256_before": "569e684df62f142ae2980ec22801f58aa1ce6d469e5926f58380875d47c3a8bd",
+          "sha256_after": "569e684df62f142ae2980ec22801f58aa1ce6d469e5926f58380875d47c3a8bd",
+          "unchanged": true,
+          "format": "cie-batch-checkpoint",
+          "state": "CieBatchState"
+        },
+        {
+          "fixture": "ielts-run-checkpoint-ok.json",
+          "sha256_before": "0364323fea0d9f37c643bf758dfc0b05b2c2cf8204df84d59e50044aad5bcf12",
+          "sha256_after": "0364323fea0d9f37c643bf758dfc0b05b2c2cf8204df84d59e50044aad5bcf12",
+          "unchanged": true,
+          "format": "ielts-run-checkpoint/1",
+          "state": "IeltsRunState"
+        },
+        {
+          "fixture": "unsupported-checkpoint.json",
+          "sha256_before": "b7f2f031a2594ee29c3b89d7753d056f48b5665a0ebe303ea0a4e86f99bba414",
+          "sha256_after": "b7f2f031a2594ee29c3b89d7753d056f48b5665a0ebe303ea0a4e86f99bba414",
+          "unchanged": true,
+          "format": "unknown",
+          "state": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "units": 6,
+    "rehearsed": 5,
+    "not_run": 1,
+    "checks": 21,
+    "problems": 0
+  },
+  "problems": []
+}

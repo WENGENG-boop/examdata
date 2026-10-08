@@ -1,26 +1,11 @@
 """Pearson 站内 Algolia servlet 的只读访问层。
 
-Edexcel 的页面是 AngularJS 空壳，服务端 HTML 里没有任何 PDF 锚点，
-资源清单只能通过站内 servlet 拿 JSON。本模块把「构造 fq -> 查询 ->
-撞上限分片 -> 去重」抽出来，供两处复用：资源枚举（adapter）与
-按科目/考季/卷号精确定位（paperqa）。
+资源枚举（adapter）与精确定位（paperqa）共用查询、响应校验和去重。
+servlet 忽略 `page` 且 `hitsPerPage` 硬上限为 1000。被截断响应中的
+facet 取值不能证明覆盖全部记录，因此即使可按这些取值继续切分，也必须
+拒绝饱和响应。命中请求上限或 `nbHits` 表明截断时抛 `ShardExhausted`。
 
-**为什么必须分片**：servlet 的 `page` 参数被忽略（实测），只有
-`hitsPerPage` 有效且硬上限 1000。撞上限不切分就会静默丢数据——这是
-最难发现的一类 bug，因为返回的清单看起来完全正常，只是少了一部分。
-切到 `MAX_SHARD_DEPTH` 仍饱和、且没有可用切分维度时就抛
-`ShardExhausted`，绝不返回可能被截断的结果。
-
-**残余局限（如实记录）**：分片维度取自被截断响应里出现过的 facet 取值，
-如果截断恰好整段丢掉了某个考季，该考季不会出现在分片列表里，分片就补不回
-来。因此分片降低截断风险但**不能证明穷尽**。paperqa 的查询都带
-科目+考季+系列三重条件（实测十几条，远低于上限），不依赖分片；
-适配器的全量枚举若命中上限，宁可报错也不返回"看起来完整"的清单。
-
-**为什么不用 `NOT id:"/content/dam/secure*"`**：`id` 不是 servlet 的
-可过滤属性，该过滤器静默匹配空集，`NOT 空集` 等于全集（实测 Economics
-全量 1533 条，加 `NOT` 后仍 1533 条，且返回里照样混着门禁路径）。
-门禁只能靠 URL 前缀在下载时判定，见 `paperqa/sources/pearson.py`。
+门禁靠 URL 前缀判定；`id` 不是 servlet 的可过滤属性，不能用它排除门禁。
 """
 
 from __future__ import annotations
@@ -29,17 +14,16 @@ import json
 from typing import Any, Iterable, Iterator, Sequence
 from urllib.parse import quote
 
+import httpx
+
 from ...core.fetch import Fetcher
 
 ORIGIN = "https://qualifications.pearson.com"
 ALGOLIA_SERVLET = "/services/pearson/algolia/GET.servlet"
 
-# servlet 的 hitsPerPage 硬上限。超过就必须分片，否则静默截断。
 HITS_CAP = 1000
-# 分片递归的最大深度。到顶仍饱和就抛错，绝不返回被截断的结果。
+# 保留旧版分片常量的导入契约；截断响应不再用于推断完整的分片范围。
 MAX_SHARD_DEPTH = 3
-
-# 分片维度，按优先级排列：考季基数低、分布均匀，优先按它切。
 SHARD_DIMENSIONS: tuple[str, ...] = (
     "Pearson-UK:Exam-Series/",
     "Pearson-UK:Document-Type/",
@@ -47,11 +31,11 @@ SHARD_DIMENSIONS: tuple[str, ...] = (
 
 
 class ShardExhausted(RuntimeError):
-    """分片到最大深度仍撞上限——继续下去会静默丢数据，必须显式失败。"""
+    """查询可能被截断，无法证明记录完整。"""
 
 
 class ServletError(RuntimeError):
-    """servlet 不可用或返回了无法解析的内容。"""
+    """servlet 不可用或响应形状无效。"""
 
 
 def build_fq(tags: Iterable[str | Sequence[str]]) -> str:
@@ -76,34 +60,81 @@ def build_fq(tags: Iterable[str | Sequence[str]]) -> str:
     return " AND ".join(clauses)
 
 
-def fetch_records(
-    fetcher: Fetcher, tags: Iterable[str | Sequence[str]], hits: int = HITS_CAP
-) -> list[dict[str, Any]]:
-    """查一次 servlet，返回原始记录。
+def validate_record(record: Any) -> None:
+    if not isinstance(record, dict):
+        raise ServletError("Invalid Pearson catalogue record: expected an object")
+    if not isinstance(record.get("url"), str):
+        raise ServletError("Invalid Pearson catalogue record: url must be a string")
+    for name in ("title", "objectID", "extension"):
+        value = record.get(name)
+        if value is not None and not isinstance(value, str):
+            raise ServletError(f"Invalid Pearson catalogue record: {name} must be a string")
+    categories = record.get("category")
+    if categories is not None and (
+        not isinstance(categories, list) or any(not isinstance(c, str) for c in categories)
+    ):
+        raise ServletError("Invalid Pearson catalogue record: category must be a list of strings")
 
-    传输或解析失败一律抛 `ServletError`——静默返回空列表会让调用方
-    把"查询失败"当成"这批没有记录"，进而把缺失当成完整性。
-    """
-    url = f"{ORIGIN}{ALGOLIA_SERVLET}?fq={quote(build_fq(tags))}&hitsPerPage={hits}"
-    res = fetcher.get_text(url)
-    if not res.ok or not res.text:
+
+def fetch_records_for_fq(
+    fetcher: Fetcher, fq: str, hits: int = HITS_CAP
+) -> list[dict[str, Any]]:
+    if isinstance(hits, bool) or not isinstance(hits, int) or hits < 1:
+        raise ValueError("hits must be a positive integer")
+    url = f"{ORIGIN}{ALGOLIA_SERVLET}?fq={quote(fq)}&hitsPerPage={hits}"
+    try:
+        res = fetcher.get_text(url)
+    except (httpx.HTTPError, OSError) as exc:
+        raise ServletError("Pearson catalogue request failed") from exc
+    if not res.ok or res.status == 206 or not isinstance(res.text, str) or not res.text:
         raise ServletError(f"Pearson catalogue unavailable (HTTP {res.status})")
     try:
         data = json.loads(res.text)
-        records = ((data or {}).get("searchResults") or {}).get("algoliaRecords")
-    except (ValueError, AttributeError) as exc:
-        raise ServletError("Invalid Pearson catalogue response") from exc
-    if not isinstance(records, list) or any(not isinstance(r, dict) for r in records):
-        raise ServletError("Invalid Pearson catalogue response")
+    except ValueError as exc:
+        raise ServletError("Invalid Pearson catalogue JSON") from exc
+    if not isinstance(data, dict) or not isinstance(data.get("searchResults"), dict):
+        raise ServletError("Invalid Pearson catalogue response: searchResults must be an object")
+    results = data["searchResults"]
+    records = results.get("algoliaRecords")
+    if not isinstance(records, list):
+        raise ServletError("Invalid Pearson catalogue response: algoliaRecords must be a list")
+    for index, record in enumerate(records):
+        try:
+            validate_record(record)
+        except ServletError as exc:
+            raise ServletError(f"Pearson catalogue record {index}: {exc}") from exc
+    for container in (data, results):
+        if "nbHits" not in container:
+            continue
+        total = container["nbHits"]
+        if isinstance(total, bool) or not isinstance(total, int) or total < len(records):
+            raise ServletError("Invalid Pearson catalogue response: nbHits is inconsistent")
+        if total > len(records):
+            raise ShardExhausted(
+                f"Pearson catalogue truncated: returned {len(records)} of {total} records"
+            )
+    limit = min(hits, HITS_CAP)
+    if len(records) >= limit:
+        raise ShardExhausted(
+            f"Pearson catalogue reached the {limit} record limit; completeness is unproven"
+        )
     return records
+
+
+def fetch_records(
+    fetcher: Fetcher, tags: Iterable[str | Sequence[str]], hits: int = HITS_CAP
+) -> list[dict[str, Any]]:
+    """返回完整的小查询结果；传输、形状或完整性错误均显式失败。"""
+    return fetch_records_for_fq(fetcher, build_fq(tags), hits)
 
 
 def facet_values(records: list[dict[str, Any]]) -> dict[str, list[str]]:
     """统计这批记录里各 facet 前缀下的取值分布。"""
     out: dict[str, set[str]] = {}
     for rec in records:
+        validate_record(rec)
         for c in rec.get("category") or []:
-            if isinstance(c, str) and "/" in c:
+            if "/" in c:
                 prefix, _, value = c.rpartition("/")
                 out.setdefault(prefix + "/", set()).add(value)
     return {k: sorted(v) for k, v in out.items()}
@@ -116,40 +147,20 @@ def shard_records(
     depth: int = 0,
     label: str = "",
 ) -> Iterator[dict[str, Any]]:
-    """递归查询，保证不静默截断。"""
-    tags = list(tags)
-    records = fetch_records(fetcher, tags)
-    if len(records) < HITS_CAP:
-        yield from records
-        return
-
-    if depth >= MAX_SHARD_DEPTH:
-        raise ShardExhausted(
-            f"{label}: 分片深度已达 {MAX_SHARD_DEPTH} 仍撞上 {HITS_CAP} 条上限"
-            f"（tags={tags}）。拒绝返回可能被截断的结果。"
-        )
-
-    facets = facet_values(records)
-    for prefix in SHARD_DIMENSIONS:
-        values = facets.get(prefix) or []
-        if len(values) < 2:
-            continue
-        for value in sorted(values):
-            yield from shard_records(
-                fetcher, tags + [prefix + value], depth=depth + 1, label=label
-            )
-        return
-
-    raise ShardExhausted(
-        f"{label}: 命中 {len(records)} 条且无可用切分维度（tags={tags}）。"
-        "拒绝返回可能被截断的结果。"
-    )
+    """保留分片入口契约，但不以截断响应推断全部 facet。"""
+    try:
+        records = fetch_records(fetcher, tags)
+    except (ServletError, ShardExhausted) as exc:
+        if label:
+            raise type(exc)(f"{label}: {exc}") from exc
+        raise
+    yield from records
 
 
 def iter_records(
     fetcher: Fetcher, tags: Iterable[str | Sequence[str]], *, label: str = ""
 ) -> Iterator[dict[str, Any]]:
-    """分片查询并按 URL/objectID 去重（分片之间会重叠）。"""
+    """查询并按 URL/objectID 去重。"""
     seen: set[str] = set()
     for rec in shard_records(fetcher, tags, depth=0, label=label):
         key = rec.get("url") or rec.get("objectID") or ""

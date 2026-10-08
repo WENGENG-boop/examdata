@@ -1,0 +1,24 @@
+=== A05 provider dispatch probe ===
+providers: ['cie_index_fixture', 'edexcel_index_fixture', 'ielts_questions_fixture']
+[ok] discovery.ok :: status=ok count=3
+[ok] cie.questions.ok :: count=5
+[ok] cie.questions.hierarchy :: numbers=['1', '1(a)', '1(b)', '2', '3']
+[ok] edexcel.questions.unsupported :: error=unsupported_capability
+[ok] edexcel.questions.not_empty_success
+[ok] ielts.year.filter_rejected :: error=unsupported_filter
+[ok] ielts.Q41.empty_success_with_gap :: status=ok gaps=['missing_answer_slot']
+[ok] ielts.Q5.conflict_unverified :: gaps=['answer_conflict']
+[ok] cie.container.unknown_date_gap :: gaps=['unknown_date']
+[ok] alias.routes_to_ielts
+[ok] alias.conflict_refused
+[ok] alias.unknown_raises
+[ok] partial.status :: status=partial
+[ok] partial.has_data
+[ok] partial.failure_sanitized
+[ok] all_fail.error
+[ok] unavailable.error
+[ok] unavailable.partial_with_available
+[ok] null.empty_success
+[ok] no_provider.error
+
+A05_PROBE: PASS (0 failing)

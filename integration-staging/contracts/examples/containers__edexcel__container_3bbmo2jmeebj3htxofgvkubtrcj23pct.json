@@ -1,0 +1,25 @@
+{
+  "schema": "container/1",
+  "public_id": "container_3bbmo2jmeebj3htxofgvkubtrcj23pct",
+  "kind": "paper",
+  "native_identity": {
+    "subject": "synthetic-ial-mathematics",
+    "unit": "SYN-WMA11",
+    "paper": "01"
+  },
+  "sections": [],
+  "resources": [],
+  "question_refs": [],
+  "revision": null,
+  "coverage": "unknown",
+  "content_class": "synthetic",
+  "lineage": {
+    "operation": "map_native_fixture",
+    "source_refs": [
+      "synthetic/edexcel",
+      "native-subject:synthetic-ial-mathematics"
+    ],
+    "parent_refs": [],
+    "note": "native unit code WMA11"
+  }
+}

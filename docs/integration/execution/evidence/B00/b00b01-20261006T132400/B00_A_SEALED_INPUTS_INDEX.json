@@ -1,0 +1,104 @@
+{
+  "schema": "examdata.integration.b00_a_sealed_inputs/1",
+  "run_id": "b00b01-20261006T132400",
+  "created_at_local": "2026-10-06T13:44:34+08:00",
+  "purpose": "byte-identical copies of the A-sealed governance inputs, taken as the B00 starting snapshot; originals untouched (original_read_only)",
+  "files": [
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/execution-ledger.json",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_execution-ledger.json",
+      "bytes": 490190,
+      "sha256": "72b24d335d73b6876c1b78d741f3a97a552f780acde284f1d554743a6f112fe1",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/ownership.json",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_ownership.json",
+      "bytes": 6780,
+      "sha256": "bf11e22fe72df5d3d0573df8c3728dfc54963131b1a0e8d44a1b336dda356b24",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/A12_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_A12_ROUTE_COMPATIBILITY_WORKSHEET.json",
+      "bytes": 178558,
+      "sha256": "76ce0abc077b389aa17c7e946a101553d3ddb4a02ce74abfc59d766026b8ee34",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/A14_MERGE_MAP.json",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_A14_MERGE_MAP.json",
+      "bytes": 230459,
+      "sha256": "29940a0b0582b8b7e8e6fea79692ba849e3d25dd917dfa059d8bbda98fc3654a",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/A14_MERGE_MAP.md",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_A14_MERGE_MAP.md",
+      "bytes": 78982,
+      "sha256": "1cf2a41f020313c30f40e47e5a0a809237d9459146b7a27e13e32a4f7e28a9c7",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/A14_RELEASE_MANIFEST.json",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_A14_RELEASE_MANIFEST.json",
+      "bytes": 9154,
+      "sha256": "ae938da2e35ef0efa10aaa414fcbee105093ac7f3edfca7b95c6e90ed655e561",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/A14_REHEARSAL.json",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_A14_REHEARSAL.json",
+      "bytes": 7726,
+      "sha256": "94adc824f1fb8f606880787acd78c900832b23ea542ca3227e1f23e25dc0117f",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/ROUTE_INVENTORY_CURRENT.json",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_ROUTE_INVENTORY_CURRENT.json",
+      "bytes": 20756,
+      "sha256": "946d3e90cbccd54dc9ac9005f36f8f940b6b7d2fe1a5ae515b119d3c00e55baf",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/PHASE_A_REPORT.md",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_PHASE_A_REPORT.md",
+      "bytes": 12686,
+      "sha256": "84a025649ef4a0e1d761053eaf20038bd2535ed0d7a6a2944bea331f7d4b3251",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/PHASE_A_DEFERRED_WORK.md",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_PHASE_A_DEFERRED_WORK.md",
+      "bytes": 7657,
+      "sha256": "2c09ea250627ae9a861588c5168bbc6fef9597d1f54853cd2b927960678662d4",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/PHASE_A_INDEPENDENT_REVIEW_2026-10-06.md",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_PHASE_A_INDEPENDENT_REVIEW_2026-10-06.md",
+      "bytes": 6286,
+      "sha256": "b6a7ec12b11071756f30292974db25cca128c2cfa73ec2cd48b9387f429ea1cd",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    },
+    {
+      "label": "copied_snapshot",
+      "source_path": "docs/integration/execution/evidence/A15/independent_checks_2026-10-06.txt",
+      "evidence_path": "docs/integration/execution/evidence/B00/b00b01-20261006T132400/a_sealed_independent_checks_2026-10-06.txt",
+      "bytes": 137945,
+      "sha256": "699604ae42549a63ed2756faca7e94a28e2551f71e8129716eeff3c3c05a30c8",
+      "copied_at_local": "2026-10-06T13:44:34+08:00"
+    }
+  ]
+}

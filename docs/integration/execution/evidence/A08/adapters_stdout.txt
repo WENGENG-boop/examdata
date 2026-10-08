@@ -1,0 +1,63 @@
+=== A08 read-adapter probe ===
+synthetic fixtures: C:\Users\weo\Desktop\api\integration-staging\fixtures\synthetic\ielts-toefl
+copied snapshots: C:\Users\weo\Desktop\api\integration-staging\fixtures\copied
+
+-- source reader --
+[ok] read.classify_kinds
+[ok] read.outside_staging_not_opened
+[ok] read.wrong_kind_rejected
+[ok] read.kmf_url_shape
+[ok] read.cache_entries_reported
+
+-- IELTS question set (A03 book fixture) --
+[ok] ielts.q41_missing_slot_preserved
+[ok] ielts.grouped_alternatives
+[ok] ielts.table_structure
+[ok] ielts.question_hierarchy
+[ok] ielts.answer_conflict_preserved
+[ok] ielts.no_answer_upgraded
+
+-- IELTS question set (A08 variant fixture) --
+[ok] ielts.variant_kept
+[ok] ielts.edition_unresolved
+[ok] ielts.special_numbering_kept
+
+-- IELTS audio alignment --
+[ok] audio.verified_claim_capped
+[ok] audio.states_distinct
+[ok] audio.no_offset_invented
+
+-- IELTS copied page map + provenance --
+[ok] pages.unresolved_reported
+[ok] pages.hashes_mapped
+[ok] pages.revision_pointer
+
+-- TOEFL copied reading index --
+[ok] toefl.index_one_container_per_passage
+[ok] toefl.index_no_coverage_claim
+[ok] toefl.index_unresolved_identity
+[ok] toefl.index_real_urls_accepted
+
+-- TOEFL synthetic question sets --
+[ok] toefl.identity_classes_distinct
+[ok] toefl.table_rows
+[ok] toefl.multiple_choice_count
+[ok] toefl.missing_options_table
+[ok] toefl.locked_jj_metadata_only
+[ok] toefl.unknown_dates
+[ok] toefl.bad_url_reported
+
+-- TOEFL cache reparse --
+[ok] toefl.cache_bad_entries_reported
+
+-- provenance --
+[ok] prov.synthetic.ielts-questions-a08-synthetic
+[ok] prov.no_upgrade.ielts-questions-a08-synthetic
+[ok] prov.synthetic.ielts-audio-synthetic
+[ok] prov.no_upgrade.ielts-audio-synthetic
+[ok] prov.synthetic.toefl-questions-synthetic
+[ok] prov.no_upgrade.toefl-questions-synthetic
+[ok] prov.synthetic.toefl-bad-cache-synthetic
+[ok] prov.no_upgrade.toefl-bad-cache-synthetic
+
+A08_PROBE: PASS (0 failing)

@@ -1,0 +1,26 @@
+{
+  "written": "docs/integration/execution/evidence/A01/statics_extract.json",
+  "components": {
+    "examdata": 40,
+    "frontend": 21,
+    "ielts-api": 35,
+    "toefl-api": 12,
+    "ielts-data": 16,
+    "cie-index-batch-2026-10-01": 2,
+    "cie-location-batch": 24,
+    "cie-question-crops": 7,
+    "gaokao-feasibility": 7,
+    "docs": 6
+  },
+  "python_main_guards": 12,
+  "cli_commands": 36,
+  "node_cli_candidates": 24,
+  "gateway_spawn_facts": 90,
+  "frontend_call_hits": 33,
+  "env_reads_python": 16,
+  "env_reads_node": 23,
+  "env_templates": 0,
+  "data_roots": 15,
+  "git_status_entries": 1269
+}
+STATIC_INVENTORY: PASS

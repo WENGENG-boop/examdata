@@ -1,0 +1,59 @@
+A00 evidence — project-level AGENTS.md/CLAUDE.md scan and user-global rule-tree probe
+Purpose: determine which rule sources apply to this executor (project-level vs user-global).
+
+--- command 1 (verbatim): project-level rule-file scan ---
+for d in . docs docs/integration examdata examdata/src examdata/src/examdata frontend ielts-api toefl-api cie-location-batch cie-question-crops gaokao-feasibility tmp_edexcel_tt_probe cie-index-batch-2026-10-01; do
+  for f in AGENTS.md CLAUDE.md; do
+    [ -e "$d/$f" ] && echo "FOUND: $d/$f"
+  done
+done
+echo 'AGENTS/CLAUDE scan complete'
+
+--- output 1 (verbatim) ---
+AGENTS/CLAUDE scan complete
+
+No FOUND lines: no project-level AGENTS.md or CLAUDE.md exists in any scanned workspace
+directory. Therefore only the user-global rule tree applies to this task.
+
+--- command 2 (verbatim): user-global rule tree probe (passive; nothing executed) ---
+echo '--- user-level rules probe (passive; nothing executed) ---'
+command -v kander 2>/dev/null || echo 'kander: not on PATH'
+ls -la "$HOME/.config/kander" 2>&1 | head -8
+echo '--- ~/.agents entries ---'
+ls "$HOME/.agents" 2>&1 | head -20
+
+--- output 2 (verbatim) ---
+--- user-level rules probe (passive; nothing executed) ---
+/c/Users/weo/.local/bin/kander
+total 20
+drwxr-xr-x 1 weo 197121 0 Sep  6 19:55 .
+drwxr-xr-x 1 weo 197121 0 Sep 28 14:06 ..
+-rw-r--r-- 1 weo 197121 1995 Sep  6 19:55 config.json
+-rw-r--r-- 1 weo 197121 1996 Sep  6 19:54 config.json.bak.20260906T115425.410338100
+-rw-r--r-- 1 weo 197121 4937 Sep  6 19:55 config.json.bak.20260906T115516.105921300
+-rw-r--r-- 1 weo 197121    0 Sep  6 19:48 config.json.lock
+--- ~/.agents entries ---
+AGENTS.md
+KANDER-AGENTS.md
+KANDER-BASE-RULES.md
+KANDER-CODE-RULES.md
+KANDER-COLLABORATION-RULES.md
+KANDER-GIT-RULES.md
+KANDER-KANBAN-RULES.md
+KANDER-REPORTING-RULES.md
+KANDER-REVIEW-RULES.md
+KANDER-TASK-GROUP-RULES.md
+KANDER-TASK-INTAKE-RULES.md
+skills
+
+--- notes ---
+- Kander is installed globally; its config and module rule files live under C:/Users/weo/.config/kander
+  and C:/Users/weo/.agents. The config was read directly as a file (read-only) instead of running
+  `kander config --json`, so no command could write outside the two Phase A roots.
+- Module switches (from the read-only config read): rules.code, rules.collaboration, rules.git,
+  rules.task_intake, rules.task_groups, rules.review, rules.reporting are enabled.
+- Framework dispositions decided for this goal (recorded in A00_INITIAL_REPORT.md §8): code adopted;
+  reporting reduced to a one-line end-of-task report (non-kanban, non-git -> branch N/A); review
+  deferred during Phase A (its git-commit/worktree/reviewer mechanics conflict with isolation) and
+  to be offered to the user at Phase B; task_intake satisfied (user chose direct execution); other
+  modules not loaded for this task.
